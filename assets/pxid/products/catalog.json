@@ -1,0 +1,29 @@
+{
+  "reviewed": "2026-08-28",
+  "scope": "cn/business.html content only; hero, header, footer and animation scripts excluded",
+  "wechat": {"title":"2026 PXID 品向智能制造简介","local_summary":"../../../cn/news/odm-project-guide.html","original":"https://mp.weixin.qq.com/s/L2EON37Os-NBv7End_kDVA","status":"Local summary and source link found. Original article could not be opened; not treated as a verified model catalog."},
+  "products": [
+    {"id":"ebike","name":"MANTIS-P6","category":"全地形电动自行车","image":"mantis-p6.webp","fit":"catalog","focus":"50% 8%","matte":"#fff","source":"https://www.pxid.com/fat-px-2-coolplay-new-trend-product/","original":"https://cdnus.globalso.com/pxid/P6-绿.png!/format/webp/lossless/true","note":"Official lossless WebP verified pixel-identical to original PNG; 291242 bytes instead of 6261225."},
+    {"name":"PXID-P5","category":"宽胎电动自行车","image":"pxid-p5-riding.jpg","focus":"64% center","source":"https://www.pxid.com/p5-product/","original":"https://cdnus.globalso.com/pxid/049.jpg"},
+    {"id":"folding","name":"LIGHT-P2","category":"折叠电动自行车","image":"light-p2.jpg","fit":"catalog","focus":"50% 8%","matte":"#000","source":"https://www.pxid.com/pxid-design-eu-market-popular-250w-36v-16-inch-city-road-electric-bike-product/","original":"https://cdnus.globalso.com/pxid/P2-白色.jpg"},
+    {"id":"motorcycle","name":"M2","category":"电动摩托车","image":"m2.jpg","focus":"58% center","source":"https://www.pxid.com/m2-product/","original":"https://cdnus.globalso.com/pxid/Product-Rendering-Display-2.jpg"},
+    {"id":"scooter","name":"URBAN-03","category":"城市电动滑板车","image":"urban-03.png","fit":"catalog","focus":"50% 8%","matte":"#111","source":"https://www.pxid.com/pxid-design-urban-03-model-500w-motor-kick-scooter-electric-gps-scooter-with-sharing-app-product/","original":"https://cdnus.globalso.com/pxid/P3-02.png","note":"Detail specification says URBAN-03; navigation says URBAN-P3. Not assumed to be T2."},
+    {"name":"H10","category":"镁合金电动滑板车","image":"h10.jpg","focus":"59% center","source":"https://www.pxid.com/h10a-product/","original":"https://cdnus.globalso.com/pxid/12-1.jpg","supporting_source":"https://www.pxid.com/uploads/E-scooter-Case.pdf"},
+    {"id":"special","name":"PX-3","category":"双驱越野电动滑板车","image":"px-3.jpg","focus":"50% center","source":"https://www.pxid.com/case-px-3-product/","original":"https://cdnus.globalso.com/pxid/12-11.jpg"},
+    {"name":"FREEMILE-F1","category":"坐式电动滑板车","image":"freemile-f1.jpg","fit":"catalog","focus":"50% 8%","matte":"#fff","source":"https://www.pxid.com/freemile-f-product/","original":"https://cdnus.globalso.com/pxid/4-2.2.jpg","note":"Use the ODM case name FREEMILE-F1 and its seated product photograph, not an inferred BESTRIDE alias."},
+    {"name":"BESTRIDE PRO","category":"三轮电动滑板车","image":"bestride-pro.jpg","focus":"53% center","source":"https://www.pxid.com/three-wheel-electric-scooter-manufacturer-wholesale-1000w-dual-motor-electric-scooter-product/","original":"https://cdnus.globalso.com/pxid/F2-2.jpg"}
+  ],
+  "services": [
+    {"name":"产品设计","description":"手绘草图、三维建模与 CMF 设计。","image":"../inner-hero/design-desktop.webp","focus":"28% 15%","source":"https://www.pxid.com/services/?tab=1"},
+    {"name":"结构与电控系统设计","description":"结构设计、材料与工艺选型，以及电控系统开发。","image":"service-structure.jpg","focus":"40% center","source":"https://www.pxid.com/mechanical-design/?tab=2","supporting_source":"https://www.pxid.com/electrical-control-system-design/?tab=3","original":"https://cdnus.globalso.com/pxid/Mechanical-Design1.jpg"},
+    {"name":"工程样车开发","description":"零部件加工、样车装配与功能验证。","image":"service-prototype.jpg","focus":"40% center","source":"https://www.pxid.com/prototype-production/?tab=4","original":"https://cdnus.globalso.com/pxid/Prototype-production01.jpg"},
+    {"name":"模具、车架与涂装","description":"模具开发、车架制造与表面涂装。","image":"../inner-hero/tooling-desktop.webp","focus":"50% center","source":"https://www.pxid.com/mould-design/?tab=5","note":"Group label combines original service steps 5–7; image shows tooling."},
+    {"name":"检测与批量生产","description":"质量检验、整车装配与批量生产。","image":"../unified/process/process-09.webp","focus":"62% center","source":"https://www.pxid.com/mass-production/?tab=9","supporting_source":"https://www.pxid.com/testing-laboratory/?tab=8","note":"Group label combines original service steps 8–9; existing assembly photograph retained."}
+  ],
+  "features": [
+    {"name":"结构拆解","description":"车架、转向、传动与电池等部件的结构布局。","image":"../unified/home-v2/case-p2-engineering.jpg","focus":"50% center","alt":"PXID 折叠电动自行车的车架、车轮、传动与电池部件分解图","href":"sustainability.html#stage-design","cta":"查看结构开发","source":"https://www.pxid.com/mechanical-design/?tab=2","note":"使用本项目已批准的本地 PXID 零部件分解图；不是整车展示照。来源页用于核对结构开发范围，不将图中零部件称为检测成果。"},
+    {"name":"样车制作","description":"完成零部件加工与装配，检查配合关系和整车功能。","image":"proof-prototype.webp","focus":"62% center","alt":"工程人员在样车上安装和检查折叠连接机构","href":"sustainability.html#stage-engineering","cta":"查看样车开发","source":"https://www.pxid.com/prototype-production/?tab=4","original":"https://cdnus.globalso.com/pxid/样车制作.jpg","note":"官方样车制作页横幅原图，使用官方 CDN WebP 编码版本；保留手部与连接机构，不重画或修改产品。"},
+    {"name":"产品测试","description":"开展车架疲劳、冲击与整车振动测试。","image":"proof-testing.webp","focus":"60% center","alt":"电动滑板车在装有加载配重的整车测试台上接受测试","href":"sustainability.html#stage-delivery","cta":"查看测试与检验","source":"https://www.pxid.com/testing-laboratory/?tab=8","original":"https://cdnus.globalso.com/pxid/Testing-quality-detection.jpg","note":"官方测试页说明车架疲劳、跌落冲击、前叉疲劳和整车振动测试。图片展示加载测试，不宣称一张照片证明全部项目。"},
+    {"name":"批量装配","description":"完成整车装配、功能检查与出厂检验。","image":"proof-assembly.webp","focus":"62% center","alt":"PXID 工人在电动滑板车装配线上进行整车装配","href":"contact.html","cta":"咨询生产项目","source":"https://www.pxid.com/mass-production/?tab=9","original":"https://cdnus.globalso.com/pxid/1143.jpg","note":"官方量产页装配线实拍；不添加产能、交期或认证承诺。"}
+  ]
+}

@@ -1,0 +1,55 @@
+/* News list overlay only. Native dialog keeps the retained list inert underneath. */
+dialog.pxid-news-overlay {
+  position:fixed; inset:0; box-sizing:border-box; width:min(1040px,calc(100% - 80px));
+  height:calc(100dvh - 80px); max-width:none; max-height:none; margin:auto; padding:0;
+  border:0; background:#fff; color:#171717; overflow:hidden;
+  box-shadow:0 24px 100px rgb(0 0 0 / 22%); font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:16px; line-height:1.8;
+}
+dialog.pxid-news-overlay[open] { display:flex; flex-direction:column; }
+.pxid-news-overlay::backdrop { background:rgb(0 0 0 / 64%); }
+.pxid-news-overlay *, .pxid-news-overlay *::before, .pxid-news-overlay *::after { box-sizing:border-box; }
+.pxid-news-overlay .pxid-overlay-bar { flex:none; display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:72px; padding:12px 28px; border-bottom:1px solid #e5e5e5; background:#fff; }
+.pxid-news-overlay .pxid-overlay-bar>span { font-size:13px; letter-spacing:.06em; color:#737373; }
+.pxid-news-overlay button { cursor:pointer; font:inherit; }
+.pxid-news-overlay .pxid-overlay-close { display:grid; place-items:center; flex:none; width:44px; height:44px; border:0; background:transparent; color:#171717; }
+.pxid-overlay-close svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.5; }
+.pxid-news-overlay .pxid-overlay-close:hover { color:#ef2438; background:#f6f6f6; }
+.pxid-news-overlay :focus-visible { outline:2px solid #ef2438; outline-offset:3px; }
+.pxid-news-overlay .pxid-overlay-scroll { flex:1; min-height:0; overflow:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; scrollbar-gutter:stable; }
+.pxid-news-overlay .pxid-overlay-content { max-width:880px; margin:0 auto; padding:56px 48px 72px; }
+.pxid-news-overlay .pxid-overlay-category { margin:0 0 16px; color:#737373; font-size:14px; line-height:1.5; }
+.pxid-news-overlay h1 { margin:0; font-size:clamp(30px,3.2vw,44px); font-weight:600; line-height:1.3; letter-spacing:0; color:#171717; overflow-wrap:anywhere; text-wrap:balance; }
+.pxid-news-overlay .pxid-overlay-heading { margin-bottom:36px; }
+.pxid-news-overlay figure { margin:28px 0 36px; }
+.pxid-news-overlay img { display:block; position:static; width:100%; max-width:100%; height:auto; object-fit:contain; }
+.pxid-news-overlay .pxid-overlay-hero { margin:0 0 40px; }
+.pxid-news-overlay .pxid-overlay-hero img { max-height:440px; object-fit:cover; }
+.pxid-news-overlay .pxid-overlay-copy p { max-width:none; margin:0 0 20px; color:#525252; font-size:18px; line-height:1.85; letter-spacing:0; text-align:left; text-indent:0; }
+.pxid-news-overlay .pxid-overlay-copy .news-lead { font-size:20px; color:#171717; line-height:1.7; margin-bottom:40px; }
+.pxid-news-overlay .news-section { margin-top:40px; }
+.pxid-news-overlay h2 { margin:0 0 16px; color:#171717; font-size:26px; font-weight:500; line-height:1.4; }
+.pxid-news-overlay figcaption { margin-top:12px; color:#737373; font-size:14px; line-height:1.6; }
+.pxid-news-overlay a { color:#171717; text-decoration:none; }
+.pxid-news-overlay a:hover { color:#ef2438; }
+.pxid-news-overlay .news-sources, .pxid-news-overlay .news-related { margin-top:48px; padding-top:28px; border-top:1px solid #e5e5e5; }
+.pxid-news-overlay .news-sources h2, .pxid-news-overlay .news-related h2 { font-size:20px; }
+.pxid-news-overlay .news-sources p { font-size:15px; }
+.pxid-news-overlay .news-source-links { display:flex; flex-wrap:wrap; gap:8px 24px; }
+.pxid-news-overlay .news-source-links a { display:inline-flex; align-items:center; gap:10px; min-height:44px; font-size:15px; }
+.pxid-news-overlay .news-related-links { display:grid; gap:12px; }
+.pxid-news-overlay .news-related-links a { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:48px; font-size:16px; line-height:1.6; }
+.pxid-news-overlay .pxid-overlay-message { padding:40px 0; }
+.pxid-news-overlay .pxid-overlay-message p { margin:24px 0; color:#525252; }
+.pxid-news-overlay .pxid-overlay-retry { padding:10px 24px; border:0; background:#ef2438; color:white; }
+@media(max-width:700px) {
+  dialog.pxid-news-overlay { width:calc(100% - 24px); height:calc(100dvh - 32px); }
+  .pxid-news-overlay .pxid-overlay-bar { min-height:64px; padding:8px 12px 8px 20px; }
+  .pxid-news-overlay .pxid-overlay-content { padding:32px 22px 48px; }
+  .pxid-news-overlay h1 { font-size:30px; }
+  .pxid-news-overlay h2 { font-size:22px; }
+  .pxid-news-overlay .pxid-overlay-copy p { font-size:16px; line-height:1.8; }
+  .pxid-news-overlay .pxid-overlay-copy .news-lead { font-size:18px; }
+  .pxid-news-overlay .pxid-overlay-heading { margin-bottom:28px; }
+  .pxid-news-overlay .pxid-overlay-hero img { max-height:320px; }
+}
