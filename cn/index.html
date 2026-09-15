@@ -1222,7 +1222,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   :scope{background: var(--paper);}
   .note { position:sticky; top:0; z-index:99; background: var(--dark); color:#d71920; padding: 14px clamp(15px, 0.32rem, 33px); font-size:clamp(12px, 0.16rem, 14px); line-height:1.6; }
   .note b { color:#d71920; }
-  section { position:relative; min-height:540px; overflow:hidden; border-bottom:4px solid #e5e5e5; }
+  section { position:relative; min-height:100vh; overflow:hidden; border-bottom:4px solid #e5e5e5; }
   .tag { position:absolute; top:18px; left:22px; z-index:40; color:#ffffff; font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
          background: rgba(110,110,110,.94); padding: 6px 14px; border-radius:20px; letter-spacing:.5px; }
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
@@ -1487,7 +1487,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   :scope{background: var(--paper);}
   .note { position:sticky; top:0; z-index:99; background: var(--dark); color:#d71920; padding: 14px clamp(15px, 0.32rem, 33px); font-size:clamp(12px, 0.16rem, 14px); line-height:1.6; }
   .note b { color:#d71920; }
-  section { position:relative; min-height:540px; overflow:hidden; border-bottom:4px solid #e5e5e5; }
+  section { position:relative; min-height:100vh; overflow:hidden; border-bottom:4px solid #e5e5e5; }
   .tag { position:absolute; top:18px; left:22px; z-index:40; color:#ffffff; font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
          background: rgba(110,110,110,.94); padding: 6px 14px; border-radius:20px; letter-spacing:.5px; }
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
@@ -1768,7 +1768,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   :scope{background: var(--paper);}
   .note { position:sticky; top:0; z-index:99; background: var(--dark); color:#d71920; padding: 14px clamp(15px, 0.32rem, 33px); font-size:clamp(12px, 0.16rem, 14px); line-height:1.6; }
   .note b { color:#d71920; }
-  section { position:relative; min-height:540px; overflow:hidden; border-bottom:4px solid #e5e5e5; }
+  section { position:relative; min-height:100vh; overflow:hidden; border-bottom:4px solid #e5e5e5; }
   .tag { position:absolute; top:18px; left:22px; z-index:40; color:#ffffff; font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
          background: rgba(110,110,110,.94); padding: 6px 14px; border-radius:20px; letter-spacing:.5px; }
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
@@ -2047,7 +2047,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   :scope{background: var(--paper);}
   .note { position:sticky; top:0; z-index:99; background: var(--dark); color:#d71920; padding: 14px clamp(15px, 0.32rem, 33px); font-size:clamp(12px, 0.16rem, 14px); line-height:1.6; }
   .note b { color:#d71920; }
-  section { position:relative; min-height:540px; overflow:hidden; border-bottom:4px solid #e5e5e5; }
+  section { position:relative; min-height:100vh; overflow:hidden; border-bottom:4px solid #e5e5e5; }
   .tag { position:absolute; top:18px; left:22px; z-index:40; color:#ffffff; font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
          background: rgba(110,110,110,.94); padding: 6px 14px; border-radius:20px; letter-spacing:.5px; }
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
@@ -2316,7 +2316,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   :scope{background: var(--paper);}
   .note { position:sticky; top:0; z-index:99; background: var(--dark); color:#d71920; padding: 14px clamp(15px, 0.32rem, 33px); font-size:clamp(12px, 0.16rem, 14px); line-height:1.6; }
   .note b { color:#d71920; }
-  section { position:relative; min-height:540px; overflow:hidden; border-bottom:4px solid #e5e5e5; }
+  section { position:relative; min-height:100vh; overflow:hidden; border-bottom:4px solid #e5e5e5; }
   .tag { position:absolute; top:18px; left:22px; z-index:40; color:#ffffff; font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
          background: rgba(110,110,110,.94); padding: 6px 14px; border-radius:20px; letter-spacing:.5px; }
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
@@ -2596,13 +2596,10 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
 })();
 </script></template><style id="pxid-s2-switch-css">
 #pxidS2{position:relative}
-/* 站点给 .row 的 min-height 会把段撑成 885 —— 变体态去掉它，段高完全跟随 iframe */
-#pxidS2:not([data-s1v="orig"]){min-height:0!important;max-height:none!important}
-@media (min-width:901px){#pxidS2.row.banner{height:100vh;height:100svh}}
-#pxidS2 > .pxid-s2frame{display:block;width:100%;height:600px;border:0;background:#fff;transition:none}
+#pxidS2 > .pxid-s2frame{position:absolute;inset:0;display:block;width:100%;height:100%;border:0;background:#fff}
 #pxidS2 > .pxid-s2frame[hidden]{display:none}
 #pxidS2:not([data-s1v="orig"]) > .bg,
-#pxidS2:not([data-s1v="orig"]) > .inner{display:none!important}
+#pxidS2:not([data-s1v="orig"]) > .inner{visibility:hidden}
 #pxidS2 .pxid-s2switch{position:absolute;bottom:18px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.46);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:4px;opacity:.6;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
 #pxidS2 .pxid-s2switch:hover{opacity:1}
 #pxidS2 .pxid-s2switch .lbl{display:none}
@@ -2651,7 +2648,7 @@ html.pxid-s2-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
       var d=frame.contentDocument; if(!d) return;
       var root=d.querySelector('section')||d.querySelector('div[id]'); if(!root) return;
       var h=Math.round(root.getBoundingClientRect().height);
-      if(h>0) frame.style.height=h+62+"px";
+      /* 段高由站点原样内容撑出，iframe 铺满即可 */
     }catch(e){} }
   }
   if(frame) frame.addEventListener("load", function(){ setTimeout(fitFrame,120); setTimeout(fitFrame,600); });
