@@ -419,7 +419,7 @@
 #pxidP1 > .pxid-p1frame{display:block;width:100%;height:0;border:0;background:#fff}
 #pxidP1 > .pxid-p1frame[hidden]{display:none}
 #pxidP1:not([data-p1v="orig"]) > .inner{display:none!important}
-#pxidP1 .pxid-p1switch{position:absolute;top:6px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.46);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:4px;opacity:.62;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
+#pxidP1 .pxid-p1switch{position:absolute;top:6px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.8);padding:4px;opacity:.72;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
 #pxidP1 .pxid-p1switch:hover{opacity:1}
 #pxidP1 .pxid-p1switch .lbl{display:none}
 #pxidP1 .pxid-p1switch button{cursor:pointer;font:inherit;font-size:12px;line-height:1;padding:6px 8px;border:0;background:transparent;color:rgba(255,255,255,.86);white-space:nowrap;border-radius:0;transition:color .18s,background .18s}
@@ -438,7 +438,7 @@
     var d; try{ d=frame.contentDocument; }catch(e){ return; }
     if(!d||!d.body) return;
     var h=d.body.scrollHeight||d.documentElement.scrollHeight;
-    if(h>0) frame.style.height=h+"px";
+    if(h>0 && frame.style.height!==h+"px") frame.style.height=h+"px";
   }
   window.__pxidP1fit=fit;
   function doc(v){
@@ -451,9 +451,10 @@
       +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow-x:hidden;"
       +"background:#f8f8f8;font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}</style>"
       +"</head><body>"+t.innerHTML
-      +"<script>(function(){function r(){try{parent.__pxidP1fit&&parent.__pxidP1fit()}catch(e){}}"
+      +"<script>(function(){var q=0;function r(){if(q)return;q=requestAnimationFrame(function(){q=0;"
+      +"try{parent.__pxidP1fit&&parent.__pxidP1fit()}catch(e){}})}"
       +"addEventListener(\"load\",r);addEventListener(\"resize\",r);document.addEventListener(\"load\",r,true);"
-      +"if(window.ResizeObserver){try{new ResizeObserver(r).observe(document.documentElement)}catch(e){}}"
+      +"if(window.ResizeObserver){try{new ResizeObserver(r).observe(document.body)}catch(e){}}"
       +"setTimeout(r,60);setTimeout(r,300);setTimeout(r,900);})()<\/script>"
       +"</body></html>";
     return cache[k];
@@ -472,6 +473,7 @@
   var sw=sec.querySelector(".pxid-p1switch");
   function vis(){
     if(!sw) return;
+    if(window.innerWidth>900){ if(sw.classList.contains("show")) sw.classList.remove("show"); return; }
     var r=sec.getBoundingClientRect(), wh=window.innerHeight||document.documentElement.clientHeight;
     sw.classList.toggle("show", r.top < wh-80 && r.bottom > 80);
   }
@@ -576,6 +578,13 @@
 #F .ov .nm{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #F .ov .ds{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #G .code{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+
+/* 长标题不折断（坤哥 2026-09-15「不要换行」）：桌面 5 列下「结构与电控系统设计」会折成两行。
+   nowrap 后溢出的几个 px 交给列间 gap 吸收（1440 约 29px、1920 约 38px，实测最大溢 5px，安全）。
+   窄屏只有 2 列、空间更小（实测 390 下需 181px vs 列宽 150px），所以改成 .rA 整块换行
+   —— 名称不断字、也不撞相邻列。 */
+#A .nmA{white-space:nowrap}
+@media (max-width:900px){#A .rA{flex-wrap:wrap}}
 </style><section class="blk" id="A"><div class="in">
   <div class="head"><h2>ODM 服务</h2></div>
   <div class="gA">
@@ -689,6 +698,13 @@
 #F .ov .nm{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #F .ov .ds{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #G .code{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+
+/* 长标题不折断（坤哥 2026-09-15「不要换行」）：桌面 5 列下「结构与电控系统设计」会折成两行。
+   nowrap 后溢出的几个 px 交给列间 gap 吸收（1440 约 29px、1920 约 38px，实测最大溢 5px，安全）。
+   窄屏只有 2 列、空间更小（实测 390 下需 181px vs 列宽 150px），所以改成 .rA 整块换行
+   —— 名称不断字、也不撞相邻列。 */
+#A .nmA{white-space:nowrap}
+@media (max-width:900px){#A .rA{flex-wrap:wrap}}
 </style><section class="blk" id="F"><div class="in">
   <div class="head"><h2>ODM 服务</h2></div>
   <div class="gF">
@@ -797,6 +813,13 @@
 #F .ov .nm{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #F .ov .ds{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #G .code{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+
+/* 长标题不折断（坤哥 2026-09-15「不要换行」）：桌面 5 列下「结构与电控系统设计」会折成两行。
+   nowrap 后溢出的几个 px 交给列间 gap 吸收（1440 约 29px、1920 约 38px，实测最大溢 5px，安全）。
+   窄屏只有 2 列、空间更小（实测 390 下需 181px vs 列宽 150px），所以改成 .rA 整块换行
+   —— 名称不断字、也不撞相邻列。 */
+#A .nmA{white-space:nowrap}
+@media (max-width:900px){#A .rA{flex-wrap:wrap}}
 </style><section class="blk" id="G"><div class="in">
   <div class="head"><h2>ODM 服务</h2></div>
   <article class="cardG">
@@ -942,6 +965,13 @@
 #E .ovE .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #E .ovE .nm{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #E .ovE .ds{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+
+/* 长标题不折断（坤哥 2026-09-15「不要换行」）：桌面 5 列下「结构与电控系统设计」会折成两行。
+   nowrap 后溢出的几个 px 交给列间 gap 吸收（1440 约 29px、1920 约 38px，实测最大溢 5px，安全）。
+   窄屏只有 2 列、空间更小（实测 390 下需 181px vs 列宽 150px），所以改成 .rA 整块换行
+   —— 名称不断字、也不撞相邻列。 */
+#A .nmA{white-space:nowrap}
+@media (max-width:900px){#A .rA{flex-wrap:wrap}}
 </style><section id="E">
   <div class="headE"><h2>ODM 服务</h2></div>
   <div class="bandE">
@@ -971,7 +1001,7 @@
 #pxidP2 > .pxid-p2frame{display:block;width:100%;height:0;border:0;background:#fff}
 #pxidP2 > .pxid-p2frame[hidden]{display:none}
 #pxidP2:not([data-p2v="orig"]) > .inner{display:none!important}
-#pxidP2 .pxid-p2switch{position:absolute;top:6px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.46);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:4px;opacity:.62;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
+#pxidP2 .pxid-p2switch{position:absolute;top:6px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.8);padding:4px;opacity:.72;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
 #pxidP2 .pxid-p2switch:hover{opacity:1}
 #pxidP2 .pxid-p2switch .lbl{display:none}
 #pxidP2 .pxid-p2switch button{cursor:pointer;font:inherit;font-size:12px;line-height:1;padding:6px 8px;border:0;background:transparent;color:rgba(255,255,255,.86);white-space:nowrap;border-radius:0;transition:color .18s,background .18s}
@@ -990,7 +1020,7 @@
     var d; try{ d=frame.contentDocument; }catch(e){ return; }
     if(!d||!d.body) return;
     var h=d.body.scrollHeight||d.documentElement.scrollHeight;
-    if(h>0) frame.style.height=h+"px";
+    if(h>0 && frame.style.height!==h+"px") frame.style.height=h+"px";
   }
   window.__pxidP2fit=fit;
   function doc(v){
@@ -1003,9 +1033,10 @@
       +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow-x:hidden;"
       +"background:#f8f8f8;font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}</style>"
       +"</head><body>"+t.innerHTML
-      +"<script>(function(){function r(){try{parent.__pxidP2fit&&parent.__pxidP2fit()}catch(e){}}"
+      +"<script>(function(){var q=0;function r(){if(q)return;q=requestAnimationFrame(function(){q=0;"
+      +"try{parent.__pxidP2fit&&parent.__pxidP2fit()}catch(e){}})}"
       +"addEventListener(\"load\",r);addEventListener(\"resize\",r);document.addEventListener(\"load\",r,true);"
-      +"if(window.ResizeObserver){try{new ResizeObserver(r).observe(document.documentElement)}catch(e){}}"
+      +"if(window.ResizeObserver){try{new ResizeObserver(r).observe(document.body)}catch(e){}}"
       +"setTimeout(r,60);setTimeout(r,300);setTimeout(r,900);})()<\/script>"
       +"</body></html>";
     return cache[k];
@@ -1013,6 +1044,7 @@
   var sw=sec.querySelector(".pxid-p2switch");
   function vis(){
     if(!sw) return;
+    if(window.innerWidth>900){ if(sw.classList.contains("show")) sw.classList.remove("show"); return; }
     var r=sec.getBoundingClientRect(), wh=window.innerHeight||document.documentElement.clientHeight;
     sw.classList.toggle("show", r.top < wh-80 && r.bottom > 80);
   }
