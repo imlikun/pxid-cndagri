@@ -436,9 +436,8 @@
   function fit(){
     if(!frame||frame.hidden) return;
     var d; try{ d=frame.contentDocument; }catch(e){ return; }
-    if(!d||!d.documentElement) return;
-    var h=Math.max(d.documentElement.scrollHeight, d.documentElement.offsetHeight,
-                   d.body?d.body.scrollHeight:0, d.body?d.body.offsetHeight:0);
+    if(!d||!d.body) return;
+    var h=d.body.scrollHeight||d.documentElement.scrollHeight;
     if(h>0) frame.style.height=h+"px";
   }
   window.__pxidP1fit=fit;
@@ -485,13 +484,559 @@
 })();
 </script>
 </section>
-<section class="row r2 row_2026" id="capabilities"><div class="inner maxSize"><div class="topic"><h2 class="f-80 green en_b alanGo" data-text="ODM 服务">ODM 服务</h2></div><div class="capability-grid">
+<section class="row r2 row_2026" id="pxidP2" data-p2v="orig"><div class="inner maxSize"><div class="topic"><h2 class="f-80 green en_b alanGo" data-text="ODM 服务">ODM 服务</h2></div><div class="capability-grid">
   <div class="capability-panel alanGo"><div class="capability-image" role="img" aria-label="产品设计" style="background-image:url(../assets/pxid/products/../inner-hero/design-desktop.webp);background-position:28% 15%"></div><div><span>01</span><h3>产品设计</h3><p>手绘草图、三维建模与 CMF 设计。</p></div></div>
   <div class="capability-panel alanGo"><div class="capability-image" role="img" aria-label="结构与电控系统设计" style="background-image:url(../assets/pxid/products/service-structure.jpg);background-position:40% center"></div><div><span>02</span><h3>结构与电控系统设计</h3><p>结构设计、材料与工艺选型，以及电控系统开发。</p></div></div>
   <div class="capability-panel alanGo"><div class="capability-image" role="img" aria-label="工程样车开发" style="background-image:url(../assets/pxid/products/service-prototype.jpg);background-position:40% center"></div><div><span>03</span><h3>工程样车开发</h3><p>零部件加工、样车装配与功能验证。</p></div></div>
   <div class="capability-panel alanGo"><div class="capability-image" role="img" aria-label="模具、车架与涂装" style="background-image:url(../assets/pxid/products/../inner-hero/tooling-desktop.webp);background-position:50% center"></div><div><span>04</span><h3>模具、车架与涂装</h3><p>模具开发、车架制造与表面涂装。</p></div></div>
   <div class="capability-panel alanGo"><div class="capability-image" role="img" aria-label="检测与批量生产" style="background-image:url(../assets/pxid/products/../unified/process/process-09.webp);background-position:62% center"></div><div><span>05</span><h3>检测与批量生产</h3><p>质量检验、整车装配与批量生产。</p></div></div>
-</div></div></section>
+</div></div>
+  <iframe class="pxid-p2frame" title="ODM 服务区排版预览" hidden></iframe>
+  <div class="pxid-p2switch" role="group" aria-label="ODM 服务区排版切换"><span class="lbl">P2 排版</span><button type="button" data-v="orig" class="on">线上原样</button><button type="button" data-v="a">A 大红序号</button><button type="button" data-v="f">F Bento</button><button type="button" data-v="g">G 背景卡</button><button type="button" data-v="e">E 满出血五列</button></div>
+  <template class="pxid-p2tpl" data-v="a"><style>
+  :scope{
+    --red:#d71920; --page:#f8f8f8; --block:#f4f4f4; --line:#e4e4e4;
+    --ink:#333333; --ink-3:#999999; --title:#1a1a1a;
+    --en:"Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --gutter:clamp(16px,4vw,64px);
+  }
+  *{box-sizing:border-box}
+  :scope{background: var(--page);color:var(--ink);}
+  .in{max-width:1840px;margin:0 auto;padding:0 var(--gutter)}
+  .blk{position:relative;padding:clamp(52px,4.6vw,92px) 0}
+  .tagline{display:flex;align-items:center;gap: 14px;padding: clamp(14px, 0.2933rem, 30px) var(--gutter) 0;
+    max-width:1840px;margin:0 auto;font-family:var(--mono);font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.16em;color:var(--red)}
+  .tagline b{background: var(--red);color:#ffffff;font-weight:600;padding: 3px 9px;letter-spacing:.1em}
+  .tagline i{flex:1;height:1px;background: var(--line);font-style:normal}
+  .head h2{font-size:clamp(37px, 0.8rem, 82px);line-height:1.1;margin:0 0 clamp(26px,2.6vw,48px);
+    font-weight:700;letter-spacing:-.02em;color:var(--title)}
+  .ph{aspect-ratio:3/2;background: rgb(255,255,255) center/cover no-repeat}
+  .num{font-family:var(--en);color:var(--red);font-weight:700;line-height:1}
+  .nm{font-weight:700;letter-spacing:-.01em;margin:0}
+
+  /* ===== 方案 A 大红序号（保留原案）===== */
+  #A{background: rgb(255,255,255)}
+  #A .gA{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(16px,2vw,40px)}
+  #A .rA{display:flex;align-items:baseline;gap: 14px}
+  #A .bigA{font-family:var(--en);font-size:clamp(37px, 0.8rem, 82px);color:var(--red);font-weight:700;line-height:.82}
+  #A .nmA{font-size:clamp(11px, 0.24rem, 24px);font-weight:700;color:var(--title);margin:0;line-height:1.7;letter-spacing:-.01em}
+  #A .dashA{width:24px;height:3px;background: var(--red);margin: 14px 0 clamp(11px, 0.24rem, 24px)}
+  #A .wrapA{position:relative}
+  #A .dsA{position:absolute;left:0;right:0;bottom:0;margin:0;padding: clamp(16px, 0.3467rem, 35px) 14px 12px;
+    background: linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.66));color:#ffffff;font-size:clamp(12px, 0.16rem, 14px);line-height:1.6}
+
+  /* ===== 方案 F Bento（3 列 · 01 占 2×2 大格 · 05 横跨 2 列）===== */
+  #F{background: var(--page)}
+  #F .gF{display:grid;grid-template-columns:repeat(3,1fr);
+    grid-auto-rows:clamp(150px,13vw,250px);gap:clamp(10px,1.1vw,18px)}
+  #F .cell{position:relative;overflow:hidden;background: rgb(23,23,23)}
+  #F .cell .ph{position:absolute;inset:0;aspect-ratio:auto;height:100%}
+  #F .c1{grid-column:span 2;grid-row:span 2}
+  #F .c5{grid-column:span 2}
+  #F .ov{position:absolute;left:0;right:0;bottom:0;margin:0;padding: clamp(29px, 0.6133rem, 63px) clamp(12px, 0.2667rem, 27px) clamp(11px, 0.24rem, 24px);
+    background: linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.76));color:#ffffff}
+  #F .ov .num{display:block;color:#ffffff;font-size:clamp(15px, 0.32rem, 33px);margin-bottom: 6px}
+  #F .ov .nm{display:block;color:#ffffff;font-size:clamp(11px, 0.24rem, 24px);line-height:1.7}
+  #F .ov .ds{display:block;color:rgba(255,255,255,.7);font-size:clamp(12px, 0.16rem, 14px);line-height:1.7;margin: 5px 0 0}
+  #F .c1 .ov{padding: clamp(60px, 1.28rem, 131px) clamp(21px, 0.4533rem, 46px) clamp(19px, 0.4rem, 41px)}
+  #F .c1 .ov .num{font-size:clamp(30px, 0.64rem, 65px);margin-bottom: 10px}
+  #F .c1 .ov .nm{font-size:clamp(17px, 0.36rem, 37px)}
+  #F .c1 .ov .ds{font-size:clamp(14px, 0.1867rem, 16px);margin-top: 8px}
+
+  /* ===== 方案 G 背景卡（图片铺满 + 白色信息卡浮在左侧 · 照参考稿）===== */
+  #G{background: var(--block)}
+  #G .cardG{position:relative;height:clamp(190px,18vw,290px);margin-bottom:clamp(10px,1.1vw,18px);
+    overflow:hidden;background: rgb(23,23,23)}
+  #G .cardG:last-child{margin-bottom:0}
+  #G .cardG .ph{position:absolute;inset:0;aspect-ratio:auto;height:100%}
+  #G .veil{position:absolute;inset:0;background: rgba(23,23,23,.34)}
+  #G .infoG{position:absolute;left:0;top:50%;transform:translateY(-50%);background: rgb(255,255,255);
+    width:min(44%,600px);padding:clamp(18px,1.8vw,30px) clamp(20px,2vw,34px);
+    box-shadow:0 22px 60px -28px rgba(0,0,0,.5)}
+  #G .infoG .num{font-size:clamp(19px, 0.4rem, 41px);display:block;margin-bottom: 8px}
+  #G .infoG .nm{font-size:clamp(13px, 0.28rem, 29px);color:var(--title);line-height:1.7}
+  #G .infoG .ds{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.8;color:var(--ink-3);margin: 8px 0 0}
+  #G .code{position:absolute;right:clamp(14px,1.4vw,24px);bottom:clamp(12px,1.2vw,20px);
+    font-family:var(--mono);font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.18em;color:rgba(255,255,255,.6)}
+
+  @media (max-width:1100px){
+    #A .gA{grid-template-columns:repeat(2,1fr)}
+    #F .gF{grid-template-columns:repeat(2,1fr)}
+    #F .c1{grid-column:span 2}
+    #G .infoG{width:min(70%,600px)}
+  }
+
+/* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
+.tagline b{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#A .dsA{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#F .ov{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#F .ov .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#F .ov .nm{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#F .ov .ds{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#G .code{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+</style><section class="blk" id="A"><div class="in">
+  <div class="head"><h2>ODM 服务</h2></div>
+  <div class="gA">
+  <article>
+    <div class="rA"><span class="bigA">01</span><h3 class="nmA">产品设计</h3></div>
+    <div class="dashA"></div>
+    <div class="wrapA"><div class="ph" style="background-image:url(../assets/pxid/inner-hero/design-desktop.webp);background-position:28% 15%"></div><p class="dsA">手绘草图、三维建模与 CMF 设计。</p></div>
+  </article>
+  <article>
+    <div class="rA"><span class="bigA">02</span><h3 class="nmA">结构与电控系统设计</h3></div>
+    <div class="dashA"></div>
+    <div class="wrapA"><div class="ph" style="background-image:url(../assets/pxid/products/service-structure.jpg);background-position:40% center"></div><p class="dsA">结构设计、材料与工艺选型，以及电控系统开发。</p></div>
+  </article>
+  <article>
+    <div class="rA"><span class="bigA">03</span><h3 class="nmA">工程样车开发</h3></div>
+    <div class="dashA"></div>
+    <div class="wrapA"><div class="ph" style="background-image:url(../assets/pxid/products/service-prototype.jpg);background-position:40% center"></div><p class="dsA">零部件加工、样车装配与功能验证。</p></div>
+  </article>
+  <article>
+    <div class="rA"><span class="bigA">04</span><h3 class="nmA">模具、车架与涂装</h3></div>
+    <div class="dashA"></div>
+    <div class="wrapA"><div class="ph" style="background-image:url(../assets/pxid/inner-hero/tooling-desktop.webp);background-position:50% center"></div><p class="dsA">模具开发、车架制造与表面涂装。</p></div>
+  </article>
+  <article>
+    <div class="rA"><span class="bigA">05</span><h3 class="nmA">检测与批量生产</h3></div>
+    <div class="dashA"></div>
+    <div class="wrapA"><div class="ph" style="background-image:url(../assets/pxid/unified/process/process-09.webp);background-position:62% center"></div><p class="dsA">质量检验、整车装配与批量生产。</p></div>
+  </article>
+  </div>
+</div></section></template>
+  <template class="pxid-p2tpl" data-v="f"><style>
+  :scope{
+    --red:#d71920; --page:#f8f8f8; --block:#f4f4f4; --line:#e4e4e4;
+    --ink:#333333; --ink-3:#999999; --title:#1a1a1a;
+    --en:"Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --gutter:clamp(16px,4vw,64px);
+  }
+  *{box-sizing:border-box}
+  :scope{background: var(--page);color:var(--ink);}
+  .in{max-width:1840px;margin:0 auto;padding:0 var(--gutter)}
+  .blk{position:relative;padding:clamp(52px,4.6vw,92px) 0}
+  .tagline{display:flex;align-items:center;gap: 14px;padding: clamp(14px, 0.2933rem, 30px) var(--gutter) 0;
+    max-width:1840px;margin:0 auto;font-family:var(--mono);font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.16em;color:var(--red)}
+  .tagline b{background: var(--red);color:#ffffff;font-weight:600;padding: 3px 9px;letter-spacing:.1em}
+  .tagline i{flex:1;height:1px;background: var(--line);font-style:normal}
+  .head h2{font-size:clamp(37px, 0.8rem, 82px);line-height:1.1;margin:0 0 clamp(26px,2.6vw,48px);
+    font-weight:700;letter-spacing:-.02em;color:var(--title)}
+  .ph{aspect-ratio:3/2;background: rgb(255,255,255) center/cover no-repeat}
+  .num{font-family:var(--en);color:var(--red);font-weight:700;line-height:1}
+  .nm{font-weight:700;letter-spacing:-.01em;margin:0}
+
+  /* ===== 方案 A 大红序号（保留原案）===== */
+  #A{background: rgb(255,255,255)}
+  #A .gA{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(16px,2vw,40px)}
+  #A .rA{display:flex;align-items:baseline;gap: 14px}
+  #A .bigA{font-family:var(--en);font-size:clamp(37px, 0.8rem, 82px);color:var(--red);font-weight:700;line-height:.82}
+  #A .nmA{font-size:clamp(11px, 0.24rem, 24px);font-weight:700;color:var(--title);margin:0;line-height:1.7;letter-spacing:-.01em}
+  #A .dashA{width:24px;height:3px;background: var(--red);margin: 14px 0 clamp(11px, 0.24rem, 24px)}
+  #A .wrapA{position:relative}
+  #A .dsA{position:absolute;left:0;right:0;bottom:0;margin:0;padding: clamp(16px, 0.3467rem, 35px) 14px 12px;
+    background: linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.66));color:#ffffff;font-size:clamp(12px, 0.16rem, 14px);line-height:1.6}
+
+  /* ===== 方案 F Bento（3 列 · 01 占 2×2 大格 · 05 横跨 2 列）===== */
+  #F{background: var(--page)}
+  #F .gF{display:grid;grid-template-columns:repeat(3,1fr);
+    grid-auto-rows:clamp(150px,13vw,250px);gap:clamp(10px,1.1vw,18px)}
+  #F .cell{position:relative;overflow:hidden;background: rgb(23,23,23)}
+  #F .cell .ph{position:absolute;inset:0;aspect-ratio:auto;height:100%}
+  #F .c1{grid-column:span 2;grid-row:span 2}
+  #F .c5{grid-column:span 2}
+  #F .ov{position:absolute;left:0;right:0;bottom:0;margin:0;padding: clamp(29px, 0.6133rem, 63px) clamp(12px, 0.2667rem, 27px) clamp(11px, 0.24rem, 24px);
+    background: linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.76));color:#ffffff}
+  #F .ov .num{display:block;color:#ffffff;font-size:clamp(15px, 0.32rem, 33px);margin-bottom: 6px}
+  #F .ov .nm{display:block;color:#ffffff;font-size:clamp(11px, 0.24rem, 24px);line-height:1.7}
+  #F .ov .ds{display:block;color:rgba(255,255,255,.7);font-size:clamp(12px, 0.16rem, 14px);line-height:1.7;margin: 5px 0 0}
+  #F .c1 .ov{padding: clamp(60px, 1.28rem, 131px) clamp(21px, 0.4533rem, 46px) clamp(19px, 0.4rem, 41px)}
+  #F .c1 .ov .num{font-size:clamp(30px, 0.64rem, 65px);margin-bottom: 10px}
+  #F .c1 .ov .nm{font-size:clamp(17px, 0.36rem, 37px)}
+  #F .c1 .ov .ds{font-size:clamp(14px, 0.1867rem, 16px);margin-top: 8px}
+
+  /* ===== 方案 G 背景卡（图片铺满 + 白色信息卡浮在左侧 · 照参考稿）===== */
+  #G{background: var(--block)}
+  #G .cardG{position:relative;height:clamp(190px,18vw,290px);margin-bottom:clamp(10px,1.1vw,18px);
+    overflow:hidden;background: rgb(23,23,23)}
+  #G .cardG:last-child{margin-bottom:0}
+  #G .cardG .ph{position:absolute;inset:0;aspect-ratio:auto;height:100%}
+  #G .veil{position:absolute;inset:0;background: rgba(23,23,23,.34)}
+  #G .infoG{position:absolute;left:0;top:50%;transform:translateY(-50%);background: rgb(255,255,255);
+    width:min(44%,600px);padding:clamp(18px,1.8vw,30px) clamp(20px,2vw,34px);
+    box-shadow:0 22px 60px -28px rgba(0,0,0,.5)}
+  #G .infoG .num{font-size:clamp(19px, 0.4rem, 41px);display:block;margin-bottom: 8px}
+  #G .infoG .nm{font-size:clamp(13px, 0.28rem, 29px);color:var(--title);line-height:1.7}
+  #G .infoG .ds{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.8;color:var(--ink-3);margin: 8px 0 0}
+  #G .code{position:absolute;right:clamp(14px,1.4vw,24px);bottom:clamp(12px,1.2vw,20px);
+    font-family:var(--mono);font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.18em;color:rgba(255,255,255,.6)}
+
+  @media (max-width:1100px){
+    #A .gA{grid-template-columns:repeat(2,1fr)}
+    #F .gF{grid-template-columns:repeat(2,1fr)}
+    #F .c1{grid-column:span 2}
+    #G .infoG{width:min(70%,600px)}
+  }
+
+/* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
+.tagline b{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#A .dsA{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#F .ov{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#F .ov .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#F .ov .nm{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#F .ov .ds{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#G .code{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+</style><section class="blk" id="F"><div class="in">
+  <div class="head"><h2>ODM 服务</h2></div>
+  <div class="gF">
+  <div class="cell c1">
+    <div class="ph" style="background-image:url(../assets/pxid/inner-hero/design-desktop.webp);background-position:28% 15%"></div>
+    <div class="ov"><span class="num">01</span><span class="nm">产品设计</span><span class="ds">手绘草图、三维建模与 CMF 设计。</span></div>
+  </div>
+  <div class="cell c2">
+    <div class="ph" style="background-image:url(../assets/pxid/products/service-structure.jpg);background-position:40% center"></div>
+    <div class="ov"><span class="num">02</span><span class="nm">结构与电控系统设计</span><span class="ds">结构设计、材料与工艺选型，以及电控系统开发。</span></div>
+  </div>
+  <div class="cell c3">
+    <div class="ph" style="background-image:url(../assets/pxid/products/service-prototype.jpg);background-position:40% center"></div>
+    <div class="ov"><span class="num">03</span><span class="nm">工程样车开发</span><span class="ds">零部件加工、样车装配与功能验证。</span></div>
+  </div>
+  <div class="cell c4">
+    <div class="ph" style="background-image:url(../assets/pxid/inner-hero/tooling-desktop.webp);background-position:50% center"></div>
+    <div class="ov"><span class="num">04</span><span class="nm">模具、车架与涂装</span><span class="ds">模具开发、车架制造与表面涂装。</span></div>
+  </div>
+  <div class="cell c5">
+    <div class="ph" style="background-image:url(../assets/pxid/unified/process/process-09.webp);background-position:62% center"></div>
+    <div class="ov"><span class="num">05</span><span class="nm">检测与批量生产</span><span class="ds">质量检验、整车装配与批量生产。</span></div>
+  </div>
+  </div>
+</div></section></template>
+  <template class="pxid-p2tpl" data-v="g"><style>
+  :scope{
+    --red:#d71920; --page:#f8f8f8; --block:#f4f4f4; --line:#e4e4e4;
+    --ink:#333333; --ink-3:#999999; --title:#1a1a1a;
+    --en:"Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --gutter:clamp(16px,4vw,64px);
+  }
+  *{box-sizing:border-box}
+  :scope{background: var(--page);color:var(--ink);}
+  .in{max-width:1840px;margin:0 auto;padding:0 var(--gutter)}
+  .blk{position:relative;padding:clamp(52px,4.6vw,92px) 0}
+  .tagline{display:flex;align-items:center;gap: 14px;padding: clamp(14px, 0.2933rem, 30px) var(--gutter) 0;
+    max-width:1840px;margin:0 auto;font-family:var(--mono);font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.16em;color:var(--red)}
+  .tagline b{background: var(--red);color:#ffffff;font-weight:600;padding: 3px 9px;letter-spacing:.1em}
+  .tagline i{flex:1;height:1px;background: var(--line);font-style:normal}
+  .head h2{font-size:clamp(37px, 0.8rem, 82px);line-height:1.1;margin:0 0 clamp(26px,2.6vw,48px);
+    font-weight:700;letter-spacing:-.02em;color:var(--title)}
+  .ph{aspect-ratio:3/2;background: rgb(255,255,255) center/cover no-repeat}
+  .num{font-family:var(--en);color:var(--red);font-weight:700;line-height:1}
+  .nm{font-weight:700;letter-spacing:-.01em;margin:0}
+
+  /* ===== 方案 A 大红序号（保留原案）===== */
+  #A{background: rgb(255,255,255)}
+  #A .gA{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(16px,2vw,40px)}
+  #A .rA{display:flex;align-items:baseline;gap: 14px}
+  #A .bigA{font-family:var(--en);font-size:clamp(37px, 0.8rem, 82px);color:var(--red);font-weight:700;line-height:.82}
+  #A .nmA{font-size:clamp(11px, 0.24rem, 24px);font-weight:700;color:var(--title);margin:0;line-height:1.7;letter-spacing:-.01em}
+  #A .dashA{width:24px;height:3px;background: var(--red);margin: 14px 0 clamp(11px, 0.24rem, 24px)}
+  #A .wrapA{position:relative}
+  #A .dsA{position:absolute;left:0;right:0;bottom:0;margin:0;padding: clamp(16px, 0.3467rem, 35px) 14px 12px;
+    background: linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.66));color:#ffffff;font-size:clamp(12px, 0.16rem, 14px);line-height:1.6}
+
+  /* ===== 方案 F Bento（3 列 · 01 占 2×2 大格 · 05 横跨 2 列）===== */
+  #F{background: var(--page)}
+  #F .gF{display:grid;grid-template-columns:repeat(3,1fr);
+    grid-auto-rows:clamp(150px,13vw,250px);gap:clamp(10px,1.1vw,18px)}
+  #F .cell{position:relative;overflow:hidden;background: rgb(23,23,23)}
+  #F .cell .ph{position:absolute;inset:0;aspect-ratio:auto;height:100%}
+  #F .c1{grid-column:span 2;grid-row:span 2}
+  #F .c5{grid-column:span 2}
+  #F .ov{position:absolute;left:0;right:0;bottom:0;margin:0;padding: clamp(29px, 0.6133rem, 63px) clamp(12px, 0.2667rem, 27px) clamp(11px, 0.24rem, 24px);
+    background: linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.76));color:#ffffff}
+  #F .ov .num{display:block;color:#ffffff;font-size:clamp(15px, 0.32rem, 33px);margin-bottom: 6px}
+  #F .ov .nm{display:block;color:#ffffff;font-size:clamp(11px, 0.24rem, 24px);line-height:1.7}
+  #F .ov .ds{display:block;color:rgba(255,255,255,.7);font-size:clamp(12px, 0.16rem, 14px);line-height:1.7;margin: 5px 0 0}
+  #F .c1 .ov{padding: clamp(60px, 1.28rem, 131px) clamp(21px, 0.4533rem, 46px) clamp(19px, 0.4rem, 41px)}
+  #F .c1 .ov .num{font-size:clamp(30px, 0.64rem, 65px);margin-bottom: 10px}
+  #F .c1 .ov .nm{font-size:clamp(17px, 0.36rem, 37px)}
+  #F .c1 .ov .ds{font-size:clamp(14px, 0.1867rem, 16px);margin-top: 8px}
+
+  /* ===== 方案 G 背景卡（图片铺满 + 白色信息卡浮在左侧 · 照参考稿）===== */
+  #G{background: var(--block)}
+  #G .cardG{position:relative;height:clamp(190px,18vw,290px);margin-bottom:clamp(10px,1.1vw,18px);
+    overflow:hidden;background: rgb(23,23,23)}
+  #G .cardG:last-child{margin-bottom:0}
+  #G .cardG .ph{position:absolute;inset:0;aspect-ratio:auto;height:100%}
+  #G .veil{position:absolute;inset:0;background: rgba(23,23,23,.34)}
+  #G .infoG{position:absolute;left:0;top:50%;transform:translateY(-50%);background: rgb(255,255,255);
+    width:min(44%,600px);padding:clamp(18px,1.8vw,30px) clamp(20px,2vw,34px);
+    box-shadow:0 22px 60px -28px rgba(0,0,0,.5)}
+  #G .infoG .num{font-size:clamp(19px, 0.4rem, 41px);display:block;margin-bottom: 8px}
+  #G .infoG .nm{font-size:clamp(13px, 0.28rem, 29px);color:var(--title);line-height:1.7}
+  #G .infoG .ds{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.8;color:var(--ink-3);margin: 8px 0 0}
+  #G .code{position:absolute;right:clamp(14px,1.4vw,24px);bottom:clamp(12px,1.2vw,20px);
+    font-family:var(--mono);font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.18em;color:rgba(255,255,255,.6)}
+
+  @media (max-width:1100px){
+    #A .gA{grid-template-columns:repeat(2,1fr)}
+    #F .gF{grid-template-columns:repeat(2,1fr)}
+    #F .c1{grid-column:span 2}
+    #G .infoG{width:min(70%,600px)}
+  }
+
+/* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
+.tagline b{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#A .dsA{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#F .ov{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#F .ov .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#F .ov .nm{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#F .ov .ds{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#G .code{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+</style><section class="blk" id="G"><div class="in">
+  <div class="head"><h2>ODM 服务</h2></div>
+  <article class="cardG">
+    <div class="ph" style="background-image:url(../assets/pxid/inner-hero/design-desktop.webp);background-position:28% 15%"></div>
+    <div class="veil"></div>
+    <div class="infoG">
+      <span class="num">01</span>
+      <h3 class="nm">产品设计</h3>
+      <p class="ds">手绘草图、三维建模与 CMF 设计。</p>
+    </div>
+    <span class="code">ODM / 01</span>
+  </article>
+  <article class="cardG">
+    <div class="ph" style="background-image:url(../assets/pxid/products/service-structure.jpg);background-position:40% center"></div>
+    <div class="veil"></div>
+    <div class="infoG">
+      <span class="num">02</span>
+      <h3 class="nm">结构与电控系统设计</h3>
+      <p class="ds">结构设计、材料与工艺选型，以及电控系统开发。</p>
+    </div>
+    <span class="code">ODM / 02</span>
+  </article>
+  <article class="cardG">
+    <div class="ph" style="background-image:url(../assets/pxid/products/service-prototype.jpg);background-position:40% center"></div>
+    <div class="veil"></div>
+    <div class="infoG">
+      <span class="num">03</span>
+      <h3 class="nm">工程样车开发</h3>
+      <p class="ds">零部件加工、样车装配与功能验证。</p>
+    </div>
+    <span class="code">ODM / 03</span>
+  </article>
+  <article class="cardG">
+    <div class="ph" style="background-image:url(../assets/pxid/inner-hero/tooling-desktop.webp);background-position:50% center"></div>
+    <div class="veil"></div>
+    <div class="infoG">
+      <span class="num">04</span>
+      <h3 class="nm">模具、车架与涂装</h3>
+      <p class="ds">模具开发、车架制造与表面涂装。</p>
+    </div>
+    <span class="code">ODM / 04</span>
+  </article>
+  <article class="cardG">
+    <div class="ph" style="background-image:url(../assets/pxid/unified/process/process-09.webp);background-position:62% center"></div>
+    <div class="veil"></div>
+    <div class="infoG">
+      <span class="num">05</span>
+      <h3 class="nm">检测与批量生产</h3>
+      <p class="ds">质量检验、整车装配与批量生产。</p>
+    </div>
+    <span class="code">ODM / 05</span>
+  </article>
+</div></section></template>
+  <template class="pxid-p2tpl" data-v="e"><style>
+  :scope{
+    --red:#d71920; --page:#f8f8f8; --block:#f4f4f4; --line:#e4e4e4;
+    --ink:#333333; --ink-3:#999999; --title:#1a1a1a;
+    --en:"Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --gutter:clamp(16px,4vw,64px);
+  }
+  *{box-sizing:border-box}
+  :scope{background: var(--page);color:var(--ink);}
+  .in{max-width:1840px;margin:0 auto;padding:0 var(--gutter)}
+  .blk{position:relative;padding:clamp(52px,4.6vw,92px) 0}
+  .tagline{display:flex;align-items:center;gap: 14px;padding: clamp(14px, 0.2933rem, 30px) var(--gutter) 0;
+    max-width:1840px;margin:0 auto;font-family:var(--mono);font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.16em;color:var(--red)}
+  .tagline b{background: var(--red);color:#ffffff;font-weight:600;padding: 3px 9px;letter-spacing:.1em}
+  .tagline i{flex:1;height:1px;background: var(--line);font-style:normal}
+  .head h2{font-size:clamp(37px, 0.8rem, 82px);line-height:1.1;margin:0 0 clamp(26px,2.6vw,48px);
+    font-weight:700;letter-spacing:-.02em;color:var(--title)}
+  .ph{aspect-ratio:3/2;background: rgb(255,255,255) center/cover no-repeat}
+  .num{font-family:var(--en);color:var(--red);font-weight:700;line-height:1}
+  .nm{font-weight:700;color:var(--title);letter-spacing:-.01em;margin:0}
+  .ds{color:var(--ink-3);margin:0}
+
+  /* ===== 方案 A 大红序号（5 列 · 超大红序号 + 红短横线 + 描述压图）===== */
+  #A{background: rgb(255,255,255)}
+  #A .gA{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(16px,2vw,40px)}
+  #A .rA{display:flex;align-items:baseline;gap: 14px}
+  #A .bigA{font-family:var(--en);font-size:clamp(37px, 0.8rem, 82px);color:var(--red);font-weight:700;line-height:.82}
+  #A .nmA{font-size:clamp(11px, 0.24rem, 24px);font-weight:700;color:var(--title);margin:0;line-height:1.7;letter-spacing:-.01em}
+  #A .dashA{width:24px;height:3px;background: var(--red);margin: 14px 0 clamp(11px, 0.24rem, 24px)}
+  #A .wrapA{position:relative}
+  #A .dsA{position:absolute;left:0;right:0;bottom:0;margin:0;padding: clamp(16px, 0.3467rem, 35px) 14px 12px;
+    background: linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.66));color:#ffffff;font-size:clamp(12px, 0.16rem, 14px);line-height:1.6}
+
+  /* ===== 方案 B 目录条（5 行 · 左大序号 中名称描述 右图）===== */
+  #B{background: rgb(255,255,255)}
+  #B .cB{display:grid;grid-template-columns:clamp(84px,8vw,172px) 1fr clamp(220px,26vw,430px);
+    gap:clamp(16px,2.4vw,46px);align-items:center;
+    padding:clamp(14px,1.5vw,26px) 0;border-bottom:1px solid var(--line)}
+  #B .cB:first-of-type{border-top:1px solid var(--line)}
+  #B .idxB{font-family:var(--en);font-size:clamp(45px, 0.96rem, 98px);color:var(--red);font-weight:700;line-height:1}
+  #B .nmB{font-size:clamp(19px, 0.4rem, 41px);font-weight:700;color:var(--title);line-height:1.25;margin:0;letter-spacing:-.01em}
+  #B .dsB{font-size:clamp(16px, 0.2133rem, 18px);line-height:1.9;color:var(--ink-3);margin: 8px 0 0}
+  #B .ph{width:100%}
+
+  /* ===== 方案 C 三级灰度五格（图 + 序号32 + 名称22 + 描述16）===== */
+  #C .gC{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(16px,2vw,40px)}
+  #C .tC{display:flex;align-items:baseline;gap: 10px;margin-top: clamp(16px, 0.2133rem, 18px)}
+  #C .idxC{font-size:clamp(19px, 0.4rem, 41px);flex:none}
+  #C .nmC{font-size:clamp(11px, 0.24rem, 24px);font-weight:700;color:var(--title);margin:0;line-height:1.7;letter-spacing:-.01em}
+  #C .dsC{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.8;color:var(--ink-3);margin: 6px 0 0}
+
+  /* ===== 方案 D 横滑胶片 ===== */
+  #D .rail{overflow-x:auto;-webkit-mask-image:linear-gradient(90deg,#000000 0,#000000 94%,transparent);
+    mask-image:linear-gradient(90deg,#000000 0,#000000 94%,transparent)}
+  #D .strip{display:flex;gap:clamp(12px,1.4vw,24px);width:max-content}
+  #D .cardD{flex:0 0 clamp(260px,26vw,380px);position:relative}
+  #D .badgeD{position:absolute;left:0;top:0;background: var(--red);color:#ffffff;font-family:var(--en);
+    font-size:clamp(14px, 0.1867rem, 16px);font-weight:700;padding: 5px 13px;z-index:2}
+  #D .nmD{font-size:clamp(13px, 0.28rem, 29px);font-weight:700;color:var(--title);margin: 14px 0 0;line-height:1.7}
+  #D .dsD{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.8;color:var(--ink-3);margin: 6px 0 0}
+
+  /* ===== 方案 E 满出血五列（文字压图上）===== */
+  #E{background: var(--page)}
+  #E .bandE{display:grid;grid-template-columns:repeat(5,1fr);gap: 2px}
+  #E .colE{position:relative;min-height:clamp(280px,30vw,460px)}
+  #E .colE .ph{position:absolute;inset:0;aspect-ratio:auto;height:100%}
+  #E .ovE{position:absolute;left:0;right:0;bottom:0;margin:0;padding: clamp(27px, 0.5867rem, 60px) clamp(14px, 0.2933rem, 30px) clamp(14px, 0.2933rem, 30px);
+    background: linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.78));color:#ffffff}
+  #E .ovE .num{color:#ffffff;font-size:clamp(15px, 0.32rem, 33px);display:block;margin-bottom: 6px}
+  #E .ovE .nm{color:#ffffff;font-size:clamp(13px, 0.28rem, 29px);line-height:1.7}
+  #E .ovE .ds{color:rgba(255,255,255,.72);font-size:clamp(12px, 0.16rem, 14px);line-height:1.7;margin: 6px 0 0}
+  #E .headE{padding:clamp(52px,4.6vw,92px) var(--gutter) clamp(26px,2.6vw,44px);max-width:1840px;margin:0 auto}
+
+  @media (max-width:1100px){
+    #A .gA,#C .gC{grid-template-columns:repeat(2,1fr)}
+    #E .bandE{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:900px){
+    #B .cB{grid-template-columns:64px 1fr;row-gap: 14px}
+    #B .cB .ph{grid-column:1/-1}
+  }
+
+/* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
+.tagline b{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#A .dsA{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#D .badgeD{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#E .ovE{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#E .ovE .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#E .ovE .nm{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#E .ovE .ds{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+</style><section id="E">
+  <div class="headE"><h2>ODM 服务</h2></div>
+  <div class="bandE">
+  <div class="colE">
+    <div class="ph" style="background-image:url(../assets/pxid/inner-hero/design-desktop.webp);background-position:28% 15%"></div>
+    <p class="ovE"><span class="num">01</span><span class="nm">产品设计</span><span class="ds">手绘草图、三维建模与 CMF 设计。</span></p>
+  </div>
+  <div class="colE">
+    <div class="ph" style="background-image:url(../assets/pxid/products/service-structure.jpg);background-position:40% center"></div>
+    <p class="ovE"><span class="num">02</span><span class="nm">结构与电控系统设计</span><span class="ds">结构设计、材料与工艺选型，以及电控系统开发。</span></p>
+  </div>
+  <div class="colE">
+    <div class="ph" style="background-image:url(../assets/pxid/products/service-prototype.jpg);background-position:40% center"></div>
+    <p class="ovE"><span class="num">03</span><span class="nm">工程样车开发</span><span class="ds">零部件加工、样车装配与功能验证。</span></p>
+  </div>
+  <div class="colE">
+    <div class="ph" style="background-image:url(../assets/pxid/inner-hero/tooling-desktop.webp);background-position:50% center"></div>
+    <p class="ovE"><span class="num">04</span><span class="nm">模具、车架与涂装</span><span class="ds">模具开发、车架制造与表面涂装。</span></p>
+  </div>
+  <div class="colE">
+    <div class="ph" style="background-image:url(../assets/pxid/unified/process/process-09.webp);background-position:62% center"></div>
+    <p class="ovE"><span class="num">05</span><span class="nm">检测与批量生产</span><span class="ds">质量检验、整车装配与批量生产。</span></p>
+  </div>
+  </div>
+</section></template><style id="pxid-p2-switch-css">
+#pxidP2{position:relative}
+#pxidP2 > .pxid-p2frame{display:block;width:100%;height:0;border:0;background:#fff}
+#pxidP2 > .pxid-p2frame[hidden]{display:none}
+#pxidP2:not([data-p2v="orig"]) > .inner{display:none!important}
+#pxidP2 .pxid-p2switch{position:absolute;top:6px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.46);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:4px;opacity:.62;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
+#pxidP2 .pxid-p2switch:hover{opacity:1}
+#pxidP2 .pxid-p2switch .lbl{display:none}
+#pxidP2 .pxid-p2switch button{cursor:pointer;font:inherit;font-size:12px;line-height:1;padding:6px 8px;border:0;background:transparent;color:rgba(255,255,255,.86);white-space:nowrap;border-radius:0;transition:color .18s,background .18s}
+#pxidP2 .pxid-p2switch button:hover{color:#fff;background:rgba(255,255,255,.15)}
+#pxidP2 .pxid-p2switch button.on{background:#d71920;color:#fff}
+@media (max-width:900px){#pxidP2 .pxid-p2switch{position:fixed;left:12px;right:12px;bottom:14px;top:auto;max-width:none;justify-content:center;opacity:0;pointer-events:none}
+#pxidP2 .pxid-p2switch.show{opacity:.95;pointer-events:auto}
+#pxidP2 .pxid-p2switch button{font-size:11.5px;padding:7px 6px;flex:1 1 auto}}
+</style><script id="pxid-p2-switch-js">
+(function(){
+  var sec=document.getElementById("pxidP2"); if(!sec) return;
+  var KEY="pxid-p2-v", frame=sec.querySelector(".pxid-p2frame");
+  var btns=sec.querySelectorAll(".pxid-p2switch button"), cache={};
+  function fit(){
+    if(!frame||frame.hidden) return;
+    var d; try{ d=frame.contentDocument; }catch(e){ return; }
+    if(!d||!d.body) return;
+    var h=d.body.scrollHeight||d.documentElement.scrollHeight;
+    if(h>0) frame.style.height=h+"px";
+  }
+  window.__pxidP2fit=fit;
+  function doc(v){
+    var fs=getComputedStyle(document.documentElement).fontSize||"16px";
+    var k=v+"|"+fs;
+    if(cache[k]) return cache[k];
+    var t=sec.querySelector("template.pxid-p2tpl[data-v=\""+v+"\"]"); if(!t) return null;
+    cache[k]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
+      +"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow-x:hidden;"
+      +"background:#f8f8f8;font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}</style>"
+      +"</head><body>"+t.innerHTML
+      +"<script>(function(){function r(){try{parent.__pxidP2fit&&parent.__pxidP2fit()}catch(e){}}"
+      +"addEventListener(\"load\",r);addEventListener(\"resize\",r);document.addEventListener(\"load\",r,true);"
+      +"if(window.ResizeObserver){try{new ResizeObserver(r).observe(document.documentElement)}catch(e){}}"
+      +"setTimeout(r,60);setTimeout(r,300);setTimeout(r,900);})()<\/script>"
+      +"</body></html>";
+    return cache[k];
+  }
+  var sw=sec.querySelector(".pxid-p2switch");
+  function vis(){
+    if(!sw) return;
+    var r=sec.getBoundingClientRect(), wh=window.innerHeight||document.documentElement.clientHeight;
+    sw.classList.toggle("show", r.top < wh-80 && r.bottom > 80);
+  }
+  function set(v){
+    if(!frame) return;
+    var d=doc(v);
+    if(d){ if(frame.getAttribute("srcdoc")!==d) frame.setAttribute("srcdoc",d); frame.hidden=false; fit(); }
+    else { frame.hidden=true; frame.removeAttribute("srcdoc"); frame.style.height="0"; v="orig"; }
+    sec.setAttribute("data-p2v",v);
+    for(var i=0;i<btns.length;i++) btns[i].classList.toggle("on",btns[i].getAttribute("data-v")===v);
+    try{ localStorage.setItem(KEY,v); }catch(e){}
+    vis();
+  }
+  if(frame){ frame.addEventListener("load", fit); }
+  addEventListener("resize", fit);
+  addEventListener("scroll", vis, {passive:true});
+  addEventListener("resize", vis);
+  vis();
+  for(var i=0;i<btns.length;i++)(function(b){ b.addEventListener("click",function(){ set(b.getAttribute("data-v")); }); })(btns[i]);
+  try{ var s=localStorage.getItem(KEY); if(s&&s!=="orig") set(s); }catch(e){}
+  window.__pxidP2=set;
+})();
+</script>
+</section>
 <section data-vh="4.5" class="row r3">
   <section class="row rowPhoto"><div class="proof-photo fxBg" role="img" aria-label="PXID 折叠电动自行车的车架、车轮、传动与电池部件分解图" style="background-image:url(../assets/pxid/products/../unified/home-v2/case-p2-engineering.jpg);background-position:50% center"></div><div class="inner maxSize"><div class="layer-items right"><div class="list"><div class="msg"><h2 class="f-60 wc en_b aniFn">结构拆解</h2><p class="f-16 wc aniFn pxid-prose">车架、转向、传动与电池等部件的结构布局。</p><a class="layer-btn" href="sustainability.html#stage-design"><span class="txt">查看结构开发</span></a></div></div></div></div></section>
   <section class="row rowPhoto"><div class="proof-photo fxBg" role="img" aria-label="工程人员在样车上安装和检查折叠连接机构" style="background-image:url(../assets/pxid/products/proof-prototype.webp);background-position:62% center"></div><div class="inner maxSize"><div class="layer-items right"><div class="list"><div class="msg"><h2 class="f-60 wc en_b aniFn">样车制作</h2><p class="f-16 wc aniFn pxid-prose">完成零部件加工与装配，检查配合关系和整车功能。</p><a class="layer-btn" href="sustainability.html#stage-engineering"><span class="txt">查看样车开发</span></a></div></div></div></div></section>
