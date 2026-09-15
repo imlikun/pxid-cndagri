@@ -1417,6 +1417,16 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M .band:hover::after { opacity:.9; animation:arrowbob 1.1s ease-in-out infinite; }
   @keyframes arrowbob { 0%,100%{transform:translateY(-50%) translateX(0)} 50%{transform:translateY(-50%) translateX(-10px)} }
 
+/* S2 可读性补强（坤哥 09-15）：文字压在照片上 → 用底色提对比，不加描边/阴影等字体特效 */
+#J .head { background: linear-gradient(90deg,rgba(23,23,23,.88) 0%,rgba(23,23,23,.62) 62%,rgba(23,23,23,0) 100%);
+  padding:clamp(18px,.36rem,30px) clamp(20px,.44rem,38px); }
+#J .slice { background: linear-gradient(0deg,rgba(23,23,23,.86) 0%,rgba(23,23,23,.5) 46%,rgba(23,23,23,0) 100%); }
+#J .slice .num { color:rgba(255,255,255,.62); }
+#J .slice .cap-t { color:#ffffff; }
+#J .slice .cap-s { color:rgba(255,255,255,.9); }
+#M .band { background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.6) 58%,rgba(23,23,23,0) 100%); }
+#M .band .num { color:rgba(255,255,255,.5); }
+
 /* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
 .tag{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .head .eyebrow{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
@@ -1434,6 +1444,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
 #M .band .txt{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #M .band .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #M .band::after{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#J .slice .cap-t{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#J .slice .cap-s{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 </style><section id="C">
   <div class="copy rise d1">
     <div class="eyebrow">Electric Mobility ODM</div>
@@ -1670,6 +1682,16 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M .band:hover::after { opacity:.9; animation:arrowbob 1.1s ease-in-out infinite; }
   @keyframes arrowbob { 0%,100%{transform:translateY(-50%) translateX(0)} 50%{transform:translateY(-50%) translateX(-10px)} }
 
+/* S2 可读性补强（坤哥 09-15）：文字压在照片上 → 用底色提对比，不加描边/阴影等字体特效 */
+#J .head { background: linear-gradient(90deg,rgba(23,23,23,.88) 0%,rgba(23,23,23,.62) 62%,rgba(23,23,23,0) 100%);
+  padding:clamp(18px,.36rem,30px) clamp(20px,.44rem,38px); }
+#J .slice { background: linear-gradient(0deg,rgba(23,23,23,.86) 0%,rgba(23,23,23,.5) 46%,rgba(23,23,23,0) 100%); }
+#J .slice .num { color:rgba(255,255,255,.62); }
+#J .slice .cap-t { color:#ffffff; }
+#J .slice .cap-s { color:rgba(255,255,255,.9); }
+#M .band { background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.6) 58%,rgba(23,23,23,0) 100%); }
+#M .band .num { color:rgba(255,255,255,.5); }
+
 /* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
 .tag{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .head .eyebrow{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
@@ -1687,6 +1709,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
 #M .band .txt{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #M .band .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #M .band::after{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#J .slice .cap-t{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#J .slice .cap-s{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 </style><section id="I">
   <div class="head rise d1">
     <div class="eyebrow">Electric Mobility ODM</div>
@@ -1939,6 +1963,16 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M .band:hover::after { opacity:.9; animation:arrowbob 1.1s ease-in-out infinite; }
   @keyframes arrowbob { 0%,100%{transform:translateY(-50%) translateX(0)} 50%{transform:translateY(-50%) translateX(-10px)} }
 
+/* S2 可读性补强（坤哥 09-15）：文字压在照片上 → 用底色提对比，不加描边/阴影等字体特效 */
+#J .head { background: linear-gradient(90deg,rgba(23,23,23,.88) 0%,rgba(23,23,23,.62) 62%,rgba(23,23,23,0) 100%);
+  padding:clamp(18px,.36rem,30px) clamp(20px,.44rem,38px); }
+#J .slice { background: linear-gradient(0deg,rgba(23,23,23,.86) 0%,rgba(23,23,23,.5) 46%,rgba(23,23,23,0) 100%); }
+#J .slice .num { color:rgba(255,255,255,.62); }
+#J .slice .cap-t { color:#ffffff; }
+#J .slice .cap-s { color:rgba(255,255,255,.9); }
+#M .band { background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.6) 58%,rgba(23,23,23,0) 100%); }
+#M .band .num { color:rgba(255,255,255,.5); }
+
 /* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
 .tag{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .head .eyebrow{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
@@ -1956,6 +1990,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
 #M .band .txt{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #M .band .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #M .band::after{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#J .slice .cap-t{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#J .slice .cap-s{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 </style><section id="J">
   <div class="head rise d1">
     <div class="eyebrow">Electric Mobility ODM</div>
@@ -2206,6 +2242,16 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M .band:hover::after { opacity:.9; animation:arrowbob 1.1s ease-in-out infinite; }
   @keyframes arrowbob { 0%,100%{transform:translateY(-50%) translateX(0)} 50%{transform:translateY(-50%) translateX(-10px)} }
 
+/* S2 可读性补强（坤哥 09-15）：文字压在照片上 → 用底色提对比，不加描边/阴影等字体特效 */
+#J .head { background: linear-gradient(90deg,rgba(23,23,23,.88) 0%,rgba(23,23,23,.62) 62%,rgba(23,23,23,0) 100%);
+  padding:clamp(18px,.36rem,30px) clamp(20px,.44rem,38px); }
+#J .slice { background: linear-gradient(0deg,rgba(23,23,23,.86) 0%,rgba(23,23,23,.5) 46%,rgba(23,23,23,0) 100%); }
+#J .slice .num { color:rgba(255,255,255,.62); }
+#J .slice .cap-t { color:#ffffff; }
+#J .slice .cap-s { color:rgba(255,255,255,.9); }
+#M .band { background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.6) 58%,rgba(23,23,23,0) 100%); }
+#M .band .num { color:rgba(255,255,255,.5); }
+
 /* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
 .tag{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .head .eyebrow{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
@@ -2223,6 +2269,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
 #M .band .txt{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #M .band .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #M .band::after{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#J .slice .cap-t{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#J .slice .cap-s{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 </style><section id="K">
   <div class="head rise d1">
     <div class="eyebrow">Electric Mobility ODM</div>
@@ -2463,6 +2511,16 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M .band:hover::after { opacity:.9; animation:arrowbob 1.1s ease-in-out infinite; }
   @keyframes arrowbob { 0%,100%{transform:translateY(-50%) translateX(0)} 50%{transform:translateY(-50%) translateX(-10px)} }
 
+/* S2 可读性补强（坤哥 09-15）：文字压在照片上 → 用底色提对比，不加描边/阴影等字体特效 */
+#J .head { background: linear-gradient(90deg,rgba(23,23,23,.88) 0%,rgba(23,23,23,.62) 62%,rgba(23,23,23,0) 100%);
+  padding:clamp(18px,.36rem,30px) clamp(20px,.44rem,38px); }
+#J .slice { background: linear-gradient(0deg,rgba(23,23,23,.86) 0%,rgba(23,23,23,.5) 46%,rgba(23,23,23,0) 100%); }
+#J .slice .num { color:rgba(255,255,255,.62); }
+#J .slice .cap-t { color:#ffffff; }
+#J .slice .cap-s { color:rgba(255,255,255,.9); }
+#M .band { background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.6) 58%,rgba(23,23,23,0) 100%); }
+#M .band .num { color:rgba(255,255,255,.5); }
+
 /* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
 .tag{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .head .eyebrow{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
@@ -2480,6 +2538,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
 #M .band .txt{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #M .band .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #M .band::after{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#J .slice .cap-t{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#J .slice .cap-s{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 </style><section id="M">
   <div class="head rise d1">
     <div class="eyebrow">Electric Mobility ODM</div>
