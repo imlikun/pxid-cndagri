@@ -1171,7 +1171,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
     cache[ck]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
       +"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
       +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow:hidden;"
-      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}</style>"
+      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}html,body{height:100%}/* 内容比段高矮时（S4 内容 715 < 段高 812）垂直居中，别贴着顶 */body{display:flex;flex-direction:column;justify-content:center}</style>"
       +"</head><body>"+t.innerHTML+"</body></html>";
     return cache[ck];
   }
@@ -2535,9 +2535,34 @@ html.pxid-s2-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
     cache[ck]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
       +"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
       +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow:hidden;"
-      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}</style>"
+      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}html,body{height:100%}/* 内容比段高矮时（S4 内容 715 < 段高 812）垂直居中，别贴着顶 */body{display:flex;flex-direction:column;justify-content:center}/* 变体源的 section 多为 min-height:88vh/84vh，内容重心偏上（坤哥要求垂直居中）——统一给一点顶部内边距把内容压到视觉居中；absolute 子元素相对 padding box 定位，会跟着下移 */section{box-sizing:border-box;padding-top:5.4vh}</style>"
       +"</head><body>"+t.innerHTML+"</body></html>";
     return cache[ck];
+  }
+  /* 内容在段内垂直居中：变体 section 常是 88vh/min-height 决定的高度，比段高矮 →
+     下方会拖出一条空白带（坤哥：「后增加的内容偏上部」「底部明显的区分去掉」）。
+     做法：量所有直接子元素的并集边界，算出与段中心的偏移，整体平移补正，并让根元素铺满。 */
+  /* 内容在段内垂直居中（坤哥：偏上部 / 底部那条多余的区分去掉）
+     ① root 先铺满段高（min-height:100%）→ 背景铺到底、不拖空白带；
+     ② 量所有直接子元素的并集边界（iframe 内部坐标！），算出与段中心的偏移；
+     ③ 只做纯平移 translateY 补正 —— 不改高度（改高度会让 74% 这类百分比定位跟着动，来回振荡）；
+     ④ 平移后底部会露出一条 → body 用 root 自己的背景色兜住，肉眼无缝。 */
+  function centerContent(){
+    if(!frame||frame.hidden) return;
+    try{
+      var d=frame.contentDocument; if(!d) return;
+      var root=d.querySelector('section')||d.querySelector('div[id]'); if(!root) return;
+      root.style.transform=""; root.style.minHeight="100%";
+      void root.offsetHeight;                      /* 强制重排，否则量到旧布局 */
+      var kids=root.children, top=1e9, bot=-1e9, i, r;
+      for(i=0;i<kids.length;i++){ r=kids[i].getBoundingClientRect(); if(r.height<4) continue;
+        if(r.top<top) top=r.top; if(r.bottom>bot) bot=r.bottom; }
+      if(top>bot) return;
+      var shift=Math.round(frame.clientHeight/2-(top+bot)/2);
+      var bg=d.defaultView.getComputedStyle(root).backgroundColor;
+      if(bg && bg!=='rgba(0, 0, 0, 0)') d.body.style.background=bg;
+      if(Math.abs(shift)>=6) root.style.transform="translateY("+shift+"px)";
+    }catch(e){}
   }
   function fitFrame(){
     if(!frame||frame.hidden) return;
@@ -2548,7 +2573,7 @@ html.pxid-s2-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
       /* 段高由站点原样内容撑出，iframe 铺满即可 */
     }catch(e){} }
   }
-  if(frame) frame.addEventListener("load", function(){ setTimeout(fitFrame,120); setTimeout(fitFrame,600); });
+  if(frame) frame.addEventListener("load", function(){ setTimeout(centerContent,200); setTimeout(centerContent,1200); setTimeout(centerContent,2600); setTimeout(fitFrame,120); setTimeout(fitFrame,600); });
   function syncNav(){
     document.documentElement.classList.toggle("pxid-s2-lab", !!(frame&&!frame.hidden));
   }
@@ -2558,7 +2583,7 @@ html.pxid-s2-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
     if(d){ if(frame.getAttribute("srcdoc")!==d) frame.setAttribute("srcdoc",d); frame.hidden=false; }
     else { frame.hidden=true; frame.removeAttribute("srcdoc"); v="orig"; }
     sec.setAttribute("data-s1v",v);
-    syncNav(); setTimeout(fitFrame,120); setTimeout(fitFrame,700);
+    syncNav(); setTimeout(centerContent,300); setTimeout(centerContent,1400); setTimeout(centerContent,2800); syncNav(); setTimeout(fitFrame,120); setTimeout(fitFrame,700);
     for(var i=0;i<btns.length;i++) btns[i].classList.toggle("on",btns[i].getAttribute("data-v")===v);
     try{ localStorage.setItem(KEY,v); }catch(e){}
   }
@@ -2966,9 +2991,34 @@ html.pxid-s4-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
     cache[ck]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
       +"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
       +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow:hidden;"
-      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}</style>"
+      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}html,body{height:100%}/* 内容比段高矮时（S4 内容 715 < 段高 812）垂直居中，别贴着顶 */body{display:flex;flex-direction:column;justify-content:center}/* 变体源的 section 多为 min-height:88vh/84vh，内容重心偏上（坤哥要求垂直居中）——统一给一点顶部内边距把内容压到视觉居中；absolute 子元素相对 padding box 定位，会跟着下移 */section{box-sizing:border-box;padding-top:5.4vh}</style>"
       +"</head><body>"+t.innerHTML+"</body></html>";
     return cache[ck];
+  }
+  /* 内容在段内垂直居中：变体 section 常是 88vh/min-height 决定的高度，比段高矮 →
+     下方会拖出一条空白带（坤哥：「后增加的内容偏上部」「底部明显的区分去掉」）。
+     做法：量所有直接子元素的并集边界，算出与段中心的偏移，整体平移补正，并让根元素铺满。 */
+  /* 内容在段内垂直居中（坤哥：偏上部 / 底部那条多余的区分去掉）
+     ① root 先铺满段高（min-height:100%）→ 背景铺到底、不拖空白带；
+     ② 量所有直接子元素的并集边界（iframe 内部坐标！），算出与段中心的偏移；
+     ③ 只做纯平移 translateY 补正 —— 不改高度（改高度会让 74% 这类百分比定位跟着动，来回振荡）；
+     ④ 平移后底部会露出一条 → body 用 root 自己的背景色兜住，肉眼无缝。 */
+  function centerContent(){
+    if(!frame||frame.hidden) return;
+    try{
+      var d=frame.contentDocument; if(!d) return;
+      var root=d.querySelector('section')||d.querySelector('div[id]'); if(!root) return;
+      root.style.transform=""; root.style.minHeight="100%";
+      void root.offsetHeight;                      /* 强制重排，否则量到旧布局 */
+      var kids=root.children, top=1e9, bot=-1e9, i, r;
+      for(i=0;i<kids.length;i++){ r=kids[i].getBoundingClientRect(); if(r.height<4) continue;
+        if(r.top<top) top=r.top; if(r.bottom>bot) bot=r.bottom; }
+      if(top>bot) return;
+      var shift=Math.round(frame.clientHeight/2-(top+bot)/2);
+      var bg=d.defaultView.getComputedStyle(root).backgroundColor;
+      if(bg && bg!=='rgba(0, 0, 0, 0)') d.body.style.background=bg;
+      if(Math.abs(shift)>=6) root.style.transform="translateY("+shift+"px)";
+    }catch(e){}
   }
   function fitFrame(){
     if(!frame||frame.hidden) return;
@@ -2979,7 +3029,7 @@ html.pxid-s4-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
       /* 段高由站点原样内容撑出，iframe 铺满即可 */
     }catch(e){} }
   }
-  if(frame) frame.addEventListener("load", function(){ setTimeout(fitFrame,120); setTimeout(fitFrame,600); });
+  if(frame) frame.addEventListener("load", function(){ setTimeout(centerContent,200); setTimeout(centerContent,1200); setTimeout(centerContent,2600); setTimeout(fitFrame,120); setTimeout(fitFrame,600); });
   function syncNav(){
     document.documentElement.classList.toggle("pxid-s4-lab", !!(frame&&!frame.hidden));
   }
@@ -2989,7 +3039,7 @@ html.pxid-s4-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
     if(d){ if(frame.getAttribute("srcdoc")!==d) frame.setAttribute("srcdoc",d); frame.hidden=false; }
     else { frame.hidden=true; frame.removeAttribute("srcdoc"); v="orig"; }
     sec.setAttribute("data-s1v",v);
-    syncNav(); setTimeout(fitFrame,120); setTimeout(fitFrame,700);
+    syncNav(); setTimeout(centerContent,300); setTimeout(centerContent,1400); setTimeout(centerContent,2800); syncNav(); setTimeout(fitFrame,120); setTimeout(fitFrame,700);
     for(var i=0;i<btns.length;i++) btns[i].classList.toggle("on",btns[i].getAttribute("data-v")===v);
     try{ localStorage.setItem(KEY,v); }catch(e){}
   }
@@ -4448,6 +4498,8 @@ html.pxid-s4-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
 })();
 </script></template><style id="pxid-s6-switch-css">
 #pxidS6{position:relative}
+/* 坤哥：section 高度不能超过一屏 —— S6 原样 1029(>900)，变体态压到一屏 */
+#pxidS6:not([data-s1v="orig"]){max-height:100vh;max-height:100svh;overflow:hidden}
 #pxidS6 > .pxid-s6frame{position:absolute;inset:0;display:block;width:100%;height:100%;border:0;background:#fff}
 #pxidS6 > .pxid-s6frame[hidden]{display:none}
 #pxidS6:not([data-s1v="orig"]) > .bg,
@@ -4493,9 +4545,34 @@ html.pxid-s6-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
     cache[ck]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
       +"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
       +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow:hidden;"
-      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}</style>"
+      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}html,body{height:100%}/* 内容比段高矮时（S4 内容 715 < 段高 812）垂直居中，别贴着顶 */body{display:flex;flex-direction:column;justify-content:center}/* 变体源的 section 多为 min-height:88vh/84vh，内容重心偏上（坤哥要求垂直居中）——统一给一点顶部内边距把内容压到视觉居中；absolute 子元素相对 padding box 定位，会跟着下移 */section{box-sizing:border-box;padding-top:5.4vh}</style>"
       +"</head><body>"+EXT+t.innerHTML+"</body></html>";
     return cache[ck];
+  }
+  /* 内容在段内垂直居中：变体 section 常是 88vh/min-height 决定的高度，比段高矮 →
+     下方会拖出一条空白带（坤哥：「后增加的内容偏上部」「底部明显的区分去掉」）。
+     做法：量所有直接子元素的并集边界，算出与段中心的偏移，整体平移补正，并让根元素铺满。 */
+  /* 内容在段内垂直居中（坤哥：偏上部 / 底部那条多余的区分去掉）
+     ① root 先铺满段高（min-height:100%）→ 背景铺到底、不拖空白带；
+     ② 量所有直接子元素的并集边界（iframe 内部坐标！），算出与段中心的偏移；
+     ③ 只做纯平移 translateY 补正 —— 不改高度（改高度会让 74% 这类百分比定位跟着动，来回振荡）；
+     ④ 平移后底部会露出一条 → body 用 root 自己的背景色兜住，肉眼无缝。 */
+  function centerContent(){
+    if(!frame||frame.hidden) return;
+    try{
+      var d=frame.contentDocument; if(!d) return;
+      var root=d.querySelector('section')||d.querySelector('div[id]'); if(!root) return;
+      root.style.transform=""; root.style.minHeight="100%";
+      void root.offsetHeight;                      /* 强制重排，否则量到旧布局 */
+      var kids=root.children, top=1e9, bot=-1e9, i, r;
+      for(i=0;i<kids.length;i++){ r=kids[i].getBoundingClientRect(); if(r.height<4) continue;
+        if(r.top<top) top=r.top; if(r.bottom>bot) bot=r.bottom; }
+      if(top>bot) return;
+      var shift=Math.round(frame.clientHeight/2-(top+bot)/2);
+      var bg=d.defaultView.getComputedStyle(root).backgroundColor;
+      if(bg && bg!=='rgba(0, 0, 0, 0)') d.body.style.background=bg;
+      if(Math.abs(shift)>=6) root.style.transform="translateY("+shift+"px)";
+    }catch(e){}
   }
   function fitFrame(){
     if(!frame||frame.hidden) return;
@@ -4506,7 +4583,7 @@ html.pxid-s6-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
       /* 段高由站点原样内容撑出，iframe 铺满即可 */
     }catch(e){} }
   }
-  if(frame) frame.addEventListener("load", function(){ setTimeout(fitFrame,120); setTimeout(fitFrame,600); });
+  if(frame) frame.addEventListener("load", function(){ setTimeout(centerContent,200); setTimeout(centerContent,1200); setTimeout(centerContent,2600); setTimeout(fitFrame,120); setTimeout(fitFrame,600); });
   function syncNav(){
     document.documentElement.classList.toggle("pxid-s6-lab", !!(frame&&!frame.hidden));
   }
@@ -4516,7 +4593,7 @@ html.pxid-s6-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
     if(d){ if(frame.getAttribute("srcdoc")!==d) frame.setAttribute("srcdoc",d); frame.hidden=false; }
     else { frame.hidden=true; frame.removeAttribute("srcdoc"); v="orig"; }
     sec.setAttribute("data-s1v",v);
-    syncNav(); setTimeout(fitFrame,120); setTimeout(fitFrame,700);
+    syncNav(); setTimeout(centerContent,300); setTimeout(centerContent,1400); setTimeout(centerContent,2800); syncNav(); setTimeout(fitFrame,120); setTimeout(fitFrame,700);
     for(var i=0;i<btns.length;i++) btns[i].classList.toggle("on",btns[i].getAttribute("data-v")===v);
     try{ localStorage.setItem(KEY,v); }catch(e){}
   }
