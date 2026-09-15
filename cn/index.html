@@ -1220,7 +1220,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   :scope{background: var(--paper);}
   .note { position:sticky; top:0; z-index:99; background: var(--dark); color:#d71920; padding: 14px clamp(15px, 0.32rem, 33px); font-size:clamp(12px, 0.16rem, 14px); line-height:1.6; }
   .note b { color:#d71920; }
-  section { position:relative; min-height:auto; overflow:hidden; border-bottom:4px solid #e5e5e5; }
+  section { position:relative; min-height:540px; overflow:hidden; border-bottom:4px solid #e5e5e5; }
   .tag { position:absolute; top:18px; left:22px; z-index:40; color:#ffffff; font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
          background: rgba(110,110,110,.94); padding: 6px 14px; border-radius:20px; letter-spacing:.5px; }
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
@@ -1485,7 +1485,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   :scope{background: var(--paper);}
   .note { position:sticky; top:0; z-index:99; background: var(--dark); color:#d71920; padding: 14px clamp(15px, 0.32rem, 33px); font-size:clamp(12px, 0.16rem, 14px); line-height:1.6; }
   .note b { color:#d71920; }
-  section { position:relative; min-height:auto; overflow:hidden; border-bottom:4px solid #e5e5e5; }
+  section { position:relative; min-height:540px; overflow:hidden; border-bottom:4px solid #e5e5e5; }
   .tag { position:absolute; top:18px; left:22px; z-index:40; color:#ffffff; font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
          background: rgba(110,110,110,.94); padding: 6px 14px; border-radius:20px; letter-spacing:.5px; }
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
@@ -1766,7 +1766,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   :scope{background: var(--paper);}
   .note { position:sticky; top:0; z-index:99; background: var(--dark); color:#d71920; padding: 14px clamp(15px, 0.32rem, 33px); font-size:clamp(12px, 0.16rem, 14px); line-height:1.6; }
   .note b { color:#d71920; }
-  section { position:relative; min-height:auto; overflow:hidden; border-bottom:4px solid #e5e5e5; }
+  section { position:relative; min-height:540px; overflow:hidden; border-bottom:4px solid #e5e5e5; }
   .tag { position:absolute; top:18px; left:22px; z-index:40; color:#ffffff; font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
          background: rgba(110,110,110,.94); padding: 6px 14px; border-radius:20px; letter-spacing:.5px; }
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
@@ -2045,7 +2045,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   :scope{background: var(--paper);}
   .note { position:sticky; top:0; z-index:99; background: var(--dark); color:#d71920; padding: 14px clamp(15px, 0.32rem, 33px); font-size:clamp(12px, 0.16rem, 14px); line-height:1.6; }
   .note b { color:#d71920; }
-  section { position:relative; min-height:auto; overflow:hidden; border-bottom:4px solid #e5e5e5; }
+  section { position:relative; min-height:540px; overflow:hidden; border-bottom:4px solid #e5e5e5; }
   .tag { position:absolute; top:18px; left:22px; z-index:40; color:#ffffff; font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
          background: rgba(110,110,110,.94); padding: 6px 14px; border-radius:20px; letter-spacing:.5px; }
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
@@ -2314,7 +2314,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   :scope{background: var(--paper);}
   .note { position:sticky; top:0; z-index:99; background: var(--dark); color:#d71920; padding: 14px clamp(15px, 0.32rem, 33px); font-size:clamp(12px, 0.16rem, 14px); line-height:1.6; }
   .note b { color:#d71920; }
-  section { position:relative; min-height:auto; overflow:hidden; border-bottom:4px solid #e5e5e5; }
+  section { position:relative; min-height:540px; overflow:hidden; border-bottom:4px solid #e5e5e5; }
   .tag { position:absolute; top:18px; left:22px; z-index:40; color:#ffffff; font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
          background: rgba(110,110,110,.94); padding: 6px 14px; border-radius:20px; letter-spacing:.5px; }
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
@@ -2643,7 +2643,7 @@ html.pxid-s2-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
     if(!frame||frame.hidden) return;
     for(var i=0;i<3;i++){ try{
       var d=frame.contentDocument; if(!d) return;
-      var root=d.body?d.body.firstElementChild:null; if(!root) return;
+      var root=d.querySelector('section')||d.querySelector('div[id]'); if(!root) return;
       var h=Math.round(root.getBoundingClientRect().height);
       if(h>0) frame.style.height=h+62+"px";
     }catch(e){} }
