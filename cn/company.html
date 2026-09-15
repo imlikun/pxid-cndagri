@@ -1287,6 +1287,15 @@
 </div></section>
 <section class="row r5"><div class="bg"></div><div class="inner"><div class="group"><div class="swiper r5Sw"><div class="swiper-wrapper"><div class="swiper-slide"><div class="photo"><div class="pic" role="img" aria-label="设计师绘制电动滑板车手绘草图" style="background-image:url(../assets/pxid/unified/process/odm-poster.webp?v=20260827-crop1)"></div></div><div class="msg" data-swiper-parallax-x="-100" data-swiper-parallax-opacity="0"><a class="layer-set mcFix" href="sustainability.html#stage-definition" aria-label="查看产品设计详情" title="查看产品设计详情"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a><p class="f-20 wc">产品设计</p></div></div><div class="swiper-slide"><div class="photo"><div class="pic" role="img" aria-label="电动滑板车在加载配重的测试台上进行检验" style="background-image:url(../assets/pxid/products/proof-testing.webp)"></div></div><div class="msg" data-swiper-parallax-x="-100" data-swiper-parallax-opacity="0"><a class="layer-set mcFix" href="sustainability.html#stage-engineering" aria-label="查看样车与测试详情" title="查看样车与测试详情"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a><p class="f-20 wc">样车与测试</p></div></div><div class="swiper-slide"><div class="photo"><div class="pic" role="img" aria-label="PXID 车间的电动滑板车整车装配线" style="background-image:url(../assets/pxid/products/proof-assembly.webp)"></div></div><div class="msg" data-swiper-parallax-x="-100" data-swiper-parallax-opacity="0"><a class="layer-set mcFix" href="sustainability.html#stage-delivery" aria-label="查看制造与装配详情" title="查看制造与装配详情"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a><p class="f-20 wc">制造与装配</p></div></div></div><div class="swiper-button-next greenFix layer-set"><div class="mask"></div><div class="layer-icon"><i class="iconfont wc f-14">&#xe8a9;</i></div></div></div></div><div class="part pxid-project-start"><div class="box maxSize"><h2 class="f-100 en_b green alanGo" data-text="选择项目起点">选择项目起点</h2><ul class="items layer-items"><li class="list downList alanParent active f-36"><em class="dot"></em><h3 class="green alanUp en_b">只有产品想法</h3><p class="f-14 alanUp black" style="display:block">可从市场需求、使用场景和产品定义开始。</p></li><li class="list downList alanParent f-36"><em class="dot"></em><h3 class="green alanUp en_b">已有设计或样车</h3><p class="f-14 alanUp black">可从结构评审、工程样车、模具开发或制造评估开始。</p></li></ul><a class="layer-btn" href="contact.html"><div class="mk"></div><span class="txt f-16">启动项目</span></a></div></div></div></section>
 <style id="pxid-company-switch-css">
+/* 坤哥 09-15：满屏段解除锁高 —— .r2 是 height:100vh、.r4 是 height:150vh+overflow:hidden，
+   变体 iframe 比它高就被裁 → 白卡贴顶、下面被切（"不是垂直居中"）。切到变体时去掉这把锁，
+   让 section 跟着 iframe 长，白卡回到段落中间。类名由 JS 挂，orig 状态完全不受影响。 */
+.company main .row.pxid-cv-open{height:auto!important;min-height:0!important;overflow:visible!important;max-height:none!important;padding-top:0!important;padding-bottom:0!important}
+/* .inner 变 flow-root：阻止 iframe 的上下 margin 折叠穿透到 section 外面
+   （c2 的 section 上下 padding 本来就是 0，折叠后白卡直接贴顶 → "不垂直居中"） */
+.company main .row.pxid-cv-open .inner{display:flow-root!important}
+/* 留白改由 iframe 的对称 margin 承担，白卡回到段落正中 */
+.company main .row.pxid-cv-open .inner > iframe{margin:clamp(56px,5.4vw,104px) 0!important}
 .pxid-c1switch{position:absolute;top:6px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:4px;opacity:.68;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
 .pxid-c1switch:hover{opacity:1}
 .pxid-c1switch button{cursor:pointer;font:inherit;font-size:12px;line-height:1;padding:6px 8px;border:0;background:transparent;color:rgba(255,255,255,.86);white-space:nowrap;border-radius:0}
@@ -1389,6 +1398,7 @@
         else fit(frame);
       } else { frame.hidden=true; frame.removeAttribute("srcdoc"); frame.style.height="0"; v="orig"; }
       sec.setAttribute("data-"+cfg.id+"v",v);
+      var rowSec=sec.closest("section"); if(rowSec) rowSec.classList.toggle("pxid-cv-open",v!=="orig");
       for(var i=0;i<btns.length;i++) btns[i].classList.toggle("on",btns[i].getAttribute("data-v")===String(v));
       try{ localStorage.setItem(KEY,v); }catch(e){}
     }
