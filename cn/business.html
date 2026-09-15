@@ -443,11 +443,13 @@
   }
   window.__pxidP1fit=fit;
   function doc(v){
-    if(cache[v]) return cache[v];
+    var fs=getComputedStyle(document.documentElement).fontSize||"16px";
+    var k=v+"|"+fs;
+    if(cache[k]) return cache[k];
     var t=sec.querySelector("template.pxid-p1tpl[data-v=\""+v+"\"]"); if(!t) return null;
-    cache[v]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
+    cache[k]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
       +"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
-      +"<style>*{box-sizing:border-box}html,body{margin:0;padding:0;overflow-x:hidden;"
+      +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow-x:hidden;"
       +"background:#f8f8f8;font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}</style>"
       +"</head><body>"+t.innerHTML
       +"<script>(function(){function r(){try{parent.__pxidP1fit&&parent.__pxidP1fit()}catch(e){}}"
@@ -455,7 +457,7 @@
       +"if(window.ResizeObserver){try{new ResizeObserver(r).observe(document.documentElement)}catch(e){}}"
       +"setTimeout(r,60);setTimeout(r,300);setTimeout(r,900);})()<\/script>"
       +"</body></html>";
-    return cache[v];
+    return cache[k];
   }
   function set(v){
     if(!frame) return;
