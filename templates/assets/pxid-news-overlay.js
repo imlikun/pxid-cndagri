@@ -10,6 +10,8 @@
   const cache = new Map();
   const dialog = document.createElement('dialog');
   dialog.className = 'pxid-news-overlay';
+  // Keep native modal scrolling outside the site's Lenis wheel/touch handler.
+  dialog.setAttribute('data-lenis-prevent', '');
   dialog.setAttribute('aria-labelledby', 'pxid-overlay-title');
   dialog.innerHTML = '<div class="pxid-overlay-bar"><span>PXID · 新闻与资料</span><button type="button" class="pxid-overlay-close" aria-label="关闭详情，返回新闻列表" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><div class="pxid-overlay-scroll" tabindex="0"><div class="pxid-overlay-content"></div></div>';
   document.body.append(dialog);
