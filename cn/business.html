@@ -150,9 +150,8 @@
     #PF .pF .ph{grid-column:1/-1}
   }
 
-/* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
-.tagline b{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-</style><section id="PD">
+/* 坤哥 09-15：字体描边 / 阴影全部去掉（含源文件自带的），一层压制到底 */
+:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}</style><section id="PD">
   <div class="hD"><div class="in"><div class="head"><span>01 / Product Range</span><h2>电动出行产品</h2></div><p class="lede">电动自行车、电动摩托车与电动滑板车。</p></div></div>
       <div class="bandD "><div class="in"><div class="gD">
       
@@ -236,10 +235,8 @@
     #A .gA{grid-template-columns:1fr;gap: clamp(21px, 0.4533rem, 46px)}
   }
 
-/* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
-.tagline b{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#A .tyA{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-</style><section class="blk" id="A">
+/* 坤哥 09-15：字体描边 / 阴影全部去掉（含源文件自带的），一层压制到底 */
+:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}</style><section class="blk" id="A">
   <div class="in">
     <div class="head"><span>01 / Product Range</span><h2>电动出行产品</h2></div>
     <p class="lede">电动自行车、电动摩托车与电动滑板车。</p>
@@ -335,9 +332,8 @@
     #B .cB .ph{grid-column:1/-1}
   }
 
-/* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
-.tagline b{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-</style><section class="blk" id="B">
+/* 坤哥 09-15：字体描边 / 阴影全部去掉（含源文件自带的），一层压制到底 */
+:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}</style><section class="blk" id="B">
   <div class="in">
     <div class="head"><span>01 / Product Range</span><h2>电动出行产品</h2></div>
     <p class="lede">电动自行车、电动摩托车与电动滑板车。</p>
@@ -434,11 +430,19 @@
   var KEY="pxid-p1-v", frame=sec.querySelector(".pxid-p1frame");
   var btns=sec.querySelectorAll(".pxid-p1switch button"), cache={};
   function fit(){
-    if(!frame||frame.hidden) return;
+    if(!frame||frame.hidden){ if(sec) sec.style.removeProperty("background-color"); return; }
     var d; try{ d=frame.contentDocument; }catch(e){ return; }
     if(!d||!d.body) return;
     var h=d.body.scrollHeight||d.documentElement.scrollHeight;
     if(h>0 && frame.style.height!==h+"px") frame.style.height=h+"px";
+    syncBg(d);
+  }
+  function syncBg(d){
+    if(!d) return;
+    var vs=d.querySelector("body > section");
+    var bg=vs?getComputedStyle(vs).backgroundColor:"";
+    if(!bg||bg==="rgba(0, 0, 0, 0)") bg=getComputedStyle(d.body).backgroundColor;
+    if(bg && bg!=="rgba(0, 0, 0, 0)"){ try{ sec.style.setProperty("background-color",bg,"important"); }catch(e){} }
   }
   window.__pxidP1fit=fit;
   function doc(v){
@@ -570,15 +574,8 @@
     #G .infoG{width:min(70%,600px)}
   }
 
-/* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
-.tagline b{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#A .dsA{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#F .ov{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#F .ov .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#F .ov .nm{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#F .ov .ds{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#G .code{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-
+/* 坤哥 09-15：字体描边 / 阴影全部去掉（含源文件自带的），一层压制到底 */
+:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}
 /* 长标题不折断（坤哥 2026-09-15「不要换行」）：桌面 5 列下「结构与电控系统设计」会折成两行。
    nowrap 后溢出的几个 px 交给列间 gap 吸收（1440 约 29px、1920 约 38px，实测最大溢 5px，安全）。
    窄屏只有 2 列、空间更小（实测 390 下需 181px vs 列宽 150px），所以改成 .rA 整块换行
@@ -690,15 +687,8 @@
     #G .infoG{width:min(70%,600px)}
   }
 
-/* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
-.tagline b{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#A .dsA{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#F .ov{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#F .ov .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#F .ov .nm{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#F .ov .ds{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#G .code{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-
+/* 坤哥 09-15：字体描边 / 阴影全部去掉（含源文件自带的），一层压制到底 */
+:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}
 /* 长标题不折断（坤哥 2026-09-15「不要换行」）：桌面 5 列下「结构与电控系统设计」会折成两行。
    nowrap 后溢出的几个 px 交给列间 gap 吸收（1440 约 29px、1920 约 38px，实测最大溢 5px，安全）。
    窄屏只有 2 列、空间更小（实测 390 下需 181px vs 列宽 150px），所以改成 .rA 整块换行
@@ -805,15 +795,8 @@
     #G .infoG{width:min(70%,600px)}
   }
 
-/* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
-.tagline b{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#A .dsA{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#F .ov{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#F .ov .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#F .ov .nm{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#F .ov .ds{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#G .code{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-
+/* 坤哥 09-15：字体描边 / 阴影全部去掉（含源文件自带的），一层压制到底 */
+:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}
 /* 长标题不折断（坤哥 2026-09-15「不要换行」）：桌面 5 列下「结构与电控系统设计」会折成两行。
    nowrap 后溢出的几个 px 交给列间 gap 吸收（1440 约 29px、1920 约 38px，实测最大溢 5px，安全）。
    窄屏只有 2 列、空间更小（实测 390 下需 181px vs 列宽 150px），所以改成 .rA 整块换行
@@ -957,15 +940,8 @@
     #B .cB .ph{grid-column:1/-1}
   }
 
-/* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
-.tagline b{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#A .dsA{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#D .badgeD{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#E .ovE{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#E .ovE .num{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#E .ovE .nm{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-#E .ovE .ds{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
-
+/* 坤哥 09-15：字体描边 / 阴影全部去掉（含源文件自带的），一层压制到底 */
+:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}
 /* 长标题不折断（坤哥 2026-09-15「不要换行」）：桌面 5 列下「结构与电控系统设计」会折成两行。
    nowrap 后溢出的几个 px 交给列间 gap 吸收（1440 约 29px、1920 约 38px，实测最大溢 5px，安全）。
    窄屏只有 2 列、空间更小（实测 390 下需 181px vs 列宽 150px），所以改成 .rA 整块换行
@@ -1016,11 +992,19 @@
   var KEY="pxid-p2-v", frame=sec.querySelector(".pxid-p2frame");
   var btns=sec.querySelectorAll(".pxid-p2switch button"), cache={};
   function fit(){
-    if(!frame||frame.hidden) return;
+    if(!frame||frame.hidden){ if(sec) sec.style.removeProperty("background-color"); return; }
     var d; try{ d=frame.contentDocument; }catch(e){ return; }
     if(!d||!d.body) return;
     var h=d.body.scrollHeight||d.documentElement.scrollHeight;
     if(h>0 && frame.style.height!==h+"px") frame.style.height=h+"px";
+    syncBg(d);
+  }
+  function syncBg(d){
+    if(!d) return;
+    var vs=d.querySelector("body > section");
+    var bg=vs?getComputedStyle(vs).backgroundColor:"";
+    if(!bg||bg==="rgba(0, 0, 0, 0)") bg=getComputedStyle(d.body).backgroundColor;
+    if(bg && bg!=="rgba(0, 0, 0, 0)"){ try{ sec.style.setProperty("background-color",bg,"important"); }catch(e){} }
   }
   window.__pxidP2fit=fit;
   function doc(v){
