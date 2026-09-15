@@ -1146,13 +1146,13 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
 #pxidS1 > .pxid-s1frame[hidden]{display:none}
 #pxidS1:not([data-s1v="orig"]) > .bg,
 #pxidS1:not([data-s1v="orig"]) > .inner{display:none!important}
-#pxidS1 .pxid-s1switch{position:absolute;top:100px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.46);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:4px;opacity:.6;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
+#pxidS1 .pxid-s1switch{position:absolute;bottom:18px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.46);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:4px;opacity:.6;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
 #pxidS1 .pxid-s1switch:hover{opacity:1}
 #pxidS1 .pxid-s1switch .lbl{display:none}
 #pxidS1 .pxid-s1switch button{cursor:pointer;font:inherit;font-size:12px;line-height:1;padding:6px 8px;border:0;background:transparent;color:rgba(255,255,255,.86);white-space:nowrap;border-radius:0;transition:color .18s,background .18s}
 #pxidS1 .pxid-s1switch button:hover{color:#fff;background:rgba(255,255,255,.15)}
 #pxidS1 .pxid-s1switch button.on{background:#d71920;color:#fff}
-@media (max-width:900px){#pxidS1 .pxid-s1switch{left:12px;right:12px;top:84px;max-width:none;opacity:.88}#pxidS1 .pxid-s1switch button{font-size:11.5px;padding:6px 7px}}
+@media (max-width:900px){#pxidS1 .pxid-s1switch{left:12px;right:12px;bottom:12px;max-width:none;opacity:.88}#pxidS1 .pxid-s1switch button{font-size:11.5px;padding:6px 7px}}
 html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .pcNav,
 html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav{background:rgba(249,249,247,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(23,23,23,.08)}
 html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .pcNav .navHref,
@@ -1167,6 +1167,10 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .logoBox img{f
 html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav #menu,
 html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub,
 html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{color:#171717!important}
+#app header .pcNav .mid .lists .navHref i.iconfont{display:none!important}
+#app header .pcNav .mid .lists .navHref{position:relative}
+#app header .pcNav .mid .lists .navHref::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:#d71920;transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+#app header .pcNav .mid .lists .navHref:hover::after{transform:scaleX(1)}
 </style><script id="pxid-s1-switch-js">
 (function(){
   var sec=document.getElementById("pxidS1"); if(!sec) return;
