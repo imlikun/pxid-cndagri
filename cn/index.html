@@ -1226,10 +1226,10 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
 
   /* 共用素材文字 —— 参考 Better Design Award 层级 */
-  .eyebrow { display:inline-block; font-size:clamp(12px, 0.16rem, 14px); font-weight:600; letter-spacing:.32em;
+  .eyebrow { display:inline-block; font-size:clamp(11px, 0.24rem, 24px); font-weight:700; letter-spacing:.18em;
              text-transform:uppercase; color:var(--green); line-height:1.7; }
   .eyebrow::after { content:''; display:block; width:30px; height:2px; background: var(--green); margin-top: 10px; }
-  h2 { font-size:clamp(28px, 0.6rem, 61px); font-weight:600; line-height:1.05; color:#121212; letter-spacing:-.02em; }
+  h2 { font-size:clamp(37px, 0.8rem, 82px); font-weight:600; line-height:1.05; color:#121212; letter-spacing:-.02em; }
   .subhead { font-size:clamp(14px, 0.3067rem, 31px); font-weight:700; color:var(--green); margin-top: 10px; letter-spacing:.02em; }
   .lede { font-size:clamp(16px, 0.2133rem, 18px); line-height:1.85; color:var(--gray); margin-top: clamp(11px, 0.24rem, 24px); max-width:30em; }
   .cta { display:inline-flex; align-items:center; gap: 8px; margin-top: clamp(16px, 0.3467rem, 35px); font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
@@ -1237,8 +1237,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   .cta .ar { transition:transform .3s ease; }
   .cta:hover .ar { transform:translateX(6px); }
   .bignum { font-weight:800; -webkit-text-stroke:2px rgba(255,255,255,.85); color:transparent; line-height:.8; }
-  .cap-t { font-size:clamp(11px, 0.24rem, 24px); font-weight:700; color:#ffffff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
-  .cap-s { font-size:clamp(12px, 0.16rem, 14px); color:rgba(255,255,255,.85); margin-top: 3px; text-shadow:0 1px 8px rgba(0,0,0,.5); }
+  .cap-t { font-size:clamp(13px, 0.28rem, 29px); font-weight:700; color:#ffffff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
+  .cap-s { font-size:clamp(16px, 0.2133rem, 18px); color:rgba(255,255,255,.85); margin-top: 3px; text-shadow:0 1px 8px rgba(0,0,0,.5); }
 
   .rise { opacity:0; transform:translateY(40px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
   section.in .rise { opacity:1; transform:none; }
@@ -1280,7 +1280,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   /* ===== 9 · 三色巨卡（重做交互：透视倾斜 + 文字错位 + 持续光带） ===== */
   #I { background: rgb(23,23,23); }
   #I .head { position:absolute; left:0; top:0; bottom:0; width:28vw; padding:10vh 4vw; z-index:6; display:flex; flex-direction:column; justify-content:center; }
-  #I .head .eyebrow { color:#d71920; }
+  #I .head .eyebrow { color:#ffffff; }
+
   #I .head .eyebrow::after { background: rgb(157,157,157); }
   #I .head h2 { color:#ffffff; margin-top: 14px; }
   #I .head .subhead { color:#d71920; }
@@ -1312,9 +1313,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #I .dcard .txt { position:relative; z-index:2; margin-top:auto; }
   #I .dcard .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; color:#ffffff; line-height:1.15;
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .04s; }
-  #I .dcard .cap-s { font-size:clamp(12px, 0.16rem, 14px); color:rgba(255,255,255,.9); margin-top: 8px; line-height:1.5;
+  #I .dcard .cap-s { font-size:clamp(16px, 0.2133rem, 18px); color:rgba(255,255,255,.9); margin-top: 8px; line-height:1.5;
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .1s; }
-  #I .dcard .num { font-size:clamp(52px, 1.12rem, 114px); font-weight:900; color:rgba(255,255,255,.35); line-height:.9; margin-top: clamp(11px, 0.24rem, 24px);
+  #I .dcard .num { font-size:clamp(52px, 1.12rem, 114px); font-weight:900; color:rgba(255,255,255,.55); line-height:.9; margin-top: clamp(11px, 0.24rem, 24px);
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .14s; }
   #I .dcard:hover .cap-t { transform:translateY(-8px); }
   #I .dcard:hover .cap-s { transform:translateY(-8px); }
@@ -1324,7 +1325,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #J { background: rgb(236,236,236); overflow:hidden; }
   #J .head { position:absolute; left:6vw; top:10vh; z-index:6; }
   #J .slice-wrap { position:absolute; inset:0; display:flex; }
-  #J .slice { position:relative; flex:1; height:100%; transform:skewX(-12deg); margin:0 -2vw; overflow:hidden;
+  #J .slice {
+  background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.62) 58%,rgba(23,23,23,0) 100%);
+ position:relative; flex:1; height:100%; transform:skewX(-12deg); margin:0 -2vw; overflow:hidden;
               transition:flex .65s cubic-bezier(.2,.7,.2,1), filter .5s ease; cursor:pointer; }
   #J .slice .bg { position:absolute; inset:0; transform:skewX(12deg); margin:0 2vw; background-size:cover; background-position:center;
       opacity:.4; filter:blur(1.6px) brightness(.92);
@@ -1341,11 +1344,11 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #J .slice:hover .sheen::before { animation:sweep .9s ease forwards; }
   @keyframes sweep { 0%{left:-60%;opacity:0} 15%{opacity:1} 100%{left:130%;opacity:0} }
   #J .slice .content { position:absolute; inset:0; transform:skewX(12deg); margin:0 2vw; display:flex; flex-direction:column; justify-content:flex-end; padding:6vh 3vw; color:#ffffff; }
-  #J .slice .num { font-size:clamp(56px, 1.2rem, 122px); font-weight:900; color:rgba(255,255,255,.25); line-height:.8;
+  #J .slice .num { font-size:clamp(56px, 1.2rem, 122px); font-weight:900; color:rgba(255,255,255,.5); line-height:.8;
       transition:transform .6s cubic-bezier(.2,.7,.2,1), -webkit-text-stroke-color .5s ease; -webkit-text-stroke:0 transparent; }
   #J .slice:hover .num { transform:scale(1.1) translateY(-8px); -webkit-text-stroke:2px rgba(255,255,255,.7); }
-  #J .slice .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; margin-top: clamp(16px, 0.2133rem, 18px);
-      transition:transform .6s cubic-bezier(.2,.7,.2,1) .06s, opacity .5s; }
+  #J .slice .cap-t { font-size:clamp(22px, 0.4667rem, 48px); font-weight:600; margin-top: clamp(16px, 0.2133rem, 18px);
+      transition:transform .6s cubic-bezier(.2,.7,.2,1) .06s, opacity .5s; ;line-height:1.1}
   #J .slice .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:0; max-width:18vw; transition:transform .6s cubic-bezier(.2,.7,.2,1) .12s, opacity .5s ease; }
   #J .slice:hover .cap-t { transform:translateY(-10px); }
   #J .slice:hover .cap-s { opacity:.95; transform:translateY(-10px); }
@@ -1375,8 +1378,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #K .hex .cap { position:absolute; left:50%; bottom:18%; transform:translateX(-50%); text-align:center; color:#ffffff; width:80%; z-index:6;
                  opacity:.85; transition:opacity .5s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
   #K .hex:hover .cap { opacity:1; transform:translateX(-50%) translateY(-8px); }
-  #K .hex .cap-t { font-size:clamp(14px, 0.3067rem, 31px); font-weight:600; }
-  #K .hex .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:.9; margin-top: 4px; }
+  #K .hex .cap-t { font-size:clamp(17px, 0.36rem, 37px); font-weight:600; }
+  #K .hex .cap-s { font-size:clamp(14px, 0.1867rem, 16px); opacity:.9; margin-top: 4px; }
   #K .hex .num { position:absolute; left:50%; top:10%; transform:translateX(-50%); font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.35); z-index:6;
                  transition:transform .6s cubic-bezier(.2,.7,.2,1), color .5s ease; }
   #K .hex:hover .num { transform:translateX(-50%) scale(1.14); color:rgba(255,255,255,.6); }
@@ -1385,7 +1388,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M { background: rgb(236,236,236); }
   #M .head { position:absolute; left:6vw; top:8vh; z-index:6; }
   #M .bands { position:absolute; left:0; right:0; top:30vh; bottom:10vh; display:flex; flex-direction:column; gap:2vh; }
-  #M .band { position:relative; flex:1; display:flex; align-items:center; overflow:hidden; transition:flex .55s ease; cursor:pointer; }
+  #M .band {
+  background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.62) 58%,rgba(23,23,23,0) 100%);
+ position:relative; flex:1; display:flex; align-items:center; overflow:hidden; transition:flex .55s ease; cursor:pointer; }
   #M .band .bg { position:absolute; inset:0; opacity:.85; overflow:hidden;
       transition:filter .55s ease; }
   #M .b1 .bg { background: rgb(110,110,110); } #M .b2 .bg { background: rgb(135,135,135); } #M .b3 .bg { background: rgb(184,184,184); }
@@ -1403,10 +1408,10 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M .band:hover img { transform:translateY(-50%) translateX(-14px) scale(1.1); filter:grayscale(0) brightness(1.05); }
   #M .band .txt { position:relative; z-index:4; color:#ffffff; padding-left:6vw; width:34vw; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
   #M .band:hover .txt { transform:translateX(18px); }
-  #M .band .num { font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.2); line-height:.8; margin-bottom: 6px; transition:transform .6s ease; }
+  #M .band .num { font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.45); line-height:.8; margin-bottom: 6px; transition:transform .6s ease; }
   #M .band:hover .num { transform:scale(1.06); }
-  #M .band .cap-t { font-size:clamp(17px, 0.36rem, 37px); font-weight:600; }
-  #M .band .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:.9; margin-top: 4px; }
+  #M .band .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; }
+  #M .band .cap-s { font-size:clamp(16px, 0.2133rem, 18px); opacity:.9; margin-top: 4px; }
   #M .band::after { content:'→'; position:absolute; right:3vw; top:50%; transform:translateY(-50%); z-index:6;
       color:#ffffff; font-size:clamp(26px, 0.56rem, 57px); font-weight:900; opacity:0; transition:opacity .45s ease; pointer-events:none; }
   #M .band:hover::after { opacity:.9; animation:arrowbob 1.1s ease-in-out infinite; }
@@ -1414,6 +1419,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
 
 /* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
 .tag{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#I .head .eyebrow{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .head h2{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .dcard .big{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .dcard .cap-t{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
@@ -1473,10 +1479,10 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
 
   /* 共用素材文字 —— 参考 Better Design Award 层级 */
-  .eyebrow { display:inline-block; font-size:clamp(12px, 0.16rem, 14px); font-weight:600; letter-spacing:.32em;
+  .eyebrow { display:inline-block; font-size:clamp(11px, 0.24rem, 24px); font-weight:700; letter-spacing:.18em;
              text-transform:uppercase; color:var(--green); line-height:1.7; }
   .eyebrow::after { content:''; display:block; width:30px; height:2px; background: var(--green); margin-top: 10px; }
-  h2 { font-size:clamp(28px, 0.6rem, 61px); font-weight:600; line-height:1.05; color:#121212; letter-spacing:-.02em; }
+  h2 { font-size:clamp(37px, 0.8rem, 82px); font-weight:600; line-height:1.05; color:#121212; letter-spacing:-.02em; }
   .subhead { font-size:clamp(14px, 0.3067rem, 31px); font-weight:700; color:var(--green); margin-top: 10px; letter-spacing:.02em; }
   .lede { font-size:clamp(16px, 0.2133rem, 18px); line-height:1.85; color:var(--gray); margin-top: clamp(11px, 0.24rem, 24px); max-width:30em; }
   .cta { display:inline-flex; align-items:center; gap: 8px; margin-top: clamp(16px, 0.3467rem, 35px); font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
@@ -1484,8 +1490,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   .cta .ar { transition:transform .3s ease; }
   .cta:hover .ar { transform:translateX(6px); }
   .bignum { font-weight:800; -webkit-text-stroke:2px rgba(255,255,255,.85); color:transparent; line-height:.8; }
-  .cap-t { font-size:clamp(11px, 0.24rem, 24px); font-weight:700; color:#ffffff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
-  .cap-s { font-size:clamp(12px, 0.16rem, 14px); color:rgba(255,255,255,.85); margin-top: 3px; text-shadow:0 1px 8px rgba(0,0,0,.5); }
+  .cap-t { font-size:clamp(13px, 0.28rem, 29px); font-weight:700; color:#ffffff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
+  .cap-s { font-size:clamp(16px, 0.2133rem, 18px); color:rgba(255,255,255,.85); margin-top: 3px; text-shadow:0 1px 8px rgba(0,0,0,.5); }
 
   .rise { opacity:0; transform:translateY(40px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
   section.in .rise { opacity:1; transform:none; }
@@ -1527,7 +1533,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   /* ===== 9 · 三色巨卡（重做交互：透视倾斜 + 文字错位 + 持续光带） ===== */
   #I { background: rgb(23,23,23); }
   #I .head { position:absolute; left:0; top:0; bottom:0; width:28vw; padding:10vh 4vw; z-index:6; display:flex; flex-direction:column; justify-content:center; }
-  #I .head .eyebrow { color:#d71920; }
+  #I .head .eyebrow { color:#ffffff; }
+
   #I .head .eyebrow::after { background: rgb(157,157,157); }
   #I .head h2 { color:#ffffff; margin-top: 14px; }
   #I .head .subhead { color:#d71920; }
@@ -1559,9 +1566,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #I .dcard .txt { position:relative; z-index:2; margin-top:auto; }
   #I .dcard .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; color:#ffffff; line-height:1.15;
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .04s; }
-  #I .dcard .cap-s { font-size:clamp(12px, 0.16rem, 14px); color:rgba(255,255,255,.9); margin-top: 8px; line-height:1.5;
+  #I .dcard .cap-s { font-size:clamp(16px, 0.2133rem, 18px); color:rgba(255,255,255,.9); margin-top: 8px; line-height:1.5;
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .1s; }
-  #I .dcard .num { font-size:clamp(52px, 1.12rem, 114px); font-weight:900; color:rgba(255,255,255,.35); line-height:.9; margin-top: clamp(11px, 0.24rem, 24px);
+  #I .dcard .num { font-size:clamp(52px, 1.12rem, 114px); font-weight:900; color:rgba(255,255,255,.55); line-height:.9; margin-top: clamp(11px, 0.24rem, 24px);
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .14s; }
   #I .dcard:hover .cap-t { transform:translateY(-8px); }
   #I .dcard:hover .cap-s { transform:translateY(-8px); }
@@ -1571,7 +1578,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #J { background: rgb(236,236,236); overflow:hidden; }
   #J .head { position:absolute; left:6vw; top:10vh; z-index:6; }
   #J .slice-wrap { position:absolute; inset:0; display:flex; }
-  #J .slice { position:relative; flex:1; height:100%; transform:skewX(-12deg); margin:0 -2vw; overflow:hidden;
+  #J .slice {
+  background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.62) 58%,rgba(23,23,23,0) 100%);
+ position:relative; flex:1; height:100%; transform:skewX(-12deg); margin:0 -2vw; overflow:hidden;
               transition:flex .65s cubic-bezier(.2,.7,.2,1), filter .5s ease; cursor:pointer; }
   #J .slice .bg { position:absolute; inset:0; transform:skewX(12deg); margin:0 2vw; background-size:cover; background-position:center;
       opacity:.4; filter:blur(1.6px) brightness(.92);
@@ -1588,11 +1597,11 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #J .slice:hover .sheen::before { animation:sweep .9s ease forwards; }
   @keyframes sweep { 0%{left:-60%;opacity:0} 15%{opacity:1} 100%{left:130%;opacity:0} }
   #J .slice .content { position:absolute; inset:0; transform:skewX(12deg); margin:0 2vw; display:flex; flex-direction:column; justify-content:flex-end; padding:6vh 3vw; color:#ffffff; }
-  #J .slice .num { font-size:clamp(56px, 1.2rem, 122px); font-weight:900; color:rgba(255,255,255,.25); line-height:.8;
+  #J .slice .num { font-size:clamp(56px, 1.2rem, 122px); font-weight:900; color:rgba(255,255,255,.5); line-height:.8;
       transition:transform .6s cubic-bezier(.2,.7,.2,1), -webkit-text-stroke-color .5s ease; -webkit-text-stroke:0 transparent; }
   #J .slice:hover .num { transform:scale(1.1) translateY(-8px); -webkit-text-stroke:2px rgba(255,255,255,.7); }
-  #J .slice .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; margin-top: clamp(16px, 0.2133rem, 18px);
-      transition:transform .6s cubic-bezier(.2,.7,.2,1) .06s, opacity .5s; }
+  #J .slice .cap-t { font-size:clamp(22px, 0.4667rem, 48px); font-weight:600; margin-top: clamp(16px, 0.2133rem, 18px);
+      transition:transform .6s cubic-bezier(.2,.7,.2,1) .06s, opacity .5s; ;line-height:1.1}
   #J .slice .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:0; max-width:18vw; transition:transform .6s cubic-bezier(.2,.7,.2,1) .12s, opacity .5s ease; }
   #J .slice:hover .cap-t { transform:translateY(-10px); }
   #J .slice:hover .cap-s { opacity:.95; transform:translateY(-10px); }
@@ -1622,8 +1631,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #K .hex .cap { position:absolute; left:50%; bottom:18%; transform:translateX(-50%); text-align:center; color:#ffffff; width:80%; z-index:6;
                  opacity:.85; transition:opacity .5s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
   #K .hex:hover .cap { opacity:1; transform:translateX(-50%) translateY(-8px); }
-  #K .hex .cap-t { font-size:clamp(14px, 0.3067rem, 31px); font-weight:600; }
-  #K .hex .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:.9; margin-top: 4px; }
+  #K .hex .cap-t { font-size:clamp(17px, 0.36rem, 37px); font-weight:600; }
+  #K .hex .cap-s { font-size:clamp(14px, 0.1867rem, 16px); opacity:.9; margin-top: 4px; }
   #K .hex .num { position:absolute; left:50%; top:10%; transform:translateX(-50%); font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.35); z-index:6;
                  transition:transform .6s cubic-bezier(.2,.7,.2,1), color .5s ease; }
   #K .hex:hover .num { transform:translateX(-50%) scale(1.14); color:rgba(255,255,255,.6); }
@@ -1632,7 +1641,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M { background: rgb(236,236,236); }
   #M .head { position:absolute; left:6vw; top:8vh; z-index:6; }
   #M .bands { position:absolute; left:0; right:0; top:30vh; bottom:10vh; display:flex; flex-direction:column; gap:2vh; }
-  #M .band { position:relative; flex:1; display:flex; align-items:center; overflow:hidden; transition:flex .55s ease; cursor:pointer; }
+  #M .band {
+  background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.62) 58%,rgba(23,23,23,0) 100%);
+ position:relative; flex:1; display:flex; align-items:center; overflow:hidden; transition:flex .55s ease; cursor:pointer; }
   #M .band .bg { position:absolute; inset:0; opacity:.85; overflow:hidden;
       transition:filter .55s ease; }
   #M .b1 .bg { background: rgb(110,110,110); } #M .b2 .bg { background: rgb(135,135,135); } #M .b3 .bg { background: rgb(184,184,184); }
@@ -1650,10 +1661,10 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M .band:hover img { transform:translateY(-50%) translateX(-14px) scale(1.1); filter:grayscale(0) brightness(1.05); }
   #M .band .txt { position:relative; z-index:4; color:#ffffff; padding-left:6vw; width:34vw; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
   #M .band:hover .txt { transform:translateX(18px); }
-  #M .band .num { font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.2); line-height:.8; margin-bottom: 6px; transition:transform .6s ease; }
+  #M .band .num { font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.45); line-height:.8; margin-bottom: 6px; transition:transform .6s ease; }
   #M .band:hover .num { transform:scale(1.06); }
-  #M .band .cap-t { font-size:clamp(17px, 0.36rem, 37px); font-weight:600; }
-  #M .band .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:.9; margin-top: 4px; }
+  #M .band .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; }
+  #M .band .cap-s { font-size:clamp(16px, 0.2133rem, 18px); opacity:.9; margin-top: 4px; }
   #M .band::after { content:'→'; position:absolute; right:3vw; top:50%; transform:translateY(-50%); z-index:6;
       color:#ffffff; font-size:clamp(26px, 0.56rem, 57px); font-weight:900; opacity:0; transition:opacity .45s ease; pointer-events:none; }
   #M .band:hover::after { opacity:.9; animation:arrowbob 1.1s ease-in-out infinite; }
@@ -1661,6 +1672,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
 
 /* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
 .tag{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#I .head .eyebrow{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .head h2{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .dcard .big{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .dcard .cap-t{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
@@ -1736,10 +1748,10 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
 
   /* 共用素材文字 —— 参考 Better Design Award 层级 */
-  .eyebrow { display:inline-block; font-size:clamp(12px, 0.16rem, 14px); font-weight:600; letter-spacing:.32em;
+  .eyebrow { display:inline-block; font-size:clamp(11px, 0.24rem, 24px); font-weight:700; letter-spacing:.18em;
              text-transform:uppercase; color:var(--green); line-height:1.7; }
   .eyebrow::after { content:''; display:block; width:30px; height:2px; background: var(--green); margin-top: 10px; }
-  h2 { font-size:clamp(28px, 0.6rem, 61px); font-weight:600; line-height:1.05; color:#121212; letter-spacing:-.02em; }
+  h2 { font-size:clamp(37px, 0.8rem, 82px); font-weight:600; line-height:1.05; color:#121212; letter-spacing:-.02em; }
   .subhead { font-size:clamp(14px, 0.3067rem, 31px); font-weight:700; color:var(--green); margin-top: 10px; letter-spacing:.02em; }
   .lede { font-size:clamp(16px, 0.2133rem, 18px); line-height:1.85; color:var(--gray); margin-top: clamp(11px, 0.24rem, 24px); max-width:30em; }
   .cta { display:inline-flex; align-items:center; gap: 8px; margin-top: clamp(16px, 0.3467rem, 35px); font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
@@ -1747,8 +1759,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   .cta .ar { transition:transform .3s ease; }
   .cta:hover .ar { transform:translateX(6px); }
   .bignum { font-weight:800; -webkit-text-stroke:2px rgba(255,255,255,.85); color:transparent; line-height:.8; }
-  .cap-t { font-size:clamp(11px, 0.24rem, 24px); font-weight:700; color:#ffffff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
-  .cap-s { font-size:clamp(12px, 0.16rem, 14px); color:rgba(255,255,255,.85); margin-top: 3px; text-shadow:0 1px 8px rgba(0,0,0,.5); }
+  .cap-t { font-size:clamp(13px, 0.28rem, 29px); font-weight:700; color:#ffffff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
+  .cap-s { font-size:clamp(16px, 0.2133rem, 18px); color:rgba(255,255,255,.85); margin-top: 3px; text-shadow:0 1px 8px rgba(0,0,0,.5); }
 
   .rise { opacity:0; transform:translateY(40px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
   section.in .rise { opacity:1; transform:none; }
@@ -1790,7 +1802,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   /* ===== 9 · 三色巨卡（重做交互：透视倾斜 + 文字错位 + 持续光带） ===== */
   #I { background: rgb(23,23,23); }
   #I .head { position:absolute; left:0; top:0; bottom:0; width:28vw; padding:10vh 4vw; z-index:6; display:flex; flex-direction:column; justify-content:center; }
-  #I .head .eyebrow { color:#d71920; }
+  #I .head .eyebrow { color:#ffffff; }
+
   #I .head .eyebrow::after { background: rgb(157,157,157); }
   #I .head h2 { color:#ffffff; margin-top: 14px; }
   #I .head .subhead { color:#d71920; }
@@ -1822,9 +1835,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #I .dcard .txt { position:relative; z-index:2; margin-top:auto; }
   #I .dcard .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; color:#ffffff; line-height:1.15;
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .04s; }
-  #I .dcard .cap-s { font-size:clamp(12px, 0.16rem, 14px); color:rgba(255,255,255,.9); margin-top: 8px; line-height:1.5;
+  #I .dcard .cap-s { font-size:clamp(16px, 0.2133rem, 18px); color:rgba(255,255,255,.9); margin-top: 8px; line-height:1.5;
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .1s; }
-  #I .dcard .num { font-size:clamp(52px, 1.12rem, 114px); font-weight:900; color:rgba(255,255,255,.35); line-height:.9; margin-top: clamp(11px, 0.24rem, 24px);
+  #I .dcard .num { font-size:clamp(52px, 1.12rem, 114px); font-weight:900; color:rgba(255,255,255,.55); line-height:.9; margin-top: clamp(11px, 0.24rem, 24px);
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .14s; }
   #I .dcard:hover .cap-t { transform:translateY(-8px); }
   #I .dcard:hover .cap-s { transform:translateY(-8px); }
@@ -1834,7 +1847,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #J { background: rgb(236,236,236); overflow:hidden; }
   #J .head { position:absolute; left:6vw; top:10vh; z-index:6; }
   #J .slice-wrap { position:absolute; inset:0; display:flex; }
-  #J .slice { position:relative; flex:1; height:100%; transform:skewX(-12deg); margin:0 -2vw; overflow:hidden;
+  #J .slice {
+  background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.62) 58%,rgba(23,23,23,0) 100%);
+ position:relative; flex:1; height:100%; transform:skewX(-12deg); margin:0 -2vw; overflow:hidden;
               transition:flex .65s cubic-bezier(.2,.7,.2,1), filter .5s ease; cursor:pointer; }
   #J .slice .bg { position:absolute; inset:0; transform:skewX(12deg); margin:0 2vw; background-size:cover; background-position:center;
       opacity:.4; filter:blur(1.6px) brightness(.92);
@@ -1851,11 +1866,11 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #J .slice:hover .sheen::before { animation:sweep .9s ease forwards; }
   @keyframes sweep { 0%{left:-60%;opacity:0} 15%{opacity:1} 100%{left:130%;opacity:0} }
   #J .slice .content { position:absolute; inset:0; transform:skewX(12deg); margin:0 2vw; display:flex; flex-direction:column; justify-content:flex-end; padding:6vh 3vw; color:#ffffff; }
-  #J .slice .num { font-size:clamp(56px, 1.2rem, 122px); font-weight:900; color:rgba(255,255,255,.25); line-height:.8;
+  #J .slice .num { font-size:clamp(56px, 1.2rem, 122px); font-weight:900; color:rgba(255,255,255,.5); line-height:.8;
       transition:transform .6s cubic-bezier(.2,.7,.2,1), -webkit-text-stroke-color .5s ease; -webkit-text-stroke:0 transparent; }
   #J .slice:hover .num { transform:scale(1.1) translateY(-8px); -webkit-text-stroke:2px rgba(255,255,255,.7); }
-  #J .slice .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; margin-top: clamp(16px, 0.2133rem, 18px);
-      transition:transform .6s cubic-bezier(.2,.7,.2,1) .06s, opacity .5s; }
+  #J .slice .cap-t { font-size:clamp(22px, 0.4667rem, 48px); font-weight:600; margin-top: clamp(16px, 0.2133rem, 18px);
+      transition:transform .6s cubic-bezier(.2,.7,.2,1) .06s, opacity .5s; ;line-height:1.1}
   #J .slice .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:0; max-width:18vw; transition:transform .6s cubic-bezier(.2,.7,.2,1) .12s, opacity .5s ease; }
   #J .slice:hover .cap-t { transform:translateY(-10px); }
   #J .slice:hover .cap-s { opacity:.95; transform:translateY(-10px); }
@@ -1885,8 +1900,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #K .hex .cap { position:absolute; left:50%; bottom:18%; transform:translateX(-50%); text-align:center; color:#ffffff; width:80%; z-index:6;
                  opacity:.85; transition:opacity .5s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
   #K .hex:hover .cap { opacity:1; transform:translateX(-50%) translateY(-8px); }
-  #K .hex .cap-t { font-size:clamp(14px, 0.3067rem, 31px); font-weight:600; }
-  #K .hex .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:.9; margin-top: 4px; }
+  #K .hex .cap-t { font-size:clamp(17px, 0.36rem, 37px); font-weight:600; }
+  #K .hex .cap-s { font-size:clamp(14px, 0.1867rem, 16px); opacity:.9; margin-top: 4px; }
   #K .hex .num { position:absolute; left:50%; top:10%; transform:translateX(-50%); font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.35); z-index:6;
                  transition:transform .6s cubic-bezier(.2,.7,.2,1), color .5s ease; }
   #K .hex:hover .num { transform:translateX(-50%) scale(1.14); color:rgba(255,255,255,.6); }
@@ -1895,7 +1910,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M { background: rgb(236,236,236); }
   #M .head { position:absolute; left:6vw; top:8vh; z-index:6; }
   #M .bands { position:absolute; left:0; right:0; top:30vh; bottom:10vh; display:flex; flex-direction:column; gap:2vh; }
-  #M .band { position:relative; flex:1; display:flex; align-items:center; overflow:hidden; transition:flex .55s ease; cursor:pointer; }
+  #M .band {
+  background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.62) 58%,rgba(23,23,23,0) 100%);
+ position:relative; flex:1; display:flex; align-items:center; overflow:hidden; transition:flex .55s ease; cursor:pointer; }
   #M .band .bg { position:absolute; inset:0; opacity:.85; overflow:hidden;
       transition:filter .55s ease; }
   #M .b1 .bg { background: rgb(110,110,110); } #M .b2 .bg { background: rgb(135,135,135); } #M .b3 .bg { background: rgb(184,184,184); }
@@ -1913,10 +1930,10 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M .band:hover img { transform:translateY(-50%) translateX(-14px) scale(1.1); filter:grayscale(0) brightness(1.05); }
   #M .band .txt { position:relative; z-index:4; color:#ffffff; padding-left:6vw; width:34vw; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
   #M .band:hover .txt { transform:translateX(18px); }
-  #M .band .num { font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.2); line-height:.8; margin-bottom: 6px; transition:transform .6s ease; }
+  #M .band .num { font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.45); line-height:.8; margin-bottom: 6px; transition:transform .6s ease; }
   #M .band:hover .num { transform:scale(1.06); }
-  #M .band .cap-t { font-size:clamp(17px, 0.36rem, 37px); font-weight:600; }
-  #M .band .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:.9; margin-top: 4px; }
+  #M .band .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; }
+  #M .band .cap-s { font-size:clamp(16px, 0.2133rem, 18px); opacity:.9; margin-top: 4px; }
   #M .band::after { content:'→'; position:absolute; right:3vw; top:50%; transform:translateY(-50%); z-index:6;
       color:#ffffff; font-size:clamp(26px, 0.56rem, 57px); font-weight:900; opacity:0; transition:opacity .45s ease; pointer-events:none; }
   #M .band:hover::after { opacity:.9; animation:arrowbob 1.1s ease-in-out infinite; }
@@ -1924,6 +1941,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
 
 /* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
 .tag{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#I .head .eyebrow{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .head h2{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .dcard .big{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .dcard .cap-t{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
@@ -1997,10 +2015,10 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
 
   /* 共用素材文字 —— 参考 Better Design Award 层级 */
-  .eyebrow { display:inline-block; font-size:clamp(12px, 0.16rem, 14px); font-weight:600; letter-spacing:.32em;
+  .eyebrow { display:inline-block; font-size:clamp(11px, 0.24rem, 24px); font-weight:700; letter-spacing:.18em;
              text-transform:uppercase; color:var(--green); line-height:1.7; }
   .eyebrow::after { content:''; display:block; width:30px; height:2px; background: var(--green); margin-top: 10px; }
-  h2 { font-size:clamp(28px, 0.6rem, 61px); font-weight:600; line-height:1.05; color:#121212; letter-spacing:-.02em; }
+  h2 { font-size:clamp(37px, 0.8rem, 82px); font-weight:600; line-height:1.05; color:#121212; letter-spacing:-.02em; }
   .subhead { font-size:clamp(14px, 0.3067rem, 31px); font-weight:700; color:var(--green); margin-top: 10px; letter-spacing:.02em; }
   .lede { font-size:clamp(16px, 0.2133rem, 18px); line-height:1.85; color:var(--gray); margin-top: clamp(11px, 0.24rem, 24px); max-width:30em; }
   .cta { display:inline-flex; align-items:center; gap: 8px; margin-top: clamp(16px, 0.3467rem, 35px); font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
@@ -2008,8 +2026,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   .cta .ar { transition:transform .3s ease; }
   .cta:hover .ar { transform:translateX(6px); }
   .bignum { font-weight:800; -webkit-text-stroke:2px rgba(255,255,255,.85); color:transparent; line-height:.8; }
-  .cap-t { font-size:clamp(11px, 0.24rem, 24px); font-weight:700; color:#ffffff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
-  .cap-s { font-size:clamp(12px, 0.16rem, 14px); color:rgba(255,255,255,.85); margin-top: 3px; text-shadow:0 1px 8px rgba(0,0,0,.5); }
+  .cap-t { font-size:clamp(13px, 0.28rem, 29px); font-weight:700; color:#ffffff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
+  .cap-s { font-size:clamp(16px, 0.2133rem, 18px); color:rgba(255,255,255,.85); margin-top: 3px; text-shadow:0 1px 8px rgba(0,0,0,.5); }
 
   .rise { opacity:0; transform:translateY(40px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
   section.in .rise { opacity:1; transform:none; }
@@ -2051,7 +2069,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   /* ===== 9 · 三色巨卡（重做交互：透视倾斜 + 文字错位 + 持续光带） ===== */
   #I { background: rgb(23,23,23); }
   #I .head { position:absolute; left:0; top:0; bottom:0; width:28vw; padding:10vh 4vw; z-index:6; display:flex; flex-direction:column; justify-content:center; }
-  #I .head .eyebrow { color:#d71920; }
+  #I .head .eyebrow { color:#ffffff; }
+
   #I .head .eyebrow::after { background: rgb(157,157,157); }
   #I .head h2 { color:#ffffff; margin-top: 14px; }
   #I .head .subhead { color:#d71920; }
@@ -2083,9 +2102,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #I .dcard .txt { position:relative; z-index:2; margin-top:auto; }
   #I .dcard .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; color:#ffffff; line-height:1.15;
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .04s; }
-  #I .dcard .cap-s { font-size:clamp(12px, 0.16rem, 14px); color:rgba(255,255,255,.9); margin-top: 8px; line-height:1.5;
+  #I .dcard .cap-s { font-size:clamp(16px, 0.2133rem, 18px); color:rgba(255,255,255,.9); margin-top: 8px; line-height:1.5;
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .1s; }
-  #I .dcard .num { font-size:clamp(52px, 1.12rem, 114px); font-weight:900; color:rgba(255,255,255,.35); line-height:.9; margin-top: clamp(11px, 0.24rem, 24px);
+  #I .dcard .num { font-size:clamp(52px, 1.12rem, 114px); font-weight:900; color:rgba(255,255,255,.55); line-height:.9; margin-top: clamp(11px, 0.24rem, 24px);
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .14s; }
   #I .dcard:hover .cap-t { transform:translateY(-8px); }
   #I .dcard:hover .cap-s { transform:translateY(-8px); }
@@ -2095,7 +2114,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #J { background: rgb(236,236,236); overflow:hidden; }
   #J .head { position:absolute; left:6vw; top:10vh; z-index:6; }
   #J .slice-wrap { position:absolute; inset:0; display:flex; }
-  #J .slice { position:relative; flex:1; height:100%; transform:skewX(-12deg); margin:0 -2vw; overflow:hidden;
+  #J .slice {
+  background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.62) 58%,rgba(23,23,23,0) 100%);
+ position:relative; flex:1; height:100%; transform:skewX(-12deg); margin:0 -2vw; overflow:hidden;
               transition:flex .65s cubic-bezier(.2,.7,.2,1), filter .5s ease; cursor:pointer; }
   #J .slice .bg { position:absolute; inset:0; transform:skewX(12deg); margin:0 2vw; background-size:cover; background-position:center;
       opacity:.4; filter:blur(1.6px) brightness(.92);
@@ -2112,11 +2133,11 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #J .slice:hover .sheen::before { animation:sweep .9s ease forwards; }
   @keyframes sweep { 0%{left:-60%;opacity:0} 15%{opacity:1} 100%{left:130%;opacity:0} }
   #J .slice .content { position:absolute; inset:0; transform:skewX(12deg); margin:0 2vw; display:flex; flex-direction:column; justify-content:flex-end; padding:6vh 3vw; color:#ffffff; }
-  #J .slice .num { font-size:clamp(56px, 1.2rem, 122px); font-weight:900; color:rgba(255,255,255,.25); line-height:.8;
+  #J .slice .num { font-size:clamp(56px, 1.2rem, 122px); font-weight:900; color:rgba(255,255,255,.5); line-height:.8;
       transition:transform .6s cubic-bezier(.2,.7,.2,1), -webkit-text-stroke-color .5s ease; -webkit-text-stroke:0 transparent; }
   #J .slice:hover .num { transform:scale(1.1) translateY(-8px); -webkit-text-stroke:2px rgba(255,255,255,.7); }
-  #J .slice .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; margin-top: clamp(16px, 0.2133rem, 18px);
-      transition:transform .6s cubic-bezier(.2,.7,.2,1) .06s, opacity .5s; }
+  #J .slice .cap-t { font-size:clamp(22px, 0.4667rem, 48px); font-weight:600; margin-top: clamp(16px, 0.2133rem, 18px);
+      transition:transform .6s cubic-bezier(.2,.7,.2,1) .06s, opacity .5s; ;line-height:1.1}
   #J .slice .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:0; max-width:18vw; transition:transform .6s cubic-bezier(.2,.7,.2,1) .12s, opacity .5s ease; }
   #J .slice:hover .cap-t { transform:translateY(-10px); }
   #J .slice:hover .cap-s { opacity:.95; transform:translateY(-10px); }
@@ -2146,8 +2167,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #K .hex .cap { position:absolute; left:50%; bottom:18%; transform:translateX(-50%); text-align:center; color:#ffffff; width:80%; z-index:6;
                  opacity:.85; transition:opacity .5s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
   #K .hex:hover .cap { opacity:1; transform:translateX(-50%) translateY(-8px); }
-  #K .hex .cap-t { font-size:clamp(14px, 0.3067rem, 31px); font-weight:600; }
-  #K .hex .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:.9; margin-top: 4px; }
+  #K .hex .cap-t { font-size:clamp(17px, 0.36rem, 37px); font-weight:600; }
+  #K .hex .cap-s { font-size:clamp(14px, 0.1867rem, 16px); opacity:.9; margin-top: 4px; }
   #K .hex .num { position:absolute; left:50%; top:10%; transform:translateX(-50%); font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.35); z-index:6;
                  transition:transform .6s cubic-bezier(.2,.7,.2,1), color .5s ease; }
   #K .hex:hover .num { transform:translateX(-50%) scale(1.14); color:rgba(255,255,255,.6); }
@@ -2156,7 +2177,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M { background: rgb(236,236,236); }
   #M .head { position:absolute; left:6vw; top:8vh; z-index:6; }
   #M .bands { position:absolute; left:0; right:0; top:30vh; bottom:10vh; display:flex; flex-direction:column; gap:2vh; }
-  #M .band { position:relative; flex:1; display:flex; align-items:center; overflow:hidden; transition:flex .55s ease; cursor:pointer; }
+  #M .band {
+  background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.62) 58%,rgba(23,23,23,0) 100%);
+ position:relative; flex:1; display:flex; align-items:center; overflow:hidden; transition:flex .55s ease; cursor:pointer; }
   #M .band .bg { position:absolute; inset:0; opacity:.85; overflow:hidden;
       transition:filter .55s ease; }
   #M .b1 .bg { background: rgb(110,110,110); } #M .b2 .bg { background: rgb(135,135,135); } #M .b3 .bg { background: rgb(184,184,184); }
@@ -2174,10 +2197,10 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M .band:hover img { transform:translateY(-50%) translateX(-14px) scale(1.1); filter:grayscale(0) brightness(1.05); }
   #M .band .txt { position:relative; z-index:4; color:#ffffff; padding-left:6vw; width:34vw; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
   #M .band:hover .txt { transform:translateX(18px); }
-  #M .band .num { font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.2); line-height:.8; margin-bottom: 6px; transition:transform .6s ease; }
+  #M .band .num { font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.45); line-height:.8; margin-bottom: 6px; transition:transform .6s ease; }
   #M .band:hover .num { transform:scale(1.06); }
-  #M .band .cap-t { font-size:clamp(17px, 0.36rem, 37px); font-weight:600; }
-  #M .band .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:.9; margin-top: 4px; }
+  #M .band .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; }
+  #M .band .cap-s { font-size:clamp(16px, 0.2133rem, 18px); opacity:.9; margin-top: 4px; }
   #M .band::after { content:'→'; position:absolute; right:3vw; top:50%; transform:translateY(-50%); z-index:6;
       color:#ffffff; font-size:clamp(26px, 0.56rem, 57px); font-weight:900; opacity:0; transition:opacity .45s ease; pointer-events:none; }
   #M .band:hover::after { opacity:.9; animation:arrowbob 1.1s ease-in-out infinite; }
@@ -2185,6 +2208,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
 
 /* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
 .tag{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#I .head .eyebrow{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .head h2{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .dcard .big{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .dcard .cap-t{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
@@ -2248,10 +2272,10 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
 
   /* 共用素材文字 —— 参考 Better Design Award 层级 */
-  .eyebrow { display:inline-block; font-size:clamp(12px, 0.16rem, 14px); font-weight:600; letter-spacing:.32em;
+  .eyebrow { display:inline-block; font-size:clamp(11px, 0.24rem, 24px); font-weight:700; letter-spacing:.18em;
              text-transform:uppercase; color:var(--green); line-height:1.7; }
   .eyebrow::after { content:''; display:block; width:30px; height:2px; background: var(--green); margin-top: 10px; }
-  h2 { font-size:clamp(28px, 0.6rem, 61px); font-weight:600; line-height:1.05; color:#121212; letter-spacing:-.02em; }
+  h2 { font-size:clamp(37px, 0.8rem, 82px); font-weight:600; line-height:1.05; color:#121212; letter-spacing:-.02em; }
   .subhead { font-size:clamp(14px, 0.3067rem, 31px); font-weight:700; color:var(--green); margin-top: 10px; letter-spacing:.02em; }
   .lede { font-size:clamp(16px, 0.2133rem, 18px); line-height:1.85; color:var(--gray); margin-top: clamp(11px, 0.24rem, 24px); max-width:30em; }
   .cta { display:inline-flex; align-items:center; gap: 8px; margin-top: clamp(16px, 0.3467rem, 35px); font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
@@ -2259,8 +2283,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   .cta .ar { transition:transform .3s ease; }
   .cta:hover .ar { transform:translateX(6px); }
   .bignum { font-weight:800; -webkit-text-stroke:2px rgba(255,255,255,.85); color:transparent; line-height:.8; }
-  .cap-t { font-size:clamp(11px, 0.24rem, 24px); font-weight:700; color:#ffffff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
-  .cap-s { font-size:clamp(12px, 0.16rem, 14px); color:rgba(255,255,255,.85); margin-top: 3px; text-shadow:0 1px 8px rgba(0,0,0,.5); }
+  .cap-t { font-size:clamp(13px, 0.28rem, 29px); font-weight:700; color:#ffffff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
+  .cap-s { font-size:clamp(16px, 0.2133rem, 18px); color:rgba(255,255,255,.85); margin-top: 3px; text-shadow:0 1px 8px rgba(0,0,0,.5); }
 
   .rise { opacity:0; transform:translateY(40px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
   section.in .rise { opacity:1; transform:none; }
@@ -2302,7 +2326,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   /* ===== 9 · 三色巨卡（重做交互：透视倾斜 + 文字错位 + 持续光带） ===== */
   #I { background: rgb(23,23,23); }
   #I .head { position:absolute; left:0; top:0; bottom:0; width:28vw; padding:10vh 4vw; z-index:6; display:flex; flex-direction:column; justify-content:center; }
-  #I .head .eyebrow { color:#d71920; }
+  #I .head .eyebrow { color:#ffffff; }
+
   #I .head .eyebrow::after { background: rgb(157,157,157); }
   #I .head h2 { color:#ffffff; margin-top: 14px; }
   #I .head .subhead { color:#d71920; }
@@ -2334,9 +2359,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #I .dcard .txt { position:relative; z-index:2; margin-top:auto; }
   #I .dcard .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; color:#ffffff; line-height:1.15;
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .04s; }
-  #I .dcard .cap-s { font-size:clamp(12px, 0.16rem, 14px); color:rgba(255,255,255,.9); margin-top: 8px; line-height:1.5;
+  #I .dcard .cap-s { font-size:clamp(16px, 0.2133rem, 18px); color:rgba(255,255,255,.9); margin-top: 8px; line-height:1.5;
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .1s; }
-  #I .dcard .num { font-size:clamp(52px, 1.12rem, 114px); font-weight:900; color:rgba(255,255,255,.35); line-height:.9; margin-top: clamp(11px, 0.24rem, 24px);
+  #I .dcard .num { font-size:clamp(52px, 1.12rem, 114px); font-weight:900; color:rgba(255,255,255,.55); line-height:.9; margin-top: clamp(11px, 0.24rem, 24px);
       transition:transform .6s cubic-bezier(.2,.7,.2,1) .14s; }
   #I .dcard:hover .cap-t { transform:translateY(-8px); }
   #I .dcard:hover .cap-s { transform:translateY(-8px); }
@@ -2346,7 +2371,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #J { background: rgb(236,236,236); overflow:hidden; }
   #J .head { position:absolute; left:6vw; top:10vh; z-index:6; }
   #J .slice-wrap { position:absolute; inset:0; display:flex; }
-  #J .slice { position:relative; flex:1; height:100%; transform:skewX(-12deg); margin:0 -2vw; overflow:hidden;
+  #J .slice {
+  background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.62) 58%,rgba(23,23,23,0) 100%);
+ position:relative; flex:1; height:100%; transform:skewX(-12deg); margin:0 -2vw; overflow:hidden;
               transition:flex .65s cubic-bezier(.2,.7,.2,1), filter .5s ease; cursor:pointer; }
   #J .slice .bg { position:absolute; inset:0; transform:skewX(12deg); margin:0 2vw; background-size:cover; background-position:center;
       opacity:.4; filter:blur(1.6px) brightness(.92);
@@ -2363,11 +2390,11 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #J .slice:hover .sheen::before { animation:sweep .9s ease forwards; }
   @keyframes sweep { 0%{left:-60%;opacity:0} 15%{opacity:1} 100%{left:130%;opacity:0} }
   #J .slice .content { position:absolute; inset:0; transform:skewX(12deg); margin:0 2vw; display:flex; flex-direction:column; justify-content:flex-end; padding:6vh 3vw; color:#ffffff; }
-  #J .slice .num { font-size:clamp(56px, 1.2rem, 122px); font-weight:900; color:rgba(255,255,255,.25); line-height:.8;
+  #J .slice .num { font-size:clamp(56px, 1.2rem, 122px); font-weight:900; color:rgba(255,255,255,.5); line-height:.8;
       transition:transform .6s cubic-bezier(.2,.7,.2,1), -webkit-text-stroke-color .5s ease; -webkit-text-stroke:0 transparent; }
   #J .slice:hover .num { transform:scale(1.1) translateY(-8px); -webkit-text-stroke:2px rgba(255,255,255,.7); }
-  #J .slice .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; margin-top: clamp(16px, 0.2133rem, 18px);
-      transition:transform .6s cubic-bezier(.2,.7,.2,1) .06s, opacity .5s; }
+  #J .slice .cap-t { font-size:clamp(22px, 0.4667rem, 48px); font-weight:600; margin-top: clamp(16px, 0.2133rem, 18px);
+      transition:transform .6s cubic-bezier(.2,.7,.2,1) .06s, opacity .5s; ;line-height:1.1}
   #J .slice .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:0; max-width:18vw; transition:transform .6s cubic-bezier(.2,.7,.2,1) .12s, opacity .5s ease; }
   #J .slice:hover .cap-t { transform:translateY(-10px); }
   #J .slice:hover .cap-s { opacity:.95; transform:translateY(-10px); }
@@ -2397,8 +2424,8 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #K .hex .cap { position:absolute; left:50%; bottom:18%; transform:translateX(-50%); text-align:center; color:#ffffff; width:80%; z-index:6;
                  opacity:.85; transition:opacity .5s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
   #K .hex:hover .cap { opacity:1; transform:translateX(-50%) translateY(-8px); }
-  #K .hex .cap-t { font-size:clamp(14px, 0.3067rem, 31px); font-weight:600; }
-  #K .hex .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:.9; margin-top: 4px; }
+  #K .hex .cap-t { font-size:clamp(17px, 0.36rem, 37px); font-weight:600; }
+  #K .hex .cap-s { font-size:clamp(14px, 0.1867rem, 16px); opacity:.9; margin-top: 4px; }
   #K .hex .num { position:absolute; left:50%; top:10%; transform:translateX(-50%); font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.35); z-index:6;
                  transition:transform .6s cubic-bezier(.2,.7,.2,1), color .5s ease; }
   #K .hex:hover .num { transform:translateX(-50%) scale(1.14); color:rgba(255,255,255,.6); }
@@ -2407,7 +2434,9 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M { background: rgb(236,236,236); }
   #M .head { position:absolute; left:6vw; top:8vh; z-index:6; }
   #M .bands { position:absolute; left:0; right:0; top:30vh; bottom:10vh; display:flex; flex-direction:column; gap:2vh; }
-  #M .band { position:relative; flex:1; display:flex; align-items:center; overflow:hidden; transition:flex .55s ease; cursor:pointer; }
+  #M .band {
+  background: linear-gradient(90deg,rgba(23,23,23,.9) 0%,rgba(23,23,23,.62) 58%,rgba(23,23,23,0) 100%);
+ position:relative; flex:1; display:flex; align-items:center; overflow:hidden; transition:flex .55s ease; cursor:pointer; }
   #M .band .bg { position:absolute; inset:0; opacity:.85; overflow:hidden;
       transition:filter .55s ease; }
   #M .b1 .bg { background: rgb(110,110,110); } #M .b2 .bg { background: rgb(135,135,135); } #M .b3 .bg { background: rgb(184,184,184); }
@@ -2425,10 +2454,10 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   #M .band:hover img { transform:translateY(-50%) translateX(-14px) scale(1.1); filter:grayscale(0) brightness(1.05); }
   #M .band .txt { position:relative; z-index:4; color:#ffffff; padding-left:6vw; width:34vw; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
   #M .band:hover .txt { transform:translateX(18px); }
-  #M .band .num { font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.2); line-height:.8; margin-bottom: 6px; transition:transform .6s ease; }
+  #M .band .num { font-size:clamp(45px, 0.96rem, 98px); font-weight:900; color:rgba(255,255,255,.45); line-height:.8; margin-bottom: 6px; transition:transform .6s ease; }
   #M .band:hover .num { transform:scale(1.06); }
-  #M .band .cap-t { font-size:clamp(17px, 0.36rem, 37px); font-weight:600; }
-  #M .band .cap-s { font-size:clamp(12px, 0.16rem, 14px); opacity:.9; margin-top: 4px; }
+  #M .band .cap-t { font-size:clamp(19px, 0.4rem, 41px); font-weight:600; }
+  #M .band .cap-s { font-size:clamp(16px, 0.2133rem, 18px); opacity:.9; margin-top: 4px; }
   #M .band::after { content:'→'; position:absolute; right:3vw; top:50%; transform:translateY(-50%); z-index:6;
       color:#ffffff; font-size:clamp(26px, 0.56rem, 57px); font-weight:900; opacity:0; transition:opacity .45s ease; pointer-events:none; }
   #M .band:hover::after { opacity:.9; animation:arrowbob 1.1s ease-in-out infinite; }
@@ -2436,6 +2465,7 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
 
 /* 可读性衬底：下面这些选择器都是浅色文字，多半压在照片上 —— 给一层柔和暗影，防止被亮部吃掉 */
 .tag{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
+#I .head .eyebrow{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .head h2{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .dcard .big{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
 #I .dcard .cap-t{paint-order:stroke fill;-webkit-text-stroke:2.5px rgba(17,17,17,.62);text-shadow:0 0 3px rgba(0,0,0,.6),0 1px 7px rgba(0,0,0,.5),0 2px 20px rgba(0,0,0,.42)}
