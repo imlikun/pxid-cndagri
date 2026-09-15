@@ -1177,14 +1177,16 @@ html.pxid-s1-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   var KEY="pxid-s1-v", frame=sec.querySelector(".pxid-s1frame");
   var btns=sec.querySelectorAll(".pxid-s1switch button"), cache={};
   function doc(v){
-    if(cache[v]) return cache[v];
+    var fs=getComputedStyle(document.documentElement).fontSize||"16px";
+    var ck=v+"|"+fs;
+    if(cache[ck]) return cache[ck];
     var t=sec.querySelector("template.pxid-s1tpl[data-v=\""+v+"\"]"); if(!t) return null;
-    cache[v]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
+    cache[ck]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
       +"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
-      +"<style>*{box-sizing:border-box}html,body{margin:0;padding:0;overflow:hidden;"
-      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}html{font-size:5.20833vw}</style>"
+      +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow:hidden;"
+      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}</style>"
       +"</head><body>"+t.innerHTML+"</body></html>";
-    return cache[v];
+    return cache[ck];
   }
   function syncNav(){
     document.documentElement.classList.toggle("pxid-s1-lab", !!(frame&&!frame.hidden));
@@ -2632,14 +2634,16 @@ html.pxid-s2-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   var KEY="pxid-s2-v", frame=sec.querySelector(".pxid-s2frame");
   var btns=sec.querySelectorAll(".pxid-s2switch button"), cache={};
   function doc(v){
-    if(cache[v]) return cache[v];
+    var fs=getComputedStyle(document.documentElement).fontSize||"16px";
+    var ck=v+"|"+fs;
+    if(cache[ck]) return cache[ck];
     var t=sec.querySelector("template.pxid-s2tpl[data-v=\""+v+"\"]"); if(!t) return null;
-    cache[v]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
+    cache[ck]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
       +"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
-      +"<style>*{box-sizing:border-box}html,body{margin:0;padding:0;overflow:hidden;"
-      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}html{font-size:5.20833vw}</style>"
+      +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow:hidden;"
+      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}</style>"
       +"</head><body>"+t.innerHTML+"</body></html>";
-    return cache[v];
+    return cache[ck];
   }
   function fitFrame(){
     if(!frame||frame.hidden) return;
