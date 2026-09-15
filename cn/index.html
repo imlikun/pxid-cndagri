@@ -76,9 +76,13 @@
 
   /* ============ C 画廊沉浸（保留，轮播动起来） ============ */
   #C .txts .txt { display:flex; align-items:center; justify-content:center; }
-  #C .glass { background: rgba(23,23,23,.62); border:1px solid rgba(255,255,255,.24); backdrop-filter:blur(14px);
-              border-radius:0; padding: clamp(26px, 0.56rem, 57px) clamp(38px, 0.8267rem, 84px); text-align:center; color:#ffffff; max-width:580px; text-shadow:0 2px 14px rgba(0,0,0,.4); }
-  #C .glass .btn { background: rgb(255,255,255); color:#171717; font-size:clamp(22px, 0.4667rem, 48px); padding: clamp(16px, 0.3467rem, 35px) clamp(36px, 0.7733rem, 79px); margin-top: clamp(21px, 0.4533rem, 46px); border-radius:0; -webkit-text-stroke:0 !important; text-shadow:none !important; paint-order:normal; font-weight:600; }
+  #C .glass { position:absolute; left:6.5%; bottom:12%; top:auto; right:auto; max-width:min(620px,52%); margin:0; padding:0; text-align:left; color:#ffffff; background:none; border:0; backdrop-filter:none; -webkit-backdrop-filter:none; border-radius:0; }
+#C .glass::before { content:''; position:absolute; z-index:0; pointer-events:none; left:-6.5vw; right:auto; top:-18vh; bottom:-16vh; width:min(74vw,1160px); background: linear-gradient(90deg, rgba(23,23,23,.66) 0%, rgba(23,23,23,.38) 46%, rgba(23,23,23,0) 96%); }
+#C .glass > * { position:relative; z-index:1; }
+#C .glass h1 { font-size:clamp(37px, 0.8rem, 82px); font-weight:700; line-height:1.05; letter-spacing:-.02em; margin: 0 0 12px; }
+#C .glass p { font-size:clamp(11px, 0.24rem, 24px); line-height:1.5; color:rgba(255,255,255,.86); margin: 0 0 clamp(17px, 0.3733rem, 38px); letter-spacing:.01em; }
+  #C .glass .btn { display:inline-block; background: rgb(215,25,32); color:#ffffff; border:0; border-radius:0; font-size:clamp(16px, 0.2133rem, 18px); font-weight:600; letter-spacing:.03em; padding: 15px clamp(21px, 0.4533rem, 46px); margin:0; text-decoration:none; -webkit-text-stroke:0 !important; text-shadow:none !important; paint-order:normal !important; transition:background .18s ease, color .18s ease; }
+#C .glass .btn:hover { background: rgb(255,255,255); color:#171717; }
   #C .thumbs { position:absolute; right:3vw; top:50%; transform:translateY(-50%); z-index:26; display:flex; flex-direction:column; gap: 12px; }
   #C .thumbs span { width:54px; height:34px; border-radius:6px; background-size:cover; background-position:center; border:2px solid rgba(255,255,255,.4); cursor:pointer; }
   #C .thumbs span.on { border-color:#ffffff; box-shadow:0 0 0 2px #d71920; }
@@ -87,7 +91,7 @@
   /* ============ D 网格拼贴（保留，框子固定 · 三张图优雅流转） ============ */
   #D { background: rgb(236,236,236); }
   #D .top { position:absolute; top:8vh; left:6vw; right:6vw; z-index:5; color:#171717; }
-  #D .top h1 { font-size:clamp(37px, 0.8rem, 82px); ;line-height:1.1}
+  #D .top h1 { font-size:clamp(30px, 0.64rem, 65px); ;line-height:1.1}
   #D .top p { color:#676767; margin-top: 10px; }
   #D .grid { position:absolute; top:26vh; left:6vw; right:6vw; bottom:10vh; }
   /* 固定框子 */
@@ -141,9 +145,9 @@
     <div class="img"><img loading="lazy"  src="../assets/pxid/home/award-m2-gida.jpg"></div>
   </div>
   <div class="txts">
-    <div class="txt on"><div class="glass"><h1 style="font-size:clamp(30px,4.7vw,68px)">MANTIS P6</h1><p>全地形电动自行车</p><a class="btn" href="#">查看车型</a></div></div>
-    <div class="txt"><div class="glass"><h1 style="font-size:clamp(30px,4.7vw,68px)">PXID P2</h1><p>折叠电动自行车</p><a class="btn" href="#">查看 ODM 流程</a></div></div>
-    <div class="txt"><div class="glass"><h1 style="font-size:clamp(30px,4.7vw,68px)">PXID M2</h1><p>城市电动摩托车</p><a class="btn" href="#">了解可持续</a></div></div>
+    <div class="txt on"><div class="glass"><h1>MANTIS P6</h1><p>全地形电动自行车</p><a class="btn" href="#">查看车型</a></div></div>
+    <div class="txt"><div class="glass"><h1>PXID P2</h1><p>折叠电动自行车</p><a class="btn" href="#">查看 ODM 流程</a></div></div>
+    <div class="txt"><div class="glass"><h1>PXID M2</h1><p>城市电动摩托车</p><a class="btn" href="#">了解可持续</a></div></div>
   </div>
   <div class="thumbs">
     <span class="on" data-i="0" style="background-image:url('../assets/pxid/home/mantis-mountain.png')"></span>
@@ -305,9 +309,13 @@
 
   /* ============ C 画廊沉浸（保留，轮播动起来） ============ */
   #C .txts .txt { display:flex; align-items:center; justify-content:center; }
-  #C .glass { background: rgba(23,23,23,.62); border:1px solid rgba(255,255,255,.24); backdrop-filter:blur(14px);
-              border-radius:0; padding: clamp(26px, 0.56rem, 57px) clamp(38px, 0.8267rem, 84px); text-align:center; color:#ffffff; max-width:580px; text-shadow:0 2px 14px rgba(0,0,0,.4); }
-  #C .glass .btn { background: rgb(255,255,255); color:#171717; font-size:clamp(22px, 0.4667rem, 48px); padding: clamp(16px, 0.3467rem, 35px) clamp(36px, 0.7733rem, 79px); margin-top: clamp(21px, 0.4533rem, 46px); border-radius:0; -webkit-text-stroke:0 !important; text-shadow:none !important; paint-order:normal; font-weight:600; }
+  #C .glass { position:absolute; left:6.5%; bottom:12%; top:auto; right:auto; max-width:min(620px,52%); margin:0; padding:0; text-align:left; color:#ffffff; background:none; border:0; backdrop-filter:none; -webkit-backdrop-filter:none; border-radius:0; }
+#C .glass::before { content:''; position:absolute; z-index:0; pointer-events:none; left:-6.5vw; right:auto; top:-18vh; bottom:-16vh; width:min(74vw,1160px); background: linear-gradient(90deg, rgba(23,23,23,.66) 0%, rgba(23,23,23,.38) 46%, rgba(23,23,23,0) 96%); }
+#C .glass > * { position:relative; z-index:1; }
+#C .glass h1 { font-size:clamp(37px, 0.8rem, 82px); font-weight:700; line-height:1.05; letter-spacing:-.02em; margin: 0 0 12px; }
+#C .glass p { font-size:clamp(11px, 0.24rem, 24px); line-height:1.5; color:rgba(255,255,255,.86); margin: 0 0 clamp(17px, 0.3733rem, 38px); letter-spacing:.01em; }
+  #C .glass .btn { display:inline-block; background: rgb(215,25,32); color:#ffffff; border:0; border-radius:0; font-size:clamp(16px, 0.2133rem, 18px); font-weight:600; letter-spacing:.03em; padding: 15px clamp(21px, 0.4533rem, 46px); margin:0; text-decoration:none; -webkit-text-stroke:0 !important; text-shadow:none !important; paint-order:normal !important; transition:background .18s ease, color .18s ease; }
+#C .glass .btn:hover { background: rgb(255,255,255); color:#171717; }
   #C .thumbs { position:absolute; right:3vw; top:50%; transform:translateY(-50%); z-index:26; display:flex; flex-direction:column; gap: 12px; }
   #C .thumbs span { width:54px; height:34px; border-radius:6px; background-size:cover; background-position:center; border:2px solid rgba(255,255,255,.4); cursor:pointer; }
   #C .thumbs span.on { border-color:#ffffff; box-shadow:0 0 0 2px #d71920; }
@@ -316,7 +324,7 @@
   /* ============ D 网格拼贴（保留，框子固定 · 三张图优雅流转） ============ */
   #D { background: rgb(236,236,236); }
   #D .top { position:absolute; top:8vh; left:6vw; right:6vw; z-index:5; color:#171717; }
-  #D .top h1 { font-size:clamp(37px, 0.8rem, 82px); ;line-height:1.1}
+  #D .top h1 { font-size:clamp(30px, 0.64rem, 65px); ;line-height:1.1}
   #D .top p { color:#676767; margin-top: 10px; }
   #D .grid { position:absolute; top:26vh; left:6vw; right:6vw; bottom:10vh; }
   /* 固定框子 */
@@ -529,9 +537,13 @@
 
   /* ============ C 画廊沉浸（保留，轮播动起来） ============ */
   #C .txts .txt { display:flex; align-items:center; justify-content:center; }
-  #C .glass { background: rgba(23,23,23,.62); border:1px solid rgba(255,255,255,.24); backdrop-filter:blur(14px);
-              border-radius:0; padding: clamp(26px, 0.56rem, 57px) clamp(38px, 0.8267rem, 84px); text-align:center; color:#ffffff; max-width:580px; text-shadow:0 2px 14px rgba(0,0,0,.4); }
-  #C .glass .btn { background: rgb(255,255,255); color:#171717; font-size:clamp(22px, 0.4667rem, 48px); padding: clamp(16px, 0.3467rem, 35px) clamp(36px, 0.7733rem, 79px); margin-top: clamp(21px, 0.4533rem, 46px); border-radius:0; -webkit-text-stroke:0 !important; text-shadow:none !important; paint-order:normal; font-weight:600; }
+  #C .glass { position:absolute; left:6.5%; bottom:12%; top:auto; right:auto; max-width:min(620px,52%); margin:0; padding:0; text-align:left; color:#ffffff; background:none; border:0; backdrop-filter:none; -webkit-backdrop-filter:none; border-radius:0; }
+#C .glass::before { content:''; position:absolute; z-index:0; pointer-events:none; left:-6.5vw; right:auto; top:-18vh; bottom:-16vh; width:min(74vw,1160px); background: linear-gradient(90deg, rgba(23,23,23,.66) 0%, rgba(23,23,23,.38) 46%, rgba(23,23,23,0) 96%); }
+#C .glass > * { position:relative; z-index:1; }
+#C .glass h1 { font-size:clamp(37px, 0.8rem, 82px); font-weight:700; line-height:1.05; letter-spacing:-.02em; margin: 0 0 12px; }
+#C .glass p { font-size:clamp(11px, 0.24rem, 24px); line-height:1.5; color:rgba(255,255,255,.86); margin: 0 0 clamp(17px, 0.3733rem, 38px); letter-spacing:.01em; }
+  #C .glass .btn { display:inline-block; background: rgb(215,25,32); color:#ffffff; border:0; border-radius:0; font-size:clamp(16px, 0.2133rem, 18px); font-weight:600; letter-spacing:.03em; padding: 15px clamp(21px, 0.4533rem, 46px); margin:0; text-decoration:none; -webkit-text-stroke:0 !important; text-shadow:none !important; paint-order:normal !important; transition:background .18s ease, color .18s ease; }
+#C .glass .btn:hover { background: rgb(255,255,255); color:#171717; }
   #C .thumbs { position:absolute; right:3vw; top:50%; transform:translateY(-50%); z-index:26; display:flex; flex-direction:column; gap: 12px; }
   #C .thumbs span { width:54px; height:34px; border-radius:6px; background-size:cover; background-position:center; border:2px solid rgba(255,255,255,.4); cursor:pointer; }
   #C .thumbs span.on { border-color:#ffffff; box-shadow:0 0 0 2px #d71920; }
@@ -540,7 +552,7 @@
   /* ============ D 网格拼贴（保留，框子固定 · 三张图优雅流转） ============ */
   #D { background: rgb(236,236,236); }
   #D .top { position:absolute; top:8vh; left:6vw; right:6vw; z-index:5; color:#171717; }
-  #D .top h1 { font-size:clamp(37px, 0.8rem, 82px); ;line-height:1.1}
+  #D .top h1 { font-size:clamp(30px, 0.64rem, 65px); ;line-height:1.1}
   #D .top p { color:#676767; margin-top: 10px; }
   #D .grid { position:absolute; top:26vh; left:6vw; right:6vw; bottom:10vh; }
   /* 固定框子 */
@@ -753,9 +765,13 @@
 
   /* ============ C 画廊沉浸（保留，轮播动起来） ============ */
   #C .txts .txt { display:flex; align-items:center; justify-content:center; }
-  #C .glass { background: rgba(23,23,23,.62); border:1px solid rgba(255,255,255,.24); backdrop-filter:blur(14px);
-              border-radius:0; padding: clamp(26px, 0.56rem, 57px) clamp(38px, 0.8267rem, 84px); text-align:center; color:#ffffff; max-width:580px; text-shadow:0 2px 14px rgba(0,0,0,.4); }
-  #C .glass .btn { background: rgb(255,255,255); color:#171717; font-size:clamp(22px, 0.4667rem, 48px); padding: clamp(16px, 0.3467rem, 35px) clamp(36px, 0.7733rem, 79px); margin-top: clamp(21px, 0.4533rem, 46px); border-radius:0; -webkit-text-stroke:0 !important; text-shadow:none !important; paint-order:normal; font-weight:600; }
+  #C .glass { position:absolute; left:6.5%; bottom:12%; top:auto; right:auto; max-width:min(620px,52%); margin:0; padding:0; text-align:left; color:#ffffff; background:none; border:0; backdrop-filter:none; -webkit-backdrop-filter:none; border-radius:0; }
+#C .glass::before { content:''; position:absolute; z-index:0; pointer-events:none; left:-6.5vw; right:auto; top:-18vh; bottom:-16vh; width:min(74vw,1160px); background: linear-gradient(90deg, rgba(23,23,23,.66) 0%, rgba(23,23,23,.38) 46%, rgba(23,23,23,0) 96%); }
+#C .glass > * { position:relative; z-index:1; }
+#C .glass h1 { font-size:clamp(37px, 0.8rem, 82px); font-weight:700; line-height:1.05; letter-spacing:-.02em; margin: 0 0 12px; }
+#C .glass p { font-size:clamp(11px, 0.24rem, 24px); line-height:1.5; color:rgba(255,255,255,.86); margin: 0 0 clamp(17px, 0.3733rem, 38px); letter-spacing:.01em; }
+  #C .glass .btn { display:inline-block; background: rgb(215,25,32); color:#ffffff; border:0; border-radius:0; font-size:clamp(16px, 0.2133rem, 18px); font-weight:600; letter-spacing:.03em; padding: 15px clamp(21px, 0.4533rem, 46px); margin:0; text-decoration:none; -webkit-text-stroke:0 !important; text-shadow:none !important; paint-order:normal !important; transition:background .18s ease, color .18s ease; }
+#C .glass .btn:hover { background: rgb(255,255,255); color:#171717; }
   #C .thumbs { position:absolute; right:3vw; top:50%; transform:translateY(-50%); z-index:26; display:flex; flex-direction:column; gap: 12px; }
   #C .thumbs span { width:54px; height:34px; border-radius:6px; background-size:cover; background-position:center; border:2px solid rgba(255,255,255,.4); cursor:pointer; }
   #C .thumbs span.on { border-color:#ffffff; box-shadow:0 0 0 2px #d71920; }
@@ -764,7 +780,7 @@
   /* ============ D 网格拼贴（保留，框子固定 · 三张图优雅流转） ============ */
   #D { background: rgb(236,236,236); }
   #D .top { position:absolute; top:8vh; left:6vw; right:6vw; z-index:5; color:#171717; }
-  #D .top h1 { font-size:clamp(37px, 0.8rem, 82px); ;line-height:1.1}
+  #D .top h1 { font-size:clamp(30px, 0.64rem, 65px); ;line-height:1.1}
   #D .top p { color:#676767; margin-top: 10px; }
   #D .grid { position:absolute; top:26vh; left:6vw; right:6vw; bottom:10vh; }
   /* 固定框子 */
@@ -2734,14 +2750,14 @@ html.pxid-s2-lab #app > header:not(.pxid-header-scrolled) .appNav .searchSub i{c
   <div class="step s2">
     <div class="cap"><div class="no">01</div><h3>电动自行车</h3><p>通勤、折叠与全地形车型</p></div>
     <div class="pic">
-      <img loading="lazy"  src="../assets/pxid/unified/home-v2/case-offroad-main.jpg" alt="电动自行车">
+      <img loading="lazy"  src="../assets/pxid/home/mantis-studio.jpg" alt="电动自行车">
       <span class="tick"></span><span class="tick on"></span><span class="mark"></span>
     </div>
   </div>
   <div class="step s3">
     <div class="cap"><div class="no">02</div><h3>电动摩托车</h3><p>城市出行与定制开发</p></div>
     <div class="pic">
-      <img loading="lazy"  src="../assets/pxid/unified/home-v2/case-p2-main.jpg" alt="电动摩托车">
+      <img loading="lazy"  src="../assets/pxid/home/award-m2-gida.jpg" alt="电动摩托车">
       <span class="tick"></span><span class="tick on"></span><span class="mark"></span>
     </div>
   </div>
