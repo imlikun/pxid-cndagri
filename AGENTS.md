@@ -68,6 +68,41 @@ cd /www/wwwroot/appin.site/nav/three-sites/cndagri
 
 当前定稿标记：tag `v2026-09-19-2250-dinggao`
 
+### 1.7 凭据（怎么取）
+
+服务器与 GitHub 都是**密钥登录，没有密码**，直接用下面路径的 key：
+
+| 用途 | 凭据 | 位置 |
+|---|---|---|
+| 登录 ECS | SSH 私钥 | `C:\Users\Kun.li\.ssh\id_ed25519_appin_server` |
+| 推 GitHub（本机） | SSH 私钥 | `C:\Users\Kun.li\.ssh\id_ed25519_github` |
+| 推 GitHub（ECS 内） | SSH 私钥 | `~/.ssh/id_ed25519_github`（`~/.ssh/config` 已配好） |
+| GitHub API / https 方式 | 细粒度 PAT | 见下（口令库） |
+
+口令库（AES-256-GCM 加密；脚本 `C:\Users\Kun.li\.workbuddy\skills\account-vault\vault.js`，数据 `~/.workbuddy/accounts/vault.json`）：
+
+```bash
+# 列出所有条目
+node "C:/Users/Kun.li/.workbuddy/skills/account-vault/vault.js" list
+
+# 脱敏查看（默认）
+node "C:/Users/Kun.li/.workbuddy/skills/account-vault/vault.js" get GitHub
+
+# 取明文（仅在明确需要复制粘贴时用）
+node "C:/Users/Kun.li/.workbuddy/skills/account-vault/vault.js" raw GitHub-PAT-WorkBuddy
+```
+
+已收录且与本项目相关的条目：
+
+| 条目名 | 内容 |
+|---|---|
+| `GitHub-PAT-WorkBuddy` | GitHub 细粒度 PAT（Contents 读写 / 所有仓库），https 方式推仓库或调 API 用 |
+| `GitLab PXID` | `git.pxidiot.com:8099` 的 likun 账号 PAT |
+| `DNSPod-API` | pxid-api.appin.site 的 SSL DNS-01 验证 |
+| `PXID运营后台AdminToken` | pxid-api.appin.site 运营后台 Bearer |
+
+> 注意：口令库里**没有** ECS root 密码（本机一直用密钥登录）；如需宝塔面板密码，那是另一台机器（47.100.105.156）的条目。
+
 ---
 
 ## 2. 项目结构与页面清单
