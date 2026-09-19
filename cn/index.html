@@ -833,6 +833,9 @@
   #m1 .relief use{fill:#0e0e0e;stroke:none;opacity:.62}
   #m1 .dim-side{display:none}
   #m1 .face{fill:url(#dimFill);stroke:#5c5c5c;stroke-width:.62;stroke-linejoin:round;filter:drop-shadow(0 0 .7px rgba(150,196,206,.42))}
+    /* G3 玻璃提亮（坤哥 2026-09-17 选的档）：在地图 SVG 上做「提亮 + 轻模糊 + 投影」，
+       让灰色地图在黑底上像隔了一层玻璃浮起来 */
+    #m1 .mapsvg{filter:brightness(1.85) saturate(.9) blur(.5px) drop-shadow(0 12px 30px rgba(0,0,0,.55))}
     /* ② 省份微差分层：34 个 .pv 按 3 档灰度错开，出「拼图」层次 */
     #m1 .pv:nth-child(3n+2){fill:#484848}
     #m1 .pv:nth-child(3n){fill:#3c3c3c}
