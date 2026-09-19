@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="chinaLg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>制造能力｜PXID 品向 · 从设计到量产，全流程自有</title>
+  <meta name="description" content="PXID 品向制造能力：六大工艺（注塑成型、CNC 精密加工、模具设计与制造、车架与涂装、装配调试、检测质量）、23 台自有设备、能力边界与四道质检关口。">
+  <link rel="icon" href="../assets/pxid/logo-dark.png" type="image/png">
+  <script src="../templates/assets/swiper-bundle.js"></script>
+  <link rel="stylesheet" href="../templates/assets/index.css">
+  <link rel="stylesheet" href="../templates/assets/respone.css">
+  <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260831-bw-red8">
+  <style>
+.mfgMain{--red:#d71920;--ink:#171717;--line:#e4e4e4;--page:#f8f8f8;
+  background:var(--page);color:var(--ink);padding-inline:clamp(16px,4vw,64px);max-width:1840px;margin:0 auto}
+.mfgMain *{box-sizing:border-box;border-radius:0}
+.blk{padding:clamp(30px,2.4vw,60px) 0;border-bottom:1px solid var(--line)}
+.blkDark{background:#171717;color:#fff;margin-inline:calc(-1 * clamp(16px,4vw,64px));padding-inline:clamp(16px,4vw,64px)}
+.wcols{display:grid;gap:clamp(16px,1.8vw,36px);align-items:stretch}
+.c11{grid-template-columns:1fr 1fr}
+.c4{grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.4vw,28px)}
+.wtxt{display:flex;flex-direction:column;justify-content:center}
+.wnum{font-family:var(--mono,ui-monospace,Menlo,Consolas,monospace);font-size:clamp(11px,0.16rem,15px);
+  letter-spacing:.14em;color:#d71920;display:block;margin-bottom:6px}
+.wlab{font-family:var(--mono,ui-monospace,Menlo,Consolas,monospace);font-size:clamp(10px,0.15rem,13px);
+  letter-spacing:.18em;color:#9a9a9a;display:block}
+.blkDark .wlab{color:#8a8a8a}
+.wttl{font-size:clamp(21px,0.3rem,30px);font-weight:600;margin:6px 0 clamp(10px,1vw,16px);letter-spacing:-.01em;line-height:1.35}
+.wbig2{font-size:clamp(30px,0.52rem,52px);font-weight:600;line-height:1.25;margin:8px 0 clamp(12px,1.2vw,20px);letter-spacing:-.02em}
+.wlede{font-size:clamp(14px,0.185rem,17px);line-height:1.95;color:rgba(23,23,23,.78);margin:0}
+.blkDark .wlede{color:rgba(255,255,255,.76)}
+.wfacts{list-style:none;padding:0;margin:clamp(12px,1.2vw,20px) 0 0;display:flex;flex-wrap:wrap;gap:6px 8px}
+.wfacts li{font-size:clamp(12px,0.155rem,14px);line-height:1.6;color:rgba(23,23,23,.72);border:1px solid var(--line);padding:5px 10px}
+.blkDark .wfacts li{color:rgba(255,255,255,.72);border-color:rgba(255,255,255,.22)}
+/* 图片 */
+.wpic{position:relative;overflow:hidden;background:#e8e8e5;height:100%}
+.wpic img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.22,1,.36,1)}
+.wpic:hover img{transform:scale(1.03)}
+.wimg{min-height:clamp(220px,20vw,340px)}
+/* 融合卡 */
+.vproc .whead,.whead{display:flex;align-items:baseline;gap:14px;margin-bottom:clamp(14px,1.4vw,24px);flex-wrap:wrap}
+.whead .wttl{margin:0}
+.wheadnote{font-size:clamp(12px,0.15rem,14px);color:#9a9a9a}
+.ccard{background:#fff;border:1px solid var(--line);border-bottom:0;margin-bottom:0}
+.ccard:last-child{border-bottom:1px solid var(--line)}
+.ccard.dark{background:#171717;border-color:#2a2a2a}
+.ccard-top{display:flex;align-items:baseline;gap:14px;padding:clamp(14px,1.4vw,20px) clamp(18px,1.8vw,28px);
+  border-bottom:1px solid var(--line);flex-wrap:wrap}
+.card.dark .ccard-top{border-color:#2a2a2a}
+.ccard-top .num{font:800 clamp(22px,2vw,30px)/1 "Helvetica Neue",Inter,Arial,sans-serif;letter-spacing:-.03em;color:#d71920;flex:none}
+.ccard-top h4{margin:0;font-size:clamp(18px,0.24rem,24px);font-weight:600}
+.card.dark .ccard-top h4{color:#fff}
+.ccard-top .en{font:600 11px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.16em;color:#9a9a9a}
+.ccard-body{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.ccard-body.flip{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+.ccard-media{display:flex;flex-direction:column;gap:2px;padding:clamp(12px,1.2vw,18px)}
+.ccard-media>.wpic{min-height:clamp(200px,18vw,290px);flex:1}
+.wmini{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.wmini>.wpic{min-height:clamp(70px,6vw,110px)}
+.ccard-info{padding:clamp(18px,1.8vw,28px);display:flex;flex-direction:column;gap:clamp(12px,1.2vw,18px);justify-content:center}
+.crow{display:grid;grid-template-columns:clamp(64px,6vw,78px) 1fr;gap:clamp(10px,1vw,18px);align-items:start}
+.crow b{font-size:clamp(12px,0.15rem,13px);font-weight:600;color:#8a8a8a;padding-top:2px}
+.ccard.dark .crow b{color:#7a7a7a}
+.crow .v{font-size:clamp(14px,0.18rem,16px);line-height:1.8;color:#2a2a2a}
+.ccard.dark .crow .v{color:rgba(255,255,255,.82)}
+.crow .v .hl{color:#171717;font-weight:600}
+.card.dark .crow .v .hl{color:#fff}
+.nums{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.nums span{border:1px solid var(--line);background:#f2f2f0;padding:3px 9px;font-size:clamp(11.5px,0.145rem,13px);
+  color:#3a3a3a;font-family:ui-monospace,Menlo,Consolas,monospace}
+.ccard.dark .nums span{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.07);color:rgba(255,255,255,.86)}
+/* 能力边界表 */
+.wtable{overflow-x:auto}
+.wtable table{width:100%;border-collapse:collapse;background:#fff;font-size:clamp(13px,0.165rem,15px)}
+.wtable th,.wtable td{text-align:left;padding:clamp(11px,1.1vw,16px) clamp(14px,1.4vw,22px);border-bottom:1px solid var(--line);vertical-align:top}
+.wtable th{background:#f2f2f0;font-weight:600;font-size:clamp(12px,0.15rem,13.5px);color:#5a5a5a;letter-spacing:.03em;white-space:nowrap}
+.wtable td:first-child{font-weight:600;white-space:nowrap;color:#171717}
+.wtable td.note{color:rgba(23,23,23,.62)}
+/* 设备清单 */
+.wgridEq{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.weq{border:1px solid var(--line);padding:clamp(14px,1.4vw,24px);background:#fff}
+.weqhd{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px;
+  padding-bottom:10px;border-bottom:1px solid var(--line)}
+.weqhd h4{margin:0;font-size:clamp(15px,0.2rem,19px);font-weight:600}
+.weqcnt{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:clamp(11px,0.15rem,13px);color:#d71920;letter-spacing:.1em}
+.weq ul{list-style:none;padding:0;margin:0}
+.weq li{font-size:clamp(12.5px,0.16rem,15px);line-height:1.9;color:rgba(23,23,23,.74);padding-left:12px;position:relative}
+.weq li::before{content:"";position:absolute;left:0;top:.72em;width:4px;height:4px;background:#d71920}
+/* 质量 */
+.wq{padding:clamp(14px,1.4vw,22px) 0}
+.wqk{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:clamp(11px,0.15rem,13px);letter-spacing:.16em;color:#d71920;display:block;margin-bottom:8px}
+.wq h4{margin:0 0 8px;font-size:clamp(15px,0.2rem,19px);font-weight:600}
+.wq p{margin:0;font-size:clamp(13px,0.165rem,15px);line-height:1.85;color:rgba(23,23,23,.7)}
+.wqimgs{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:clamp(16px,1.6vw,28px)}
+.wqimgs .wpic{min-height:clamp(200px,20vw,320px)}
+/* 整合能力 */
+.wgridCap{grid-template-columns:repeat(4,1fr);gap:clamp(16px,1.8vw,36px)}
+.wgrid4{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.wcapc h4{margin:6px 0 10px;font-size:clamp(16px,0.21rem,21px);font-weight:600;color:#fff}
+.wcapc p{margin:0;font-size:clamp(13px,0.165rem,15px);line-height:1.95;color:rgba(255,255,255,.72)}
+/* 实证卡 */
+.wcard4{display:block;position:relative;text-decoration:none;color:inherit;overflow:hidden}
+.wcard4 .wpic{min-height:clamp(200px,18vw,300px)}
+.wcardcap{position:absolute;left:0;right:0;bottom:0;padding:clamp(12px,1.2vw,20px);
+  background:linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.82));color:#fff}
+.wcardcap h4{margin:0 0 4px;font-size:clamp(16px,0.21rem,21px);font-weight:600}
+.wcardcap .wlab{color:rgba(255,255,255,.6)}
+/* FAQ */
+.wfaq{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.wfq{background:#fff;border:1px solid var(--line);padding:clamp(16px,1.6vw,26px)}
+.wfq h4{margin:0 0 8px;font-size:clamp(15px,0.2rem,19px);font-weight:600}
+.wfq p{margin:0;font-size:clamp(13px,0.165rem,15px);line-height:1.9;color:rgba(23,23,23,.72)}
+/* 概览卡 */
+.wcols2{display:grid;grid-template-columns:1fr 1fr;gap:2px;align-content:start}
+.wstat{padding:clamp(14px,1.4vw,24px);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:#fff}
+.wstatnum{font:800 clamp(30px,2.6vw,54px)/1 "Helvetica Neue",Inter,Arial,sans-serif;letter-spacing:-.03em}
+.wstatlab{font-size:clamp(12px,0.15rem,14px);color:rgba(23,23,23,.62);margin-top:6px}
+/* 收尾 */
+.vtail .wbtns{display:flex;gap:10px;margin-top:clamp(14px,1.4vw,24px);flex-wrap:wrap}
+.wbtn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
+  height:clamp(38px,3vw,50px);padding:0 clamp(18px,1.8vw,30px);font-size:clamp(13px,0.17rem,15px);
+  background:#171717;color:#fff;border:1px solid #171717}
+.wbtn.red{background:#d71920;border-color:#d71920}
+.wbtn:hover{opacity:.88}
+@media (max-width:900px){
+  .c11,.c4,.wgridEq,.wgridCap,.wgrid4,.c3{grid-template-columns:1fr}
+  .card-body,.ccard-body.flip{grid-template-columns:1fr}
+  .crow{grid-template-columns:1fr;gap:4px}
+  .crow b{padding-top:0}
+  .wfaq{grid-template-columns:1fr}
+  .wcols2{grid-template-columns:1fr 1fr}
+  .wqimgs{grid-template-columns:1fr}
+}
+</style>
+
+<style id="pxid-mfg-tidy">
+/* ===== 制造能力页 · 排版整理 ===== */
+
+/* ① 六大工艺卡：固定图组高度，消除卡片参差与右侧大片空白 */
+.blk.vproc .ccard-media{padding:clamp(10px,1vw,14px);gap:2px}
+.blk.vproc .ccard-media>.wpic{flex:none;height:clamp(230px,19vw,290px);min-height:0}
+.blk.vproc .wmini{display:grid;grid-template-columns:1fr 1fr;gap:2px;height:clamp(105px,8.2vw,135px)}
+.blk.vproc .wmini>.wpic{height:100%;min-height:0}
+.blk.vproc .ccard-info{justify-content:center;padding:clamp(22px,2.2vw,36px);gap:clamp(14px,1.4vw,22px)}
+.blk.vproc .crow .v{font-size:clamp(14.5px,0.185rem,16.5px);line-height:1.85}
+.blk.vproc .ccard.dark{background:#171717}
+.blk.vproc .ccard.dark .ccard-media{background:#171717}
+.blk.vproc .ccard.dark .wpic img{filter:brightness(.9)}
+
+/* ② 段落节奏：统一上下留白（深色段只改 padding-block，避免冲掉 padding-inline） */
+.blk{padding:clamp(46px,4.2vw,74px) 0}
+.blk.vintro{padding-top:clamp(34px,3vw,52px)}
+.blkDark{padding-block:clamp(54px,5vw,86px)}
+
+/* ③ 设备清单：去掉 6 个边框盒子，改成无边框清单列 */
+.wgridEq{gap:clamp(20px,2vw,34px) clamp(26px,2.6vw,52px)}
+.weq{border:0;background:transparent;padding:0}
+.weqhd{padding-bottom:9px;margin-bottom:11px}
+
+/* ④ 四道关口：列内加一条顶部行线，跟设备清单同一套语言 */
+.vqual .wq{border-top:1px solid var(--line);padding-top:clamp(14px,1.4vw,20px)}
+
+/* ⑤ 移动端：卡片改「图在上、文在下」单列（原来两列，文字被挤成每行 6 字） */
+@media (max-width:900px){
+  .blk.vproc .ccard-body{grid-template-columns:1fr}
+  .blk.vproc .ccard-media>.wpic{height:clamp(190px,52vw,270px)}
+  .blk.vproc .wmini{height:clamp(86px,26vw,128px)}
+  .blk.vproc .ccard-info{padding:clamp(18px,4.6vw,26px);gap:clamp(12px,3vw,18px)}
+  .blk{padding:clamp(34px,6vw,52px) 0}
+  .blkDark{padding-block:clamp(40px,7vw,60px)}
+  .wgridEq{gap:clamp(20px,5vw,30px) 0}
+}
+</style>
+
+<style id="pxid-mfg-fig">
+/* 07 能力边界：左图 + 右大数字 */
+.capHero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:2px;margin-bottom:2px}
+.capFig{position:relative;overflow:hidden;background:#e8e8e5;min-height:clamp(230px,21vw,330px)}
+.capFig img{display:block;width:100%;height:100%;object-fit:cover}
+.capNums{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.capNums .cn{background:#f6f6f4;padding:clamp(16px,1.6vw,26px);display:flex;flex-direction:column;justify-content:center}
+.capNums .cn b{font-family:"Helvetica Neue",Inter,Arial,sans-serif;font-size:clamp(24px,2.2vw,38px);line-height:1;font-weight:800;letter-spacing:-.03em;color:#171717}
+.capNums .cn b span{color:#d71920;margin:0 2px;font-weight:600}
+.capNums .cn i{font-style:normal;margin-top:9px;font-size:clamp(11.5px,0.15rem,13.5px);color:#8a8a8a;line-height:1.5}
+/* 表格去掉「说明」列（最啰嗦的一列），两列更清爽 */
+.vbounds .wtable th:last-child,.vbounds .wtable td.note{display:none}
+.vbounds .wtable table{width:100%;table-layout:fixed}
+.vbounds .wtable th:first-child,.vbounds .wtable td:first-child{width:clamp(84px,7vw,120px)}
+/* 08 设备清单：每组配图 */
+.weq .eqFig{position:relative;overflow:hidden;background:#e8e8e5;height:clamp(118px,9.6vw,148px);margin-bottom:clamp(12px,1.2vw,16px)}
+.weq .eqFig img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.22,1,.36,1)}
+.weq:hover .eqFig img{transform:scale(1.03)}
+@media (max-width:900px){
+  .capHero{grid-template-columns:1fr}
+  .capFig{min-height:clamp(200px,54vw,280px)}
+  .capNums .cn{padding:clamp(14px,4vw,20px)}
+  .weq .eqFig{height:clamp(150px,44vw,210px)}
+}
+</style>
+</head>
+<body id="app" class="manufacturing afterInner">
+<style id="pxid-no-wave">
+  /* ① hero 与 r6 段的波浪（.wave w1 / w2）*/
+  .wave, .wave.w1, .wave.w2{display:none !important}
+  /* ② footer 顶部的波浪 —— 实际是 .wb-footer-wave / .pxid-footer-wave（悬在 footer 上方 ~69px）
+        以及 legacy 的 .bg > svg.water，全部隐藏 */
+  #app footer .wb-footer-wave,
+  #app footer .pxid-footer-wave,
+  #app footer .wb-footer-wave svg,
+  #app footer .pxid-footer-wave svg,
+  #app footer .bg,
+  #app footer .bg .water{display:none !important}
+  /* ③ 波浪是悬出 footer 顶边的，去掉后原来的负 margin 会造成重叠，一并取消 */
+  .afterInner footer,
+  #app footer.wb-footer,
+  #app footer.pxid-footer{margin-top:0 !important}
+  /* ④ footer 顶部拉平成一条细直线，替代原来的波浪收边 */
+  #app footer{border-top:1px solid rgba(255,255,255,.16)}
+</style>
+<header>
+  <nav class="pcNav pc">
+    <a href="index.html" class="col logo">
+      <img class="white" src="../assets/pxid/logo-white.svg" alt="PXID 品向">
+      <img class="black" src="../assets/pxid/logo-ink.svg" alt="PXID 品向">
+    </a>
+    <ul class="mid fxc"><li class="lists hrefList"><a href="index.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>首页</a></li><li class="lists hrefList"><a href="business.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>产品方案</a></li><li class="lists hrefList on"><a href="manufacturing.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>制造能力</a></li><li class="lists hrefList"><a href="sustainability.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>ODM 全流程</a></li><li class="lists hrefList"><a href="news.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>洞察与资料</a></li><li class="lists hrefList"><a href="contact.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>启动项目</a></li><li class="lists hrefList"><a href="company.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>关于 PXID</a></li></ul>
+    <div class="col set fxc">
+      <div class="layer-search" data-url="search.html"><input class="search f-14 wc" type="search" aria-label="搜索产品与资料" placeholder="搜索产品与资料"><button type="button" class="sub fxc" aria-label="搜索"><i class="iconfont f-14 wc" aria-hidden="true">&#xe8af;</i></button></div>
+      <a class="language fxc" href="index.html" aria-label="英文站规划中"><span class="txt wc f-16 en_b">EN</span></a>
+    </div>
+    <div class="mask"></div>
+  </nav>
+  <nav class="appNav app">
+    <div class="mask"></div>
+    <a class="logoBox" href="index.html"><img src="../assets/pxid/logo-white.svg" alt="PXID 品向" class="logo"></a>
+    <div class="col">
+      <a href="search.html" class="searchSub fxc" aria-label="搜索"><i class="iconfont f-14 wc">&#xe8af;</i></a>
+      <button type="button" id="menu" aria-label="打开导航" aria-expanded="false" aria-controls="pxid-mobile-menu"><span class="txt">Menu</span><svg class="pxid-menu-glyph" viewBox="0 0 24 24" aria-hidden="true"><path class="pxid-menu-line pxid-menu-line-top" d="M4 8h16"></path><path class="pxid-menu-line pxid-menu-line-bottom" d="M4 16h16"></path></svg></button>
+    </div>
+  </nav>
+</header>
+<main id="main-content">
+<section class="row banner pxid-inner-hero" data-hero-image="production" data-vh="1.08"><div class="bg"><div class="photo alanGo"><div class="pic full pxid-inner-hero-media"><picture class="pxid-hero-picture"><source media="(max-width: 900px) and (orientation: portrait)" srcset="../assets/pxid/inner-hero/production-mobile.webp" width="941" height="1672"><img src="../assets/pxid/inner-hero/tooling-desktop.webp" width="1672" height="941" alt="PXID 制造车间" fetchpriority="high" loading="eager" decoding="async"></picture></div></div><div class="wave w1"><div class="mask waveItem"></div></div><div class="wave w2"><div class="mask waveItem"></div></div></div><div class="inner maxSize"><small class="f-40 wc en_m alanGo" style="font-size:1.067rem">Manufacturing</small><h1 class="f-40 wc num_b alanGo alanFn" data-text="制造能力">制造能力</h1><div class="scrEl"><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span></div></div></section>
+<div class="mfgMain"><section class="blk vintro">
+<div class="wcols c11">
+  <div class="wtxt"><span class="wlab">MANUFACTURING CAPABILITY</span>
+    <h2 class="wbig2">从设计到量产，<br>全流程自有</h2>
+    <p class="wlede">模具、注塑、CNC、车架、涂装、装配与检测都在自有体系内完成。品牌客户给出产品定义，工程与制造由 PXID 承接 —— 打样与量产不必换供应商。</p>
+    <ul class="wfacts"><li>设计制造一体化</li><li>无外协断点</li><li>小单快反 · 大单稳供</li><li>批次可追溯</li></ul></div>
+  <div class="wcols2">
+    <div class="wstat"><span class="wstatnum">06</span><span class="wstatlab">类工艺覆盖</span></div>
+    <div class="wstat"><span class="wstatnum">23</span><span class="wstatlab">台主要设备</span></div>
+    <div class="wstat"><span class="wstatnum">09</span><span class="wstatlab">台 CNC 加工中心</span></div>
+    <div class="wstat"><span class="wstatnum">07</span><span class="wstatlab">台注塑机 90–530T</span></div>
+  </div>
+</div></section><section class="blk vproc"><div class="whead"><span class="wnum">01–06</span><span class="wlab">PROCESS × EQUIPMENT</span><h3 class="wttl">六大工艺，设备与能力挂在工艺里</h3><span class="wheadnote">每张卡回答：能做什么 / 支撑设备 / 能力边界 / 典型应用</span></div><article class="ccard"><div class="ccard-top"><span class="num">01</span><h4>注塑成型</h4><span class="en">INJECTION MOLDING</span></div><div class="ccard-body"><div class="ccard-media"><div class="wpic"><img src="../assets/pxid/factory-pro/injection-ma5300.jpg" alt="注塑成型" loading="lazy" decoding="async"></div><div class="wmini"><div class="wpic"><img src="../assets/pxid/factory-pro/injection-ht-3200.jpg" alt="" loading="lazy" decoding="async"></div><div class="wpic"><img src="../assets/pxid/factory-pro/inject-op-02.jpg" alt="" loading="lazy" decoding="async"></div></div></div><div class="ccard-info"><div class="crow"><b>能做什么</b><span class="v">结构件、外壳、功能件的小批到批量成型，常规单色成型与自有试模。</span></div><div class="crow"><b>支撑设备</b><span class="v"><span class="hl">海天注塑机 7 台</span><span class="nums"><span>90T × 2</span><span>120T</span><span>250T</span><span>260T</span><span>470T</span><span>530T</span></span></span></div><div class="crow"><b>能力边界</b><span class="v">锁模力覆盖 90–530T；热流道与模温控制按产品结构调整。</span></div><div class="crow"><b>典型应用</b><span class="v">塑料结构件、外观覆盖件、功能件。</span></div></div></div></article><article class="ccard"><div class="ccard-top"><span class="num">02</span><h4>CNC 精密加工</h4><span class="en">CNC MACHINING</span></div><div class="ccard-body flip"><div class="ccard-info"><div class="crow"><b>能做什么</b><span class="v">手板、检具、模具零件与小批金属件的加工；粗加工与精加工分机台排产。</span></div><div class="crow"><b>支撑设备</b><span class="v"><span class="hl">加工中心 9 台</span><span class="nums"><span>永利达 VH11 × 4</span><span>高锋 SV105 × 2</span><span>乔峰 LM2013</span><span>乔峰 HSD1615</span><span>北京精雕 JDLVT500</span></span></span></div><div class="crow"><b>能力边界</b><span class="v">最大行程 2000×1300×600mm（LM2013）／1600×1500×800mm（HSD1615）。</span></div><div class="crow"><b>典型应用</b><span class="v">模具型腔型芯、检具、金属结构件、手板。</span></div></div><div class="ccard-media"><div class="wpic"><img src="../assets/pxid/factory-pro/cnc-vh11-01.jpg" alt="CNC 精密加工" loading="lazy" decoding="async"></div><div class="wmini"><div class="wpic"><img src="../assets/pxid/factory-pro/cnc-jdlvt500.jpg" alt="" loading="lazy" decoding="async"></div><div class="wpic"><img src="../assets/pxid/factory-pro/cnc-hsd1615.jpg" alt="" loading="lazy" decoding="async"></div></div></div></div></article><article class="ccard dark"><div class="ccard-top"><span class="num">03</span><h4>模具设计与制造</h4><span class="en">TOOLING</span></div><div class="ccard-body"><div class="ccard-media"><div class="wpic"><img src="../assets/pxid/factory-pro/mold-rack.jpg" alt="模具设计与制造" loading="lazy" decoding="async"></div><div class="wmini"><div class="wpic"><img src="../assets/pxid/factory-pro/edm-hanba-g45l.jpg" alt="" loading="lazy" decoding="async"></div><div class="wpic"><img src="../assets/pxid/factory-pro/wire-ruijun-fr600.jpg" alt="" loading="lazy" decoding="async"></div></div></div><div class="ccard-info"><div class="crow"><b>能做什么</b><span class="v">从 DFM 可制造性分析、分型规划到模流仿真，再到模架加工、中走丝、EDM 放电与电极加工、模具修正与试模验证 —— 全流程厂内闭环。</span></div><div class="crow"><b>支撑设备</b><span class="v"><span class="hl">EDM 3 台 + 线切割 3 台</span><span class="nums"><span>汉霸 G45L</span><span>迪蒙 ADI600</span><span>牧野 EDGE3i</span><span>霸器 BQ800</span><span>瑞钧 FR600XS</span><span>西部 M50HP</span></span></span></div><div class="crow"><b>能力边界</b><span class="v">中走丝切割 · EDM 放电 · 电极加工 · 模具修正 · 自有试模。</span></div><div class="crow"><b>典型应用</b><span class="v">注塑模具全生命周期。</span></div></div></div></article><article class="ccard"><div class="ccard-top"><span class="num">04</span><h4>车架与涂装</h4><span class="en">FRAME & COATING</span></div><div class="ccard-body flip"><div class="ccard-info"><div class="crow"><b>能做什么</b><span class="v">自有车架产线承担成型与校正；自有涂装线完成外观件涂装与配色打样。</span></div><div class="crow"><b>支撑设备</b><span class="v"><span class="hl">自有车架产线 + 涂装线</span><span class="nums"><span>T4/T6 热处理</span><span>前处理炉</span><span>底漆固化炉</span><span>无尘粉末喷涂线</span></span></span></div><div class="crow"><b>能力边界</b><span class="v">覆盖前处理、底漆固化、T4/T6 热处理到粉末喷涂的完整涂装工艺。</span></div><div class="crow"><b>典型应用</b><span class="v">电动自行车 / 电动摩托车 / 电动滑板车车架与外观件。</span></div></div><div class="ccard-media"><div class="wpic"><img src="../assets/pxid/factory-pro/paint-booth-purple.jpg" alt="车架与涂装" loading="lazy" decoding="async"></div><div class="wmini"><div class="wpic"><img src="../assets/pxid/factory-pro/paint-line-overview.jpg" alt="" loading="lazy" decoding="async"></div><div class="wpic"><img src="../assets/pxid/factory-pro/frame-jig-yellow.jpg" alt="" loading="lazy" decoding="async"></div></div></div></div></article><article class="ccard"><div class="ccard-top"><span class="num">05</span><h4>装配与调试</h4><span class="en">ASSEMBLY</span></div><div class="ccard-body"><div class="ccard-media"><div class="wpic"><img src="../assets/pxid/factory-pro/workstation-01.jpg" alt="装配与调试" loading="lazy" decoding="async"></div><div class="wmini"><div class="wpic"><img src="../assets/pxid/factory-pro/line-scooter-05.jpg" alt="" loading="lazy" decoding="async"></div><div class="wpic"><img src="../assets/pxid/factory-pro/assemble-01.jpg" alt="" loading="lazy" decoding="async"></div></div></div><div class="ccard-info"><div class="crow"><b>能做什么</b><span class="v">整机与部件装配、电气连接与功能调试，按项目节点分批交付。</span></div><div class="crow"><b>支撑设备</b><span class="v"><span class="hl">3 条装配线</span><span class="nums"><span>整机装配</span><span>部件分装</span><span>电气连接</span><span>功能调试</span></span></span></div><div class="crow"><b>能力边界</b><span class="v">装配过程留档、可回溯；可按客户节奏分批出货。</span></div><div class="crow"><b>典型应用</b><span class="v">整车总装。</span></div></div></div></article><article class="ccard dark"><div class="ccard-top"><span class="num">06</span><h4>检测与质量</h4><span class="en">TESTING & QUALITY</span></div><div class="ccard-body flip"><div class="ccard-info"><div class="crow"><b>能做什么</b><span class="v">关键尺寸检测、性能测试、批次质量追溯。</span></div><div class="crow"><b>支撑设备</b><span class="v"><span class="hl">三坐标 1 台（海克斯康）</span><span class="nums"><span>INSPEC 70RS</span><span>行程 1000×1500×800mm</span><span>盐雾试验箱</span></span></span></div><div class="crow"><b>能力边界</b><span class="v">首批量产做 20 余项性能测试（含路试）；IQC / IPQC / OQC / 批次追溯四道关口。</span></div><div class="crow"><b>典型应用</b><span class="v">模具零件、关键尺寸、整机性能。</span></div></div><div class="ccard-media"><div class="wpic"><img src="../assets/pxid/factory-pro/test-salt-spray.jpg" alt="检测与质量" loading="lazy" decoding="async"></div><div class="wmini"><div class="wpic"><img src="../assets/pxid/factory-pro/polish-line.jpg" alt="" loading="lazy" decoding="async"></div><div class="wpic"><img src="../assets/pxid/factory-pro/grinder-kent.jpg" alt="" loading="lazy" decoding="async"></div></div></div></div></article></section><section class="blk vbounds"><div class="whead"><span class="wnum">07</span><span class="wlab">CAPABILITY ENVELOPE</span><h3 class="wttl">能力边界</h3><span class="wheadnote">尺寸 / 产量 / 材料 / 交期 —— 工程师最先核对的就是这几项</span></div><div class="capHero"><div class="capFig"><img src="../assets/pxid/factory-pro/cmm-inspec.jpg" alt="三坐标精密测量" loading="lazy" decoding="async"></div><div class="capNums"><div class="cn"><b>2000<span>×</span>1300<span>×</span>600</b><i>mm · CNC 最大加工行程</i></div><div class="cn"><b>90–530</b><i>T · 注塑锁模力覆盖</i></div><div class="cn"><b>1</b><i>件起 · 打样起订量</i></div><div class="cn"><b>20+</b><i>项 · 量产性能测试</i></div></div></div><div class="wtable"><table><thead><tr><th>项目</th><th>范围</th><th>说明</th></tr></thead><tbody><tr><td>尺寸范围</td><td>注塑件按模具型腔尺寸；CNC 最大行程 2000×1300×600mm（LM2013）／1600×1500×800mm（HSD1615）；三坐标测量行程 1000×1500×800mm</td><td class="note">按工件图纸与机台行程匹配</td></tr><tr><td>产量范围</td><td>打样 1 件起 · 小批试产 · 批量生产</td><td class="note">1 件 → 批量，同一体系内承接，打样与量产不必换供应商</td></tr><tr><td>材料</td><td>工程塑料（注塑件）、铝合金 / 钢件（CNC）、车架用金属型材</td><td class="note">按项目确认牌号与状态</td></tr><tr><td>二次加工</td><td>涂装（自有）、热处理 T4/T6（自有涂装线内）</td><td class="note">其余表面处理按项目评估路径</td></tr><tr><td>交期</td><td>按图纸复杂度与排产评估；打样与量产分别报价</td><td class="note">提交图纸后由工程评估给出周期</td></tr><tr><td>行业</td><td>电动出行：电动自行车 / 电动摩托车 / 电动滑板车</td><td class="note">整机厂与品牌方的 ODM 项目</td></tr></tbody></table></div></section><section class="blk"><div class="whead"><span class="wnum">08</span><span class="wlab">EQUIPMENT LIST</span><h3 class="wttl">自有设备清单</h3><span class="wheadnote">备查层 · 共 23 台主要设备</span></div><div class="wgridEq"><div class="weq"><div class="eqFig"><img src="../assets/pxid/factory-pro/cnc-vh11-01.jpg" alt="CNC 加工中心" loading="lazy" decoding="async"></div><div class="weqhd"><h4>CNC 加工中心</h4><span class="weqcnt">9 台</span></div><ul><li>永利达 VH11 × 4</li><li>高锋 SV105 × 2</li><li>乔峰 LM2013 × 1（行程 2000×1300×600mm）</li><li>乔峰 HSD1615 × 1（行程 1600×1500×800mm）</li><li>北京精雕 JDLVT500 × 1</li></ul></div><div class="weq"><div class="eqFig"><img src="../assets/pxid/factory-pro/injection-ma5300.jpg" alt="注塑机" loading="lazy" decoding="async"></div><div class="weqhd"><h4>注塑机</h4><span class="weqcnt">7 台</span></div><ul><li>90T × 2</li><li>120T</li><li>250T</li><li>260T</li><li>470T</li><li>530T</li></ul></div><div class="weq"><div class="eqFig"><img src="../assets/pxid/factory-pro/edm-hanba-g45l.jpg" alt="EDM 火花机" loading="lazy" decoding="async"></div><div class="weqhd"><h4>EDM 火花机</h4><span class="weqcnt">3 台</span></div><ul><li>汉霸 G45L</li><li>迪蒙 ADI600</li><li>牧野 EDGE3i</li></ul></div><div class="weq"><div class="eqFig"><img src="../assets/pxid/factory-pro/wire-ruijun-fr600.jpg" alt="线切割" loading="lazy" decoding="async"></div><div class="weqhd"><h4>线切割</h4><span class="weqcnt">3 台</span></div><ul><li>霸器 BQ800</li><li>瑞钧 FR600XS (pro)</li><li>西部 M50HP</li></ul></div><div class="weq"><div class="eqFig"><img src="../assets/pxid/factory-pro/cmm-inspec.jpg" alt="三坐标测量机" loading="lazy" decoding="async"></div><div class="weqhd"><h4>三坐标测量机</h4><span class="weqcnt">1 台</span></div><ul><li>海克斯康 INSPEC 70RS 10.15.08</li><li>测量行程 1000×1500×800mm</li></ul></div><div class="weq"><div class="eqFig"><img src="../assets/pxid/factory-pro/grinder-kent.jpg" alt="辅助设备" loading="lazy" decoding="async"></div><div class="weqhd"><h4>辅助设备</h4><span class="weqcnt">—</span></div><ul><li>KENT 平面磨床</li><li>铣床</li><li>普通车床</li></ul></div></div></section><section class="blk vqual"><div class="whead"><span class="wnum">09</span><span class="wlab">QUALITY CONTROL</span><h3 class="wttl">四道关口，批次可追溯</h3></div><div class="wcols c4"><div class="wq"><span class="wqk">IQC</span><h4>来料检验</h4><p>原材料入库前做成分与性能核验，不合格材料不流入产线。</p></div><div class="wq"><span class="wqk">IPQC</span><h4>过程巡检</h4><p>关键工序设在线检测点，按节拍巡回检验并及时纠正偏差。</p></div><div class="wq"><span class="wqk">OQC</span><h4>成品检验</h4><p>外观、尺寸、功能、包装逐项检验，不合格品隔离标识。</p></div><div class="wq"><span class="wqk">TRACE</span><h4>批次追溯</h4><p>每批生成质检记录，材料证明与检测数据可回溯。</p></div></div><div class="wqimgs"><div class="wpic"><img src="../assets/pxid/factory-pro/paint-hang-white.jpg" alt="涂装线挂件" loading="lazy" decoding="async"></div><div class="wpic"><img src="../assets/pxid/factory-pro/label-apply.jpg" alt="车架贴标留档" loading="lazy" decoding="async"></div></div></section><section class="blk blkDark vcaps"><div class="whead"><span class="wnum">10</span><span class="wlab">CAPABILITY</span><h3 class="wttl">ODM 视角的整合能力</h3></div><div class="wgrid4 wgridCap"><div class="wcapc"><span class="wnum">01</span><h4>设计制造一体化</h4><p>设计阶段即考虑工艺可行性，DFM 前置评审，避免「设计做得出来、制造做不出来」。</p></div><div class="wcapc"><span class="wnum">02</span><h4>全流程自主可控</h4><p>模具、CNC、EDM、线切割、注塑、涂装、检测与装配在自有体系内完成，无外协断点。</p></div><div class="wcapc"><span class="wnum">03</span><h4>小单快反 · 大单稳供</h4><p>90T 小机到 530T 大机全覆盖，CNC 兼做手板与小批零件。</p></div><div class="wcapc"><span class="wnum">04</span><h4>品质四道关口</h4><p>来料 IQC、过程 IPQC、成品 OQC、批次追溯，不合格品不外流。</p></div></div></section><section class="blk vproof"><div class="whead"><span class="wnum">11</span><span class="wlab">EVIDENCE</span><h3 class="wttl">产线实录</h3><span class="wheadnote">注塑、装配、涂装、检测现场</span></div><div class="wgrid4"><a class="wcard4"><div class="wpic"><img src="../assets/pxid/factory-pro/injection-ma5300.jpg" alt="注塑现场" loading="lazy" decoding="async"></div><div class="wcardcap"><span class="wnum">01</span><h4>注塑现场</h4><span class="wlab">海天注塑机 90–530T</span></div></a><a class="wcard4"><div class="wpic"><img src="../assets/pxid/factory-pro/workstation-01.jpg" alt="装配线" loading="lazy" decoding="async"></div><div class="wcardcap"><span class="wnum">02</span><h4>装配线</h4><span class="wlab">3 条装配线</span></div></a><a class="wcard4"><div class="wpic"><img src="../assets/pxid/factory-pro/paint-booth-purple.jpg" alt="涂装线" loading="lazy" decoding="async"></div><div class="wcardcap"><span class="wnum">03</span><h4>涂装线</h4><span class="wlab">T4/T6 · 无尘粉末喷涂</span></div></a><a class="wcard4"><div class="wpic"><img src="../assets/pxid/factory-pro/test-salt-spray.jpg" alt="检测" loading="lazy" decoding="async"></div><div class="wcardcap"><span class="wnum">04</span><h4>检测</h4><span class="wlab">盐雾 · 尺寸 · 性能</span></div></a></div></section><section class="blk vfaq"><div class="whead"><span class="wnum">12</span><span class="wlab">FREQUENTLY ASKED</span><h3 class="wttl">常见问题</h3></div><div class="wfaq"><div class="wfq"><h4>最少多少件可以做？</h4><p>打样 1 件起，CNC 与小批试产都能承接；批量生产按项目排产。</p></div><div class="wfq"><h4>打样和量产要不要换供应商？</h4><p>不用。模具、CNC、注塑、涂装、装配在同一体系内，从打样直接过渡到量产。</p></div><div class="wfq"><h4>能不能按图纸控公差？</h4><p>按图纸与检测记录承诺。机床的定位/重复定位指标不等于零件验收公差，具体以约定的检测项为准。</p></div><div class="wfq"><h4>外观件能做涂装吗？</h4><p>能。自有涂装线覆盖前处理、底漆固化、T4/T6 热处理与无尘粉末喷涂，支持配色打样。</p></div><div class="wfq"><h4>怎么保证批次一致性？</h4><p>四道关口 IQC / IPQC / OQC / 批次追溯，每批生成质检记录，材料证明与检测数据可回溯。</p></div><div class="wfq"><h4>交期怎么算？</h4><p>提交图纸或产品定义后由工程评估工艺路径与排产，打样与量产分别给出周期。</p></div><div class="wfq"><h4>怎么开始合作？</h4><p>提交产品定义、结构图纸或样品，工程师评估可行性、工艺路径与风险后给出方案与报价。</p></div></div></section><section class="blk vtail"><div class="wcols c11"><div class="wtxt"><span class="wlab">START A PROJECT</span><h3 class="wttl">把图纸发过来，先做一次工程评估</h3><p class="wlede">提交产品定义、结构图纸或样品，工程师评估工艺路径、周期与风险后给出方案与报价。</p><div class="wbtns"><a class="wbtn red" href="contact.html#project-form">咨询制造合作</a><a class="wbtn" href="sustainability.html">查看 ODM 全流程</a></div></div><div class="wimg"><div class="wpic"><img src="../assets/pxid/factory-pro/assemble-02.jpg" alt="装配现场" loading="lazy" decoding="async"></div></div></div></section></div>
+</main>
+<footer id="footer-contact" class="wb-footer"><div class="wb-footer-wave" aria-hidden="true"><svg viewBox="0 0 1440 92" preserveAspectRatio="none" focusable="false"><path d="M0 54C176 16 315 12 469 38C636 66 770 83 934 55C1097 27 1235 15 1440 46V92H0Z"></path></svg></div><div class="wb-footer-inner"><div class="wb-footer-top"><a class="wb-footer-logo" href="index.html" aria-label="PXID 品向首页"><img src="../assets/pxid/logo-white.svg" alt="PXID 品向"></a><div class="wb-footer-links"><nav class="wb-footer-col" aria-label="产品方向"><h3>产品方向</h3><a href="business.html#ebike">电动自行车</a><a href="business.html#scooter">电动滑板车</a><a href="business.html#motorcycle">电动摩托车</a></nav><nav class="wb-footer-col" aria-label="ODM 服务"><h3>ODM 服务</h3><a href="sustainability.html#stage-definition">产品设计</a><a href="sustainability.html#stage-design">结构与电控系统设计</a><a href="sustainability.html#stage-engineering">工程样车开发</a><a href="sustainability.html#stage-delivery">测试与批量生产</a></nav><nav class="wb-footer-col" aria-label="公司信息"><h3>公司</h3><a href="company.html">关于 PXID</a><a href="news.html">新闻与资料</a><a href="contact.html">项目咨询</a></nav></div></div><div class="wb-footer-mid"><div class="wb-footer-contact"><div class="wb-footer-contact-item"><svg class="wb-footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><address>江苏省淮安市清江浦区深圳东路18号4号楼</address></div><div class="wb-footer-contact-item"><svg class="wb-footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 1 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+8618936381099">+86 189 3638 1099</a></div><div class="wb-footer-contact-item"><svg class="wb-footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:inquiry@pxid.com">inquiry@pxid.com</a></div></div><div class="wb-footer-side"><div class="wb-footer-share"><h3>关注 PXID</h3><div class="wb-footer-qrs"><figure class="wb-footer-qr" title="微信"><img src="../assets/pxid/footer/qr-wechat.svg" alt="PXID 微信二维码" loading="lazy"></figure><figure class="wb-footer-qr" title="抖音"><img src="../assets/pxid/footer/qr-douyin.svg" alt="PXID 抖音二维码" loading="lazy"></figure><figure class="wb-footer-qr" title="小红书"><img src="../assets/pxid/footer/qr-xiaohongshu.svg" alt="PXID 小红书二维码" loading="lazy"></figure><figure class="wb-footer-qr" title="视频号"><img src="../assets/pxid/footer/qr-videochannel.svg" alt="PXID 视频号二维码" loading="lazy"></figure></div></div><div class="wb-footer-subscribe"><h3>订阅行业资讯</h3><form class="wb-footer-subscribe-form"><label class="sr-only" for="pxid-footer-email">邮箱地址</label><input id="pxid-footer-email" name="email" type="email" autocomplete="email" placeholder="Your Email Address_" required=""><button type="submit">订阅 <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></form><p class="wb-footer-form-status" aria-live="polite"></p></div></div></div><div class="wb-footer-bottom"><p>Copyright © 2026 PXID 品向智造. All rights reserved.</p><div><a href="privacy-policy.html">隐私政策</a><span aria-hidden="true">|</span><a href="legal-notice.html">法律声明</a><span aria-hidden="true">|</span><div class="wb-footer-top-link" role="button" tabindex="0" aria-label="返回顶部">返回顶部 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></div></div><p>从产品设计到批量生产</p></div></div></footer>
+
+
+<script src="../templates/assets/pxid-motion.js"></script>
+<script src="../templates/assets/pxid-site.js?v=20260828-company-menu21"></script>
+</body>
+</html>

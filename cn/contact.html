@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="chinaLg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>项目咨询｜PXID 品向</title>
+  <meta name="description" content="联系 PXID，提交电动自行车、电动摩托车或电动滑板车的 ODM 项目需求。">
+  <meta name="keywords" content="PXID,品向,工业设计,电动出行,ODM,电动自行车,电动滑板车,制造">
+  <link rel="icon" href="../assets/pxid/logo-dark.png" type="image/png">
+  <script src="../templates/assets/swiper-bundle.js"></script>
+  <link rel="stylesheet" href="../templates/assets/index.css">
+  <link rel="stylesheet" href="../templates/assets/respone.css">
+  <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260831-bw-red8">
+<style>
+/* 坤哥 09-15：intro 模块中英字号对换 —— 英文为主(40px)、中文为辅(18px)，
+   比例 2.2:1 与 hero 语言一致，但整体尺度按本模块（表单引导区）收小。
+   页内样式，不动全站共享 CSS。 */
+.contact-intro > span{ display:block; font-size:clamp(32px,.53rem,52px); line-height:1.12;
+  letter-spacing:.02em; font-weight:600; color:var(--pxid-red); text-transform:uppercase; }
+.contact-intro h2{ font-size:clamp(16px,.24rem,20px); line-height:1.45; margin:.12rem 0 .2rem;
+  color:var(--pxid-ink); font-weight:600; }
+</style>
+</head>
+<body id="app" class="contact afterInner">
+<!-- 全站去掉波浪（坤哥 2026-09-19）：hero/r6 的 .wave 与 footer 顶部 svg.water 隐藏，footer 顶部改平直线 -->
+<style id="pxid-no-wave">
+  /* ① hero 与 r6 段的波浪（.wave w1 / w2）*/
+  .wave, .wave.w1, .wave.w2{display:none !important}
+  /* ② footer 顶部的波浪 —— 实际是 .wb-footer-wave / .pxid-footer-wave（悬在 footer 上方 ~69px）
+        以及 legacy 的 .bg > svg.water，全部隐藏 */
+  #app footer .wb-footer-wave,
+  #app footer .pxid-footer-wave,
+  #app footer .wb-footer-wave svg,
+  #app footer .pxid-footer-wave svg,
+  #app footer .bg,
+  #app footer .bg .water{display:none !important}
+  /* ③ 波浪是悬出 footer 顶边的，去掉后原来的负 margin 会造成重叠，一并取消 */
+  .afterInner footer,
+  #app footer.wb-footer,
+  #app footer.pxid-footer{margin-top:0 !important}
+  /* ④ footer 顶部拉平成一条细直线，替代原来的波浪收边 */
+  #app footer{border-top:1px solid rgba(255,255,255,.16)}
+</style>
+<header>
+  <nav class="pcNav pc">
+    <a href="index.html" class="col logo">
+      <img class="white" src="../assets/pxid/logo-white.svg" alt="PXID 品向">
+      <img class="black" src="../assets/pxid/logo-ink.svg" alt="PXID 品向">
+    </a>
+    <ul class="mid fxc"><li class="lists hrefList"><a href="index.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>首页</a></li><li class="lists hrefList"><a href="business.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>产品方案</a></li><li class="lists hrefList"><a href="manufacturing.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>制造能力</a></li><li class="lists hrefList"><a href="sustainability.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>ODM 全流程</a></li><li class="lists hrefList"><a href="news.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>洞察与资料</a></li><li class="lists hrefList on"><a href="contact.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>启动项目</a></li><li class="lists hrefList"><a href="company.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>关于 PXID</a></li></ul>
+    <div class="col set fxc">
+      <div class="layer-search" data-url="search.html"><input class="search f-14 wc" type="text" placeholder="搜索产品与资料"><a class="sub fxc" aria-label="搜索"><i class="iconfont f-14 wc">&#xe8af;</i></a></div>
+      <a class="language fxc" href="index.html" aria-label="英文站规划中"><span class="txt wc f-16 en_b">EN</span></a>
+    </div>
+    <div class="mask"></div>
+  </nav>
+  <nav class="appNav app">
+    <div class="mask"></div>
+    <a class="logoBox" href="index.html"><img src="../assets/pxid/logo-white.svg" alt="PXID 品向" class="logo"></a>
+    <div class="col">
+      <a href="search.html" class="searchSub fxc" aria-label="搜索"><i class="iconfont f-14 wc">&#xe8af;</i></a>
+      <span id="menu"><span class="txt">Menu</span><svg class="pxid-menu-glyph" viewBox="0 0 24 24" aria-hidden="true"><path class="pxid-menu-line pxid-menu-line-top" d="M4 8h16"></path><path class="pxid-menu-line pxid-menu-line-bottom" d="M4 16h16"></path></svg></span>
+    </div>
+  </nav>
+</header>
+<nav class="menu">
+  <div class="items" data-vh=".8"><div class="content"><a href="index.html" class="lists appNavList"><span class="en_b f-26 wc">首页</span></a><a href="business.html" class="lists appNavList"><span class="en_b f-26 wc">产品方案</span></a><a href="sustainability.html" class="lists appNavList"><span class="en_b f-26 wc">ODM 全流程</span></a><a href="news.html" class="lists appNavList"><span class="en_b f-26 wc">洞察与资料</span></a><a href="contact.html" class="lists appNavList"><span class="en_b f-26 wc">启动项目</span></a><a href="company.html" class="lists appNavList"><span class="en_b f-26 wc">关于 PXID</span></a></div></div>
+  <svg class="shape-overlays" viewBox="0 0 1080 1080" preserveAspectRatio="none"><rect class="path" x="0" y="0" width="1080" height="1080"></rect></svg>
+</nav>
+<main><section class="row banner pxid-inner-hero" data-hero-image="contact" data-vh="1.08"><div class="bg"><div class="photo alanGo"><div class="pic full pxid-inner-hero-media"><picture class="pxid-hero-picture"><source media="(max-width: 900px) and (orientation: portrait)" srcset="../assets/pxid/home/mobile/hero-m2-portrait.jpg" width="941" height="1672"><img src="../assets/pxid/inner-hero/contact-desktop.jpg" width="1920" height="808" alt="" fetchpriority="high" loading="eager" decoding="async"></picture></div></div><div class="wave w1"><div class="mask waveItem"></div></div><div class="wave w2"><div class="mask waveItem"></div></div></div><div class="inner maxSize"><small class="f-40 wc en_m alanGo" style="font-size:1.067rem">Contact PXID</small><h1 class="f-40 wc num_b alanGo alanFn" data-text="项目咨询">项目咨询</h1><div class="scrEl"><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span></div></div></section><section class="row r1"><div class="inner maxSize"><div class="contact-intro"><span>Project Information</span><h2>提交项目需求</h2><p class="pxid-prose">请填写产品类别、当前阶段、目标市场和已有资料。当前为演示页面，表单暂不发送。</p></div><div class="pxid-contact-layout"><form id="project-form" class="pxid-project-form" novalidate><fieldset><legend>当前项目阶段</legend><label><input type="radio" name="stage" value="idea" checked>仅有产品构想，需要产品设计</label><label><input type="radio" name="stage" value="design">已有设计方案，需要结构与电控开发</label><label><input type="radio" name="stage" value="prototype">已有工程样车，需要测试或优化</label><label><input type="radio" name="stage" value="production">已具备量产条件，需要制造评估</label></fieldset><fieldset><legend>产品类别</legend><label><input type="checkbox" name="product" value="ebike">电动自行车</label><label><input type="checkbox" name="product" value="motorcycle">电动摩托车</label><label><input type="checkbox" name="product" value="scooter">电动滑板车</label><label><input type="checkbox" name="product" value="other">其他电动出行产品</label></fieldset><div class="form-fields"><label>姓名 *<input required name="name" type="text" autocomplete="name"></label><label>公司或品牌名称 *<input required name="company" type="text" autocomplete="organization"></label><label>工作邮箱 *<input required name="email" type="email" autocomplete="email"></label><label>联系电话 *<input required name="phone" type="text" autocomplete="tel"></label><label class="wide">目标市场<input name="market" type="text"></label><label class="wide">项目说明<textarea name="message" rows="6" placeholder="请说明产品类别、当前阶段、目标市场、预计数量和时间要求，并注明已有的草图、三维数据或工程样车。"></textarea></label></div><button type="submit">提交项目需求</button><p class="form-status" role="status" aria-live="polite"></p></form><aside class="contact-aside"><span>PXID / 淮安</span><h3>联系 PXID</h3><p><strong>电话</strong><br><a href="tel:+8618936381099">+86 189 3638 1099</a></p><p><strong>邮箱</strong><br><a href="mailto:inquiry@pxid.com">inquiry@pxid.com</a></p><p><strong>地址</strong><br>江苏省淮安市清江浦区深圳东路18号4号楼</p><a class="contact-link" href="business.html#capabilities">查看制造能力 →</a></aside></div></div></section></main>
+<footer id="footer-contact">
+  <div class="bg"><svg class="water" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none"><defs><path id="foot-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z"/></defs><g class="parallax"><use href="#foot-wave" x="50" y="0" fill="rgba(19,65,68,1)"/></g></svg></div>
+  <div class="inner">
+    <div class="mid fxb">
+      <div class="left alanParent alanGo"><a class="logo alanUp" href="index.html"><img class="icon" src="../assets/pxid/logo-white.svg" alt="PXID 品向"></a></div>
+      <div class="right"><div class="top fxb alanParent alanGo"><div class="layer-search alanUp" data-url="search.html"><input class="search f-14 wc" type="text" placeholder="搜索产品与资料"><a class="sub fxc" aria-label="搜索"><i class="iconfont f-20 wc">&#xe8af;</i></a></div><div class="layer-top alanUp"><span class="mask"></span><span class="txt layer-icon"><i class="iconfont f-18">&#xe8ba;</i></span></div></div><ul class="items alanParent alanGo"><li class="list alanUp"><a href="index.html" class="f-20 en_b fxs wc txt">首页<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="company.html" class="f-20 en_b fxs wc txt">关于 PXID<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="business.html" class="f-20 en_b fxs wc txt">产品方案<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="manufacturing.html" class="f-20 en_b fxs wc txt">制造能力<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="sustainability.html" class="f-20 en_b fxs wc txt">ODM 全流程<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="news.html" class="f-20 en_b fxs wc txt">洞察与资料<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="contact.html" class="f-20 en_b fxs wc txt">启动项目<i class="iconfont f-20 mc">&#xe8a9;</i></a></li></ul></div>
+    </div>
+    <div class="btm alanParent alanGo">
+      <p class="f-12 wc alanUp">Copyright © 2026 PXID 品向智造. All rights reserved.</p>
+      <div class="col fxb alanUp"><p class="f-14 wc"><a href="tel:+8618936381099">+86 189 3638 1099</a><br><a href="mailto:inquiry@pxid.com">inquiry@pxid.com</a><br>江苏省淮安市清江浦区深圳东路18号4号楼</p><div class="set fxc"><a class="f-12 aHref" href="privacy-policy.html">隐私政策</a><span class="line"></span><a class="f-12 aHref" href="legal-notice.html">法律声明</a></div></div>
+    </div>
+  </div>
+</footer>
+<script src="../templates/assets/pxid-motion.js"></script>
+<script src="../templates/assets/pxid-site.js?v=20260828-company-menu21"></script>
+
+</body>
+</html>

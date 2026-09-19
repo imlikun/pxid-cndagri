@@ -1,0 +1,15 @@
+# ===== 备份 / 回退点（绝不入库） =====
+_bak-*/
+**/_bak-*/
+*.bak-*
+
+# ===== 测试 / 预览产物 =====
+.playwright/
+**/.playwright/
+_preview/
+**/_preview/
+
+# ===== 系统 / 编辑器 =====
+.DS_Store
+Thumbs.db
+*.swp

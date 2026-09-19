@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="chinaLg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ODM 全流程｜PXID 品向</title>
+  <meta name="description" content="了解 PXID 从产品设计、结构与电控开发到工程样车、制造、检验和批量生产的 ODM 流程。">
+  <meta name="keywords" content="PXID,品向,工业设计,电动出行,ODM,电动自行车,电动滑板车,制造">
+  <link rel="icon" href="../assets/pxid/logo-dark.png" type="image/png">
+  <script src="../templates/assets/swiper-bundle.js"></script>
+  <link rel="stylesheet" href="../templates/assets/index.css">
+  <link rel="stylesheet" href="../templates/assets/respone.css">
+  <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260831-bw-red8">
+<style id="pxid-nav-local">
+/* ===== 本页导航定制：hover 出下划线；去掉项前那个 3D 翻转小图标 ===== */
+/* 原效果：.lists .navHref .iconfont{opacity:0;rotateX(90deg)...} → hover/当前项才翻出来 */
+#app header .pcNav .mid .lists .navHref .iconfont{display:none !important}
+#app header .pcNav .mid .lists .navHref::after{
+  content:"";position:absolute;left:.3rem;right:.3rem;bottom:calc(50% - 13px);
+  height:2px;background:#d71920;pointer-events:none;
+  -webkit-transform:scaleX(0);transform:scaleX(0);
+  -webkit-transform-origin:left center;transform-origin:left center;
+  -webkit-transition:-webkit-transform .28s cubic-bezier(.38,0,0,1);
+  transition:transform .28s cubic-bezier(.38,0,0,1)}
+#app header .pcNav .mid .lists:hover .navHref::after,
+#app header .pcNav .mid .lists.on .navHref::after{
+  -webkit-transform:scaleX(1);transform:scaleX(1)}
+@media (prefers-reduced-motion:reduce){
+  #app header .pcNav .mid .lists .navHref::after{transition:none}
+}
+</style>
+</head>
+<body id="app" class="sustain afterInner">
+<header>
+  <nav class="pcNav pc">
+    <a href="index.html" class="col logo">
+      <img class="white" src="../assets/pxid/logo-white.svg" alt="PXID 品向">
+      <img class="black" src="../assets/pxid/logo-ink.svg" alt="PXID 品向">
+    </a>
+    <ul class="mid fxc"><li class="lists hrefList"><a href="index.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>首页</a></li><li class="lists hrefList"><a href="business.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>产品方案</a></li><li class="lists hrefList on"><a href="sustainability.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>ODM 全流程</a></li><li class="lists hrefList"><a href="news.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>洞察与资料</a></li><li class="lists hrefList"><a href="contact.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>启动项目</a></li><li class="lists hrefList"><a href="company.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>关于 PXID</a></li></ul>
+    <div class="col set fxc">
+      <div class="layer-search" data-url="search.html"><input class="search f-14 wc" type="text" placeholder="搜索产品与资料"><a class="sub fxc" aria-label="搜索"><i class="iconfont f-14 wc">&#xe8af;</i></a></div>
+      <a class="language fxc" href="index.html" aria-label="英文站规划中"><span class="txt wc f-16 en_b">EN</span></a>
+    </div>
+    <div class="mask"></div>
+  </nav>
+  <nav class="appNav app">
+    <div class="mask"></div>
+    <a class="logoBox" href="index.html"><img src="../assets/pxid/logo-white.svg" alt="PXID 品向" class="logo"></a>
+    <div class="col">
+      <a href="search.html" class="searchSub fxc" aria-label="搜索"><i class="iconfont f-14 wc">&#xe8af;</i></a>
+      <span id="menu"><span class="txt">Menu</span><svg class="pxid-menu-glyph" viewBox="0 0 24 24" aria-hidden="true"><path class="pxid-menu-line pxid-menu-line-top" d="M4 8h16"></path><path class="pxid-menu-line pxid-menu-line-bottom" d="M4 16h16"></path></svg></span>
+    </div>
+  </nav>
+</header>
+<nav class="menu">
+  <div class="items" data-vh=".8"><div class="content"><a href="index.html" class="lists appNavList"><span class="en_b f-26 wc">首页</span></a><a href="business.html" class="lists appNavList"><span class="en_b f-26 wc">产品方案</span></a><a href="sustainability.html" class="lists appNavList"><span class="en_b f-26 wc">ODM 全流程</span></a><a href="news.html" class="lists appNavList"><span class="en_b f-26 wc">洞察与资料</span></a><a href="contact.html" class="lists appNavList"><span class="en_b f-26 wc">启动项目</span></a><a href="company.html" class="lists appNavList"><span class="en_b f-26 wc">关于 PXID</span></a></div></div>
+  <svg class="shape-overlays" viewBox="0 0 1080 1080" preserveAspectRatio="none"><rect class="path" x="0" y="0" width="1080" height="1080"></rect></svg>
+</nav>
+<main>
+  <section class="row banner pxid-inner-hero" data-hero-image="tooling" data-vh="1.08">
+    <div class="bg"><div class="photo alanGo"><div class="pic full pxid-inner-hero-media"><picture class="pxid-hero-picture"><source media="(max-width: 900px) and (orientation: portrait)" srcset="../assets/pxid/inner-hero/tooling-mobile.webp" width="750" height="1000"><img src="../assets/pxid/inner-hero/tooling-desktop.webp" width="1920" height="940" alt="" fetchpriority="high" loading="eager" decoding="async"></picture></div></div><div class="wave w1"><div class="mask waveItem"></div></div><div class="wave w2"><div class="mask waveItem"></div></div></div>
+    <div class="inner maxSize"><small class="f-40 wc en_m alanGo">ODM Process</small><h1 class="f-170 wc num_b alanGo alanFn" data-text="ODM 全流程">ODM 全流程</h1><div class="scrEl"><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span></div></div>
+  </section>
+
+  <section class="row r1 odm-intro" id="odm-intro" data-f2="orig">
+    <div class="group maxSize">
+      <div class="f2-switch" role="group" aria-label="版式切换">
+        <button type="button" data-v="orig" class="on">原样</button>
+        <button type="button" data-v="a">A 七宫格</button>
+        <button type="button" data-v="b">B 大序号刻度条</button>
+        <button type="button" data-v="c">C 横向轴线</button>
+        <button type="button" data-v="e">E 索引卡带</button>
+      </div>
+      <div class="pxid-section-head alanGo">
+        <h2>从产品设计到批量生产</h2>
+        <p class="pxid-prose">PXID 为电动出行产品提供一站式 ODM 服务，覆盖从概念设计、工程开发到规模化量产的完整流程。</p>
+      </div>
+      <ol class="odm-process-index alanGo" aria-label="ODM 五组流程">
+        <li><a href="#stage-definition"><span>01</span><strong>产品设计</strong><small>草图与效果图</small></a></li>
+        <li><a href="#stage-design"><span>02</span><strong>结构与电控</strong><small>系统设计</small></a></li>
+        <li><a href="#stage-engineering"><span>03</span><strong>工程样车</strong><small>实车验证</small></a></li>
+        <li><a href="#stage-validation"><span>04</span><strong>制造准备</strong><small>模具、车架与涂装</small></a></li>
+        <li><a href="#stage-delivery"><span>05</span><strong>测试与量产</strong><small>质量检验</small></a></li>
+      </ol>
+
+      <div class="f2-var f2-v-a" data-f2v="a" aria-label="方案 A">
+          <div class="f2-head"><h2>从产品设计到批量生产</h2><p>PXID 为电动出行产品提供一站式 ODM 服务，覆盖从概念设计、工程开发到规模化量产的完整流程。</p></div>
+          <div class="f2-gA">
+          <a href="#stage-definition"><div class="f2-tA"><span class="f2-iA f2-num">01</span><h3 class="f2-nA">产品设计</h3></div><p class="f2-sA">草图与效果图</p></a>
+          <a href="#stage-design"><div class="f2-tA"><span class="f2-iA f2-num">02</span><h3 class="f2-nA">结构与电控</h3></div><p class="f2-sA">系统设计</p></a>
+          <a href="#stage-engineering"><div class="f2-tA"><span class="f2-iA f2-num">03</span><h3 class="f2-nA">工程样车</h3></div><p class="f2-sA">实车验证</p></a>
+          <a href="#stage-validation"><div class="f2-tA"><span class="f2-iA f2-num">04</span><h3 class="f2-nA">制造准备</h3></div><p class="f2-sA">模具、车架与涂装</p></a>
+          <a href="#stage-delivery"><div class="f2-tA"><span class="f2-iA f2-num">05</span><h3 class="f2-nA">测试与量产</h3></div><p class="f2-sA">质量检验</p></a>
+          </div>
+      </div>
+      <div class="f2-var f2-v-b" data-f2v="b" aria-label="方案 B">
+          <div class="f2-head"><h2>从产品设计到批量生产</h2><p>PXID 为电动出行产品提供一站式 ODM 服务，覆盖从概念设计、工程开发到规模化量产的完整流程。</p></div>
+          <div class="f2-gB">
+          <a href="#stage-definition"><span class="f2-bigB">01</span><div class="f2-dashB"></div><h3 class="f2-nB">产品设计</h3><p class="f2-sB">草图与效果图</p></a>
+          <a href="#stage-design"><span class="f2-bigB">02</span><div class="f2-dashB"></div><h3 class="f2-nB">结构与电控</h3><p class="f2-sB">系统设计</p></a>
+          <a href="#stage-engineering"><span class="f2-bigB">03</span><div class="f2-dashB"></div><h3 class="f2-nB">工程样车</h3><p class="f2-sB">实车验证</p></a>
+          <a href="#stage-validation"><span class="f2-bigB">04</span><div class="f2-dashB"></div><h3 class="f2-nB">制造准备</h3><p class="f2-sB">模具、车架与涂装</p></a>
+          <a href="#stage-delivery"><span class="f2-bigB">05</span><div class="f2-dashB"></div><h3 class="f2-nB">测试与量产</h3><p class="f2-sB">质量检验</p></a>
+          </div>
+      </div>
+      <div class="f2-var f2-v-c" data-f2v="c" aria-label="方案 C">
+          <div class="f2-head"><h2>从产品设计到批量生产</h2><p>PXID 为电动出行产品提供一站式 ODM 服务，覆盖从概念设计、工程开发到规模化量产的完整流程。</p></div>
+          <div class="f2-axis"><div class="f2-gC">
+          <a class="f2-cellC f2-up" href="#stage-definition">
+            <div class="f2-txtC"><span class="f2-iC f2-num">01</span><h3 class="f2-nC">产品设计</h3><p class="f2-sC">草图与效果图</p></div>
+            <span class="f2-dotC"></span>
+          </a>
+          <a class="f2-cellC f2-down" href="#stage-design">
+            <div class="f2-txtC"><span class="f2-iC f2-num">02</span><h3 class="f2-nC">结构与电控</h3><p class="f2-sC">系统设计</p></div>
+            <span class="f2-dotC"></span>
+          </a>
+          <a class="f2-cellC f2-up" href="#stage-engineering">
+            <div class="f2-txtC"><span class="f2-iC f2-num">03</span><h3 class="f2-nC">工程样车</h3><p class="f2-sC">实车验证</p></div>
+            <span class="f2-dotC"></span>
+          </a>
+          <a class="f2-cellC f2-down" href="#stage-validation">
+            <div class="f2-txtC"><span class="f2-iC f2-num">04</span><h3 class="f2-nC">制造准备</h3><p class="f2-sC">模具、车架与涂装</p></div>
+            <span class="f2-dotC"></span>
+          </a>
+          <a class="f2-cellC f2-up" href="#stage-delivery">
+            <div class="f2-txtC"><span class="f2-iC f2-num">05</span><h3 class="f2-nC">测试与量产</h3><p class="f2-sC">质量检验</p></div>
+            <span class="f2-dotC"></span>
+          </a>
+          </div></div>
+      </div>
+      <div class="f2-var f2-v-e" data-f2v="e" aria-label="方案 E">
+          <div class="f2-head"><h2>从产品设计到批量生产</h2><p>PXID 为电动出行产品提供一站式 ODM 服务，覆盖从概念设计、工程开发到规模化量产的完整流程。</p></div>
+          <div class="f2-gE">
+          <a class="f2-cE" href="#stage-definition"><span class="f2-iE f2-num">01</span><h3 class="f2-nE">产品设计</h3><p class="f2-sE">草图与效果图</p></a>
+          <a class="f2-cE" href="#stage-design"><span class="f2-iE f2-num">02</span><h3 class="f2-nE">结构与电控</h3><p class="f2-sE">系统设计</p></a>
+          <a class="f2-cE" href="#stage-engineering"><span class="f2-iE f2-num">03</span><h3 class="f2-nE">工程样车</h3><p class="f2-sE">实车验证</p></a>
+          <a class="f2-cE" href="#stage-validation"><span class="f2-iE f2-num">04</span><h3 class="f2-nE">制造准备</h3><p class="f2-sE">模具、车架与涂装</p></a>
+          <a class="f2-cE" href="#stage-delivery"><span class="f2-iE f2-num">05</span><h3 class="f2-nE">测试与量产</h3><p class="f2-sE">质量检验</p></a>
+          </div>
+      </div>
+    </div>
+  </section>
+<style>
+/* ===== F2 版式切换（临时挑选用 · 定稿后整块删除）===== */
+#odm-intro{position:relative}
+#odm-intro{
+  --f2-red:#d71920; --f2-page:#f8f8f8; --f2-block:#f4f4f4; --f2-line:#e4e4e4;
+  --f2-ink:#333333; --f2-ink-3:#999999; --f2-title:#1a1a1a;
+  --f2-en:"Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+  --f2-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --f2-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --f2-gutter:clamp(16px,4vw,64px);
+}
+#odm-intro .f2-switch{position:absolute;top:-58px;right:0;z-index:6;
+  display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;align-items:center;
+  max-width:100%;font-family:var(--f2-sans)}
+#odm-intro .f2-switch button{font:inherit;font-size:12.5px;line-height:1;letter-spacing:.02em;
+  padding:7px 11px;border:1px solid #dcdcda;background:#fff;color:#6a6a6a;cursor:pointer;
+  border-radius:0;transition:background-color .2s ease,color .2s ease,border-color .2s ease;white-space:nowrap}
+#odm-intro .f2-switch button:hover{border-color:#d71920;color:#d71920}
+#odm-intro .f2-switch button.on{background:#d71920;border-color:#d71920;color:#fff}
+#odm-intro .f2-var{display:none}
+#odm-intro[data-f2="a"] .f2-var[data-f2v="a"],
+#odm-intro[data-f2="b"] .f2-var[data-f2v="b"],
+#odm-intro[data-f2="c"] .f2-var[data-f2v="c"],
+#odm-intro[data-f2="e"] .f2-var[data-f2v="e"]{display:block}
+#odm-intro:not([data-f2="orig"]) > .group > .pxid-section-head,
+#odm-intro:not([data-f2="orig"]) > .group > .odm-process-index{display:none}
+@media (max-width:900px){
+  #odm-intro .f2-switch{position:static;margin:0 0 22px;justify-content:flex-start}
+  #odm-intro .f2-switch button{font-size:12px;padding:6px 9px}
+}
+  #odm-intro .f2-var .f2-head h2{font-size:clamp(30px, 0.64rem, 65px);line-height:1.2;margin: 0 0 14px;font-weight:400;
+    letter-spacing:-.01em;color:var(--f2-title)}
+  #odm-intro .f2-var .f2-head p{font-size:clamp(16px, 0.2133rem, 18px);line-height:2;color:var(--f2-ink-3);margin:0 0 clamp(30px,3vw,56px);max-width:820px}
+  #odm-intro .f2-var .f2-num{font-family:var(--f2-en);color:var(--f2-red);font-weight:700;line-height:1}
+
+
+/* ===== 方案 A 七宫格（01 红序号 + 加粗名称 + 浅灰副文，四级灰度，无线无图标）===== */
+  #odm-intro .f2-v-a{background:transparent}
+  #odm-intro .f2-v-a .f2-gA{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(18px,2.4vw,44px)}
+  #odm-intro .f2-v-a .f2-tA{display:flex;align-items:baseline;gap: 12px}
+  #odm-intro .f2-v-a .f2-iA{font-size:clamp(19px, 0.4rem, 41px);flex:none}
+  #odm-intro .f2-v-a .f2-nA{font-size:clamp(13px, 0.28rem, 29px);font-weight:700;color:var(--f2-title);margin:0;line-height:1.7;letter-spacing:-.01em}
+  #odm-intro .f2-v-a .f2-sA{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.8;color:var(--f2-ink-3);margin: 6px 0 0;padding-left:calc(clamp(24px,2.1vw,32px) + 12px)}
+
+  
+/* ===== 方案 B 大序号刻度条（超大序号 + 红短横线 + 名称副文）===== */
+  #odm-intro .f2-v-b{background:transparent}
+  #odm-intro .f2-v-b .f2-gB{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(18px,2.4vw,44px)}
+  #odm-intro .f2-v-b .f2-bigB{font-family:var(--f2-en);font-size:clamp(45px, 0.96rem, 98px);color:var(--f2-red);font-weight:700;line-height:.82}
+  #odm-intro .f2-v-b .f2-dashB{width:26px;height:3px;background: var(--f2-red);margin: clamp(16px, 0.2133rem, 18px) 0 clamp(11px, 0.24rem, 24px)}
+  #odm-intro .f2-v-b .f2-nB{font-size:clamp(13px, 0.28rem, 29px);font-weight:700;color:var(--f2-title);margin:0;line-height:1.7}
+  #odm-intro .f2-v-b .f2-sB{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.8;color:var(--f2-ink-3);margin: 6px 0 0}
+
+  
+/* ===== 方案 C 横向轴线（一条线贯穿，节点固定在中线上，文字上下交替）===== */
+  #odm-intro .f2-v-c{background:transparent}
+  #odm-intro .f2-v-c .f2-axis{position:relative}
+  #odm-intro .f2-v-c .f2-axis::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background: var(--f2-line)}
+  #odm-intro .f2-v-c .f2-gC{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,1.8vw,34px);position:relative}
+  #odm-intro .f2-v-c .f2-cellC{position:relative;display:block;height:clamp(160px,14vw,220px)}
+  #odm-intro .f2-v-c .f2-dotC{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:11px;height:11px;border-radius:50%;background: var(--f2-red);box-shadow:0 0 0 5px #ffffff}
+  #odm-intro .f2-v-c .f2-txtC{position:absolute;left:0;right:0;text-align:center;background: rgb(255,255,255)}
+  #odm-intro .f2-v-c .f2-cellC.f2-up .f2-txtC{bottom:calc(50% + 24px)}
+  #odm-intro .f2-v-c .f2-cellC.f2-down .f2-txtC{top:calc(50% + 24px)}
+  #odm-intro .f2-v-c .f2-iC{font-size:clamp(15px, 0.32rem, 33px);display:block;margin-bottom: 4px}
+  #odm-intro .f2-v-c .f2-nC{font-size:clamp(11px, 0.24rem, 24px);font-weight:700;color:var(--f2-title);margin:0;line-height:1.7}
+  #odm-intro .f2-v-c .f2-sC{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.7;color:var(--f2-ink-3);margin: 4px 0 0}
+
+  
+/* ===== 方案 E 索引卡带（5 张等分 · 浅灰底 · 2px 缝）===== */
+  #odm-intro .f2-v-e{background:transparent}
+  #odm-intro .f2-v-e .f2-gE{display:grid;grid-template-columns:repeat(5,1fr);gap: 2px}
+  #odm-intro .f2-v-e .f2-cE{background: var(--f2-block);padding:clamp(22px,2.2vw,40px) clamp(18px,1.8vw,32px);
+    display:flex;flex-direction:column;gap: 10px;min-height:clamp(170px,16vw,260px)}
+  #odm-intro .f2-v-e .f2-iE{font-size:clamp(19px, 0.4rem, 41px)}
+  #odm-intro .f2-v-e .f2-nE{font-size:clamp(13px, 0.28rem, 29px);font-weight:700;color:var(--f2-title);margin:auto 0 0;line-height:1.7}
+  #odm-intro .f2-v-e .f2-sE{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.7;color:var(--f2-ink-3);margin:0}
+
+
+  @media (max-width:1100px){
+    #odm-intro .f2-v-a .f2-gA,#odm-intro .f2-v-b .f2-gB,#odm-intro .f2-v-c .f2-gC,#odm-intro .f2-v-e .f2-gE{grid-template-columns:repeat(2,1fr)}
+    #odm-intro .f2-v-c .f2-axis::before{display:none}
+  }</style>
+
+<script>
+(function(){
+  var sec = document.getElementById('odm-intro');
+  if (!sec) return;
+  var KEY = 'pxid-f2-layout';
+  var btns = sec.querySelectorAll('.f2-switch button');
+  function apply(v){
+    sec.setAttribute('data-f2', v);
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].className = (btns[i].getAttribute('data-v') === v) ? 'on' : '';
+    }
+    try { localStorage.setItem(KEY, v); } catch (e) {}
+  }
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', function(){ apply(this.getAttribute('data-v')); });
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  if (saved && sec.querySelector('.f2-var[data-f2v="' + saved + '"]')) apply(saved);
+  else if (saved === 'orig') apply('orig');
+})();
+</script>
+
+
+  <section class="odm-stage-grid" id="odm-stages" data-f3="orig" aria-label="ODM 阶段说明">
+    <div class="f3-switchbar"><div class="f3-sb-btns">
+      <button type="button" data-v="orig" class="on">原样</button>
+      <button type="button" data-v="d">D 目录条</button>
+      <button type="button" data-v="da">成品A 满幅逐屏</button>
+      <button type="button" data-v="db">成品B 图文错层</button>
+      <button type="button" data-v="dc">成品C 主辅层级</button>
+      <button type="button" data-v="dd">成品D 图纸卡</button>
+    </div></div>
+    <article class="odm-stage alanGo" id="stage-definition">
+      <div class="stage-photo" role="img" aria-label="产品设计草图" style="background-image:url('../assets/pxid/unified/process/process-01.webp')"></div>
+      <div class="stage-copy"><span>01 / Product Design</span><h2>产品设计</h2><p class="pxid-prose">结合目标市场法规、使用场景和用户需求开展分析，通过手绘草图、三维建模与效果图完成方案评审。</p><dl><div><dt>工作内容</dt><dd>市场分析、手绘草图、三维建模与效果图</dd></div><div><dt>下一环节</dt><dd>结构设计与电控系统设计</dd></div></dl></div>
+    </article>
+    <article class="odm-stage alanGo" id="stage-design">
+      <div class="stage-photo" role="img" aria-label="结构与电控系统设计" style="background-image:url('../assets/pxid/unified/process/process-02.webp')"></div>
+      <div class="stage-copy"><span>02 / Engineering Design</span><h2>结构与电控系统设计</h2><p class="pxid-prose">结构设计兼顾安全、材料与制造工艺；电控开发覆盖电池管理、驱动与助力控制、制动逻辑和人机交互。</p><dl><div><dt>结构设计</dt><dd>结构规划、材料工艺与工程验证</dd></div><div><dt>电控设计</dt><dd>电池管理、驱动控制、制动与人机交互</dd></div></dl></div>
+    </article>
+    <article class="odm-stage alanGo" id="stage-engineering">
+      <div class="stage-photo" role="img" aria-label="工程样车开发" style="background-image:url('../assets/pxid/unified/home-v2/case-p2-engineering.jpg')"></div>
+      <div class="stage-copy"><span>03 / Prototype</span><h2>工程样车开发</h2><p class="pxid-prose">制作接近量产状态的工程样车，对结构、装配逻辑、制造工艺和电控系统进行综合验证。</p><dl><div><dt>工作内容</dt><dd>样车制作、装配与功能检查</dd></div><div><dt>验证对象</dt><dd>结构、装配、制造工艺与电控系统</dd></div></dl></div>
+    </article>
+    <article class="odm-stage alanGo" id="stage-validation">
+      <div class="stage-photo" role="img" aria-label="模具、车架与涂装" style="background-image:url('../assets/pxid/unified/process/process-06.webp')"></div>
+      <div class="stage-copy"><span>04 / Manufacturing</span><h2>模具、车架与涂装</h2><p class="pxid-prose">模具团队通过 DFM 评审和 CAE 模流分析完成制造准备，随后进入模具制造、车架加工、热处理与表面涂装。</p><dl><div><dt>制造环节</dt><dd>DFM 评审、模具制造、注塑与车架加工</dd></div><div><dt>表面处理</dt><dd>热处理、研磨抛光、底漆与粉末涂装</dd></div></dl></div>
+    </article>
+    <article class="odm-stage alanGo" id="stage-delivery">
+      <div class="stage-photo" role="img" aria-label="测试、质量检验与批量生产" style="background-image:url('../assets/pxid/unified/process/process-09.webp')"></div>
+      <div class="stage-copy"><span>05 / Mass Production</span><h2>测试、质量检验与批量生产</h2><p class="pxid-prose">覆盖道路、耐久、防水、电池、电机和关键部件测试；完成整车装配与成品检验后进入批量交付。</p><dl><div><dt>检验环节</dt><dd>道路、耐久、防水与关键部件测试</dd></div><div><dt>生产环节</dt><dd>整车装配、成品检验与批量交付</dd></div></dl></div>
+    </article>
+      <div class="f3-var f3-v-d" data-f3v="d" aria-label="F3 D 目录条">
+      <div class="f3-blk-shell">
+          <div class="f3-in">
+        <article class="f3-rowD">
+          <span class="f3-idxD">01</span>
+          <div><span class="f3-en f3-enD">01 / Product Design</span><h3 class="f3-cn f3-cnD">产品设计</h3><p class="f3-ds f3-dsD">结合目标市场法规、使用场景和用户需求开展分析，通过手绘草图、三维建模与效果图完成方案评审。</p><dl><div><dt>工作内容</dt><dd>市场分析、手绘草图、三维建模与效果图</dd></div><div><dt>下一环节</dt><dd>结构设计与电控系统设计</dd></div></dl></div>
+          <div class="f3-ph" style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></div>
+        </article>
+        <article class="f3-rowD">
+          <span class="f3-idxD">02</span>
+          <div><span class="f3-en f3-enD">02 / Engineering Design</span><h3 class="f3-cn f3-cnD">结构与电控系统设计</h3><p class="f3-ds f3-dsD">结构设计兼顾安全、材料与制造工艺；电控开发覆盖电池管理、驱动与助力控制、制动逻辑和人机交互。</p><dl><div><dt>结构设计</dt><dd>结构规划、材料工艺与工程验证</dd></div><div><dt>电控设计</dt><dd>电池管理、驱动控制、制动与人机交互</dd></div></dl></div>
+          <div class="f3-ph" style="background-image:url(../assets/pxid/unified/process/process-02.webp)"></div>
+        </article>
+        <article class="f3-rowD">
+          <span class="f3-idxD">03</span>
+          <div><span class="f3-en f3-enD">03 / Prototype</span><h3 class="f3-cn f3-cnD">工程样车开发</h3><p class="f3-ds f3-dsD">制作接近量产状态的工程样车，对结构、装配逻辑、制造工艺和电控系统进行综合验证。</p><dl><div><dt>工作内容</dt><dd>样车制作、装配与功能检查</dd></div><div><dt>验证对象</dt><dd>结构、装配、制造工艺与电控系统</dd></div></dl></div>
+          <div class="f3-ph" style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)"></div>
+        </article>
+        <article class="f3-rowD">
+          <span class="f3-idxD">04</span>
+          <div><span class="f3-en f3-enD">04 / Manufacturing</span><h3 class="f3-cn f3-cnD">模具、车架与涂装</h3><p class="f3-ds f3-dsD">模具团队通过 DFM 评审和 CAE 模流分析完成制造准备，随后进入模具制造、车架加工、热处理与表面涂装。</p><dl><div><dt>制造环节</dt><dd>DFM 评审、模具制造、注塑与车架加工</dd></div><div><dt>表面处理</dt><dd>热处理、研磨抛光、底漆与粉末涂装</dd></div></dl></div>
+          <div class="f3-ph" style="background-image:url(../assets/pxid/unified/process/process-06.webp)"></div>
+        </article>
+        <article class="f3-rowD">
+          <span class="f3-idxD">05</span>
+          <div><span class="f3-en f3-enD">05 / Mass Production</span><h3 class="f3-cn f3-cnD">测试、质量检验与批量生产</h3><p class="f3-ds f3-dsD">覆盖道路、耐久、防水、电池、电机和关键部件测试；完成整车装配与成品检验后进入批量交付。</p><dl><div><dt>检验环节</dt><dd>道路、耐久、防水与关键部件测试</dd></div><div><dt>生产环节</dt><dd>整车装配、成品检验与批量交付</dd></div></dl></div>
+          <div class="f3-ph" style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></div>
+        </article>
+      </div>
+      </div>
+    </div>
+    <div class="f3-var f3-v-da" data-f3v="da" aria-label="F3 成品A 满幅逐屏">
+      <div class="f3-mod" id="va"><div class="f3-A">
+        <article class="f3-a-row" id="A-stage-1">
+          <div class="f3-a-fig" style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></div>
+          <div class="f3-a-txt"><span class="f3-eyebrow">01 / Product Design</span><h2 class="">产品设计</h2><p class="f3-pr">结合目标市场法规、使用场景和用户需求开展分析，通过手绘草图、三维建模与效果图完成方案评审。</p>
+         <dl class="f3-dl"><div><dt>工作内容</dt><dd>市场分析、手绘草图、三维建模与效果图</dd></div><div><dt>下一环节</dt><dd>结构设计与电控系统设计</dd></div></dl></div>
+          <div class="f3-a-evi"><i style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/p2frame-overview.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/p2frame-cad.webp)"></i>
+          </div>
+        </article>
+        <article class="f3-a-row" id="A-stage-2">
+          <div class="f3-a-fig" style="background-image:url(../assets/pxid/unified/process/process-02.webp)"></div>
+          <div class="f3-a-txt"><span class="f3-eyebrow">02 / Engineering Design</span><h2 class="">结构与电控系统设计</h2><p class="f3-pr">结构设计兼顾安全、材料与制造工艺；电控开发覆盖电池管理、驱动与助力控制、制动逻辑和人机交互。</p>
+         <dl class="f3-dl"><div><dt>结构设计</dt><dd>结构规划、材料工艺与工程验证</dd></div><div><dt>电控设计</dt><dd>电池管理、驱动控制、制动与人机交互</dd></div></dl></div>
+          <div class="f3-a-evi"><i style="background-image:url(../assets/pxid/unified/process/process-02.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/process-03.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/process-04.webp)"></i>
+          </div>
+        </article>
+        <article class="f3-a-row" id="A-stage-3">
+          <div class="f3-a-fig" style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)"></div>
+          <div class="f3-a-txt"><span class="f3-eyebrow">03 / Prototype</span><h2 class="">工程样车开发</h2><p class="f3-pr">制作接近量产状态的工程样车，对结构、装配逻辑、制造工艺和电控系统进行综合验证。</p>
+         <dl class="f3-dl"><div><dt>工作内容</dt><dd>样车制作、装配与功能检查</dd></div><div><dt>验证对象</dt><dd>结构、装配、制造工艺与电控系统</dd></div></dl></div>
+          <div class="f3-a-evi"><i style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/process-05.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/home-v2/case-p2-detail.jpg)"></i>
+          </div>
+        </article>
+        <article class="f3-a-row" id="A-stage-4">
+          <div class="f3-a-fig" style="background-image:url(../assets/pxid/unified/process/process-06.webp)"></div>
+          <div class="f3-a-txt"><span class="f3-eyebrow">04 / Manufacturing</span><h2 class="">模具、车架与涂装</h2><p class="f3-pr">模具团队通过 DFM 评审和 CAE 模流分析完成制造准备，随后进入模具制造、车架加工、热处理与表面处理。</p>
+         <dl class="f3-dl"><div><dt>制造环节</dt><dd>DFM 评审、模具制造、注塑与车架加工</dd></div><div><dt>表面处理</dt><dd>热处理、研磨抛光、底漆与粉末涂装</dd></div></dl></div>
+          <div class="f3-a-evi"><i style="background-image:url(../assets/pxid/unified/process/process-06.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/p2frame-mold1.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/p2frame-mold3.webp)"></i>
+          </div>
+        </article>
+        <article class="f3-a-row" id="A-stage-5">
+          <div class="f3-a-fig" style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></div>
+          <div class="f3-a-txt"><span class="f3-eyebrow">05 / Mass Production</span><h2 class="">测试、质量检验与批量生产</h2><p class="f3-pr">覆盖道路、耐久、防水、电池、电机和关键部件测试；完成整车装配与成品检验后进入批量交付。</p>
+         <dl class="f3-dl"><div><dt>检验环节</dt><dd>道路、耐久、防水与关键部件测试</dd></div><div><dt>生产环节</dt><dd>整车装配、成品检验与批量交付</dd></div></dl></div>
+          <div class="f3-a-evi"><i style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/ipqc-check.jpg)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/process-08.webp)"></i>
+          </div>
+        </article></div></div>
+    </div>
+    <div class="f3-var f3-v-db" data-f3v="db" aria-label="F3 成品B 图文错层">
+      <div class="f3-mod" id="vb"><div class="f3-B">
+        <article class="f3-b-row" id="B-stage-1">
+          <div class="f3-b-stage">
+            <div class="f3-b-fig" style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></div>
+            <div class="f3-b-card"><span class="f3-eyebrow">01 / Product Design</span><h2 class="">产品设计</h2><p class="f3-pr">结合目标市场法规、使用场景和用户需求开展分析，通过手绘草图、三维建模与效果图完成方案评审。</p>
+         <dl class="f3-dl"><div><dt>工作内容</dt><dd>市场分析、手绘草图、三维建模与效果图</dd></div><div><dt>下一环节</dt><dd>结构设计与电控系统设计</dd></div></dl></div>
+          </div>
+          <div class="f3-b-strip"><i style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/p2frame-overview.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/p2frame-cad.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/o3-1.webp)"></i></div>
+        </article>
+        <article class="f3-b-row" id="B-stage-2">
+          <div class="f3-b-stage">
+            <div class="f3-b-fig" style="background-image:url(../assets/pxid/unified/process/process-02.webp)"></div>
+            <div class="f3-b-card"><span class="f3-eyebrow">02 / Engineering Design</span><h2 class="">结构与电控系统设计</h2><p class="f3-pr">结构设计兼顾安全、材料与制造工艺；电控开发覆盖电池管理、驱动与助力控制、制动逻辑和人机交互。</p>
+         <dl class="f3-dl"><div><dt>结构设计</dt><dd>结构规划、材料工艺与工程验证</dd></div><div><dt>电控设计</dt><dd>电池管理、驱动控制、制动与人机交互</dd></div></dl></div>
+          </div>
+          <div class="f3-b-strip"><i style="background-image:url(../assets/pxid/unified/process/process-02.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/process-03.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/process-04.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/o3-2-2.jpg)"></i></div>
+        </article>
+        <article class="f3-b-row" id="B-stage-3">
+          <div class="f3-b-stage">
+            <div class="f3-b-fig" style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)"></div>
+            <div class="f3-b-card"><span class="f3-eyebrow">03 / Prototype</span><h2 class="">工程样车开发</h2><p class="f3-pr">制作接近量产状态的工程样车，对结构、装配逻辑、制造工艺和电控系统进行综合验证。</p>
+         <dl class="f3-dl"><div><dt>工作内容</dt><dd>样车制作、装配与功能检查</dd></div><div><dt>验证对象</dt><dd>结构、装配、制造工艺与电控系统</dd></div></dl></div>
+          </div>
+          <div class="f3-b-strip"><i style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)"></i><i style="background-image:url(../assets/pxid/unified/process/process-05.webp)"></i><i style="background-image:url(../assets/pxid/unified/home-v2/case-p2-detail.jpg)"></i><i style="background-image:url(../assets/pxid/unified/process/o3-3-1.webp)"></i></div>
+        </article>
+        <article class="f3-b-row" id="B-stage-4">
+          <div class="f3-b-stage">
+            <div class="f3-b-fig" style="background-image:url(../assets/pxid/unified/process/process-06.webp)"></div>
+            <div class="f3-b-card"><span class="f3-eyebrow">04 / Manufacturing</span><h2 class="">模具、车架与涂装</h2><p class="f3-pr">模具团队通过 DFM 评审和 CAE 模流分析完成制造准备，随后进入模具制造、车架加工、热处理与表面处理。</p>
+         <dl class="f3-dl"><div><dt>制造环节</dt><dd>DFM 评审、模具制造、注塑与车架加工</dd></div><div><dt>表面处理</dt><dd>热处理、研磨抛光、底漆与粉末涂装</dd></div></dl></div>
+          </div>
+          <div class="f3-b-strip"><i style="background-image:url(../assets/pxid/unified/process/process-06.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/p2frame-mold1.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/p2frame-mold3.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/carousel-dfm.webp)"></i></div>
+        </article>
+        <article class="f3-b-row" id="B-stage-5">
+          <div class="f3-b-stage">
+            <div class="f3-b-fig" style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></div>
+            <div class="f3-b-card"><span class="f3-eyebrow">05 / Mass Production</span><h2 class="">测试、质量检验与批量生产</h2><p class="f3-pr">覆盖道路、耐久、防水、电池、电机和关键部件测试；完成整车装配与成品检验后进入批量交付。</p>
+         <dl class="f3-dl"><div><dt>检验环节</dt><dd>道路、耐久、防水与关键部件测试</dd></div><div><dt>生产环节</dt><dd>整车装配、成品检验与批量交付</dd></div></dl></div>
+          </div>
+          <div class="f3-b-strip"><i style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/ipqc-check.jpg)"></i><i style="background-image:url(../assets/pxid/unified/process/process-08.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/oqc-check.jpg)"></i></div>
+        </article></div></div>
+    </div>
+    <div class="f3-var f3-v-dc" data-f3v="dc" aria-label="F3 成品C 主辅层级">
+      <div class="f3-mod" id="vc"><div class="f3-C">
+        <article class="f3-c-row" id="C-stage-1">
+          <div class="f3-c-top">
+            <div class="f3-c-fig" style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></div>
+            <div class="f3-c-txt"><span class="f3-eyebrow">01 / Product Design</span><h2 class="">产品设计</h2><p class="f3-pr">结合目标市场法规、使用场景和用户需求开展分析，通过手绘草图、三维建模与效果图完成方案评审。</p>
+         <dl class="f3-dl"><div><dt>工作内容</dt><dd>市场分析、手绘草图、三维建模与效果图</dd></div><div><dt>下一环节</dt><dd>结构设计与电控系统设计</dd></div></dl></div>
+          </div>
+          <div class="f3-c-strip"><i style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/p2frame-overview.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/p2frame-cad.webp)"></i>
+            <i class="wide" style="background-image:url(../assets/pxid/unified/process/o3-1.webp)"></i>
+          </div>
+        </article>
+        <article class="f3-c-row" id="C-stage-2">
+          <div class="f3-c-top">
+            <div class="f3-c-fig" style="background-image:url(../assets/pxid/unified/process/process-02.webp)"></div>
+            <div class="f3-c-txt"><span class="f3-eyebrow">02 / Engineering Design</span><h2 class="">结构与电控系统设计</h2><p class="f3-pr">结构设计兼顾安全、材料与制造工艺；电控开发覆盖电池管理、驱动与助力控制、制动逻辑和人机交互。</p>
+         <dl class="f3-dl"><div><dt>结构设计</dt><dd>结构规划、材料工艺与工程验证</dd></div><div><dt>电控设计</dt><dd>电池管理、驱动控制、制动与人机交互</dd></div></dl></div>
+          </div>
+          <div class="f3-c-strip"><i style="background-image:url(../assets/pxid/unified/process/process-02.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/process-03.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/process-04.webp)"></i>
+            <i class="wide" style="background-image:url(../assets/pxid/unified/process/o3-2-2.jpg)"></i>
+          </div>
+        </article>
+        <article class="f3-c-row" id="C-stage-3">
+          <div class="f3-c-top">
+            <div class="f3-c-fig" style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)"></div>
+            <div class="f3-c-txt"><span class="f3-eyebrow">03 / Prototype</span><h2 class="">工程样车开发</h2><p class="f3-pr">制作接近量产状态的工程样车，对结构、装配逻辑、制造工艺和电控系统进行综合验证。</p>
+         <dl class="f3-dl"><div><dt>工作内容</dt><dd>样车制作、装配与功能检查</dd></div><div><dt>验证对象</dt><dd>结构、装配、制造工艺与电控系统</dd></div></dl></div>
+          </div>
+          <div class="f3-c-strip"><i style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/process-05.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/home-v2/case-p2-detail.jpg)"></i>
+            <i class="wide" style="background-image:url(../assets/pxid/unified/process/o3-3-1.webp)"></i>
+          </div>
+        </article>
+        <article class="f3-c-row" id="C-stage-4">
+          <div class="f3-c-top">
+            <div class="f3-c-fig" style="background-image:url(../assets/pxid/unified/process/process-06.webp)"></div>
+            <div class="f3-c-txt"><span class="f3-eyebrow">04 / Manufacturing</span><h2 class="">模具、车架与涂装</h2><p class="f3-pr">模具团队通过 DFM 评审和 CAE 模流分析完成制造准备，随后进入模具制造、车架加工、热处理与表面处理。</p>
+         <dl class="f3-dl"><div><dt>制造环节</dt><dd>DFM 评审、模具制造、注塑与车架加工</dd></div><div><dt>表面处理</dt><dd>热处理、研磨抛光、底漆与粉末涂装</dd></div></dl></div>
+          </div>
+          <div class="f3-c-strip"><i style="background-image:url(../assets/pxid/unified/process/process-06.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/p2frame-mold1.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/p2frame-mold3.webp)"></i>
+            <i class="wide" style="background-image:url(../assets/pxid/unified/process/carousel-dfm.webp)"></i>
+          </div>
+        </article>
+        <article class="f3-c-row" id="C-stage-5">
+          <div class="f3-c-top">
+            <div class="f3-c-fig" style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></div>
+            <div class="f3-c-txt"><span class="f3-eyebrow">05 / Mass Production</span><h2 class="">测试、质量检验与批量生产</h2><p class="f3-pr">覆盖道路、耐久、防水、电池、电机和关键部件测试；完成整车装配与成品检验后进入批量交付。</p>
+         <dl class="f3-dl"><div><dt>检验环节</dt><dd>道路、耐久、防水与关键部件测试</dd></div><div><dt>生产环节</dt><dd>整车装配、成品检验与批量交付</dd></div></dl></div>
+          </div>
+          <div class="f3-c-strip"><i style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/ipqc-check.jpg)"></i>
+            <i style="background-image:url(../assets/pxid/unified/process/process-08.webp)"></i>
+            <i class="wide" style="background-image:url(../assets/pxid/unified/process/oqc-check.jpg)"></i>
+          </div>
+        </article></div></div>
+    </div>
+    <div class="f3-var f3-v-dd" data-f3v="dd" aria-label="F3 成品D 图纸卡">
+      <div class="f3-mod" id="vd"><div class="f3-D">
+        <article class="f3-d-sheet" id="D-stage-1">
+          <div class="f3-d-hd"><span class="f3-d-num">01</span><h2>产品设计</h2><span class="f3-d-en">PRODUCT DESIGN</span></div>
+          <div class="f3-d-b">
+            <div class="f3-d-fig" style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></div>
+            <div class="f3-d-side"><span class="f3-eyebrow">01 / Product Design</span><p class="f3-pr">结合目标市场法规、使用场景和用户需求开展分析，通过手绘草图、三维建模与效果图完成方案评审。</p>
+              <dl class="f3-dl"><div><dt>工作内容</dt><dd>市场分析、手绘草图、三维建模与效果图</dd></div><div><dt>下一环节</dt><dd>结构设计与电控系统设计</dd></div></dl></div>
+          </div>
+          <div class="f3-d-strip"><i style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/p2frame-overview.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/p2frame-cad.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/o3-1.webp)"></i>
+            <span class="f3-d-rev">REV A · SCALE 1:1</span></div>
+        </article>
+        <article class="f3-d-sheet" id="D-stage-2">
+          <div class="f3-d-hd"><span class="f3-d-num">02</span><h2>结构与电控系统设计</h2><span class="f3-d-en">ENGINEERING DESIGN</span></div>
+          <div class="f3-d-b">
+            <div class="f3-d-fig" style="background-image:url(../assets/pxid/unified/process/process-02.webp)"></div>
+            <div class="f3-d-side"><span class="f3-eyebrow">02 / Engineering Design</span><p class="f3-pr">结构设计兼顾安全、材料与制造工艺；电控开发覆盖电池管理、驱动与助力控制、制动逻辑和人机交互。</p>
+              <dl class="f3-dl"><div><dt>结构设计</dt><dd>结构规划、材料工艺与工程验证</dd></div><div><dt>电控设计</dt><dd>电池管理、驱动控制、制动与人机交互</dd></div></dl></div>
+          </div>
+          <div class="f3-d-strip"><i style="background-image:url(../assets/pxid/unified/process/process-02.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/process-03.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/process-04.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/o3-2-2.jpg)"></i>
+            <span class="f3-d-rev">REV A · SCALE 1:1</span></div>
+        </article>
+        <article class="f3-d-sheet" id="D-stage-3">
+          <div class="f3-d-hd"><span class="f3-d-num">03</span><h2>工程样车开发</h2><span class="f3-d-en">PROTOTYPE</span></div>
+          <div class="f3-d-b">
+            <div class="f3-d-fig" style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)"></div>
+            <div class="f3-d-side"><span class="f3-eyebrow">03 / Prototype</span><p class="f3-pr">制作接近量产状态的工程样车，对结构、装配逻辑、制造工艺和电控系统进行综合验证。</p>
+              <dl class="f3-dl"><div><dt>工作内容</dt><dd>样车制作、装配与功能检查</dd></div><div><dt>验证对象</dt><dd>结构、装配、制造工艺与电控系统</dd></div></dl></div>
+          </div>
+          <div class="f3-d-strip"><i style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)"></i><i style="background-image:url(../assets/pxid/unified/process/process-05.webp)"></i><i style="background-image:url(../assets/pxid/unified/home-v2/case-p2-detail.jpg)"></i><i style="background-image:url(../assets/pxid/unified/process/o3-3-1.webp)"></i>
+            <span class="f3-d-rev">REV A · SCALE 1:1</span></div>
+        </article>
+        <article class="f3-d-sheet" id="D-stage-4">
+          <div class="f3-d-hd"><span class="f3-d-num">04</span><h2>模具、车架与涂装</h2><span class="f3-d-en">MANUFACTURING</span></div>
+          <div class="f3-d-b">
+            <div class="f3-d-fig" style="background-image:url(../assets/pxid/unified/process/process-06.webp)"></div>
+            <div class="f3-d-side"><span class="f3-eyebrow">04 / Manufacturing</span><p class="f3-pr">模具团队通过 DFM 评审和 CAE 模流分析完成制造准备，随后进入模具制造、车架加工、热处理与表面处理。</p>
+              <dl class="f3-dl"><div><dt>制造环节</dt><dd>DFM 评审、模具制造、注塑与车架加工</dd></div><div><dt>表面处理</dt><dd>热处理、研磨抛光、底漆与粉末涂装</dd></div></dl></div>
+          </div>
+          <div class="f3-d-strip"><i style="background-image:url(../assets/pxid/unified/process/process-06.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/p2frame-mold1.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/p2frame-mold3.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/carousel-dfm.webp)"></i>
+            <span class="f3-d-rev">REV A · SCALE 1:1</span></div>
+        </article>
+        <article class="f3-d-sheet" id="D-stage-5">
+          <div class="f3-d-hd"><span class="f3-d-num">05</span><h2>测试、质量检验与批量生产</h2><span class="f3-d-en">MASS PRODUCTION</span></div>
+          <div class="f3-d-b">
+            <div class="f3-d-fig" style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></div>
+            <div class="f3-d-side"><span class="f3-eyebrow">05 / Mass Production</span><p class="f3-pr">覆盖道路、耐久、防水、电池、电机和关键部件测试；完成整车装配与成品检验后进入批量交付。</p>
+              <dl class="f3-dl"><div><dt>检验环节</dt><dd>道路、耐久、防水与关键部件测试</dd></div><div><dt>生产环节</dt><dd>整车装配、成品检验与批量交付</dd></div></dl></div>
+          </div>
+          <div class="f3-d-strip"><i style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/ipqc-check.jpg)"></i><i style="background-image:url(../assets/pxid/unified/process/process-08.webp)"></i><i style="background-image:url(../assets/pxid/unified/process/oqc-check.jpg)"></i>
+            <span class="f3-d-rev">REV A · SCALE 1:1</span></div>
+        </article></div></div>
+    </div>
+  </section>
+<style>
+#odm-stages{position:relative}
+#odm-stages .f3-switchbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  justify-content:flex-end;padding:14px clamp(16px,4vw,64px) 2px;background:#fff}
+#odm-stages .f3-sb-btns{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+#odm-stages .f3-sb-btns button{font:inherit;font-size:12.5px;line-height:1;letter-spacing:.02em;
+  padding:7px 11px;border:1px solid #dcdcda;background:#fff;color:#6a6a6a;cursor:pointer;border-radius:0;
+  transition:background-color .2s ease,color .2s ease,border-color .2s ease;white-space:nowrap}
+#odm-stages .f3-sb-btns button:hover{border-color:#d71920;color:#d71920}
+#odm-stages .f3-sb-btns button.on{background:#d71920;border-color:#d71920;color:#fff}
+#odm-stages .f3-var{display:none}
+#odm-stages[data-f3="a"] .f3-var[data-f3v="a"],
+#odm-stages[data-f3="b"] .f3-var[data-f3v="b"],
+#odm-stages[data-f3="c"] .f3-var[data-f3v="c"],
+#odm-stages[data-f3="d"] .f3-var[data-f3v="d"],
+#odm-stages[data-f3="e"] .f3-var[data-f3v="e"],
+#odm-stages[data-f3="da"] .f3-var[data-f3v="da"],
+#odm-stages[data-f3="db"] .f3-var[data-f3v="db"],
+#odm-stages[data-f3="dc"] .f3-var[data-f3v="dc"],
+#odm-stages[data-f3="dd"] .f3-var[data-f3v="dd"]{display:block;grid-column:1/-1}
+#odm-stages:not([data-f3="orig"]) > .odm-stage{display:none}
+#odm-stages .f3-var .f3-blk-shell{padding:clamp(46px,4vw,80px) clamp(16px,4vw,64px)}
+/* 成品套的图容器类名（a-fig/b-fig/c-fig/d-fig）自带背景图但没带 cover —— 补齐 */
+#odm-stages .f3-var [class*="-fig"]{background-size:cover;background-position:center;background-repeat:no-repeat}
+/* 小图带：可点切大图，选中的那张加红框（outline 不占布局） */
+#odm-stages .f3-var .f3-a-evi i,
+#odm-stages .f3-var .f3-b-strip i,
+#odm-stages .f3-var .f3-c-strip i,
+#odm-stages .f3-var .f3-d-strip i{cursor:pointer}
+#odm-stages .f3-var .f3-picked{outline:2px solid #d71920;outline-offset:1px}
+@media (max-width:900px){
+  #odm-stages .f3-switchbar{justify-content:flex-start}
+}
+
+/* ---- F3 方案 D ---- */
+#odm-stages .f3-v-d{
+    --f3-red:#d71920; --f3-page:#f8f8f8; --f3-block:#f4f4f4; --f3-line:#e4e4e4;
+    --f3-ink:#333333; --f3-ink-3:#999999; --f3-title:#1a1a1a;
+    --f3-en:"Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+    --f3-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --f3-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --f3-gutter:clamp(16px,4vw,64px);
+  }#odm-stages .f3-v-d *{box-sizing:border-box}#odm-stages .f3-v-d{background:transparent;color:var(--f3-ink);}#odm-stages .f3-v-d .f3-in{max-width:1840px;margin:0 auto;padding:0 var(--f3-gutter)}#odm-stages .f3-v-d .f3-blk{position:relative;padding:clamp(46px,4vw,80px) 0}#odm-stages .f3-v-d .f3-tagline{display:flex;align-items:center;gap: 14px;padding: clamp(14px, 0.2933rem, 30px) var(--f3-gutter) 0;
+    max-width:1840px;margin:0 auto;font-family:var(--f3-mono);font-size:clamp(13px, 0.18rem, 15px);letter-spacing:.16em;color:var(--f3-red)}#odm-stages .f3-v-d .f3-tagline b{background: var(--f3-red);color:#ffffff;font-weight:600;padding: 3px 9px;letter-spacing:.1em}#odm-stages .f3-v-d .f3-tagline i{flex:1;height:1px;background: var(--f3-line);font-style:normal}#odm-stages .f3-v-d .f3-ph{aspect-ratio:3/2;background: rgb(255,255,255) center/cover no-repeat}#odm-stages .f3-v-d .f3-en{font-family:var(--f3-en);color:var(--f3-red);font-weight:700;letter-spacing:.01em}#odm-stages .f3-v-d .f3-cn{font-weight:700;color:var(--f3-title);letter-spacing:-.01em;margin:0}#odm-stages .f3-v-d .f3-ds{color:var(--f3-ink-3);margin:0}#odm-stages .f3-v-d dl{margin: clamp(11px, 0.24rem, 24px) 0 0;padding:0}#odm-stages .f3-v-d dl>div{display:flex;align-items:baseline;gap: 14px;padding: 9px 0;border-top:1px solid var(--f3-line)}#odm-stages .f3-v-d dt{flex:0 0 clamp(64px,6vw,104px);font-size:clamp(14px, 0.1867rem, 16px);color:var(--f3-ink-3);line-height:1.7}#odm-stages .f3-v-d dd{margin:0;font-size:clamp(14px, 0.1867rem, 16px);line-height:1.7;color:var(--f3-ink)}#odm-stages .f3-v-d{background:transparent;}#odm-stages .f3-v-d .f3-rowA{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3.4vw,84px);
+    align-items:center;padding:clamp(26px,2.8vw,56px) 0;border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-d .f3-rowA:first-of-type{padding-top:0}#odm-stages .f3-v-d .f3-rowA:last-of-type{border-bottom:none}#odm-stages .f3-v-d .f3-rowA:nth-child(even) .f3-wrapA{order:2}#odm-stages .f3-v-d .f3-enA{font-size:clamp(11px, 0.24rem, 24px);display:block;margin-bottom: 10px}#odm-stages .f3-v-d .f3-cnA{font-size:clamp(19px, 0.4rem, 41px);line-height:1.25}#odm-stages .f3-v-d .f3-dsA{font-size:clamp(16px, 0.2133rem, 18px);line-height:1.9;margin-top: 12px}#odm-stages .f3-v-d{background:transparent;}#odm-stages .f3-v-d .f3-gB{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(32px,3.6vw,64px) clamp(18px,2.2vw,44px)}#odm-stages .f3-v-d .f3-enB{font-size:clamp(14px, 0.1867rem, 16px);display:block;margin: clamp(16px, 0.2133rem, 18px) 0 8px}#odm-stages .f3-v-d .f3-cnB{font-size:clamp(14px, 0.3067rem, 31px);line-height:1.3}#odm-stages .f3-v-d .f3-dsB{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 10px}#odm-stages .f3-v-d{background:transparent;}#odm-stages .f3-v-d .f3-gC{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,48px)}#odm-stages .f3-v-d .f3-cardC{background: var(--f3-block);padding:clamp(16px,1.6vw,28px)}#odm-stages .f3-v-d .f3-enC{font-size:clamp(14px, 0.1867rem, 16px);display:block;margin: clamp(11px, 0.24rem, 24px) 0 8px}#odm-stages .f3-v-d .f3-cnC{font-size:clamp(14px, 0.3067rem, 31px);line-height:1.3}#odm-stages .f3-v-d .f3-dsC{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 10px}#odm-stages .f3-v-d{background:transparent;}#odm-stages .f3-v-d .f3-rowD{display:grid;grid-template-columns:clamp(74px,7vw,140px) 1fr clamp(220px,24vw,400px);
+    gap:clamp(16px,2.4vw,46px);align-items:center;
+    padding:clamp(20px,2vw,38px) 0;border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-d .f3-rowD:first-of-type{border-top:1px solid var(--f3-line)}#odm-stages .f3-v-d .f3-idxD{font-family:var(--f3-en);font-size:clamp(45px, 0.96rem, 98px);color:var(--f3-red);font-weight:700;line-height:1}#odm-stages .f3-v-d .f3-enD{font-size:clamp(14px, 0.1867rem, 16px);display:block;margin-bottom: 6px}#odm-stages .f3-v-d .f3-cnD{font-size:clamp(15px, 0.32rem, 33px);line-height:1.3}#odm-stages .f3-v-d .f3-dsD{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 8px}#odm-stages .f3-v-d .f3-ph{width:100%}#odm-stages .f3-v-d{background:transparent;}#odm-stages .f3-v-d .f3-tlE{position:relative;padding-left:clamp(30px,3.4vw,64px)}#odm-stages .f3-v-d .f3-tlE::before{content:"";position:absolute;left:9px;top:12px;bottom:12px;width:1px;background: var(--f3-line)}#odm-stages .f3-v-d .f3-nodeE{position:relative;display:grid;grid-template-columns:1fr clamp(220px,24vw,420px);
+    gap:clamp(20px,2.6vw,56px);align-items:center;padding:clamp(24px,2.4vw,44px) 0}#odm-stages .f3-v-d .f3-nodeE::before{content:"";position:absolute;left:calc(-1 * clamp(30px,3.4vw,64px) + 4px);top:clamp(38px,3.6vw,58px);
+    width:11px;height:11px;border-radius:50%;background: var(--f3-red);box-shadow:0 0 0 5px var(--f3-page)}#odm-stages .f3-v-d .f3-enE{font-size:clamp(14px, 0.1867rem, 16px);display:block;margin-bottom: 8px}#odm-stages .f3-v-d .f3-cnE{font-size:clamp(15px, 0.32rem, 33px);line-height:1.3}#odm-stages .f3-v-d .f3-dsE{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 10px}#odm-stages .f3-v-d .f3-ph{width:100%}@media (max-width:1100px){#odm-stages .f3-v-d .f3-rowA, #odm-stages .f3-v-d .f3-gC, #odm-stages .f3-v-d .f3-gB{grid-template-columns:1fr}#odm-stages .f3-v-d .f3-rowA:nth-child(even) .f3-wrapA{order:0}#odm-stages .f3-v-d .f3-rowD{grid-template-columns:56px 1fr;row-gap: 14px}#odm-stages .f3-v-d .f3-rowD .f3-ph{grid-column:1/-1}#odm-stages .f3-v-d .f3-nodeE{grid-template-columns:1fr;row-gap: clamp(16px, 0.2133rem, 18px)}}
+/* ---- F3 成品 A ---- */
+#odm-stages .f3-v-da *{box-sizing:border-box}#odm-stages .f3-v-da .f3-wbar{position:sticky;top:0;z-index:60;background: rgba(23,23,23,.95);backdrop-filter:blur(10px);border-bottom:1px solid #2c2c2c}#odm-stages .f3-v-da .f3-wbar .f3-in{max-width:1840px;margin:0 auto;padding: 12px clamp(15px, 0.32rem, 33px);display:flex;gap: 7px;align-items:center;flex-wrap:wrap}#odm-stages .f3-v-da .f3-wbar b{color:#d71920;font:900 clamp(12px, 0.16rem, 14px)/1.7 "SF Mono",Consolas,monospace;letter-spacing:.12em;margin-right: 10px}#odm-stages .f3-v-da .f3-wbar a{color:#6e6e6e;text-decoration:none;font:700 clamp(12px, 0.16rem, 14px)/1.7 "SF Mono",Consolas,monospace;padding: 7px 10px;border:1px solid #313131}#odm-stages .f3-v-da .f3-wbar a:hover{color:#171717;border-color:#171717}#odm-stages .f3-v-da .f3-wbar .hint{margin-left:auto;color:#646464;font-size:clamp(13px, 0.18rem, 15px)}#odm-stages .f3-v-da .f3-lead{max-width:1840px;margin: clamp(16px, 0.3467rem, 35px) auto 0;padding: clamp(16px, 0.2133rem, 18px) clamp(12px, 0.2667rem, 27px);border-left:3px solid #d71920;background: rgb(23,23,23);color:#aeaeae;font-size:clamp(13px, 0.18rem, 15px);line-height:1.85}#odm-stages .f3-v-da .f3-lead b{color:#d71920}#odm-stages .f3-v-da .f3-wrap{max-width:1840px;margin:0 auto;padding: 0 clamp(15px, 0.32rem, 33px)}#odm-stages .f3-v-da .f3-vname{display:flex;align-items:center;gap: 12px;margin: clamp(27px, 0.5867rem, 60px) 0 0}#odm-stages .f3-v-da .f3-vname b{background: var(--f3-red);color:#ffffff;font-size:clamp(13px, 0.18rem, 15px);font-weight:800;padding: 5px 10px;letter-spacing:.02em}#odm-stages .f3-v-da .f3-vname h3{margin:0;font-size:clamp(16px, 0.2133rem, 18px);font-weight:800;color:#ffffff}#odm-stages .f3-v-da .f3-vname span{color:#8f8f8f;font-size:clamp(13px, 0.18rem, 15px)}#odm-stages .f3-v-da .f3-vname i{margin-left:auto;font-style:normal;color:#717171;font:700 clamp(12px, 0.16rem, 14px)/1.7 "SF Mono",Consolas,monospace}#odm-stages .f3-v-da .f3-frame{margin-top: 12px;border:1px solid #383838}#odm-stages .f3-v-da{--f3-red:#d71920;--f3-ink:#171717;--f3-soft:#eeeeee;--f3-line:rgba(23,23,23,.14);
+  --f3-copy:rgba(23,23,23,.92);--f3-copy-soft:rgba(23,23,23,.8)}#odm-stages .f3-v-da .f3-mod{background: rgb(255,255,255);color:var(--f3-ink)}#odm-stages .f3-v-da .f3-mod-in{padding:0 0}#odm-stages .f3-v-da .f3-px{padding-inline:clamp(16px,4vw,64px);max-width:1840px;margin:0 auto}#odm-stages .f3-v-da .f3-eyebrow{display:block;color:var(--f3-red);font-size:clamp(13px, 0.18rem, 15px);letter-spacing:.08em;text-transform:uppercase}#odm-stages .f3-v-da .f3-eyebrow.f3-red{color:#d71920}#odm-stages .f3-v-da .f3-pr{color:var(--f3-copy);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.75;margin:.24rem 0 0;max-width:34em}#odm-stages .f3-v-da .f3-dl{margin:.42rem 0 0;border-top:1px solid var(--f3-line);padding:0;flex:none}#odm-stages .f3-v-da .f3-dl>div{display:grid;grid-template-columns:.85rem 1fr;gap:clamp(8px,.16rem,18px);
+  padding:clamp(6px,.13rem,14px) 0;border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-da .f3-dl dt{color:var(--f3-copy-soft);font-size:clamp(13px, 0.18rem, 15px);margin:0}#odm-stages .f3-v-da .f3-dl dd{color:var(--f3-ink);font-size:clamp(13px, 0.18rem, 15px);line-height:1.55;margin:0}#odm-stages .f3-v-da h2{color:var(--f3-ink);font-size:clamp(30px, 0.64rem, 65px);line-height:1.16;margin:.2rem 0 0;
+  max-width:9ch;text-wrap:balance;letter-spacing:-.01em}#odm-stages .f3-v-da .f3-ph{background-size:cover;background-position:center;background-repeat:no-repeat}#odm-stages .f3-v-da i{display:block;background-size:cover;background-position:center;background-repeat:no-repeat}#odm-stages .f3-v-da .f3-A .f3-a-row{position:relative;border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-da .f3-A .f3-a-fig{height:7.467rem;min-height:380px}#odm-stages .f3-v-da .f3-A .f3-a-row::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;
+  background: linear-gradient(0deg,rgba(23,23,23,.96) 0%,rgba(23,23,23,.86) 32%,rgba(23,23,23,.46) 56%,rgba(23,23,23,.08) 76%,rgba(23,23,23,.22) 100%)}#odm-stages .f3-v-da .f3-A .f3-a-txt{position:absolute;left:clamp(16px,4vw,64px);bottom:clamp(20px,3vw,52px);z-index:2;
+  max-width:46em;padding-right:26%}#odm-stages .f3-v-da .f3-A .f3-a-txt .f3-eyebrow{color:#d71920}#odm-stages .f3-v-da .f3-A .f3-a-txt h2{color:#ffffff}#odm-stages .f3-v-da .f3-A .f3-a-txt .f3-pr{color:rgba(255,255,255,.95)}#odm-stages .f3-v-da .f3-A .f3-a-txt .f3-dl{margin-top:.3rem;border-color:rgba(255,255,255,.22)}#odm-stages .f3-v-da .f3-A .f3-a-txt .f3-dl>div{border-color:rgba(255,255,255,.18)}#odm-stages .f3-v-da .f3-A .f3-a-txt .f3-dl dt{color:rgba(255,255,255,.84)}#odm-stages .f3-v-da .f3-A .f3-a-txt .f3-dl dd{color:rgba(255,255,255,.92)}#odm-stages .f3-v-da .f3-A .f3-a-evi{position:absolute;right:clamp(16px,4vw,64px);bottom:clamp(20px,3vw,52px);z-index:2;display:flex;gap: 10px}#odm-stages .f3-v-da .f3-A .f3-a-evi i{width:clamp(96px,8vw,150px);height:clamp(72px,5.6vw,104px);border:1px solid rgba(255,255,255,.35)}#odm-stages .f3-v-da .f3-B .f3-b-row{padding:clamp(22px,3vw,44px) 0 clamp(26px,3.4vw,50px);border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-da .f3-B .f3-b-stage{position:relative;padding-left:clamp(16px,4vw,64px);padding-right:0}#odm-stages .f3-v-da .f3-B .f3-b-fig{height:5.867rem;min-height:320px;margin-left:7%}#odm-stages .f3-v-da .f3-B .f3-b-card{position:absolute;left:clamp(16px,4vw,64px);bottom:0;width:40%;background: rgb(255,255,255);
+  border:1px solid var(--f3-line);padding:clamp(16px,1.8vw,30px) clamp(16px,1.8vw,30px)}#odm-stages .f3-v-da .f3-B .f3-b-strip{display:flex;gap: 10px;margin-top:clamp(12px,1.4vw,22px);padding-left:clamp(16px,4vw,64px)}#odm-stages .f3-v-da .f3-B .f3-b-strip i{flex:1;height:1.467rem;min-height:90px}#odm-stages .f3-v-da .f3-C{background: rgb(23,23,23)}#odm-stages .f3-v-da .f3-C .f3-c-row{padding:clamp(24px,3vw,46px) 0 clamp(26px,3.2vw,48px);border-bottom:1px solid #232323;
+  padding-inline:clamp(16px,4vw,64px)}#odm-stages .f3-v-da .f3-C .f3-c-top{display:flex;gap:clamp(20px,3vw,52px);align-items:stretch}#odm-stages .f3-v-da .f3-C .f3-c-fig{flex:0 0 60%;height:5.867rem;min-height:320px}#odm-stages .f3-v-da .f3-C .f3-c-txt{flex:1;color:#ffffff;align-self:center}#odm-stages .f3-v-da .f3-C .f3-c-txt h2{color:#ffffff}#odm-stages .f3-v-da .f3-C .f3-c-txt .f3-pr{color:rgba(255,255,255,.92)}#odm-stages .f3-v-da .f3-C .f3-c-txt .f3-dl{border-color:rgba(255,255,255,.2)}#odm-stages .f3-v-da .f3-C .f3-c-txt .f3-dl>div{border-color:rgba(255,255,255,.16)}#odm-stages .f3-v-da .f3-C .f3-c-txt .f3-dl dt{color:rgba(255,255,255,.82)}#odm-stages .f3-v-da .f3-C .f3-c-txt .f3-dl dd{color:rgba(255,255,255,.92)}#odm-stages .f3-v-da .f3-C .f3-c-strip{display:flex;gap: 10px;margin-top:clamp(12px,1.4vw,22px)}#odm-stages .f3-v-da .f3-C .f3-c-strip i{flex:1;height:2rem;min-height:120px}#odm-stages .f3-v-da .f3-C .f3-c-strip i.wide{flex:1.6}#odm-stages .f3-v-da .f3-D{padding:clamp(22px,3vw,44px) 0 clamp(30px,3.6vw,56px)}#odm-stages .f3-v-da .f3-D .f3-d-sheet{margin:0 clamp(16px,4vw,64px) clamp(18px,2.4vw,40px);border:1px solid #d1d1d1}#odm-stages .f3-v-da .f3-D .f3-d-hd{display:flex;align-items:center;gap:clamp(12px,1.4vw,22px);padding:clamp(10px,1vw,18px) clamp(14px,1.6vw,26px);
+  border-bottom:1px solid #d1d1d1;background: var(--f3-soft)}#odm-stages .f3-v-da .f3-D .f3-d-num{font:900 clamp(clamp(14px, 0.1867rem, 16px),.2rem,18px)/1 "SF Mono",Consolas,monospace;color:#5a5a5a}#odm-stages .f3-v-da .f3-D .f3-d-hd h2{margin:0;max-width:none;font-size:clamp(14px, 0.3067rem, 31px)}#odm-stages .f3-v-da .f3-D .f3-d-en{margin-left:auto;font:700 clamp(clamp(12px, 0.16rem, 14px),.13rem,13px)/1 "SF Mono",Consolas,monospace;
+  letter-spacing:.16em;color:#6e6e6e}#odm-stages .f3-v-da .f3-D .f3-d-b{display:flex;gap:clamp(16px,2vw,36px);padding:clamp(14px,1.8vw,30px)}#odm-stages .f3-v-da .f3-D .f3-d-fig{flex:0 0 58%;height:5.067rem;min-height:300px}#odm-stages .f3-v-da .f3-D .f3-d-side{flex:1}#odm-stages .f3-v-da .f3-D .f3-d-strip{display:flex;gap: 10px;align-items:center;padding:0 clamp(14px,1.6vw,26px) clamp(14px,1.8vw,30px)}#odm-stages .f3-v-da .f3-D .f3-d-strip i{flex:0 0 24%;height:1.2rem;min-height:84px}#odm-stages .f3-v-da .f3-D .f3-d-rev{margin-left:auto;font:700 clamp(clamp(12px, 0.16rem, 14px),.13rem,12px)/1 "SF Mono",Consolas,monospace;
+  letter-spacing:.14em;color:#6e6e6e}#odm-stages .f3-v-da .f3-ho{background: rgb(23,23,23);color:#ffffff;padding:clamp(52px,6vw,120px) 0}#odm-stages .f3-v-da .f3-ho-in{padding-inline:clamp(16px,4vw,64px);max-width:1840px;margin:0 auto;
+  display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(24px,4vw,80px);align-items:end}#odm-stages .f3-v-da .f3-ho-head h2{color:#ffffff;font-size:clamp(37px, 0.8rem, 82px);max-width:14ch;margin:.2rem 0 clamp(12px,1.2vw,22px);line-height:1.1}#odm-stages .f3-v-da .f3-ho-head p{color:rgba(255,255,255,.9);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.75;max-width:31em;margin:0}#odm-stages .f3-v-da .f3-ho-list{border-top:1px solid rgba(255,255,255,.2)}#odm-stages .f3-v-da .f3-ho-list>div{display:grid;grid-template-columns:1.1fr .8fr 1.5fr;gap:clamp(10px,1.4vw,26px);
+  align-items:baseline;padding:clamp(10px,1.1vw,20px) 0;border-bottom:1px solid rgba(255,255,255,.14)}#odm-stages .f3-v-da .f3-ho-list span{color:#b1b1b1;font-size:clamp(13px, 0.18rem, 15px)}#odm-stages .f3-v-da .f3-ho-list strong{font-size:clamp(14px, 0.3067rem, 31px);font-weight:700}#odm-stages .f3-v-da .f3-ho-list p{color:rgba(255,255,255,.9);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.65;margin:0}@media (max-width:900px){#odm-stages .f3-v-da .f3-A .f3-a-txt{padding-right:0;right:clamp(16px,4vw,64px)}#odm-stages .f3-v-da .f3-A .f3-a-evi{display:none}#odm-stages .f3-v-da .f3-B .f3-b-fig{margin-left:0;height:auto;aspect-ratio:4/3}#odm-stages .f3-v-da .f3-B .f3-b-card{position:static;width:auto;margin-top: clamp(16px, 0.2133rem, 18px);border:0;padding:0}#odm-stages .f3-v-da .f3-C .f3-c-top{flex-direction:column}#odm-stages .f3-v-da .f3-C .f3-c-fig{flex:none;height:auto;aspect-ratio:4/3}#odm-stages .f3-v-da .f3-D .f3-d-b{flex-direction:column}#odm-stages .f3-v-da .f3-D .f3-d-fig{flex:none;height:auto;aspect-ratio:4/3}#odm-stages .f3-v-da .f3-D .f3-d-strip{flex-wrap:wrap}#odm-stages .f3-v-da .f3-D .f3-d-strip i{flex:0 0 30%}#odm-stages .f3-v-da .f3-ho-in{grid-template-columns:1fr;gap: clamp(20px, 0.4267rem, 44px)}#odm-stages .f3-v-da .f3-ho-list>div{grid-template-columns:1fr;gap: 6px}}
+/* ---- F3 成品 B ---- */
+#odm-stages .f3-v-db *{box-sizing:border-box}#odm-stages .f3-v-db .f3-wbar{position:sticky;top:0;z-index:60;background: rgba(23,23,23,.95);backdrop-filter:blur(10px);border-bottom:1px solid #2c2c2c}#odm-stages .f3-v-db .f3-wbar .f3-in{max-width:1840px;margin:0 auto;padding: 12px clamp(15px, 0.32rem, 33px);display:flex;gap: 7px;align-items:center;flex-wrap:wrap}#odm-stages .f3-v-db .f3-wbar b{color:#d71920;font:900 clamp(12px, 0.16rem, 14px)/1.7 "SF Mono",Consolas,monospace;letter-spacing:.12em;margin-right: 10px}#odm-stages .f3-v-db .f3-wbar a{color:#6e6e6e;text-decoration:none;font:700 clamp(12px, 0.16rem, 14px)/1.7 "SF Mono",Consolas,monospace;padding: 7px 10px;border:1px solid #313131}#odm-stages .f3-v-db .f3-wbar a:hover{color:#171717;border-color:#171717}#odm-stages .f3-v-db .f3-wbar .hint{margin-left:auto;color:#646464;font-size:clamp(13px, 0.18rem, 15px)}#odm-stages .f3-v-db .f3-lead{max-width:1840px;margin: clamp(16px, 0.3467rem, 35px) auto 0;padding: clamp(16px, 0.2133rem, 18px) clamp(12px, 0.2667rem, 27px);border-left:3px solid #d71920;background: rgb(23,23,23);color:#aeaeae;font-size:clamp(13px, 0.18rem, 15px);line-height:1.85}#odm-stages .f3-v-db .f3-lead b{color:#d71920}#odm-stages .f3-v-db .f3-wrap{max-width:1840px;margin:0 auto;padding: 0 clamp(15px, 0.32rem, 33px)}#odm-stages .f3-v-db .f3-vname{display:flex;align-items:center;gap: 12px;margin: clamp(27px, 0.5867rem, 60px) 0 0}#odm-stages .f3-v-db .f3-vname b{background: var(--f3-red);color:#ffffff;font-size:clamp(13px, 0.18rem, 15px);font-weight:800;padding: 5px 10px;letter-spacing:.02em}#odm-stages .f3-v-db .f3-vname h3{margin:0;font-size:clamp(16px, 0.2133rem, 18px);font-weight:800;color:#ffffff}#odm-stages .f3-v-db .f3-vname span{color:#8f8f8f;font-size:clamp(13px, 0.18rem, 15px)}#odm-stages .f3-v-db .f3-vname i{margin-left:auto;font-style:normal;color:#717171;font:700 clamp(12px, 0.16rem, 14px)/1.7 "SF Mono",Consolas,monospace}#odm-stages .f3-v-db .f3-frame{margin-top: 12px;border:1px solid #383838}#odm-stages .f3-v-db{--f3-red:#d71920;--f3-ink:#171717;--f3-soft:#eeeeee;--f3-line:rgba(23,23,23,.14);
+  --f3-copy:rgba(23,23,23,.92);--f3-copy-soft:rgba(23,23,23,.8)}#odm-stages .f3-v-db .f3-mod{background: rgb(255,255,255);color:var(--f3-ink)}#odm-stages .f3-v-db .f3-mod-in{padding:0 0}#odm-stages .f3-v-db .f3-px{padding-inline:clamp(16px,4vw,64px);max-width:1840px;margin:0 auto}#odm-stages .f3-v-db .f3-eyebrow{display:block;color:var(--f3-red);font-size:clamp(13px, 0.18rem, 15px);letter-spacing:.08em;text-transform:uppercase}#odm-stages .f3-v-db .f3-eyebrow.f3-red{color:#d71920}#odm-stages .f3-v-db .f3-pr{color:var(--f3-copy);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.75;margin:.24rem 0 0;max-width:34em}#odm-stages .f3-v-db .f3-dl{margin:.42rem 0 0;border-top:1px solid var(--f3-line);padding:0;flex:none}#odm-stages .f3-v-db .f3-dl>div{display:grid;grid-template-columns:.85rem 1fr;gap:clamp(8px,.16rem,18px);
+  padding:clamp(6px,.13rem,14px) 0;border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-db .f3-dl dt{color:var(--f3-copy-soft);font-size:clamp(13px, 0.18rem, 15px);margin:0}#odm-stages .f3-v-db .f3-dl dd{color:var(--f3-ink);font-size:clamp(13px, 0.18rem, 15px);line-height:1.55;margin:0}#odm-stages .f3-v-db h2{color:var(--f3-ink);font-size:clamp(30px, 0.64rem, 65px);line-height:1.16;margin:.2rem 0 0;
+  max-width:9ch;text-wrap:balance;letter-spacing:-.01em}#odm-stages .f3-v-db .f3-ph{background-size:cover;background-position:center;background-repeat:no-repeat}#odm-stages .f3-v-db i{display:block;background-size:cover;background-position:center;background-repeat:no-repeat}#odm-stages .f3-v-db .f3-A .f3-a-row{position:relative;border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-db .f3-A .f3-a-fig{height:7.467rem;min-height:380px}#odm-stages .f3-v-db .f3-A .f3-a-row::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;
+  background: linear-gradient(0deg,rgba(23,23,23,.96) 0%,rgba(23,23,23,.86) 32%,rgba(23,23,23,.46) 56%,rgba(23,23,23,.08) 76%,rgba(23,23,23,.22) 100%)}#odm-stages .f3-v-db .f3-A .f3-a-txt{position:absolute;left:clamp(16px,4vw,64px);bottom:clamp(20px,3vw,52px);z-index:2;
+  max-width:46em;padding-right:26%}#odm-stages .f3-v-db .f3-A .f3-a-txt .f3-eyebrow{color:#d71920}#odm-stages .f3-v-db .f3-A .f3-a-txt h2{color:#ffffff}#odm-stages .f3-v-db .f3-A .f3-a-txt .f3-pr{color:rgba(255,255,255,.95)}#odm-stages .f3-v-db .f3-A .f3-a-txt .f3-dl{margin-top:.3rem;border-color:rgba(255,255,255,.22)}#odm-stages .f3-v-db .f3-A .f3-a-txt .f3-dl>div{border-color:rgba(255,255,255,.18)}#odm-stages .f3-v-db .f3-A .f3-a-txt .f3-dl dt{color:rgba(255,255,255,.84)}#odm-stages .f3-v-db .f3-A .f3-a-txt .f3-dl dd{color:rgba(255,255,255,.92)}#odm-stages .f3-v-db .f3-A .f3-a-evi{position:absolute;right:clamp(16px,4vw,64px);bottom:clamp(20px,3vw,52px);z-index:2;display:flex;gap: 10px}#odm-stages .f3-v-db .f3-A .f3-a-evi i{width:clamp(96px,8vw,150px);height:clamp(72px,5.6vw,104px);border:1px solid rgba(255,255,255,.35)}#odm-stages .f3-v-db .f3-B .f3-b-row{padding:clamp(22px,3vw,44px) 0 clamp(26px,3.4vw,50px);border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-db .f3-B .f3-b-stage{position:relative;padding-left:clamp(16px,4vw,64px);padding-right:0}#odm-stages .f3-v-db .f3-B .f3-b-fig{height:5.867rem;min-height:320px;margin-left:7%}#odm-stages .f3-v-db .f3-B .f3-b-card{position:absolute;left:clamp(16px,4vw,64px);bottom:0;width:40%;background: rgb(255,255,255);
+  border:1px solid var(--f3-line);padding:clamp(16px,1.8vw,30px) clamp(16px,1.8vw,30px)}#odm-stages .f3-v-db .f3-B .f3-b-strip{display:flex;gap: 10px;margin-top:clamp(12px,1.4vw,22px);padding-left:clamp(16px,4vw,64px)}#odm-stages .f3-v-db .f3-B .f3-b-strip i{flex:1;height:1.467rem;min-height:90px}#odm-stages .f3-v-db .f3-C{background: rgb(23,23,23)}#odm-stages .f3-v-db .f3-C .f3-c-row{padding:clamp(24px,3vw,46px) 0 clamp(26px,3.2vw,48px);border-bottom:1px solid #232323;
+  padding-inline:clamp(16px,4vw,64px)}#odm-stages .f3-v-db .f3-C .f3-c-top{display:flex;gap:clamp(20px,3vw,52px);align-items:stretch}#odm-stages .f3-v-db .f3-C .f3-c-fig{flex:0 0 60%;height:5.867rem;min-height:320px}#odm-stages .f3-v-db .f3-C .f3-c-txt{flex:1;color:#ffffff;align-self:center}#odm-stages .f3-v-db .f3-C .f3-c-txt h2{color:#ffffff}#odm-stages .f3-v-db .f3-C .f3-c-txt .f3-pr{color:rgba(255,255,255,.92)}#odm-stages .f3-v-db .f3-C .f3-c-txt .f3-dl{border-color:rgba(255,255,255,.2)}#odm-stages .f3-v-db .f3-C .f3-c-txt .f3-dl>div{border-color:rgba(255,255,255,.16)}#odm-stages .f3-v-db .f3-C .f3-c-txt .f3-dl dt{color:rgba(255,255,255,.82)}#odm-stages .f3-v-db .f3-C .f3-c-txt .f3-dl dd{color:rgba(255,255,255,.92)}#odm-stages .f3-v-db .f3-C .f3-c-strip{display:flex;gap: 10px;margin-top:clamp(12px,1.4vw,22px)}#odm-stages .f3-v-db .f3-C .f3-c-strip i{flex:1;height:2rem;min-height:120px}#odm-stages .f3-v-db .f3-C .f3-c-strip i.wide{flex:1.6}#odm-stages .f3-v-db .f3-D{padding:clamp(22px,3vw,44px) 0 clamp(30px,3.6vw,56px)}#odm-stages .f3-v-db .f3-D .f3-d-sheet{margin:0 clamp(16px,4vw,64px) clamp(18px,2.4vw,40px);border:1px solid #d1d1d1}#odm-stages .f3-v-db .f3-D .f3-d-hd{display:flex;align-items:center;gap:clamp(12px,1.4vw,22px);padding:clamp(10px,1vw,18px) clamp(14px,1.6vw,26px);
+  border-bottom:1px solid #d1d1d1;background: var(--f3-soft)}#odm-stages .f3-v-db .f3-D .f3-d-num{font:900 clamp(clamp(14px, 0.1867rem, 16px),.2rem,18px)/1 "SF Mono",Consolas,monospace;color:#5a5a5a}#odm-stages .f3-v-db .f3-D .f3-d-hd h2{margin:0;max-width:none;font-size:clamp(14px, 0.3067rem, 31px)}#odm-stages .f3-v-db .f3-D .f3-d-en{margin-left:auto;font:700 clamp(clamp(12px, 0.16rem, 14px),.13rem,13px)/1 "SF Mono",Consolas,monospace;
+  letter-spacing:.16em;color:#6e6e6e}#odm-stages .f3-v-db .f3-D .f3-d-b{display:flex;gap:clamp(16px,2vw,36px);padding:clamp(14px,1.8vw,30px)}#odm-stages .f3-v-db .f3-D .f3-d-fig{flex:0 0 58%;height:5.067rem;min-height:300px}#odm-stages .f3-v-db .f3-D .f3-d-side{flex:1}#odm-stages .f3-v-db .f3-D .f3-d-strip{display:flex;gap: 10px;align-items:center;padding:0 clamp(14px,1.6vw,26px) clamp(14px,1.8vw,30px)}#odm-stages .f3-v-db .f3-D .f3-d-strip i{flex:0 0 24%;height:1.2rem;min-height:84px}#odm-stages .f3-v-db .f3-D .f3-d-rev{margin-left:auto;font:700 clamp(clamp(12px, 0.16rem, 14px),.13rem,12px)/1 "SF Mono",Consolas,monospace;
+  letter-spacing:.14em;color:#6e6e6e}#odm-stages .f3-v-db .f3-ho{background: rgb(23,23,23);color:#ffffff;padding:clamp(52px,6vw,120px) 0}#odm-stages .f3-v-db .f3-ho-in{padding-inline:clamp(16px,4vw,64px);max-width:1840px;margin:0 auto;
+  display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(24px,4vw,80px);align-items:end}#odm-stages .f3-v-db .f3-ho-head h2{color:#ffffff;font-size:clamp(37px, 0.8rem, 82px);max-width:14ch;margin:.2rem 0 clamp(12px,1.2vw,22px);line-height:1.1}#odm-stages .f3-v-db .f3-ho-head p{color:rgba(255,255,255,.9);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.75;max-width:31em;margin:0}#odm-stages .f3-v-db .f3-ho-list{border-top:1px solid rgba(255,255,255,.2)}#odm-stages .f3-v-db .f3-ho-list>div{display:grid;grid-template-columns:1.1fr .8fr 1.5fr;gap:clamp(10px,1.4vw,26px);
+  align-items:baseline;padding:clamp(10px,1.1vw,20px) 0;border-bottom:1px solid rgba(255,255,255,.14)}#odm-stages .f3-v-db .f3-ho-list span{color:#b1b1b1;font-size:clamp(13px, 0.18rem, 15px)}#odm-stages .f3-v-db .f3-ho-list strong{font-size:clamp(14px, 0.3067rem, 31px);font-weight:700}#odm-stages .f3-v-db .f3-ho-list p{color:rgba(255,255,255,.9);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.65;margin:0}@media (max-width:900px){#odm-stages .f3-v-db .f3-A .f3-a-txt{padding-right:0;right:clamp(16px,4vw,64px)}#odm-stages .f3-v-db .f3-A .f3-a-evi{display:none}#odm-stages .f3-v-db .f3-B .f3-b-fig{margin-left:0;height:auto;aspect-ratio:4/3}#odm-stages .f3-v-db .f3-B .f3-b-card{position:static;width:auto;margin-top: clamp(16px, 0.2133rem, 18px);border:0;padding:0}#odm-stages .f3-v-db .f3-C .f3-c-top{flex-direction:column}#odm-stages .f3-v-db .f3-C .f3-c-fig{flex:none;height:auto;aspect-ratio:4/3}#odm-stages .f3-v-db .f3-D .f3-d-b{flex-direction:column}#odm-stages .f3-v-db .f3-D .f3-d-fig{flex:none;height:auto;aspect-ratio:4/3}#odm-stages .f3-v-db .f3-D .f3-d-strip{flex-wrap:wrap}#odm-stages .f3-v-db .f3-D .f3-d-strip i{flex:0 0 30%}#odm-stages .f3-v-db .f3-ho-in{grid-template-columns:1fr;gap: clamp(20px, 0.4267rem, 44px)}#odm-stages .f3-v-db .f3-ho-list>div{grid-template-columns:1fr;gap: 6px}}
+/* ---- F3 成品 C ---- */
+#odm-stages .f3-v-dc *{box-sizing:border-box}#odm-stages .f3-v-dc .f3-wbar{position:sticky;top:0;z-index:60;background: rgba(23,23,23,.95);backdrop-filter:blur(10px);border-bottom:1px solid #2c2c2c}#odm-stages .f3-v-dc .f3-wbar .f3-in{max-width:1840px;margin:0 auto;padding: 12px clamp(15px, 0.32rem, 33px);display:flex;gap: 7px;align-items:center;flex-wrap:wrap}#odm-stages .f3-v-dc .f3-wbar b{color:#d71920;font:900 clamp(12px, 0.16rem, 14px)/1.7 "SF Mono",Consolas,monospace;letter-spacing:.12em;margin-right: 10px}#odm-stages .f3-v-dc .f3-wbar a{color:#6e6e6e;text-decoration:none;font:700 clamp(12px, 0.16rem, 14px)/1.7 "SF Mono",Consolas,monospace;padding: 7px 10px;border:1px solid #313131}#odm-stages .f3-v-dc .f3-wbar a:hover{color:#171717;border-color:#171717}#odm-stages .f3-v-dc .f3-wbar .hint{margin-left:auto;color:#646464;font-size:clamp(13px, 0.18rem, 15px)}#odm-stages .f3-v-dc .f3-lead{max-width:1840px;margin: clamp(16px, 0.3467rem, 35px) auto 0;padding: clamp(16px, 0.2133rem, 18px) clamp(12px, 0.2667rem, 27px);border-left:3px solid #d71920;background: rgb(23,23,23);color:#aeaeae;font-size:clamp(13px, 0.18rem, 15px);line-height:1.85}#odm-stages .f3-v-dc .f3-lead b{color:#d71920}#odm-stages .f3-v-dc .f3-wrap{max-width:1840px;margin:0 auto;padding: 0 clamp(15px, 0.32rem, 33px)}#odm-stages .f3-v-dc .f3-vname{display:flex;align-items:center;gap: 12px;margin: clamp(27px, 0.5867rem, 60px) 0 0}#odm-stages .f3-v-dc .f3-vname b{background: var(--f3-red);color:#ffffff;font-size:clamp(13px, 0.18rem, 15px);font-weight:800;padding: 5px 10px;letter-spacing:.02em}#odm-stages .f3-v-dc .f3-vname h3{margin:0;font-size:clamp(16px, 0.2133rem, 18px);font-weight:800;color:#ffffff}#odm-stages .f3-v-dc .f3-vname span{color:#8f8f8f;font-size:clamp(13px, 0.18rem, 15px)}#odm-stages .f3-v-dc .f3-vname i{margin-left:auto;font-style:normal;color:#717171;font:700 clamp(12px, 0.16rem, 14px)/1.7 "SF Mono",Consolas,monospace}#odm-stages .f3-v-dc .f3-frame{margin-top: 12px;border:1px solid #383838}#odm-stages .f3-v-dc{--f3-red:#d71920;--f3-ink:#171717;--f3-soft:#eeeeee;--f3-line:rgba(23,23,23,.14);
+  --f3-copy:rgba(23,23,23,.92);--f3-copy-soft:rgba(23,23,23,.8)}#odm-stages .f3-v-dc .f3-mod{background: rgb(255,255,255);color:var(--f3-ink)}#odm-stages .f3-v-dc .f3-mod-in{padding:0 0}#odm-stages .f3-v-dc .f3-px{padding-inline:clamp(16px,4vw,64px);max-width:1840px;margin:0 auto}#odm-stages .f3-v-dc .f3-eyebrow{display:block;color:var(--f3-red);font-size:clamp(13px, 0.18rem, 15px);letter-spacing:.08em;text-transform:uppercase}#odm-stages .f3-v-dc .f3-eyebrow.f3-red{color:#d71920}#odm-stages .f3-v-dc .f3-pr{color:var(--f3-copy);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.75;margin:.24rem 0 0;max-width:34em}#odm-stages .f3-v-dc .f3-dl{margin:.42rem 0 0;border-top:1px solid var(--f3-line);padding:0;flex:none}#odm-stages .f3-v-dc .f3-dl>div{display:grid;grid-template-columns:.85rem 1fr;gap:clamp(8px,.16rem,18px);
+  padding:clamp(6px,.13rem,14px) 0;border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-dc .f3-dl dt{color:var(--f3-copy-soft);font-size:clamp(13px, 0.18rem, 15px);margin:0}#odm-stages .f3-v-dc .f3-dl dd{color:var(--f3-ink);font-size:clamp(13px, 0.18rem, 15px);line-height:1.55;margin:0}#odm-stages .f3-v-dc h2{color:var(--f3-ink);font-size:clamp(30px, 0.64rem, 65px);line-height:1.16;margin:.2rem 0 0;
+  max-width:9ch;text-wrap:balance;letter-spacing:-.01em}#odm-stages .f3-v-dc .f3-ph{background-size:cover;background-position:center;background-repeat:no-repeat}#odm-stages .f3-v-dc i{display:block;background-size:cover;background-position:center;background-repeat:no-repeat}#odm-stages .f3-v-dc .f3-A .f3-a-row{position:relative;border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-dc .f3-A .f3-a-fig{height:7.467rem;min-height:380px}#odm-stages .f3-v-dc .f3-A .f3-a-row::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;
+  background: linear-gradient(0deg,rgba(23,23,23,.96) 0%,rgba(23,23,23,.86) 32%,rgba(23,23,23,.46) 56%,rgba(23,23,23,.08) 76%,rgba(23,23,23,.22) 100%)}#odm-stages .f3-v-dc .f3-A .f3-a-txt{position:absolute;left:clamp(16px,4vw,64px);bottom:clamp(20px,3vw,52px);z-index:2;
+  max-width:46em;padding-right:26%}#odm-stages .f3-v-dc .f3-A .f3-a-txt .f3-eyebrow{color:#d71920}#odm-stages .f3-v-dc .f3-A .f3-a-txt h2{color:#ffffff}#odm-stages .f3-v-dc .f3-A .f3-a-txt .f3-pr{color:rgba(255,255,255,.95)}#odm-stages .f3-v-dc .f3-A .f3-a-txt .f3-dl{margin-top:.3rem;border-color:rgba(255,255,255,.22)}#odm-stages .f3-v-dc .f3-A .f3-a-txt .f3-dl>div{border-color:rgba(255,255,255,.18)}#odm-stages .f3-v-dc .f3-A .f3-a-txt .f3-dl dt{color:rgba(255,255,255,.84)}#odm-stages .f3-v-dc .f3-A .f3-a-txt .f3-dl dd{color:rgba(255,255,255,.92)}#odm-stages .f3-v-dc .f3-A .f3-a-evi{position:absolute;right:clamp(16px,4vw,64px);bottom:clamp(20px,3vw,52px);z-index:2;display:flex;gap: 10px}#odm-stages .f3-v-dc .f3-A .f3-a-evi i{width:clamp(96px,8vw,150px);height:clamp(72px,5.6vw,104px);border:1px solid rgba(255,255,255,.35)}#odm-stages .f3-v-dc .f3-B .f3-b-row{padding:clamp(22px,3vw,44px) 0 clamp(26px,3.4vw,50px);border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-dc .f3-B .f3-b-stage{position:relative;padding-left:clamp(16px,4vw,64px);padding-right:0}#odm-stages .f3-v-dc .f3-B .f3-b-fig{height:5.867rem;min-height:320px;margin-left:7%}#odm-stages .f3-v-dc .f3-B .f3-b-card{position:absolute;left:clamp(16px,4vw,64px);bottom:0;width:40%;background: rgb(255,255,255);
+  border:1px solid var(--f3-line);padding:clamp(16px,1.8vw,30px) clamp(16px,1.8vw,30px)}#odm-stages .f3-v-dc .f3-B .f3-b-strip{display:flex;gap: 10px;margin-top:clamp(12px,1.4vw,22px);padding-left:clamp(16px,4vw,64px)}#odm-stages .f3-v-dc .f3-B .f3-b-strip i{flex:1;height:1.467rem;min-height:90px}#odm-stages .f3-v-dc .f3-C{background: rgb(23,23,23)}#odm-stages .f3-v-dc .f3-C .f3-c-row{padding:clamp(24px,3vw,46px) 0 clamp(26px,3.2vw,48px);border-bottom:1px solid #232323;
+  padding-inline:clamp(16px,4vw,64px)}#odm-stages .f3-v-dc .f3-C .f3-c-top{display:flex;gap:clamp(20px,3vw,52px);align-items:stretch}#odm-stages .f3-v-dc .f3-C .f3-c-fig{flex:0 0 60%;height:5.867rem;min-height:320px}#odm-stages .f3-v-dc .f3-C .f3-c-txt{flex:1;color:#ffffff;align-self:center}#odm-stages .f3-v-dc .f3-C .f3-c-txt h2{color:#ffffff}#odm-stages .f3-v-dc .f3-C .f3-c-txt .f3-pr{color:rgba(255,255,255,.92)}#odm-stages .f3-v-dc .f3-C .f3-c-txt .f3-dl{border-color:rgba(255,255,255,.2)}#odm-stages .f3-v-dc .f3-C .f3-c-txt .f3-dl>div{border-color:rgba(255,255,255,.16)}#odm-stages .f3-v-dc .f3-C .f3-c-txt .f3-dl dt{color:rgba(255,255,255,.82)}#odm-stages .f3-v-dc .f3-C .f3-c-txt .f3-dl dd{color:rgba(255,255,255,.92)}#odm-stages .f3-v-dc .f3-C .f3-c-strip{display:flex;gap: 10px;margin-top:clamp(12px,1.4vw,22px)}#odm-stages .f3-v-dc .f3-C .f3-c-strip i{flex:1;height:2rem;min-height:120px}#odm-stages .f3-v-dc .f3-C .f3-c-strip i.wide{flex:1.6}#odm-stages .f3-v-dc .f3-D{padding:clamp(22px,3vw,44px) 0 clamp(30px,3.6vw,56px)}#odm-stages .f3-v-dc .f3-D .f3-d-sheet{margin:0 clamp(16px,4vw,64px) clamp(18px,2.4vw,40px);border:1px solid #d1d1d1}#odm-stages .f3-v-dc .f3-D .f3-d-hd{display:flex;align-items:center;gap:clamp(12px,1.4vw,22px);padding:clamp(10px,1vw,18px) clamp(14px,1.6vw,26px);
+  border-bottom:1px solid #d1d1d1;background: var(--f3-soft)}#odm-stages .f3-v-dc .f3-D .f3-d-num{font:900 clamp(clamp(14px, 0.1867rem, 16px),.2rem,18px)/1 "SF Mono",Consolas,monospace;color:#5a5a5a}#odm-stages .f3-v-dc .f3-D .f3-d-hd h2{margin:0;max-width:none;font-size:clamp(14px, 0.3067rem, 31px)}#odm-stages .f3-v-dc .f3-D .f3-d-en{margin-left:auto;font:700 clamp(clamp(12px, 0.16rem, 14px),.13rem,13px)/1 "SF Mono",Consolas,monospace;
+  letter-spacing:.16em;color:#6e6e6e}#odm-stages .f3-v-dc .f3-D .f3-d-b{display:flex;gap:clamp(16px,2vw,36px);padding:clamp(14px,1.8vw,30px)}#odm-stages .f3-v-dc .f3-D .f3-d-fig{flex:0 0 58%;height:5.067rem;min-height:300px}#odm-stages .f3-v-dc .f3-D .f3-d-side{flex:1}#odm-stages .f3-v-dc .f3-D .f3-d-strip{display:flex;gap: 10px;align-items:center;padding:0 clamp(14px,1.6vw,26px) clamp(14px,1.8vw,30px)}#odm-stages .f3-v-dc .f3-D .f3-d-strip i{flex:0 0 24%;height:1.2rem;min-height:84px}#odm-stages .f3-v-dc .f3-D .f3-d-rev{margin-left:auto;font:700 clamp(clamp(12px, 0.16rem, 14px),.13rem,12px)/1 "SF Mono",Consolas,monospace;
+  letter-spacing:.14em;color:#6e6e6e}#odm-stages .f3-v-dc .f3-ho{background: rgb(23,23,23);color:#ffffff;padding:clamp(52px,6vw,120px) 0}#odm-stages .f3-v-dc .f3-ho-in{padding-inline:clamp(16px,4vw,64px);max-width:1840px;margin:0 auto;
+  display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(24px,4vw,80px);align-items:end}#odm-stages .f3-v-dc .f3-ho-head h2{color:#ffffff;font-size:clamp(37px, 0.8rem, 82px);max-width:14ch;margin:.2rem 0 clamp(12px,1.2vw,22px);line-height:1.1}#odm-stages .f3-v-dc .f3-ho-head p{color:rgba(255,255,255,.9);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.75;max-width:31em;margin:0}#odm-stages .f3-v-dc .f3-ho-list{border-top:1px solid rgba(255,255,255,.2)}#odm-stages .f3-v-dc .f3-ho-list>div{display:grid;grid-template-columns:1.1fr .8fr 1.5fr;gap:clamp(10px,1.4vw,26px);
+  align-items:baseline;padding:clamp(10px,1.1vw,20px) 0;border-bottom:1px solid rgba(255,255,255,.14)}#odm-stages .f3-v-dc .f3-ho-list span{color:#b1b1b1;font-size:clamp(13px, 0.18rem, 15px)}#odm-stages .f3-v-dc .f3-ho-list strong{font-size:clamp(14px, 0.3067rem, 31px);font-weight:700}#odm-stages .f3-v-dc .f3-ho-list p{color:rgba(255,255,255,.9);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.65;margin:0}@media (max-width:900px){#odm-stages .f3-v-dc .f3-A .f3-a-txt{padding-right:0;right:clamp(16px,4vw,64px)}#odm-stages .f3-v-dc .f3-A .f3-a-evi{display:none}#odm-stages .f3-v-dc .f3-B .f3-b-fig{margin-left:0;height:auto;aspect-ratio:4/3}#odm-stages .f3-v-dc .f3-B .f3-b-card{position:static;width:auto;margin-top: clamp(16px, 0.2133rem, 18px);border:0;padding:0}#odm-stages .f3-v-dc .f3-C .f3-c-top{flex-direction:column}#odm-stages .f3-v-dc .f3-C .f3-c-fig{flex:none;height:auto;aspect-ratio:4/3}#odm-stages .f3-v-dc .f3-D .f3-d-b{flex-direction:column}#odm-stages .f3-v-dc .f3-D .f3-d-fig{flex:none;height:auto;aspect-ratio:4/3}#odm-stages .f3-v-dc .f3-D .f3-d-strip{flex-wrap:wrap}#odm-stages .f3-v-dc .f3-D .f3-d-strip i{flex:0 0 30%}#odm-stages .f3-v-dc .f3-ho-in{grid-template-columns:1fr;gap: clamp(20px, 0.4267rem, 44px)}#odm-stages .f3-v-dc .f3-ho-list>div{grid-template-columns:1fr;gap: 6px}}
+/* ---- F3 成品 D ---- */
+#odm-stages .f3-v-dd *{box-sizing:border-box}#odm-stages .f3-v-dd .f3-wbar{position:sticky;top:0;z-index:60;background: rgba(23,23,23,.95);backdrop-filter:blur(10px);border-bottom:1px solid #2c2c2c}#odm-stages .f3-v-dd .f3-wbar .f3-in{max-width:1840px;margin:0 auto;padding: 12px clamp(15px, 0.32rem, 33px);display:flex;gap: 7px;align-items:center;flex-wrap:wrap}#odm-stages .f3-v-dd .f3-wbar b{color:#d71920;font:900 clamp(12px, 0.16rem, 14px)/1.7 "SF Mono",Consolas,monospace;letter-spacing:.12em;margin-right: 10px}#odm-stages .f3-v-dd .f3-wbar a{color:#6e6e6e;text-decoration:none;font:700 clamp(12px, 0.16rem, 14px)/1.7 "SF Mono",Consolas,monospace;padding: 7px 10px;border:1px solid #313131}#odm-stages .f3-v-dd .f3-wbar a:hover{color:#171717;border-color:#171717}#odm-stages .f3-v-dd .f3-wbar .hint{margin-left:auto;color:#646464;font-size:clamp(13px, 0.18rem, 15px)}#odm-stages .f3-v-dd .f3-lead{max-width:1840px;margin: clamp(16px, 0.3467rem, 35px) auto 0;padding: clamp(16px, 0.2133rem, 18px) clamp(12px, 0.2667rem, 27px);border-left:3px solid #d71920;background: rgb(23,23,23);color:#aeaeae;font-size:clamp(13px, 0.18rem, 15px);line-height:1.85}#odm-stages .f3-v-dd .f3-lead b{color:#d71920}#odm-stages .f3-v-dd .f3-wrap{max-width:1840px;margin:0 auto;padding: 0 clamp(15px, 0.32rem, 33px)}#odm-stages .f3-v-dd .f3-vname{display:flex;align-items:center;gap: 12px;margin: clamp(27px, 0.5867rem, 60px) 0 0}#odm-stages .f3-v-dd .f3-vname b{background: var(--f3-red);color:#ffffff;font-size:clamp(13px, 0.18rem, 15px);font-weight:800;padding: 5px 10px;letter-spacing:.02em}#odm-stages .f3-v-dd .f3-vname h3{margin:0;font-size:clamp(16px, 0.2133rem, 18px);font-weight:800;color:#ffffff}#odm-stages .f3-v-dd .f3-vname span{color:#8f8f8f;font-size:clamp(13px, 0.18rem, 15px)}#odm-stages .f3-v-dd .f3-vname i{margin-left:auto;font-style:normal;color:#717171;font:700 clamp(12px, 0.16rem, 14px)/1.7 "SF Mono",Consolas,monospace}#odm-stages .f3-v-dd .f3-frame{margin-top: 12px;border:1px solid #383838}#odm-stages .f3-v-dd{--f3-red:#d71920;--f3-ink:#171717;--f3-soft:#eeeeee;--f3-line:rgba(23,23,23,.14);
+  --f3-copy:rgba(23,23,23,.92);--f3-copy-soft:rgba(23,23,23,.8)}#odm-stages .f3-v-dd .f3-mod{background: rgb(255,255,255);color:var(--f3-ink)}#odm-stages .f3-v-dd .f3-mod-in{padding:0 0}#odm-stages .f3-v-dd .f3-px{padding-inline:clamp(16px,4vw,64px);max-width:1840px;margin:0 auto}#odm-stages .f3-v-dd .f3-eyebrow{display:block;color:var(--f3-red);font-size:clamp(13px, 0.18rem, 15px);letter-spacing:.08em;text-transform:uppercase}#odm-stages .f3-v-dd .f3-eyebrow.f3-red{color:#d71920}#odm-stages .f3-v-dd .f3-pr{color:var(--f3-copy);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.75;margin:.24rem 0 0;max-width:34em}#odm-stages .f3-v-dd .f3-dl{margin:.42rem 0 0;border-top:1px solid var(--f3-line);padding:0;flex:none}#odm-stages .f3-v-dd .f3-dl>div{display:grid;grid-template-columns:.85rem 1fr;gap:clamp(8px,.16rem,18px);
+  padding:clamp(6px,.13rem,14px) 0;border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-dd .f3-dl dt{color:var(--f3-copy-soft);font-size:clamp(13px, 0.18rem, 15px);margin:0}#odm-stages .f3-v-dd .f3-dl dd{color:var(--f3-ink);font-size:clamp(13px, 0.18rem, 15px);line-height:1.55;margin:0}#odm-stages .f3-v-dd h2{color:var(--f3-ink);font-size:clamp(30px, 0.64rem, 65px);line-height:1.16;margin:.2rem 0 0;
+  max-width:9ch;text-wrap:balance;letter-spacing:-.01em}#odm-stages .f3-v-dd .f3-ph{background-size:cover;background-position:center;background-repeat:no-repeat}#odm-stages .f3-v-dd i{display:block;background-size:cover;background-position:center;background-repeat:no-repeat}#odm-stages .f3-v-dd .f3-A .f3-a-row{position:relative;border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-dd .f3-A .f3-a-fig{height:7.467rem;min-height:380px}#odm-stages .f3-v-dd .f3-A .f3-a-row::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;
+  background: linear-gradient(0deg,rgba(23,23,23,.96) 0%,rgba(23,23,23,.86) 32%,rgba(23,23,23,.46) 56%,rgba(23,23,23,.08) 76%,rgba(23,23,23,.22) 100%)}#odm-stages .f3-v-dd .f3-A .f3-a-txt{position:absolute;left:clamp(16px,4vw,64px);bottom:clamp(20px,3vw,52px);z-index:2;
+  max-width:46em;padding-right:26%}#odm-stages .f3-v-dd .f3-A .f3-a-txt .f3-eyebrow{color:#d71920}#odm-stages .f3-v-dd .f3-A .f3-a-txt h2{color:#ffffff}#odm-stages .f3-v-dd .f3-A .f3-a-txt .f3-pr{color:rgba(255,255,255,.95)}#odm-stages .f3-v-dd .f3-A .f3-a-txt .f3-dl{margin-top:.3rem;border-color:rgba(255,255,255,.22)}#odm-stages .f3-v-dd .f3-A .f3-a-txt .f3-dl>div{border-color:rgba(255,255,255,.18)}#odm-stages .f3-v-dd .f3-A .f3-a-txt .f3-dl dt{color:rgba(255,255,255,.84)}#odm-stages .f3-v-dd .f3-A .f3-a-txt .f3-dl dd{color:rgba(255,255,255,.92)}#odm-stages .f3-v-dd .f3-A .f3-a-evi{position:absolute;right:clamp(16px,4vw,64px);bottom:clamp(20px,3vw,52px);z-index:2;display:flex;gap: 10px}#odm-stages .f3-v-dd .f3-A .f3-a-evi i{width:clamp(96px,8vw,150px);height:clamp(72px,5.6vw,104px);border:1px solid rgba(255,255,255,.35)}#odm-stages .f3-v-dd .f3-B .f3-b-row{padding:clamp(22px,3vw,44px) 0 clamp(26px,3.4vw,50px);border-bottom:1px solid var(--f3-line)}#odm-stages .f3-v-dd .f3-B .f3-b-stage{position:relative;padding-left:clamp(16px,4vw,64px);padding-right:0}#odm-stages .f3-v-dd .f3-B .f3-b-fig{height:5.867rem;min-height:320px;margin-left:7%}#odm-stages .f3-v-dd .f3-B .f3-b-card{position:absolute;left:clamp(16px,4vw,64px);bottom:0;width:40%;background: rgb(255,255,255);
+  border:1px solid var(--f3-line);padding:clamp(16px,1.8vw,30px) clamp(16px,1.8vw,30px)}#odm-stages .f3-v-dd .f3-B .f3-b-strip{display:flex;gap: 10px;margin-top:clamp(12px,1.4vw,22px);padding-left:clamp(16px,4vw,64px)}#odm-stages .f3-v-dd .f3-B .f3-b-strip i{flex:1;height:1.467rem;min-height:90px}#odm-stages .f3-v-dd .f3-C{background: rgb(23,23,23)}#odm-stages .f3-v-dd .f3-C .f3-c-row{padding:clamp(24px,3vw,46px) 0 clamp(26px,3.2vw,48px);border-bottom:1px solid #232323;
+  padding-inline:clamp(16px,4vw,64px)}#odm-stages .f3-v-dd .f3-C .f3-c-top{display:flex;gap:clamp(20px,3vw,52px);align-items:stretch}#odm-stages .f3-v-dd .f3-C .f3-c-fig{flex:0 0 60%;height:5.867rem;min-height:320px}#odm-stages .f3-v-dd .f3-C .f3-c-txt{flex:1;color:#ffffff;align-self:center}#odm-stages .f3-v-dd .f3-C .f3-c-txt h2{color:#ffffff}#odm-stages .f3-v-dd .f3-C .f3-c-txt .f3-pr{color:rgba(255,255,255,.92)}#odm-stages .f3-v-dd .f3-C .f3-c-txt .f3-dl{border-color:rgba(255,255,255,.2)}#odm-stages .f3-v-dd .f3-C .f3-c-txt .f3-dl>div{border-color:rgba(255,255,255,.16)}#odm-stages .f3-v-dd .f3-C .f3-c-txt .f3-dl dt{color:rgba(255,255,255,.82)}#odm-stages .f3-v-dd .f3-C .f3-c-txt .f3-dl dd{color:rgba(255,255,255,.92)}#odm-stages .f3-v-dd .f3-C .f3-c-strip{display:flex;gap: 10px;margin-top:clamp(12px,1.4vw,22px)}#odm-stages .f3-v-dd .f3-C .f3-c-strip i{flex:1;height:2rem;min-height:120px}#odm-stages .f3-v-dd .f3-C .f3-c-strip i.wide{flex:1.6}#odm-stages .f3-v-dd .f3-D{padding:clamp(22px,3vw,44px) 0 clamp(30px,3.6vw,56px)}#odm-stages .f3-v-dd .f3-D .f3-d-sheet{margin:0 clamp(16px,4vw,64px) clamp(18px,2.4vw,40px);border:1px solid #d1d1d1}#odm-stages .f3-v-dd .f3-D .f3-d-hd{display:flex;align-items:center;gap:clamp(12px,1.4vw,22px);padding:clamp(10px,1vw,18px) clamp(14px,1.6vw,26px);
+  border-bottom:1px solid #d1d1d1;background: var(--f3-soft)}#odm-stages .f3-v-dd .f3-D .f3-d-num{font:900 clamp(clamp(14px, 0.1867rem, 16px),.2rem,18px)/1 "SF Mono",Consolas,monospace;color:#5a5a5a}#odm-stages .f3-v-dd .f3-D .f3-d-hd h2{margin:0;max-width:none;font-size:clamp(14px, 0.3067rem, 31px)}#odm-stages .f3-v-dd .f3-D .f3-d-en{margin-left:auto;font:700 clamp(clamp(12px, 0.16rem, 14px),.13rem,13px)/1 "SF Mono",Consolas,monospace;
+  letter-spacing:.16em;color:#6e6e6e}#odm-stages .f3-v-dd .f3-D .f3-d-b{display:flex;gap:clamp(16px,2vw,36px);padding:clamp(14px,1.8vw,30px)}#odm-stages .f3-v-dd .f3-D .f3-d-fig{flex:0 0 58%;height:5.067rem;min-height:300px}#odm-stages .f3-v-dd .f3-D .f3-d-side{flex:1}#odm-stages .f3-v-dd .f3-D .f3-d-strip{display:flex;gap: 10px;align-items:center;padding:0 clamp(14px,1.6vw,26px) clamp(14px,1.8vw,30px)}#odm-stages .f3-v-dd .f3-D .f3-d-strip i{flex:0 0 24%;height:1.2rem;min-height:84px}#odm-stages .f3-v-dd .f3-D .f3-d-rev{margin-left:auto;font:700 clamp(clamp(12px, 0.16rem, 14px),.13rem,12px)/1 "SF Mono",Consolas,monospace;
+  letter-spacing:.14em;color:#6e6e6e}#odm-stages .f3-v-dd .f3-ho{background: rgb(23,23,23);color:#ffffff;padding:clamp(52px,6vw,120px) 0}#odm-stages .f3-v-dd .f3-ho-in{padding-inline:clamp(16px,4vw,64px);max-width:1840px;margin:0 auto;
+  display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(24px,4vw,80px);align-items:end}#odm-stages .f3-v-dd .f3-ho-head h2{color:#ffffff;font-size:clamp(37px, 0.8rem, 82px);max-width:14ch;margin:.2rem 0 clamp(12px,1.2vw,22px);line-height:1.1}#odm-stages .f3-v-dd .f3-ho-head p{color:rgba(255,255,255,.9);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.75;max-width:31em;margin:0}#odm-stages .f3-v-dd .f3-ho-list{border-top:1px solid rgba(255,255,255,.2)}#odm-stages .f3-v-dd .f3-ho-list>div{display:grid;grid-template-columns:1.1fr .8fr 1.5fr;gap:clamp(10px,1.4vw,26px);
+  align-items:baseline;padding:clamp(10px,1.1vw,20px) 0;border-bottom:1px solid rgba(255,255,255,.14)}#odm-stages .f3-v-dd .f3-ho-list span{color:#b1b1b1;font-size:clamp(13px, 0.18rem, 15px)}#odm-stages .f3-v-dd .f3-ho-list strong{font-size:clamp(14px, 0.3067rem, 31px);font-weight:700}#odm-stages .f3-v-dd .f3-ho-list p{color:rgba(255,255,255,.9);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.65;margin:0}@media (max-width:900px){#odm-stages .f3-v-dd .f3-A .f3-a-txt{padding-right:0;right:clamp(16px,4vw,64px)}#odm-stages .f3-v-dd .f3-A .f3-a-evi{display:none}#odm-stages .f3-v-dd .f3-B .f3-b-fig{margin-left:0;height:auto;aspect-ratio:4/3}#odm-stages .f3-v-dd .f3-B .f3-b-card{position:static;width:auto;margin-top: clamp(16px, 0.2133rem, 18px);border:0;padding:0}#odm-stages .f3-v-dd .f3-C .f3-c-top{flex-direction:column}#odm-stages .f3-v-dd .f3-C .f3-c-fig{flex:none;height:auto;aspect-ratio:4/3}#odm-stages .f3-v-dd .f3-D .f3-d-b{flex-direction:column}#odm-stages .f3-v-dd .f3-D .f3-d-fig{flex:none;height:auto;aspect-ratio:4/3}#odm-stages .f3-v-dd .f3-D .f3-d-strip{flex-wrap:wrap}#odm-stages .f3-v-dd .f3-D .f3-d-strip i{flex:0 0 30%}#odm-stages .f3-v-dd .f3-ho-in{grid-template-columns:1fr;gap: clamp(20px, 0.4267rem, 44px)}#odm-stages .f3-v-dd .f3-ho-list>div{grid-template-columns:1fr;gap: 6px}}
+
+/* 压图文字：用半透明底色把字托住 —— 站点既定取向是「底色提对比」，不用描边/阴影等字体特效 */
+#odm-stages .f3-v-da .f3-A .f3-a-txt{
+  background: rgba(17,17,17,.68);
+  padding: clamp(18px,1.9vw,32px) 26% clamp(18px,1.9vw,32px) clamp(20px,2.1vw,36px);
+}
+@media (max-width:900px){
+  #odm-stages .f3-v-da .f3-A .f3-a-txt{padding:16px 18px}
+}
+/* 成品D 的缩略图带从 3 张变 4 张后，把右上角那行 REV/SCALE 标注挤得换行了 —— 收窄图宽并禁止标注折行 */
+#odm-stages .f3-v-dd .f3-D .f3-d-strip i{flex:0 0 20%}
+#odm-stages .f3-v-dd .f3-D .f3-d-rev{white-space:nowrap}
+</style>
+
+<script>
+(function(){
+  var sec = document.getElementById('odm-stages');
+  if (!sec) return;
+  var KEY = 'pxid-f3-layout';
+  var btns = sec.querySelectorAll('.f3-sb-btns button');
+  function apply(v){
+    sec.setAttribute('data-f3', v);
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].className = (btns[i].getAttribute('data-v') === v) ? 'on' : '';
+    }
+    try { localStorage.setItem(KEY, v); } catch (e) {}
+  }
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', function(){ apply(this.getAttribute('data-v')); });
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  if (saved && sec.querySelector('.f3-var[data-f3v="' + saved + '"]')) apply(saved);
+  else if (saved === 'orig') apply('orig');
+
+  // ---- 成品套：点小图 → 同一行的大图跟着换（切回来也靠它，因首张小图就是主图本身）----
+  var PAIRS = [
+    ['.f3-a-evi', '.f3-a-fig'],
+    ['.f3-b-strip', '.f3-b-fig'],
+    ['.f3-c-strip', '.f3-c-fig'],
+    ['.f3-d-strip', '.f3-d-fig']
+  ];
+  function bgOf(el){
+    return el.style.backgroundImage || getComputedStyle(el).backgroundImage;
+  }
+  PAIRS.forEach(function (p) {
+    Array.prototype.forEach.call(sec.querySelectorAll(p[0]), function (strip) {
+      var row = strip.parentElement;
+      var fig = row ? row.querySelector(p[1]) : null;
+      if (!fig) return;
+      var thumbs = Array.prototype.filter.call(strip.children, function (el) {
+        return el.tagName === 'I';
+      });
+      if (!thumbs.length) return;
+      thumbs.forEach(function (t) {
+        t.setAttribute('role', 'button');
+        t.setAttribute('tabindex', '0');
+        t.setAttribute('aria-label', '切换本行大图');
+        function pick() {
+          var bg = bgOf(t);
+          if (!bg) return;
+          fig.style.backgroundImage = bg;
+          thumbs.forEach(function (x) { x.classList.remove('f3-picked'); });
+          t.classList.add('f3-picked');
+        }
+        t.addEventListener('click', pick);
+        t.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); }
+        });
+      });
+      thumbs[0].classList.add('f3-picked');   // 首张就是当前主图，初始选中
+    });
+  });
+})();
+</script>
+
+
+  <section class="row odm-handoff" id="odm-handoff" data-f4="orig">
+    <div class="f4-switchbar"><div class="f4-sb-btns">
+      <button type="button" data-v="orig" class="on">原样</button>
+      <button type="button" data-v="b">B 交接卡带</button>
+      <button type="button" data-v="c">C 流程链</button>
+      <button type="button" data-v="e">E 大序号横条</button>
+    </div></div>
+    <div class="group maxSize">
+      <div class="odm-handoff-head alanGo"><span>02 / 流程衔接</span><h2>各环节按开发顺序衔接</h2><p class="pxid-prose">产品设计完成后进入工程开发；工程样车验证后进入制造、测试和批量生产。</p></div>
+      <div class="odm-handoff-list alanGo">
+        <div><span>产品设计 → 结构设计</span><strong>设计方案进入工程开发</strong><p class="pxid-prose">结构设计将产品外观转化为可加工和装配的部件。</p></div>
+        <div><span>结构与电控 → 工程样车</span><strong>工程方案进入实车验证</strong><p class="pxid-prose">通过可骑行样车检查机械结构和关键部件。</p></div>
+        <div><span>测试与检验 → 批量生产</span><strong>整车进入装配生产</strong><p class="pxid-prose">完成性能测试和质量检验后进行批量装配。</p></div>
+      </div>
+    </div>
+      <div class="f4-var f4-v-b" data-f4v="b" aria-label="F4 B 交接卡带">
+      <div class="f4-blk-shell">
+      <div class="f4-in">
+        <div class="f4-head"><span>02 / 流程衔接</span><h2>各环节按开发顺序衔接</h2></div>
+        <p class="f4-lede">产品设计完成后进入工程开发；工程样车验证后进入制造、测试和批量生产。</p>
+        <div class="f4-gB">
+          <article class="f4-cardB"><span class="f4-rel">产品设计 → 结构设计</span><h3 class="f4-ttl f4-ttlB">设计方案进入工程开发</h3><p class="f4-dsc f4-dscB">结构设计将产品外观转化为可加工和装配的部件。</p></article>
+          <article class="f4-cardB"><span class="f4-rel">结构与电控 → 工程样车</span><h3 class="f4-ttl f4-ttlB">工程方案进入实车验证</h3><p class="f4-dsc f4-dscB">通过可骑行样车检查机械结构和关键部件。</p></article>
+          <article class="f4-cardB"><span class="f4-rel">测试与检验 → 批量生产</span><h3 class="f4-ttl f4-ttlB">整车进入装配生产</h3><p class="f4-dsc f4-dscB">完成性能测试和质量检验后进行批量装配。</p></article>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="f4-var f4-v-c" data-f4v="c" aria-label="F4 C 流程链">
+      <div class="f4-blk-shell">
+      <div class="f4-in">
+        <div class="f4-head"><span>02 / 流程衔接</span><h2>各环节按开发顺序衔接</h2></div>
+        <p class="f4-lede">产品设计完成后进入工程开发；工程样车验证后进入制造、测试和批量生产。</p>
+        <div class="f4-chain"><div class="f4-gC">
+          <article class="f4-cellC"><span class="f4-rel">产品设计 → 结构设计</span><h3 class="f4-ttl f4-ttlC">设计方案进入工程开发</h3><p class="f4-dsc f4-dscC">结构设计将产品外观转化为可加工和装配的部件。</p></article>
+          <article class="f4-cellC"><span class="f4-rel">结构与电控 → 工程样车</span><h3 class="f4-ttl f4-ttlC">工程方案进入实车验证</h3><p class="f4-dsc f4-dscC">通过可骑行样车检查机械结构和关键部件。</p></article>
+          <article class="f4-cellC"><span class="f4-rel">测试与检验 → 批量生产</span><h3 class="f4-ttl f4-ttlC">整车进入装配生产</h3><p class="f4-dsc f4-dscC">完成性能测试和质量检验后进行批量装配。</p></article>
+        </div></div>
+      </div>
+      </div>
+    </div>
+    <div class="f4-var f4-v-e" data-f4v="e" aria-label="F4 E 大序号横条">
+      <div class="f4-blk-shell">
+      <div class="f4-in">
+        <div class="f4-head"><span>02 / 流程衔接</span><h2>各环节按开发顺序衔接</h2></div>
+        <p class="f4-lede">产品设计完成后进入工程开发；工程样车验证后进入制造、测试和批量生产。</p>
+        <article class="f4-rowE"><span class="f4-idxE">01</span><div><h3 class="f4-ttl f4-ttlE">设计方案进入工程开发</h3><p class="f4-dsc f4-dscE">结构设计将产品外观转化为可加工和装配的部件。</p></div></article>
+        <article class="f4-rowE"><span class="f4-idxE">02</span><div><h3 class="f4-ttl f4-ttlE">工程方案进入实车验证</h3><p class="f4-dsc f4-dscE">通过可骑行样车检查机械结构和关键部件。</p></div></article>
+        <article class="f4-rowE"><span class="f4-idxE">03</span><div><h3 class="f4-ttl f4-ttlE">整车进入装配生产</h3><p class="f4-dsc f4-dscE">完成性能测试和质量检验后进行批量装配。</p></div></article>
+      </div>
+      </div>
+    </div>
+  </section>
+<style>
+#odm-handoff{position:relative}
+#odm-handoff .f4-switchbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  justify-content:flex-end;padding:0 0 14px}
+#odm-handoff .f4-sb-btns{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+#odm-handoff .f4-sb-btns button{font:inherit;font-size:12.5px;line-height:1;letter-spacing:.02em;
+  padding:7px 11px;border:1px solid #4a4a4a;background:transparent;color:#c9c9c9;cursor:pointer;border-radius:0;
+  transition:background-color .2s ease,color .2s ease,border-color .2s ease;white-space:nowrap}
+#odm-handoff .f4-sb-btns button:hover{border-color:#d71920;color:#fff}
+#odm-handoff .f4-sb-btns button.on{background:#d71920;border-color:#d71920;color:#fff}
+#odm-handoff .f4-var{display:none}
+#odm-handoff[data-f4="b"] .f4-var[data-f4v="b"],
+#odm-handoff[data-f4="c"] .f4-var[data-f4v="c"],
+#odm-handoff[data-f4="e"] .f4-var[data-f4v="e"]{display:block}
+#odm-handoff:not([data-f4="orig"]) > .group{display:none}
+#odm-handoff .f4-var .f4-blk-shell{padding:clamp(52px,4.6vw,92px) clamp(16px,4vw,64px)}
+@media (max-width:900px){
+  #odm-handoff .f4-switchbar{justify-content:flex-start}
+}
+
+/* ---- F4 浅色 B ---- */
+#odm-handoff .f4-v-b{
+    --f4-red:#d71920; --f4-page:#f8f8f8; --f4-block:#f4f4f4; --f4-line:#e4e4e4;
+    --f4-ink:#333333; --f4-ink-3:#6e6e6e; --f4-title:#1a1a1a;
+    --f4-en:"Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+    --f4-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --f4-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --f4-gutter:clamp(16px,4vw,64px);
+  }#odm-handoff .f4-v-b *{box-sizing:border-box}#odm-handoff .f4-v-b{background: var(--f4-page);color:var(--f4-ink);}#odm-handoff .f4-v-b .f4-in{max-width:1840px;margin:0 auto;padding:0 var(--f4-gutter)}#odm-handoff .f4-v-b .f4-blk{position:relative;padding:clamp(52px,4.6vw,92px) 0}#odm-handoff .f4-v-b .f4-tagline{display:flex;align-items:center;gap: 14px;padding: clamp(14px, 0.2933rem, 30px) var(--f4-gutter) 0;
+    max-width:1840px;margin:0 auto;font-family:var(--f4-mono);font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.16em;color:var(--f4-red)}#odm-handoff .f4-v-b .f4-tagline b{background: var(--f4-red);color:#ffffff;font-weight:600;padding: 3px 9px;letter-spacing:.1em}#odm-handoff .f4-v-b .f4-tagline i{flex:1;height:1px;background: var(--f4-line);font-style:normal}#odm-handoff .f4-v-b .f4-head{display:flex;align-items:baseline;gap: clamp(16px, 0.2133rem, 18px);margin: 0 0 clamp(16px, 0.2133rem, 18px)}#odm-handoff .f4-v-b .f4-head span{font-family:var(--f4-mono);font-size:clamp(11px, 0.24rem, 24px);font-weight:700;
+    color:var(--f4-red);letter-spacing:.05em;flex:none;line-height:1.7}#odm-handoff .f4-v-b .f4-head h2{font-size:clamp(26px, 0.56rem, 57px);line-height:1.2;margin:0;font-weight:400;
+    letter-spacing:-.01em;color:var(--f4-title)}#odm-handoff .f4-v-b .f4-lede{font-size:clamp(16px, 0.2133rem, 18px);line-height:2;color:var(--f4-ink-3);margin:0 0 clamp(30px,3vw,56px);max-width:820px}#odm-handoff .f4-v-b .f4-rel{font-family:var(--f4-mono);font-size:clamp(14px, 0.1867rem, 16px);letter-spacing:.03em;color:var(--f4-red)}#odm-handoff .f4-v-b .f4-ttl{font-weight:700;color:var(--f4-title);letter-spacing:-.01em;margin:0}#odm-handoff .f4-v-b .f4-dsc{color:var(--f4-ink-3);margin:0}#odm-handoff .f4-v-b{background: rgb(255,255,255)}#odm-handoff .f4-v-b .f4-gA{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,2.6vw,56px)}#odm-handoff .f4-v-b .f4-ttlA{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3;margin-top: 14px}#odm-handoff .f4-v-b .f4-dscA{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 10px}#odm-handoff .f4-v-b{background: var(--f4-page)}#odm-handoff .f4-v-b .f4-gB{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,28px)}#odm-handoff .f4-v-b .f4-cardB{background: var(--f4-block);padding:clamp(22px,2.2vw,40px);min-height:clamp(180px,17vw,280px);
+    display:flex;flex-direction:column}#odm-handoff .f4-v-b .f4-ttlB{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3;margin-top:auto}#odm-handoff .f4-v-b .f4-dscB{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 10px}#odm-handoff .f4-v-b{background: rgb(255,255,255)}#odm-handoff .f4-v-b .f4-chain{position:relative}#odm-handoff .f4-v-b .f4-chain::before{content:"";position:absolute;left:0;right:0;top:6px;height:1px;background: var(--f4-line)}#odm-handoff .f4-v-b .f4-gC{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,2.8vw,60px);position:relative}#odm-handoff .f4-v-b .f4-cellC{padding-top: clamp(21px, 0.4533rem, 46px);position:relative}#odm-handoff .f4-v-b .f4-cellC::before{content:"";position:absolute;left:0;top:1px;width:11px;height:11px;border-radius:50%;
+    background: var(--f4-red);box-shadow:0 0 0 5px #ffffff}#odm-handoff .f4-v-b .f4-ttlC{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3;margin-top: 12px}#odm-handoff .f4-v-b .f4-dscC{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 10px}#odm-handoff .f4-v-b{background: rgb(255,255,255)}#odm-handoff .f4-v-b .f4-rowD{display:grid;grid-template-columns:clamp(190px,18vw,320px) 1fr;gap:clamp(18px,2.6vw,56px);
+    align-items:baseline;padding:clamp(20px,2.2vw,38px) 0;border-bottom:1px solid var(--f4-line)}#odm-handoff .f4-v-b .f4-rowD:first-of-type{border-top:1px solid var(--f4-line)}#odm-handoff .f4-v-b .f4-ttlD{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3}#odm-handoff .f4-v-b .f4-dscD{font-size:clamp(16px, 0.2133rem, 18px);line-height:1.9;margin-top: 10px}#odm-handoff .f4-v-b{background: rgb(255,255,255)}#odm-handoff .f4-v-b .f4-rowE{display:grid;grid-template-columns:clamp(74px,7vw,150px) 1fr;gap:clamp(16px,2.4vw,48px);
+    align-items:baseline;padding:clamp(22px,2.4vw,42px) 0;border-bottom:1px solid var(--f4-line)}#odm-handoff .f4-v-b .f4-rowE:first-of-type{border-top:1px solid var(--f4-line)}#odm-handoff .f4-v-b .f4-idxE{font-family:var(--f4-en);font-size:clamp(37px, 0.8rem, 82px);color:var(--f4-red);font-weight:700;line-height:1}#odm-handoff .f4-v-b .f4-ttlE{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3}#odm-handoff .f4-v-b .f4-dscE{font-size:clamp(16px, 0.2133rem, 18px);line-height:1.9;margin-top: 10px}@media (max-width:1100px){#odm-handoff .f4-v-b .f4-gA, #odm-handoff .f4-v-b .f4-gB, #odm-handoff .f4-v-b .f4-gC{grid-template-columns:1fr}#odm-handoff .f4-v-b .f4-rowD, #odm-handoff .f4-v-b .f4-rowE{grid-template-columns:1fr;row-gap: 12px}#odm-handoff .f4-v-b .f4-chain::before{display:none}}
+/* ---- F4 浅色 C ---- */
+#odm-handoff .f4-v-c{
+    --f4-red:#d71920; --f4-page:#f8f8f8; --f4-block:#f4f4f4; --f4-line:#e4e4e4;
+    --f4-ink:#333333; --f4-ink-3:#6e6e6e; --f4-title:#1a1a1a;
+    --f4-en:"Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+    --f4-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --f4-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --f4-gutter:clamp(16px,4vw,64px);
+  }#odm-handoff .f4-v-c *{box-sizing:border-box}#odm-handoff .f4-v-c{background: var(--f4-page);color:var(--f4-ink);}#odm-handoff .f4-v-c .f4-in{max-width:1840px;margin:0 auto;padding:0 var(--f4-gutter)}#odm-handoff .f4-v-c .f4-blk{position:relative;padding:clamp(52px,4.6vw,92px) 0}#odm-handoff .f4-v-c .f4-tagline{display:flex;align-items:center;gap: 14px;padding: clamp(14px, 0.2933rem, 30px) var(--f4-gutter) 0;
+    max-width:1840px;margin:0 auto;font-family:var(--f4-mono);font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.16em;color:var(--f4-red)}#odm-handoff .f4-v-c .f4-tagline b{background: var(--f4-red);color:#ffffff;font-weight:600;padding: 3px 9px;letter-spacing:.1em}#odm-handoff .f4-v-c .f4-tagline i{flex:1;height:1px;background: var(--f4-line);font-style:normal}#odm-handoff .f4-v-c .f4-head{display:flex;align-items:baseline;gap: clamp(16px, 0.2133rem, 18px);margin: 0 0 clamp(16px, 0.2133rem, 18px)}#odm-handoff .f4-v-c .f4-head span{font-family:var(--f4-mono);font-size:clamp(11px, 0.24rem, 24px);font-weight:700;
+    color:var(--f4-red);letter-spacing:.05em;flex:none;line-height:1.7}#odm-handoff .f4-v-c .f4-head h2{font-size:clamp(26px, 0.56rem, 57px);line-height:1.2;margin:0;font-weight:400;
+    letter-spacing:-.01em;color:var(--f4-title)}#odm-handoff .f4-v-c .f4-lede{font-size:clamp(16px, 0.2133rem, 18px);line-height:2;color:var(--f4-ink-3);margin:0 0 clamp(30px,3vw,56px);max-width:820px}#odm-handoff .f4-v-c .f4-rel{font-family:var(--f4-mono);font-size:clamp(14px, 0.1867rem, 16px);letter-spacing:.03em;color:var(--f4-red)}#odm-handoff .f4-v-c .f4-ttl{font-weight:700;color:var(--f4-title);letter-spacing:-.01em;margin:0}#odm-handoff .f4-v-c .f4-dsc{color:var(--f4-ink-3);margin:0}#odm-handoff .f4-v-c{background: rgb(255,255,255)}#odm-handoff .f4-v-c .f4-gA{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,2.6vw,56px)}#odm-handoff .f4-v-c .f4-ttlA{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3;margin-top: 14px}#odm-handoff .f4-v-c .f4-dscA{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 10px}#odm-handoff .f4-v-c{background: var(--f4-page)}#odm-handoff .f4-v-c .f4-gB{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,28px)}#odm-handoff .f4-v-c .f4-cardB{background: var(--f4-block);padding:clamp(22px,2.2vw,40px);min-height:clamp(180px,17vw,280px);
+    display:flex;flex-direction:column}#odm-handoff .f4-v-c .f4-ttlB{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3;margin-top:auto}#odm-handoff .f4-v-c .f4-dscB{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 10px}#odm-handoff .f4-v-c{background: rgb(255,255,255)}#odm-handoff .f4-v-c .f4-chain{position:relative}#odm-handoff .f4-v-c .f4-chain::before{content:"";position:absolute;left:0;right:0;top:6px;height:1px;background: var(--f4-line)}#odm-handoff .f4-v-c .f4-gC{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,2.8vw,60px);position:relative}#odm-handoff .f4-v-c .f4-cellC{padding-top: clamp(21px, 0.4533rem, 46px);position:relative}#odm-handoff .f4-v-c .f4-cellC::before{content:"";position:absolute;left:0;top:1px;width:11px;height:11px;border-radius:50%;
+    background: var(--f4-red);box-shadow:0 0 0 5px #ffffff}#odm-handoff .f4-v-c .f4-ttlC{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3;margin-top: 12px}#odm-handoff .f4-v-c .f4-dscC{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 10px}#odm-handoff .f4-v-c{background: rgb(255,255,255)}#odm-handoff .f4-v-c .f4-rowD{display:grid;grid-template-columns:clamp(190px,18vw,320px) 1fr;gap:clamp(18px,2.6vw,56px);
+    align-items:baseline;padding:clamp(20px,2.2vw,38px) 0;border-bottom:1px solid var(--f4-line)}#odm-handoff .f4-v-c .f4-rowD:first-of-type{border-top:1px solid var(--f4-line)}#odm-handoff .f4-v-c .f4-ttlD{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3}#odm-handoff .f4-v-c .f4-dscD{font-size:clamp(16px, 0.2133rem, 18px);line-height:1.9;margin-top: 10px}#odm-handoff .f4-v-c{background: rgb(255,255,255)}#odm-handoff .f4-v-c .f4-rowE{display:grid;grid-template-columns:clamp(74px,7vw,150px) 1fr;gap:clamp(16px,2.4vw,48px);
+    align-items:baseline;padding:clamp(22px,2.4vw,42px) 0;border-bottom:1px solid var(--f4-line)}#odm-handoff .f4-v-c .f4-rowE:first-of-type{border-top:1px solid var(--f4-line)}#odm-handoff .f4-v-c .f4-idxE{font-family:var(--f4-en);font-size:clamp(37px, 0.8rem, 82px);color:var(--f4-red);font-weight:700;line-height:1}#odm-handoff .f4-v-c .f4-ttlE{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3}#odm-handoff .f4-v-c .f4-dscE{font-size:clamp(16px, 0.2133rem, 18px);line-height:1.9;margin-top: 10px}@media (max-width:1100px){#odm-handoff .f4-v-c .f4-gA, #odm-handoff .f4-v-c .f4-gB, #odm-handoff .f4-v-c .f4-gC{grid-template-columns:1fr}#odm-handoff .f4-v-c .f4-rowD, #odm-handoff .f4-v-c .f4-rowE{grid-template-columns:1fr;row-gap: 12px}#odm-handoff .f4-v-c .f4-chain::before{display:none}}
+/* ---- F4 浅色 E ---- */
+#odm-handoff .f4-v-e{
+    --f4-red:#d71920; --f4-page:#f8f8f8; --f4-block:#f4f4f4; --f4-line:#e4e4e4;
+    --f4-ink:#333333; --f4-ink-3:#6e6e6e; --f4-title:#1a1a1a;
+    --f4-en:"Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+    --f4-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --f4-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --f4-gutter:clamp(16px,4vw,64px);
+  }#odm-handoff .f4-v-e *{box-sizing:border-box}#odm-handoff .f4-v-e{background: var(--f4-page);color:var(--f4-ink);}#odm-handoff .f4-v-e .f4-in{max-width:1840px;margin:0 auto;padding:0 var(--f4-gutter)}#odm-handoff .f4-v-e .f4-blk{position:relative;padding:clamp(52px,4.6vw,92px) 0}#odm-handoff .f4-v-e .f4-tagline{display:flex;align-items:center;gap: 14px;padding: clamp(14px, 0.2933rem, 30px) var(--f4-gutter) 0;
+    max-width:1840px;margin:0 auto;font-family:var(--f4-mono);font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.16em;color:var(--f4-red)}#odm-handoff .f4-v-e .f4-tagline b{background: var(--f4-red);color:#ffffff;font-weight:600;padding: 3px 9px;letter-spacing:.1em}#odm-handoff .f4-v-e .f4-tagline i{flex:1;height:1px;background: var(--f4-line);font-style:normal}#odm-handoff .f4-v-e .f4-head{display:flex;align-items:baseline;gap: clamp(16px, 0.2133rem, 18px);margin: 0 0 clamp(16px, 0.2133rem, 18px)}#odm-handoff .f4-v-e .f4-head span{font-family:var(--f4-mono);font-size:clamp(11px, 0.24rem, 24px);font-weight:700;
+    color:var(--f4-red);letter-spacing:.05em;flex:none;line-height:1.7}#odm-handoff .f4-v-e .f4-head h2{font-size:clamp(26px, 0.56rem, 57px);line-height:1.2;margin:0;font-weight:400;
+    letter-spacing:-.01em;color:var(--f4-title)}#odm-handoff .f4-v-e .f4-lede{font-size:clamp(16px, 0.2133rem, 18px);line-height:2;color:var(--f4-ink-3);margin:0 0 clamp(30px,3vw,56px);max-width:820px}#odm-handoff .f4-v-e .f4-rel{font-family:var(--f4-mono);font-size:clamp(14px, 0.1867rem, 16px);letter-spacing:.03em;color:var(--f4-red)}#odm-handoff .f4-v-e .f4-ttl{font-weight:700;color:var(--f4-title);letter-spacing:-.01em;margin:0}#odm-handoff .f4-v-e .f4-dsc{color:var(--f4-ink-3);margin:0}#odm-handoff .f4-v-e{background: rgb(255,255,255)}#odm-handoff .f4-v-e .f4-gA{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,2.6vw,56px)}#odm-handoff .f4-v-e .f4-ttlA{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3;margin-top: 14px}#odm-handoff .f4-v-e .f4-dscA{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 10px}#odm-handoff .f4-v-e{background: var(--f4-page)}#odm-handoff .f4-v-e .f4-gB{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,28px)}#odm-handoff .f4-v-e .f4-cardB{background: var(--f4-block);padding:clamp(22px,2.2vw,40px);min-height:clamp(180px,17vw,280px);
+    display:flex;flex-direction:column}#odm-handoff .f4-v-e .f4-ttlB{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3;margin-top:auto}#odm-handoff .f4-v-e .f4-dscB{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 10px}#odm-handoff .f4-v-e{background: rgb(255,255,255)}#odm-handoff .f4-v-e .f4-chain{position:relative}#odm-handoff .f4-v-e .f4-chain::before{content:"";position:absolute;left:0;right:0;top:6px;height:1px;background: var(--f4-line)}#odm-handoff .f4-v-e .f4-gC{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,2.8vw,60px);position:relative}#odm-handoff .f4-v-e .f4-cellC{padding-top: clamp(21px, 0.4533rem, 46px);position:relative}#odm-handoff .f4-v-e .f4-cellC::before{content:"";position:absolute;left:0;top:1px;width:11px;height:11px;border-radius:50%;
+    background: var(--f4-red);box-shadow:0 0 0 5px #ffffff}#odm-handoff .f4-v-e .f4-ttlC{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3;margin-top: 12px}#odm-handoff .f4-v-e .f4-dscC{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.85;margin-top: 10px}#odm-handoff .f4-v-e{background: rgb(255,255,255)}#odm-handoff .f4-v-e .f4-rowD{display:grid;grid-template-columns:clamp(190px,18vw,320px) 1fr;gap:clamp(18px,2.6vw,56px);
+    align-items:baseline;padding:clamp(20px,2.2vw,38px) 0;border-bottom:1px solid var(--f4-line)}#odm-handoff .f4-v-e .f4-rowD:first-of-type{border-top:1px solid var(--f4-line)}#odm-handoff .f4-v-e .f4-ttlD{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3}#odm-handoff .f4-v-e .f4-dscD{font-size:clamp(16px, 0.2133rem, 18px);line-height:1.9;margin-top: 10px}#odm-handoff .f4-v-e{background: rgb(255,255,255)}#odm-handoff .f4-v-e .f4-rowE{display:grid;grid-template-columns:clamp(74px,7vw,150px) 1fr;gap:clamp(16px,2.4vw,48px);
+    align-items:baseline;padding:clamp(22px,2.4vw,42px) 0;border-bottom:1px solid var(--f4-line)}#odm-handoff .f4-v-e .f4-rowE:first-of-type{border-top:1px solid var(--f4-line)}#odm-handoff .f4-v-e .f4-idxE{font-family:var(--f4-en);font-size:clamp(37px, 0.8rem, 82px);color:var(--f4-red);font-weight:700;line-height:1}#odm-handoff .f4-v-e .f4-ttlE{font-size:clamp(17px, 0.36rem, 37px);line-height:1.3}#odm-handoff .f4-v-e .f4-dscE{font-size:clamp(16px, 0.2133rem, 18px);line-height:1.9;margin-top: 10px}@media (max-width:1100px){#odm-handoff .f4-v-e .f4-gA, #odm-handoff .f4-v-e .f4-gB, #odm-handoff .f4-v-e .f4-gC{grid-template-columns:1fr}#odm-handoff .f4-v-e .f4-rowD, #odm-handoff .f4-v-e .f4-rowE{grid-template-columns:1fr;row-gap: 12px}#odm-handoff .f4-v-e .f4-chain::before{display:none}}</style>
+
+<script>
+(function(){
+  var sec = document.getElementById('odm-handoff');
+  if (!sec) return;
+  var KEY = 'pxid-f4-layout';
+  var btns = sec.querySelectorAll('.f4-sb-btns button');
+  function apply(v){
+    sec.setAttribute('data-f4', v);
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].className = (btns[i].getAttribute('data-v') === v) ? 'on' : '';
+    }
+    try { localStorage.setItem(KEY, v); } catch (e) {}
+  }
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', function(){ apply(this.getAttribute('data-v')); });
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  if (saved && sec.querySelector('.f4-var[data-f4v="' + saved + '"]')) apply(saved);
+  else if (saved === 'orig') apply('orig');
+})();
+</script>
+
+
+  <section class="row odm-cta">
+    <a class="maxSize alanGo" href="contact.html?stage=ODM">
+      <span>已有需求、设计方案或工程样车？</span>
+      <h2>提交当前项目资料</h2>
+      <strong>联系 PXID <i aria-hidden="true">→</i></strong>
+    </a>
+  </section>
+</main>
+<footer id="footer-contact">
+  <div class="bg"><svg class="water" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none"><defs><path id="foot-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z"/></defs><g class="parallax"><use href="#foot-wave" x="50" y="0" fill="rgba(19,65,68,1)"/></g></svg></div>
+  <div class="inner">
+    <div class="mid fxb">
+      <div class="left alanParent alanGo"><a class="logo alanUp" href="index.html"><img class="icon" src="../assets/pxid/logo-white.svg" alt="PXID 品向"></a></div>
+      <div class="right"><div class="top fxb alanParent alanGo"><div class="layer-search alanUp" data-url="search.html"><input class="search f-14 wc" type="text" placeholder="搜索产品与资料"><a class="sub fxc" aria-label="搜索"><i class="iconfont f-20 wc">&#xe8af;</i></a></div><div class="layer-top alanUp"><span class="mask"></span><span class="txt layer-icon"><i class="iconfont f-18">&#xe8ba;</i></span></div></div><ul class="items alanParent alanGo"><li class="list alanUp"><a href="index.html" class="f-20 en_b fxs wc txt">首页<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="company.html" class="f-20 en_b fxs wc txt">关于 PXID<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="business.html" class="f-20 en_b fxs wc txt">产品方案<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="sustainability.html" class="f-20 en_b fxs wc txt">ODM 全流程<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="news.html" class="f-20 en_b fxs wc txt">洞察与资料<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="contact.html" class="f-20 en_b fxs wc txt">启动项目<i class="iconfont f-20 mc">&#xe8a9;</i></a></li></ul></div>
+    </div>
+    <div class="btm alanParent alanGo">
+      <p class="f-12 wc alanUp">Copyright © 2026 PXID 品向智造. All rights reserved.</p>
+      <div class="col fxb alanUp"><p class="f-14 wc"><a href="tel:+8618936381099">+86 189 3638 1099</a><br><a href="mailto:inquiry@pxid.com">inquiry@pxid.com</a><br>江苏省淮安市清江浦区深圳东路18号4号楼</p><div class="set fxc"><a class="f-12 aHref" href="privacy-policy.html">隐私政策</a><span class="line"></span><a class="f-12 aHref" href="legal-notice.html">法律声明</a></div></div>
+    </div>
+  </div>
+</footer>
+<script src="../templates/assets/pxid-motion.js"></script>
+<script src="../templates/assets/pxid-site.js?v=20260828-company-menu21"></script>
+
+</body>
+</html>

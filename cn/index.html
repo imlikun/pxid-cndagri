@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="chinaLg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PXID 品向｜电动出行产品设计与 ODM</title>
+  <meta name="description" content="PXID 为电动自行车、电动摩托车和电动滑板车提供从产品设计到批量生产的 ODM 服务。">
+  <meta name="keywords" content="PXID,品向,工业设计,电动出行,ODM,电动自行车,电动滑板车,制造">
+  <link rel="icon" href="../assets/pxid/logo-dark.png" type="image/png">
+  <script src="../templates/assets/swiper-bundle.js"></script>
+  <link rel="stylesheet" href="../templates/assets/index.css">
+  <link rel="stylesheet" href="../templates/assets/respone.css">
+  <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260831-bw-red8">
+</head>
+<body id="app" class="home" data-motion-src="../templates/assets/pxid-home-motion.js?v=20260914-native1">
+<!-- 全站去掉波浪（坤哥 2026-09-19）：hero/r6 的 .wave 与 footer 顶部 svg.water 隐藏，footer 顶部改平直线 -->
+<style id="pxid-no-wave">
+  /* ① hero 与 r6 段的波浪（.wave w1 / w2）*/
+  .wave, .wave.w1, .wave.w2{display:none !important}
+  /* ② footer 顶部的波浪 —— 实际是 .wb-footer-wave / .pxid-footer-wave（悬在 footer 上方 ~69px）
+        以及 legacy 的 .bg > svg.water，全部隐藏 */
+  #app footer .wb-footer-wave,
+  #app footer .pxid-footer-wave,
+  #app footer .wb-footer-wave svg,
+  #app footer .pxid-footer-wave svg,
+  #app footer .bg,
+  #app footer .bg .water{display:none !important}
+  /* ③ 波浪是悬出 footer 顶边的，去掉后原来的负 margin 会造成重叠，一并取消 */
+  .afterInner footer,
+  #app footer.wb-footer,
+  #app footer.pxid-footer{margin-top:0 !important}
+  /* ④ footer 顶部拉平成一条细直线，替代原来的波浪收边 */
+  #app footer{border-top:1px solid rgba(255,255,255,.16)}
+</style>
+<header>
+  <nav class="pcNav pc">
+    <a href="index.html" class="col logo">
+      <img class="white" src="../assets/pxid/logo-white.svg" alt="PXID 品向">
+      <img class="black" src="../assets/pxid/logo-ink.svg" alt="PXID 品向">
+    </a>
+    <ul class="mid fxc"><li class="lists hrefList on"><a href="index.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>首页</a></li><li class="lists hrefList"><a href="business.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>产品方案</a></li><li class="lists hrefList"><a href="manufacturing.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>制造能力</a></li><li class="lists hrefList"><a href="sustainability.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>ODM 全流程</a></li><li class="lists hrefList"><a href="news.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>洞察与资料</a></li><li class="lists hrefList"><a href="contact.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>启动项目</a></li><li class="lists hrefList"><a href="company.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>关于 PXID</a></li></ul>
+    <div class="col set fxc">
+      <div class="layer-search" data-url="search.html"><input class="search f-14 wc" type="search" aria-label="搜索产品与资料" placeholder="搜索产品与资料"><button type="button" class="sub fxc" aria-label="搜索"><i class="iconfont f-14 wc" aria-hidden="true">&#xe8af;</i></button></div>
+      <a class="language fxc" href="index.html" aria-label="英文站规划中"><span class="txt wc f-16 en_b">EN</span></a>
+    </div>
+    <div class="mask"></div>
+  </nav>
+  <nav class="appNav app">
+    <div class="mask"></div>
+    <a class="logoBox" href="index.html"><img src="../assets/pxid/logo-white.svg" alt="PXID 品向" class="logo"></a>
+    <div class="col">
+      <a href="search.html" class="searchSub fxc" aria-label="搜索"><i class="iconfont f-14 wc">&#xe8af;</i></a>
+      <button type="button" id="menu" aria-label="打开导航" aria-expanded="false" aria-controls="pxid-mobile-menu"><span class="txt">Menu</span><svg class="pxid-menu-glyph" viewBox="0 0 24 24" aria-hidden="true"><path class="pxid-menu-line pxid-menu-line-top" d="M4 8h16"></path><path class="pxid-menu-line pxid-menu-line-bottom" d="M4 16h16"></path></svg></button>
+    </div>
+  </nav>
+</header>
+<nav class="menu">
+  <div class="items" data-vh=".8"><div class="content"><a href="index.html" class="lists appNavList"><span class="en_b f-26 wc">首页</span></a><a href="business.html" class="lists appNavList"><span class="en_b f-26 wc">产品方案</span></a><a href="sustainability.html" class="lists appNavList"><span class="en_b f-26 wc">ODM 全流程</span></a><a href="news.html" class="lists appNavList"><span class="en_b f-26 wc">洞察与资料</span></a><a href="contact.html" class="lists appNavList"><span class="en_b f-26 wc">启动项目</span></a><a href="company.html" class="lists appNavList"><span class="en_b f-26 wc">关于 PXID</span></a></div></div>
+  <svg class="shape-overlays" viewBox="0 0 1080 1080" preserveAspectRatio="none"><rect class="path" x="0" y="0" width="1080" height="1080"></rect></svg>
+</nav>
+<div id="loading" class="pxid-loading"><div class="pxid-load-core"><img src="../assets/pxid/logo-white.svg" id="loadMedia" class="pxid-load-logo" alt="PXID"><div class="pxid-load-progress" role="progressbar" aria-label="首页加载进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="pxid-load-meta"><span>LOADING</span><output class="pxid-load-value">00%</output></div><div class="pxid-load-track" aria-hidden="true"><span class="pxid-load-fill"></span></div></div></div><p class="note f-12 wc">© 2026<br>PXID / 品向智造</p></div>
+<main id="main-content" tabindex="-1">
+  <section class="row banner" id="pxidS1"><div class="bg"><div class="photo"><div class="bannerPic full"><div class="pic full lazy" data-src="../assets/pxid/home/mantis-mountain.png" data-mobile-src="../assets/pxid/home/mobile/hero-mantis-p6-portrait.jpg"></div></div><div class="bannerPic full"><div class="pic full lazy" data-src="../assets/pxid/home/light-p2-rider.jpg" data-mobile-src="../assets/pxid/home/mobile/hero-p2-portrait.jpg"></div></div><div class="bannerPic full"><div class="pic full lazy" data-src="../assets/pxid/home/award-m2-gida.jpg" data-mobile-src="../assets/pxid/home/mobile/hero-m2-portrait.jpg"></div></div></div><div class="wave w1"><div class="mask waveItem"></div></div><div class="wave w2"><div class="mask waveItem"></div></div></div><div class="inner" data-vh="1"><div class="group"><div class="list bannerList"><h1 class="f-80 til en_b wc">MANTIS P6<br>全地形电动自行车</h1><a class="layer-btn alanGo" href="business.html#ebike"><div class="mk"></div><span class="txt f-16"><span class="num_b mr-20">查看车型</span><i class="iconfont f-12 green">&#xe8a9;</i></span></a></div><div class="list bannerList"><h2 class="f-80 til en_b wc">PXID P2<br>折叠电动自行车</h2><a class="layer-btn alanGo" href="business.html#folding"><div class="mk"></div><span class="txt f-16"><span class="num_b mr-20">查看车型</span><i class="iconfont f-12 green">&#xe8a9;</i></span></a></div><div class="list bannerList"><h2 class="f-80 til en_b wc">PXID M2<br>城市电动摩托车</h2><a class="layer-btn alanGo" href="sustainability.html"><div class="mk"></div><span class="txt f-16"><span class="num_b mr-20">查看 ODM 流程</span><i class="iconfont f-12 green">&#xe8a9;</i></span></a></div></div><div class="pager"><button type="button" class="BannerDot on" aria-label="显示第 1 个产品" aria-current="true"><em class="dot"></em><span class="iconfont wc" aria-hidden="true">&#xe8a9;</span></button><button type="button" class="BannerDot" aria-label="显示第 2 个产品"><em class="dot"></em><span class="iconfont wc" aria-hidden="true">&#xe8a9;</span></button><button type="button" class="BannerDot" aria-label="显示第 3 个产品"><em class="dot"></em><span class="iconfont wc" aria-hidden="true">&#xe8a9;</span></button></div><div class="scrEl"><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span></div></div>
+  </section>
+
+  <section class="row r1 pxid-odm-intro" id="pxidS2"><div class="bg"><div class="photo"></div><div class="imgBox">
+    <div class="img alanGo"><img src="../assets/pxid/unified/process/process-01-design.jpg" alt="产品设计"><div class="box wc"><div class="wc countFn"><em class="count f-60 num_m">01</em></div><p><strong>产品设计</strong><span>手绘草图与三维效果图</span></p></div></div>
+    <div class="img alanGo"><img src="../assets/pxid/unified/process/process-02-engineering.jpg" alt="工程开发"><div class="box wc"><div class="wc countFn"><em class="count f-60 num_m">02</em></div><p><strong>工程开发</strong><span>结构、电控与工程样车</span></p></div></div>
+    <div class="img alanGo"><img src="../assets/pxid/unified/news/capability-manufacturing.jpg" alt="制造与检验"><div class="box wc"><div class="wc countFn"><em class="count f-60 num_m">03</em></div><p><strong>制造与检验</strong><span>模具、车架、涂装与装配</span></p></div></div>
+  </div></div><div class="inner maxSize"><div id="r1Txt" class="group fxs"><h2 class="f-60 green en_b mb-50 alanFn" data-split="/" data-text="电动出行产品 ODM/从设计到批量生产"><span class="pxid-title-line">电动出行产品 ODM</span><span class="pxid-title-line">从设计到批量生产</span></h2><p class="f-20 alanFn pxid-prose">PXID 品向成立于 2013 年，专注于电动出行产品开发，现已形成覆盖产品设计研发、模具设计制造、车架生产、整车装配和试验检测的一站式 ODM/OEM 服务体系。</p><a class="layer-btn alanGo" href="company.html"><div class="mk"></div><span class="txt f-16"><span class="num_b mr-20">了解 PXID</span><i class="iconfont f-12 green">&#xe8a9;</i></span></a></div></div></section>
+  <style id="pxid-s2-pd">
+  /* —— S2「1 产品设计」配图与左栏（坤哥 2026-09-17）—— */
+  /* 1) 大图高度改成与右列两格（2/3）总高一致：原 height:74%，右列两格合计覆盖 0~100% */
+  .home .r1.pxid-odm-intro .bg .imgBox .img:nth-of-type(1){height:100%}
+  /* 2) 竖构图（1282x1920）焦点：人物与桌面草图居中偏上 */
+  .home .r1.pxid-odm-intro .bg .imgBox .img:nth-of-type(1) > img{object-position:50% 46%}
+  @media (min-width:901px){
+    /* 3) 左栏顶底都与右侧图片区对齐：图片区 = .imgBox，layout top 147px / 距段底 68.6px（@1920，段高 980）
+          section 高 = clamp(780px,11.8rem,980px)、rem = 5.20833vw → 用 min(9.22vw,147px) 等值跟随 */
+    .home .r1.pxid-odm-intro > .inner{align-items:stretch}
+    .home .r1.pxid-odm-intro #r1Txt{
+      width:min(43%,6.5rem);
+      display:flex;flex-direction:column;
+      padding-top:min(9.22vw,147px);
+      padding-bottom:min(4.3vw,68.6px)}
+    /* 4) 按钮压到底：按钮底边与图片底边齐平（坤哥 2026-09-17 下午） */
+    .home .r1.pxid-odm-intro #r1Txt > .layer-btn{margin-top:auto!important;margin-bottom:0!important}
+  }
+  @media (max-width:900px){
+    .home .r1.pxid-odm-intro > .inner{align-items:center}
+    .home .r1.pxid-odm-intro #r1Txt{padding-top:0;padding-bottom:0}
+  }
+  </style><script>
+(function(){
+  var secs = document.querySelectorAll('section');
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:.3});
+  secs.forEach(function(s){ io.observe(s); });
+})();
+</script><script>(function(){var root=document.getElementById("M");if(!root)return;var head=root.querySelector(".head"),bands=root.querySelector(".bands");if(!head||!bands)return;function fit(){var t=head.offsetTop+head.offsetHeight+24;if(Math.abs(parseFloat(bands.style.top||"-9999")-t)<1)return;bands.style.top=t+"px";}fit();setTimeout(fit,300);setTimeout(fit,1000);setTimeout(fit,2400);window.addEventListener("resize",fit);})();</script></template></section>
+
+  <section class="row r2"><div class="bg"><div class="mask"></div><div class="pic fxBg" style="background-image:url('../assets/pxid/home/offroad-cover.jpg')"></div></div><div class="inner maxSize"><h2 class="f-56 en_b wc alanFn">三类电动出行产品</h2></div></section>
+
+  <section class="row r3" id="pxidS4" data-s1v="orig"><div class="inner"><div class="topic fxb maxSize"><h2 class="f-80 en_b green alanGo" data-text="产品系列">产品系列</h2><div data-delay=".1" class="set fxb alanFn"><button type="button" class="r3Prev layer-set" aria-label="上一个产品"><div class="mask right"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8b3;</i></div></button><button type="button" class="r3Next layer-set" aria-label="下一个产品"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></button></div></div><div class="group alanFn alanGo maxSize"><div class="r3Sw swiper"><div class="swiper-wrapper"><a href="business.html#ebike" class="swiper-slide"><div class="photo"><div class="pic full" data-src="../assets/pxid/home/mantis-mountain.png"></div><div class="layer-set white"><div class="mask"></div><div class="layer-icon"><i class="iconfont wc f-12">&#xe8a9;</i><svg class="product-link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 8 8-8 8-3-3 5-5-5-5z"/></svg></div></div></div><div class="msg"><h3 class="f-36">电动自行车</h3><p class="f-14 gray">通勤、折叠与全地形车型</p></div></a><a href="business.html#motorcycle" class="swiper-slide"><div class="photo"><div class="pic full" data-src="../assets/pxid/home/award-m2-gida.jpg"></div><div class="layer-set white"><div class="mask"></div><div class="layer-icon"><i class="iconfont wc f-12">&#xe8a9;</i><svg class="product-link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 8 8-8 8-3-3 5-5-5-5z"/></svg></div></div></div><div class="msg"><h3 class="f-36">电动摩托车</h3><p class="f-14 gray">城市出行与定制开发</p></div></a><a href="business.html#scooter" class="swiper-slide"><div class="photo"><div class="pic full" data-src="../assets/pxid/home/t2-white.jpg"></div><div class="layer-set white"><div class="mask"></div><div class="layer-icon"><i class="iconfont wc f-12">&#xe8a9;</i><svg class="product-link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 8 8-8 8-3-3 5-5-5-5z"/></svg></div></div></div><div class="msg"><h3 class="f-36">电动滑板车</h3><p class="f-14 gray">城市通勤与短途出行</p></div></a><a href="business.html#special" class="swiper-slide"><div class="photo"><div class="pic full" data-src="../assets/pxid/unified/news/hero-rider-forest.jpg"></div><div class="layer-set white"><div class="mask"></div><div class="layer-icon"><i class="iconfont wc f-12">&#xe8a9;</i><svg class="product-link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 8 8-8 8-3-3 5-5-5-5z"/></svg></div></div></div><div class="msg"><h3 class="f-36">定制项目</h3><p class="f-14 gray">共享、越野与特殊用途产品</p></div></a></div></div></div></div>
+  <iframe class="pxid-s4frame" title="Hero 排版预览" hidden></iframe>
+  <template class="pxid-s4tpl" data-v="b"><style>
+  * { margin:0; padding:0; box-sizing:border-box; border-radius:0 !important; }
+  :scope{ --green:#d71920; --red:#d71920; --gray:#676767; --paper:#f4f4f4; --line:#dadada; }
+  :scope{background: var(--paper);}
+  .note { position:sticky; top:0; z-index:99; background: rgb(23,23,23); color:#d71920; padding: 14px clamp(15px, 0.32rem, 33px); font-size:clamp(12px, 0.16rem, 14px); line-height:1.7; }
+  .note b { color:#d71920; }
+  .note i { color:#9e9e9e; font-style:normal; }
+  section { position:relative; overflow:hidden; border-bottom:4px solid #e5e5e5; }
+  .tag { position:absolute; top:18px; left:22px; z-index:40; color:#ffffff; font-size:clamp(14px, 0.1867rem, 16px); font-weight:700;
+         background: rgba(110,110,110,.94); padding: 6px 14px; letter-spacing:.5px; }
+  .tag small { font-weight:400; opacity:.85; margin-left: 6px; }
+  .eyebrow { display:inline-block; font-size:clamp(12px, 0.16rem, 14px); font-weight:600; letter-spacing:.32em;
+             text-transform:uppercase; color:var(--green); line-height:1.7; }
+  .eyebrow::after { content:''; display:block; width:26px; height:2px; background: var(--green); margin-top: 9px; }
+  h2 { font-size:clamp(37px, 0.8rem, 82px); font-weight:600; line-height:1.1; color:#121212; letter-spacing:-.01em; margin-top: 12px; }
+
+  /* ================= N · 尺度阶梯 ================= */
+  #N { min-height:88vh; background: var(--paper); }
+  #N .head { position:absolute; left:6vw; top:12vh; z-index:6; }
+  #N .base { position:absolute; left:6vw; right:6vw; top:74%; height:1px; background: rgb(210,210,210); }
+  #N .scale { position:absolute; left:6vw; top:74%; margin-top: 14px; font-size:clamp(12px, 0.16rem, 14px); letter-spacing:.3em; color:#ababab; }
+
+  /* 默认：按体量呼吸——小的快而轻，大的慢而沉 */
+  #N .step { position:absolute; bottom:26%; cursor:pointer; }
+  #N .s1 { left:12vw; animation:bobS 4.8s ease-in-out infinite; }
+  #N .s2 { left:40vw; animation:bobM 6.4s ease-in-out infinite; }
+  #N .s3 { left:70vw; animation:bobL 8.2s ease-in-out infinite; }
+  @keyframes bobS { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  @keyframes bobM { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+  @keyframes bobL { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+
+  #N .step .pic { position:relative; overflow:hidden; }
+  #N .s1 .pic { width:14vw; height:19vh; }
+  #N .s2 .pic { width:19vw; height:33vh; }
+  #N .s3 .pic { width:24vw; height:48vh; }
+  #N .step .pic img { width:100%; height:100%; object-fit:cover; display:block;
+      filter:grayscale(.3) saturate(.8) brightness(.97);
+      transition:transform 1.3s cubic-bezier(.2,.7,.2,1), filter .8s ease; }
+  /* hover：图内推近 + 去灰（不再整体上浮，避免廉价感） */
+  #N .step:hover .pic img { transform:scale(1.06); filter:grayscale(0) saturate(1.08) brightness(1.02); }
+
+  /* 顶部刻度尺：hover 点亮为绿色 */
+  #N .step .tick { position:absolute; left:0; top:-16px; width:100%; height:7px; opacity:.45;
+      background:repeating-linear-gradient(90deg,#bfbfbf 0 1px,transparent 1px 9px);
+      transition:opacity .5s ease; }
+  #N .step .tick.on { position:absolute; left:0; top:-16px; width:100%; height:7px; opacity:0;
+      background:repeating-linear-gradient(90deg,var(--green) 0 1px,transparent 1px 9px);
+      transition:opacity .5s ease; }
+  #N .step:hover .tick.on { opacity:1; }
+
+  /* 基线上对应位置长出一段绿色量尺 */
+  #N .step .mark { position:absolute; left:0; top:100%; height:2px; width:100%; background: var(--green);
+      transform:scaleX(0); transform-origin:left;
+      transition:transform .65s cubic-bezier(.2,.7,.2,1); }
+  #N .step:hover .mark { transform:scaleX(1); }
+
+  #N .step .cap { position:absolute; left:0; top:-8.4vh; }
+  #N .step .no { font-size:clamp(12px, 0.16rem, 14px); font-weight:700; letter-spacing:.3em; color:#ababab;
+      transition:color .4s ease, transform .55s cubic-bezier(.2,.7,.2,1); }
+  #N .step h3 { font-weight:900; color:#121212; line-height:1;
+      transition:color .4s ease, transform .6s cubic-bezier(.2,.7,.2,1) .05s; }
+  #N .s1 h3 { font-size:clamp(14px, 0.3067rem, 31px); }
+  #N .s2 h3 { font-size:clamp(22px, 0.4667rem, 48px); ;line-height:1.1}
+  #N .s3 h3 { font-size:clamp(30px, 0.64rem, 65px); ;line-height:1.1}
+  #N .step p { font-size:clamp(12px, 0.16rem, 14px); color:var(--gray); margin-top: 6px; letter-spacing:.05em; opacity:.6;
+      transition:opacity .5s ease, transform .6s cubic-bezier(.2,.7,.2,1) .1s; }
+  #N .step:hover .no { color:#171717; transform:translateY(-4px); }
+  #N .step:hover h3 { color:#171717; transform:translateY(-6px); }
+  #N .step:hover p  { opacity:1; transform:translateY(-6px); }
+
+  /* ================= P · 叠纸抽换 ================= */
+  #P { min-height:84vh; background: rgb(236,236,236); }
+  #P .head { position:absolute; left:6vw; top:12vh; z-index:6; }
+  #P .idx { position:absolute; left:6vw; top:42%; z-index:6; }
+  #P .idx .it { position:relative; display:flex; align-items:baseline; gap:1.2vw; padding:1.8vh 0; cursor:pointer;
+      transition:transform .6s cubic-bezier(.2,.7,.2,1); }
+  /* 当前项左侧长出绿色竖线 */
+  #P .idx .it::before { content:''; position:absolute; left:-1.4vw; top:50%; transform:translateY(-50%);
+      width:2px; height:0; background: var(--green); transition:height .55s cubic-bezier(.2,.7,.2,1); }
+  #P .idx .it.on::before { height:64%; }
+  #P .idx .it .no { font-size:clamp(12px, 0.16rem, 14px); font-weight:700; letter-spacing:.3em; color:#ababab;
+      transition:color .4s ease, transform .55s cubic-bezier(.2,.7,.2,1); }
+  #P .idx .it h3 { font-size:clamp(15px, 0.32rem, 33px); font-weight:900; color:#121212;
+      transition:color .4s ease, transform .6s cubic-bezier(.2,.7,.2,1) .05s; }
+  #P .idx .it p { font-size:clamp(12px, 0.16rem, 14px); color:var(--gray); opacity:.55;
+      transition:opacity .5s ease, transform .6s cubic-bezier(.2,.7,.2,1) .1s; }
+  #P .idx .it.on { transform:translateX(.8vw); }
+  #P .idx .it.on .no { color:var(--green); transform:translateY(-3px); }
+  #P .idx .it.on h3 { color:var(--green); transform:translateY(-3px); }
+  #P .idx .it.on p  { opacity:1; transform:translateY(-3px); }
+
+  /* 整叠缓慢呼吸 */
+  #P .stack { position:absolute; right:7.6vw; top:50%; width:56vw; height:65vh;
+      animation:stackBob 7.5s ease-in-out infinite; transform:translateY(-50%); }
+  @keyframes stackBob { 0%,100%{transform:translateY(-50%)} 50%{transform:translateY(calc(-50% - 9px))} }
+  #P .sheet { position:absolute; inset:0; overflow:hidden; background: rgb(255,255,255);
+      box-shadow:0 12px 34px rgba(0,0,0,.16);
+      transition:transform .85s cubic-bezier(.2,.7,.2,1), opacity .8s ease, box-shadow .7s ease; }
+  #P .sheet img { width:100%; height:100%; object-fit:cover; display:block;
+      filter:saturate(.88) brightness(.97); transition:filter .8s ease; }
+  #P .sheet.s0 { transform:translate(0,0);          z-index:1; opacity:.45; }
+  #P .sheet.s1 { transform:translate(2.2vw,-2.2vh); z-index:2; opacity:.7; }
+  #P .sheet.on { transform:translate(4.4vw,-4.4vh); z-index:3; opacity:1; box-shadow:0 26px 60px rgba(0,0,0,.24); }
+  #P .sheet.out{ transform:translate(17vw,7vh) rotate(6deg); z-index:4; opacity:0; box-shadow:0 40px 80px rgba(0,0,0,.3); }
+  /* 当前张：Ken Burns 缓慢推近 + 去灰 */
+  #P .sheet.on img { filter:saturate(1.05) brightness(1); animation:kenP 11s ease-in-out infinite alternate; }
+  @keyframes kenP { from{transform:scale(1)} to{transform:scale(1.1)} }
+  /* 鼠标悬停纸叠：下一张探出一点，像可以掀开 */
+  #P .stack:hover .sheet.s0 { transform:translate(1.8vw,-1.8vh); opacity:.6; }
+  #P .stack:hover .sheet.s1 { transform:translate(3.6vw,-3.6vh); opacity:.85; }
+
+  #P .count { position:absolute; right:7.6vw; bottom:10vh; z-index:6; display:flex; align-items:center; gap: 12px; }
+  #P .count .bar { width:64px; height:1px; background: rgb(200,200,200); position:relative; }
+  #P .count .bar i { position:absolute; left:0; top:0; bottom:0; width:0; background: var(--green); }
+  #P .count .bar.run i { animation:pc 5s linear forwards; }
+  @keyframes pc { from{width:0} to{width:100%} }
+  #P .count .t { font-size:clamp(12px, 0.16rem, 14px); letter-spacing:.3em; color:#979797; }
+
+/* 坤哥 09-15：字体描边 / 阴影全部去掉（含源文件自带的），一层压制到底 */
+:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}</style><section id="P">
+  <div class="head"><div class="eyebrow">Product Lines</div><h2>产品系列</h2></div>
+  <div class="idx">
+    <div class="it on" data-i="0"><span class="no">01</span><h3>电动滑板车</h3><p>城市通勤与短途出行</p></div>
+    <div class="it" data-i="1"><span class="no">02</span><h3>电动自行车</h3><p>通勤、折叠与全地形车型</p></div>
+    <div class="it" data-i="2"><span class="no">03</span><h3>电动摩托车</h3><p>城市出行与定制开发</p></div>
+  </div>
+  <div class="stack">
+    <div class="sheet on"><img loading="lazy"  src="../assets/pxid/home/line-scooter.jpg" alt="电动滑板车"></div>
+    <div class="sheet"><img loading="lazy"  src="../assets/pxid/home/line-ebike-fold.jpg" alt="电动自行车"></div>
+    <div class="sheet"><img loading="lazy"  src="../assets/pxid/home/line-ebike-rider.jpg" alt="电动摩托车"></div>
+  </div>
+  <div class="count"><div class="bar run"><i></i></div><span class="t">01 / 03</span></div>
+</section><script>
+(function(){
+  /* P：叠纸抽换 —— 当前张在最上，切走时被斜抽出去，其余按堆叠顺序排 */
+  var P = document.getElementById('P');
+  /* 该脚本会被库/线上页一并注入其它变体（如「N 尺度阶梯」）——那里没有 #P 元素，
+     直接退出，避免 P.querySelectorAll 抛 null 报错 */
+  if (!P) return;
+  var its = P.querySelectorAll('.idx .it'), sh = P.querySelectorAll('.stack .sheet');
+  var bar = P.querySelector('.count .bar'), tt = P.querySelector('.count .t');
+  var cur = 0, timer = null;
+  function go(i){
+    cur = i;
+    sh.forEach(function(s,k){
+      s.classList.remove('s0','s1','on','out');
+      if(k < i)      s.classList.add('out');
+      else if(k === i) s.classList.add('on');
+      else           s.classList.add('s0','s1');   /* 后面的叠在一起 */
+    });
+    /* 给后排两张区分堆叠层次 */
+    var back = [];
+    sh.forEach(function(s,k){ if(k > i) back.push(s); });
+    back.forEach(function(s,n){ s.classList.remove('s0','s1'); s.classList.add(n===0 ? 's1' : 's0'); });
+    its.forEach(function(t,k){ t.classList.toggle('on', k===i); });
+    tt.textContent = '0' + (i+1) + ' / 03';
+    bar.classList.remove('run'); void bar.offsetWidth; bar.classList.add('run');
+  }
+  function arm(){ clearInterval(timer); timer = setInterval(function(){ go((cur+1) % 3); }, 5000); }
+  its.forEach(function(t){
+    t.addEventListener('mouseenter', function(){ go(+t.dataset.i); arm(); });
+  });
+  go(0);
+  arm();
+
+  /* 标题块顶部与图卡顶部齐平（坤哥 09-17：「和图片顶部在一个水平线」）。
+     ⚠️ 用**实测差值**调，不能写死 CSS 的 top：head 是本段最上面的元素，动它会改变父页
+     centerContent 的并集边界 → 整体平移量跟着变（实测写死值会差几十 px）。
+     ⚠️ 量之前要把 stack 的呼吸动画停到基准相位 —— stackBob 有 ±9px 浮动，否则结果随机偏。 */
+  function alignHead(){
+    var hd = P.querySelector('.head'), eb = P.querySelector('.head .eyebrow'),
+        st = P.querySelector('.stack'), on = P.querySelector('.stack .sheet.on');
+    if (!eb || !st || !on) return;
+    var keep = st.style.animation;
+    st.style.animation = 'none'; void st.offsetHeight;
+    var d = eb.getBoundingClientRect().top - on.getBoundingClientRect().top;
+    st.style.animation = keep || '';
+    if (Math.abs(d) < 0.5) return;
+    hd.style.marginTop = ((parseFloat(hd.style.marginTop || '0') || 0) - d) + 'px';
+  }
+  alignHead();
+  window.addEventListener('load', alignHead);
+  window.setTimeout(alignHead, 900);
+  window.setTimeout(alignHead, 2600);
+  window.setTimeout(alignHead, 4000);
+})();
+</script></template><style id="pxid-s4-switch-css">
+#pxidS4{position:relative}
+#pxidS4 > .pxid-s4frame{position:absolute;inset:0;display:block;width:100%;height:100%;border:0;background:#fff}
+#pxidS4 > .pxid-s4frame[hidden]{display:none}
+#pxidS4:not([data-s1v="orig"]) > .bg,
+#pxidS4:not([data-s1v="orig"]) > .inner{visibility:hidden}
+#pxidS4 .pxid-s4switch{position:absolute;bottom:18px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.46);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:4px;opacity:.6;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
+#pxidS4 .pxid-s4switch:hover{opacity:1}
+#pxidS4 .pxid-s4switch .lbl{display:none}
+#pxidS4 .pxid-s4switch button{cursor:pointer;font:inherit;font-size:12px;line-height:1;padding:6px 8px;border:0;background:transparent;color:rgba(255,255,255,.86);white-space:nowrap;border-radius:0;transition:color .18s,background .18s}
+#pxidS4 .pxid-s4switch button:hover{color:#fff;background:rgba(255,255,255,.15)}
+#pxidS4 .pxid-s4switch button.on{background:#d71920;color:#fff}
+@media (max-width:900px){#pxidS4 .pxid-s4switch{left:12px;right:12px;bottom:12px;max-width:none;opacity:.88}#pxidS4 .pxid-s4switch button{font-size:11.5px;padding:6px 7px}}
+#app header .pcNav .mid .lists .navHref i.iconfont{display:none!important}
+#app header .pcNav .mid .lists .navHref{position:relative}
+#app header .pcNav .mid .lists .navHref::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:#d71920;transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+#app header .pcNav .mid .lists .navHref:hover::after{transform:scaleX(1)}
+</style><script id="pxid-s4-switch-js">
+(function(){
+  var sec=document.getElementById("pxidS4"); if(!sec) return;
+  var KEY="pxid-s4-v", frame=sec.querySelector(".pxid-s4frame");
+  var btns=sec.querySelectorAll(".pxid-s4switch button"), cache={};
+  function doc(v){
+    var fs=getComputedStyle(document.documentElement).fontSize||"16px";
+    var ck=v+"|"+fs;
+    if(cache[ck]) return cache[ck];
+    var t=sec.querySelector("template.pxid-s4tpl[data-v=\""+v+"\"]"); if(!t) return null;
+    cache[ck]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
+      +"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow:hidden;"
+      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}html,body{height:100%}/* 内容比段高矮时（S4 内容 715 < 段高 812）垂直居中，别贴着顶 */body{display:flex;flex-direction:column;justify-content:center}/* 变体源的 section 多为 min-height:88vh/84vh，内容重心偏上（坤哥要求垂直居中）——统一给一点顶部内边距把内容压到视觉居中；absolute 子元素相对 padding box 定位，会跟着下移 */section{box-sizing:border-box;padding-top:5.4vh}</style>"
+      +"</head><body>"+t.innerHTML+"</body></html>";
+    return cache[ck];
+  }
+  /* 内容在段内垂直居中：变体 section 常是 88vh/min-height 决定的高度，比段高矮 →
+     下方会拖出一条空白带（坤哥：「后增加的内容偏上部」「底部明显的区分去掉」）。
+     做法：量所有直接子元素的并集边界，算出与段中心的偏移，整体平移补正，并让根元素铺满。 */
+  /* 内容在段内垂直居中（坤哥：偏上部 / 底部那条多余的区分去掉）
+     ① root 先铺满段高（min-height:100%）→ 背景铺到底、不拖空白带；
+     ② 量所有直接子元素的并集边界（iframe 内部坐标！），算出与段中心的偏移；
+     ③ 只做纯平移 translateY 补正 —— 不改高度（改高度会让 74% 这类百分比定位跟着动，来回振荡）；
+     ④ 平移后底部会露出一条 → body 用 root 自己的背景色兜住，肉眼无缝。 */
+  function centerContent(){
+    if(!frame||frame.hidden) return;
+    try{
+      var d=frame.contentDocument; if(!d) return;
+      var root=d.querySelector('section')||d.querySelector('div[id]'); if(!root) return;
+      root.style.transform=""; root.style.minHeight="100%";
+      void root.offsetHeight;                      /* 强制重排，否则量到旧布局 */
+      var kids=root.children, top=1e9, bot=-1e9, i, r;
+      for(i=0;i<kids.length;i++){ r=kids[i].getBoundingClientRect(); if(r.height<4) continue;
+        if(r.top<top) top=r.top; if(r.bottom>bot) bot=r.bottom; }
+      if(top>bot) return;
+      var shift=Math.round(frame.clientHeight/2-(top+bot)/2);
+      var bg=d.defaultView.getComputedStyle(root).backgroundColor;
+      if(bg && bg!=='rgba(0, 0, 0, 0)') d.body.style.background=bg;
+      if(Math.abs(shift)>=6) root.style.transform="translateY("+shift+"px)";
+    }catch(e){}
+  }
+  function fitFrame(){
+    if(!frame||frame.hidden) return;
+    for(var i=0;i<3;i++){ try{
+      var d=frame.contentDocument; if(!d) return;
+      var root=d.querySelector('section')||d.querySelector('div[id]'); if(!root) return;
+      var h=Math.round(root.getBoundingClientRect().height);
+      /* 段高由站点原样内容撑出，iframe 铺满即可 */
+    }catch(e){} }
+  }
+  if(frame) frame.addEventListener("load", function(){ setTimeout(centerContent,200); setTimeout(centerContent,1200); setTimeout(centerContent,2600); setTimeout(fitFrame,120); setTimeout(fitFrame,600); });
+  function syncNav(){
+    document.documentElement.classList.toggle("pxid-s4-lab", !!(frame&&!frame.hidden));
+  }
+  function set(v){
+    if(!frame) return;
+    var d=doc(v);
+    if(d){ if(frame.getAttribute("srcdoc")!==d) frame.setAttribute("srcdoc",d); frame.hidden=false; }
+    else { frame.hidden=true; frame.removeAttribute("srcdoc"); v="orig"; }
+    sec.setAttribute("data-s1v",v);
+    syncNav(); setTimeout(centerContent,300); setTimeout(centerContent,1400); setTimeout(centerContent,2800); syncNav(); setTimeout(fitFrame,120); setTimeout(fitFrame,700);
+    for(var i=0;i<btns.length;i++) btns[i].classList.toggle("on",btns[i].getAttribute("data-v")===v);
+    try{ localStorage.setItem(KEY,v); }catch(e){}
+  }
+  if(frame) frame.addEventListener("load", syncNav);
+  for(var i=0;i<btns.length;i++)(function(b){ b.addEventListener("click",function(){ set(b.getAttribute("data-v")); }); })(btns[i]);
+  /* 本段已定为「P 叠纸抽换」（坤哥：这个模块只保留 P）—— 忽略历史偏好，固定 P */
+  try{ localStorage.setItem(KEY,"b"); }catch(e){}
+  set("b");
+  window.__pxidS4=set;
+})();
+</script>
+  </section>
+
+  <section class="row r4"><div class="inner"><div class="videoBox"><video class="media pc" loop preload="none" muted playsinline webkit-playsinline poster="../assets/pxid/unified/process/odm-poster.webp?v=20260827-crop1"><source src="../assets/pxid/unified/process/odm-process.webm?v=20260827-crop1" type="video/webm"><source src="../assets/pxid/unified/process/odm-process.mp4?v=20260827-crop1" type="video/mp4"></video><div class="pxid-mobile-video app" style="background-image:url('../assets/pxid/unified/process/odm-poster.webp?v=20260827-crop1')"></div><div class="topic maxSize fxb"><div class="til"><h2 class="f-80 mb-20 green en_b alanGo" data-text="制造能力">制造能力</h2><p class="f-24 green alanFn">自建模具、车架、涂装、检测与装配体系，衔接产品开发和批量生产</p></div><a href="business.html#capabilities" class="layer-btn alanGo"><div class="mk"></div><div class="txt f-16"><span class="num_b">查看制造能力</span><div class="layer-icon"><small class="ripple"></small><small class="ripple"></small><i class="iconfont f-12 green">&#xe8a9;</i></div></div></a></div></div></div></section>
+
+  <section class="row pxid-process-section" id="pxidS7" data-s1v="orig"><div class="inner">
+      <div class="topic maxSize"><h2 id="process-heading" class="f-80 green en_b">ODM 服务流程</h2><p class="process-lede pxid-prose">从产品设计、结构与电控开发，到工程样车、制造、检验和批量生产。</p></div>
+      <div class="pxid-process-rail" role="region" aria-label="ODM 九步流程，可左右滑动" tabindex="0" data-lenis-prevent-touch>
+        <ol class="pxid-process-track">
+          <li class="pxid-process-step"><div class="pxid-process-photo" style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></div><p class="pxid-process-caption"><span class="pxid-process-number" aria-hidden="true">01</span><span>产品设计</span></p></li>
+          <li class="pxid-process-step"><div class="pxid-process-photo" style="background-image:url(../assets/pxid/unified/process/process-02.webp)"></div><p class="pxid-process-caption"><span class="pxid-process-number" aria-hidden="true">02</span><span>结构设计</span></p></li>
+          <li class="pxid-process-step"><div class="pxid-process-photo" style="background-image:url(../assets/pxid/unified/process/process-03.webp)"></div><p class="pxid-process-caption"><span class="pxid-process-number" aria-hidden="true">03</span><span>电控系统设计</span></p></li>
+          <li class="pxid-process-step"><div class="pxid-process-photo" style="background-image:url(../assets/pxid/unified/process/process-04.webp)"></div><p class="pxid-process-caption"><span class="pxid-process-number" aria-hidden="true">04</span><span>工程样车开发</span></p></li>
+          <li class="pxid-process-step"><div class="pxid-process-photo" style="background-image:url(../assets/pxid/unified/process/process-05.webp)"></div><p class="pxid-process-caption"><span class="pxid-process-number" aria-hidden="true">05</span><span>模具设计与制造</span></p></li>
+          <li class="pxid-process-step"><div class="pxid-process-photo" style="background-image:url(../assets/pxid/unified/process/process-06.webp)"></div><p class="pxid-process-caption"><span class="pxid-process-number" aria-hidden="true">06</span><span>车架制造</span></p></li>
+          <li class="pxid-process-step"><div class="pxid-process-photo" style="background-image:url(../assets/pxid/unified/process/process-07.webp)"></div><p class="pxid-process-caption"><span class="pxid-process-number" aria-hidden="true">07</span><span>涂装</span></p></li>
+          <li class="pxid-process-step"><div class="pxid-process-photo" role="img" aria-label="电动滑板车在加载配重的测试台上接受检验" style="background-image:url(../assets/pxid/products/proof-testing.webp)"></div><p class="pxid-process-caption"><span class="pxid-process-number" aria-hidden="true">08</span><span>测试与质量检验</span></p></li>
+          <li class="pxid-process-step"><div class="pxid-process-photo" style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></div><p class="pxid-process-caption"><span class="pxid-process-number" aria-hidden="true">09</span><span>批量生产</span></p></li>
+        </ol>
+      </div>
+      <a class="network-cta" href="sustainability.html">了解 ODM 全流程 <span>→</span></a></div>
+  <iframe class="pxid-s7frame" title="ODM 排版预览" hidden></iframe>
+  <template class="pxid-s7tpl" data-v="a"><style>
+  /* 参考稿（BDA）字阶：中文一级 40 · 卡片序号 32 · 卡片标题 22 · 正文 16/行高2 · 强调色 #d71920
+     全宽版式：不留 1200 内容边距，改为 padding-inline: clamp(16px,4vw,64px) + max-width 1840 收边，
+     行高随视口缩放（clamp），保证 1440 / 1920 / 2560 都不散。硬边：零圆角/无边框/无阴影 */
+  :scope{
+    --red:#d71920; --page:#f8f8f8; --block:#f4f4f4; --line:#e4e4e4;
+    --ink:#1a1a1a; --ink-2:#5a5a5a; --ink-3:#999999;
+    --en:"Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --gutter:clamp(16px,4vw,64px);
+    --gap:clamp(8px,.9vw,16px);
+  }
+  *{box-sizing:border-box;border-radius:0}
+  :scope{background: var(--page);color:var(--ink);}
+  .tag{position:sticky;top:0;z-index:99;padding: 10px clamp(14px, 0.2933rem, 30px);font-size:clamp(12px, 0.16rem, 14px);color:#ededed;background: rgb(23,23,23)}
+  .tag b{color:#d71920}
+  .blk{position:relative;padding: clamp(32px, 0.6933rem, 71px) 0}
+  .wrap{padding-inline:var(--gutter);max-width:min(94vw,2200px);margin:0 auto}
+  .vmark{font-family:var(--mono);font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.12em;color:#b0b0b0;margin-bottom: clamp(16px, 0.2133rem, 18px);display:block}
+  .blk.full .vmark{color:rgba(255,255,255,.82);text-shadow:0 1px 4px rgba(0,0,0,.5)}
+  #b3 .vmark{color:#9a9a9a;text-shadow:none}
+
+  h2.zh{font-size:clamp(45px, 0.96rem, 98px);line-height:1.22;font-weight:600;margin:0;letter-spacing:-.01em}
+  h2.zh .en{font-family:var(--en);font-weight:400;color:var(--red);letter-spacing:-.01em}
+  .lede{font-size:clamp(16px, 0.2133rem, 18px);line-height:2;color:var(--ink-2);margin: 10px 0 0}
+  .cta{display:inline-flex;align-items:center;gap: 8px;font-size:clamp(14px, 0.1867rem, 16px);color:var(--red);text-decoration:none;white-space:nowrap}
+  .cta i{font-style:normal;transition:transform .3s ease}
+  .cta:hover i{transform:translateX(5px)}
+
+  .bento{display:grid;gap:var(--gap)}
+  .tile{position:relative;overflow:hidden;background: rgb(220,220,220)}
+  .tile .img{position:absolute;inset:0;background-position:center;background-size:cover;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+  .tile:hover .img{transform:scale(1.04)}
+  .cap{position:absolute;left:0;right:0;bottom:0;padding: 10px 12px;color:#ffffff;display:flex;align-items:baseline;gap: 8px;
+    background: linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.78))}
+  .cap .n{font-family:var(--mono);font-size:clamp(12px, 0.16rem, 14px);color:#d71920;flex:none}
+  .cap .t{font-size:clamp(12px, 0.16rem, 14px);font-weight:600;white-space:nowrap}
+  .tile.big .cap{padding: clamp(16px, 0.2133rem, 18px) clamp(11px, 0.24rem, 24px)}
+  .tile.big .cap .n{font-size:clamp(13px, 0.28rem, 29px);font-family:var(--en);font-weight:500;color:#ffffff}
+  .tile.big .cap .t{font-size:clamp(13px, 0.28rem, 29px)}
+  .tile.text{background: var(--block);display:flex;flex-direction:column;justify-content:center;padding:clamp(12px,1.25vw,24px);gap: 10px}
+  .tile.text h2.zh{font-size:clamp(45px, 0.96rem, 98px);line-height:1.1}
+  .tile.text .lede{font-size:clamp(14px, 0.1867rem, 16px);line-height:1.9}
+  .tile.text .bar{width:30px;height:2px;background: var(--red);margin: 4px 0 2px}
+
+  /* ===== B1F 全宽 6×3 主次 bento（B1 优化版）===== */
+  #d71920 .bento{grid-template-columns:repeat(6,1fr);grid-auto-rows:clamp(150px,9vw,230px)}
+  #d71920 .t-text{grid-column:1/3;grid-row:1/3}
+  #d71920 .t01{grid-column:3/5;grid-row:1/3}
+  #d71920 .t02{grid-column:5/6;grid-row:1/2}
+  #d71920 .t03{grid-column:6/7;grid-row:1/2}
+  #d71920 .t04{grid-column:5/7;grid-row:2/3}
+  #d71920 .t05{grid-column:1/3;grid-row:3/4}
+  #d71920 .t06{grid-column:3/4;grid-row:3/4}
+  #d71920 .t07{grid-column:4/5;grid-row:3/4}
+  #d71920 .t08{grid-column:5/6;grid-row:3/4}
+  #d71920 .t09{grid-column:6/7;grid-row:3/4}
+
+  /* ===== B2F 全宽 4×3 bento（B2 优化版，文字块穿插）===== */
+  #d71920{background: rgb(255,255,255)}
+  #d71920 .bento{grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,9vw,230px)}
+  #d71920 .t01{grid-column:1/3;grid-row:1/2}
+  #d71920 .t02{grid-column:3/4;grid-row:1/2}
+  #d71920 .t03{grid-column:4/5;grid-row:1/2}
+  #d71920 .t04{grid-column:1/2;grid-row:2/3}
+  #d71920 .t05{grid-column:2/3;grid-row:2/3}
+  #d71920 .t-text{grid-column:3/5;grid-row:2/3}
+  #d71920 .t06{grid-column:1/2;grid-row:3/4}
+  #d71920 .t07{grid-column:2/3;grid-row:3/4}
+  #d71920 .t08{grid-column:3/4;grid-row:3/4}
+  #d71920 .t09{grid-column:4/5;grid-row:3/4}
+
+  /* ===== B3 满出血 bento（对照，保留）===== */
+  #b3 .bento{grid-template-columns:repeat(6,1fr);grid-auto-rows:clamp(180px,10.8vw,276px)}
+  #b3 .t-text{grid-column:1/3;grid-row:1/3}
+  #b3 .t01{grid-column:3/7;grid-row:1/2}
+  #b3 .t02{grid-column:3/4;grid-row:2/3}
+  #b3 .t03{grid-column:4/5;grid-row:2/3}
+  #b3 .t04{grid-column:5/6;grid-row:2/3}
+  #b3 .t05{grid-column:6/7;grid-row:2/3}
+  #b3 .t06{grid-column:1/2;grid-row:3/4}
+  #b3 .t07{grid-column:2/3;grid-row:3/4}
+  #b3 .t08{grid-column:3/4;grid-row:3/4}
+  #b3 .t09{grid-column:4/7;grid-row:3/4}
+
+  /* ===== C4 满出血编目带（对照，保留）===== */
+  #c4{display:grid;grid-template-columns:clamp(320px,28vw,400px) 1fr;height:clamp(220px,17vw,260px)}
+  #c4 .panel{order:1;background: var(--page);padding:clamp(24px,2.4vw,36px);display:flex;flex-direction:column;justify-content:center;gap: 12px}
+  #c4 .panel h2.zh{font-size:clamp(19px, 0.4rem, 41px)}
+  #c4 .band{order:2;display:grid;grid-template-columns:repeat(9,1fr);height:100%}
+  #c4 .col{position:relative;overflow:hidden}
+  #c4 .col .ph{position:absolute;inset:0;background: rgb(220,220,220) center/cover no-repeat}
+  #c4 .col .ov{position:absolute;left:0;right:0;bottom:0;padding: 9px 10px;color:#ffffff;
+    background: linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.78));display:flex;flex-direction:column;gap: 2px}
+  #c4 .col .ov .n{font-family:var(--mono);font-size:clamp(12px, 0.16rem, 14px);color:#d71920}
+  #c4 .col .ov .t{font-size:clamp(12px, 0.16rem, 14px);font-weight:600;white-space:nowrap}
+
+  @media (max-width:900px){
+    :scope{--gutter:14px}
+    .blk{padding: clamp(24px, 0.5067rem, 52px) 0}
+    h2.zh{font-size:clamp(17px, 0.36rem, 37px)}
+    .tile.big .cap .t{font-size:clamp(16px, 0.2133rem, 18px)}
+    #d71920 .bento,#d71920 .bento,#b3 .bento{grid-template-columns:1fr 1fr;grid-auto-rows:132px}
+    #d71920 .t-text,#d71920 .t-text,#b3 .t-text,#d71920 .t01,#d71920 .t01,#b3 .t01,#d71920 .t04,#d71920 .t05,#b3 .t09{grid-column:span 2;grid-row:span 1}
+    #c4{display:block;height:auto}
+    #c4 .band{grid-template-columns:repeat(3,1fr);height:auto}
+    #c4 .col{height:150px}
+  }
+
+/* 坤哥 09-15：字体描边 / 阴影全部去掉（含源文件自带的），一层压制到底 */
+:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}.tile.text{gap:4px;padding-top:11px;padding-bottom:11px}.tile.text .bar{margin:2px 0}.tile.text .lede{line-height:1.72;margin-top:2px}#b2 .tile.text h2.zh{font-size:64px;line-height:1.06}
+  /* 坤哥 09-17：ODM 放大加粗、服务流程缩小不加粗、两者一行 */
+  .tile.text h2.zh{font-size:clamp(23px, .43rem, 44px);line-height:1;font-weight:400;letter-spacing:0;
+    white-space:nowrap;display:flex;align-items:baseline;gap:.16em}
+  .tile.text h2.zh .en{font-size:2.7em;font-weight:800;letter-spacing:-.02em;line-height:.84;color:var(--red)}
+
+  /* —— S7 左栏：ODM 顶头 + 方块紧跟描述 + 空白压在方块与 CTA 之间 + CTA 贴底
+        （按线稿 B 格①，坤哥 2026-09-17 15:07 确认）—— */
+  .tile.text{justify-content:flex-start!important;position:relative}
+  .tile.text h2.zh{display:block!important}
+  .tile.text h2.zh .en{display:block;line-height:.88}
+  .tile.text .steps{margin-top:16px;display:flex;gap:5px}
+  .tile.text .steps i{flex:1;height:26px;background:rgba(23,23,23,.075);
+    font-style:normal;font-size:11px;line-height:26px;text-align:center;color:rgba(23,23,23,.45)}
+  .tile.text .cta{position:absolute;left:24px;right:24px;bottom:11px;margin:0!important}
+</style><div class="blk" id="b3"><div class="wrap">
+  
+  <div class="bento">
+    <div class="tile text t-text">
+      <h2 class="zh"><span class="en">ODM</span> 服务流程</h2>
+      <div class="bar"></div>
+      <p class="lede">从产品设计、结构与电控开发，到工程样车、制造、检验和批量生产。</p><div class="steps" aria-hidden="true"><i>01</i><i>02</i><i>03</i><i>04</i><i>05</i><i>06</i><i>07</i><i>08</i><i>09</i></div>
+      <a class="cta" href="#" style="margin-top:6px">了解 ODM 全流程 <i>→</i></a>
+    </div>
+    <div class="tile big t01"><div class="img" style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></div><div class="cap"><span class="n">01</span><span class="t">产品设计</span></div></div>
+    <div class="tile t02"><div class="img" style="background-image:url(../assets/pxid/unified/process/process-02.webp)"></div><div class="cap"><span class="n">02</span><span class="t">结构设计</span></div></div>
+    <div class="tile t03"><div class="img" style="background-image:url(../assets/pxid/unified/process/process-03.webp)"></div><div class="cap"><span class="n">03</span><span class="t">电控系统设计</span></div></div>
+    <div class="tile t04"><div class="img" style="background-image:url(../assets/pxid/unified/process/process-04.webp)"></div><div class="cap"><span class="n">04</span><span class="t">工程样车开发</span></div></div>
+    <div class="tile t05"><div class="img" style="background-image:url(../assets/pxid/unified/process/process-05.webp)"></div><div class="cap"><span class="n">05</span><span class="t">模具设计与制造</span></div></div>
+    <div class="tile t06"><div class="img" style="background-image:url(../assets/pxid/unified/process/process-06.webp)"></div><div class="cap"><span class="n">06</span><span class="t">车架制造</span></div></div>
+    <div class="tile t07"><div class="img" style="background-image:url(../assets/pxid/unified/process/process-07.webp)"></div><div class="cap"><span class="n">07</span><span class="t">涂装</span></div></div>
+    <div class="tile t08"><div class="img" style="background-image:url(../assets/pxid/products/proof-testing.webp)"></div><div class="cap"><span class="n">08</span><span class="t">测试与质量检验</span></div></div>
+    <div class="tile big t09"><div class="img" style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></div><div class="cap"><span class="n">09</span><span class="t">批量生产</span></div></div>
+  </div>
+</div></div>
+
+<!-- ===== C4 对照 ===== -->
+</div></template>
+  <style id="pxid-s7-switch-css">
+#pxidS7{position:relative}
+/* 变体态给到「一屏」：① 坤哥要「段高不超一屏」；② 变体内部的 Bento 网格行高是 vh 基准 ——
+   段高若沿用原样的 591，网格行高被压到 89px，左侧文字格装不下内容，
+   「了解 ODM 全流程 →」会溢出 9px 被下一行图格盖住（实测）。 */
+#pxidS7:not([data-s1v="orig"]){height:100vh;height:100svh;min-height:100vh;min-height:100svh}
+#pxidS7 > .pxid-s7frame{position:absolute;inset:0;display:block;width:100%;height:100%;border:0;background:#fff}
+#pxidS7 > .pxid-s7frame[hidden]{display:none}
+#pxidS7:not([data-s1v="orig"]) > .bg,
+#pxidS7:not([data-s1v="orig"]) > .inner{visibility:hidden}
+#pxidS7 .pxid-s7switch{position:absolute;bottom:18px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.46);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:4px;opacity:.6;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
+#pxidS7 .pxid-s7switch:hover{opacity:1}
+#pxidS7 .pxid-s7switch .lbl{display:none}
+#pxidS7 .pxid-s7switch button{cursor:pointer;font:inherit;font-size:12px;line-height:1;padding:6px 8px;border:0;background:transparent;color:rgba(255,255,255,.86);white-space:nowrap;border-radius:0;transition:color .18s,background .18s}
+#pxidS7 .pxid-s7switch button:hover{color:#fff;background:rgba(255,255,255,.15)}
+#pxidS7 .pxid-s7switch button.on{background:#d71920;color:#fff}
+@media (max-width:900px){#pxidS7 .pxid-s7switch{left:12px;right:12px;bottom:12px;max-width:none;opacity:.88}#pxidS7 .pxid-s7switch button{font-size:11.5px;padding:6px 7px}}
+#app header .pcNav .mid .lists .navHref i.iconfont{display:none!important}
+#app header .pcNav .mid .lists .navHref{position:relative}
+#app header .pcNav .mid .lists .navHref::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:#d71920;transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+#app header .pcNav .mid .lists .navHref:hover::after{transform:scaleX(1)}
+</style><script id="pxid-s7-switch-js">
+(function(){
+  var sec=document.getElementById("pxidS7"); if(!sec) return;
+  var KEY="pxid-s7-v", frame=sec.querySelector(".pxid-s7frame");
+  var EXT="";
+  var btns=sec.querySelectorAll(".pxid-s7switch button"), cache={};
+  function doc(v){
+    var fs=getComputedStyle(document.documentElement).fontSize||"16px";
+    var ck=v+"|"+fs;
+    if(cache[ck]) return cache[ck];
+    var t=sec.querySelector("template.pxid-s7tpl[data-v=\""+v+"\"]"); if(!t) return null;
+    cache[ck]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
+      +"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow:hidden;"
+      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}html,body{height:100%}/* 内容比段高矮时（S4 内容 715 < 段高 812）垂直居中，别贴着顶 */body{display:flex;flex-direction:column;justify-content:center}/* 内容垂直居中靠 body 的 flex（见上），⚠️ 这里不能加 section{padding-top}：S7 变体自带 .blk 上下 padding */</style>"
+      +"</head><body>"+EXT+t.innerHTML+"</body></html>";
+    return cache[ck];
+  }
+  /* 内容在段内垂直居中：变体 section 常是 88vh/min-height 决定的高度，比段高矮 →
+     下方会拖出一条空白带（坤哥：「后增加的内容偏上部」「底部明显的区分去掉」）。
+     做法：量所有直接子元素的并集边界，算出与段中心的偏移，整体平移补正，并让根元素铺满。 */
+  /* 内容在段内垂直居中（坤哥：偏上部 / 底部那条多余的区分去掉）
+     ① root 先铺满段高（min-height:100%）→ 背景铺到底、不拖空白带；
+     ② 量所有直接子元素的并集边界（iframe 内部坐标！），算出与段中心的偏移；
+     ③ 只做纯平移 translateY 补正 —— 不改高度（改高度会让 74% 这类百分比定位跟着动，来回振荡）；
+     ④ 平移后底部会露出一条 → body 用 root 自己的背景色兜住，肉眼无缝。 */
+  function centerContent(){
+    if(!frame||frame.hidden) return;
+    try{
+      var d=frame.contentDocument; if(!d) return;
+      var root=d.querySelector('section')||d.querySelector('div[id]'); if(!root) return;
+      /* ⚠️ S7 的变体 root 是「自然高度」（.blk 自带上下 padding），不铺满段高 ——
+         垂直居中交给 body{display:flex;flex-direction:column;justify-content:center} 就够。
+         千万别照抄 S6 的「minHeight:100% 铺满 + translateY 平移」：root 铺满后再下移，
+         底边会越过 body 边界被 overflow:hidden 裁掉（S7 实测裁掉 39px，
+         正好切在左下「了解 ODM 全流程 →」那行字上）。 */
+      root.style.transform=""; root.style.minHeight="";
+      var bg=d.defaultView.getComputedStyle(root).backgroundColor;
+      if(bg && bg!=='rgba(0, 0, 0, 0)') d.body.style.background=bg;
+    }catch(e){}
+  }
+  function fitFrame(){
+    if(!frame||frame.hidden) return;
+    for(var i=0;i<3;i++){ try{
+      var d=frame.contentDocument; if(!d) return;
+      var root=d.querySelector('section')||d.querySelector('div[id]'); if(!root) return;
+      var h=Math.round(root.getBoundingClientRect().height);
+      /* 段高由站点原样内容撑出，iframe 铺满即可 */
+    }catch(e){} }
+  }
+  if(frame) frame.addEventListener("load", function(){ setTimeout(centerContent,200); setTimeout(centerContent,1200); setTimeout(centerContent,2600); setTimeout(fitFrame,120); setTimeout(fitFrame,600); });
+  function syncNav(){
+    document.documentElement.classList.toggle("pxid-s7-lab", !!(frame&&!frame.hidden));
+  }
+  function set(v){
+    if(!frame) return;
+    var d=doc(v);
+    if(d){ if(frame.getAttribute("srcdoc")!==d) frame.setAttribute("srcdoc",d); frame.hidden=false; }
+    else { frame.hidden=true; frame.removeAttribute("srcdoc"); v="orig"; }
+    sec.setAttribute("data-s1v",v);
+    syncNav(); setTimeout(centerContent,300); setTimeout(centerContent,1400); setTimeout(centerContent,2800); syncNav(); setTimeout(fitFrame,120); setTimeout(fitFrame,700);
+    for(var i=0;i<btns.length;i++) btns[i].classList.toggle("on",btns[i].getAttribute("data-v")===v);
+    try{ localStorage.setItem(KEY,v); }catch(e){}
+  }
+  if(frame) frame.addEventListener("load", syncNav);
+  for(var i=0;i<btns.length;i++)(function(b){ b.addEventListener("click",function(){ set(b.getAttribute("data-v")); }); })(btns[i]);
+  /* 本段已定为「B3 满出血对比」（坤哥：这个 section 只保留 B3）—— 忽略历史偏好 */
+  try{ localStorage.setItem(KEY,"a"); }catch(e){}
+  set("a");
+  window.__pxidS7=set;
+})();
+</script>
+  </section>
+
+  <section class="row r5 pxid-network" id="pxidS6" data-s1v="orig"><div class="inner"><div class="topic maxSize"><h2 id="network-heading" class="f-80 green en_b">淮安 · PXiD</h2><p class="network-lede pxid-prose">为电动出行品牌提供产品设计、工程开发与制造服务。</p></div><div class="imgBox"><div class="map pxid-map-stage"><svg class="china-network-svg" viewBox="0 0 1000 650" role="img" aria-labelledby="mapTitle mapDesc">
+      <title id="mapTitle">中华人民共和国 · 淮安 PXID 服务连接示意</title>
+      <desc id="mapDesc">立体浮雕质感的中国服务连接视觉稿，以淮安为起点呈现服务连接。红色连线为视觉表达，不代表分支机构或项目分布；版图公开使用前需按标准地图要求送审。</desc>
+      <defs>
+        <linearGradient id="mapGlassFill" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#f1f1ef" stop-opacity=".98" />
+          <stop offset=".42" stop-color="#b8b8b5" stop-opacity=".96" />
+          <stop offset="1" stop-color="#686866" stop-opacity=".98" />
+        </linearGradient>
+        <linearGradient id="mapGlassEdge" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ffffff" stop-opacity="1" />
+          <stop offset=".44" stop-color="#d0d0cd" stop-opacity=".92" />
+          <stop offset="1" stop-color="#7b7b78" stop-opacity=".9" />
+        </linearGradient>
+        <linearGradient id="mapReliefSide" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#777775" />
+          <stop offset=".48" stop-color="#464645" />
+          <stop offset="1" stop-color="#202020" />
+        </linearGradient>
+        <filter id="mapGlassShadow" x="-30%" y="-35%" width="165%" height="190%">
+          <feDropShadow dx="0" dy="38" stdDeviation="24" flood-color="#000000" flood-opacity=".72" />
+          <feDropShadow dx="-3" dy="-5" stdDeviation="4" flood-color="#ffffff" flood-opacity=".26" />
+        </filter>
+        <filter id="mapOuterGlow" x="-35%" y="-35%" width="170%" height="170%">
+          <feGaussianBlur stdDeviation="9" />
+        </filter>
+        <filter id="routeGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="routeBlur" />
+          <feMerge><feMergeNode in="routeBlur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <path id="chinaShape" d="M595.17,562.15 L596.96,567.26 L591.62,572.79 L588.9,581.04 L583.4,585.61 L575.54,589.09 L563.82,584.28 L563.3,572.6 L572.06,565.66 L570.64,565.54 L571.87,563.81 L584.89,561.21 L590.86,562.39 L591.78,559.93 L595.17,562.15 Z M587.95,545.42 L589.91,545.58 L589.66,547.33 L586.46,546.82 L587.95,545.42 Z M620.33,537.12 L618.63,537.37 L620.39,536.05 L620.33,537.12 Z M622.43,537.7 L622.32,535.11 L623.47,535.41 L622.43,537.7 Z M699.74,493.73 L698.42,494.49 L698.61,492.88 L699.74,493.73 Z M723.22,479.14 L721.5,479.51 L721.81,476.38 L723.48,477.1 L723.22,479.14 Z M743.73,439.2 L742.01,439.56 L743.07,437.41 L743.73,439.2 Z M758.71,410.69 L754.81,409.93 L754.03,407.96 L758.54,409.1 L758.71,410.69 Z M752.5,387.47 L747.58,386.6 L743.15,382.71 L752.5,387.47 Z M876.71,219.73 L872.69,216.55 L872.6,214.32 L867.69,212.7 L864.82,221.06 L859.31,221.58 L853.72,227.28 L841.13,228.05 L844.63,233.83 L842.62,237.16 L828.72,234.98 L825.5,231.37 L822.46,232.04 L811.65,244.5 L795.89,251.26 L788.33,258.18 L784.65,260.66 L778.13,260.04 L766.51,264.31 L754.21,272.62 L749.84,273.38 L749.45,275.48 L742.47,277.51 L741.66,274.64 L749.87,271.78 L749.13,270.09 L751.86,267.56 L744.08,267.59 L743.96,265.16 L747.55,263.73 L747.55,260.6 L751.61,258.99 L758.41,250.01 L752.1,243.44 L750.58,245.39 L742.63,244.55 L732.66,254.74 L717.06,262.0 L711.13,270.66 L701.39,272.41 L697.71,269.99 L695.2,270.53 L691.63,275.67 L690.78,279.13 L693.78,283.89 L697.33,285.84 L710.6,287.97 L712.73,293.17 L710.78,298.78 L715.58,301.71 L722.36,301.46 L730.26,294.35 L729.48,293.5 L736.54,291.14 L749.31,296.82 L755.28,295.78 L764.03,297.69 L760.87,302.78 L761.91,304.62 L759.35,306.36 L753.5,304.43 L740.9,309.71 L737.42,309.39 L738.63,312.25 L735.99,312.72 L734.94,317.03 L731.43,318.18 L730.49,315.53 L728.42,315.93 L727.14,317.19 L729.87,319.24 L717.62,329.61 L713.83,336.49 L714.34,338.01 L729.62,345.22 L738.28,364.32 L738.02,369.71 L745.03,373.3 L745.92,376.62 L752.4,382.54 L752.55,384.26 L749.89,384.13 L745.17,381.9 L739.75,381.74 L733.25,378.15 L726.31,380.72 L736.05,380.0 L737.09,382.49 L749.6,390.09 L752.71,396.21 L746.13,398.14 L737.57,404.75 L732.24,404.24 L728.58,406.47 L732.88,405.53 L734.87,408.11 L743.83,405.52 L749.85,410.45 L755.65,412.1 L747.39,417.96 L753.62,416.12 L753.29,423.27 L750.41,421.43 L747.11,422.39 L749.87,426.04 L747.87,426.36 L749.63,427.58 L746.94,430.77 L748.87,436.08 L744.03,437.14 L742.22,435.55 L739.53,439.95 L736.51,440.36 L737.73,442.16 L734.21,446.88 L734.5,449.44 L729.79,454.23 L727.04,460.69 L724.1,461.62 L723.27,458.04 L721.64,459.82 L719.89,458.97 L724.09,465.82 L718.09,470.06 L713.46,469.04 L716.22,471.67 L720.33,470.84 L719.19,477.1 L720.38,480.14 L714.04,479.25 L715.55,482.55 L711.13,482.9 L710.15,487.16 L706.25,488.58 L706.54,491.83 L698.37,491.75 L697.21,493.95 L694.86,494.07 L697.92,497.53 L691.79,503.75 L689.47,503.69 L688.05,507.52 L686.95,505.61 L683.97,507.67 L681.5,506.64 L680.79,509.58 L677.47,511.08 L678.47,512.24 L676.16,513.73 L675.2,517.28 L672.06,516.74 L666.33,519.47 L663.29,518.69 L661.26,520.73 L656.92,519.23 L652.02,522.28 L649.12,520.18 L647.72,523.61 L643.59,523.43 L640.0,523.87 L634.32,518.56 L634.34,514.52 L632.89,514.91 L630.19,517.8 L633.37,522.63 L633.31,528.23 L627.58,530.51 L626.71,528.49 L624.78,533.06 L622.7,532.49 L619.51,535.04 L616.26,531.98 L615.48,535.57 L610.3,533.93 L605.41,538.35 L597.01,539.07 L590.56,543.59 L588.32,541.7 L584.64,547.68 L587.67,549.3 L586.92,551.82 L589.77,554.16 L587.37,557.55 L580.75,556.5 L581.98,555.22 L577.6,548.1 L577.86,544.84 L581.44,539.54 L577.94,538.87 L576.22,536.35 L575.9,538.67 L570.23,540.37 L569.55,537.87 L564.82,537.26 L562.27,533.15 L560.64,533.1 L560.96,537.22 L558.42,536.3 L557.29,538.36 L553.37,539.12 L550.31,536.89 L544.46,537.59 L539.01,532.8 L534.6,531.97 L532.98,524.03 L536.27,519.82 L532.86,517.85 L529.09,518.62 L527.22,516.91 L522.84,517.63 L514.7,511.22 L508.81,514.39 L506.27,519.16 L501.75,520.95 L498.47,519.5 L495.58,523.45 L490.97,519.77 L489.15,522.72 L486.76,519.96 L481.82,524.84 L474.49,520.24 L473.57,520.89 L471.14,524.57 L470.27,525.35 L469.57,525.89 L465.48,525.75 L464.3,524.2 L464.0,524.13 L463.55,524.26 L463.03,524.63 L462.67,525.49 L462.3,526.68 L461.55,527.45 L460.93,527.8 L463.97,534.28 L464.07,535.02 L464.12,537.64 L463.77,542.05 L464.89,543.61 L464.64,543.74 L463.85,544.46 L463.51,544.56 L461.18,543.28 L457.44,544.04 L456.96,543.84 L456.63,543.44 L456.44,542.61 L456.56,541.64 L455.92,540.65 L456.23,538.91 L455.4,538.22 L454.55,535.36 L447.74,539.67 L441.19,539.54 L438.22,535.31 L437.89,531.22 L427.5,529.74 L432.01,517.08 L430.73,515.41 L422.78,513.55 L422.33,506.98 L420.1,502.71 L422.37,499.43 L413.45,499.59 L404.16,502.62 L406.22,497.8 L403.68,493.8 L404.43,489.5 L406.64,488.06 L407.81,482.26 L410.55,481.64 L412.45,477.41 L415.19,477.17 L419.81,472.96 L418.49,469.79 L420.23,468.02 L420.99,458.96 L419.74,447.01 L416.89,445.72 L414.68,447.35 L411.28,437.69 L404.65,432.66 L403.78,432.76 L402.25,435.14 L401.17,436.65 L400.67,437.22 L400.4,439.19 L400.99,440.78 L396.77,444.16 L395.56,445.08 L384.51,439.88 L377.96,438.73 L369.01,444.34 L354.08,446.76 L347.5,450.78 L343.12,458.95 L335.04,458.23 L325.1,457.6 L325.44,456.99 L325.36,456.08 L324.81,455.1 L324.36,454.5 L324.27,454.17 L324.42,453.47 L324.83,452.45 L325.59,451.28 L325.03,450.17 L324.25,448.86 L323.68,448.74 L322.27,449.04 L320.71,448.98 L318.58,447.24 L319.11,444.16 L319.25,441.68 L315.25,440.14 L313.96,439.32 L313.29,439.43 L311.16,440.9 L310.35,440.97 L305.97,439.42 L304.74,439.32 L302.56,439.44 L300.77,439.29 L300.49,439.09 L300.92,437.22 L300.7,436.81 L298.88,436.29 L297.21,435.93 L295.44,435.79 L294.25,436.05 L293.09,436.62 L292.13,437.66 L290.73,438.11 L289.07,438.88 L288.27,439.6 L279.82,450.9 L278.98,450.19 L278.0,449.17 L277.78,447.78 L278.94,444.05 L279.21,442.51 L278.56,440.41 L275.33,439.1 L273.15,440.34 L270.99,440.99 L269.06,441.29 L268.6,441.53 L268.61,442.48 L265.04,442.24 L261.63,443.32 L256.87,443.22 L254.73,442.97 L252.99,441.6 L251.75,440.99 L250.44,440.53 L249.13,440.18 L248.68,439.44 L248.27,439.07 L247.18,438.95 L246.32,439.22 L245.78,441.07 L244.23,441.6 L243.08,441.13 L241.49,440.18 L240.33,438.78 L239.5,439.24 L239.29,441.51 L238.29,441.87 L237.71,441.6 L237.25,440.67 L236.08,438.46 L234.92,437.16 L233.76,436.3 L229.92,436.32 L227.07,436.07 L225.79,435.71 L225.3,434.86 L225.77,433.16 L226.33,431.83 L226.31,431.52 L225.84,431.36 L225.02,431.25 L221.95,432.1 L221.12,432.0 L212.97,426.66 L212.21,424.77 L211.53,422.95 L211.15,421.98 L210.01,421.47 L208.78,421.08 L203.73,422.54 L197.59,416.02 L184.19,409.17 L181.65,405.17 L178.94,404.63 L175.89,404.25 L172.67,405.01 L170.34,408.72 L169.23,409.53 L166.48,406.53 L164.88,405.72 L155.09,401.5 L155.32,399.75 L151.27,396.64 L147.54,395.47 L143.59,393.97 L139.55,388.83 L134.34,390.03 L134.5,386.59 L133.62,383.7 L134.08,380.0 L130.79,376.48 L130.21,375.19 L129.66,372.67 L129.27,371.86 L134.24,371.28 L134.48,372.17 L136.85,374.32 L140.45,372.2 L140.1,364.55 L139.49,363.77 L139.95,361.96 L139.63,361.13 L137.28,359.3 L136.08,358.02 L134.92,352.28 L134.1,349.18 L137.59,345.91 L137.1,344.03 L136.08,343.45 L128.37,340.17 L125.95,335.0 L124.77,332.14 L124.29,326.9 L120.8,326.66 L115.74,326.97 L113.57,326.47 L110.63,325.8 L107.61,324.87 L106.0,324.14 L105.44,323.88 L104.07,323.11 L103.09,322.45 L102.91,320.72 L102.21,320.85 L100.54,321.47 L98.62,321.87 L97.56,321.88 L97.13,321.6 L96.02,319.26 L93.75,318.26 L94.64,313.19 L94.32,312.04 L94.05,311.08 L92.72,309.13 L91.74,308.44 L90.24,307.73 L88.9,307.47 L87.27,307.99 L86.75,307.79 L86.07,305.58 L85.64,305.13 L81.44,304.01 L79.94,304.29 L79.08,304.53 L76.26,303.27 L74.95,303.25 L74.1,303.47 L73.88,303.35 L73.47,302.94 L71.73,301.72 L71.67,301.42 L74.35,300.22 L75.93,299.76 L76.75,299.39 L76.93,299.47 L77.34,300.03 L78.38,300.39 L79.11,300.29 L82.37,297.95 L79.16,294.68 L77.98,281.63 L70.31,278.6 L66.7,280.42 L63.49,279.4 L61.98,275.65 L63.54,273.91 L60.71,269.95 L61.12,267.41 L61.06,266.61 L63.8,266.01 L65.0,264.65 L65.11,264.22 L64.65,262.58 L64.04,261.85 L63.98,261.28 L64.28,260.85 L64.68,260.1 L65.46,258.57 L66.22,257.59 L78.24,253.25 L77.82,251.73 L78.31,250.91 L78.75,250.75 L80.74,251.42 L82.27,251.35 L84.13,250.95 L88.14,248.71 L88.64,248.75 L90.38,253.6 L93.17,253.64 L98.71,251.7 L99.57,252.89 L100.69,252.32 L101.89,251.42 L103.29,249.47 L103.93,248.18 L104.18,246.97 L104.49,246.4 L105.16,245.82 L106.82,243.32 L108.02,242.69 L109.15,242.46 L117.68,243.16 L119.66,242.68 L121.03,242.21 L123.06,242.28 L125.45,241.91 L128.64,238.78 L128.88,237.41 L130.03,236.71 L134.33,234.55 L142.22,231.16 L149.0,229.4 L150.06,227.93 L151.06,227.64 L155.45,227.37 L155.72,227.2 L155.88,226.96 L155.35,224.98 L155.25,216.71 L160.08,214.6 L157.95,212.02 L163.62,210.22 L157.45,196.01 L159.26,186.63 L150.52,184.06 L153.2,182.2 L176.61,176.99 L180.23,179.85 L184.85,178.97 L188.5,180.39 L189.79,175.85 L185.54,173.26 L195.78,149.09 L209.93,152.37 L219.25,152.34 L220.97,154.49 L230.98,150.95 L233.45,148.05 L231.57,138.01 L234.78,130.88 L246.24,128.7 L249.96,120.79 L257.33,120.24 L258.68,120.38 L260.1,119.68 L263.64,119.02 L264.38,119.08 L265.21,121.54 L263.36,123.34 L264.63,124.71 L267.44,125.56 L267.9,125.99 L266.75,128.3 L271.48,129.56 L272.97,130.6 L274.45,130.89 L275.17,131.91 L275.3,133.39 L276.81,134.14 L279.06,135.18 L280.2,135.38 L282.06,136.69 L288.25,136.29 L289.42,136.67 L292.53,139.36 L293.29,139.41 L294.43,139.09 L295.12,138.46 L296.11,138.59 L297.19,140.6 L298.45,141.25 L300.2,141.65 L300.45,141.97 L301.81,144.26 L302.83,147.59 L304.94,150.4 L305.97,151.86 L307.17,152.14 L308.18,152.61 L308.77,153.69 L309.84,155.73 L308.78,163.0 L309.3,164.42 L310.0,165.51 L310.07,166.56 L305.2,174.32 L308.29,179.32 L310.76,178.99 L318.43,181.14 L330.46,182.16 L332.68,182.13 L335.68,181.75 L346.12,183.14 L363.26,192.16 L372.41,193.26 L372.06,196.89 L374.93,198.19 L379.71,208.48 L387.25,216.92 L399.01,215.87 L431.44,219.23 L438.84,217.58 L440.31,217.68 L446.51,218.5 L454.73,219.49 L460.51,219.68 L461.71,219.91 L462.87,220.27 L467.36,224.59 L469.99,225.46 L475.99,226.47 L483.12,227.77 L492.27,231.64 L496.38,230.95 L500.79,230.2 L503.56,229.73 L503.56,233.05 L508.75,233.28 L510.49,234.01 L511.48,233.7 L512.41,232.98 L513.58,231.84 L515.26,231.34 L523.19,227.96 L536.13,223.48 L556.21,221.07 L563.61,221.54 L572.97,221.21 L574.45,220.94 L588.17,216.11 L596.87,207.49 L609.36,202.34 L610.13,200.3 L602.53,191.91 L609.64,181.32 L611.57,181.06 L612.72,181.34 L617.0,181.41 L618.26,182.13 L619.66,183.55 L621.24,184.07 L626.15,185.18 L629.75,185.46 L632.72,185.91 L633.86,186.16 L634.8,185.89 L638.01,183.87 L640.21,183.17 L640.93,182.74 L645.78,179.22 L647.81,176.37 L650.37,175.92 L652.95,176.55 L656.44,176.37 L663.88,175.34 L671.28,171.07 L671.9,170.21 L671.73,169.45 L671.5,168.83 L676.51,162.71 L680.76,161.22 L687.56,161.61 L687.9,161.16 L687.89,160.48 L688.41,158.94 L688.6,158.44 L689.06,158.2 L690.62,158.17 L693.41,159.24 L698.14,156.98 L699.37,156.8 L701.55,156.22 L702.92,156.43 L705.44,156.6 L706.42,156.45 L707.48,156.6 L709.22,155.56 L710.84,155.95 L713.78,157.41 L716.21,157.78 L718.25,157.59 L720.35,157.93 L721.59,157.9 L722.17,157.58 L723.89,156.9 L724.33,154.08 L721.65,149.64 L712.63,141.98 L711.71,141.51 L709.74,140.91 L708.01,140.41 L707.02,139.43 L705.26,137.59 L704.27,136.97 L693.8,136.91 L687.81,142.01 L686.88,141.8 L683.78,139.67 L682.09,139.21 L681.37,138.96 L679.35,138.71 L677.79,138.79 L675.81,139.17 L673.87,139.1 L673.0,138.86 L671.76,138.88 L669.52,139.93 L668.36,141.11 L666.99,141.49 L662.95,138.63 L661.64,134.74 L663.28,133.9 L665.37,132.96 L665.53,131.47 L665.46,129.81 L665.87,127.96 L678.24,109.03 L695.31,113.74 L703.59,108.71 L715.18,105.34 L716.42,102.11 L713.8,100.18 L726.75,82.04 L736.54,74.51 L735.2,67.37 L726.76,66.36 L727.15,64.02 L739.92,56.46 L777.51,52.48 L794.78,58.75 L798.55,57.69 L806.78,60.14 L816.71,70.47 L825.07,89.64 L830.55,95.6 L830.98,101.03 L834.61,103.18 L834.04,109.36 L840.47,112.9 L850.57,112.42 L855.75,115.85 L861.96,115.63 L871.96,123.19 L877.08,123.65 L877.07,127.58 L880.68,131.54 L879.65,136.44 L882.94,141.14 L904.65,141.06 L907.96,137.53 L914.23,135.12 L918.87,135.25 L930.7,131.06 L936.03,132.87 L934.61,136.39 L937.28,141.05 L928.9,147.33 L924.51,163.34 L918.42,173.11 L914.83,174.78 L913.79,180.31 L911.24,181.84 L895.7,177.33 L889.89,182.54 L883.22,184.66 L887.15,196.4 L887.18,206.93 L884.47,214.16 L875.24,216.82 L876.71,219.73 Z M639.74,528.45 L637.47,527.98 L640.41,526.58 L639.74,528.45 Z M640.0,523.87 L643.59,523.43 L643.62,527.16 L638.88,526.1 L640.0,523.87 Z M702.96,493.34 L703.32,494.98 L701.35,494.64 L702.96,493.34 Z M740.25,522.23 L737.83,532.79 L729.13,520.74 L726.83,514.18 L727.69,506.54 L740.71,485.58 L748.64,481.9 L753.45,486.48 L745.83,513.84 L740.25,522.23 Z" />
+      </defs>
+      <g class="map-float">
+      <g class="map-extrusion" aria-hidden="true">
+        <use href="#chinaShape" transform="translate(0 34)" />
+        <use href="#chinaShape" transform="translate(0 31)" />
+        <use href="#chinaShape" transform="translate(0 28)" />
+        <use href="#chinaShape" transform="translate(0 25)" />
+        <use href="#chinaShape" transform="translate(0 22)" />
+        <use href="#chinaShape" transform="translate(0 19)" />
+        <use href="#chinaShape" transform="translate(0 16)" />
+        <use href="#chinaShape" transform="translate(0 13)" />
+        <use href="#chinaShape" transform="translate(0 10)" />
+        <use href="#chinaShape" transform="translate(0 7)" />
+        <use href="#chinaShape" transform="translate(0 4)" />
+      </g>
+      <use class="china-shape" href="#chinaShape" filter="url(#mapGlassShadow)" />
+      <use class="china-highlight" href="#chinaShape" aria-hidden="true" />
+      <g class="map-country-label" aria-hidden="true"><text x="470" y="342">中华人民共和国</text></g>
+      <g class="network-lines"><path class="network-line line-1" pathLength="1" d="M 711.68 355.3 Q 486.50 132.52 261.31 200.52" /><path class="network-line line-2" pathLength="1" d="M 711.68 355.3 Q 604.76 273.30 497.85 399.5" /><path class="network-line line-3" pathLength="1" d="M 711.68 355.3 Q 649.20 217.91 586.73 271.91" /><path class="network-line line-4" pathLength="1" d="M 711.68 355.3 Q 728.77 287.30 745.86 391.91" /><path class="network-line line-5" pathLength="1" d="M 711.68 355.3 Q 670.71 273.30 629.74 514.94" /><path class="network-line line-6" pathLength="1" d="M 711.68 355.3 Q 750.99 116.15 790.3 170.15" /><path class="network-line line-7" pathLength="1" d="M 711.68 355.3 Q 594.73 287.30 477.78 486.08" /></g>
+      <g class="network-points"><g><circle class="network-end end-1" cx="261.31" cy="200.52" r="5" /></g><g><circle class="network-end end-2" cx="497.85" cy="399.5" r="5" /></g><g><circle class="network-end end-3" cx="586.73" cy="271.91" r="5" /></g><g><circle class="network-end end-4" cx="745.86" cy="391.91" r="5" /></g><g><circle class="network-end end-5" cx="629.74" cy="514.94" r="5" /></g><g><circle class="network-end end-6" cx="790.3" cy="170.15" r="5" /></g><g><circle class="network-end end-7" cx="477.78" cy="486.08" r="5" /></g></g>
+      <g class="source-node">
+        <circle class="source-halo halo-a" cx="711.68" cy="355.3" r="24" />
+        <circle class="source-halo halo-b" cx="711.68" cy="355.3" r="24" />
+        <circle class="source-core" cx="711.68" cy="355.3" r="9" />
+        <text x="728.68" y="343.3">淮安 · PXiD</text>
+      </g>
+      </g>
+    </svg>
+    <div class="map-review-note">版图视觉示意 · 公开使用前需送审</div></div></div></div>
+  <iframe class="pxid-s6frame" title="Hero 排版预览" hidden></iframe>
+  <template class="pxid-s6tpl" data-v="a"><style>
+  :scope{ --green:#d71920; --red:#d71920; --ink:#0b0b0b; --line:#1d1d1d; --gray:#919191; }
+  *{margin:0;padding:0;box-sizing:border-box;border-radius:0!important}
+  :scope{background: var(--ink);color:#ffffff;}
+  svg text{font-family:inherit}
+  .tag{position:fixed;left:0;top:0;right:0;z-index:99;padding: 12px clamp(14px, 0.2933rem, 30px);font-size:clamp(12px, 0.16rem, 14px);color:#d3d3d3;background: rgba(23,23,23,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .tag b{color:var(--green)}
+  .sec{position:relative;min-height:100vh;overflow:hidden;border-bottom:1px solid var(--line);padding-top: clamp(27px, 0.5867rem, 60px)}
+  .num{position:absolute;left:26px;top:60px;z-index:5;font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.3em;color:#5f5f5f}
+  .eyebrow{font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.42em;color:var(--green);text-transform:uppercase;font-weight:600}
+  .lede{color:var(--gray);font-size:clamp(16px, 0.2133rem, 18px);line-height:1.9}
+  .note{position:absolute;right:26px;bottom:20px;font-size:clamp(12px, 0.16rem, 14px);color:#4f4f4f;letter-spacing:.12em;z-index:6}
+  .bar{width:34px;height:3px;background: var(--green);margin-bottom: clamp(11px, 0.24rem, 24px)}
+  .legend{position:absolute;left:6%;bottom:11%;font-family:ui-monospace,Consolas,monospace;font-size:clamp(12px, 0.16rem, 14px);color:#5f5f5f;letter-spacing:.2em;line-height:2.1;z-index:4}
+  .legend b{color:var(--green);font-weight:600}
+  .china-network-svg{display:block;width:100%;height:100%}
+  @keyframes haloPulse{0%{transform:scale(.35);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+
+  /* ============ M1 明暗聚焦（沿用站内浮雕版图）============ */
+  #m1{background: rgb(23,23,23)}
+  #m1 .stage{position:absolute;inset:0}
+  #m1 .mapsvg{position:absolute;right:13.5%;top:50%;transform:translateY(-50%);height:min(93%,1000px);width:auto;max-width:54%;aspect-ratio:1000/1007}
+  #m1 .relief use{fill:#0e0e0e;stroke:none;opacity:.62}
+  #m1 .dim-side{display:none}
+  #m1 .face{fill:url(#dimFill);stroke:#5c5c5c;stroke-width:.62;stroke-linejoin:round;filter:drop-shadow(0 0 .7px rgba(150,196,206,.42))}
+    /* G3 玻璃提亮（坤哥 2026-09-17 选的档）：在地图 SVG 上做「提亮 + 轻模糊 + 投影」，
+       让灰色地图在黑底上像隔了一层玻璃浮起来 */
+    #m1 .mapsvg{filter:brightness(1.85) saturate(.9) blur(.5px) drop-shadow(0 12px 30px rgba(0,0,0,.55))}
+    /* ② 省份微差分层：34 个 .pv 按 3 档灰度错开，出「拼图」层次 */
+    #m1 .pv:nth-child(3n+2){fill:#484848}
+    #m1 .pv:nth-child(3n){fill:#3c3c3c}
+    #m1 .pv:nth-child(1){fill:#4f4f4f}
+  #m1 .country{fill:rgba(255,255,255,.26);font-size:clamp(20px, 0.44rem, 46px);letter-spacing:.46em;text-anchor:middle;pointer-events:none}
+  #m1 .rt path{fill:none;stroke:rgba(215,25,32,.28);stroke-width:1.4}
+  #m1 .rt circle{fill:#171717;stroke:rgba(215,25,32,.5);stroke-width:1}
+  #m1 .rt{cursor:pointer;transition:opacity .45s}
+  #m1 .rts:hover .rt:not(:hover){opacity:.25}
+  #m1 .rt:hover path{stroke:#171717;stroke-width:2;filter:drop-shadow(0 0 6px rgba(23,23,23,.9))}
+  #m1 .rt:hover circle{fill:#ffffff;stroke:#171717}
+  #m1 .ring{fill:none;stroke:var(--red);stroke-width:1.6}
+  #m1 .halo{fill:none;stroke:var(--red);stroke-width:2;transform-origin:739.0px 400.4px;animation:haloPulse 2.6s ease-out infinite}
+  #m1 .halo.b{animation-delay:1.3s}
+  #m1 .core{fill:var(--red);stroke:#ffffff;stroke-width:2.5}
+  #m1 .srctext{fill:#ffffff;font-size:clamp(11px, 0.24rem, 24px);font-weight:700;letter-spacing:.06em}
+  #m1 .m1txt{position:absolute;left:7%;bottom:12%;z-index:4;max-width:520px}
+  #m1 .m1txt h2{font-size:clamp(45px, 0.96rem, 98px);font-weight:600;letter-spacing:.02em;margin: 14px 0 clamp(11px, 0.24rem, 24px);line-height:1.05}
+
+  /* ============ N1 标准政区图：温和纸地图 + 省界 + 省名 ============ */
+  #n1{
+    background:
+      radial-gradient(circle at 62% 48%, rgba(255,255,255,.085) 0, rgba(255,255,255,.028) 34%, transparent 62%),
+      linear-gradient(145deg,#050505 0%,#1a1a1a 54%,#090909 100%);
+  }
+  #n1 .num{ color:rgba(255,255,255,.34); }
+  #n1 .glow{position:absolute;left:52%;top:46%;width:min(74vw,1080px);aspect-ratio:1.55;border-radius:50%;transform:translate(-42%,-50%);
+    background:radial-gradient(ellipse,rgba(255,255,255,.10),rgba(255,255,255,.026) 48%,transparent 72%);filter:blur(38px);pointer-events:none}
+  #n1 .stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding-right:12.4%}
+  #n1 .mapsvg{height:min(80vh,84%);width:auto;max-width:56%;overflow:visible;
+    filter:drop-shadow(0 42px 74px rgba(0,0,0,.86));
+    opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1.1s cubic-bezier(.22,1,.36,1)}
+  #n1.is-active .mapsvg{opacity:1;transform:translateY(0)}
+  #n1 .p{fill:url(#n1Paper);stroke:#d71920;stroke-width:.9;stroke-opacity:.82;
+    transition:fill .34s ease,stroke .34s ease;cursor:pointer}
+  #n1 .p:hover{fill:#ffffff;stroke-opacity:.95}
+  #n1 .js{fill:url(#n1Js);stroke:#d71920;stroke-width:.9;stroke-opacity:.85}
+  #n1 .js:hover{fill:#171717}
+  #n1 .lbl{fill:#333333;font-size:clamp(12px, 0.16rem, 14px);font-weight:600;text-anchor:middle;pointer-events:none;letter-spacing:.02em}
+  #n1 .lbl.sm{font-size:clamp(12px, 0.16rem, 14px)}
+  #n1 .lbl.js{fill:#ffffff;font-weight:800}
+  #n1 .lbl.sea{fill:rgba(255,255,255,.52);font-weight:500;letter-spacing:.22em}
+  #n1 .country{fill:rgba(255,255,255,.26);font-size:clamp(26px, 0.56rem, 57px);letter-spacing:.72em;text-anchor:middle;transform:translate(-470px,-250px)}
+  #n1 .srctext{fill:#ffffff;font-size:clamp(16px, 0.2133rem, 18px);font-weight:700;paint-order:stroke;stroke:#111111;stroke-width:2.6px}
+  /* 服务线：先画后落点 */
+  #n1 .rt path{fill:none;stroke:#d71920;stroke-width:1.8;stroke-opacity:.9;stroke-linecap:round;
+    stroke-dasharray:1;stroke-dashoffset:1}
+  #n1.is-active .rt path{animation:n1Draw .85s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--i)*.13s + .45s)}
+  @keyframes n1Draw{to{stroke-dashoffset:0}}
+  #n1 .rt circle{fill:#ffffff;stroke:#d71920;stroke-width:1.8;opacity:0}
+  #n1.is-active .rt circle{animation:n1Pop .5s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--i)*.13s + 1.18s)}
+  @keyframes n1Pop{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+  #n1 .rt circle{transform-box:fill-box;transform-origin:center}
+  #n1 .rt{cursor:pointer;transition:opacity .35s ease}
+  #n1 .rts:hover .rt:not(:hover){opacity:.24}
+  #n1 .rt:hover path{stroke:#171717;stroke-width:2.7;stroke-opacity:1;filter:drop-shadow(0 2px 5px rgba(23,23,23,.5))}
+  #n1 .rt:hover circle{fill:#171717;stroke:#ffffff;stroke-width:2.2}
+  #n1 .core{fill:var(--red);stroke:#ffffff;stroke-width:3}
+  #n1 .halo{fill:none;stroke:var(--red);stroke-width:1.8;transform-box:fill-box;transform-origin:center;animation:haloPulse 2.9s ease-out infinite}
+
+  #n1 .n1txt{position:absolute;left:6%;top:50%;transform:translateY(-50%);z-index:4;max-width:430px}
+  #n1 .n1txt h2{font-size:clamp(37px, 0.8rem, 82px);font-weight:600;margin: 14px 0 clamp(16px, 0.2133rem, 18px);line-height:1.1}
+  /* 分列图注 */
+  #n1 .caption{position:absolute;right:5%;bottom:9%;z-index:5;display:flex;gap: clamp(16px, 0.3467rem, 35px);
+    font-family:ui-monospace,Consolas,monospace;font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.2em;color:rgba(255,255,255,.42);
+    opacity:0;transform:translateY(10px);transition:opacity .8s ease .3s,transform .8s cubic-bezier(.22,1,.36,1) .3s}
+  #n1.is-active .caption{opacity:1;transform:translateY(0)}
+  #n1 .caption i{font-style:normal;display:block;margin-bottom: 7px;color:rgba(255,255,255,.24);font-size:clamp(12px, 0.16rem, 14px)}
+  #n1 .caption b{color:rgba(255,255,255,.82);font-weight:600}
+  #n1 .caption .c-red b{color:#d71920}
+  #n1 .rule{position:absolute;right:5%;bottom:calc(9% - 16px);width:min(34%,420px);height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3));z-index:5}
+
+  /* ============ N2 线框政区图：深色描线 + 省界 + 省名 ============ */
+  #n2{
+    background:
+      radial-gradient(circle at 50% 46%, rgba(255,255,255,.075) 0, rgba(255,255,255,.022) 36%, transparent 64%),
+      linear-gradient(145deg,#050505 0%,#171717 54%,#080808 100%);
+  }
+  #n2 .num{ color:rgba(255,255,255,.34); }
+  #n2 .glow{position:absolute;left:50%;top:46%;width:min(70vw,1000px);aspect-ratio:1.5;border-radius:50%;transform:translate(-50%,-50%);
+    background:radial-gradient(ellipse,rgba(255,255,255,.09),rgba(255,255,255,.022) 46%,transparent 70%);filter:blur(40px);pointer-events:none}
+  #n2 .stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding-right:13.2%}
+  #n2 .mapsvg{height:min(74vh,86%);width:auto;max-width:58%;overflow:visible;
+    filter:drop-shadow(0 30px 60px rgba(0,0,0,.7));
+    opacity:0;transition:opacity 1.1s cubic-bezier(.22,1,.36,1)}
+  #n2.is-active .mapsvg{opacity:1}
+  #n2 .p{fill:rgba(255,255,255,.022);stroke:rgba(255,255,255,.26);stroke-width:.8;
+    transition:fill .4s ease,stroke .4s ease;cursor:pointer}
+  #n2 .p:hover{fill:rgba(255,255,255,.085);stroke:rgba(255,255,255,.9)}
+  #n2 .js{fill:rgba(215,25,32,.16);stroke:var(--red);stroke-width:1.4}
+  #n2 .js:hover{fill:rgba(23,23,23,.34);stroke:#171717}
+  #n2 .lbl{fill:rgba(255,255,255,.5);font-size:clamp(12px, 0.16rem, 14px);font-weight:500;text-anchor:middle;pointer-events:none;letter-spacing:.03em}
+  #n2 .lbl.sm{font-size:clamp(12px, 0.16rem, 14px)}
+  #n2 .lbl.js{fill:#d71920;font-weight:700}
+  #n2 .lbl.sea{fill:rgba(255,255,255,.26);letter-spacing:.22em}
+  #n2 .country{fill:rgba(255,255,255,.26);font-size:clamp(22px, 0.4667rem, 48px);letter-spacing:.6em;text-anchor:middle;transform:translate(190px,600px)}
+  /* 线：细虚线勾勒，入场逐条描绘 */
+  #n2 .rt path{fill:none;stroke:rgba(215,25,32,.62);stroke-width:1.4;stroke-linecap:round;
+    stroke-dasharray:1;stroke-dashoffset:1}
+  #n2.is-active .rt path{animation:n1Draw 1.05s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--i)*.14s + .35s)}
+  #n2 .rt circle{fill:#080808;stroke:rgba(255,255,255,.62);stroke-width:1.3;opacity:0}
+  #n2.is-active .rt circle{animation:n1Pop .5s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--i)*.14s + 1.35s)}
+  #n2 .rt circle{transform-box:fill-box;transform-origin:center}
+  #n2 .rt{cursor:pointer;transition:opacity .4s ease}
+  #n2 .rts:hover .rt:not(:hover){opacity:.2}
+  #n2 .rt:hover path{stroke:#171717;stroke-width:2.3;filter:drop-shadow(0 0 7px rgba(23,23,23,.8))}
+  #n2 .rt:hover circle{fill:#171717;stroke:#ffffff}
+  #n2 .core{fill:var(--red);stroke:#ffffff;stroke-width:3}
+  #n2 .halo{fill:none;stroke:var(--red);stroke-width:1.8;transform-box:fill-box;transform-origin:center;animation:haloPulse 2.9s ease-out infinite}
+  #n2 .srctext{fill:#ffffff;font-size:clamp(16px, 0.2133rem, 18px);font-weight:700;letter-spacing:.04em}
+  #n2 .n2txt{position:absolute;left:7%;top:50%;transform:translateY(-50%);z-index:4;max-width:440px}
+  #n2 .n2txt h2{font-size:clamp(30px, 0.64rem, 65px);font-weight:600;margin: 14px 0 clamp(16px, 0.2133rem, 18px);line-height:1.1}
+  #n2 .caption{position:absolute;left:7%;bottom:8%;z-index:5;display:flex;gap: clamp(16px, 0.3467rem, 35px);
+    font-family:ui-monospace,Consolas,monospace;font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.2em;color:rgba(255,255,255,.42)}
+  #n2 .caption i{font-style:normal;display:block;margin-bottom: 7px;color:rgba(255,255,255,.24);font-size:clamp(12px, 0.16rem, 14px)}
+  #n2 .caption b{color:rgba(255,255,255,.82);font-weight:600}
+  #n2 .caption .c-red b{color:#d71920}
+
+  /* ============ N3 三维地球（移植自 PXID 大屏 globe）============ */
+  #n3{
+    background:
+      radial-gradient(circle at 50% 48%, rgba(255,255,255,.07) 0, rgba(255,255,255,.02) 38%, transparent 66%),
+      linear-gradient(145deg,#040404 0%,#131313 54%,#070707 100%);
+  }
+  #n3 .num{ color:rgba(255,255,255,.34); }
+  #n3 .stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding-right:16.8%}
+  #n3 .globe{position:relative;width:min(80vh,48vw);height:min(80vh,48vw);flex:none;
+    opacity:0;transition:opacity 1.2s cubic-bezier(.22,1,.36,1) .25s}
+  #n3.is-active .globe{opacity:1}
+  #n3 .globe canvas{width:100%!important;height:100%!important}
+  #n3 .n3col{position:absolute;left:7%;top:50%;transform:translateY(-50%);z-index:4;max-width:470px}
+  #n3 .n3col h2{font-size:clamp(45px, 0.96rem, 98px);font-weight:600;margin: 14px 0 clamp(16px, 0.2133rem, 18px);line-height:1.1}
+  #n3 .caption{display:flex;gap: clamp(14px, 0.2933rem, 30px);margin-top: clamp(25px, 0.5333rem, 54px);padding-top: clamp(12px, 0.2667rem, 27px);border-top:1px solid rgba(255,255,255,.13);
+    font-family:ui-monospace,Consolas,monospace;font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.2em;color:rgba(255,255,255,.42);
+    opacity:0;transform:translateY(10px);transition:opacity .8s ease .5s,transform .8s cubic-bezier(.22,1,.36,1) .5s}
+  #n3.is-active .caption{opacity:1;transform:translateY(0)}
+  #n3 .caption i{font-style:normal;display:block;margin-bottom: 7px;color:rgba(255,255,255,.24);font-size:clamp(12px, 0.16rem, 14px)}
+  #n3 .caption b{color:rgba(255,255,255,.82);font-weight:600}
+  #n3 .caption .c-red b{color:#d71920}
+
+  @media (max-width:900px){
+    #m1 .m1txt h2{font-size:clamp(28px, 0.6rem, 61px);line-height:1.1}
+    #n1 .n1txt h2,#n2 .n2txt h2,#n3 .n3txt h2{font-size:clamp(26px, 0.56rem, 57px);line-height:1.1}
+    #n1 .caption,#n2 .caption,#n3 .caption{display:none}
+    #n1 .rule{display:none}
+  }
+
+/* ===== 宽屏档（坤哥 4K@150% ≈ 2560 逻辑宽）：字号/地图随宽放大后 gap 比例失控，
+   ≥1920 用大偏移把文字-图形距离再缩 ~40%；<1920 用上面的 1440 校准值 ===== */
+@media (min-width:1920px){
+  #m1 .mapsvg{right:13.5%; max-width:1200px;}
+  #n1 .stage{padding-right:28%;}
+  #n2 .stage{padding-right:29%;}
+  #n3 .stage{padding-right:31%;}
+}
+
+/* 坤哥 09-15：字体描边 / 阴影全部去掉（含源文件自带的），一层压制到底 */
+:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}</style><svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="mapGlassFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f1f1f1" stop-opacity=".98"/><stop offset=".42" stop-color="#b8b8b8" stop-opacity=".96"/><stop offset="1" stop-color="#686868" stop-opacity=".98"/>
+    </linearGradient>
+    <linearGradient id="mapGlassEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".44" stop-color="#d0d0d0" stop-opacity=".92"/><stop offset="1" stop-color="#7b7b7b" stop-opacity=".9"/>
+    </linearGradient>
+    <linearGradient id="mapReliefSide" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#777777"/><stop offset=".48" stop-color="#464646"/><stop offset="1" stop-color="#202020"/>
+    </linearGradient>
+    <linearGradient id="dimFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4c4c4c"/><stop offset="1" stop-color="#2b2b2b"/>
+    </linearGradient>
+    <filter id="mapGlassShadow" x="-30%" y="-35%" width="165%" height="190%">
+      <feDropShadow dx="0" dy="38" stdDeviation="24" flood-color="#000000" flood-opacity=".72"/>
+      <feDropShadow dx="-3" dy="-5" stdDeviation="4" flood-color="#ffffff" flood-opacity=".26"/>
+    </filter>
+    <!-- N1 纸质省域渐变 -->
+    <linearGradient id="n1Paper" x1="0" y1="0" x2=".55" y2="1">
+      <stop offset="0" stop-color="#d71920"/><stop offset=".5" stop-color="#d71920"/><stop offset="1" stop-color="#c8c8c8"/>
+    </linearGradient>
+    <linearGradient id="n1Js" x1="0" y1="0" x2=".4" y2="1">
+      <stop offset="0" stop-color="#d71920"/><stop offset="1" stop-color="#d71920"/>
+    </linearGradient>
+    <!-- 服务线护罩：深色描边，使红线在浅色省域上也清晰 -->
+    <filter id="n1Shield" x="-8%" y="-8%" width="116%" height="116%">
+      <feMorphology operator="dilate" radius="1.6" in="SourceGraphic" result="fat"/>
+      <feFlood flood-color="#1b1b1b" flood-opacity=".5" result="col"/>
+      <feComposite in="col" in2="fat" operator="in" result="halo"/>
+      <feMerge><feMergeNode in="halo"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <path id="chinaShape" d="M595.17,562.15 L596.96,567.26 L591.62,572.79 L588.9,581.04 L583.4,585.61 L575.54,589.09 L563.82,584.28 L563.3,572.6 L572.06,565.66 L570.64,565.54 L571.87,563.81 L584.89,561.21 L590.86,562.39 L591.78,559.93 L595.17,562.15 Z M587.95,545.42 L589.91,545.58 L589.66,547.33 L586.46,546.82 L587.95,545.42 Z M620.33,537.12 L618.63,537.37 L620.39,536.05 L620.33,537.12 Z M622.43,537.7 L622.32,535.11 L623.47,535.41 L622.43,537.7 Z M699.74,493.73 L698.42,494.49 L698.61,492.88 L699.74,493.73 Z M723.22,479.14 L721.5,479.51 L721.81,476.38 L723.48,477.1 L723.22,479.14 Z M743.73,439.2 L742.01,439.56 L743.07,437.41 L743.73,439.2 Z M758.71,410.69 L754.81,409.93 L754.03,407.96 L758.54,409.1 L758.71,410.69 Z M752.5,387.47 L747.58,386.6 L743.15,382.71 L752.5,387.47 Z M876.71,219.73 L872.69,216.55 L872.6,214.32 L867.69,212.7 L864.82,221.06 L859.31,221.58 L853.72,227.28 L841.13,228.05 L844.63,233.83 L842.62,237.16 L828.72,234.98 L825.5,231.37 L822.46,232.04 L811.65,244.5 L795.89,251.26 L788.33,258.18 L784.65,260.66 L778.13,260.04 L766.51,264.31 L754.21,272.62 L749.84,273.38 L749.45,275.48 L742.47,277.51 L741.66,274.64 L749.87,271.78 L749.13,270.09 L751.86,267.56 L744.08,267.59 L743.96,265.16 L747.55,263.73 L747.55,260.6 L751.61,258.99 L758.41,250.01 L752.1,243.44 L750.58,245.39 L742.63,244.55 L732.66,254.74 L717.06,262.0 L711.13,270.66 L701.39,272.41 L697.71,269.99 L695.2,270.53 L691.63,275.67 L690.78,279.13 L693.78,283.89 L697.33,285.84 L710.6,287.97 L712.73,293.17 L710.78,298.78 L715.58,301.71 L722.36,301.46 L730.26,294.35 L729.48,293.5 L736.54,291.14 L749.31,296.82 L755.28,295.78 L764.03,297.69 L760.87,302.78 L761.91,304.62 L759.35,306.36 L753.5,304.43 L740.9,309.71 L737.42,309.39 L738.63,312.25 L735.99,312.72 L734.94,317.03 L731.43,318.18 L730.49,315.53 L728.42,315.93 L727.14,317.19 L729.87,319.24 L717.62,329.61 L713.83,336.49 L714.34,338.01 L729.62,345.22 L738.28,364.32 L738.02,369.71 L745.03,373.3 L745.92,376.62 L752.4,382.54 L752.55,384.26 L749.89,384.13 L745.17,381.9 L739.75,381.74 L733.25,378.15 L726.31,380.72 L736.05,380.0 L737.09,382.49 L749.6,390.09 L752.71,396.21 L746.13,398.14 L737.57,404.75 L732.24,404.24 L728.58,406.47 L732.88,405.53 L734.87,408.11 L743.83,405.52 L749.85,410.45 L755.65,412.1 L747.39,417.96 L753.62,416.12 L753.29,423.27 L750.41,421.43 L747.11,422.39 L749.87,426.04 L747.87,426.36 L749.63,427.58 L746.94,430.77 L748.87,436.08 L744.03,437.14 L742.22,435.55 L739.53,439.95 L736.51,440.36 L737.73,442.16 L734.21,446.88 L734.5,449.44 L729.79,454.23 L727.04,460.69 L724.1,461.62 L723.27,458.04 L721.64,459.82 L719.89,458.97 L724.09,465.82 L718.09,470.06 L713.46,469.04 L716.22,471.67 L720.33,470.84 L719.19,477.1 L720.38,480.14 L714.04,479.25 L715.55,482.55 L711.13,482.9 L710.15,487.16 L706.25,488.58 L706.54,491.83 L698.37,491.75 L697.21,493.95 L694.86,494.07 L697.92,497.53 L691.79,503.75 L689.47,503.69 L688.05,507.52 L686.95,505.61 L683.97,507.67 L681.5,506.64 L680.79,509.58 L677.47,511.08 L678.47,512.24 L676.16,513.73 L675.2,517.28 L672.06,516.74 L666.33,519.47 L663.29,518.69 L661.26,520.73 L656.92,519.23 L652.02,522.28 L649.12,520.18 L647.72,523.61 L643.59,523.43 L640.0,523.87 L634.32,518.56 L634.34,514.52 L632.89,514.91 L630.19,517.8 L633.37,522.63 L633.31,528.23 L627.58,530.51 L626.71,528.49 L624.78,533.06 L622.7,532.49 L619.51,535.04 L616.26,531.98 L615.48,535.57 L610.3,533.93 L605.41,538.35 L597.01,539.07 L590.56,543.59 L588.32,541.7 L584.64,547.68 L587.67,549.3 L586.92,551.82 L589.77,554.16 L587.37,557.55 L580.75,556.5 L581.98,555.22 L577.6,548.1 L577.86,544.84 L581.44,539.54 L577.94,538.87 L576.22,536.35 L575.9,538.67 L570.23,540.37 L569.55,537.87 L564.82,537.26 L562.27,533.15 L560.64,533.1 L560.96,537.22 L558.42,536.3 L557.29,538.36 L553.37,539.12 L550.31,536.89 L544.46,537.59 L539.01,532.8 L534.6,531.97 L532.98,524.03 L536.27,519.82 L532.86,517.85 L529.09,518.62 L527.22,516.91 L522.84,517.63 L514.7,511.22 L508.81,514.39 L506.27,519.16 L501.75,520.95 L498.47,519.5 L495.58,523.45 L490.97,519.77 L489.15,522.72 L486.76,519.96 L481.82,524.84 L474.49,520.24 L473.57,520.89 L471.14,524.57 L470.27,525.35 L469.57,525.89 L465.48,525.75 L464.3,524.2 L464.0,524.13 L463.55,524.26 L463.03,524.63 L462.67,525.49 L462.3,526.68 L461.55,527.45 L460.93,527.8 L463.97,534.28 L464.07,535.02 L464.12,537.64 L463.77,542.05 L464.89,543.61 L464.64,543.74 L463.85,544.46 L463.51,544.56 L461.18,543.28 L457.44,544.04 L456.96,543.84 L456.63,543.44 L456.44,542.61 L456.56,541.64 L455.92,540.65 L456.23,538.91 L455.4,538.22 L454.55,535.36 L447.74,539.67 L441.19,539.54 L438.22,535.31 L437.89,531.22 L427.5,529.74 L432.01,517.08 L430.73,515.41 L422.78,513.55 L422.33,506.98 L420.1,502.71 L422.37,499.43 L413.45,499.59 L404.16,502.62 L406.22,497.8 L403.68,493.8 L404.43,489.5 L406.64,488.06 L407.81,482.26 L410.55,481.64 L412.45,477.41 L415.19,477.17 L419.81,472.96 L418.49,469.79 L420.23,468.02 L420.99,458.96 L419.74,447.01 L416.89,445.72 L414.68,447.35 L411.28,437.69 L404.65,432.66 L403.78,432.76 L402.25,435.14 L401.17,436.65 L400.67,437.22 L400.4,439.19 L400.99,440.78 L396.77,444.16 L395.56,445.08 L384.51,439.88 L377.96,438.73 L369.01,444.34 L354.08,446.76 L347.5,450.78 L343.12,458.95 L335.04,458.23 L325.1,457.6 L325.44,456.99 L325.36,456.08 L324.81,455.1 L324.36,454.5 L324.27,454.17 L324.42,453.47 L324.83,452.45 L325.59,451.28 L325.03,450.17 L324.25,448.86 L323.68,448.74 L322.27,449.04 L320.71,448.98 L318.58,447.24 L319.11,444.16 L319.25,441.68 L315.25,440.14 L313.96,439.32 L313.29,439.43 L311.16,440.9 L310.35,440.97 L305.97,439.42 L304.74,439.32 L302.56,439.44 L300.77,439.29 L300.49,439.09 L300.92,437.22 L300.7,436.81 L298.88,436.29 L297.21,435.93 L295.44,435.79 L294.25,436.05 L293.09,436.62 L292.13,437.66 L290.73,438.11 L289.07,438.88 L288.27,439.6 L279.82,450.9 L278.98,450.19 L278.0,449.17 L277.78,447.78 L278.94,444.05 L279.21,442.51 L278.56,440.41 L275.33,439.1 L273.15,440.34 L270.99,440.99 L269.06,441.29 L268.6,441.53 L268.61,442.48 L265.04,442.24 L261.63,443.32 L256.87,443.22 L254.73,442.97 L252.99,441.6 L251.75,440.99 L250.44,440.53 L249.13,440.18 L248.68,439.44 L248.27,439.07 L247.18,438.95 L246.32,439.22 L245.78,441.07 L244.23,441.6 L243.08,441.13 L241.49,440.18 L240.33,438.78 L239.5,439.24 L239.29,441.51 L238.29,441.87 L237.71,441.6 L237.25,440.67 L236.08,438.46 L234.92,437.16 L233.76,436.3 L229.92,436.32 L227.07,436.07 L225.79,435.71 L225.3,434.86 L225.77,433.16 L226.33,431.83 L226.31,431.52 L225.84,431.36 L225.02,431.25 L221.95,432.1 L221.12,432.0 L212.97,426.66 L212.21,424.77 L211.53,422.95 L211.15,421.98 L210.01,421.47 L208.78,421.08 L203.73,422.54 L197.59,416.02 L184.19,409.17 L181.65,405.17 L178.94,404.63 L175.89,404.25 L172.67,405.01 L170.34,408.72 L169.23,409.53 L166.48,406.53 L164.88,405.72 L155.09,401.5 L155.32,399.75 L151.27,396.64 L147.54,395.47 L143.59,393.97 L139.55,388.83 L134.34,390.03 L134.5,386.59 L133.62,383.7 L134.08,380.0 L130.79,376.48 L130.21,375.19 L129.66,372.67 L129.27,371.86 L134.24,371.28 L134.48,372.17 L136.85,374.32 L140.45,372.2 L140.1,364.55 L139.49,363.77 L139.95,361.96 L139.63,361.13 L137.28,359.3 L136.08,358.02 L134.92,352.28 L134.1,349.18 L137.59,345.91 L137.1,344.03 L136.08,343.45 L128.37,340.17 L125.95,335.0 L124.77,332.14 L124.29,326.9 L120.8,326.66 L115.74,326.97 L113.57,326.47 L110.63,325.8 L107.61,324.87 L106.0,324.14 L105.44,323.88 L104.07,323.11 L103.09,322.45 L102.91,320.72 L102.21,320.85 L100.54,321.47 L98.62,321.87 L97.56,321.88 L97.13,321.6 L96.02,319.26 L93.75,318.26 L94.64,313.19 L94.32,312.04 L94.05,311.08 L92.72,309.13 L91.74,308.44 L90.24,307.73 L88.9,307.47 L87.27,307.99 L86.75,307.79 L86.07,305.58 L85.64,305.13 L81.44,304.01 L79.94,304.29 L79.08,304.53 L76.26,303.27 L74.95,303.25 L74.1,303.47 L73.88,303.35 L73.47,302.94 L71.73,301.72 L71.67,301.42 L74.35,300.22 L75.93,299.76 L76.75,299.39 L76.93,299.47 L77.34,300.03 L78.38,300.39 L79.11,300.29 L82.37,297.95 L79.16,294.68 L77.98,281.63 L70.31,278.6 L66.7,280.42 L63.49,279.4 L61.98,275.65 L63.54,273.91 L60.71,269.95 L61.12,267.41 L61.06,266.61 L63.8,266.01 L65.0,264.65 L65.11,264.22 L64.65,262.58 L64.04,261.85 L63.98,261.28 L64.28,260.85 L64.68,260.1 L65.46,258.57 L66.22,257.59 L78.24,253.25 L77.82,251.73 L78.31,250.91 L78.75,250.75 L80.74,251.42 L82.27,251.35 L84.13,250.95 L88.14,248.71 L88.64,248.75 L90.38,253.6 L93.17,253.64 L98.71,251.7 L99.57,252.89 L100.69,252.32 L101.89,251.42 L103.29,249.47 L103.93,248.18 L104.18,246.97 L104.49,246.4 L105.16,245.82 L106.82,243.32 L108.02,242.69 L109.15,242.46 L117.68,243.16 L119.66,242.68 L121.03,242.21 L123.06,242.28 L125.45,241.91 L128.64,238.78 L128.88,237.41 L130.03,236.71 L134.33,234.55 L142.22,231.16 L149.0,229.4 L150.06,227.93 L151.06,227.64 L155.45,227.37 L155.72,227.2 L155.88,226.96 L155.35,224.98 L155.25,216.71 L160.08,214.6 L157.95,212.02 L163.62,210.22 L157.45,196.01 L159.26,186.63 L150.52,184.06 L153.2,182.2 L176.61,176.99 L180.23,179.85 L184.85,178.97 L188.5,180.39 L189.79,175.85 L185.54,173.26 L195.78,149.09 L209.93,152.37 L219.25,152.34 L220.97,154.49 L230.98,150.95 L233.45,148.05 L231.57,138.01 L234.78,130.88 L246.24,128.7 L249.96,120.79 L257.33,120.24 L258.68,120.38 L260.1,119.68 L263.64,119.02 L264.38,119.08 L265.21,121.54 L263.36,123.34 L264.63,124.71 L267.44,125.56 L267.9,125.99 L266.75,128.3 L271.48,129.56 L272.97,130.6 L274.45,130.89 L275.17,131.91 L275.3,133.39 L276.81,134.14 L279.06,135.18 L280.2,135.38 L282.06,136.69 L288.25,136.29 L289.42,136.67 L292.53,139.36 L293.29,139.41 L294.43,139.09 L295.12,138.46 L296.11,138.59 L297.19,140.6 L298.45,141.25 L300.2,141.65 L300.45,141.97 L301.81,144.26 L302.83,147.59 L304.94,150.4 L305.97,151.86 L307.17,152.14 L308.18,152.61 L308.77,153.69 L309.84,155.73 L308.78,163.0 L309.3,164.42 L310.0,165.51 L310.07,166.56 L305.2,174.32 L308.29,179.32 L310.76,178.99 L318.43,181.14 L330.46,182.16 L332.68,182.13 L335.68,181.75 L346.12,183.14 L363.26,192.16 L372.41,193.26 L372.06,196.89 L374.93,198.19 L379.71,208.48 L387.25,216.92 L399.01,215.87 L431.44,219.23 L438.84,217.58 L440.31,217.68 L446.51,218.5 L454.73,219.49 L460.51,219.68 L461.71,219.91 L462.87,220.27 L467.36,224.59 L469.99,225.46 L475.99,226.47 L483.12,227.77 L492.27,231.64 L496.38,230.95 L500.79,230.2 L503.56,229.73 L503.56,233.05 L508.75,233.28 L510.49,234.01 L511.48,233.7 L512.41,232.98 L513.58,231.84 L515.26,231.34 L523.19,227.96 L536.13,223.48 L556.21,221.07 L563.61,221.54 L572.97,221.21 L574.45,220.94 L588.17,216.11 L596.87,207.49 L609.36,202.34 L610.13,200.3 L602.53,191.91 L609.64,181.32 L611.57,181.06 L612.72,181.34 L617.0,181.41 L618.26,182.13 L619.66,183.55 L621.24,184.07 L626.15,185.18 L629.75,185.46 L632.72,185.91 L633.86,186.16 L634.8,185.89 L638.01,183.87 L640.21,183.17 L640.93,182.74 L645.78,179.22 L647.81,176.37 L650.37,175.92 L652.95,176.55 L656.44,176.37 L663.88,175.34 L671.28,171.07 L671.9,170.21 L671.73,169.45 L671.5,168.83 L676.51,162.71 L680.76,161.22 L687.56,161.61 L687.9,161.16 L687.89,160.48 L688.41,158.94 L688.6,158.44 L689.06,158.2 L690.62,158.17 L693.41,159.24 L698.14,156.98 L699.37,156.8 L701.55,156.22 L702.92,156.43 L705.44,156.6 L706.42,156.45 L707.48,156.6 L709.22,155.56 L710.84,155.95 L713.78,157.41 L716.21,157.78 L718.25,157.59 L720.35,157.93 L721.59,157.9 L722.17,157.58 L723.89,156.9 L724.33,154.08 L721.65,149.64 L712.63,141.98 L711.71,141.51 L709.74,140.91 L708.01,140.41 L707.02,139.43 L705.26,137.59 L704.27,136.97 L693.8,136.91 L687.81,142.01 L686.88,141.8 L683.78,139.67 L682.09,139.21 L681.37,138.96 L679.35,138.71 L677.79,138.79 L675.81,139.17 L673.87,139.1 L673.0,138.86 L671.76,138.88 L669.52,139.93 L668.36,141.11 L666.99,141.49 L662.95,138.63 L661.64,134.74 L663.28,133.9 L665.37,132.96 L665.53,131.47 L665.46,129.81 L665.87,127.96 L678.24,109.03 L695.31,113.74 L703.59,108.71 L715.18,105.34 L716.42,102.11 L713.8,100.18 L726.75,82.04 L736.54,74.51 L735.2,67.37 L726.76,66.36 L727.15,64.02 L739.92,56.46 L777.51,52.48 L794.78,58.75 L798.55,57.69 L806.78,60.14 L816.71,70.47 L825.07,89.64 L830.55,95.6 L830.98,101.03 L834.61,103.18 L834.04,109.36 L840.47,112.9 L850.57,112.42 L855.75,115.85 L861.96,115.63 L871.96,123.19 L877.08,123.65 L877.07,127.58 L880.68,131.54 L879.65,136.44 L882.94,141.14 L904.65,141.06 L907.96,137.53 L914.23,135.12 L918.87,135.25 L930.7,131.06 L936.03,132.87 L934.61,136.39 L937.28,141.05 L928.9,147.33 L924.51,163.34 L918.42,173.11 L914.83,174.78 L913.79,180.31 L911.24,181.84 L895.7,177.33 L889.89,182.54 L883.22,184.66 L887.15,196.4 L887.18,206.93 L884.47,214.16 L875.24,216.82 L876.71,219.73 Z M639.74,528.45 L637.47,527.98 L640.41,526.58 L639.74,528.45 Z M640.0,523.87 L643.59,523.43 L643.62,527.16 L638.88,526.1 L640.0,523.87 Z M702.96,493.34 L703.32,494.98 L701.35,494.64 L702.96,493.34 Z M740.25,522.23 L737.83,532.79 L729.13,520.74 L726.83,514.18 L727.69,506.54 L740.71,485.58 L748.64,481.9 L753.45,486.48 L745.83,513.84 L740.25,522.23 Z"/>
+  </defs>
+</svg>
+<section class="sec" id="m1">
+  
+  <div class="stage">
+    <svg class="mapsvg" viewBox="0 0 1000 1007" style="aspect-ratio:1000 / 1007" role="img" aria-label="中华人民共和国 · 淮安 PXID 服务连接示意（含南海诸岛、台湾省）">
+      <defs>
+        <g id="cnMap"><path class="pv" d="M711.9 260.5L713.2 260.6L714.2 258.6L705.6 257.9L701.6 253.9L700.5 250.9L699.7 252.6L697.4 252.5L697.7 254.1L695.5 253.5L697.3 256.8L694.0 256.3L692.6 258.9L686.0 261.3L689.5 266.9L687.5 269.2L686.3 268.7L681.1 271.6L680.7 273.2L682.9 275.9L680.9 276.5L681.5 279.2L686.8 282.0L688.5 280.2L693.2 280.4L697.0 283.4L696.5 281.7L698.5 280.3L702.8 280.3L704.7 278.7L705.4 276.6L702.7 274.4L702.7 271.5L706.6 271.6L711.9 269.5L712.5 267.6L709.9 264.8L710.6 260.9Z"><title>北京市</title></path><path class="pv" d="M718.6 284.2L720.4 284.0L721.4 280.7L718.7 280.2L717.8 281.6L716.6 280.2L714.6 273.3L715.1 272.2L719.1 272.3L715.1 267.5L713.0 267.2L709.3 270.9L708.8 274.7L710.3 275.5L708.7 275.9L708.7 279.7L705.6 279.3L705.1 278.1L703.2 279.9L702.7 282.9L704.2 283.5L703.3 284.8L704.4 285.5L704.8 290.0L702.2 291.6L702.1 297.2L707.3 298.7L708.0 300.6L709.7 299.5L710.3 301.2L718.0 298.7L716.7 295.7L720.0 295.2L720.4 289.8L723.5 287.6L719.3 284.8L714.9 285.5L716.0 283.8L717.6 284.1Z"><title>天津市</title></path><path class="pv" d="M713.8 259.2L709.6 262.1L709.9 264.8L711.9 267.6L715.1 267.5L718.8 271.0L718.9 272.9L715.1 272.2L714.6 273.3L716.6 280.2L717.8 281.6L718.7 280.2L721.4 280.7L719.4 285.1L722.8 286.5L722.9 288.2L726.1 291.6L730.4 294.1L732.3 292.8L731.8 289.6L737.9 288.7L737.5 289.8L743.1 285.0L744.6 277.5L747.4 276.0L747.5 274.4L752.8 273.0L750.6 270.1L750.8 268.0L749.1 267.5L747.8 261.2L742.8 261.3L741.0 259.5L741.7 258.5L739.6 258.9L736.2 255.7L737.1 252.9L738.7 252.8L737.7 251.1L740.0 250.2L742.6 245.8L736.9 246.1L736.1 244.6L728.1 245.2L727.4 241.0L724.6 237.4L725.3 235.8L727.2 236.6L727.9 235.2L726.3 231.6L727.3 230.9L724.3 231.3L724.2 228.6L722.1 227.4L723.4 226.1L722.8 224.3L718.9 219.6L713.9 220.0L712.5 222.8L707.8 222.3L704.9 224.0L704.6 228.2L702.8 228.0L704.4 230.2L702.9 232.5L699.0 233.5L695.0 232.1L691.6 236.5L688.6 233.2L687.3 233.3L679.4 237.8L679.9 240.0L677.0 240.7L671.5 240.1L671.6 235.8L672.7 235.1L671.5 230.1L666.6 229.4L665.3 230.8L665.8 232.4L663.2 233.0L660.8 236.3L661.2 241.8L658.0 241.5L655.5 243.5L657.8 247.5L654.6 250.2L658.4 253.6L658.2 255.5L662.1 260.3L662.6 264.7L666.1 265.3L665.1 266.8L659.1 268.3L658.9 270.8L657.3 269.9L656.0 271.9L658.3 273.9L660.9 273.8L661.0 275.0L663.9 274.9L664.1 279.2L666.7 280.7L664.5 286.1L665.2 287.9L663.1 290.8L659.3 291.2L658.3 289.5L655.8 290.9L653.7 293.1L654.9 297.1L650.4 301.1L650.1 306.9L654.8 308.9L658.2 317.1L657.4 318.2L659.8 318.8L653.8 329.3L653.8 335.3L652.6 334.8L652.3 336.6L648.8 338.3L650.3 342.5L653.1 345.2L663.1 347.3L667.1 350.1L672.3 349.6L672.3 351.4L675.8 348.3L678.8 350.7L681.6 349.5L678.2 342.5L681.5 337.2L684.8 336.2L689.6 325.6L693.8 325.1L693.6 322.8L695.4 320.7L697.0 322.9L703.0 315.4L713.3 315.3L715.7 310.9L718.7 309.6L721.8 304.8L718.9 304.8L716.6 299.7L710.3 301.2L709.7 299.5L708.0 300.6L707.3 298.7L702.1 297.2L702.2 291.6L704.8 290.0L704.4 285.5L703.3 284.8L704.2 283.5L702.7 282.9L703.2 279.9L698.5 280.3L696.5 281.7L697.0 283.4L693.2 280.4L688.5 280.2L686.0 281.9L684.6 279.9L682.1 280.3L680.9 277.2L682.9 275.9L680.7 273.2L681.1 271.6L686.3 268.7L687.5 269.2L689.5 266.9L686.0 261.3L692.6 258.9L694.0 256.3L697.3 256.8L695.5 253.5L697.7 254.1L697.4 252.5L699.7 252.6L700.0 251.1L705.6 257.9L714.3 259.4ZM709.6 270.5L703.5 271.2L702.3 272.8L704.9 275.3L704.4 278.5L709.1 279.3L708.7 275.9L710.3 275.5L708.8 274.7L709.3 270.9ZM718.9 284.7L715.5 284.1L714.9 285.5L718.3 285.1Z"><title>河北省</title></path><path class="pv" d="M598.7 380.5L605.9 380.2L607.5 377.9L611.2 376.4L618.1 375.7L621.9 371.3L626.0 371.4L626.0 366.9L637.6 368.4L641.1 366.6L641.2 365.3L643.3 365.9L644.3 363.5L646.2 364.0L649.4 361.9L650.2 359.4L651.4 359.8L650.7 356.1L652.0 355.7L653.1 345.2L650.3 342.5L648.8 338.3L652.3 336.6L652.6 334.8L653.8 335.3L653.8 329.3L659.8 318.8L657.4 318.2L658.2 317.1L654.8 308.9L650.1 306.9L650.4 301.1L654.9 297.1L653.7 293.1L655.8 290.9L658.3 289.5L659.3 291.2L663.1 290.8L665.2 287.9L664.5 286.1L666.7 280.7L664.1 279.2L663.9 274.9L661.0 275.0L660.9 273.8L658.3 273.9L656.0 271.9L657.3 269.9L658.9 270.8L659.1 268.3L665.1 266.8L666.1 265.3L662.6 264.7L662.1 260.3L659.7 257.4L658.5 258.0L658.5 261.6L655.1 262.9L654.2 261.8L650.4 265.2L646.4 265.8L645.3 263.9L641.8 264.8L637.1 268.8L632.4 266.2L630.1 267.0L624.5 276.3L624.0 279.8L621.5 280.4L616.9 279.0L614.6 283.6L611.1 284.1L612.8 286.2L611.0 291.0L608.5 292.9L606.8 303.2L600.8 308.5L601.0 313.2L604.5 316.9L605.5 321.2L604.6 323.4L603.0 323.7L603.8 326.6L598.8 332.0L599.0 338.9L600.6 340.8L599.8 349.2L602.5 359.8L596.3 374.9L597.4 380.3Z"><title>山西省</title></path><path class="pv" d="M384.3 216.1L395.2 239.0L391.7 243.3L397.3 250.2L403.1 253.7L403.3 260.8L407.9 258.6L407.0 257.2L408.6 256.7L410.8 260.0L410.6 258.0L413.7 256.5L415.6 258.6L416.8 255.0L423.2 255.2L424.9 253.5L432.0 254.6L434.1 257.8L433.0 266.6L427.6 271.9L421.1 274.5L427.3 275.0L434.3 278.5L435.5 282.0L438.3 282.6L438.3 284.2L443.9 284.1L443.8 291.7L445.9 293.3L450.2 291.8L449.7 293.4L451.8 296.7L456.2 299.2L459.1 299.1L463.9 294.4L460.0 290.5L461.1 290.0L470.0 287.1L479.0 290.3L484.5 285.6L492.8 283.0L496.6 283.8L495.9 286.3L498.3 292.5L492.9 299.4L485.7 304.2L487.6 309.2L484.8 311.6L485.5 315.1L490.0 316.8L498.1 324.2L516.5 318.3L521.1 318.4L521.5 316.8L523.7 316.3L525.0 312.2L523.8 309.9L525.4 306.4L525.2 299.4L527.1 294.1L530.0 289.2L532.2 289.3L532.2 287.0L535.9 286.8L537.4 284.7L540.3 284.8L540.5 288.0L543.4 291.7L539.1 297.9L537.4 304.5L535.4 305.9L542.9 309.7L546.9 309.2L551.0 312.4L550.5 313.4L559.8 316.6L560.5 319.4L572.7 318.7L573.0 311.4L575.3 313.9L577.5 311.9L575.3 308.2L577.2 303.6L582.3 299.7L581.8 298.2L586.5 295.2L588.7 291.1L591.3 290.1L591.0 286.8L591.9 288.0L596.1 286.6L595.0 283.1L598.8 286.0L601.1 284.6L602.7 286.9L607.0 282.0L611.0 280.5L610.2 284.7L614.3 283.8L616.9 279.0L621.5 280.4L624.0 279.8L624.5 276.3L630.1 267.0L632.4 266.2L637.1 268.8L641.8 264.8L645.3 263.9L646.4 265.8L649.4 265.5L654.2 261.8L655.1 262.9L658.5 261.6L658.5 258.0L659.7 257.4L658.4 253.6L654.6 250.2L657.8 247.5L655.4 243.8L658.0 241.5L661.2 241.8L660.8 236.3L663.2 233.0L665.8 232.4L665.3 230.8L666.6 229.4L671.5 230.1L672.7 235.1L671.6 235.8L671.5 240.1L677.0 240.7L679.9 240.0L679.4 237.8L687.3 233.3L688.6 233.2L691.6 236.5L695.0 232.1L699.0 233.5L702.9 232.5L704.4 230.2L702.8 228.0L704.6 228.2L704.9 224.0L707.8 222.3L712.5 222.8L713.9 220.0L718.9 219.6L722.8 224.3L723.4 226.1L722.1 227.4L724.2 228.6L724.3 231.3L727.3 230.9L726.3 231.6L727.9 235.2L727.2 236.6L725.3 235.8L724.6 237.4L727.4 241.0L728.6 245.9L736.1 244.6L736.9 246.1L741.9 246.4L744.8 243.7L744.6 240.8L745.5 240.7L743.4 236.3L744.9 230.3L742.5 228.0L746.8 224.3L748.7 227.0L752.3 227.7L756.5 238.1L759.3 233.6L762.3 231.7L762.5 229.9L769.3 226.6L772.3 227.0L777.4 222.5L781.0 221.7L782.5 223.3L785.6 220.9L786.4 218.2L790.7 218.3L790.7 217.3L793.8 218.3L794.9 216.9L793.1 215.4L794.5 215.1L801.2 217.8L807.3 215.4L806.4 214.8L807.8 212.1L812.9 211.9L815.0 206.5L815.0 204.6L810.4 203.8L808.7 202.1L808.6 200.9L811.0 201.0L810.5 200.0L812.3 199.3L809.0 191.3L809.9 188.7L805.7 184.6L805.6 181.7L798.3 186.2L791.8 186.8L792.0 182.3L789.5 180.3L790.0 177.3L789.0 177.1L790.1 176.5L788.2 173.6L791.3 166.3L789.8 165.9L790.1 163.0L787.4 161.7L786.9 157.9L781.6 156.8L784.4 154.3L783.5 151.8L784.8 151.3L791.5 155.8L794.6 153.4L795.6 156.1L796.4 155.4L799.4 157.7L800.8 153.5L800.3 150.3L804.4 149.8L806.5 146.8L803.8 143.1L803.7 140.2L813.4 137.9L813.4 133.9L811.8 135.2L812.2 132.8L808.5 131.7L810.2 133.0L809.7 135.0L807.2 134.7L806.3 136.9L803.7 137.1L802.1 135.6L801.9 132.5L800.0 132.2L801.2 130.3L797.4 129.2L794.2 124.7L797.0 120.7L806.2 116.0L808.5 112.6L813.0 110.7L824.1 100.9L827.6 108.2L826.6 109.9L828.5 108.7L828.3 100.5L833.0 89.2L834.6 87.9L838.0 89.0L839.7 87.8L840.5 82.5L838.2 78.4L839.7 78.1L839.2 72.3L841.4 70.2L840.3 69.4L843.4 67.2L844.8 63.1L849.6 60.2L848.4 56.5L852.3 54.0L853.3 50.6L841.8 38.9L838.2 38.2L833.9 43.8L830.0 44.9L827.8 43.8L826.5 46.0L823.7 44.5L818.7 45.4L815.2 43.5L814.4 45.0L810.8 46.0L803.7 45.2L801.3 41.9L799.2 31.8L797.5 30.0L800.2 26.3L795.1 25.4L794.6 23.5L790.1 21.1L784.8 25.7L782.7 25.0L781.5 22.5L774.1 19.3L780.7 14.8L784.4 10.1L779.3 4.5L769.2 5.4L759.7 13.9L755.4 15.8L756.1 19.6L762.4 18.4L766.8 20.6L765.1 24.9L767.7 28.2L765.6 32.9L756.3 37.8L754.0 44.2L751.0 47.2L751.1 49.6L746.7 53.9L746.9 56.2L740.7 63.7L744.5 64.3L744.4 68.2L740.1 71.8L731.8 72.9L719.3 81.1L701.6 74.6L691.2 95.1L686.7 101.3L687.1 106.4L682.3 108.5L683.2 113.2L689.0 118.0L694.3 114.1L697.3 114.9L702.8 113.7L707.7 115.2L712.4 118.8L719.4 111.3L731.7 111.8L735.0 116.2L740.9 118.4L741.1 120.9L744.6 122.1L743.9 123.1L750.3 127.8L753.7 133.6L753.5 138.3L751.7 138.1L749.7 140.0L744.8 139.7L740.7 138.9L737.3 136.2L735.2 138.0L727.6 136.9L718.4 141.3L715.9 139.7L713.0 140.1L712.2 144.6L703.5 144.1L699.5 145.9L694.4 152.4L694.6 156.3L692.8 158.0L690.5 158.1L685.1 162.6L679.7 164.0L669.6 163.1L666.4 164.1L665.0 167.6L659.4 172.7L651.5 177.0L638.8 175.1L632.2 170.4L625.1 170.0L621.2 172.5L615.5 184.7L619.6 190.7L622.9 193.1L624.2 198.1L621.7 198.5L618.0 202.1L609.1 205.4L599.7 216.4L581.1 223.3L576.7 222.9L573.8 224.1L564.0 222.8L559.1 224.0L551.4 222.8L523.4 233.1L515.1 237.0L511.5 240.4L510.1 239.0L503.7 238.8L503.8 234.6L493.0 236.0L485.7 234.4L474.2 229.0L463.8 227.4L459.5 221.9L444.2 218.6L435.5 218.2L434.6 219.3L422.3 220.7L386.1 216.4Z"><title>内蒙古自治区</title></path><path class="pv" d="M812.3 276.4L821.5 275.7L822.3 277.3L825.5 270.6L831.9 264.7L834.7 262.5L836.8 262.8L836.3 261.5L840.6 259.0L842.9 259.4L845.6 256.4L847.2 256.8L847.6 254.8L845.7 253.5L848.9 248.8L845.0 244.1L843.3 238.6L841.2 238.5L840.9 235.6L840.9 232.6L844.0 229.3L841.1 229.1L840.9 226.2L838.9 225.9L839.1 223.5L837.2 222.0L837.7 219.6L836.3 219.4L835.7 215.9L834.0 216.2L834.2 209.3L827.4 215.1L825.9 214.4L827.0 212.8L825.3 212.0L826.8 210.5L824.3 207.3L820.4 206.4L816.6 202.2L812.9 211.9L807.8 212.1L806.4 214.8L807.3 215.4L801.2 217.8L794.5 215.1L793.1 215.4L794.9 216.9L793.8 218.3L790.7 217.3L790.7 218.3L786.4 218.2L785.6 220.9L782.5 223.3L781.0 221.7L777.4 222.5L772.3 227.0L769.3 226.6L762.5 229.9L762.3 231.7L759.3 233.6L756.5 238.1L752.3 227.7L748.7 227.0L746.8 224.3L743.2 226.8L742.5 228.0L744.9 230.3L743.4 236.3L745.2 242.6L740.0 250.2L737.7 251.1L738.7 252.8L737.1 252.9L736.2 255.7L739.6 258.9L741.7 258.5L741.0 259.5L742.8 261.3L747.8 261.2L749.1 267.5L750.8 268.0L750.6 270.1L752.5 272.4L762.9 268.2L765.0 263.0L768.4 258.7L771.7 258.0L770.7 256.0L772.6 256.2L773.2 254.7L778.3 255.5L779.3 254.5L780.1 255.8L784.4 254.2L786.6 258.5L789.8 258.7L791.4 261.8L790.6 264.5L786.4 267.3L787.3 269.6L783.6 273.5L779.9 274.7L778.5 279.7L774.8 281.1L775.5 284.8L779.5 286.5L782.9 284.9L780.7 287.0L782.2 289.9L781.4 290.7L780.7 289.1L779.4 291.6L777.2 291.0L776.7 292.6L772.6 293.8L773.4 297.8L782.7 294.8L781.2 293.3L782.0 292.1L786.1 292.9L785.0 291.5L788.4 291.0L790.1 289.1L789.3 288.0L797.9 281.9L807.1 278.9L808.1 277.1L812.1 276.8ZM797.8 286.5L795.6 286.4L797.8 286.5ZM792.6 288.8L793.9 289.0L793.8 288.0L792.6 288.8ZM798.6 287.6L797.6 287.6L798.6 287.6ZM804.0 281.3L802.7 281.8L804.2 281.6ZM806.2 291.7L806.9 290.7L806.0 291.5Z"><title>辽宁省</title></path><path class="pv" d="M910.8 223.7L913.2 222.6L915.6 212.0L919.0 212.2L918.9 213.5L921.8 214.1L921.4 217.8L924.3 221.0L925.8 219.6L927.7 223.5L926.4 221.9L926.9 218.6L923.9 217.4L935.9 213.3L935.2 211.6L938.7 202.0L935.8 203.4L933.9 201.8L931.3 203.2L927.5 199.5L924.0 198.9L923.2 191.0L918.6 195.2L916.5 191.4L913.1 194.4L905.2 195.5L904.8 200.1L899.1 201.2L896.6 197.2L897.1 194.8L895.1 194.1L892.5 188.8L892.6 184.4L890.8 181.6L887.6 185.0L885.6 184.9L886.3 189.2L881.3 190.5L876.5 183.7L876.1 181.5L877.6 180.4L871.5 179.0L869.4 180.5L868.3 175.4L870.1 172.9L868.0 169.2L865.2 169.1L861.6 166.8L856.1 169.0L852.3 168.6L847.4 164.8L847.3 161.5L843.0 162.1L842.0 164.0L837.7 164.2L834.6 161.1L834.2 163.0L826.3 163.0L825.5 160.9L819.9 156.4L820.9 155.0L819.3 153.1L820.5 151.4L819.2 146.0L812.9 147.3L807.6 146.3L804.4 149.8L800.3 150.3L800.8 153.5L799.4 157.7L796.4 155.4L795.6 156.1L794.6 153.4L791.5 155.8L788.0 152.6L783.5 151.8L784.4 154.3L781.6 156.8L786.9 157.9L787.4 161.7L790.1 163.0L789.8 165.9L791.3 166.3L788.2 173.6L790.1 176.5L789.0 177.1L790.0 177.3L789.5 180.3L792.0 182.3L791.8 186.8L798.3 186.2L805.6 181.7L805.7 184.6L809.9 188.7L809.0 191.3L812.1 197.8L811.0 201.0L808.6 200.9L810.4 203.8L815.0 204.6L815.8 202.5L817.5 202.8L820.4 206.4L824.3 207.3L826.8 210.5L825.3 212.0L827.0 212.8L825.9 214.4L827.4 215.1L834.2 209.3L834.0 216.2L835.7 215.9L836.3 219.4L837.7 219.6L837.2 222.0L839.1 223.5L838.9 225.9L840.9 226.2L841.1 229.1L844.0 229.3L840.8 232.9L841.8 233.5L841.2 238.5L843.3 238.6L845.0 244.1L848.9 248.8L845.6 254.3L853.0 253.6L854.3 250.3L861.1 244.8L862.2 238.7L863.5 238.6L863.6 237.0L865.3 238.0L867.4 235.8L871.5 240.1L870.5 241.3L872.7 242.4L877.4 242.5L878.9 243.8L884.8 243.2L886.7 244.8L890.0 240.6L885.3 232.1L900.3 231.5L904.5 227.9L904.9 224.5L907.0 222.8L910.3 224.0Z"><title>吉林省</title></path><path class="pv" d="M812.9 147.3L819.2 146.0L820.5 151.4L819.3 153.1L820.9 155.0L819.9 156.4L825.5 160.9L826.3 163.0L834.2 163.0L834.6 161.1L837.7 164.2L842.0 164.0L843.0 162.1L847.3 161.5L847.4 164.8L852.3 168.6L856.1 169.0L861.6 166.8L865.2 169.1L868.0 169.2L870.1 172.9L868.3 175.4L869.4 180.5L871.5 179.0L877.6 180.4L876.1 181.5L876.5 183.7L881.3 190.5L886.3 189.2L885.6 184.9L887.6 185.0L890.8 181.6L892.6 184.4L892.5 188.8L895.1 194.1L897.1 194.8L896.6 197.2L899.1 201.2L904.8 200.1L905.2 195.5L913.1 194.4L916.5 191.4L918.6 195.2L923.2 191.0L924.0 198.9L927.5 199.5L931.3 203.2L933.9 201.8L935.8 203.4L938.4 201.9L936.8 201.3L938.5 191.0L935.3 177.7L932.9 174.8L936.1 172.9L941.6 172.3L947.9 165.0L949.8 166.7L965.2 171.4L968.2 169.3L968.3 163.2L973.6 159.2L973.6 155.1L977.0 152.9L977.4 148.5L980.7 146.7L980.1 145.0L981.4 143.7L979.8 142.2L982.4 139.0L983.2 132.1L985.8 129.6L985.1 125.2L987.2 123.1L991.4 122.1L994.9 117.3L991.2 112.0L993.2 106.5L999.9 103.5L999.6 102.4L994.6 104.2L985.5 104.0L978.0 106.5L974.8 109.2L968.1 108.9L963.0 112.9L960.5 112.8L958.8 117.3L955.8 116.4L949.4 118.2L943.1 118.5L940.9 116.7L934.0 117.8L928.1 109.5L931.0 105.7L929.7 101.5L927.3 101.7L926.0 99.4L928.3 94.0L921.1 94.2L916.2 90.8L912.9 85.8L910.2 85.6L909.4 83.1L902.4 84.4L901.3 82.4L897.2 81.9L898.0 80.4L896.9 79.6L887.8 80.7L881.8 79.7L877.2 75.0L876.7 70.4L878.4 66.7L874.0 64.7L874.5 62.7L873.3 62.2L874.6 59.8L873.4 56.4L867.3 50.2L868.3 45.0L866.7 45.0L867.1 46.5L865.6 45.8L867.1 43.3L865.2 42.8L865.9 40.7L863.3 39.4L864.2 37.2L859.8 32.4L861.4 28.6L857.3 27.2L859.4 25.4L857.6 25.1L858.1 23.6L854.7 19.9L851.8 18.7L854.2 16.0L851.8 16.1L849.5 13.3L847.1 14.1L848.1 11.4L846.1 9.6L844.7 10.3L838.4 7.2L834.3 8.0L834.0 9.3L830.9 7.1L826.9 6.8L823.7 3.7L821.9 4.3L813.7 0.3L812.2 1.1L812.0 0.1L811.7 1.3L808.1 0.0L800.8 2.1L794.4 2.4L793.1 1.2L785.4 2.7L779.3 4.5L784.4 10.1L780.7 14.8L774.1 19.3L781.5 22.5L782.7 25.0L784.8 25.7L790.1 21.1L794.6 23.5L795.1 25.4L800.2 26.3L797.5 30.0L799.2 31.8L801.3 41.9L803.7 45.2L810.8 46.0L814.4 45.0L815.2 43.5L818.7 45.4L823.7 44.5L826.5 46.0L827.8 43.8L830.0 44.9L833.9 43.8L838.2 38.2L841.8 38.9L853.3 50.6L852.3 54.0L848.4 56.5L849.6 60.2L844.8 63.1L843.4 67.2L840.3 69.4L841.4 70.2L839.2 72.3L839.7 78.1L838.2 78.4L840.5 82.5L839.7 87.8L838.0 89.0L834.6 87.9L833.0 89.2L828.3 100.5L828.5 108.7L826.6 109.9L827.6 108.2L824.1 100.9L813.0 110.7L808.5 112.6L806.2 116.0L797.0 120.7L794.2 124.7L797.4 129.2L801.2 130.3L800.0 132.2L801.9 132.5L802.1 135.6L804.0 137.4L806.3 136.9L807.2 134.7L809.7 135.0L810.2 133.0L808.5 131.7L812.2 132.8L811.8 135.2L813.4 133.9L813.4 137.9L803.7 140.2L803.8 143.1L806.5 146.8L811.7 146.6Z"><title>黑龙江省</title></path><path class="pv" d="M769.5 452.5L771.0 452.5L771.0 456.1L772.7 455.7L775.6 459.3L782.2 456.4L786.5 457.3L787.2 453.4L782.9 446.7L776.7 442.5L773.0 445.3L772.4 449.6L769.4 450.9ZM787.0 440.4L780.9 438.7L776.4 435.4L773.1 437.6L777.2 441.7L778.2 441.0L785.6 444.2L787.3 442.9ZM784.1 446.2L779.4 443.1L783.9 446.6ZM784.2 445.6L789.0 447.7L789.4 446.6L784.0 445.2ZM786.5 448.5L787.3 449.6L786.6 448.2Z"><title>上海市</title></path><path class="pv" d="M711.3 381.3L708.9 383.9L707.3 378.3L702.8 373.0L702.7 374.2L697.2 374.6L696.0 379.8L703.4 384.8L705.7 384.8L706.6 389.2L709.3 391.2L714.6 391.4L715.4 392.9L716.4 392.0L718.4 394.8L718.4 398.4L725.1 397.9L721.5 408.2L723.1 410.0L726.0 408.8L727.3 417.0L728.5 418.3L733.9 418.3L736.2 413.5L739.0 413.6L741.7 416.2L742.4 420.6L740.1 423.7L737.2 420.8L731.7 421.0L732.1 423.1L733.7 423.3L733.9 426.1L732.9 428.5L730.7 428.8L728.8 431.2L728.3 434.1L730.6 435.9L730.3 437.2L732.9 437.6L732.9 439.8L735.0 439.1L736.4 440.3L736.3 444.9L734.5 445.3L734.2 447.1L740.4 448.1L744.4 446.8L745.0 449.3L748.4 450.6L753.6 449.4L756.7 453.7L762.0 454.4L763.1 457.7L766.5 455.1L766.2 453.4L769.5 452.5L769.2 450.1L772.4 449.6L773.0 445.3L777.2 441.7L773.1 437.6L774.4 436.0L776.4 435.4L780.9 438.7L787.0 440.4L786.9 438.4L783.5 431.5L778.6 429.2L778.1 424.1L770.5 420.5L770.8 415.5L768.4 407.1L766.9 405.9L760.0 386.4L749.1 381.2L746.2 379.1L747.2 377.9L744.9 377.5L746.7 377.5L745.8 376.8L742.5 376.6L742.1 372.9L743.7 371.9L742.7 370.0L736.4 372.0L734.1 377.6L735.2 378.1L729.9 379.4L728.6 384.3L725.4 385.0L725.4 381.7L721.7 379.0L719.1 379.5L719.2 382.2L717.3 381.6L715.8 383.3L711.4 381.2Z"><title>江苏省</title></path><path class="pv" d="M729.5 507.2L730.4 508.2L734.1 506.7L735.5 508.2L734.3 513.6L735.7 514.7L737.2 523.8L739.0 523.1L743.0 524.6L748.5 519.5L751.2 526.9L759.2 524.4L762.4 530.2L763.8 529.9L766.3 523.5L765.2 521.5L767.5 517.5L768.6 517.8L770.2 515.1L773.3 517.3L774.3 516.6L773.8 514.9L771.0 514.0L772.1 511.1L772.9 510.2L773.4 512.4L775.4 512.3L779.1 507.0L781.3 508.0L782.4 504.8L779.9 499.9L782.3 498.6L782.3 495.7L783.7 495.7L781.0 489.6L783.6 489.6L786.8 491.9L787.4 481.3L784.7 479.8L789.7 475.3L782.9 473.0L777.2 465.4L772.7 462.5L772.1 461.6L775.6 458.4L772.7 455.7L771.0 456.1L771.0 452.5L766.2 453.4L766.5 455.1L763.1 457.7L762.0 454.4L756.7 453.7L753.6 449.4L748.8 450.2L748.0 456.2L745.9 459.8L745.0 459.1L742.6 460.6L745.2 465.4L741.9 467.0L737.9 465.6L736.7 466.5L737.0 474.1L734.5 478.1L730.5 482.5L725.6 485.0L723.1 488.7L724.0 493.0L728.4 496.7L730.2 506.4ZM790.0 473.1L792.6 474.1L792.2 470.9L786.7 469.2L787.8 473.0L789.3 473.1ZM794.3 458.1L796.0 458.9L794.6 457.9ZM790.0 466.3L788.3 467.0L791.1 468.2L790.2 465.8ZM792.5 467.9L794.2 468.1L792.8 467.4ZM793.4 475.0L794.1 476.3L794.4 474.5L793.1 473.7L793.3 475.0ZM791.7 476.0L792.4 477.6L792.6 476.3ZM786.5 457.3L789.5 460.9L786.9 457.0ZM790.3 479.9L789.5 477.1L788.2 478.5L789.6 479.7ZM785.0 473.3L786.3 473.0L785.5 471.0L784.9 473.2ZM786.7 467.1L787.2 466.0L786.1 466.7ZM792.1 478.4L791.3 477.2L791.5 478.3ZM772.7 514.3L773.1 513.3L771.8 514.0Z"><title>浙江省</title></path><path class="pv" d="M699.7 392.3L700.2 394.9L692.5 398.4L689.3 392.4L684.4 391.4L682.6 395.1L684.0 395.2L682.9 397.2L684.1 400.9L679.3 402.6L678.4 410.0L672.2 410.1L671.8 412.9L676.9 415.6L677.0 420.9L680.4 421.2L683.9 424.6L688.5 421.4L687.5 422.7L689.0 429.4L688.6 436.5L681.8 439.3L679.8 445.8L683.2 449.9L685.1 448.8L690.9 452.5L686.1 459.1L688.5 462.5L688.4 466.6L691.0 468.8L692.2 476.5L694.5 477.1L698.9 474.7L700.0 471.4L704.6 473.9L700.9 478.7L701.7 481.6L708.0 478.7L707.4 476.2L709.7 474.3L710.3 476.2L712.9 475.9L715.0 481.1L722.5 481.3L724.7 484.5L727.6 484.5L727.8 483.0L730.5 482.5L732.9 480.0L737.0 474.1L736.7 466.5L737.9 465.6L741.9 467.0L745.2 465.4L742.6 460.6L745.0 459.1L745.9 459.8L749.2 450.7L745.0 449.3L744.4 446.8L735.3 448.2L734.1 446.3L736.3 444.9L736.4 440.3L735.0 439.1L732.9 439.8L733.8 438.6L730.9 437.9L728.3 434.1L728.8 431.2L730.7 428.8L732.9 428.5L733.9 426.1L733.7 423.3L732.1 423.1L731.7 421.0L737.2 420.8L740.1 423.7L742.4 420.6L741.7 416.2L739.0 413.6L736.2 413.5L734.5 415.6L734.7 417.9L728.5 418.3L726.5 415.7L727.4 413.3L726.0 408.8L723.1 410.0L721.5 408.2L725.1 397.9L718.4 398.4L718.4 394.8L716.4 392.0L715.4 392.9L714.6 391.4L709.3 391.2L706.6 389.2L705.7 384.8L699.6 382.7L697.0 379.5L693.2 381.0L692.6 383.4L696.0 387.3L699.1 386.9L699.3 391.2Z"><title>安徽省</title></path><path class="pv" d="M738.8 573.8L738.9 572.0L737.8 572.6L736.9 571.4L738.4 569.8L737.3 568.1L739.9 569.0L739.1 570.4L740.9 571.1L740.6 573.0L740.8 568.7L743.0 570.0L744.9 568.2L741.0 565.4L742.2 563.8L744.4 564.9L744.5 562.7L746.0 563.3L745.8 564.9L746.7 564.3L747.6 565.9L748.1 564.3L748.4 566.5L749.6 563.8L751.2 565.3L752.7 564.1L751.4 559.8L749.6 563.7L746.4 560.5L748.5 559.5L750.4 552.9L748.5 549.8L749.7 547.9L754.2 546.1L751.5 541.4L748.1 540.7L749.5 538.6L752.9 540.2L754.0 537.4L755.9 537.7L752.1 542.6L757.2 540.3L755.8 535.8L758.7 534.9L759.5 531.3L762.4 530.2L759.2 524.4L751.2 526.9L748.5 519.5L743.0 524.6L739.0 523.1L737.2 523.8L735.7 514.7L734.3 513.6L735.5 508.2L734.1 506.7L730.4 508.2L729.3 507.2L727.5 508.6L728.2 511.2L720.1 514.1L718.2 517.0L714.7 513.4L710.8 515.6L711.0 517.7L709.5 519.4L708.1 519.2L707.7 520.5L706.9 519.6L706.5 521.8L707.9 522.4L709.0 527.3L707.1 531.1L701.0 533.5L698.9 536.3L699.7 545.7L698.4 544.9L696.7 547.2L696.3 549.7L697.9 550.9L696.0 553.9L692.1 555.9L692.9 557.6L691.1 559.1L690.1 566.8L687.6 569.0L688.8 572.2L687.9 574.0L691.1 576.2L693.1 575.7L693.9 577.4L696.4 575.7L698.6 581.1L703.2 580.1L702.3 582.3L706.2 589.7L705.1 592.0L705.9 596.2L709.3 602.1L711.1 602.3L713.7 601.6L717.1 595.7L719.1 595.2L725.0 587.9L723.2 584.9L724.4 581.8L726.4 583.0L730.8 581.1L732.4 582.8L735.2 577.7L733.0 576.4L738.5 575.6L737.4 574.6L738.8 573.9ZM729.1 583.0L727.3 583.7L727.8 585.6L729.9 585.0L729.8 583.1ZM746.3 569.3L747.2 570.1L747.9 569.0L746.4 568.0L745.9 569.2ZM725.8 583.2L724.8 582.0L723.6 584.0L725.6 584.0ZM749.5 540.5L750.8 539.5L749.3 540.0Z"><title>福建省</title></path><path class="pv" d="M725.6 485.0L722.5 481.3L715.0 481.1L712.9 475.9L710.3 476.2L709.7 474.3L707.4 476.2L708.0 478.7L701.7 481.6L700.6 479.0L704.6 473.9L700.8 471.3L698.9 474.7L694.5 477.1L692.8 476.3L688.5 478.4L684.6 475.9L682.0 476.1L678.4 480.5L675.6 479.2L676.2 482.7L673.7 481.5L671.5 483.4L672.9 483.6L672.0 485.0L665.9 486.4L662.5 485.6L661.6 488.2L658.5 488.8L656.8 493.4L660.0 496.4L658.9 501.8L661.0 503.3L660.3 504.3L661.6 506.6L657.4 509.8L657.9 512.4L653.5 514.3L653.7 517.0L650.7 522.1L651.3 526.1L655.4 525.4L653.8 531.1L656.3 534.1L654.8 537.0L655.2 539.8L659.3 541.7L656.9 550.1L660.4 548.8L661.4 550.1L657.6 552.8L656.1 559.1L657.2 561.2L656.6 564.4L658.3 565.9L658.1 568.2L666.3 564.8L669.6 567.7L669.4 570.8L666.6 571.7L663.9 574.2L663.0 578.3L660.2 579.4L664.0 583.3L668.3 581.6L668.9 582.7L669.3 581.1L671.6 582.0L672.3 580.0L680.4 577.4L684.9 582.3L687.4 582.0L686.0 578.3L688.8 574.0L687.6 569.0L690.1 566.8L691.1 559.1L692.9 557.6L692.1 555.9L696.0 553.9L697.9 550.9L696.3 549.7L696.7 547.2L698.4 544.9L699.7 545.7L700.3 543.6L698.7 541.9L698.9 536.3L701.0 533.5L707.1 531.1L709.0 527.3L706.3 520.5L709.5 519.4L711.0 517.7L710.8 515.6L714.7 513.4L718.2 517.0L720.1 514.1L728.2 511.2L727.5 508.6L730.2 506.4L728.4 496.7L723.1 490.9L723.7 487.1L725.8 486.0Z"><title>江西省</title></path><path class="pv" d="M696.0 379.8L697.2 374.6L702.7 374.2L702.8 373.0L707.3 378.3L708.9 383.9L712.2 380.9L714.9 383.2L717.3 381.6L719.2 382.2L719.1 379.5L721.7 379.0L725.4 381.7L725.4 385.0L728.6 384.3L729.9 379.4L735.2 378.1L734.1 377.6L736.4 372.0L742.7 370.0L744.7 371.0L749.4 360.7L753.7 359.7L753.7 357.3L755.1 358.2L756.0 355.0L759.9 353.0L756.8 350.4L757.9 348.4L760.8 348.5L759.6 351.5L766.5 349.9L766.2 344.6L768.4 343.1L769.1 345.1L770.6 343.1L770.9 341.5L768.7 340.0L771.6 341.0L780.3 335.8L779.0 336.7L781.7 337.9L781.4 336.4L787.5 333.2L788.1 335.0L789.7 333.6L790.2 335.6L796.0 334.4L796.9 331.6L795.0 331.6L795.2 329.8L797.5 328.6L796.7 326.5L799.0 324.5L790.1 323.6L789.8 321.2L780.4 323.5L777.5 319.8L774.7 320.7L773.4 317.9L766.8 315.7L758.6 318.5L758.9 321.2L752.4 324.8L753.2 327.1L750.7 329.7L744.0 330.1L742.0 326.8L739.6 327.3L737.7 321.8L739.1 319.5L742.9 319.1L743.4 314.9L741.3 316.0L737.2 309.5L732.6 309.5L731.4 311.2L722.7 308.3L720.7 306.3L717.6 310.8L715.3 311.4L713.3 315.3L703.0 315.4L697.0 322.9L695.4 320.7L693.6 322.8L693.8 325.1L689.6 325.6L684.8 336.2L681.5 337.2L679.5 339.9L678.2 342.5L679.7 346.3L681.2 346.9L681.6 349.9L679.2 356.5L691.6 350.2L690.8 353.1L688.5 353.3L685.0 357.4L681.6 358.3L679.5 362.7L674.4 365.0L670.8 371.5L672.5 373.2L677.3 373.3L677.9 375.6L680.7 376.4L682.7 381.2L689.8 380.3L694.0 381.5L695.4 380.1Z"><title>山东省</title></path><path class="pv" d="M636.7 425.6L644.7 424.1L648.2 427.3L653.2 424.5L653.1 431.1L655.1 435.9L656.8 435.7L657.3 437.8L660.6 435.7L662.3 437.7L667.0 437.5L666.6 441.5L667.9 441.1L671.0 443.6L675.3 442.6L676.4 440.7L678.6 445.1L681.8 439.3L684.7 437.2L688.1 437.2L689.0 429.4L687.5 422.7L688.5 421.4L683.9 424.6L680.4 421.2L677.0 420.9L676.9 415.6L671.8 412.9L672.2 410.1L676.5 410.9L678.7 409.7L679.3 402.6L684.1 400.9L682.9 397.2L684.0 395.2L682.6 395.1L683.6 392.0L685.7 391.1L689.3 392.4L691.2 397.0L692.5 398.4L694.2 398.0L700.4 394.7L698.5 390.1L699.4 387.3L696.0 387.3L692.6 383.4L693.2 381.0L691.6 380.4L682.1 380.9L680.7 376.4L677.9 375.6L677.3 373.3L672.5 373.2L670.8 371.5L674.4 365.0L679.5 362.7L681.6 358.3L685.0 357.4L688.5 353.3L690.8 353.1L691.6 350.2L679.6 356.9L681.3 349.0L678.8 350.7L675.8 348.3L672.3 351.4L672.3 349.6L667.1 350.1L663.1 347.3L653.1 345.2L652.0 355.7L650.7 356.1L651.4 359.8L650.2 359.4L649.4 361.9L646.2 364.0L644.3 363.5L643.3 365.9L641.2 365.3L641.1 366.6L637.6 368.4L626.0 366.9L626.0 371.4L621.9 371.3L618.1 375.7L611.2 376.4L607.5 377.9L605.9 380.2L598.7 380.5L600.7 385.8L599.7 387.7L603.0 389.4L602.1 392.1L603.4 393.8L602.1 394.9L608.9 401.1L608.5 407.5L613.0 412.5L612.9 415.0L616.5 417.5L618.2 420.8L619.2 420.0L627.6 425.2L630.4 426.3L633.9 424.6L635.5 425.3Z"><title>河南省</title></path><path class="pv" d="M609.5 409.3L608.2 407.6L604.0 410.7L601.9 407.6L600.2 409.2L596.1 409.4L586.4 407.1L583.4 409.6L589.2 411.3L589.1 415.0L594.3 416.0L595.9 420.0L592.8 421.8L586.6 420.7L584.4 426.7L586.4 430.6L585.8 438.2L588.2 438.7L588.1 441.8L594.5 444.6L595.4 453.2L593.9 456.8L590.8 454.8L582.1 463.1L581.2 460.2L578.7 462.4L577.0 459.7L573.2 463.0L571.3 461.1L569.3 463.5L567.0 463.0L566.6 465.3L569.5 467.7L568.5 475.2L566.1 476.1L567.2 478.1L568.3 478.7L570.8 475.8L571.3 479.1L574.7 480.8L575.0 486.4L577.3 484.8L578.1 488.6L580.1 490.5L584.7 480.4L587.1 480.9L589.0 477.7L594.4 477.1L598.6 480.2L603.0 477.4L600.7 474.6L601.6 473.1L600.6 471.8L604.1 472.2L604.7 470.6L612.7 472.1L615.2 474.6L622.0 474.9L626.3 478.0L626.1 479.3L629.0 479.7L629.8 482.6L632.2 480.2L636.3 480.9L639.0 477.2L640.4 479.2L641.7 477.4L639.8 480.8L640.5 483.4L642.2 482.5L642.5 484.1L650.5 475.9L650.1 479.4L652.0 479.2L653.3 481.3L651.5 482.4L653.5 484.0L651.2 487.9L652.5 488.4L652.6 491.4L654.5 490.8L655.8 492.4L658.5 488.8L661.6 488.2L662.5 485.6L665.9 486.4L672.0 485.0L672.9 483.6L671.5 483.4L673.7 481.5L676.2 482.7L675.6 479.2L678.4 480.5L682.0 476.1L684.6 475.9L688.5 478.4L692.2 476.5L691.0 468.8L688.4 466.6L688.5 462.5L686.1 459.1L690.9 452.5L685.1 448.8L683.2 449.9L679.8 444.7L677.8 444.9L676.4 440.7L675.3 442.6L671.0 443.6L667.9 441.1L666.6 441.5L667.0 437.5L662.3 437.7L660.6 435.7L657.3 437.8L653.6 432.9L653.2 424.5L648.2 427.3L644.7 424.1L637.0 425.6L633.9 424.6L630.4 426.3L619.2 420.0L618.2 420.8L616.5 417.5L612.9 415.0L613.0 412.5L611.3 411.9L611.7 410.4L610.2 409.0Z"><title>湖北省</title></path><path class="pv" d="M625.4 578.4L627.7 576.0L628.1 569.6L635.7 570.6L637.7 575.3L639.2 575.3L641.2 574.7L640.7 570.4L641.8 569.2L639.1 568.2L638.9 566.4L640.0 567.3L644.9 563.0L650.8 567.1L654.5 566.6L657.3 562.6L656.1 559.1L657.6 552.8L661.4 550.1L660.4 548.8L656.9 550.1L659.3 541.7L655.2 539.8L654.8 537.0L656.3 534.1L653.8 531.1L655.4 525.4L651.3 526.1L650.7 522.1L653.7 517.0L653.5 514.3L657.9 512.4L657.4 509.8L660.5 508.0L661.6 505.1L658.9 501.8L660.0 496.4L657.1 494.2L656.6 492.0L652.6 491.4L652.5 488.4L651.2 487.9L653.5 484.0L651.5 482.4L653.3 481.3L652.0 479.2L650.1 479.4L650.5 475.9L642.5 484.1L642.2 482.5L640.5 483.4L639.8 480.8L641.7 477.4L640.4 479.2L639.0 477.2L636.3 480.9L632.2 480.2L629.8 482.6L629.0 479.7L626.1 479.3L626.3 478.0L622.0 474.9L615.2 474.6L612.7 472.1L604.7 470.6L604.1 472.2L600.6 471.8L601.6 473.1L600.7 474.6L603.0 477.4L601.7 478.6L598.6 480.2L594.4 477.1L589.0 477.7L588.0 480.6L584.7 480.4L580.5 488.5L581.2 498.0L579.5 500.2L581.5 501.4L580.7 506.2L582.6 507.6L581.2 513.9L583.8 521.7L581.2 524.6L578.6 524.1L572.9 531.4L575.4 532.7L576.9 531.0L579.0 531.7L580.2 530.1L584.0 530.4L585.3 534.1L583.4 535.2L584.6 535.5L584.9 538.2L586.0 538.0L580.9 539.1L582.9 542.4L580.7 546.6L582.0 547.8L583.9 546.8L584.7 550.6L583.7 552.0L588.2 553.3L587.4 555.5L589.5 555.6L589.0 553.2L592.1 549.2L594.2 549.8L593.6 552.1L595.5 551.9L596.7 553.9L602.5 546.4L606.1 548.0L608.4 545.4L613.3 547.7L611.9 554.1L612.9 555.9L616.7 556.0L613.8 558.8L614.1 562.7L608.8 570.0L608.3 573.7L610.4 574.3L610.4 572.5L613.3 570.2L616.4 572.8L616.1 579.9L618.1 580.3L620.3 577.5L624.2 577.8Z"><title>湖南省</title></path><path class="pv" d="M650.3 629.2L652.1 625.1L650.6 625.2L653.3 622.7L652.3 618.8L655.8 624.5L663.7 621.3L665.7 624.6L667.4 623.7L667.3 620.6L665.9 620.3L669.0 617.6L669.6 621.7L671.9 622.6L675.0 617.6L676.8 617.0L679.2 617.8L679.9 619.7L683.1 620.4L683.6 618.3L682.5 618.3L684.4 616.0L687.2 618.7L694.9 614.3L698.2 614.7L699.2 610.7L703.1 609.3L704.4 603.3L709.3 602.1L709.3 600.7L707.1 599.4L705.5 594.8L706.2 589.7L702.3 582.3L703.2 580.1L698.6 581.1L696.4 575.7L693.9 577.4L693.1 575.7L687.1 575.0L686.0 578.3L687.4 582.0L684.9 582.3L680.4 577.4L672.3 580.0L671.6 582.0L669.3 581.1L668.9 582.7L668.3 581.6L664.5 583.5L660.2 579.4L663.0 578.3L663.9 574.2L666.6 571.7L669.4 570.8L669.1 566.9L666.3 564.8L658.1 568.2L657.6 564.3L655.7 564.4L654.5 566.6L650.8 567.1L645.3 562.9L640.0 567.3L638.9 566.4L639.1 568.2L641.8 569.2L640.7 570.4L641.2 574.7L637.7 575.3L635.7 570.6L628.1 569.6L627.7 576.0L624.0 579.5L626.0 586.5L623.0 588.7L624.1 593.5L622.0 597.2L619.4 596.6L618.8 600.5L616.7 600.8L615.3 603.9L614.5 607.6L615.8 612.6L614.6 615.6L612.3 618.4L609.7 618.8L609.7 620.4L604.7 622.2L603.7 623.8L605.3 627.7L603.1 629.0L603.6 629.9L598.2 629.5L598.9 635.5L592.6 635.8L591.2 640.1L589.0 640.0L589.1 644.3L591.0 644.9L588.6 646.5L587.0 654.9L588.4 661.1L590.7 664.0L591.4 669.3L598.2 668.4L601.5 664.1L600.1 659.9L598.9 659.9L598.9 657.2L596.0 656.3L595.5 653.8L599.4 649.7L602.7 649.2L605.0 646.2L609.4 644.7L613.4 643.7L613.4 645.1L616.0 643.2L619.4 643.2L620.8 641.2L621.9 642.3L624.6 641.4L625.5 640.8L624.3 639.2L627.2 637.6L628.9 639.4L630.8 639.3L632.3 637.4L635.5 638.3L637.9 635.0L640.1 636.7L642.7 630.9L645.6 636.0L650.5 631.9L650.0 629.2ZM706.6 604.6L708.5 605.3L708.3 603.6L706.7 604.5ZM638.9 638.6L636.5 639.9L637.7 640.0L637.6 642.2L638.6 638.7ZM633.6 641.8L635.8 640.6L635.8 639.2L633.7 640.9ZM661.3 633.1L662.6 632.6L661.4 632.7ZM599.6 650.0L601.4 651.8L602.8 649.3L599.6 649.9ZM601.0 651.9L597.5 651.7L595.8 654.7L599.2 653.7L601.3 655.0L601.7 652.3ZM702.5 658.1L704.4 659.8L702.1 661.5L704.0 661.7L705.0 659.0L703.3 657.9ZM603.0 654.8L601.5 655.3L602.5 656.3L603.1 655.1ZM689.0 651.5L691.1 652.7L689.4 651.0ZM688.8 653.9L690.0 655.0L689.2 653.5Z"><title>广东省</title></path><path class="pv" d="M584.2 552.5L581.8 558.5L577.9 557.1L574.6 558.9L577.6 558.8L576.7 562.9L573.3 562.6L572.8 560.6L571.3 560.7L570.2 567.0L565.7 562.5L564.2 564.6L562.7 564.3L562.0 569.0L556.2 570.7L554.6 566.9L551.5 568.9L550.7 565.3L549.0 565.2L547.2 561.0L543.3 564.4L543.5 568.5L530.0 574.1L530.4 578.0L528.0 580.6L526.7 578.7L519.5 577.0L518.3 574.6L515.7 574.6L514.8 573.3L512.6 574.9L511.9 577.5L507.0 580.9L503.7 578.6L503.6 582.5L506.7 586.8L506.8 584.4L512.1 584.4L514.4 586.3L515.6 592.1L516.6 590.9L519.4 592.9L521.0 590.5L521.9 592.6L523.8 591.8L524.3 592.8L527.6 590.9L530.7 595.7L528.8 603.4L527.6 604.4L525.2 602.8L521.7 605.2L522.7 606.8L519.9 608.6L520.7 612.0L523.1 612.1L525.7 615.0L530.1 613.6L533.6 616.2L536.2 614.4L541.2 617.3L536.7 624.3L536.8 626.5L538.8 628.2L539.0 634.2L539.6 633.3L543.8 634.5L544.1 637.0L547.8 639.4L548.9 638.8L550.2 641.6L551.6 640.2L552.7 641.7L557.9 640.4L559.4 642.8L561.8 643.3L564.0 641.4L563.8 643.6L568.1 642.4L570.3 639.8L572.2 641.4L578.6 642.1L577.1 645.0L579.3 645.6L584.9 644.7L586.3 642.3L589.1 644.3L588.4 641.1L591.2 640.1L591.7 636.5L598.9 635.5L598.2 629.5L603.6 629.9L603.1 629.0L605.3 627.7L603.7 623.8L604.7 622.2L609.7 620.4L609.7 618.8L612.3 618.4L614.6 615.6L615.8 612.6L614.5 607.6L615.3 603.9L616.7 600.8L618.8 600.5L619.4 596.6L622.0 597.2L624.1 593.5L622.9 589.7L626.0 586.5L623.9 580.7L625.4 578.4L620.3 577.5L618.1 580.3L616.1 579.9L616.4 572.8L613.3 570.2L610.4 572.5L610.4 574.3L608.3 573.7L608.8 570.0L614.1 562.7L613.8 558.8L616.7 556.0L612.9 555.9L611.9 554.1L613.3 547.7L608.4 545.4L606.1 548.0L602.5 546.4L596.7 553.9L595.5 551.9L593.6 552.1L594.2 549.8L592.1 549.2L589.0 553.2L589.0 555.8L587.4 555.5L588.2 553.3L586.6 552.2L584.7 553.2Z"><title>广西壮族自治区</title></path><path class="pv" d="M594.3 673.0L587.0 673.3L584.4 676.1L581.2 675.2L578.7 679.5L570.6 686.6L570.6 703.9L574.4 705.3L575.4 707.4L578.1 707.2L585.8 710.8L588.5 709.8L589.1 706.9L593.7 706.1L596.6 701.5L600.7 700.6L603.5 687.9L609.8 681.3L609.5 678.3L608.2 673.2L605.7 672.8L603.7 670.3L601.1 672.0L594.9 672.1ZM628.4 997.1L629.6 997.3L628.6 996.5ZM625.0 997.7L626.1 998.1L625.6 996.8ZM616.3 732.2L617.6 731.4L616.1 731.9ZM717.7 770.2L718.0 771.8L719.6 771.7L718.0 771.3L718.3 769.5L719.8 770.7L717.8 769.4ZM620.7 749.9L622.0 748.6L620.4 748.8L621.6 749.4ZM619.3 748.7L618.7 750.7L619.9 748.6ZM655.8 922.3L658.5 923.6L664.1 920.7L666.5 916.6L665.2 915.0L656.2 921.6ZM657.1 896.9L658.1 898.6L657.3 896.7ZM624.6 747.3L626.3 747.3L625.1 746.8ZM660.7 899.0L661.5 899.8L661.1 898.6ZM687.3 880.1L688.4 880.8L687.9 878.7ZM667.5 874.9L667.9 875.9L668.6 874.7ZM583.9 927.5L587.8 924.2L591.6 924.3L588.0 922.9L585.0 925.4ZM632.8 753.8L634.6 752.4L632.3 753.7ZM633.8 897.4L635.4 897.9L634.7 897.1ZM665.1 857.5L667.1 857.1L666.5 856.2ZM697.9 866.3L697.6 868.0L700.4 867.5L698.3 867.2L698.5 865.7ZM681.9 876.3L683.2 876.3L682.1 875.6ZM676.5 906.6L678.4 908.1L678.9 907.2L677.0 906.4ZM655.8 914.3L657.0 915.5L656.5 914.0ZM651.6 894.8L653.1 894.2L651.7 894.5ZM668.8 854.1L670.4 852.6L669.0 853.4ZM591.5 917.4L592.4 918.1L593.9 916.4L593.8 915.4L591.8 916.6ZM701.8 844.1L702.4 845.5L702.0 843.8ZM633.3 744.5L634.6 743.3L633.1 743.9ZM668.9 750.4L670.8 749.8L668.9 749.8ZM718.7 858.7L719.8 858.1L718.8 858.0ZM668.7 844.8L669.2 845.6L669.2 844.3ZM600.0 912.0L601.6 912.5L602.3 911.2L600.1 911.8ZM682.0 904.5L683.0 904.5L682.1 904.0ZM623.8 913.0L625.3 913.1L624.3 912.2ZM710.5 860.4L712.8 860.8L711.0 859.5ZM619.7 921.4L621.0 920.3L620.0 920.2ZM633.6 958.6L634.2 959.3L634.2 958.1ZM667.2 897.4L668.6 896.7L667.5 896.7ZM701.3 746.9L702.0 747.7L701.6 746.3ZM654.8 690.4L656.2 689.1L654.2 689.6ZM635.6 972.4L636.1 973.6L636.0 972.1ZM619.2 916.2L620.4 916.6L619.4 915.7ZM634.5 963.3L635.0 965.2L635.0 963.2ZM679.6 795.0L680.9 795.1L679.9 794.6ZM635.0 967.2L636.2 967.1L635.2 966.5Z"><title>海南省</title></path><path class="pv" d="M533.7 502.5L535.8 502.1L535.3 496.3L538.2 500.0L536.8 503.3L539.1 504.0L539.9 500.8L541.7 500.5L541.0 497.8L543.7 497.4L544.1 495.3L547.2 495.6L547.9 497.7L550.1 496.0L550.4 489.2L553.1 488.6L553.4 489.9L555.2 490.1L556.0 488.9L557.9 493.7L561.2 491.2L565.1 491.4L566.4 496.9L565.5 499.4L570.4 500.5L569.5 506.1L570.9 506.3L570.5 503.8L571.6 503.0L572.8 504.5L572.1 508.4L577.7 509.3L578.8 504.6L581.5 501.4L579.5 500.2L581.1 498.5L580.1 495.3L581.5 492.1L578.6 489.6L577.3 484.8L575.0 486.4L574.7 480.8L571.3 479.1L570.8 475.8L568.3 478.7L566.1 476.1L568.5 475.2L569.5 467.7L566.8 464.1L567.0 463.0L569.3 463.5L571.3 461.1L573.2 463.0L577.0 459.7L578.7 462.4L581.2 460.2L582.1 463.1L590.8 454.8L593.9 456.8L595.4 453.2L595.2 446.5L592.1 442.6L588.1 441.8L588.2 438.7L580.9 438.4L580.8 436.8L577.7 434.2L568.4 428.7L566.6 428.8L567.4 430.9L564.3 433.4L568.8 437.6L569.0 439.5L565.7 442.5L563.2 442.9L563.1 446.0L560.7 447.7L561.1 451.8L559.2 453.0L560.0 454.6L557.7 457.0L555.9 455.1L554.3 456.4L551.7 456.0L550.7 458.0L552.2 459.9L544.8 472.1L543.6 471.2L539.5 472.3L536.7 466.5L531.4 469.1L530.4 466.8L524.8 464.1L523.1 467.8L521.5 467.3L522.1 468.7L520.1 469.8L523.6 472.5L523.4 475.1L516.2 481.5L516.8 484.1L518.6 484.9L518.8 487.2L522.7 487.2L524.3 494.2L527.6 493.5L528.4 494.8L531.0 494.9L533.0 501.9Z"><title>重庆市</title></path><path class="pv" d="M449.2 529.1L448.7 532.6L452.4 535.4L452.8 538.6L454.8 537.7L452.9 541.3L456.8 545.3L456.0 547.5L459.6 550.0L460.0 552.2L461.5 551.0L464.0 551.8L471.9 545.9L472.4 548.1L474.2 548.9L476.9 545.8L478.9 545.7L479.8 542.0L477.2 534.8L477.0 527.1L478.0 524.9L481.2 524.6L486.8 517.1L487.9 513.4L485.9 512.1L488.2 508.4L489.4 507.8L490.3 509.0L493.2 506.7L491.6 502.5L492.7 499.6L494.4 501.0L502.1 500.4L499.4 502.2L499.7 506.1L502.7 508.2L501.7 508.9L502.4 510.7L500.1 512.0L504.5 516.2L509.6 514.7L512.4 511.1L515.8 513.1L516.4 518.9L518.5 517.5L521.5 519.7L531.6 517.7L533.1 515.8L531.0 510.3L525.9 510.6L524.8 506.9L521.8 506.5L521.5 502.6L523.5 500.6L525.7 501.1L527.1 497.7L533.8 503.4L531.0 494.9L528.4 494.8L527.6 493.5L524.3 494.2L522.7 487.2L518.8 487.2L518.6 484.9L516.8 484.1L516.2 481.5L523.4 475.1L523.6 472.5L520.3 469.3L522.1 468.7L521.5 467.3L523.1 467.8L524.8 464.1L530.4 466.8L531.4 469.1L536.7 466.5L539.5 472.3L542.4 472.4L543.5 471.1L544.8 472.0L552.2 459.9L550.7 458.0L551.7 456.0L554.3 456.4L555.9 455.1L557.7 457.0L560.0 454.6L559.2 453.0L561.1 451.8L560.7 447.7L563.1 446.0L563.2 442.9L565.7 442.5L569.0 439.5L568.8 437.6L564.3 433.4L566.1 433.0L565.7 431.4L567.4 430.9L566.1 429.3L568.3 427.8L564.0 427.2L559.8 429.8L554.9 424.8L551.3 424.4L550.9 422.1L547.3 424.1L545.2 421.9L544.9 418.5L539.5 417.9L534.5 420.4L529.6 418.3L528.3 415.4L521.1 418.7L519.0 414.1L517.6 415.2L518.7 418.0L514.4 420.3L505.6 419.5L499.9 416.0L499.8 413.8L502.1 412.4L500.6 411.9L500.1 406.6L502.0 406.1L498.7 404.6L498.0 400.6L495.9 398.9L487.4 399.1L487.3 396.5L484.7 397.7L481.6 396.5L480.9 391.9L481.8 391.0L477.5 386.3L472.4 389.6L473.2 391.0L469.8 390.8L469.0 393.2L464.9 393.3L468.2 398.1L468.3 400.5L470.4 401.8L470.2 403.6L465.8 405.9L465.9 408.2L464.6 406.9L464.1 408.6L459.8 410.3L458.9 407.3L461.8 403.8L460.1 400.6L457.2 405.0L458.4 407.0L456.7 410.6L454.4 408.1L452.6 409.6L451.3 407.4L448.5 408.2L449.4 411.8L448.5 414.5L450.3 416.2L449.0 419.5L445.3 420.7L441.4 419.1L440.7 422.2L437.0 418.0L436.3 418.7L436.7 417.6L434.4 417.8L433.6 420.6L432.0 419.9L432.2 415.9L428.2 411.8L425.6 418.0L420.1 414.7L418.3 415.1L417.2 412.0L411.7 409.6L408.4 399.7L404.3 395.3L404.2 390.9L394.7 388.4L392.3 390.1L391.7 394.2L387.5 395.8L388.2 400.5L390.0 401.1L390.5 403.3L393.7 404.4L389.4 409.3L390.0 412.9L387.6 413.5L388.4 418.6L401.3 425.9L401.3 428.0L404.8 432.6L404.5 436.1L412.1 445.3L410.3 447.8L408.2 446.0L407.5 449.0L413.3 457.5L412.5 458.9L415.1 474.2L413.8 479.4L415.8 488.1L416.6 504.5L420.1 509.4L420.5 502.0L425.6 496.0L426.2 498.9L433.1 506.5L432.7 508.8L430.5 510.1L433.0 514.9L435.2 515.8L435.3 518.5L437.4 515.7L439.1 516.8L441.3 514.6L447.1 528.6L448.4 528.9Z"><title>四川省</title></path><path class="pv" d="M580.8 503.1L578.8 504.6L577.7 509.3L572.6 508.7L571.6 503.0L570.5 503.8L570.9 506.3L569.5 506.1L570.4 500.5L565.5 499.4L566.4 496.9L565.1 491.4L561.2 491.2L557.9 493.7L556.0 488.9L555.2 490.1L551.0 488.8L550.1 496.0L547.9 497.7L547.2 495.6L544.1 495.3L543.7 497.4L541.0 497.8L541.7 500.5L539.9 500.8L539.1 504.0L536.8 503.3L538.2 500.0L535.3 496.3L535.8 502.1L534.2 501.6L533.8 503.4L527.1 497.7L525.7 501.1L523.5 500.6L521.5 502.6L521.8 506.5L524.8 506.9L525.9 510.6L530.0 509.7L531.9 511.7L533.1 515.8L531.6 517.7L521.5 519.7L519.6 517.6L517.1 518.0L514.3 525.7L512.5 524.7L509.3 527.2L508.5 526.0L503.9 526.5L501.0 523.7L498.0 527.8L494.0 524.2L493.0 527.4L488.7 531.8L491.5 534.1L490.4 537.2L492.2 542.5L496.2 542.8L497.1 540.3L500.9 540.7L502.0 538.9L506.0 544.4L500.2 560.2L502.1 561.7L502.2 563.7L504.2 562.7L504.0 565.2L505.5 567.3L508.6 568.5L505.2 572.0L506.7 573.3L503.7 578.6L507.0 580.9L511.9 577.5L512.6 574.9L514.8 573.3L515.7 574.6L518.3 574.6L519.5 577.0L526.7 578.7L528.0 580.6L530.4 578.0L530.0 574.1L543.5 568.5L543.3 564.4L547.2 561.0L549.0 565.2L550.7 565.3L551.5 568.9L554.6 566.9L557.5 570.9L562.0 569.0L562.7 564.3L564.2 564.6L565.1 562.7L570.2 567.0L571.3 560.7L572.8 560.6L573.3 562.6L576.7 562.9L577.6 558.8L574.6 558.9L577.9 557.1L581.8 558.5L584.7 550.6L583.9 546.8L582.0 547.8L580.7 546.6L582.9 542.4L580.9 539.1L584.2 537.9L583.4 535.2L585.3 534.1L584.8 531.9L583.1 530.0L580.2 530.1L579.0 531.7L576.9 531.0L575.4 532.7L572.9 531.4L578.6 524.1L581.2 524.6L583.8 521.7L581.2 513.9L582.6 507.6L580.8 506.7L580.6 503.7ZM584.1 536.5L584.8 538.1L584.6 535.5L583.9 536.4Z"><title>贵州省</title></path><path class="pv" d="M516.4 518.9L515.8 513.1L512.4 511.1L509.6 514.7L503.4 515.5L500.1 512.0L502.4 510.7L502.4 507.6L499.3 504.9L499.4 502.2L502.1 500.4L494.4 501.0L492.7 499.6L491.6 502.5L493.2 506.7L490.3 509.0L489.4 507.8L488.2 508.4L485.9 512.1L487.9 513.4L486.8 517.1L481.2 524.6L478.0 524.9L477.0 527.1L477.2 534.8L479.8 542.0L478.5 546.3L476.9 545.8L474.2 548.9L472.4 548.1L471.9 545.9L464.4 551.8L461.5 551.0L460.0 552.2L459.6 550.0L456.0 547.5L456.8 545.3L452.9 541.3L454.8 537.7L452.8 538.6L452.4 535.4L448.7 532.6L449.2 529.1L447.1 528.6L441.3 514.6L439.1 516.8L437.4 515.7L435.3 518.5L435.2 515.8L433.0 514.9L430.5 510.1L432.7 508.8L433.1 506.5L426.2 498.9L425.6 496.0L420.5 502.0L420.7 507.1L420.1 509.4L418.9 508.4L416.6 504.5L415.8 488.5L413.7 488.8L414.2 492.2L412.6 495.2L413.5 496.3L411.6 497.0L410.5 493.0L407.9 493.8L408.8 498.2L407.4 499.6L409.8 506.0L409.3 508.4L404.1 510.7L402.6 505.3L401.1 505.8L402.1 508.1L400.0 510.2L402.9 522.7L404.7 522.1L404.9 519.7L409.2 522.0L410.4 540.7L408.7 548.3L409.4 550.6L407.1 550.8L409.2 556.0L408.1 557.2L406.3 556.3L402.8 562.3L400.5 560.8L400.0 565.6L396.8 568.9L395.1 567.8L393.2 571.6L394.4 576.3L390.4 578.4L390.1 584.4L392.4 584.2L392.3 587.3L394.0 588.1L393.4 591.0L390.1 594.4L392.0 596.5L399.2 591.6L406.6 590.7L407.4 591.7L412.0 590.2L412.3 591.3L408.7 594.1L408.6 597.3L410.5 597.7L412.1 600.9L410.8 602.5L412.5 604.8L412.2 609.2L415.7 611.6L419.6 610.8L422.5 612.0L423.1 614.8L421.2 614.7L421.5 616.5L419.1 618.6L420.2 623.5L416.5 630.2L429.8 632.4L430.1 639.4L432.3 639.4L432.3 643.4L434.0 644.1L437.3 642.8L439.6 644.4L448.4 638.0L450.0 648.8L451.2 649.9L455.1 648.4L458.9 650.5L460.0 648.4L458.3 646.7L458.7 641.8L459.9 641.1L459.0 636.8L456.3 634.1L455.3 628.6L457.4 623.9L459.0 623.3L461.1 625.7L463.4 624.2L467.1 625.0L471.0 617.9L479.4 624.6L484.2 617.2L487.5 621.5L489.3 617.5L494.6 623.3L497.1 617.2L499.4 616.5L499.6 618.6L501.2 619.6L504.8 616.4L507.1 616.8L508.9 614.8L508.2 611.1L509.5 610.1L515.2 608.0L516.7 605.5L520.2 609.6L521.0 607.1L522.7 606.8L521.7 605.2L525.2 602.8L527.6 604.4L529.9 601.9L530.7 595.7L527.6 590.9L524.3 592.8L523.8 591.8L521.9 592.6L521.0 590.5L519.4 592.9L516.6 590.9L515.6 592.1L513.1 585.0L507.6 584.1L506.7 586.8L504.5 584.8L503.1 580.2L506.7 573.3L505.2 572.0L508.6 568.5L505.5 567.3L504.0 565.2L504.2 562.7L502.2 563.7L502.1 561.7L500.2 560.2L506.0 544.4L502.0 538.9L500.9 540.7L497.1 540.3L496.2 542.8L492.2 542.5L490.4 537.2L491.5 534.1L488.7 531.8L493.0 527.4L494.0 524.2L498.0 527.8L501.0 523.7L503.9 526.5L508.5 526.0L509.3 527.2L512.5 524.7L514.3 525.7L516.2 520.4Z"><title>云南省</title></path><path class="pv" d="M263.2 350.6L250.4 345.1L247.8 346.6L243.0 342.8L228.4 345.6L226.1 343.9L221.6 346.5L215.0 346.6L207.4 349.0L206.0 349.8L203.8 355.6L197.9 357.5L196.6 359.5L191.1 356.7L187.5 357.4L177.7 361.5L177.8 363.0L173.0 365.3L170.5 364.1L164.3 365.8L156.3 364.5L154.2 362.8L153.7 359.1L149.8 359.7L145.6 358.1L143.4 359.5L143.3 361.3L138.5 363.5L138.5 366.1L132.9 367.8L130.1 367.8L127.6 365.4L125.3 366.1L123.3 364.4L121.1 366.3L112.5 363.5L109.8 366.6L111.4 368.3L106.0 371.8L102.3 383.0L89.9 384.1L88.1 389.5L83.8 390.9L85.7 398.0L84.1 399.5L91.7 409.0L94.3 420.8L90.9 425.3L88.8 426.1L85.7 423.1L85.1 418.6L79.9 421.4L81.3 426.8L80.0 428.8L85.4 433.8L83.7 436.4L86.8 440.6L85.0 442.1L85.3 445.7L87.1 446.5L90.8 453.0L94.7 453.4L95.8 451.4L99.0 454.3L100.1 453.2L104.1 456.2L106.2 460.8L115.8 463.7L122.3 467.9L123.9 472.5L125.9 472.6L126.1 469.8L128.1 468.9L128.5 464.4L130.8 465.5L132.0 463.9L137.8 466.4L139.7 465.9L140.9 471.5L147.1 473.8L151.5 479.1L153.4 478.8L158.5 481.5L163.9 489.4L169.0 486.4L172.3 487.2L173.7 488.1L174.2 495.2L177.1 495.9L178.3 498.3L180.5 498.3L184.4 501.6L188.7 499.4L189.9 500.5L188.5 506.1L192.8 507.5L195.1 506.5L196.4 507.9L198.4 505.5L202.9 514.9L204.9 514.6L204.3 511.2L206.0 509.7L206.7 513.5L209.6 514.9L212.1 510.9L214.3 511.0L222.8 516.8L228.6 515.8L231.0 517.0L232.6 514.5L237.2 515.7L237.9 513.9L241.9 513.5L245.9 510.8L249.1 512.9L249.8 516.1L248.1 523.7L251.4 528.9L254.6 525.6L253.2 523.6L255.5 517.1L259.9 511.3L264.4 508.2L268.4 510.3L269.9 509.2L272.7 509.9L274.1 511.8L277.5 512.6L279.2 511.5L285.9 516.1L289.1 511.8L294.0 515.2L292.9 516.6L294.5 517.7L293.6 522.2L295.8 523.7L300.5 523.5L302.4 527.6L300.8 530.9L302.1 536.0L310.8 534.0L318.4 535.5L329.8 532.6L330.3 529.7L337.3 521.4L341.3 521.1L347.2 518.2L353.7 514.2L355.5 510.2L361.0 507.5L363.2 507.0L365.1 509.0L369.7 508.4L370.1 510.2L372.2 509.8L383.1 518.2L385.6 515.2L387.8 515.4L388.2 512.7L386.5 511.6L387.2 508.3L389.9 506.4L390.7 502.1L392.6 502.6L394.5 506.5L396.2 505.7L400.0 510.2L402.1 508.1L401.1 505.8L402.6 505.3L404.1 510.7L409.3 508.4L409.8 506.0L407.4 499.6L408.8 498.2L407.9 493.8L410.5 493.0L411.6 497.0L413.5 496.3L413.3 489.6L415.8 488.5L413.8 479.4L415.1 474.2L412.5 458.9L413.3 457.5L407.5 449.0L408.2 446.0L410.3 447.8L412.1 445.3L404.5 436.1L404.8 432.6L401.3 428.0L401.3 425.9L394.4 422.3L387.3 421.4L388.4 426.3L386.4 426.8L386.5 431.2L381.6 431.4L379.4 433.4L377.0 432.5L378.9 438.3L377.9 439.2L372.9 437.4L371.6 434.3L368.3 434.7L369.4 438.8L367.8 440.7L365.0 436.4L363.6 436.4L362.4 439.1L359.3 437.1L357.3 437.7L354.9 433.6L356.4 432.6L356.2 429.6L354.1 429.8L352.9 426.3L350.3 427.1L353.3 425.8L352.6 424.8L347.6 424.4L342.8 419.2L335.0 424.0L330.5 423.4L328.3 421.1L324.9 423.2L320.4 419.4L317.7 420.2L316.9 417.9L304.5 418.3L303.7 415.4L299.6 416.3L292.8 410.7L291.2 411.3L287.8 409.8L286.5 411.2L282.5 411.0L273.7 407.1L268.0 401.6L266.9 396.6L261.9 391.6L264.9 389.2L265.7 386.1L264.6 380.0L263.4 379.3L265.7 376.3L264.4 374.1L261.0 374.6L261.2 370.4L258.9 368.0L260.2 367.0L259.7 365.3L264.0 362.8L263.0 361.6L264.6 355.5L260.6 355.3L258.2 352.1L262.8 350.6Z"><title>西藏自治区</title></path><path class="pv" d="M598.7 380.5L596.3 378.7L596.3 374.9L602.5 359.8L599.8 349.2L600.6 340.8L599.0 338.9L598.8 332.0L603.8 326.6L603.0 323.7L604.6 323.4L605.5 321.2L604.5 316.9L601.0 313.2L600.8 308.5L606.8 303.2L608.5 292.9L611.0 291.0L612.8 286.2L609.8 284.2L611.0 280.5L606.7 282.3L604.0 286.8L601.1 284.6L598.8 286.0L595.0 283.1L596.1 286.6L591.9 288.0L591.0 286.8L591.3 290.1L588.7 291.1L586.5 295.2L581.8 298.2L582.3 299.7L577.2 303.6L575.3 308.2L577.5 311.9L575.3 313.9L573.0 311.4L572.7 318.7L562.3 319.9L560.5 319.4L559.8 316.6L555.0 314.6L553.9 316.8L552.0 317.0L548.9 320.2L549.8 320.6L548.0 325.6L549.3 329.1L548.2 330.4L548.9 334.2L558.6 337.4L561.1 340.6L562.7 341.1L563.7 339.8L567.6 344.0L568.4 342.9L570.7 344.7L571.3 352.0L568.2 355.0L570.1 365.9L559.3 367.6L556.0 366.3L554.4 367.6L557.9 372.5L553.0 373.2L552.4 374.3L548.5 373.9L548.0 374.9L542.3 370.6L536.4 370.8L535.5 372.9L537.0 377.1L532.7 381.0L539.3 385.2L538.2 387.7L536.2 386.7L537.1 389.6L534.3 394.4L537.0 401.1L536.4 402.4L534.9 400.4L530.7 401.7L527.2 400.4L524.8 405.0L522.9 405.0L524.4 407.5L527.1 408.6L526.3 412.8L521.7 415.1L519.5 414.4L521.1 418.7L528.3 415.4L529.6 418.3L534.5 420.4L539.5 417.9L544.9 418.5L545.2 421.9L548.1 424.6L550.9 422.1L551.3 424.4L554.9 424.8L559.8 429.8L564.0 427.2L567.7 427.3L577.7 434.2L580.8 436.8L580.9 438.4L585.8 438.2L586.4 430.6L584.4 426.7L586.6 420.7L592.8 421.8L595.9 420.0L594.3 416.0L589.1 415.0L589.2 411.3L583.4 409.6L584.7 407.9L586.4 407.1L598.0 409.5L601.3 407.5L604.0 410.7L609.2 406.0L608.9 401.1L602.1 394.9L603.4 393.8L602.1 392.1L603.0 389.4L599.7 387.7L600.7 385.8L598.5 381.2Z"><title>陕西省</title></path><path class="pv" d="M535.8 357.7L534.7 358.7L535.8 365.2L533.5 367.7L530.4 363.7L529.5 365.3L528.8 363.2L525.9 364.2L528.4 362.5L526.0 361.5L525.1 362.7L522.6 358.5L523.7 358.0L519.2 357.9L517.6 356.6L517.0 351.8L519.7 349.5L517.3 342.5L515.5 341.4L514.6 338.4L516.8 336.4L514.3 334.6L514.1 332.5L510.6 331.6L507.8 327.4L505.5 328.3L506.2 324.2L498.1 324.2L490.0 316.8L485.5 315.1L484.9 310.5L487.6 309.2L485.7 304.2L492.9 299.4L498.3 292.5L495.9 286.3L496.6 283.8L492.8 283.0L484.5 285.6L479.0 290.3L470.0 287.1L461.1 290.0L460.0 290.5L463.9 294.4L459.1 299.1L456.2 299.2L451.8 296.7L449.7 293.4L450.2 291.8L445.9 293.3L443.8 291.7L443.9 284.1L438.3 284.2L438.3 282.6L435.5 282.0L434.3 278.5L427.3 275.0L421.1 274.5L427.6 271.9L433.0 266.6L434.1 257.8L432.0 254.6L424.9 253.5L423.2 255.2L416.8 255.0L415.6 258.6L413.7 256.5L410.6 258.0L410.8 260.0L408.6 256.7L407.0 257.2L407.9 258.6L403.3 260.8L403.1 253.7L397.3 250.2L391.7 243.3L395.2 239.0L384.3 216.1L371.5 217.5L366.9 219.9L364.9 223.3L368.2 227.7L366.5 229.1L367.5 231.7L366.2 233.3L358.3 236.1L353.9 240.8L351.2 236.6L346.8 238.7L345.0 241.3L341.5 242.0L333.0 249.8L329.7 254.5L328.9 258.9L315.4 260.7L310.7 281.9L305.8 287.5L306.3 291.1L318.4 288.7L319.5 293.8L328.4 293.8L330.9 294.9L328.8 296.1L330.9 297.9L338.8 297.0L341.9 305.3L348.6 303.7L356.4 306.5L360.5 304.3L366.3 308.9L369.6 309.4L371.4 306.8L376.1 307.7L376.1 302.6L377.9 302.2L378.2 300.1L382.4 300.4L380.5 294.1L380.9 288.3L387.1 288.9L399.2 296.5L401.7 294.7L402.3 291.7L407.2 293.7L411.0 290.5L415.7 293.2L415.1 294.3L424.7 303.3L432.3 307.7L433.2 307.9L432.9 305.7L430.2 303.0L431.2 301.9L437.2 306.8L445.0 308.7L444.7 312.1L449.7 315.4L452.3 316.5L453.9 315.0L456.2 315.8L459.7 319.3L462.7 317.8L464.4 322.7L473.1 330.4L470.6 330.8L470.0 333.0L474.4 337.1L472.4 338.2L475.0 341.1L476.4 345.8L480.0 348.1L477.0 350.8L478.4 351.6L478.0 355.9L475.5 355.2L473.8 357.0L475.8 361.3L474.7 362.6L470.8 360.8L469.9 363.8L467.4 364.0L467.2 366.5L469.2 368.9L464.2 372.8L463.8 374.8L461.3 375.1L461.6 380.8L465.2 382.4L466.9 385.5L465.1 387.1L463.8 386.7L461.9 390.4L460.3 389.5L458.1 390.9L455.2 388.3L445.6 384.9L443.5 386.2L442.6 389.0L446.4 394.8L448.9 395.7L449.1 399.4L455.9 399.1L456.5 402.6L460.8 401.1L461.8 403.8L458.9 407.3L460.5 410.6L461.6 408.9L464.1 408.6L464.6 406.9L465.9 408.2L466.9 404.5L470.2 403.6L470.4 401.8L468.3 400.5L468.2 398.1L464.9 393.3L469.0 393.2L469.8 390.8L473.2 391.0L472.4 389.6L477.5 386.3L481.8 391.0L480.9 391.9L481.6 396.5L484.7 397.7L487.3 396.5L487.4 399.1L495.9 398.9L498.0 400.6L498.7 404.6L502.0 406.1L500.1 406.6L500.6 411.9L502.1 412.4L499.8 413.8L499.9 416.0L505.6 419.5L513.2 420.8L518.7 418.0L518.1 414.2L521.0 415.1L525.4 413.9L527.1 408.6L524.4 407.5L522.9 405.0L524.8 405.0L526.0 401.5L527.2 400.4L530.7 401.7L534.9 400.4L536.4 402.4L537.0 401.1L534.3 394.4L537.1 389.6L536.2 386.7L538.2 387.7L539.3 385.2L532.7 381.0L537.0 377.1L535.5 372.9L536.4 370.8L542.3 370.6L548.0 374.9L548.5 373.9L552.4 374.3L553.0 373.2L557.9 372.5L554.4 367.6L556.0 366.3L559.3 367.6L570.1 365.9L568.2 355.0L571.3 352.0L570.1 343.8L568.4 342.9L567.6 344.0L563.7 339.8L562.7 341.1L561.1 340.6L558.6 337.4L548.9 334.2L548.2 330.4L546.8 329.5L537.6 329.7L538.1 333.1L536.4 332.7L538.3 336.0L538.1 338.0L536.0 338.1L534.8 341.3L533.5 340.9L536.1 343.1L535.3 346.3L541.1 347.9L543.2 350.6L542.9 353.8L541.4 354.7L542.2 357.3L539.8 358.7L536.8 357.7Z"><title>甘肃省</title></path><path class="pv" d="M476.1 345.1L475.0 341.1L472.4 338.2L474.4 337.1L470.0 333.0L470.6 330.8L473.1 330.4L472.4 328.9L464.4 322.7L462.7 317.8L459.7 319.3L456.2 315.8L453.9 315.0L452.3 316.5L449.7 315.4L444.7 312.1L445.0 308.7L437.2 306.8L431.2 301.9L430.2 303.0L432.9 305.7L433.2 307.9L432.3 307.7L424.7 303.3L415.1 294.3L415.7 293.2L411.0 290.5L407.2 293.7L402.3 291.7L401.7 294.7L399.2 296.5L387.1 288.9L380.9 288.3L380.5 294.1L382.4 300.4L378.2 300.1L377.9 302.2L376.1 302.6L376.1 307.7L371.4 306.8L369.6 309.4L366.3 308.9L360.5 304.3L356.4 306.5L348.6 303.7L341.9 305.3L338.8 297.0L330.9 297.9L328.8 296.1L330.9 294.9L328.4 293.8L319.5 293.8L318.4 288.7L309.2 290.0L306.5 292.3L288.9 297.3L278.6 298.8L274.8 302.4L269.7 302.7L270.1 305.5L272.4 307.5L276.5 305.9L276.3 317.7L285.3 322.8L289.0 332.1L287.0 331.9L279.7 335.9L279.9 340.7L284.7 341.8L285.4 350.7L283.7 350.3L281.7 352.1L278.6 349.8L271.7 349.2L267.9 346.9L266.9 351.1L258.4 351.6L258.6 354.1L264.6 355.5L263.0 361.6L264.0 362.8L259.7 365.3L260.2 367.0L258.9 368.0L261.2 370.4L261.0 374.6L264.4 374.1L265.7 376.3L263.4 379.3L264.6 380.0L265.7 386.1L264.9 389.2L261.9 391.6L266.9 396.6L266.3 397.8L267.6 398.1L269.6 403.4L279.3 409.9L292.8 410.7L299.6 416.3L303.7 415.4L304.5 418.3L316.9 417.9L317.7 420.2L320.4 419.4L324.9 423.2L328.3 421.1L330.5 423.4L335.0 424.0L342.8 419.2L347.6 424.4L352.6 424.8L353.3 425.8L350.3 427.1L352.9 426.3L354.1 429.8L356.2 429.6L356.4 432.6L354.9 433.6L357.3 437.7L359.3 437.1L362.4 439.1L363.6 436.4L365.0 436.4L368.6 440.8L368.3 434.7L369.4 434.1L371.6 434.3L374.5 438.5L377.9 439.2L378.9 438.3L377.0 432.5L379.4 433.4L381.6 431.4L386.5 431.2L386.4 426.8L388.4 426.3L386.9 421.9L388.8 421.0L393.4 422.2L388.4 418.6L387.1 414.8L390.0 412.9L389.4 409.3L393.7 404.4L390.5 403.3L390.0 401.1L388.2 400.5L387.5 395.8L391.7 394.2L392.3 390.1L394.7 388.4L404.2 390.9L404.3 395.3L408.4 399.7L410.1 407.1L411.7 409.6L417.2 412.0L418.3 415.1L420.1 414.7L425.6 418.0L428.2 411.8L432.2 415.9L431.6 419.3L433.6 420.6L434.4 417.8L436.7 417.6L436.3 418.7L437.0 418.0L440.7 422.2L441.4 419.1L445.3 420.7L449.0 419.5L450.3 416.2L448.5 414.5L449.4 411.8L448.5 408.2L451.3 407.4L452.6 409.6L454.4 408.1L456.7 410.6L458.4 407.0L457.2 405.0L459.1 402.0L456.5 402.6L455.9 399.1L454.6 398.6L449.1 399.4L448.9 395.7L446.4 394.8L442.6 389.0L443.5 386.2L445.6 384.9L449.6 385.8L458.4 391.0L460.3 389.5L461.9 390.4L463.8 386.7L465.1 387.1L466.9 385.5L465.2 382.4L461.6 380.8L461.3 375.1L463.8 374.8L464.2 372.8L469.2 368.9L467.2 366.5L467.4 364.0L469.9 363.8L470.8 360.8L474.7 362.6L475.8 361.3L473.8 357.0L475.5 355.2L478.0 355.9L478.4 351.6L477.0 350.8L480.0 348.1L476.3 345.5Z"><title>青海省</title></path><path class="pv" d="M548.2 330.4L549.3 329.6L548.0 325.6L549.8 320.6L548.9 320.2L554.6 315.5L550.5 313.4L551.0 312.4L546.9 309.2L542.9 309.7L535.4 305.9L537.4 304.5L539.1 297.9L543.4 291.7L540.5 288.0L540.3 284.8L537.4 284.7L535.9 286.8L532.2 287.0L532.2 289.3L530.0 289.2L527.1 294.1L525.2 299.4L525.4 306.4L523.8 309.9L525.0 312.2L523.7 316.3L521.5 316.8L521.1 318.4L516.5 318.3L511.8 320.7L502.2 322.1L499.8 323.8L506.2 324.2L505.5 328.3L507.8 327.4L510.6 331.6L514.1 332.5L514.3 334.6L516.8 336.4L514.6 338.4L515.5 341.4L517.3 342.5L519.7 349.5L517.0 351.8L517.6 356.6L519.2 357.9L523.7 358.0L522.6 358.5L525.1 362.7L526.0 361.5L528.9 362.3L529.5 365.3L530.4 363.7L531.5 364.3L533.5 367.7L535.8 365.2L534.7 358.7L537.7 357.6L539.8 358.7L542.7 356.3L541.4 354.7L542.9 353.8L542.7 349.7L538.7 347.0L535.8 347.1L536.1 343.1L533.5 340.9L534.8 341.3L536.0 338.1L538.1 338.0L536.4 332.7L538.1 333.1L537.4 329.8L547.7 330.5ZM528.4 362.7L525.9 364.2L528.5 363.4Z"><title>宁夏回族自治区</title></path><path class="pv" d="M371.5 217.5L371.2 214.0L363.3 206.4L357.6 191.8L354.3 191.3L355.7 185.9L349.0 186.8L344.5 185.1L338.6 181.6L336.3 178.5L324.8 172.5L314.7 170.9L304.2 171.5L301.2 170.1L293.2 170.3L286.2 167.5L282.2 168.0L278.8 160.2L279.5 157.2L284.5 151.3L282.5 145.5L285.4 140.6L284.4 140.1L285.0 137.4L282.5 132.5L280.3 131.9L277.0 127.6L274.1 118.8L270.0 117.2L268.9 114.0L264.0 114.9L260.9 110.9L252.9 111.9L250.6 109.3L245.7 108.0L243.9 103.5L234.9 100.1L236.9 97.2L231.2 94.0L233.9 92.0L232.5 88.1L227.5 88.7L226.2 90.1L221.0 88.5L217.3 88.9L214.8 91.7L216.2 94.6L215.6 97.0L212.3 100.8L206.6 103.0L199.5 103.2L196.2 107.8L195.3 110.7L198.1 125.9L195.5 130.6L191.2 130.3L185.9 134.5L182.6 131.5L169.3 132.3L160.2 128.1L154.6 127.4L145.5 152.2L143.5 153.1L142.3 159.4L142.5 161.0L146.8 163.3L147.1 167.7L136.7 167.2L134.5 164.2L120.1 169.3L107.3 170.8L103.7 173.7L105.5 176.0L108.3 175.0L112.0 179.3L111.9 189.4L117.8 202.1L116.6 205.3L118.1 205.8L118.6 208.4L111.6 211.4L115.3 214.1L109.8 215.4L108.2 219.4L110.2 226.8L108.2 228.0L107.8 231.4L104.3 231.2L101.9 234.2L94.6 235.9L83.6 242.7L75.7 244.4L75.1 247.5L70.4 249.0L69.5 251.7L59.5 251.9L56.8 250.6L54.9 251.6L52.9 253.0L49.3 262.9L46.0 265.3L45.1 263.4L40.3 264.5L39.3 266.3L35.8 266.6L36.2 262.7L34.1 259.0L28.3 263.2L21.8 261.7L21.0 263.3L22.8 265.4L19.5 265.2L13.9 270.4L10.1 270.1L7.2 271.9L5.5 277.1L7.3 280.2L5.9 282.6L1.8 282.9L0.0 284.6L3.9 291.7L5.5 292.1L5.3 293.9L3.9 293.6L3.2 295.1L4.8 300.1L8.3 301.8L10.5 298.7L14.9 299.3L22.1 302.6L21.1 309.0L24.4 316.9L22.6 319.0L26.8 324.1L26.4 325.9L22.9 327.7L19.9 326.7L16.4 327.6L16.2 330.9L21.8 331.3L22.6 333.6L24.8 332.1L31.0 333.3L31.8 338.0L34.6 337.0L38.5 339.1L41.5 347.9L39.7 351.1L42.1 352.0L43.2 356.0L46.5 356.0L49.6 354.0L50.2 357.0L53.0 359.4L60.0 362.1L68.0 363.5L70.0 362.1L71.6 363.2L75.3 362.6L73.2 365.2L73.3 368.0L76.3 373.0L77.6 380.1L80.1 381.7L81.8 381.1L82.5 382.5L84.5 382.1L87.6 385.5L89.9 385.9L89.9 384.1L102.3 383.0L106.0 371.8L111.4 368.3L109.8 366.6L112.5 363.5L121.1 366.3L123.3 364.4L125.3 366.1L127.6 365.4L130.1 367.8L132.9 367.8L138.5 366.1L138.5 363.5L143.3 361.3L143.4 359.5L145.6 358.1L149.8 359.7L153.7 359.1L154.2 362.8L156.3 364.5L164.3 365.8L170.5 364.1L173.0 365.3L177.8 363.0L177.7 361.5L187.5 357.4L191.1 356.7L195.9 359.7L197.9 357.5L202.1 356.9L204.4 354.9L206.0 349.8L209.3 348.3L221.6 346.5L225.0 344.0L228.4 345.6L241.2 342.9L244.7 343.2L247.8 346.6L250.4 345.1L253.7 347.4L255.4 346.5L264.1 351.0L266.9 351.1L267.9 346.9L271.7 349.2L278.6 349.8L282.8 351.9L283.7 350.3L286.1 350.1L284.7 341.8L279.9 340.7L279.7 335.9L287.0 331.9L289.0 332.1L288.6 329.1L285.3 322.8L276.3 317.7L276.5 305.9L272.4 307.5L270.1 305.5L269.7 302.7L274.8 302.4L278.6 298.8L288.9 297.3L307.1 292.0L305.8 287.5L310.7 281.9L315.4 260.7L328.9 258.9L329.7 254.5L333.0 249.8L341.5 242.0L345.0 241.3L346.8 238.7L351.2 236.6L353.9 240.8L358.3 236.1L366.2 233.3L367.5 231.7L366.5 229.1L368.2 227.7L364.9 223.3L368.0 219.5Z"><title>新疆维吾尔自治区</title></path><path class="pv" d="M762.1 624.6L765.3 628.6L766.3 634.9L769.1 635.5L770.8 622.8L778.1 610.6L781.6 591.3L785.5 582.7L784.9 576.5L787.6 573.2L786.0 570.4L783.2 570.0L779.8 567.0L777.2 570.0L771.5 572.4L756.6 599.3L755.2 611.9L757.1 613.3L759.7 622.8ZM749.2 602.3L749.7 601.3L747.9 601.6L748.6 603.2ZM746.9 600.8L746.3 602.2L747.2 600.8ZM779.4 631.7L780.8 633.5L780.5 631.7Z"><title>台湾省</title></path><path class="pv" d="M658.0 623.3L656.2 625.0L657.9 626.4L655.8 627.2L655.1 629.6L657.4 629.3L658.6 626.9L661.8 629.4L662.1 625.7L663.3 626.6L664.1 624.7L662.8 623.8L661.1 624.8L663.0 623.3L661.7 622.4L658.8 623.1Z"><title>香港特别行政区</title></path><path class="pv" d="M795.8 604.1L800.0 581.7L795.8 604.2ZM773.9 657.4L785.7 639.4L773.9 657.4ZM746.4 713.5L755.0 692.9L746.3 713.6ZM682.6 931.5L693.8 914.5L682.5 931.5ZM630.0 1004.0L621.5 1006.4L633.5 1003.1L638.7 999.6L633.4 1002.7ZM564.3 952.7L564.0 932.8L563.3 943.7L564.3 952.7ZM594.6 846.8L597.5 838.5L597.7 829.2L595.6 844.3ZM589.8 769.3L587.5 760.3L581.1 749.9L588.8 765.0Z"><title>南海诸岛</title></path></g>
+      </defs>
+      <g class="relief">
+        <use href="#cnMap" y="18"/><use href="#cnMap" y="12"/><use href="#cnMap" y="6"/>
+      </g>
+      <use class="face" href="#cnMap"/>
+      <text class="country" x="495.1" y="322.4">中华人民共和国</text>
+      <g class="rts">
+        <g class="rt" style="--i:0"><path pathLength="1" d="M 739.0 400.4 Q 451.3 352.0 229.2 195.3"/><circle cx="229.2" cy="195.3" r="4.5"/></g><g class="rt" style="--i:1"><path pathLength="1" d="M 739.0 400.4 Q 607.9 379.6 496.3 461.4"/><circle cx="496.3" cy="461.4" r="4.5"/></g><g class="rt" style="--i:2"><path pathLength="1" d="M 739.0 400.4 Q 697.5 337.5 696.5 274.2"/><circle cx="696.5" cy="274.2" r="4.5"/></g><g class="rt" style="--i:3"><path pathLength="1" d="M 739.0 400.4 Q 658.6 479.1 645.5 610.7"/><circle cx="645.5" cy="610.7" r="4.5"/></g><g class="rt" style="--i:4"><path pathLength="1" d="M 739.0 400.4 Q 761.9 244.6 863.0 155.8"/><circle cx="863.0" cy="155.8" r="4.5"/></g><g class="rt" style="--i:5"><path pathLength="1" d="M 739.0 400.4 Q 659.5 358.7 575.3 385.8"/><circle cx="575.3" cy="385.8" r="4.5"/></g><g class="rt" style="--i:6"><path pathLength="1" d="M 739.0 400.4 Q 766.6 414.9 778.9 448.4"/><circle cx="778.9" cy="448.4" r="4.5"/></g>
+      </g>
+      <g class="src">
+        <circle class="ring" cx="739.0" cy="400.4" r="14">
+          <animate attributeName="r" from="14" to="220" dur="3.8s" repeatCount="indefinite"/>
+          <animate attributeName="stroke-opacity" from=".5" to="0" dur="3.8s" repeatCount="indefinite"/>
+        </circle>
+        <circle class="ring b" cx="739.0" cy="400.4" r="14">
+          <animate attributeName="r" from="14" to="220" dur="3.8s" begin="1.9s" repeatCount="indefinite"/>
+          <animate attributeName="stroke-opacity" from=".5" to="0" dur="3.8s" begin="1.9s" repeatCount="indefinite"/>
+        </circle>
+        <circle class="halo" cx="739.0" cy="400.4" r="24"/>
+        <circle class="halo b" cx="739.0" cy="400.4" r="24"/>
+        <circle class="core" cx="739.0" cy="400.4" r="9"/>
+        <text class="srctext" x="757.0" y="388.4">淮安 · PXiD</text>
+      </g>
+    </svg>
+    <div class="m1txt">
+      <div class="eyebrow">Huai'an · China</div>
+      <h2>淮安 · PXiD</h2>
+      <div class="bar"></div>
+      <p class="lede">为电动出行品牌提供产品设计、工程开发与制造服务。</p>
+    </div>
+    <div class="note">版图视觉示意 · 公开使用前需送审</div>
+  </div>
+</section>
+
+<!-- ============ N1 · 标准政区图（纸感省域 + 省界 + 省名）============ -->
+</div><script>
+  var secs = [].slice.call(document.querySelectorAll('.sec'));
+  // 入场：进入视口即激活（一次性）
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-active'); io.unobserve(e.target); } });
+    },{threshold:.25});
+    secs.forEach(function(s){ io.observe(s); });
+  }
+  // 兜底：若无头渲染/隐藏段未触发观察，也要让内容可见
+  function revealVisible(){
+    var vh = window.innerHeight;
+    secs.forEach(function(s){
+      var r = s.getBoundingClientRect();
+      if (s.classList.contains('is-active')) return;
+      if (r.top < vh * .8 && r.bottom > 0) s.classList.add('is-active');
+    });
+  }
+  window.addEventListener('load', function(){ revealVisible(); setTimeout(revealVisible, 700); });
+  setTimeout(revealVisible, 1500);
+
+
+(function(){
+  if (!window.echarts || !window.PXID_WORLD_CN) { console.warn('[N3] deps missing'); return; }
+  var el = document.getElementById('pxidGlobe');
+  if (!el) return;
+
+  echarts.registerMap('world', window.PXID_WORLD_CN);
+
+  // 1) 世界国界 → 离线 canvas 贴图（赤道等距，直接当 emission 图层）
+  function borderLayer(geo, color, width, mapName){
+    var cv = document.createElement('canvas');
+    cv.width = 4096; cv.height = 2048;
+    var c = echarts.init(cv);
+    c.setOption({
+      backgroundColor: 'transparent',
+      geo: { map: mapName, silent: true, left: 0, top: 0, right: 0, bottom: 0,
+        boundingCoords: [[-180, 90], [180, -90]],
+        itemStyle: { areaColor: 'transparent', borderColor: color, borderWidth: width },
+        emphasis: { disabled: true } }
+    });
+    return c;
+  }
+  var worldLayer = borderLayer(null, 'rgba(226,234,236,.92)', 1.5, 'world');
+
+  // 2) 中国单独一层：台湾省与南海诸岛已在底图内，这里描红强调
+  var cnFeat = window.PXID_WORLD_CN.features.filter(function(f){
+    return f.properties && f.properties.name === 'China';
+  })[0];
+  var cnOnly = { type: 'FeatureCollection', features: [{
+    type: 'Feature', properties: { name: 'China' }, geometry: cnFeat.geometry
+  }] };
+  echarts.registerMap('cn-only', cnOnly);
+  var cnLayer = borderLayer(null, '#ff3b47', 2.4, 'cn-only');
+
+  var SOURCE = [119.0153, 33.6104];
+  var NODES = [
+    { name:'淮安', lng:119.0153, lat:33.6104, hub:true },
+    { name:'深圳', lng:114.0579, lat:22.5431, hub:true },
+    { name:'中国香港', lng:114.1333, lat:22.2833, hub:true },
+    { name:'日本', lng:139.6917, lat:35.6895, hub:true },
+    { name:'印度浦那', lng:73.8567, lat:18.5204, hub:true },
+    { name:'泰国', lng:100.5018, lat:13.7563 },
+    { name:'新加坡', lng:103.8198, lat:1.3521 },
+    { name:'越南', lng:106.6297, lat:10.8231 },
+    { name:'印尼', lng:106.8456, lat:-6.2088 },
+    { name:'菲律宾', lng:120.9842, lat:14.5995 },
+    { name:'马来西亚', lng:101.6869, lat:3.1390 },
+    { name:'韩国', lng:126.9780, lat:37.5665 },
+    { name:'阿联酋', lng:55.2708, lat:25.2048 },
+    { name:'沙特', lng:46.6753, lat:24.7136 },
+    { name:'以色列', lng:34.7818, lat:32.0853 },
+    { name:'德国', lng:13.4050, lat:52.5200 },
+    { name:'法国', lng:2.3522, lat:48.8566 },
+    { name:'英国', lng:-0.1278, lat:51.5074 },
+    { name:'荷兰', lng:4.9041, lat:52.3676 },
+    { name:'意大利', lng:12.4964, lat:41.9028 },
+    { name:'西班牙', lng:-3.7038, lat:40.4168 },
+    { name:'瑞士', lng:8.5417, lat:47.3769 },
+    { name:'俄罗斯', lng:37.6173, lat:55.7558 },
+    { name:'美国', lng:-74.0060, lat:40.7128 },
+    { name:'加拿大', lng:-79.3832, lat:43.6532 },
+    { name:'澳大利亚', lng:151.2093, lat:-33.8688 },
+    { name:'巴西', lng:-46.6333, lat:-23.5505 },
+    { name:'南非', lng:28.0473, lat:-26.2041 },
+    { name:'埃及', lng:31.2357, lat:30.0444 },
+    { name:'土耳其', lng:28.9784, lat:41.0082 },
+    { name:'墨西哥', lng:-99.1332, lat:19.4326 }
+  ];
+  var hubs = NODES.filter(function(n){ return n.hub; });
+  var markets = NODES.filter(function(n){ return !n.hub; });
+  var lineData = hubs.filter(function(n){ return n.name !== '淮安'; }).map(function(n){
+    return { coords: [SOURCE, [n.lng, n.lat]] };
+  });
+
+  var still = /still/.test(location.search) || /still/.test(location.hash); // 核验用：?still 停转并让中国正对镜头
+  var chart = echarts.init(el);
+  setTimeout(function(){
+    try{
+      chart.setOption({
+        backgroundColor: 'transparent',
+        globe: {
+          baseTexture: (window.PXID_TEX && window.PXID_TEX.earth) || 'assets/globe-assets/earth-blue-marble-4k.jpg',
+          shading: 'lambert',
+          light: { ambient: { intensity: .5 }, main: { intensity: 1.0, shadow: false } },
+          postEffect: { enable: true, bloom: { enable: true, intensity: .06 } },
+          atmosphere: { show: true, glowColor: '#ff4d5a', innerGlowIntensity: .1, outerGlowIntensity: .16 },
+          viewControl: { autoRotate: !still, enableRotate: true, rotateSensitivity: 1, autoRotateSpeed: 2.2,
+            distance: 236, minDistance: 120, maxDistance: 420, alpha: 18, beta: still ? -161 : -120 },
+          emphasis: { disabled: true },
+          layers: [
+            { type: 'blend', texture: worldLayer, blendTo: 'emission', intensity: .78 },
+            { type: 'blend', texture: cnLayer, blendTo: 'emission', intensity: 1.15 }
+          ]
+        },
+        series: [
+          { name: '服务连线', type: 'lines3D', coordinateSystem: 'globe',
+            effect: { show: true, trailWidth: 4.5, trailLength: .42, trailOpacity: 1, trailColor: '#ff5560' },
+            lineStyle: { color: '#ff5560', opacity: .55, width: 1.6 },
+            data: lineData },
+          { name: '淮安 · PXiD', type: 'scatter3D', coordinateSystem: 'globe', symbolSize: 26,
+            itemStyle: { color: '#ff2f43' },
+            label: { show: true, formatter: function(p){ return p.data.name; }, color: '#fff', fontSize: 16,
+              fontWeight: 'bold', textBorderColor: 'rgba(0,0,0,.6)', textBorderWidth: 2 },
+            data: hubs.filter(function(n){ return n.name === '淮安'; })
+              .map(function(n){ return { name: '淮安 · PXiD', value: [n.lng, n.lat, 0] }; }) },
+          { name: '服务枢纽', type: 'scatter3D', coordinateSystem: 'globe', symbolSize: 13,
+            itemStyle: { color: '#ffffff' },
+            label: { show: true, formatter: function(p){ return p.data.name; }, color: '#fff', fontSize: 12,
+              textBorderColor: 'rgba(0,0,0,.6)', textBorderWidth: 2 },
+            data: hubs.filter(function(n){ return n.name !== '淮安'; })
+              .map(function(n){ return { name: n.name, value: [n.lng, n.lat, 0] }; }) },
+          { name: '服务节点', type: 'scatter3D', coordinateSystem: 'globe', symbolSize: 5,
+            itemStyle: { color: '#aeb6b9' },
+            label: { show: false },
+            data: markets.map(function(n){ return { name: n.name, value: [n.lng, n.lat, 0] }; }) }
+        ]
+      });
+    }catch(e){ console.error('[N3] globe setOption failed:', e); }
+  }, 260);
+
+  window.addEventListener('resize', function(){ chart.resize(); });
+})();
+</script></template>
+  <style id="pxid-s6-switch-css">
+#pxidS6{position:relative}
+/* 坤哥：section 高度不能超过一屏 —— S6 原样 1029(>900)，变体态压到一屏 */
+#pxidS6:not([data-s1v="orig"]){max-height:100vh;max-height:100svh;overflow:hidden}
+#pxidS6 > .pxid-s6frame{position:absolute;inset:0;display:block;width:100%;height:100%;border:0;background:#fff}
+#pxidS6 > .pxid-s6frame[hidden]{display:none}
+#pxidS6:not([data-s1v="orig"]) > .bg,
+#pxidS6:not([data-s1v="orig"]) > .inner{visibility:hidden}
+#pxidS6 .pxid-s6switch{position:absolute;bottom:18px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.46);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:4px;opacity:.6;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
+#pxidS6 .pxid-s6switch:hover{opacity:1}
+#pxidS6 .pxid-s6switch .lbl{display:none}
+#pxidS6 .pxid-s6switch button{cursor:pointer;font:inherit;font-size:12px;line-height:1;padding:6px 8px;border:0;background:transparent;color:rgba(255,255,255,.86);white-space:nowrap;border-radius:0;transition:color .18s,background .18s}
+#pxidS6 .pxid-s6switch button:hover{color:#fff;background:rgba(255,255,255,.15)}
+#pxidS6 .pxid-s6switch button.on{background:#d71920;color:#fff}
+@media (max-width:900px){#pxidS6 .pxid-s6switch{left:12px;right:12px;bottom:12px;max-width:none;opacity:.88}#pxidS6 .pxid-s6switch button{font-size:11.5px;padding:6px 7px}}
+#app header .pcNav .mid .lists .navHref i.iconfont{display:none!important}
+#app header .pcNav .mid .lists .navHref{position:relative}
+#app header .pcNav .mid .lists .navHref::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:#d71920;transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+#app header .pcNav .mid .lists .navHref:hover::after{transform:scaleX(1)}
+</style><script id="pxid-s6-switch-js">
+(function(){
+  var sec=document.getElementById("pxidS6"); if(!sec) return;
+  var KEY="pxid-s6-v", frame=sec.querySelector(".pxid-s6frame");
+  /* N3 三维地球依赖 echarts 系外部 JS —— iframe 是独立文档，必须自己加载 */
+  var G="/nav/three-sites/cndagri/assets/pxid/globe-assets/";
+  var EXT=["echarts.min.js","echarts-gl.min.js","world-cn.js","tex-base64.js"].map(function(f){return ["<scr","ipt src=",String.fromCharCode(34),G,f,String.fromCharCode(34),"></scr","ipt>"].join("");}).join("");
+  var btns=sec.querySelectorAll(".pxid-s6switch button"), cache={};
+  function doc(v){
+    var fs=getComputedStyle(document.documentElement).fontSize||"16px";
+    var ck=v+"|"+fs;
+    if(cache[ck]) return cache[ck];
+    var t=sec.querySelector("template.pxid-s6tpl[data-v=\""+v+"\"]"); if(!t) return null;
+    cache[ck]="<!doctype html><html lang=\"zh-CN\"><head><meta charset=\"utf-8\">"
+      +"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      +"<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow:hidden;"
+      +"font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}html,body{height:100%}/* 内容比段高矮时（S4 内容 715 < 段高 812）垂直居中，别贴着顶 */body{display:flex;flex-direction:column;justify-content:center}/* 变体源的 section 多为 min-height:88vh/84vh，内容重心偏上（坤哥要求垂直居中）——统一给一点顶部内边距把内容压到视觉居中；absolute 子元素相对 padding box 定位，会跟着下移 */section{box-sizing:border-box;padding-top:5.4vh}</style>"
+      +"</head><body>"+EXT+t.innerHTML+"</body></html>";
+    return cache[ck];
+  }
+  /* 内容在段内垂直居中：变体 section 常是 88vh/min-height 决定的高度，比段高矮 →
+     下方会拖出一条空白带（坤哥：「后增加的内容偏上部」「底部明显的区分去掉」）。
+     做法：量所有直接子元素的并集边界，算出与段中心的偏移，整体平移补正，并让根元素铺满。 */
+  /* 内容在段内垂直居中（坤哥：偏上部 / 底部那条多余的区分去掉）
+     ① root 先铺满段高（min-height:100%）→ 背景铺到底、不拖空白带；
+     ② 量所有直接子元素的并集边界（iframe 内部坐标！），算出与段中心的偏移；
+     ③ 只做纯平移 translateY 补正 —— 不改高度（改高度会让 74% 这类百分比定位跟着动，来回振荡）；
+     ④ 平移后底部会露出一条 → body 用 root 自己的背景色兜住，肉眼无缝。 */
+  function centerContent(){
+    if(!frame||frame.hidden) return;
+    try{
+      var d=frame.contentDocument; if(!d) return;
+      var root=d.querySelector('section')||d.querySelector('div[id]'); if(!root) return;
+      root.style.transform=""; root.style.minHeight="100%";
+      void root.offsetHeight;                      /* 强制重排，否则量到旧布局 */
+      var kids=root.children, top=1e9, bot=-1e9, i, r;
+      for(i=0;i<kids.length;i++){ r=kids[i].getBoundingClientRect(); if(r.height<4) continue;
+        if(r.top<top) top=r.top; if(r.bottom>bot) bot=r.bottom; }
+      if(top>bot) return;
+      var shift=Math.round(frame.clientHeight/2-(top+bot)/2);
+      var bg=d.defaultView.getComputedStyle(root).backgroundColor;
+      if(bg && bg!=='rgba(0, 0, 0, 0)') d.body.style.background=bg;
+      if(Math.abs(shift)>=6) root.style.transform="translateY("+shift+"px)";
+    }catch(e){}
+  }
+  function fitFrame(){
+    if(!frame||frame.hidden) return;
+    for(var i=0;i<3;i++){ try{
+      var d=frame.contentDocument; if(!d) return;
+      var root=d.querySelector('section')||d.querySelector('div[id]'); if(!root) return;
+      var h=Math.round(root.getBoundingClientRect().height);
+      /* 段高由站点原样内容撑出，iframe 铺满即可 */
+    }catch(e){} }
+  }
+  if(frame) frame.addEventListener("load", function(){ setTimeout(centerContent,200); setTimeout(centerContent,1200); setTimeout(centerContent,2600); setTimeout(fitFrame,120); setTimeout(fitFrame,600); });
+  function syncNav(){
+    document.documentElement.classList.toggle("pxid-s6-lab", !!(frame&&!frame.hidden));
+  }
+  function set(v){
+    if(!frame) return;
+    var d=doc(v);
+    if(d){ if(frame.getAttribute("srcdoc")!==d) frame.setAttribute("srcdoc",d); frame.hidden=false; }
+    else { frame.hidden=true; frame.removeAttribute("srcdoc"); v="orig"; }
+    sec.setAttribute("data-s1v",v);
+    syncNav(); setTimeout(centerContent,300); setTimeout(centerContent,1400); setTimeout(centerContent,2800); syncNav(); setTimeout(fitFrame,120); setTimeout(fitFrame,700);
+    for(var i=0;i<btns.length;i++) btns[i].classList.toggle("on",btns[i].getAttribute("data-v")===v);
+    try{ localStorage.setItem(KEY,v); }catch(e){}
+  }
+  if(frame) frame.addEventListener("load", syncNav);
+  for(var i=0;i<btns.length;i++)(function(b){ b.addEventListener("click",function(){ set(b.getAttribute("data-v")); }); })(btns[i]);
+  /* 本段已定为「M1 明暗维度」（坤哥：这个 section 只保留 M1）—— 忽略历史偏好，固定 M1 */
+  try{ localStorage.setItem(KEY,"a"); }catch(e){}
+  set("a");
+  window.__pxidS6=set;
+})();
+</script>
+    <div class="s6-fade" aria-hidden="true"></div>
+  </section>
+
+  <section class="row r6 pxid-cooperation" aria-label="合作咨询"><div class="bg"><div class="photo" aria-hidden="true"><div class="r6Pic full on"><div class="pic full lazy" data-cooperation-frame="development" data-src="../assets/pxid/cooperation-video/development-desktop.jpg" style="background-image:url('../assets/pxid/cooperation-video/development-desktop.jpg')"><video class="cooperation-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" poster="../assets/pxid/cooperation-video/development-desktop.jpg" data-video-desktop="../assets/pxid/cooperation-video/development-desktop.mp4" data-video-mobile="../assets/pxid/cooperation-video/development-mobile-clean.mp4" data-poster-desktop="../assets/pxid/cooperation-video/development-desktop.jpg" data-poster-mobile="../assets/pxid/cooperation-video/development-mobile-clean.jpg"></video></div></div><div class="r6Pic full"><div class="pic full lazy" data-cooperation-frame="manufacturing" data-src="../assets/pxid/cooperation-video/manufacturing-desktop.jpg" style="background-image:url('../assets/pxid/cooperation-video/manufacturing-desktop.jpg')"><video class="cooperation-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" poster="../assets/pxid/cooperation-video/manufacturing-desktop.jpg" data-video-desktop="../assets/pxid/cooperation-video/manufacturing-desktop.mp4" data-video-mobile="../assets/pxid/cooperation-video/manufacturing-mobile-clean.mp4" data-poster-desktop="../assets/pxid/cooperation-video/manufacturing-desktop.jpg" data-poster-mobile="../assets/pxid/cooperation-video/manufacturing-mobile-clean.jpg"></video></div></div></div><div class="wave w1"><div class="mask waveItem"></div></div><div class="wave w2"><div class="mask waveItem"></div></div></div><div class="inner"><div class="group"><div class="list r6List" id="cooperation-development"><h2 class="f-40 en_b wc alan">产品开发合作</h2><p class="f-16 wc alan">有新产品需求，可从产品设计开始。</p><a class="cooperation-cta alan" href="contact.html#project-form">咨询产品开发<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a></div><div class="list r6List" id="cooperation-manufacturing" aria-hidden="true" inert><h2 class="f-40 en_b wc alan">制造合作</h2><p class="f-16 wc alan">已有设计方案或工程样车，可咨询制造评估。</p><a class="cooperation-cta alan" href="contact.html#project-form">咨询制造合作<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a></div><div class="cooperation-controls" role="group" aria-label="切换合作方向"><button class="r6Pager on" type="button" aria-controls="cooperation-development" aria-pressed="true">产品开发</button><button class="r6Pager" type="button" aria-controls="cooperation-manufacturing" aria-pressed="false">制造合作</button><button class="cooperation-video-toggle" type="button" aria-label="播放背景视频" data-playing="false" hidden><svg class="video-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="video-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg></button></div></div></div></section>
+</main>
+<footer id="footer-contact">
+  <div class="bg"><svg class="water" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none"><defs><path id="foot-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z"/></defs><g class="parallax"><use href="#foot-wave" x="50" y="0" fill="rgba(19,65,68,1)"/></g></svg></div>
+  <div class="inner">
+    <div class="mid fxb">
+      <div class="left alanParent alanGo"><a class="logo alanUp" href="index.html"><img class="icon" src="../assets/pxid/logo-white.svg" alt="PXID 品向"></a></div>
+      <div class="right"><div class="top fxb alanParent alanGo"><div class="layer-search alanUp" data-url="search.html"><input class="search f-14 wc" type="text" placeholder="搜索产品与资料"><a class="sub fxc" aria-label="搜索"><i class="iconfont f-20 wc">&#xe8af;</i></a></div><div class="layer-top alanUp"><span class="mask"></span><span class="txt layer-icon"><i class="iconfont f-18">&#xe8ba;</i></span></div></div><ul class="items alanParent alanGo"><li class="list alanUp"><a href="index.html" class="f-20 en_b fxs wc txt">首页<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="company.html" class="f-20 en_b fxs wc txt">关于 PXID<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="business.html" class="f-20 en_b fxs wc txt">产品方案<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="manufacturing.html" class="f-20 en_b fxs wc txt">制造能力<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="sustainability.html" class="f-20 en_b fxs wc txt">ODM 全流程<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="news.html" class="f-20 en_b fxs wc txt">洞察与资料<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="contact.html" class="f-20 en_b fxs wc txt">启动项目<i class="iconfont f-20 mc">&#xe8a9;</i></a></li></ul></div>
+    </div>
+    <div class="btm alanParent alanGo">
+      <p class="f-12 wc alanUp">Copyright © 2026 PXID 品向智造. All rights reserved.</p>
+      <div class="col fxb alanUp"><p class="f-14 wc"><a href="tel:+8618936381099">+86 189 3638 1099</a><br><a href="mailto:inquiry@pxid.com">inquiry@pxid.com</a><br>江苏省淮安市清江浦区深圳东路18号4号楼</p><div class="set fxc"><a class="f-12 aHref" href="privacy-policy.html">隐私政策</a><span class="line"></span><a class="f-12 aHref" href="legal-notice.html">法律声明</a></div></div>
+    </div>
+  </div>
+</footer>
+<script src="../templates/assets/pxid-site.js?v=20260828-cooperation30"></script>
+<script src="../templates/assets/pxid-cooperation-video.js?v=20260828-cooperation-video32"></script>
+<script src="../templates/assets/pxid-product-rail.js?v=20260828-product-rail33"></script>
+
+<script id="pxid-odm-scroll-fix">
+(function () {
+  var rail = document.querySelector('.home .pxid-process-rail');
+  if (!rail) return;
+  // Vertical wheel input stays with Lenis, avoiding native/animated scroll races.
+  // Horizontal wheel and trackpad input belongs to the native process rail.
+  rail.addEventListener('wheel', function (event) {
+    if (Math.abs(event.deltaX) > Math.abs(event.deltaY) || event.shiftKey) {
+      event.stopPropagation();
+    }
+  }, { passive: true });
+})();
+</script>
+<script src="../templates/assets/pxid-home-performance.js?v=20260914-native1"></script>
+<!-- pxid-motion-v1 start -->
+<!-- 全站动效 v1：变体态入场 + 切换交接（视口锚定）。移动端与 prefers-reduced-motion 自动不启用 -->
+<script src="../templates/assets/pxid-motion-v1.js?v=20260916-motion4"></script>
+<!-- pxid-motion-v1 end -->
+
+<!-- 首页一级标题规格统一 · 方案 B：72px / 行高 79.2 / 字距 -2（坤哥 2026-09-17）
+     覆盖 S1 hero / S2 / S3 / S4 / S5 / S6 / S8 共 7 段；S7（ODM 服务流程）保留
+     「ODM 116 + 服务流程 43」的特殊组合，不套用。移动端（≤900px）不启用。 -->
+<style id="pxid-title-unify">
+@media (min-width:901px){
+  .home .banner .til,
+  .home .r1.pxid-odm-intro #r1Txt > h2,
+  .home .r2 h2.pxid-reading-item,
+  .home .r3 h2.pxid-reading-item,
+  .home .r4 h2.pxid-reading-item,
+  .home .r5.pxid-network h2,
+  .home .r6.pxid-cooperation h2{
+    font-size:72px!important;line-height:79.2px!important;letter-spacing:-2px!important;font-weight:600!important}
+  .home .r1.pxid-odm-intro #r1Txt > h2 .letter,
+  .home .r3 h2.pxid-reading-item .letter,
+  .home .r4 h2.pxid-reading-item .letter{
+    font-size:inherit!important;line-height:inherit!important;letter-spacing:-2px!important}
+  /* S8 那条原规则权重更高(.home .r6.pxid-cooperation .inner .group .list h2)，同权重写一遍才压得住 */
+  .home .r6.pxid-cooperation .inner .group .list h2{
+    font-size:72px!important;line-height:79.2px!important;letter-spacing:-2px!important;font-weight:600!important}
+}
+</style>
+
+<!-- 首页 S3「三类电动出行产品」背景图：始终可见（坤哥 2026-09-17）
+     原因：index.css 里 .fxBg{visibility:hidden}，只有 .fxBg.showImg 才 visible；
+     而 showImg 由 pxid-company-services.js 用 IntersectionObserver toggle，
+     滚出视口就移除 → 背景图反复"消失"。（该 JS 是模板文件，不动，这里用 CSS 兜底） -->
+<style id="pxid-fxbg-visible">
+  .fxBg{visibility:visible!important}
+</style>
+
+<!-- 首页 hero 底部波形：铺满整宽（坤哥 2026-09-17）
+     原因：index.css 里 .home .banner .bg .wave{width:13rem;right:1.6rem} 只覆盖右侧 1300px，
+     1920 视口下左边缘落在 x=460，所以左边 460px 是空的（"前半截不显示"）。
+     ⚠️ 必须挂在主文档里（用 pxid-s6-gap 块做锚点）——这台页面有 4 个 </body>，
+        挂"最后一个 </body>"会落进内嵌文档，样式根本不加载。 -->
+<style id="pxid-wave-full">
+@media (min-width:901px){
+  /* 首页两处波形都铺满整宽（index.css 里都是 width:13rem + right 偏移，左半边天然空白） */
+  .home .banner .bg .wave,
+  .home .r6 .bg .wave{width:100%!important;left:0!important;right:0!important}
+  .home .banner .bg .wave.w2,
+  .home .r6 .bg .wave.w2{left:0!important;right:0!important}
+}
+</style>
+
+
+<!-- S6 地图段：底部留白 96px（坤哥 2026-09-17）
+     iframe 是 position:absolute;inset:0 铺满整段的，只给 section 加 padding 没用，
+     必须同时把 iframe 的底边抬起（inset 的 bottom 设 96px） -->
+<style id="pxid-s6-gap">
+@media (min-width:901px){
+  /* 底部留白 177px：地图底距段底 36(iframe 内) + 177 = 213px，
+     与「ODM 段 bento 底 → 地图段顶」的 213px 对齐（坤哥 2026-09-17） */
+  .home .r5.pxid-network{padding-bottom:177px}
+  /* 过渡带：向下渐变到「视频首帧顶部」的浅色（#c9c4bb ≈ 白纸/木桌），
+     让深色段退场时与下方视频第一帧的颜色接上 */
+  /* 过渡带：向下渐变到「视频首帧顶部」的浅色（≈白纸/木桌），让深色段退场时和视频第一帧接上 */
+  #pxidS6 .s6-fade{position:absolute;left:0;right:0;bottom:0;height:177px;z-index:6;pointer-events:none;
+    background:#ffffff;
+  if (!vids.length || !('IntersectionObserver' in window)) return;
+  vids.forEach(function(v){
+    v.muted = true; v.loop = true; v.setAttribute('playsinline','');
+    if (!v.getAttribute('src') && v.dataset.videoDesktop) v.setAttribute('src', v.dataset.videoDesktop);
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var v = e.target;
+      if (e.intersectionRatio >= 0.25) {            // 露出元素高度的 1/4 才播
+        if (v.paused) { v.play().catch(function(){}); }
+      } else {
+        if (!v.paused) { try { v.pause(); } catch(err){} }
+      }
+    });
+  }, { threshold: [0, 0.25, 0.5, 0.75] });
+  vids.forEach(function(v){ io.observe(v); });
+})();
+</script>
+</body>
+</html>
