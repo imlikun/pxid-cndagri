@@ -808,6 +808,7 @@
     </svg>
     <div class="map-review-note">版图视觉示意 · 公开使用前需送审</div></div></div></div>
   <iframe class="pxid-s6frame" title="Hero 排版预览" hidden></iframe>
+  <div class="pxid-s6switch" role="group" aria-label="地图版式切换"><span class="lbl">地图版式</span><button type="button" data-v="orig">立体浮雕</button><button type="button" data-v="a" class="on">标准政区图</button></div>
   <template class="pxid-s6tpl" data-v="a"><style>
   :scope{ --green:#d71920; --red:#d71920; --ink:#0b0b0b; --line:#1d1d1d; --gray:#919191; }
   *{margin:0;padding:0;box-sizing:border-box;border-radius:0!important}
@@ -1235,7 +1236,7 @@
 </style><script id="pxid-s6-switch-js">
 (function(){
   var sec=document.getElementById("pxidS6"); if(!sec) return;
-  var KEY="pxid-s6-v", frame=sec.querySelector(".pxid-s6frame");
+  var KEY="pxid-s6-v2", frame=sec.querySelector(".pxid-s6frame");
   /* N3 三维地球依赖 echarts 系外部 JS —— iframe 是独立文档，必须自己加载 */
   var G="/nav/three-sites/cndagri/assets/pxid/globe-assets/";
   var EXT=["echarts.min.js","echarts-gl.min.js","world-cn.js","tex-base64.js"].map(function(f){return ["<scr","ipt src=",String.fromCharCode(34),G,f,String.fromCharCode(34),"></scr","ipt>"].join("");}).join("");
@@ -1302,8 +1303,10 @@
   }
   if(frame) frame.addEventListener("load", syncNav);
   for(var i=0;i<btns.length;i++)(function(b){ b.addEventListener("click",function(){ set(b.getAttribute("data-v")); }); })(btns[i]);
-  /* 本段已定为「M1 明暗维度」（坤哥：这个 section 只保留 M1）—— 忽略历史偏好，固定 M1 */
-  set("orig");
+  /* 默认「标准政区图」（精致版），并记住用户选择 */
+  var saved="a"; try{ saved=localStorage.getItem(KEY)||"a"; }catch(e){}
+  if(saved!=="orig" && saved!=="a") saved="a";
+  set(saved);
   window.__pxidS6=set;
 })();
 </script>
