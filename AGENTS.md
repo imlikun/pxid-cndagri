@@ -193,20 +193,23 @@ node "C:/Users/Kun.li/.workbuddy/skills/account-vault/vault.js" raw GitHub-PAT-W
 
 机制：JS 从 `template[data-v=X]` 取 innerHTML → 塞进 iframe 的 `srcdoc` → 显示 iframe、隐藏 `.inner`；同时 `data-s1v` 切到 X，用 CSS 控制显隐。
 
-- 默认值由 JS 末尾那个 `set(...)` 决定，选择记在 `localStorage`（键 `pxid-s2-v` / `pxid-s6-v2` / `pxid-s7-v2`）
-- **想改默认版式**：改 JS 里 `saved` 的兜底值；若旧的 `localStorage` 值会干扰，把 `KEY` 升级（如 `pxid-s6-v` → `pxid-s6-v2`）
+- 默认值由 JS 末尾那个 `set(...)` 决定，选择记在 `localStorage`（键 `pxid-s2-v` / `pxid-s4-v` / `pxid-s7-v2`）
+  **S6 是例外**：09-20 起只剩一档，脚本硬锁 `set("a")`，已不读写 `localStorage`
+- **想改默认版式**：改 JS 里 `saved` 的兜底值；若旧的 `localStorage` 值会干扰，把 `KEY` 升级（如 `pxid-s7-v` → `pxid-s7-v2`）。S6 已无 `saved`，直接改末尾的 `set("a")`
 
-### 3.3 S6 淮安地图：5 档方案
+### 3.3 S6 淮安地图：只有 M1 一档（2026-09-20 起）
 
-| data-v | 内容 | template 大小 |
-|---|---|---|
-| `orig` | 线上原样 | — |
-| `a` | M1 明暗维度（默认） | ~97K |
-| `b` | N1 标准政区图 | ~84K |
-| `c` | N2 线框政区图 | ~84K |
-| `d` | N3 三维地球（需 `globe-assets/` 下 echarts） | ~27K |
+`cn/index.html` 里 `#pxidS6` 现在**只保留 `data-v="a"` = M1 明暗维度**一套模板：
 
-模板就在 `#pxidS6` 段内，按钮文案与 `data-v` 必须一一对应。
+- 已删除：`orig` 线上原样（段内那张内联 SVG 中国地图）、`b` N1 标准政区图、`c` N2 线框政区图、`d` N3 三维地球
+- 已删除：`.pxid-s6switch` 按钮条 + 它那 7 条 CSS + 脚本里的 `btns` / `KEY` / `localStorage` / `EXT`(echarts)
+- `#pxid-s6-switch-js` 脚本块**还在，别当废弃代码删**：M1 仍走 iframe `srcdoc` 渲染，脚本负责拼 iframe 文档和 `centerContent()` 垂直居中
+- 保留 `#pxidS6 > .inner` 里的 `h2#network-heading` + `.network-lede`（`visibility:hidden` 但占位，且供 SEO / 无障碍）
+
+**两个再改这块必须知道的坑：**
+1. **段高不能靠内容撑了。** iframe 是 `position:absolute;inset:0`，完全不贡献高度；原先段高由「线上原样」那张地图撑出来。现在写死在 `#pxid-s6-switch-css` 里：`#pxidS6{position:relative;height:100vh;height:100svh}`。删了原样图又不给这条高度 → M1 一起塌没。
+2. **`doc()` 取不到模板时不要再回落 `orig`。** 现在写成 `else { return; }`。改回 `v="orig"` 会渲染一张已经不存在的地图。
+3. 顺带：`globe-assets/`（echarts 系）现在首页**不再加载**，但目录留着 —— `_s6-test.html` / `_s7-test.html` 两个测试页里还有完整的 5 档版本可参考。
 
 ---
 
@@ -306,14 +309,15 @@ def outer_section(h, key):
 
 ---
 
-## 8. 当前进度（截至 2026-09-19 24:00）
+## 8. 当前进度（截至 2026-09-20 00:30）
 
-- S2 / S7 各带一套「版式切换」按钮（S2：当前版式 ↔ ODM 服务流程；S7：ODM 服务流程 ↔ 产品概览）
-- S6 地图恢复 5 档切换：线上原样 / M1 明暗维度 / N1 标准政区图 / N2 线框政区图 / N3 三维地球
+- S2 / S7 各带一套「版式切换」按钮（S2：当前版式 ↔ ODM 服务流程；S7：ODM 服务流程 ↔ 产品概览）；S4 也有（当前 `data-s1v="b"`）
+- **S6 地图已收敛为 M1 单档**，切换按钮一并删除（见 §3.3）。`index.html` 从 398,284 降到 180,175 字节
 - 首页 hero 视频、波浪等此前改动**已被 09-19 的回退覆盖**，当前 hero 无视频、页面有 4 处波浪、footer 有波浪
-- Git 最新提交：`da25899`
+- Git 最新提交：`848ba2f`（S6 收敛）；上一版 `4569a10`（AGENTS.md 补凭据取用）
 
 ### 已知遗留
 
 - `cn/_*-test.html` 共 11 个测试页未清理（不影响线上）
-- 部分按钮文案与模板内容可能不符（例如曾出现按钮写「标准政区图」而实际渲染 M1）——改动前先核对 `template` 内部的 `<section id>` 与按钮 `data-v`
+- 部分按钮文案与模板内容可能不符（例如曾出现按钮写「标准政区图」而实际渲染 M1）——改动前先核对 `template` 内部的 `<section id>` 与按钮 `data-v`。**S6 已无此问题**（按钮已删）
+- `#pxidS6` 那套模板内部还留着 N3 三维地球的**死代码**（`window.echarts` / `globe-assets/` 那段），因为没有 `#pxidGlobe` 元素所以恒不执行；清它属于额外风险，暂未动
