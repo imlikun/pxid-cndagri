@@ -309,15 +309,18 @@ def outer_section(h, key):
 
 ---
 
-## 8. 当前进度（截至 2026-09-20 00:30）
+## 8. 当前进度（截至 2026-09-20 14:30）
 
 - S2 / S7 各带一套「版式切换」按钮（S2：当前版式 ↔ ODM 服务流程；S7：ODM 服务流程 ↔ 产品概览）；S4 也有（当前 `data-s1v="b"`）
 - **S6 地图已收敛为 M1 单档**，切换按钮一并删除（见 §3.3）。`index.html` 从 398,284 降到 180,175 字节
-- 首页 hero 视频、波浪等此前改动**已被 09-19 的回退覆盖**，当前 hero 无视频、页面有 4 处波浪、footer 有波浪
-- Git 最新提交：`848ba2f`（S6 收敛）；上一版 `4569a10`（AGENTS.md 补凭据取用）
+- 首页 hero = **3 张原图轮播 + 1 档 ODM 视频**（2026-09-20 坤哥要两相对比）：视频不再 `z-index:14` 盖住 `.photo`，`.pager` 末尾多一个独立点位 `.pxid-hero-video-dot`（**不能复用 `BannerDot` 类**，见下条），点它给 `#pxidS1` 加 `.pxid-hero-video-on` → 图片/文案层淡出、视频 play；点回图档 pause 交还轮播。逻辑在 `templates/assets/pxid-hero-video-cmp.js`。页面另有 4 处波浪、footer 波浪，未动
+- Git 最新提交：`180f8d5`（hero 3 图恢复 + 视频改第 4 档可切换）
 
 ### 已知遗留
 
 - `cn/_*-test.html` 共 11 个测试页未清理（不影响线上）
 - 部分按钮文案与模板内容可能不符（例如曾出现按钮写「标准政区图」而实际渲染 M1）——改动前先核对 `template` 内部的 `<section id>` 与按钮 `data-v`。**S6 已无此问题**（按钮已删）
+- `cn/odm-options4.html` 是 ODM 10 步 Bento 的**第四轮评审页**（临时公开可访问），坤哥选定方案后删除，别当站内页维护
+- hero 轮播控制器 `templates/assets/pxid-home-motion.js`（由 `body[data-motion-src]` 延迟注入）把 `.bannerPic` / `.bannerList` / `.BannerDot` 当**平行数组按下标取**：三者数量必须一致，多一个 `BannerDot` 会 `copies[3]` 越界抛错并让切换整体失效
+- 往 `cn/index.html` **body 末尾塞内联 `<script>` 会静默不执行**（实测不进 `document.scripts`），新逻辑一律走 `templates/assets/*.js` 外链
 - `#pxidS6` 那套模板内部还留着 N3 三维地球的**死代码**（`window.echarts` / `globe-assets/` 那段），因为没有 `#pxidGlobe` 元素所以恒不执行；清它属于额外风险，暂未动
