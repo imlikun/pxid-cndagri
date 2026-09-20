@@ -179,10 +179,12 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
       <p>介绍 PXID 的模具、车架、涂装、装配、测试和质量检验环节。</p>
       <span class="read">阅读全文<i>→</i></span>
     </span>
-  </a></div></section></div></div>
+  </a></div>
+<div class="more-wrap"><button type="button" class="pxid-more" aria-label="切换到大图卡片墙查看全部资料">了解更多<span class="more-ar" aria-hidden="true">&#8594;</span></button></div></section></div></div>
 
 </div>
-<style>[hidden]{display:none!important}</style>
+<style>[hidden]{display:none!important}
+.more-wrap{margin-top:clamp(28px,3.2vw,56px);padding-top:clamp(22px,2.4vw,38px);border-top:2px solid var(--ink,#171717);text-align:center}.pxid-more{appearance:none;-webkit-appearance:none;display:inline-flex;align-items:center;gap:.55em;background:none;border:0;box-shadow:none;border-radius:0;cursor:pointer;padding:6px 2px;color:var(--red,#d71920);font-weight:600;font-size:clamp(16px,1.5vw,22px);line-height:1.3;font-family:inherit;letter-spacing:.02em}.pxid-more .more-ar{display:inline-block;transition:transform .22s ease}.pxid-more:hover .more-ar,.pxid-more:focus-visible .more-ar{transform:translateX(6px)}.pxid-more:focus-visible{outline:2px solid var(--red,#d71920);outline-offset:6px}</style>
 <script>
 (function(){
   var tabs=[].slice.call(document.querySelectorAll('.insight-tabs a[data-filter]'));
@@ -209,6 +211,19 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
   for(var k=0;k<tabs.length;k++)(function(t){
     t.addEventListener('click',function(e){ e.preventDefault(); apply(t.getAttribute('data-filter')); });
   })(tabs[k]);
+})();
+</script>
+<script>
+(function(){
+  var b=document.querySelector('.pxid-more'); if(!b) return;
+  b.addEventListener('click',function(e){
+    e.preventDefault();
+    try{
+      if(window.parent&&typeof window.parent.__pxidN1==='function'){ window.parent.__pxidN1('g'); return; }
+    }catch(err){}
+    /* 兜底：拿不到父页钩子就把链接交回父窗口自己导航，至少不留死按钮 */
+    try{ window.parent.location.href = window.parent.location.pathname + '?view=g'; }catch(err2){}
+  });
 })();
 </script></template>
   <template class="pxid-n1tpl" data-v="g"><style>@scope (#S04n12) {
