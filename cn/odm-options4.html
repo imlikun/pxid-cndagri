@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>ODM 全流程 · 10 步 · 第四轮（同一套 Bento，只换内部摆法）</title>
+<style>
+  /* ===== 全部取自线上 S7 #s7b9 .pxb-* 的实测值 ===== */
+  :root{
+    --ink:#171717; --red:#d71920; --block:#f4f4f4; --tile:#dcdcdc;
+    --gap:13px; --row:150px;
+    --mono:"SF Mono",Consolas,monospace;
+    --en:Poppins,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;border-radius:0}
+  body{background:#5a5a5a;font-family:"Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;color:var(--ink);line-height:1.6}
+  .canvas{width:1440px;margin:0 auto;background:#fff}
+  .bwrap{width:94%;padding-inline:calc(4/94*100%)}
+
+  .top{background:var(--ink);color:#fff;padding:60px 0 54px}
+  .top .k{font:600 12px/1 var(--mono);letter-spacing:.24em;color:var(--red)}
+  .top h1{font-size:40px;font-weight:600;letter-spacing:-1.3px;margin-top:16px}
+  .top p{color:#b3b3b0;margin-top:16px;font-size:15.5px;max-width:1000px;line-height:1.85}
+  .top p b{color:#fff}
+  .top .m{margin-top:20px;font:400 12px/1.9 var(--mono);color:#7d7d79;border-top:1px solid #2e2e2e;padding-top:14px}
+
+  .lab{padding:58px 0 26px;display:grid;grid-template-columns:1fr 268px;gap:34px;align-items:start}
+  .lab .no{display:inline-block;background:var(--red);color:#fff;font:600 11px/1 var(--mono);letter-spacing:.18em;padding:8px 12px}
+  .lab h2{font-size:30px;font-weight:600;letter-spacing:-.9px;margin-top:18px}
+  .lab .z{font-size:15.5px;color:#45453f;margin-top:12px;max-width:820px;line-height:1.9}
+  .lab .z b{color:var(--ink)}
+  .lab .d{margin-top:12px;font:400 12px/1.85 var(--mono);color:#8a8a86}
+  .lab .d em{font-style:normal;color:var(--ink);font-weight:600}
+  /* 缩略摆位图：和真实网格同一份数据生成 */
+  .mini-w{border-top:2px solid var(--ink);padding-top:12px}
+  .mini-w .mt{font:600 11px/1 var(--mono);letter-spacing:.16em;color:#8a8a86;margin-bottom:10px}
+  .mini{display:grid;gap:2px}
+  .mini i{font-style:normal;font:600 7px/1 var(--mono);display:flex;align-items:center;justify-content:center;
+    background:var(--tile);color:#8b8b87;overflow:hidden}
+  .mini i.mtxt{background:var(--ink);color:#fff}
+  .mini i.mhi{background:var(--red);color:#fff}
+  .sec{background:#fff;padding:0 0 96px}
+
+  /* ===== 共用 tile 语法（= .pxb-*）===== */
+  .g{display:grid;gap:var(--gap);position:relative}
+  .tile{position:relative;overflow:hidden;background:var(--tile)}
+  .ph{position:absolute;inset:0;background-color:#dcdcdc;
+    background-image:linear-gradient(45deg,transparent calc(50% - 1px),#c2c2be calc(50% - 1px),#c2c2be calc(50% + 1px),transparent calc(50% + 1px)),
+                    linear-gradient(-45deg,transparent calc(50% - 1px),#c2c2be calc(50% - 1px),#c2c2be calc(50% + 1px),transparent calc(50% + 1px))}
+  .cap{position:absolute;left:0;right:0;bottom:0;padding:10px 12px;color:#fff;display:flex;align-items:baseline;
+    gap:8px;flex-wrap:wrap;background:linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.78))}
+  .cap .n{font-family:var(--mono);font-size:13px;color:var(--red);flex:none}
+  .cap .t{font-size:13px;font-weight:600;white-space:nowrap}
+  .cap .s{flex:1 0 100%;font-size:12px;color:#cfcfcb;line-height:1.5}
+  /* 大块（≥2 列）：字号抬一级，副标题另起一行 */
+  .big .cap{padding:15px 18px}
+  .big .cap .n{font:600 20px/1 var(--mono);color:var(--red)}
+  .big .cap .t{font-family:var(--en);font-size:20px;font-weight:500;color:#fff;line-height:1.2}
+  .big .cap .s{font-size:12.5px}
+  /* 竖井块（1 列多行）：caption 竖排 */
+  .tall .cap{padding:14px 14px;flex-direction:column;align-items:flex-start;gap:5px}
+  .tall .cap .t{font-size:17px;white-space:normal;line-height:1.35}
+  .tall .cap .s{flex:none;font-size:12px}
+
+  .txt{background:var(--block);padding:24px;display:flex;flex-direction:column;gap:4px;position:relative;overflow:hidden}
+  .txt .en{display:block;line-height:.88;font-family:var(--en);font-size:44px;font-weight:800;letter-spacing:-.02em;color:var(--red)}
+  .txt h2{font-size:23px;line-height:1.25;font-weight:400;margin-top:12px}
+  .txt .bar{width:30px;height:2px;background:var(--red);margin:10px 0}
+  .txt .lede{font-size:15px;line-height:1.72;color:#4a4a47}
+  .txt .steps{margin-top:16px;display:flex;gap:5px}
+  .txt .steps i{flex:1;height:26px;background:rgba(23,23,23,.075);font-style:normal;font-size:11px;line-height:26px;
+    text-align:center;color:rgba(23,23,23,.45);font-family:var(--mono)}
+  .txt .cta{margin-top:auto;font-size:15px;color:var(--red);text-decoration:none;font-weight:600}
+  /* 通栏文本带（B 用）：横排 */
+  .txt.band{flex-direction:row;align-items:center;gap:26px;padding:22px 24px}
+  .txt.band .en{font-size:36px;flex:0 0 auto;line-height:.9}
+  .txt.band h2{margin-top:0;font-size:19px;flex:0 0 auto;max-width:170px}
+  .txt.band .bar{margin:0;flex:0 0 auto}
+  .txt.band .lede{flex:1;min-width:180px}
+  .txt.band .steps{margin-top:0;flex:0 0 auto;width:190px}
+  .txt.band .cta{margin-top:0;flex:0 0 auto}
+</style>
+</head>
+<body>
+<div class="canvas">
+
+  <div class="top"><div class="bwrap">
+    <div class="k">ODM 全流程 · #odm-intro · 10 步 · 第四轮</div>
+    <h1>同一套 Bento，只换内部块块的摆法</h1>
+    <p>你说得对，第三轮 A 和 B 前两行是一模一样的（文本格 2×2 钉左上、01 一个 4 格宽横条、02–05 四个窄位），只有第三行往后才分岔，所以看上去就是同一个设计。<b>这一轮三个方案的容器、灰格、红色 mono 序号、底部渐变、零圆角全部不变，唯一变量就是 11 个块在网格里的跨度和落位</b> —— 每个方案右上角给了缩略摆位图，先看轮廓再看大图。</p>
+    <div class="m">容器 1440 → <b style="color:#e4e4e1">1238</b> · 行基准 <b style="color:#e4e4e1">150px</b> · gap <b style="color:#e4e4e1">13px</b> · 斜叉=图位（车间实拍）· 墨色=文本格 · 红色=加倍大块</div>
+  </div></div>
+
+  <div class="opt" id="optA"></div>
+  <div class="opt" id="optB"></div>
+  <div class="opt" id="optC"></div>
+
+</div>
+<script>
+const S=[["01","需求分析","市场、场景与法规"],["02","概念设计","草图、三维与评审"],
+["03","结构设计","FEA 仿真与工艺选型"],["04","电控与 IoT","BMS、仪表与联网"],
+["05","工程样车","近量产验证与迭代"],["06","模具设计","DFM 与 CAE 模流"],
+["07","模具制造","CNC、EDM 与三坐标"],["08","车架涂装","焊接、热处理、粉体"],
+["09","试验检测","20 项性能与道路测试"],["10","批量装配","组装、成品检测与交付"]];
+
+/* 每项：[键, 起列, 止列, 起行, 止行, 附加类]  —— 真实网格和缩略图共用 */
+const OPT={
+ A:{cols:6,rows:4,claim:"竖井起手",
+    h2:"竖井 Bento · 01 立成一根三行高的竖格，把横向阅读节奏一刀切断",
+    z:"<b>主张：一切从需求出发，所以 01 不给横条，给它一根柱子。</b>01 独占 1 列 × 3 行（161×476），是整段最高的块，视线从左上的文本格滑出来第一个撞上的就是它；02 用 3 格宽的横格在右侧铺开，03–06 用 1、2 格小砖砌在竖井右边，最后 07–10 四块 2 格砖在最底下收口。轮廓是<b>不对称的</b>，最不像「排版好的表格」，最有编辑感。",
+    d:"跨度 <em>文本 2×2 / 01 竖井 1×3 / 02 横 3×1 / 03·05·07·08·09·10 各 2×1 / 04·06 各 1×1</em> · 段高 <em>639</em> · 视觉锚 <em>01</em> · 风险 <em>低</em>",
+    items:[["txt",1,3,1,3],["t01",3,4,1,4,"tall big"],["t02",4,7,1,2,"big"],
+           ["t03",4,6,2,3],["t04",6,7,2,3],["t05",4,6,3,4],["t06",6,7,3,4],
+           ["t07",1,3,3,4],["t08",1,3,4,5],["t09",3,5,4,5],["t10",5,7,4,5]]},
+ B:{cols:6,rows:3,claim:"双轨五步",
+    h2:"双轨 Bento · 顶上一条通栏文本带，下面两条轨各走五步",
+    z:"<b>主张：十步是两条平行的产线，不是一条蛇。</b>文本格拉成整幅宽的横带压顶（英文大字 + 标题 + 红短横 + 十格步进条 + 入口一行排开），下面<b>上轨 01–05（设计与工程）、下轨 06–10（制造与交付）</b>，每轨的头一格（01、06）做成 2 格宽当轨头，其余四格 1 格宽等分。它是三个方案里<b>最好扫读、最容易数清步数</b>的，也最省纵向空间（段高只有 476），代价是层级最平。",
+    d:"跨度 <em>文本带 6×1 通栏 / 01·06 轨头各 2×1 / 其余八格各 1×1</em> · 段高 <em>476</em>（最矮）· 扫读性 <em>最好</em> · 风险 <em>低</em>",
+    band:true,
+    items:[["txt",1,7,1,2],["t01",1,3,2,3,"big"],["t02",3,4,2,3],["t03",4,5,2,3],["t04",5,6,2,3],["t05",6,7,2,3],
+           ["t06",1,3,3,4,"big"],["t07",3,4,3,4],["t08",4,5,3,4],["t09",5,6,3,4],["t10",6,7,3,4]]},
+ C:{cols:6,rows:4,claim:"对角双核",
+    h2:"对角双核 Bento · 01 和 06 各占一个 2×2 方块，压在对角线上",
+    z:"<b>主张：十步里只有两步是真正的门槛 —— 需求定义（01）和开模（06）。</b>给这两步各一个 2×2 的大方块，位置一个在左上偏中、一个在右下，形成一条<b>对角线</b>；剩下八步用 1×1 和 2×1 的小砖把空隙砌满。读者不需要读文字就能感到「中间有两件事很重」，这正是 ODM 报价和交期最容易出问题的两个节点。",
+    d:"跨度 <em>文本 2×2 / 01·06 各 2×2 双核 / 02·05·09·10 各 2×1 / 03·04·07·08 各 1×1</em> · 段高 <em>639</em> · 视觉锚 <em>01 与 06</em> · 风险 <em>低</em>",
+    items:[["txt",1,3,1,3],["t01",3,5,1,3,"big"],["t02",5,7,1,2,"big"],
+           ["t03",5,6,2,3],["t04",6,7,2,3],["t05",1,3,3,4],["t06",5,7,3,5,"big"],
+           ["t07",3,4,3,4],["t08",4,5,3,4],["t09",1,3,4,5],["t10",3,5,4,5]]}
+};
+
+function tile(i,cls,st){const s=S[i];
+  return `<div class="tile ${cls}" style="${st}"><div class="ph"></div>
+   <div class="cap"><span class="n">${s[0]}</span><span class="t">${s[1]}</span><span class="s">${s[2]}</span></div></div>`;}
+const TXT=n=>`<span class="en">ODM<br>Process</span><h2>从产品设计到批量生产</h2>
+<div class="bar"></div><p class="lede">PXID 为电动出行产品提供一站式 ODM 服务，覆盖从概念设计、工程开发到规模化量产的完整流程。</p>
+<div class="steps">${S.map(s=>`<i>${s[0]}</i>`).join("")}</div>
+<a class="cta" href="#">看全流程 →</a>`;
+
+for(const k of ["A","B","C"]){
+  const o=OPT[k];
+  /* 缩略摆位图 */
+  let mini=`<div class="mini" style="grid-template-columns:repeat(${o.cols},1fr);grid-auto-rows:13px">`;
+  for(const it of o.items){
+    const [key,c1,c2,r1,r2,cls]=it;
+    const isTxt=key==="txt", hi=(cls||"").includes("big")||(cls||"").includes("tall");
+    mini+=`<i class="${isTxt?"mtxt":hi?"mhi":""}" style="grid-column:${c1}/${c2};grid-row:${r1}/${r2}">${isTxt?"TXT":key.slice(1)}</i>`;
+  }
+  mini+=`</div>`;
+
+  /* 真实网格 */
+  let grid=`<div class="g" style="grid-template-columns:repeat(${o.cols},1fr);grid-auto-rows:var(--row)">`;
+  for(const it of o.items){
+    const [key,c1,c2,r1,r2,cls]=it;
+    const st=`grid-column:${c1}/${c2};grid-row:${r1}/${r2}`;
+    if(key==="txt") grid+=`<div class="txt${o.band?" band":""}" style="${st}">${TXT()}</div>`;
+    else grid+=tile(+key.slice(1)-1,`t${key.slice(1)} ${cls||""}`.trim(),st);
+  }
+  grid+=`</div>`;
+
+  document.getElementById("opt"+k).innerHTML=`
+    <div class="lab bwrap">
+      <div>
+        <span class="no">方案 ${k} · ${o.claim}</span>
+        <h2>${o.h2}</h2>
+        <div class="z">${o.z}</div>
+        <div class="d">${o.d}</div>
+      </div>
+      <div class="mini-w"><div class="mt">摆位图 · ${o.cols} 列 ${o.rows} 行</div>${mini}</div>
+    </div>
+    <div class="sec"><div class="bwrap">${grid}</div></div>`;
+}
+</script>
+</body>
+</html>
