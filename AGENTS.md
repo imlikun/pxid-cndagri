@@ -313,8 +313,9 @@ def outer_section(h, key):
 
 - S2 / S7 各带一套「版式切换」按钮（S2：当前版式 ↔ ODM 服务流程；S7：ODM 服务流程 ↔ 产品概览）；S4 也有（当前 `data-s1v="b"`）
 - **S6 地图已收敛为 M1 单档**，切换按钮一并删除（见 §3.3）。`index.html` 从 398,284 降到 180,175 字节
+- `sustainability.html` 的 `#odm-intro` 已从 5 步扩到 **10 步**，并把第四轮 3 档 Bento（A 竖井 / B 双轨 / C 对角双核）做成真页面可切换对比（`d304d88`）：切换条只剩这 3 个按钮，旧 `orig/a/b/c/e` 的 DOM 与文案**原样保留、仅隐藏**，默认 `ba`，`localStorage` 旧值夹在三档内。**坤哥选定后收尾**：删掉落选两档 + 整个 `.f2-switch` + 旧 5 档 DOM 与那段 F2 `<style>`/`<script>`
 - 首页 hero = **3 张原图轮播 + 1 档 ODM 视频**（2026-09-20 坤哥要两相对比）：视频不再 `z-index:14` 盖住 `.photo`，`.pager` 末尾多一个独立点位 `.pxid-hero-video-dot`（**不能复用 `BannerDot` 类**，见下条），点它给 `#pxidS1` 加 `.pxid-hero-video-on` → 图片/文案层淡出、视频 play；点回图档 pause 交还轮播。逻辑在 `templates/assets/pxid-hero-video-cmp.js`。页面另有 4 处波浪、footer 波浪，未动
-- Git 最新提交：`180f8d5`（hero 3 图恢复 + 视频改第 4 档可切换）
+- Git 最新提交：`d304d88`（`#odm-intro` 10 步 + 3 档 Bento 上线对比）
 
 ### 已知遗留
 
