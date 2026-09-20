@@ -13,3 +13,9 @@ _preview/
 .DS_Store
 Thumbs.db
 *.swp
+
+# ===== 内部稿：含服务器地址与密钥路径，绝不入库 =====
+AGENTS.md
+HANDOFF*.md
+PXID-交付说明.md
+*.command
