@@ -315,13 +315,16 @@ def outer_section(h, key):
 - **S6 地图已收敛为 M1 单档**，切换按钮一并删除（见 §3.3）。`index.html` 从 398,284 降到 180,175 字节
 - `sustainability.html` 的 `#odm-intro` 已从 5 步扩到 **10 步**，并把第四轮 3 档 Bento（A 竖井 / B 双轨 / C 对角双核）做成真页面可切换对比（`d304d88`）：切换条只剩这 3 个按钮，旧 `orig/a/b/c/e` 的 DOM 与文案**原样保留、仅隐藏**，默认 `ba`，`localStorage` 旧值夹在三档内。**坤哥选定后收尾**：删掉落选两档 + 整个 `.f2-switch` + 旧 5 档 DOM 与那段 F2 `<style>`/`<script>`
 - 首页 hero = **3 张原图轮播 + 1 档 ODM 视频**（2026-09-20 坤哥要两相对比）：视频不再 `z-index:14` 盖住 `.photo`，`.pager` 末尾多一个独立点位 `.pxid-hero-video-dot`（**不能复用 `BannerDot` 类**，见下条），点它给 `#pxidS1` 加 `.pxid-hero-video-on` → 图片/文案层淡出、视频 play；点回图档 pause 交还轮播。逻辑在 `templates/assets/pxid-hero-video-cmp.js`。页面另有 4 处波浪、footer 波浪，未动
-- `#odm-stages` 的**成品C 主辅层级**档同步扩到 **10 段**（`2d1fead`）：每段 `min-height:100vh`（移动端 `100svh`）占满一屏，序号 / 标题 / 主图与 `#odm-intro` 的 10 步一一对应可上下对照；段 id 用 `C-stage-N` 不补零、全站无引用。**其余 f3 档（orig/a/b/c/d/da/db/dd）仍是 5 段**，定稿时要一并对齐
-- Git 最新提交：`2d1fead`（成品C 扩到 10 段满屏）
+- `#odm-stages` **已定档成品C 主辅层级**（`a8a5e17`+`aeedeef`）：切换条、原样 5 段、D 目录条、成品A/B/D 全部删除，段属性静态 `data-f3="dc"`；10 段各 `min-height:100vh`，两块之间 **90px 整条白缝**（留白是段间 `margin-bottom` 而非段内 padding，且 `.f3-v-dc .f3-C` 容器转白）；首块顶部有 `.f3-idx` 横条，01–10 数字各跳 `#C-stage-N`。f3 脚本只保留"点缩略图换本行大图"（`.f3-picked` 红框靠它），删掉的是切档控制器。f3 的 style 块已清掉 426 条孤儿规则
+- `#odm-handoff`（流程衔接）**已定档原样**（`f6e29c5`）：切换条 + B/C/E 三档 + f4 的 style/script 全删，段高 555→512，原样内容几何未变
+- 全站锚点已迁到 `#C-stage-N`（映射：定义→01 / 设计→03 / 样车→05 / 验证→06 / 交付→09）。**页脚那 4 条不在 html 里**，是 `templates/assets/pxid-site.js` 用 `pagePrefix` 拼字符串注入的；改这个共享 JS 必须同时统一升 9 个页面的 `?v=`（现 `20260920-stage-anchor1`），否则老访客拿旧缓存
+- Git 最新提交：`48ec00a`（页脚与 company 断链修复 + 缓存版本统一）
 
 ### 已知遗留
 
 - `cn/_*-test.html` 共 11 个测试页未清理（不影响线上）
 - 部分按钮文案与模板内容可能不符（例如曾出现按钮写「标准政区图」而实际渲染 M1）——改动前先核对 `template` 内部的 `<section id>` 与按钮 `data-v`。**S6 已无此问题**（按钮已删）
+- `#odm-intro` 的 **Bento 三档还没定**（A 竖井 / B 双轨 / C 对角双核，默认 A），切换条仍在；定档后按同样方式清掉另外两档 + `.f2-switch` + 旧 `orig/a/b/c/e` 五档
 - `cn/odm-options4.html` 是 ODM 10 步 Bento 的**第四轮评审页**（临时公开可访问），坤哥选定方案后删除，别当站内页维护
 - hero 轮播控制器 `templates/assets/pxid-home-motion.js`（由 `body[data-motion-src]` 延迟注入）把 `.bannerPic` / `.bannerList` / `.BannerDot` 当**平行数组按下标取**：三者数量必须一致，多一个 `BannerDot` 会 `copies[3]` 越界抛错并让切换整体失效
 - 往 `cn/index.html` **body 末尾塞内联 `<script>` 会静默不执行**（实测不进 `document.scripts`），新逻辑一律走 `templates/assets/*.js` 外链
