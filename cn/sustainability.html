@@ -39,13 +39,13 @@
   @media (max-width:900px){.pxid-cta-row{gap:10px}}
 </style>
 
-<style id="pxid-handoff-out">
-  /* 出口行住在墨段里：与段头导语同宽同字号，只把颜色关系反过来 */
-  .odm-handoff-out{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;max-width:31em;margin:.3rem 0 0;font-size:clamp(15px,.15rem,17px);line-height:1.6}
-  .odm-handoff-out>span{color:rgba(255,255,255,.5)}
-  .odm-handoff-out>a{color:#d71920;text-decoration:none;white-space:nowrap;font-weight:600}
-  .odm-handoff-out i{font-style:normal;transition:transform .3s}
-  .odm-handoff-out>a:hover i,.odm-handoff-out>a:focus-visible i{transform:translateX(5px)}
+<style id="pxid-cta-2">
+  /* 红块里的次级动作：与主 CTA 同宽，靠一条白色细线分层，不抢 48px 主标题 */
+  .odm-cta-2{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-top:clamp(24px,2.6vw,38px);padding-top:clamp(18px,2vw,26px);border-top:1px solid rgba(255,255,255,.24);font-size:clamp(15px,.15rem,17px);line-height:1.6;color:rgba(255,255,255,.76)}
+  .odm-cta-2>span{color:rgba(255,255,255,.76)}
+  .odm-cta-2>a{color:#ffffff;font-weight:700;text-decoration:none;white-space:nowrap}
+  .odm-cta-2 i{display:inline-block;margin-left:.14rem;font-style:normal;transition:transform .35s cubic-bezier(.38,0,0,1)}
+  .odm-cta-2>a:hover i,.odm-cta-2>a:focus-visible i{transform:translateX(.08rem)}
 </style>
 </head>
 <body id="app" class="sustain afterInner">
@@ -573,7 +573,7 @@
 
   <section class="row odm-handoff" id="odm-handoff">
     <div class="group maxSize">
-      <div class="odm-handoff-head alanGo"><span>02 / 流程衔接</span><h2>各环节按开发顺序衔接</h2><p class="pxid-prose">产品设计完成后进入工程开发；工程样车验证后进入制造、测试和批量生产。</p><p class="odm-handoff-out"><span>想先了解支撑这些环节的设备与工艺？</span><a href="manufacturing.html">查看制造能力 <i aria-hidden="true">→</i></a></p></div>
+      <div class="odm-handoff-head alanGo"><span>02 / 流程衔接</span><h2>各环节按开发顺序衔接</h2><p class="pxid-prose">产品设计完成后进入工程开发；工程样车验证后进入制造、测试和批量生产。</p></div>
       <div class="odm-handoff-list alanGo">
         <div><span>产品设计 → 结构设计</span><strong>设计方案进入工程开发</strong><p class="pxid-prose">结构设计将产品外观转化为可加工和装配的部件。</p></div>
         <div><span>结构与电控 → 工程样车</span><strong>工程方案进入实车验证</strong><p class="pxid-prose">通过可骑行样车检查机械结构和关键部件。</p></div>
@@ -649,6 +649,7 @@ font-weight:400!important;display:block!important;margin:0 0 10px!important;text
       <h2>提交当前项目资料</h2>
       <strong>联系 PXID <i aria-hidden="true">→</i></strong>
     </a>
+    <div class="maxSize odm-cta-2"><span>想先了解支撑这些环节的设备与工艺？</span><a href="manufacturing.html">查看制造能力 <i aria-hidden="true">→</i></a></div>
   </section>
 </main>
 <footer id="footer-contact">
