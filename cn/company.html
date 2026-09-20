@@ -12,6 +12,46 @@
   <link rel="stylesheet" href="../templates/assets/index.css">
   <link rel="stylesheet" href="../templates/assets/respone.css">
   <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260831-bw-red8">
+
+<style id="pxid-co-inserts">
+/* ===== ① 硬数字带 ===== */
+.row.pxid-co-nums{background:#f6f6f4;padding:clamp(40px,4.6vw,66px) 0}
+.pxid-co-nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2vw,30px)}
+.pxid-co-nums-grid>div{position:relative;padding-top:22px}
+.pxid-co-nums-grid i{position:absolute;top:0;left:0;display:block;width:30px;height:2px;background:#d71920}
+.pxid-co-nums-grid b{display:block;font-weight:600;letter-spacing:-.02em;color:#171717;line-height:1.06;
+  font-size:clamp(34px,3.9vw,56px);white-space:nowrap}
+.pxid-co-nums-grid span{display:block;margin-top:10px;font-size:clamp(13px,1.15vw,15px);line-height:1.6;color:#5a5a55}
+.pxid-co-nums-foot{margin:clamp(26px,2.8vw,38px) 0 0;padding-top:clamp(16px,1.8vw,22px);
+  border-top:1px solid rgba(23,23,23,.12);font-size:clamp(14px,1.2vw,15.5px);line-height:1.7;color:#5a5a55}
+.pxid-co-nums-foot em{font-style:normal;color:#171717;font-weight:600}
+@media (max-width:900px){
+  .pxid-co-nums-grid{grid-template-columns:repeat(2,1fr);gap:26px 18px}
+  .pxid-co-nums-grid b{font-size:34px}}
+
+/* ===== ③ 资质与认定 ===== */
+.row.pxid-co-qual{background:#f6f6f4;padding:clamp(56px,6vw,88px) 0 clamp(52px,5.6vw,80px)}
+.pxid-co-qual-head>span{display:block;font-size:clamp(12px,1.05vw,14px);letter-spacing:.08em;color:#d71920}
+.pxid-co-qual-head h2{margin:clamp(10px,1.1vw,14px) 0 0;font-weight:600;letter-spacing:-.02em;color:#171717;
+  font-size:clamp(28px,3.1vw,44px);line-height:1.2}
+.pxid-co-qual-head p{max-width:38em;margin:clamp(12px,1.3vw,16px) 0 0;font-size:clamp(15px,1.25vw,17px);
+  line-height:1.75;color:#5a5a55}
+.pxid-co-qual-main{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.5vw,22px) clamp(24px,3vw,48px);
+  margin-top:clamp(24px,2.6vw,34px)}
+.pxid-co-qual-main>div{position:relative;padding:clamp(13px,1.35vw,16px) 0 clamp(13px,1.35vw,16px) 22px;
+  border-top:1px solid rgba(23,23,23,.12);font-size:clamp(16px,1.45vw,20px);line-height:1.5}
+.pxid-co-qual-main i{position:absolute;left:0;top:-1px;width:34px;height:2px;background:#d71920}
+.pxid-co-qual-main strong{display:block;font-weight:500;color:#171717;font-size:inherit;line-height:1.5}
+.pxid-co-qual-sub{display:flex;align-items:baseline;gap:clamp(10px,1.2vw,16px);flex-wrap:wrap;
+  margin-top:clamp(22px,2.4vw,30px);padding-top:clamp(18px,2vw,24px);border-top:1px solid rgba(23,23,23,.12);
+  font-size:clamp(13px,1.15vw,15px);color:#7a7a74}
+.pxid-co-qual-sub .k{color:#171717;font-weight:600;letter-spacing:.04em}
+.pxid-co-qual-sub .v{color:#3d3d38}
+.pxid-co-qual-sub p{margin:0;flex:1 1 260px;min-width:200px;line-height:1.7}
+@media (max-width:900px){
+  .pxid-co-qual-main{grid-template-columns:1fr;gap:0}
+  .pxid-co-qual-main>div{padding:16px 0 16px 22px}}
+</style>
 </head>
 <body id="app" class="company afterInner">
 <!-- 全站去掉波浪（坤哥 2026-09-19）：hero/r6 的 .wave 与 footer 顶部 svg.water 隐藏，footer 顶部改平直线 -->
@@ -59,9 +99,27 @@
   <svg class="shape-overlays" viewBox="0 0 1080 1080" preserveAspectRatio="none"><rect class="path" x="0" y="0" width="1080" height="1080"></rect></svg>
 </nav>
 <main><section class="row banner pxid-inner-hero" data-hero-image="company" data-vh="1.08"><div class="bg"><div class="photo alanGo"><div class="pic full pxid-inner-hero-media"><picture class="pxid-hero-picture"><source media="(max-width: 900px) and (orientation: portrait)" srcset="../assets/pxid/inner-hero/production-mobile.webp" width="750" height="1000"><img src="../assets/pxid/inner-hero/company-desktop.jpg" width="1920" height="940" alt="" fetchpriority="high" loading="eager" decoding="async"></picture></div></div><div class="wave w1"><div class="mask waveItem"></div></div><div class="wave w2"><div class="mask waveItem"></div></div></div><div class="inner maxSize"><small class="f-40 wc en_m alanGo" style="font-size:1.067rem">Company</small><h1 class="f-40 wc num_b alanGo alanFn" data-text="关于 PXID">关于 PXID</h1><div class="scrEl"><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span></div></div></section>
+<section class="row pxid-co-nums"><div class="inner maxSize"><div class="pxid-co-nums-grid">
+<div><i></i><b>2013</b><span>品向工业设计成立，从工业设计起步</span></div>
+<div><i></i><b>25,000㎡</b><span>智能制造生产基地（2024 年投用）</span></div>
+<div><i></i><b>110+</b><span>累计登记版权与专利</span></div>
+<div><i></i><b>5,000万+</b><span>2020 年至今研发总投入</span></div>
+</div><p class="pxid-co-nums-foot">产品与服务覆盖欧洲、北美、亚洲等 <em>30 多个国家和地区</em>，个人出行、城市通勤与共享出行均有交付案例。</p></div></section>
 <section class="row r1 pxid-company-r1"><div class="inner maxSize"><div class="pxid-company-intro alanGo"><h2>从产品设计<br>到批量生产</h2><p class="pxid-prose">PXID 将产品设计、结构与电控开发、工程样车、制造与质量检验纳入同一项目流程。</p></div><div class="pxid-company-capabilities"><article class="pxid-company-capability alanGo"><div class="pxid-company-capability-photo" aria-hidden="true" style="background-image:url('../assets/pxid/unified/process/process-01.webp')"></div><div class="pxid-company-capability-copy"><h3>产品设计</h3><p class="pxid-prose">基于目标市场、使用场景和法规要求，完成草图、三维建模与方案评审。</p></div></article><article class="pxid-company-capability alanGo"><div class="pxid-company-capability-photo" aria-hidden="true" style="background-image:url('../assets/pxid/unified/process/process-04.webp')"></div><div class="pxid-company-capability-copy"><h3>结构与电控</h3><p class="pxid-prose">开展结构、材料、驱动控制、电池管理及人机交互设计。</p></div></article><article class="pxid-company-capability alanGo"><div class="pxid-company-capability-photo" aria-hidden="true" style="background-image:url('../assets/pxid/unified/home-v2/case-p2-engineering.jpg')"></div><div class="pxid-company-capability-copy"><h3>工程样车</h3><p class="pxid-prose">制作接近量产状态的工程样车，验证结构、装配和制造工艺。</p></div></article><article class="pxid-company-capability alanGo"><div class="pxid-company-capability-photo" aria-hidden="true" style="background-image:url('../assets/pxid/unified/news/capability-manufacturing.jpg')"></div><div class="pxid-company-capability-copy"><h3>制造与检验</h3><p class="pxid-prose">覆盖模具、车架、涂装、整车装配、测试和质量检验。</p></div></article></div>
 </div></section>
 <section class="row r2"><div class="bg"><div class="photo fxBg pic" style="background-image:url('../assets/pxid/unified/process/industry-bg.webp')"></div></div><div class="inner"><div id="r1Txt" class="group"><div class="top"><h2 class="f-60 green en_b alanFn" data-split="/" data-text="深耕电动出行/设计与制造"><span class="pxid-title-line">深耕电动出行</span><span class="pxid-title-line">设计与制造</span></h2><p class="f-16 black alanUpEl alanGo pxid-prose">PXID 品向成立于 2013 年，业务由工业设计服务逐步拓展至产品设计研发、模具设计制造、车架生产、整车装配和试验检测。产品与服务已覆盖欧洲、北美、亚洲等 30 多个国家和地区。</p></div><div class="clear"></div><div class="mid alanParent"><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-01.webp" alt="产品设计"><h3 class="f-24 green">产品设计</h3></div><div class="icon alanLeft"><em></em><i class="iconfont green">&#xe8a9;</i><em></em></div><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-03.webp" alt="结构设计"><h3 class="f-24 green">结构设计</h3></div><div class="icon alanLeft"><em></em><i class="iconfont green">&#xe8a9;</i><em></em></div><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-04.webp" alt="电控系统设计"><h3 class="f-24 green">电控系统设计</h3></div><div class="icon alanLeft"><em></em><i class="iconfont green">&#xe8a9;</i><em></em></div><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-09.webp" alt="批量生产"><h3 class="f-24 green">批量生产</h3></div></div></div>
+</div></section>
+<section class="row pxid-co-qual"><div class="inner maxSize">
+<div class="pxid-co-qual-head"><span>资质与认定</span><h2>政府认定与体系认证</h2>
+<p class="pxid-prose">PXID 的开发与制造体系已纳入国家与省级创新体系认定，并建立质量管理体系。</p></div>
+<div class="pxid-co-qual-main">
+<div><i></i><strong>国家高新技术企业</strong></div>
+<div><i></i><strong>江苏省工业设计中心</strong></div>
+<div><i></i><strong>淮安市轻型代步工具工程技术研究中心</strong></div>
+<div><i></i><strong>专精特新企业</strong></div>
+</div>
+<div class="pxid-co-qual-sub"><span class="k">出口资质</span><span class="v">CE · UL · EEC · ISO9001（2023）</span>
+<p>产品按欧美法规体系开发，同一套标准与检验流程用于国内交付。</p></div>
 </div></section>
 <section data-vh="1" class="row r3"><div class="bg"></div><div class="inner"><div class="topic fxb maxSize"><h2 class="f-80 en_b green alanGo" data-text="产品与设计奖项">产品与设计奖项</h2><div data-delay=".1" class="set fxb alanFn"><a class="r3Prev layer-set" role="button" aria-label="上一个奖项" tabindex="0"><div class="mask right"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8b3;</i></div></a><a class="r3Next layer-set" role="button" aria-label="下一个奖项" tabindex="0"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a></div></div><div class="group"><div class="swiper r3Sw"><div class="swiper-wrapper"><div class="swiper-slide"><div class="box"><img src="../assets/pxid/home/award-m2-gida.jpg" alt="M2 电动摩托车"><h3 class="f-16 green en_b pxid-award-title"><span>M2</span><br><span class="pxid-award-name">金芦苇工业设计奖</span></h3></div></div><div class="swiper-slide"><div class="box"><img src="../assets/pxid/home/award-p2-cgd.jpg" alt="P2 折叠电动自行车"><h3 class="f-16 green en_b pxid-award-title"><span>P2</span><br><span class="pxid-award-name">2024 GOOD DESIGN AWARD</span></h3></div></div><div class="swiper-slide"><div class="box"><img src="../assets/pxid/home/mantis-mountain.png" alt="MANTIS P6 电动自行车"><h3 class="f-16 green en_b pxid-award-title"><span>MANTIS P6</span><br><span class="pxid-award-name">2024 GOOD DESIGN AWARD</span></h3></div></div></div></div><div class="imgBox"><img src="../assets/pxid/logo-mask.svg" alt="PXID" class="logoImg"></div></div>
 </div></section>
