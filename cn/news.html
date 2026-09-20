@@ -142,8 +142,8 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
   <h2>PXID 产品与 ODM 资料</h2>
   <p class="pxid-prose">汇集 PXID 公众号与官网发布的企业介绍、开发流程、产品奖项和制造资料。</p>
 </div>
-<nav class="insight-tabs" role="tablist" aria-label="资料分类"><a href="#main" class="on" role="tab" aria-pressed="true" data-filter="all">全部</a><a href="#main" role="tab" aria-pressed="false" data-filter="企业介绍">企业介绍</a><a href="#main" role="tab" aria-pressed="false" data-filter="开发流程">开发流程</a><a href="#main" role="tab" aria-pressed="false" data-filter="产品与奖项">产品与奖项</a><a href="#main" role="tab" aria-pressed="false" data-filter="制造能力">制造能力</a></nav></div><div class="bands">
-  <a class="bar" data-cat="企业介绍" href="news/odm-project-guide.html" style="background-image:url(../assets/pxid/unified/news/band-manufacturing-2026.webp)" aria-label="阅读 2026 PXID 品向智能制造简介">
+<nav class="insight-tabs"><a href="#main" class="on">全部</a><a href="#main">企业介绍</a><a href="#main">开发流程</a><a href="#main">产品与奖项</a><a href="#main">制造能力</a></nav></div><div class="bands">
+  <a class="bar" href="news/odm-project-guide.html" style="background-image:url(../assets/pxid/unified/news/band-manufacturing-2026.webp)" aria-label="阅读 2026 PXID 品向智能制造简介">
     <img loading="lazy"  class="logo" src="../assets/pxid/logo-white.svg" alt="PXID">
     <span class="year" aria-hidden="true"><span>2</span><span>0</span><span>2</span><span>6</span></span>
     <span class="txt">
@@ -153,7 +153,7 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
       <span class="read">阅读全文<i>→</i></span>
     </span>
   </a>
-  <a class="bar" data-cat="开发流程" href="news/industrial-design-to-mass-production.html" style="background-image:url(../assets/pxid/unified/news/band-workshop-design.webp)" aria-label="阅读 从产品设计到批量生产">
+  <a class="bar" href="news/industrial-design-to-mass-production.html" style="background-image:url(../assets/pxid/unified/news/band-workshop-design.webp)" aria-label="阅读 从产品设计到批量生产">
     
     <span class="txt">
       <span class="kicker">开发流程</span>
@@ -162,7 +162,7 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
       <span class="read">阅读全文<i>→</i></span>
     </span>
   </a>
-  <a class="bar" data-cat="产品与奖项" href="news/electric-mobility-development.html" style="background-image:url(../assets/pxid/unified/news/band-product-showroom.webp)" aria-label="阅读 P2 与 P6 获得 2024 GOOD DESIGN AWARD">
+  <a class="bar" href="news/electric-mobility-development.html" style="background-image:url(../assets/pxid/unified/news/band-product-showroom.webp)" aria-label="阅读 P2 与 P6 获得 2024 GOOD DESIGN AWARD">
     
     <span class="txt">
       <span class="kicker">产品与奖项</span>
@@ -171,7 +171,7 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
       <span class="read">阅读全文<i>→</i></span>
     </span>
   </a>
-  <a class="bar" data-cat="制造能力" href="news/factory-quality-checkpoints.html" style="background-image:url(../assets/pxid/unified/news/band-mold-line.webp)" aria-label="阅读 模具、车架、涂装与整车装配">
+  <a class="bar" href="news/factory-quality-checkpoints.html" style="background-image:url(../assets/pxid/unified/news/band-mold-line.webp)" aria-label="阅读 模具、车架、涂装与整车装配">
     
     <span class="txt">
       <span class="kicker">制造能力</span>
@@ -181,36 +181,7 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
     </span>
   </a></div></section></div></div>
 
-</div>
-<style>[hidden]{display:none!important}</style>
-<script>
-(function(){
-  var tabs=[].slice.call(document.querySelectorAll('.insight-tabs a[data-filter]'));
-  var items=[].slice.call(document.querySelectorAll('[data-cat]'));
-  if(!tabs.length||!items.length) return;
-  function refit(){
-    try{ if(window.parent&&typeof window.parent.__pxidN1fit==='function') window.parent.__pxidN1fit(); }catch(e){}
-  }
-  function apply(f){
-    var n=0;
-    for(var i=0;i<items.length;i++){
-      var ok=(f==='all')||items[i].getAttribute('data-cat')===f;
-      items[i].hidden=!ok; if(ok) n++;
-    }
-    for(var j=0;j<tabs.length;j++){
-      var on=tabs[j].getAttribute('data-filter')===f;
-      tabs[j].classList.toggle('on',on);
-      tabs[j].setAttribute('aria-pressed',on?'true':'false');
-    }
-    document.documentElement.setAttribute('data-active-filter',f);
-    /* 条目数变了 -> iframe 文档高度变了 -> 必须让父页重算 frame 高度，否则留一大段空白 */
-    refit(); setTimeout(refit,60); setTimeout(refit,300); setTimeout(refit,900);
-  }
-  for(var k=0;k<tabs.length;k++)(function(t){
-    t.addEventListener('click',function(e){ e.preventDefault(); apply(t.getAttribute('data-filter')); });
-  })(tabs[k]);
-})();
-</script></template>
+</div></template>
   <template class="pxid-n1tpl" data-v="g"><style>@scope (#S04n12) {
 *{box-sizing:border-box}
 html{font-size:clamp(45px, 0.96rem, 98px)}
@@ -292,8 +263,8 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
   <h2>PXID 产品与 ODM 资料</h2>
   <p class="pxid-prose">汇集 PXID 公众号与官网发布的企业介绍、开发流程、产品奖项和制造资料。</p>
 </div>
-<nav class="insight-tabs" role="tablist" aria-label="资料分类"><a href="#main" class="on" role="tab" aria-pressed="true" data-filter="all">全部</a><a href="#main" role="tab" aria-pressed="false" data-filter="企业介绍">企业介绍</a><a href="#main" role="tab" aria-pressed="false" data-filter="开发流程">开发流程</a><a href="#main" role="tab" aria-pressed="false" data-filter="产品与奖项">产品与奖项</a><a href="#main" role="tab" aria-pressed="false" data-filter="制造能力">制造能力</a></nav><div class="wall">
-  <article class="wcard" data-cat="企业介绍">
+<nav class="insight-tabs"><a href="#main" class="on">全部</a><a href="#main">企业介绍</a><a href="#main">开发流程</a><a href="#main">产品与奖项</a><a href="#main">制造能力</a></nav><div class="wall">
+  <article class="wcard">
     <a class="wc-photo" href="news/odm-project-guide.html" style="background-image:url(../assets/pxid/unified/news/capability-manufacturing.jpg)" aria-label="阅读 2026 PXID 品向智能制造简介"></a>
     <div class="wc-body">
       <div class="wc-top"><h3><a href="news/odm-project-guide.html">2026 PXID 品向智能制造简介</a></h3><span class="wc-tag">公众号资料</span></div>
@@ -301,7 +272,7 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
       <div class="wc-foot"><span class="wc-read">阅读全文 →</span></div>
     </div>
   </article>
-  <article class="wcard" data-cat="开发流程">
+  <article class="wcard">
     <a class="wc-photo" href="news/industrial-design-to-mass-production.html" style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)" aria-label="阅读 从产品设计到批量生产"></a>
     <div class="wc-body">
       <div class="wc-top"><h3><a href="news/industrial-design-to-mass-production.html">从产品设计到批量生产</a></h3><span class="wc-tag">开发流程</span></div>
@@ -309,7 +280,7 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
       <div class="wc-foot"><span class="wc-read">阅读全文 →</span></div>
     </div>
   </article>
-  <article class="wcard" data-cat="产品与奖项">
+  <article class="wcard">
     <a class="wc-photo" href="news/electric-mobility-development.html" style="background-image:url(../assets/pxid/home/mantis-mountain.png)" aria-label="阅读 P2 与 P6 获得 2024 GOOD DESIGN AWARD"></a>
     <div class="wc-body">
       <div class="wc-top"><h3><a href="news/electric-mobility-development.html">P2 与 P6 获得 2024 GOOD DESIGN AWARD</a></h3><span class="wc-tag">产品与奖项</span></div>
@@ -317,7 +288,7 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
       <div class="wc-foot"><span class="wc-read">阅读全文 →</span></div>
     </div>
   </article>
-  <article class="wcard" data-cat="制造能力">
+  <article class="wcard">
     <a class="wc-photo" href="news/factory-quality-checkpoints.html" style="background-image:url(../assets/pxid/unified/news/capability-inspection.jpg)" aria-label="阅读 模具、车架、涂装与整车装配"></a>
     <div class="wc-body">
       <div class="wc-top"><h3><a href="news/factory-quality-checkpoints.html">模具、车架、涂装与整车装配</a></h3><span class="wc-tag">制造能力</span></div>
@@ -326,36 +297,7 @@ html{font-size:clamp(45px, 0.96rem, 98px)}
     </div>
   </article></div></div></section></div></div>
 </div>
-</div>
-<style>[hidden]{display:none!important}</style>
-<script>
-(function(){
-  var tabs=[].slice.call(document.querySelectorAll('.insight-tabs a[data-filter]'));
-  var items=[].slice.call(document.querySelectorAll('[data-cat]'));
-  if(!tabs.length||!items.length) return;
-  function refit(){
-    try{ if(window.parent&&typeof window.parent.__pxidN1fit==='function') window.parent.__pxidN1fit(); }catch(e){}
-  }
-  function apply(f){
-    var n=0;
-    for(var i=0;i<items.length;i++){
-      var ok=(f==='all')||items[i].getAttribute('data-cat')===f;
-      items[i].hidden=!ok; if(ok) n++;
-    }
-    for(var j=0;j<tabs.length;j++){
-      var on=tabs[j].getAttribute('data-filter')===f;
-      tabs[j].classList.toggle('on',on);
-      tabs[j].setAttribute('aria-pressed',on?'true':'false');
-    }
-    document.documentElement.setAttribute('data-active-filter',f);
-    /* 条目数变了 -> iframe 文档高度变了 -> 必须让父页重算 frame 高度，否则留一大段空白 */
-    refit(); setTimeout(refit,60); setTimeout(refit,300); setTimeout(refit,900);
-  }
-  for(var k=0;k<tabs.length;k++)(function(t){
-    t.addEventListener('click',function(e){ e.preventDefault(); apply(t.getAttribute('data-filter')); });
-  })(tabs[k]);
-})();
-</script></template><style id="pxid-n1-switch-css">
+</div></template><style id="pxid-n1-switch-css">
 #main{position:relative}
 #main > .pxid-n1frame{display:block;width:100%;height:0;border:0;background:#fff}
 #main > .pxid-n1frame[hidden]{display:none}
