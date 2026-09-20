@@ -52,6 +52,50 @@
   .pxid-co-qual-main{grid-template-columns:1fr;gap:0}
   .pxid-co-qual-main>div{padding:16px 0 16px 22px}}
 </style>
+
+<style id="pxid-co-inserts-2">
+/* ===== ② 发展历程（墨底） ===== */
+.row.pxid-co-timeline{background:#171717;color:#fff;padding:clamp(56px,6vw,88px) 0 clamp(48px,5.2vw,76px)}
+.pxid-co-tl-head>span{display:block;font-size:clamp(12px,1.05vw,14px);letter-spacing:.08em;color:#d71920}
+.pxid-co-tl-head h2{margin:clamp(8px,.9vw,12px) 0 0;font-weight:600;letter-spacing:-.02em;color:#fff;
+  font-size:clamp(28px,3.1vw,44px);line-height:1.15;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.pxid-co-tl-head p{max-width:40em;margin:clamp(12px,1.3vw,16px) 0 0;font-size:clamp(15px,1.25vw,17px);
+  line-height:1.75;color:rgba(255,255,255,.62)}
+.pxid-co-tl-list{margin-top:clamp(30px,3.4vw,46px);border-top:1px solid rgba(255,255,255,.14)}
+.pxid-co-tl-list>div{display:grid;grid-template-columns:clamp(88px,8vw,124px) 1fr;gap:clamp(16px,2vw,32px);
+  position:relative;padding:clamp(16px,1.8vw,22px) 0 clamp(16px,1.8vw,22px) 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.pxid-co-tl-list .yr{font-style:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:clamp(17px,1.6vw,22px);font-weight:700;
+  color:rgba(255,255,255,.5);letter-spacing:.02em;line-height:1.5}
+.pxid-co-tl-list h3{margin:0;font-size:clamp(16px,1.45vw,20px);font-weight:500;color:#fff;line-height:1.5}
+.pxid-co-tl-list p{margin:6px 0 0;font-size:clamp(14px,1.15vw,15.5px);line-height:1.7;color:rgba(255,255,255,.58);max-width:56em}
+/* 三家法人＝红色实心节点 + 白色标题 */
+.pxid-co-tl-list .co-entity .yr{color:#fff}
+.pxid-co-tl-list .co-entity::before{content:"";position:absolute;left:-1px;bottom:-1px;width:34px;height:2px;background:#d71920}
+@media (max-width:900px){
+  .pxid-co-tl-list>div{grid-template-columns:74px 1fr;gap:14px}}
+
+/* ===== ④ 数字化工厂（纸底） ===== */
+.row.pxid-co-digital{background:#f6f6f4;padding:clamp(56px,6vw,88px) 0 clamp(52px,5.6vw,80px)}
+.pxid-co-dg-head>span{display:block;font-size:clamp(12px,1.05vw,14px);letter-spacing:.08em;color:#d71920}
+.pxid-co-dg-head h2{margin:clamp(10px,1.1vw,14px) 0 0;font-weight:600;letter-spacing:-.02em;color:#171717;
+  font-size:clamp(26px,2.9vw,40px);line-height:1.25}
+.pxid-co-dg-head p{max-width:44em;margin:clamp(12px,1.3vw,16px) 0 0;font-size:clamp(15px,1.25vw,17px);
+  line-height:1.75;color:#5a5a55}
+.pxid-co-dg-list{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,34px);margin-top:clamp(26px,3vw,40px)}
+.pxid-co-dg-list>div{position:relative;padding:clamp(14px,1.5vw,18px) 0 0;border-top:1px solid rgba(23,23,23,.14)}
+.pxid-co-dg-list>div::before{content:"";position:absolute;left:0;top:-1px;width:34px;height:2px;background:#d71920}
+.pxid-co-dg-list em{display:block;font-style:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:clamp(12px,1.05vw,13.5px);
+  font-weight:700;letter-spacing:.06em;color:#171717}
+.pxid-co-dg-list h3{margin:8px 0 0;font-size:clamp(16px,1.4vw,19px);font-weight:500;color:#171717;line-height:1.45}
+.pxid-co-dg-list p{margin:8px 0 0;font-size:clamp(14px,1.15vw,15.5px);line-height:1.7;color:#5a5a55}
+.pxid-co-dg-chain{display:flex;align-items:center;gap:clamp(10px,1.2vw,16px);flex-wrap:wrap;
+  margin-top:clamp(26px,3vw,38px);padding-top:clamp(18px,2vw,24px);border-top:1px solid rgba(23,23,23,.12);
+  font-size:clamp(14px,1.2vw,16px);color:#171717;font-weight:500}
+.pxid-co-dg-chain i{flex:1 1 24px;min-width:18px;height:1px;background:rgba(23,23,23,.28)}
+@media (max-width:900px){
+  .pxid-co-dg-list{grid-template-columns:1fr;gap:0}
+  .pxid-co-dg-list>div{padding:14px 0 14px 0;border-top:1px solid rgba(23,23,23,.14)}}
+</style>
 </head>
 <body id="app" class="company afterInner">
 <!-- 全站去掉波浪（坤哥 2026-09-19）：hero/r6 的 .wave 与 footer 顶部 svg.water 隐藏，footer 顶部改平直线 -->
@@ -98,7 +142,7 @@
   <div class="items" data-vh=".8"><div class="content"><a href="index.html" class="lists appNavList"><span class="en_b f-26 wc">首页</span></a><a href="business.html" class="lists appNavList"><span class="en_b f-26 wc">产品方案</span></a><a href="sustainability.html" class="lists appNavList"><span class="en_b f-26 wc">ODM 全流程</span></a><a href="news.html" class="lists appNavList"><span class="en_b f-26 wc">洞察与资料</span></a><a href="contact.html" class="lists appNavList"><span class="en_b f-26 wc">启动项目</span></a><a href="company.html" class="lists appNavList"><span class="en_b f-26 wc">关于 PXID</span></a></div></div>
   <svg class="shape-overlays" viewBox="0 0 1080 1080" preserveAspectRatio="none"><rect class="path" x="0" y="0" width="1080" height="1080"></rect></svg>
 </nav>
-<main><section class="row banner pxid-inner-hero" data-hero-image="company" data-vh="1.08"><div class="bg"><div class="photo alanGo"><div class="pic full pxid-inner-hero-media"><picture class="pxid-hero-picture"><source media="(max-width: 900px) and (orientation: portrait)" srcset="../assets/pxid/inner-hero/production-mobile.webp" width="750" height="1000"><img src="../assets/pxid/inner-hero/company-desktop.jpg" width="1920" height="940" alt="" fetchpriority="high" loading="eager" decoding="async"></picture></div></div><div class="wave w1"><div class="mask waveItem"></div></div><div class="wave w2"><div class="mask waveItem"></div></div></div><div class="inner maxSize"><small class="f-40 wc en_m alanGo" style="font-size:1.067rem">Company</small><h1 class="f-40 wc num_b alanGo alanFn" data-text="关于 PXID">关于 PXID</h1><div class="scrEl"><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span></div></div></section>
+<main><section class="row banner pxid-inner-hero" data-hero-image="company" data-vh="1.08"><div class="bg"><div class="photo alanGo"><div class="pic full pxid-inner-hero-media"><picture class="pxid-hero-picture"><source media="(max-width: 900px) and (orientation: portrait)" srcset="../assets/pxid/inner-hero/production-mobile.webp" width="750" height="1000"><img src="../assets/pxid/inner-hero/company-desktop.jpg" width="1920" height="940" alt="" fetchpriority="high" loading="eager" decoding="async"></picture></div></div><div class="wave w1"><div class="mask waveItem"></div></div><div class="wave w2"><div class="mask waveItem"></div></div></div><div class="inner maxSize"><small class="f-40 wc en_m alanGo" style="font-size:1.067rem">Company</small><h1 class="f-80 wc num_b alanGo alanFn" data-text="关于 PXID">关于 PXID</h1><div class="scrEl"><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span></div></div></section>
 <section class="row pxid-co-nums"><div class="inner maxSize"><div class="pxid-co-nums-grid">
 <div><i></i><b>2013</b><span>品向工业设计成立，从工业设计起步</span></div>
 <div><i></i><b>25,000㎡</b><span>智能制造生产基地（2024 年投用）</span></div>
@@ -109,6 +153,18 @@
 </div></section>
 <section class="row r2"><div class="bg"><div class="photo fxBg pic" style="background-image:url('../assets/pxid/unified/process/industry-bg.webp')"></div></div><div class="inner"><div id="r1Txt" class="group"><div class="top"><h2 class="f-60 green en_b alanFn" data-split="/" data-text="深耕电动出行/设计与制造"><span class="pxid-title-line">深耕电动出行</span><span class="pxid-title-line">设计与制造</span></h2><p class="f-16 black alanUpEl alanGo pxid-prose">PXID 品向成立于 2013 年，业务由工业设计服务逐步拓展至产品设计研发、模具设计制造、车架生产、整车装配和试验检测。产品与服务已覆盖欧洲、北美、亚洲等 30 多个国家和地区。</p></div><div class="clear"></div><div class="mid alanParent"><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-01.webp" alt="产品设计"><h3 class="f-24 green">产品设计</h3></div><div class="icon alanLeft"><em></em><i class="iconfont green">&#xe8a9;</i><em></em></div><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-03.webp" alt="结构设计"><h3 class="f-24 green">结构设计</h3></div><div class="icon alanLeft"><em></em><i class="iconfont green">&#xe8a9;</i><em></em></div><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-04.webp" alt="电控系统设计"><h3 class="f-24 green">电控系统设计</h3></div><div class="icon alanLeft"><em></em><i class="iconfont green">&#xe8a9;</i><em></em></div><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-09.webp" alt="批量生产"><h3 class="f-24 green">批量生产</h3></div></div></div>
 </div></section>
+<section class="row pxid-co-timeline"><div class="inner maxSize">
+<div class="pxid-co-tl-head"><span>发展历程</span><h2>2013 &#8594; 2026</h2>
+<p class="pxid-prose">从工业设计服务起步，逐步补齐贸易、智能制造与数字化工厂，三家法人对应三段能力。</p></div>
+<div class="pxid-co-tl-list">
+<div class="co-entity"><em class="yr">2013</em><div class="bd"><h3>品向工业设计有限公司成立</h3><p>创始团队成立，从工业设计服务起步。</p></div></div>
+<div class="co-entity"><em class="yr">2019</em><div class="bd"><h3>品向科技有限公司成立</h3><p>承接贸易与客户侧交付。</p></div></div>
+<div class="co-entity"><em class="yr">2020</em><div class="bd"><h3>品向智能制造有限公司成立</h3><p>制造主体落地；同年获国家高新技术企业、江苏省工业设计中心认定。</p></div></div>
+<div><em class="yr">2021</em><div class="bd"><h3>市级技术研发中心</h3><p>淮安市轻型代步工具工程技术研究中心。</p></div></div>
+<div><em class="yr">2023</em><div class="bd"><h3>体系与产品认证</h3><p>通过 ISO9001 质量管理体系认证；产品取得 CE / UL / EEC 等认证；获评"专精特新"企业。</p></div></div>
+<div><em class="yr">2024</em><div class="bd"><h3>智能制造生产基地</h3><p>投入 3,000 万，面积 25,000&#13217;，模具、车架、涂装、检测、装配在同一园区闭环。</p></div></div>
+<div><em class="yr">2026</em><div class="bd"><h3>数字化工厂升级</h3><p>以 PLM/eMES + WMS + SDM 贯通订单、生产、仓储与供应。</p></div></div>
+</div></div></section>
 <section class="row pxid-co-qual"><div class="inner maxSize">
 <div class="pxid-co-qual-head"><span>资质与认定</span><h2>政府认定与体系认证</h2>
 <p class="pxid-prose">PXID 的开发与制造体系已纳入国家与省级创新体系认定，并建立质量管理体系。</p></div>
@@ -124,6 +180,16 @@
 <section data-vh="1" class="row r3"><div class="bg"></div><div class="inner"><div class="topic fxb maxSize"><h2 class="f-80 en_b green alanGo" data-text="产品与设计奖项">产品与设计奖项</h2><div data-delay=".1" class="set fxb alanFn"><a class="r3Prev layer-set" role="button" aria-label="上一个奖项" tabindex="0"><div class="mask right"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8b3;</i></div></a><a class="r3Next layer-set" role="button" aria-label="下一个奖项" tabindex="0"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a></div></div><div class="group"><div class="swiper r3Sw"><div class="swiper-wrapper"><div class="swiper-slide"><div class="box"><img src="../assets/pxid/home/award-m2-gida.jpg" alt="M2 电动摩托车"><h3 class="f-16 green en_b pxid-award-title"><span>M2</span><br><span class="pxid-award-name">金芦苇工业设计奖</span></h3></div></div><div class="swiper-slide"><div class="box"><img src="../assets/pxid/home/award-p2-cgd.jpg" alt="P2 折叠电动自行车"><h3 class="f-16 green en_b pxid-award-title"><span>P2</span><br><span class="pxid-award-name">2024 GOOD DESIGN AWARD</span></h3></div></div><div class="swiper-slide"><div class="box"><img src="../assets/pxid/home/mantis-mountain.png" alt="MANTIS P6 电动自行车"><h3 class="f-16 green en_b pxid-award-title"><span>MANTIS P6</span><br><span class="pxid-award-name">2024 GOOD DESIGN AWARD</span></h3></div></div></div></div><div class="imgBox"><img src="../assets/pxid/logo-mask.svg" alt="PXID" class="logoImg"></div></div>
 </div></section>
 <section class="row r4"><div class="bg"><div data-pxid-local-background class="photo fxBg pic" style="background-image:url('../assets/pxid/unified/news/case-design-2.jpg')"></div></div><div class="inner maxSize"><div class="rect swiper r4Sw"><div class="swiper-wrapper"><div class="swiper-slide"><div class="part"><div class="left"><div class="pic" style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></div></div><div class="right"><h3 class="f-40 en_b green">产品设计</h3><p data-lenis-prevent class="f-18 black pxid-prose">结合目标市场法规、使用场景和用户需求开展分析，通过手绘草图、三维建模与效果图完成方案评审。</p></div></div></div><div class="swiper-slide"><div class="part"><div class="left"><div class="pic" style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)"></div></div><div class="right"><h3 class="f-40 en_b green">结构、电控与工程样车</h3><p data-lenis-prevent class="f-18 black pxid-prose">完成结构与电控系统设计，制作接近量产状态的工程样车，对结构、装配和制造工艺进行验证。</p></div></div></div><div class="swiper-slide"><div class="part"><div class="left"><div class="pic" style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></div></div><div class="right"><h3 class="f-40 en_b green">制造、测试与批量生产</h3><p data-lenis-prevent class="f-18 black pxid-prose">自建模具、车架、涂装、检测与装配体系，完成整车性能测试、质量检验和批量生产。</p></div></div></div></div></div><div class="topic fxb"><h2 class="f-100 en_b wc alanGo" data-text="ODM 服务范围">ODM 服务范围</h2><div class="pager"><em id="r4Sum" class="f-20 mc">01</em><small class="f-20 wc">&nbsp;&nbsp;/&nbsp;&nbsp;03</small></div><div class="set"><a class="r4Prev whiteFix layer-set"><div class="mask right"></div><div class="layer-icon"><i class="iconfont green f-14">&#xe8b3;</i></div></a><a class="r4Next whiteFix layer-set"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14">&#xe8a9;</i></div></a></div></div>
+</div></section>
+<section class="row pxid-co-digital"><div class="inner maxSize">
+<div class="pxid-co-dg-head"><span>工厂数字化</span><h2>订单、生产、仓储、供应同一套数据</h2>
+<p class="pxid-prose">PXID 以 PLM/eMES、WMS、SDM 三套系统贯通"订单&#8212;生产&#8212;仓储&#8212;供应"，支撑小批量、多批次订单的交付节奏。</p></div>
+<div class="pxid-co-dg-list">
+<div><em>PLM / eMES</em><h3>产品生命周期与制造执行</h3><p>贯通研发、工艺设计、BOM 管理、版本变更与生产执行，研发数据与生产现场实时协同。</p></div>
+<div><em>WMS</em><h3>仓储管理</h3><p>全流程条码化管理与精准配送，提升库存准确率。</p></div>
+<div><em>SDM</em><h3>供应商交付管理</h3><p>采购、交付、质检全过程线上化，强化售后质量问题的追溯能力。</p></div>
+</div>
+<div class="pxid-co-dg-chain"><span>订单</span><i></i><span>生产</span><i></i><span>仓储</span><i></i><span>供应</span></div>
 </div></section>
 <section class="row r5"><div class="bg"></div><div class="inner"><div class="group"><div class="swiper r5Sw"><div class="swiper-wrapper"><div class="swiper-slide"><div class="photo"><div class="pic" role="img" aria-label="设计师绘制电动滑板车手绘草图" style="background-image:url(../assets/pxid/unified/process/odm-poster.webp?v=20260827-crop1)"></div></div><div class="msg" data-swiper-parallax-x="-100" data-swiper-parallax-opacity="0"><a class="layer-set mcFix" href="sustainability.html#C-stage-1" aria-label="查看产品设计详情" title="查看产品设计详情"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a><p class="f-20 wc">产品设计</p></div></div><div class="swiper-slide"><div class="photo"><div class="pic" role="img" aria-label="电动滑板车在加载配重的测试台上进行检验" style="background-image:url(../assets/pxid/products/proof-testing.webp)"></div></div><div class="msg" data-swiper-parallax-x="-100" data-swiper-parallax-opacity="0"><a class="layer-set mcFix" href="sustainability.html#C-stage-5" aria-label="查看样车与测试详情" title="查看样车与测试详情"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a><p class="f-20 wc">样车与测试</p></div></div><div class="swiper-slide"><div class="photo"><div class="pic" role="img" aria-label="PXID 车间的电动滑板车整车装配线" style="background-image:url(../assets/pxid/products/proof-assembly.webp)"></div></div><div class="msg" data-swiper-parallax-x="-100" data-swiper-parallax-opacity="0"><a class="layer-set mcFix" href="sustainability.html#C-stage-9" aria-label="查看制造与装配详情" title="查看制造与装配详情"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a><p class="f-20 wc">制造与装配</p></div></div></div><div class="swiper-button-next greenFix layer-set"><div class="mask"></div><div class="layer-icon"><i class="iconfont wc f-14">&#xe8a9;</i></div></div></div></div><div class="part pxid-project-start"><div class="box maxSize"><h2 class="f-100 en_b green alanGo" data-text="选择项目起点">选择项目起点</h2><ul class="items layer-items"><li class="list downList alanParent active f-36"><em class="dot"></em><h3 class="green alanUp en_b">只有产品想法</h3><p class="f-14 alanUp black" style="display:block">可从市场需求、使用场景和产品定义开始。</p></li><li class="list downList alanParent f-36"><em class="dot"></em><h3 class="green alanUp en_b">已有设计或样车</h3><p class="f-14 alanUp black">可从结构评审、工程样车、模具开发或制造评估开始。</p></li></ul><a class="layer-btn" href="contact.html"><div class="mk"></div><span class="txt f-16">启动项目</span></a></div></div></div></section>
 <style id="pxid-company-switch-css"></style>
