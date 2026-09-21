@@ -634,21 +634,21 @@
     --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
   *{box-sizing:border-box;margin:0;padding:0;border-radius:0}
   :scope{background:var(--bg);color:var(--ink);font-family:var(--sans);}
-  .wrap{display:flex;align-items:center;gap:clamp(24px,4vw,64px);padding:clamp(32px,5vw,80px) clamp(20px,5vw,80px);max-width:1600px;margin:0 auto;min-height:100%}
-  .left{flex:0 0 clamp(320px,38%,520px);display:flex;flex-direction:column;gap:clamp(18px,2vw,28px)}
-  h2{font-size:clamp(36px,4.2vw,64px);line-height:1.08;font-weight:600;letter-spacing:-.02em}
+  .wrap{display:flex;align-items:stretch;gap:clamp(32px,4.5vw,72px);padding:clamp(32px,5vw,80px) clamp(20px,5vw,80px);max-width:1900px;margin:0 auto;min-height:100%}
+  .left{flex:0 0 clamp(380px,44%,700px);display:flex;flex-direction:column;justify-content:center;gap:clamp(22px,2.4vw,36px)}
+  h2{font-size:clamp(44px,4.9vw,78px);line-height:1.08;font-weight:600;letter-spacing:-.02em}
   h2 span.red{color:var(--red)}
-  .sub{font-size:clamp(16px,1.4vw,20px);line-height:1.75;color:var(--ink2)}
-  .cta{display:inline-flex;align-items:center;gap:8px;width:fit-content;background:var(--red);color:#fff;text-decoration:none;font-size:clamp(14px,1.1vw,16px);padding:12px 22px;font-weight:500}
+  .sub{font-size:clamp(18px,1.75vw,26px);line-height:1.72;color:var(--ink2)}
+  .cta{display:inline-flex;align-items:center;gap:10px;width:fit-content;background:var(--red);color:#fff;text-decoration:none;font-size:clamp(16px,1.35vw,20px);padding:16px 30px;font-weight:500}
   .cta i{font-style:normal}
-  .right{flex:1;display:grid;grid-template-columns:1.15fr 1fr;grid-template-rows:1fr 1fr;gap:clamp(12px,1.2vw,18px);min-height:clamp(360px,32vw,520px)}
+  .right{flex:1;display:grid;grid-template-columns:1.15fr 1fr;grid-template-rows:1fr 1fr;gap:clamp(14px,1.5vw,22px);min-height:clamp(360px,72vh,720px)}
   .card{position:relative;overflow:hidden;background:var(--card);min-height:120px}
   .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
   .card:hover img{transform:scale(1.04)}
   .card.big{grid-column:1/2;grid-row:1/3}
-  .card .cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,1.2vw,22px);display:flex;align-items:baseline;gap:8px;background:linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.78));color:#fff}
-  .card .cap .n{font-family:var(--mono);font-size:clamp(14px,1.1vw,18px);color:var(--red);font-weight:600}
-  .card .cap .t{font-size:clamp(14px,1.1vw,18px);font-weight:600}
+  .card .cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(18px,1.7vw,32px);display:flex;align-items:baseline;gap:8px;background:linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.78));color:#fff}
+  .card .cap .n{font-family:var(--mono);font-size:clamp(16px,1.35vw,22px);color:var(--red);font-weight:600}
+  .card .cap .t{font-size:clamp(16px,1.35vw,22px);font-weight:600}
   @media(max-width:900px){.wrap{flex-direction:column;padding:24px}.left{flex:none;width:100%}.right{grid-template-columns:1fr 1fr;width:100%;min-height:auto}.card.big{grid-column:1/3;grid-row:1/2}}
   :scope,:scope *{-webkit-text-stroke:0!important;text-shadow:none!important;paint-order:normal!important}
 </style><div class="wrap">
@@ -1333,6 +1333,22 @@
 }
 </style>
 
+
+<style id="pxid-home-bandgap">
+/* 首页文字带的下留白统一到 pxidS4 的 1rem。
+   改前 @1440 实测「末行文字距段底」：pxidS2 76、pxidS4 64、pxidS7 143 —— S7 是两层 padding 叠出来的：
+   段自身 80，里面 #s7b9 又带 clamp(32px,3.7vw,71px) 的下内边距。这里把 Bento 那层下内边距归零，
+   下留白交给段级 1rem，实测 143→85（S7 末行自带约 10px 行尾余量）。
+   顶留白三段本来就一致（133/134/135），pxidS7 的 64px 段顶 + Bento 53px + 卡片 18px 内衬刚好凑成 135，
+   所以段顶口径不动；pxidS2 也不动 —— 它是 content-box + min-height 居中，实测已经落在 133/76，
+   给它加 padding 只会把段整体撑高（试过：885→1095）。
+   只作用于 >900：≤900 时 pxidS2 的 430px 下边距是给下方内容让位的结构值，
+   且窄屏把 Bento 下内衬归零会让最后一行溢出段底（实测 -30px），故移动端原样不动。 */
+@media (min-width:901px){
+  #pxidS7.pxid-process-section{padding:64px 0 1rem}
+  #pxidS7 #s7b9{padding-bottom:0}
+}
+</style>
 
 <!-- S6 地图段：底部留白 96px（坤哥 2026-09-17）
      iframe 是 position:absolute;inset:0 铺满整段的，只给 section 加 padding 没用，
