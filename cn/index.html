@@ -462,7 +462,17 @@
   #P .count .t { font-size:clamp(12px, 0.16rem, 14px); letter-spacing:.3em; color:#979797; }
 
 /* 坤哥 09-15：字体描边 / 阴影全部去掉（含源文件自带的），一层压制到底 */
-:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}</style><section id="P">
+:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}
+
+  /* ===== 坤哥 2026-09-21：本段（P · 叠纸抽换）上下留白各减 40% =====
+     原：.head top 12vh / .count bottom 10vh / .stack 65vh（居中 → 上下各 17.5vh）
+     新：7.2vh / 6vh / 79vh（居中 → 上下各 10.5vh = 17.5 × 0.6） */
+  #P .head  { top: 7.2vh; }
+  #P .count { bottom: 6vh; }
+  #P .stack { height: 79vh; }
+  /* 列表随之微调，保持与标题／图框的视觉关系 */
+  #P .idx   { top: 40%; }
+</style><section id="P">
   <div class="head"><div class="eyebrow">Product Lines</div><h2>产品系列</h2></div>
   <div class="idx">
     <div class="it on" data-i="0"><span class="no">01</span><h3>电动滑板车</h3><p>城市通勤与短途出行</p></div>
