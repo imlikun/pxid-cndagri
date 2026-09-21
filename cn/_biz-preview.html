@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="chinaLg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>产品方案 · 预览（规格待填，未上线）｜PXID</title>
+  <meta name="description" content="查看 PXID 的电动自行车、电动摩托车、电动滑板车产品及 ODM 制造能力。">
+  <meta name="keywords" content="PXID,品向,工业设计,电动出行,ODM,电动自行车,电动滑板车,制造">
+  <link rel="icon" href="../assets/pxid/logo-dark.png" type="image/png">
+  <script src="../templates/assets/swiper-bundle.js"></script>
+  <link rel="stylesheet" href="../templates/assets/index.css">
+  <link rel="stylesheet" href="../templates/assets/respone.css">
+  <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260831-bw-red8">
+<style>
+/* 坤哥 09-15：产品系列 section 标题 —— 中英对换 + 位置对齐（原来两列网格：左英文标签 / 右中文标题，错开）
+   英文为主 40px、中文为辅 18px，上下堆叠左对齐，与本页 hero / intro 语言一致。
+   用 .pxid-products 限定，只影响本页这一段（该类 ODM 全流程页也在用，不动共享 CSS）。 */
+.pxid-products .pxid-section-head { display:block; }
+.pxid-products .pxid-section-head > span { display:block; font-size:clamp(32px,.53rem,52px); line-height:1.12;
+  letter-spacing:.02em; font-weight:600; color:var(--pxid-red); text-transform:uppercase; }
+.pxid-products .pxid-section-head h2 { font-size:clamp(16px,.24rem,20px); line-height:1.45;
+  margin:.14rem 0 .18rem; color:var(--pxid-ink); font-weight:600; }
+.pxid-products .pxid-section-head p { grid-column:auto; max-width:66ch; }</style>
+
+<style id="pxid-cta-row">
+  .pxid-cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .pxid-cta-row .layer-btn{margin-top:0}
+  .pxid-cta-row .layer-btn.ghost{opacity:.78}
+  .pxid-cta-row .layer-btn.ghost:hover{opacity:1}
+  @media (max-width:900px){.pxid-cta-row{gap:10px}}</style>
+
+<style id="pxid-cta-row">
+  .pxid-cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:clamp(16px,1.6vw,26px)}
+  .pxid-mbtn{display:inline-flex;align-items:center;gap:8px;height:clamp(42px,3.2vw,54px);
+    padding:0 clamp(20px,1.8vw,32px);font-size:clamp(14px,0.19rem,17px);font-weight:500;
+    text-decoration:none;border:1px solid rgba(255,255,255,.5);color:#fff;background:rgba(23,23,23,.55);
+    backdrop-filter:blur(3px);transition:background .25s,color .25s,border-color .25s}
+  .pxid-mbtn.primary{background:#d71920;border-color:#d71920;color:#fff}
+  .pxid-mbtn:hover{background:#d71920;border-color:#d71920;color:#fff}
+  .pxid-mbtn i{font-style:normal;transition:transform .3s}
+  .pxid-mbtn:hover i{transform:translateX(5px)}</style>
+</head>
+<body id="app" class="business afterInner">
+<!-- 全站去掉波浪（坤哥 2026-09-19）：hero/r6 的 .wave 与 footer 顶部 svg.water 隐藏，footer 顶部改平直线 -->
+<style id="pxid-no-wave">
+  /* ① hero 与 r6 段的波浪（.wave w1 / w2）*/
+  .wave, .wave.w1, .wave.w2{display:none !important}
+  /* ② footer 顶部的波浪 —— 实际是 .wb-footer-wave / .pxid-footer-wave（悬在 footer 上方 ~69px）
+        以及 legacy 的 .bg > svg.water，全部隐藏 */
+  #app footer .wb-footer-wave,
+  #app footer .pxid-footer-wave,
+  #app footer .wb-footer-wave svg,
+  #app footer .pxid-footer-wave svg,
+  #app footer .bg,
+  #app footer .bg .water{display:none !important}
+  /* ③ 波浪是悬出 footer 顶边的，去掉后原来的负 margin 会造成重叠，一并取消 */
+  .afterInner footer,
+  #app footer.wb-footer,
+  #app footer.pxid-footer{margin-top:0 !important}
+  /* ④ footer 顶部拉平成一条细直线，替代原来的波浪收边 */
+  #app footer{border-top:1px solid rgba(255,255,255,.16)}</style>
+<header>
+  <nav class="pcNav pc">
+    <a href="index.html" class="col logo">
+      <img class="white" src="../assets/pxid/logo-white.svg" alt="PXID 品向">
+      <img class="black" src="../assets/pxid/logo-ink.svg" alt="PXID 品向">
+    </a>
+    <ul class="mid fxc"><li class="lists hrefList"><a href="index.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>首页</a></li><li class="lists hrefList on"><a href="business.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>产品方案</a></li><li class="lists hrefList"><a href="manufacturing.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>制造能力</a></li><li class="lists hrefList"><a href="sustainability.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>ODM 全流程</a></li><li class="lists hrefList"><a href="news.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>洞察与资料</a></li><li class="lists hrefList"><a href="contact.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>启动项目</a></li><li class="lists hrefList"><a href="company.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>关于 PXID</a></li></ul>
+    <div class="col set fxc">
+      <div class="layer-search" data-url="search.html"><input class="search f-14 wc" type="text" placeholder="搜索产品与资料"><a class="sub fxc" aria-label="搜索"><i class="iconfont f-14 wc">&#xe8af;</i></a></div>
+      <a class="language fxc" href="index.html" aria-label="英文站规划中"><span class="txt wc f-16 en_b">EN</span></a>
+    </div>
+    <div class="mask"></div>
+  </nav>
+  <nav class="appNav app">
+    <div class="mask"></div>
+    <a class="logoBox" href="index.html"><img src="../assets/pxid/logo-white.svg" alt="PXID 品向" class="logo"></a>
+    <div class="col">
+      <a href="search.html" class="searchSub fxc" aria-label="搜索"><i class="iconfont f-14 wc">&#xe8af;</i></a>
+      <span id="menu"><span class="txt">Menu</span><svg class="pxid-menu-glyph" viewBox="0 0 24 24" aria-hidden="true"><path class="pxid-menu-line pxid-menu-line-top" d="M4 8h16"></path><path class="pxid-menu-line pxid-menu-line-bottom" d="M4 16h16"></path></svg></span>
+    </div>
+  </nav>
+</header>
+<nav class="menu">
+  <div class="items" data-vh=".8"><div class="content"><a href="index.html" class="lists appNavList"><span class="en_b f-26 wc">首页</span></a><a href="business.html" class="lists appNavList"><span class="en_b f-26 wc">产品方案</span></a><a href="sustainability.html" class="lists appNavList"><span class="en_b f-26 wc">ODM 全流程</span></a><a href="news.html" class="lists appNavList"><span class="en_b f-26 wc">洞察与资料</span></a><a href="contact.html" class="lists appNavList"><span class="en_b f-26 wc">启动项目</span></a><a href="company.html" class="lists appNavList"><span class="en_b f-26 wc">关于 PXID</span></a></div></div>
+  <svg class="shape-overlays" viewBox="0 0 1080 1080" preserveAspectRatio="none"><rect class="path" x="0" y="0" width="1080" height="1080"></rect></svg>
+</nav>
+<main><section class="row banner pxid-inner-hero" data-hero-image="product" data-vh="1.08"><div class="bg"><div class="photo alanGo"><div class="pic full pxid-inner-hero-media"><picture class="pxid-hero-picture"><source media="(max-width: 900px) and (orientation: portrait)" srcset="../assets/pxid/home/mobile/hero-mantis-p6-portrait.jpg" width="941" height="1672"><img src="../assets/pxid/home/mantis-mountain.png" width="1672" height="941" alt="" fetchpriority="high" loading="eager" decoding="async"></picture></div></div><div class="wave w1"><div class="mask waveItem"></div></div><div class="wave w2"><div class="mask waveItem"></div></div></div><div class="inner maxSize"><small class="f-170 wc en_m alanGo" style="font-size:1.067rem">Product Solutions</small><h1 class="f-40 wc num_b alanGo alanFn" data-text="产品方案">产品方案</h1><div class="scrEl"><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span></div></div></section>
+<style>
+/* 坤哥 09-15：产品系列 section 标题 —— 中英对换 + 位置对齐（原来两列网格：左英文标签 / 右中文标题，错开）
+   英文为主 40px、中文为辅 18px，上下堆叠左对齐，与本页 hero / intro 语言一致。
+   用 .pxid-products 限定，只影响本页这一段（该类 ODM 全流程页也在用，不动共享 CSS）。 */
+.pxid-products .pxid-section-head { display:block; }
+.pxid-products .pxid-section-head > span { display:block; font-size:clamp(32px,.53rem,52px); line-height:1.12;
+  letter-spacing:.02em; font-weight:600; color:var(--pxid-red); text-transform:uppercase; }
+.pxid-products .pxid-section-head h2 { font-size:clamp(16px,.24rem,20px); line-height:1.45;
+  margin:.14rem 0 .18rem; color:var(--pxid-ink); font-weight:600; }
+.pxid-products .pxid-section-head p { grid-column:auto; max-width:66ch; }</style>
+<style id="pxid-cta-row">
+  .pxid-cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .pxid-cta-row .layer-btn{margin-top:0}
+  .pxid-cta-row .layer-btn.ghost{opacity:.78}
+  .pxid-cta-row .layer-btn.ghost:hover{opacity:1}
+  @media (max-width:900px){.pxid-cta-row{gap:10px}}</style>
+<style id="pxid-cta-row">
+  .pxid-cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:clamp(16px,1.6vw,26px)}
+  .pxid-mbtn{display:inline-flex;align-items:center;gap:8px;height:clamp(42px,3.2vw,54px);
+    padding:0 clamp(20px,1.8vw,32px);font-size:clamp(14px,0.19rem,17px);font-weight:500;
+    text-decoration:none;border:1px solid rgba(255,255,255,.5);color:#fff;background:rgba(23,23,23,.55);
+    backdrop-filter:blur(3px);transition:background .25s,color .25s,border-color .25s}
+  .pxid-mbtn.primary{background:#d71920;border-color:#d71920;color:#fff}
+  .pxid-mbtn:hover{background:#d71920;border-color:#d71920;color:#fff}
+  .pxid-mbtn i{font-style:normal;transition:transform .3s}
+  .pxid-mbtn:hover i{transform:translateX(5px)}</style>
+<style id="pxid-no-wave">
+  /* ① hero 与 r6 段的波浪（.wave w1 / w2）*/
+  .wave, .wave.w1, .wave.w2{display:none !important}
+  /* ② footer 顶部的波浪 —— 实际是 .wb-footer-wave / .pxid-footer-wave（悬在 footer 上方 ~69px）
+        以及 legacy 的 .bg > svg.water，全部隐藏 */
+  #app footer .wb-footer-wave,
+  #app footer .pxid-footer-wave,
+  #app footer .wb-footer-wave svg,
+  #app footer .pxid-footer-wave svg,
+  #app footer .bg,
+  #app footer .bg .water{display:none !important}
+  /* ③ 波浪是悬出 footer 顶边的，去掉后原来的负 margin 会造成重叠，一并取消 */
+  .afterInner footer,
+  #app footer.wb-footer,
+  #app footer.pxid-footer{margin-top:0 !important}
+  /* ④ footer 顶部拉平成一条细直线，替代原来的波浪收边 */
+  #app footer{border-top:1px solid rgba(255,255,255,.16)}</style>
+<style>
+  :scope{
+    --red:#d71920; --red-soft:#d71920;
+    --page:#f8f8f8; --block:#f4f4f4; --line:#e4e4e4;
+    --ink:#333333; --ink-2:#5a5a5a; --ink-3:#999999; --title:#1a1a1a;
+    --en:"Helvetica Neue",Helvetica,Inter,Arial,sans-serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --gutter:clamp(16px,4vw,64px);
+  }
+  *{box-sizing:border-box}
+  :scope{background: var(--page);color:var(--ink);}
+  .in{max-width:1840px;margin:0 auto;padding:0 var(--gutter)}
+  .blk{position:relative;padding:clamp(52px,4.6vw,92px) 0}
+  .tagline{display:flex;align-items:center;gap: 14px;padding: clamp(14px, 0.2933rem, 30px) var(--gutter) 0;
+    max-width:1840px;margin:0 auto;font-family:var(--mono);font-size:clamp(12px, 0.16rem, 14px);letter-spacing:.16em;color:var(--red)}
+  .tagline b{background: var(--red);color:#ffffff;font-weight:600;padding: 3px 9px;letter-spacing:.1em}
+  .tagline i{flex:1;height:1px;background: var(--line);font-style:normal}
+  /* 段头：母题①——英文红色大标题 + 中文黑字副标题，左对齐同一基线 */
+  .head{display:flex;align-items:baseline;gap: clamp(11px, 0.24rem, 24px);margin:0 0 clamp(26px,2.6vw,46px)}
+  .head span{font-family:var(--en);font-size:clamp(32px, 0.53rem, 52px);font-weight:500;color:var(--red);
+    letter-spacing:-.01em;flex:none;line-height:1}
+  .head h2{font-size:clamp(18px, 0.26rem, 22px);line-height:1.6;margin:0;font-weight:600;
+    letter-spacing:0;color:var(--title)}
+  .lede{font-size:clamp(16px, 0.2133rem, 18px);line-height:2;color:var(--ink-3);margin:0 0 clamp(26px,2.6vw,46px)}
+  .ph{aspect-ratio:3/2;background: rgb(255,255,255) center/cover no-repeat}
+  /* ===== 方案 A · 大红序号 ===== */
+  #A{background: rgb(255,255,255)}
+  #A .gA{display:grid;grid-template-columns:repeat(3,1fr);
+    gap:clamp(34px,4vw,68px) clamp(20px,2.4vw,46px)}
+  #A .rA{display:flex;align-items:baseline;gap: clamp(16px, 0.2133rem, 18px)}
+  #A .bigA{font-family:var(--en);font-size:clamp(45px, 0.96rem, 98px);color:var(--red);
+    font-weight:700;line-height:.82}
+  #A .nmA{font-size:clamp(13px, 0.28rem, 29px);font-weight:700;color:var(--title);letter-spacing:-.01em;margin:0;line-height:1.35}
+  #A .dashA{width:26px;height:3px;background: var(--red);margin: clamp(16px, 0.2133rem, 18px) 0 clamp(14px, 0.2933rem, 30px)}
+  #A .wrapA{position:relative;display:block}
+  #A .tyA{position:absolute;left:0;right:0;bottom:0;margin:0;padding: clamp(19px, 0.4rem, 41px) clamp(11px, 0.24rem, 24px) 14px;
+    background: linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.66));
+    color:#ffffff;font-size:clamp(14px, 0.1867rem, 16px);line-height:1.6}
+
+
+  @media (max-width:900px){
+    #A .gA{grid-template-columns:1fr;gap: clamp(21px, 0.4533rem, 46px)}
+  }
+
+/* 坤哥 09-15：字体描边 / 阴影全部去掉（含源文件自带的），一层压制到底 */
+:scope,:scope *{-webkit-text-stroke:0 !important;text-shadow:none !important;paint-order:normal !important}</style>
+<style id="pxid-p1-switch-css">
+#pxidP1{position:relative}
+#pxidP1 > .pxid-p1frame{display:block;width:100%;height:0;border:0;background:#fff;pointer-events:none}
+#pxidP1 > .pxid-p1frame[hidden]{display:none}
+#pxidP1:not([data-p1v="orig"]) > .inner{display:none!important}
+#pxidP1 .pxid-p1switch{position:absolute;top:6px;right:20px;z-index:60;display:flex;gap:4px;align-items:center;background:rgba(17,17,17,.8);padding:4px;opacity:.72;transition:opacity .22s ease;max-width:calc(100% - 40px);flex-wrap:wrap;justify-content:flex-end}
+#pxidP1 .pxid-p1switch:hover{opacity:1}
+#pxidP1 .pxid-p1switch .lbl{display:none}
+#pxidP1 .pxid-p1switch button{cursor:pointer;font:inherit;font-size:12px;line-height:1;padding:6px 8px;border:0;background:transparent;color:rgba(255,255,255,.86);white-space:nowrap;border-radius:0;transition:color .18s,background .18s}
+#pxidP1 .pxid-p1switch button:hover{color:#fff;background:rgba(255,255,255,.15)}
+#pxidP1 .pxid-p1switch button.on{background:#d71920;color:#fff}
+@media (max-width:900px){#pxidP1 .pxid-p1switch{position:fixed;left:12px;right:12px;bottom:14px;top:auto;max-width:none;justify-content:center;opacity:0;pointer-events:none}
+#pxidP1 .pxid-p1switch.show{opacity:.95;pointer-events:auto}
+#pxidP1 .pxid-p1switch button{font-size:11.5px;padding:7px 6px;flex:1 1 auto}}
+</style>
+<style>html{font-size:"+fs+"}*{box-sizing:border-box}html,body{margin:0;padding:0;overflow-x:hidden;"
+      +"background:#f8f8f8;font-family:-apple-system,\"Segoe UI\",\"Microsoft YaHei\",system-ui,sans-serif}</style>
+<style id="pxid-biz-parts">
+/* 品类筛选条 */
+.business .pxid-biz-filter{display:flex;flex-wrap:wrap;gap:8px;margin:clamp(18px,2vw,26px) 0 clamp(24px,2.6vw,34px)}
+.business .pxid-biz-filter button{cursor:pointer;font:inherit;background:transparent;border:0;border-radius:0;
+  padding:9px 14px;font-size:clamp(13px,1.15vw,15px);color:#6b6b68;display:flex;align-items:baseline;gap:7px}
+.business .pxid-biz-filter button em{font-style:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.78em;color:#a8a8a4}
+.business .pxid-biz-filter button:hover{color:#d71920}
+.business .pxid-biz-filter button.on{background:#171717;color:#fff}
+.business .pxid-biz-filter button.on em{color:#d71920}
+/* 末尾 CTA 红底收口段 */
+.business main .pxid-biz-cta{background:#d71920;color:#fff;
+  padding:clamp(52px,5.6vw,72px) 0 calc(clamp(52px,5.6vw,72px) + var(--pxid-footer-wave-safe,0px))}
+.business .pxid-biz-cta>a{display:grid;grid-template-columns:1fr auto;align-items:end;color:#fff;text-decoration:none;position:relative}
+.business .pxid-biz-cta span{grid-column:1/-1;font-size:clamp(14px,.14rem,16px);color:rgba(255,255,255,.86)}
+.business .pxid-biz-cta h2{margin:clamp(8px,.9vw,12px) 0 0;font-weight:600;letter-spacing:-.02em;color:#fff;
+  font-size:clamp(30px,.5rem,54px);line-height:1.15}
+.business .pxid-biz-cta strong{padding-bottom:.08rem;font-size:clamp(15px,.15rem,18px);font-weight:700;white-space:nowrap}
+.business .pxid-biz-cta i{display:inline-block;margin-left:.14rem;font-style:normal;
+  transition:transform .35s cubic-bezier(.38,0,0,1)}
+.business .pxid-biz-cta>a:hover i{transform:translateX(.08rem)}
+@media (max-width:900px){.business .pxid-biz-cta>a{grid-template-columns:1fr}.business .pxid-biz-cta h2{font-size:32px}}
+</style>
+<style id="bizx-20260921">
+.business .product-copy .bizx-custom{margin:7px 0 0;font-size:clamp(11px,.1467rem,13px);line-height:1.65;color:inherit;opacity:.66}
+.business .bizx-note{margin:12px 0 0;font-size:clamp(14px,.1867rem,16px);line-height:1.8;color:#5a5a5a}
+.business .bizx-note a{color:#d71920;text-decoration:none}
+.business .bizx-row{margin-top:clamp(28px,2.2vw,44px)}
+.business .pxid-biz-cta .bizx-ctanote{margin:10px 0 0;font-size:clamp(13px,.1733rem,15px);line-height:1.7;opacity:.72}
+@media (max-width:900px){
+  .business .product-copy .bizx-custom{font-size:12px}
+}
+</style>
+<style id="bizx2-style">
+/* 数字带（样式同首页 S2 数字带） */
+.business .bizx-band{background:#f6f6f4;padding:clamp(56px,4vw,84px) 0}
+.business .bizx-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2vw,36px)}
+.business .bizx-nums i{display:block;width:26px;height:2px;background:#d71920;margin-bottom:clamp(14px,1.25vw,20px)}
+.business .bizx-nums b{display:block;font-size:clamp(26px,2.55vw,40px);line-height:1.06;font-weight:600;letter-spacing:-.02em;color:#171717;white-space:nowrap}
+.business .bizx-nums span{display:block;margin-top:7px;font-size:clamp(13px,1.05vw,15px);line-height:1.55;color:#5a5a5a}
+/* 按场景选型 */
+.business .bizx-find{background:#fff;padding:clamp(56px,4vw,84px) 0}
+.business .bizx-eyebrow{display:block;font-family:ui-monospace,Consolas,monospace;font-size:clamp(12px,.16rem,14px);letter-spacing:.28em;text-transform:uppercase;color:#d71920}
+.business .bizx-h2{font-size:clamp(26px,2.3vw,38px);line-height:1.15;font-weight:600;color:#171717;margin:10px 0 0;letter-spacing:-.01em}
+.business .bizx-scene{list-style:none;margin:clamp(24px,2.4vw,40px) 0 0;padding:0}
+.business .bizx-scene li{display:grid;grid-template-columns:minmax(90px,auto) 1fr auto;gap:clamp(14px,1.6vw,26px);align-items:baseline;padding:clamp(14px,1.3vw,20px) 0;border-top:1px solid #e4e4e4}
+.business .bizx-scene li:last-child{border-bottom:1px solid #e4e4e4}
+.business .bizx-scene em{font-style:normal;font-weight:700;color:#171717;font-size:clamp(15px,1.15vw,17px)}
+.business .bizx-scene span{color:#6a6a6a;font-size:clamp(13px,1vw,15px)}
+.business .bizx-scene a{color:#d71920;text-decoration:none;font-size:clamp(13px,1vw,15px);white-space:nowrap}
+.business .bizx-scene a:hover{text-decoration:underline}
+/* FAQ */
+.business .bizx-faq{background:#f6f6f4;padding:clamp(56px,4vw,84px) 0}
+.business .bizx-qa{margin-top:clamp(20px,2vw,32px);border-top:1px solid #e4e4e4;padding:clamp(16px,1.6vw,24px) 0}
+.business .bizx-qa h3{font-size:clamp(15px,1.2vw,18px);color:#171717;margin:0;font-weight:700}
+.business .bizx-qa p{margin:8px 0 0;font-size:clamp(13px,1vw,15px);line-height:1.8;color:#5a5a5a}
+/* 工艺图文要点 */
+.business .bizx-points{list-style:none;margin:12px 0 0;padding:0}
+.business .bizx-points li{position:relative;padding-left:16px;font-size:clamp(13px,1vw,15px);line-height:1.9;color:rgba(255,255,255,.82)}
+.business .bizx-points li::before{content:'';position:absolute;left:0;top:.85em;width:7px;height:2px;background:#d71920}
+@media (max-width:900px){
+  .business .bizx-nums{grid-template-columns:1fr 1fr}
+  .business .bizx-scene li{grid-template-columns:1fr;gap:4px}
+  .business .bizx-scene a{justify-self:start}
+}
+</style>
+<style id="bizx3-style">
+.business .bizx-build{background:#fff;padding:clamp(56px,4vw,84px) 0}
+.business .bizx-grid4{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,1.8vw,30px);margin-top:clamp(24px,2.4vw,40px)}
+.business .bizx-card{background:#f6f6f4;overflow:hidden}
+.business .bizx-card .pic{height:clamp(170px,13.5vw,250px);background-position:center;background-size:cover}
+.business .bizx-card .bd{padding:clamp(18px,1.7vw,28px)}
+.business .bizx-card .no{display:block;font-family:ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.24em;color:#d71920}
+.business .bizx-card h3{margin:6px 0 0;font-size:clamp(19px,1.6vw,25px);font-weight:700;color:#171717}
+.business .bizx-card .desc{margin:8px 0 0;font-size:clamp(13px,1vw,15px);line-height:1.8;color:#5a5a5a}
+.business .bizx-build .bizx-points{margin:12px 0 0}
+.business .bizx-build .bizx-points li{color:#5a5a5a;font-size:clamp(12px,.95vw,14px);line-height:1.9}
+.business .bizx-card .lnk{display:inline-block;margin-top:14px;color:#d71920;text-decoration:none;font-size:clamp(13px,1vw,15px)}
+.business .bizx-card .lnk:hover{text-decoration:underline}
+.business .bizx-links{display:flex;gap:18px;align-items:baseline;margin-top:14px;flex-wrap:wrap}
+.business .bizx-links .lnk{margin-top:0}
+.business .bizx-links .ghost{color:#171717}
+@media (max-width:900px){
+  .business .bizx-grid4{grid-template-columns:1fr}
+}
+</style>  <!-- ===================== biz2 预览主内容（数据驱动，确认后迁入 business.html） ===================== -->
+  <style id="biz2-style">
+  .business .biz2-lede{max-width:44em}
+  .business .biz2-card .product-copy{background:linear-gradient(180deg,rgba(23,23,23,0),rgba(23,23,23,.58) 20%,rgba(23,23,23,.86));padding-top:80px}
+  .business .biz2-spec{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+  .business .biz2-spec span{display:block;background:rgba(255,255,255,.10);padding:9px 10px;min-width:0}
+  .business .biz2-spec b{display:block;font-size:13px;font-weight:700;color:#fff;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .business .biz2-spec i{display:block;margin-top:3px;font-style:normal;font-size:11px;color:rgba(255,255,255,.62)}
+  .business .biz2-spec .tbd{color:rgba(255,255,255,.55);font-weight:400;font-style:italic}
+  .business .biz2-custom{margin-top:10px;font-size:12px;line-height:1.65;color:rgba(255,255,255,.78)}
+  .business .biz2-custom b{color:#fff;font-weight:600}
+  .business .biz2-foot{display:flex;gap:8px;margin-top:12px}
+  .business .biz2-foot .detail{flex:1 1 auto;display:inline-flex;justify-content:center;align-items:center;height:40px;background:#171717;color:#fff;text-decoration:none;font-size:13px}
+  .business .biz2-foot .ask{flex:0 0 auto;display:inline-flex;align-items:center;padding:0 14px;height:40px;border:1px solid rgba(23,23,23,.25);color:#171717;text-decoration:none;font-size:13px;background:#fff}
+  .business .biz2-foot .ask:hover{border-color:#171717}
+  /* 详情视图 */
+  .business .biz2-detail{background:#fff;padding:clamp(32px,3.4vw,56px) 0 clamp(56px,5vw,88px)}
+  .business .biz2-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#8a8a8a;text-decoration:none;margin-bottom:18px}
+  .business .biz2-back:hover{color:#171717}
+  .business .biz2-heroimg{height:clamp(300px,36vw,520px);background-position:center;background-size:cover;background-color:#eee}
+  .business .biz2-dhead{margin-top:clamp(20px,2.2vw,32px)}
+  .business .biz2-dhead .no{font-family:ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.24em;color:#d71920}
+  .business .biz2-dhead h2{margin:8px 0 0;font-size:clamp(30px,3.2vw,48px);font-weight:700;color:#171717;letter-spacing:-.01em}
+  .business .biz2-dhead .cat{margin:8px 0 0;font-size:clamp(14px,1.2vw,16px);color:#6a6a6a}
+  .business .biz2-dgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(26px,3vw,56px);margin-top:clamp(24px,2.6vw,40px);align-items:start}
+  .business .biz2-h4{font-size:clamp(16px,1.35vw,19px);font-weight:700;color:#171717;margin:clamp(24px,2.4vw,36px) 0 0;padding-top:clamp(16px,1.6vw,22px);border-top:2px solid #171717}
+  .business .biz2-rows{margin-top:12px}
+  .business .biz2-rows .r{display:grid;grid-template-columns:120px minmax(0,1fr);gap:14px;padding:11px 0;border-bottom:1px solid #ececec;font-size:clamp(13px,1.05vw,14.5px)}
+  .business .biz2-rows .r dt{color:#8a8a8a}
+  .business .biz2-rows .r dd{margin:0;color:#171717;font-weight:600}
+  .business .biz2-rows .tbd{color:#b5b5b5;font-weight:400;font-style:italic}
+  .business .biz2-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .business .biz2-chips em{font-style:normal;font-size:12.5px;color:#d71920;border:1px solid rgba(215,25,32,.35);padding:6px 10px}
+  .business .biz2-kv{margin-top:12px}
+  .business .biz2-kv .r{display:grid;grid-template-columns:120px minmax(0,1fr);gap:14px;padding:11px 0;border-bottom:1px solid #ececec;font-size:clamp(13px,1.05vw,14.5px)}
+  .business .biz2-kv .r dt{color:#8a8a8a}
+  .business .biz2-kv .r dd{margin:0;color:#171717;line-height:1.7}
+  .business .biz2-kv .tbd{color:#b5b5b5;font-weight:400;font-style:italic}
+  .business .biz2-cta2{margin-top:clamp(28px,3vw,44px);display:flex;gap:12px;flex-wrap:wrap}
+  .business .biz2-cta2 a{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;text-decoration:none;font-size:14.5px}
+  .business .biz2-cta2 .main{background:#d71920;color:#fff}
+  .business .biz2-cta2 .sub{border:1px solid rgba(23,23,23,.28);color:#171717;background:#fff}
+  /* 跳转条 */
+  .business .bizx-jump{background:#fff;padding:26px 0;border-top:1px solid #ececec;border-bottom:1px solid #ececec}
+  .business .bizx-jump .inner{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:baseline;font-size:clamp(13px,1.05vw,14.5px);color:#6a6a6a}
+  .business .bizx-jump a{color:#d71920;text-decoration:none}
+  .business .bizx-jump a:hover{text-decoration:underline}
+  /* CTA 三按钮 */
+  .business .pxid-biz-cta .biz2-cta3{display:flex;gap:10px;flex-wrap:wrap;margin-top:clamp(18px,2vw,26px)}
+  .business .pxid-biz-cta .biz2-cta3 a{display:inline-flex;align-items:center;height:46px;padding:0 20px;border:1px solid currentColor;text-decoration:none;font-size:14px;color:inherit;opacity:.92}
+  @media (max-width:900px){
+    .business .biz2-dgrid{grid-template-columns:1fr}
+    .business .biz2-spec{grid-template-columns:repeat(3,1fr);gap:6px}
+  }
+  </style>
+
+  <section class="row r1 pxid-products" id="pxidP1" data-p1v="orig">
+    <div class="inner maxSize">
+      <div class="pxid-section-head"><span>01 / Product Range</span><h2>电动出行产品</h2><p class="pxid-prose biz2-lede">9 台量产车型可直接改款，也支持从需求开始的正向开发 —— 选一台，看它的参数、可定制边界和上牌适配。</p></div>
+      <div class="pxid-biz-filter" role="group" aria-label="按品类筛选车型">
+        <button type="button" class="on" data-f="all">全部 <em>9</em></button>
+        <button type="button" data-f="ebike">电动自行车 <em>2</em></button>
+        <button type="button" data-f="folding">折叠电动自行车 <em>1</em></button>
+        <button type="button" data-f="motorcycle">电动摩托车 <em>1</em></button>
+        <button type="button" data-f="scooter">电动滑板车 <em>4</em></button>
+        <button type="button" data-f="special">越野与特种 <em>1</em></button>
+      </div>
+      <div class="product-grid biz2-grid" id="biz2Grid"></div>
+    </div>
+  </section>
+
+  <section class="row bizx-jump"><div class="inner maxSize">
+    <span>结构拆解、样车制作、产品测试与批量装配的完整图文，见</span><a href="sustainability.html">ODM 全流程</a><span>·</span>
+    <span>工艺、设备与检测细节，见</span><a href="manufacturing.html">制造能力</a><span>。</span>
+  </div></section>
+
+  <section class="row bizx-faq" id="biz2Faq">
+    <div class="inner maxSize">
+      <span class="bizx-eyebrow">FAQ</span>
+      <h2 class="bizx-h2">常见问题</h2>
+      <div class="bizx-qa"><h3>OEM 和 ODM 有什么区别？</h3><p>OEM 按您的图纸与规格生产；ODM 由我们负责从设计到量产的完整开发，您提出品类、定位与品牌方向即可。</p></div>
+      <div class="bizx-qa"><h3>可以只做局部改款吗？</h3><p>可以。可基于现有车型做外观与配色、电池与电机、车架与结构等局部调整，也可以从需求开始正向开发。</p></div>
+      <div class="bizx-qa"><h3>开发流程一共多少步？</h3><p>共 10 个环节，从需求分析、概念设计到试验检测、批量装配，完整流程见「ODM 全流程」页面。</p></div>
+      <div class="bizx-qa"><h3>上牌与认证怎么处理？</h3><p>车辆可按目标市场的上牌与认证要求做配置评估，相关法规资料可在咨询时一并提供。</p></div>
+      <div class="bizx-qa"><h3>起订量和交期怎么算？</h3><p>按车型、配置与订单规模逐项评估，咨询时给出具体结论。</p></div>
+    </div>
+  </section>
+
+  <section class="row pxid-biz-cta"><a class="inner maxSize" href="contact.html">
+    <span>还没定用哪台车改？</span><h2>把目标品类和上牌要求发给我们</h2>
+    <strong>联系 PXID <i aria-hidden="true">&#8594;</i></strong>
+    <span class="biz2-cta3">
+      <em>基于现有车型改款 → contact.html?product=车型名</em>
+      <em>启动全新开发 → contact.html</em>
+      <em>先看制造与流程 → manufacturing.html</em>
+    </span>
+  </a></section>
+
+  <section class="row biz2-detail" id="biz2Detail" hidden></section>
+
+  <script id="biz2-data">
+  var BIZ2 = [
+   {name:"MANTIS-P6",cat:"ebike",catName:"全地形电动自行车",img:"../assets/pxid/products/mantis-p6.webp",focus:"50% 8%",matte:"#fff",
+    brief:["48V 20/35Ah","750W","115km"],
+    spec:[["电池容量","48V 20Ah / 48V 35Ah"],["电机","750W（可升级 1200W）"],["续航","最大 65km / 115km"],["最高时速","45km/h / 55km/h"],["车架材质","6061 铝合金"],["变速","单速（可 7 速 SHIMANO）"],["刹车","前 & 后油刹（可换碟刹）"],["避震","倒置前叉 + 后 200L"],["载重","150kg"],["仪表","LED（可 LCD）"],["传感器","速度（可扭矩）"],["充电时间","5-7h"]],
+    custom:["颜色（黑/绿/米）","电机 1200W","电池 35Ah","7 速 SHIMANO","前 & 后碟刹","LCD 仪表","扭矩传感器"]},
+   {name:"PXID-P5",cat:"ebike",catName:"宽胎电动自行车",img:"../assets/pxid/products/pxid-p5-riding.jpg",focus:"64% center",matte:"#fff",
+    brief:["规格待填","规格待填","规格待填"],
+    spec:[["电池容量","规格待填"],["电机","规格待填"],["续航","规格待填"],["最高时速","规格待填"],["车架材质","铝合金（轻量化 + 结构强化）"]],
+    specNote:"官网口径：优化车架几何与铝合金选材、集成 IoT 控制器与模块化电池、通过 20+ 项性能与安全测试；具体参数待官方确认。",
+    custom:["规格待填（外观与配色、电池与电控可按需求评估）"]},
+   {name:"LIGHT-P2",cat:"folding",catName:"折叠电动自行车",img:"../assets/pxid/products/light-p2.jpg",focus:"50% 8%",matte:"#000",
+    brief:["36V 7.65Ah","250W","70km"],
+    spec:[["电池容量","36V 7.65Ah"],["电机","250W（可升级 350W）"],["续航","70km"],["最高时速","24km/h"],["车架材质","镁合金"],["变速","单速（可变速）"],["刹车","160mm 机械碟刹（可液压）"],["避震","后避震"],["载重","85kg"],["仪表","LCD（可 LED）"],["踏板","铝合金（可塑料）"],["充电时间","3-4h"]],
+    custom:["颜色（深灰/白）","电机 350W","电池容量","变速","液压碟刹","踏板材质","LED 仪表"]},
+   {name:"M2",cat:"motorcycle",catName:"电动摩托车",img:"../assets/pxid/products/m2.jpg",focus:"58% center",matte:"#fff",
+    brief:["规格待填","峰值 30kW","规格待填"],
+    spec:[["电机","峰值 30kW（轮上扭矩 800+ N·m）"],["电池容量","规格待填"],["续航","规格待填"],["最高时速","规格待填"]],
+    specNote:"定位专业越野与速降骑行；电控系统支持定制（电机、电池与智能控制集成）。",
+    custom:["电机","电池","智能控制集成"]},
+   {name:"URBAN-03",cat:"scooter",catName:"城市电动滑板车",img:"../assets/pxid/products/urban-03.png",focus:"50% 8%",matte:"#111",
+    brief:["48V 15.6/21Ah","500W","50km"],
+    spec:[["电机","500W（可升级 800W）"],["电池容量","48V 15.6Ah（可 21Ah）"],["续航","最大 50km"],["最高时速","45km/h"],["车架材质","钢"],["变速","2 速（可单速）"],["刹车","前鼓刹 + 后碟刹（可液压）"],["避震","前后双避震"],["载重","100kg"],["仪表","LED（可 LCD）"],["把手","黑（可配色与图案）"],["充电时间","6-8h"]],
+    custom:["颜色（黑/红）","电机 800W","电池 21Ah","变速","液压碟刹","LCD 仪表","把手配色与图案"]},
+   {name:"H10",cat:"scooter",catName:"镁合金电动滑板车",img:"../assets/pxid/products/h10.jpg",focus:"59% center",matte:"#fff",
+    brief:["18650 锂电×40","规格待填","35km"],
+    briefAlt:true,
+    spec:[["电池","车规级锂电（18650 电芯 ×40）"],["电机","规格待填"],["续航","35km"],["最高时速","规格待填"],["爬坡","15%"],["车身","镁合金轻量化"]],
+    custom:["颜色与配置可按需求定制"]},
+   {name:"PX-3",cat:"special",catName:"双驱越野电动滑板车",img:"../assets/pxid/products/px-3.jpg",focus:"50% center",matte:"#fff",
+    brief:["48V 30Ah","2×1000W","规格待填"],
+    spec:[["电池容量","48V 30Ah 大容量"],["电机","2×1000W 双驱"],["续航","规格待填"],["最高时速","规格待填"],["轮胎","11 寸越野防爆胎"],["避震","创新四连杆弹簧避震"],["刹车","碟刹"]],
+    custom:["颜色与配置可按需求定制"]},
+   {name:"FREEMILE-F1",cat:"scooter",catName:"坐式电动滑板车",img:"../assets/pxid/products/freemile-f1.jpg",focus:"50% 8%",matte:"#fff",
+    brief:["48V 13/17.5Ah","500/800W","规格待填"],
+    spec:[["电池容量","最大 48V 13Ah / 17.5Ah（可拆换，LG/三星电芯 + BMS）"],["电机","500W / 800W 直流无刷"],["续航","规格待填"],["最高时速","规格待填"]],
+    custom:["电池容量（13/17.5Ah）","电机功率（500/800W）","颜色与配置"]},
+   {name:"BESTRIDE PRO",cat:"scooter",catName:"三轮电动滑板车",img:"../assets/pxid/products/bestride-pro.jpg",focus:"53% center",matte:"#fff",
+    brief:["48V 23.4Ah","1000W","55km/h"],
+    spec:[["电机","1000W（500W × 2）直流无刷"],["电池容量","48V 23.4Ah"],["续航","最大 45km"],["最高时速","55km/h"],["车架材质","铝 + 钢"],["变速","3 速（可单速）"],["刹车","机械碟刹（可液压）"],["避震","前后双避震"],["载重","150kg"],["仪表","LED（可 LCD）"],["踏板","铝合金"],["充电时间","8-10h"],["颜色","橙 / 绿 / 红 / 白"]],
+    custom:["颜色（橙/绿/红/白）","变速（单速/定制）","电机","液压碟刹","LCD 与定制显示界面","极速按当地法规调校"]}
+  ];
+  </script>
+
+  <script id="biz2-app">
+  (function(){
+    var TBD_TXT = "规格待填";
+    var grid = document.getElementById("biz2Grid");
+    var detail = document.getElementById("biz2Detail");
+    var listSec = document.getElementById("pxidP1");
+    var jump = document.querySelector(".bizx-jump");
+    var faq = document.getElementById("biz2Faq");
+    var cta = document.querySelector(".pxid-biz-cta");
+        function isTbd(s){ return !s || s.indexOf("规格待填") >= 0; }
+    function pad(n){ return (n < 10 ? "0" : "") + n; }
+    function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+
+    function cardHTML(p, i, total){
+      var sp = "";
+      ["电池","电机","续航"].forEach(function(k){
+        var v = p.brief[k === "电池" ? 0 : (k === "电机" ? 1 : 2)];
+        var tbdCls = String(v).indexOf("规格待填") >= 0 ? " tbd" : "";
+        sp += '<span><b class="' + tbdCls.trim() + '">' + v + '</b><i>' + k + '</i></span>';
+      });
+      var custom = (p.custom && p.custom.length === 1 && p.custom[0].indexOf("规格待填") >= 0)
+        ? '<b>可定制边界：</b>规格待填'
+        : '<b>可定制边界：</b>' + esc(p.custom.slice(0, 4).join(" · ")) + (p.custom.length > 4 ? " 等" : "");
+      return '<article class="product-card biz2-card" data-cat="' + p.cat + '" data-name="' + p.name + '">'
+        + '<div class="product-photo" role="img" aria-label="' + p.name + " " + p.catName + '" style="background-image:url(' + p.img + ');background-position:' + p.focus + ';background-color:' + p.matte + '"></div>'
+        + '<div class="product-copy">'
+        + '<span>' + pad(i + 1) + ' / ' + pad(total) + '</span>'
+        + '<h3>' + p.name + '</h3>'
+        + '<p>' + p.catName + '</p>'
+        + '<div class="biz2-spec">' + sp + '</div>'
+        + '<div class="biz2-custom">' + custom + '</div>'
+        + '<div class="biz2-foot"><a class="detail" href="#m-' + encodeURIComponent(p.name) + '">查看详情</a>'
+        + '<a class="ask" href="contact.html?product=' + encodeURIComponent(p.name) + '">咨询</a></div>'
+        + '</div></article>';
+    }
+
+    function applyFilter(f){
+      var btns = document.querySelectorAll(".pxid-biz-filter button");
+      btns.forEach(function(x){ x.classList.toggle("on", x.getAttribute("data-f") === f); });
+      var vis = 0, total = 0, i;
+      for (i = 0; i < BIZ2.length; i++){ if (f === "all" || BIZ2[i].cat === f) total++; }
+      var html = "";
+      for (i = 0; i < BIZ2.length; i++){
+        var p = BIZ2[i];
+        if (f !== "all" && p.cat !== f) continue;
+        vis++;
+        html += cardHTML(p, vis - 1, total);
+      }
+      grid.innerHTML = html;
+      if (window.history && history.replaceState) history.replaceState(null, "", f === "all" ? "#list" : "#" + f);
+    }
+
+    function detailHTML(p){
+      var rows = "";
+      p.spec.forEach(function(r){
+        var tbd = String(r[1]).indexOf("规格待填") >= 0;
+        rows += '<div class="r"><dt>' + r[0] + '</dt><dd' + (tbd ? ' class="tbd"' : '') + '>' + r[1] + '</dd></div>';
+      });
+      var chips = "";
+      p.custom.forEach(function(c){
+        var tbd = c.indexOf("规格待填") >= 0;
+        chips += '<em' + (tbd ? ' style="color:#b5b5b5;border-color:#ddd"' : '') + '>' + esc(c) + '</em>';
+      });
+      return '<div class="inner maxSize">'
+        + '<a class="biz2-back" href="#list">← 回到车型表</a>'
+        + '<div class="biz2-heroimg" style="background-image:url(' + p.img + ');background-position:' + p.focus + ';background-color:' + p.matte + '" role="img" aria-label="' + p.name + '"></div>'
+        + '<div class="biz2-dhead"><span class="no">' + esc(p.catName) + '</span><h2>' + p.name + '</h2><p class="cat">在产 · 支持定制 · 基于该车型可改款，也可作为平台延续开发</p></div>'
+        + '<div class="biz2-dgrid"><div>'
+        + '<h4 class="biz2-h4">参数表</h4><div class="biz2-rows">' + rows + '</div>'
+        + (p.specNote ? '<p class="biz2-custom" style="margin-top:14px">' + esc(p.specNote) + '</p>' : '')
+        + '</div><div>'
+        + '<h4 class="biz2-h4">可定制边界</h4><div class="biz2-chips">' + chips + '</div>'
+        + '<h4 class="biz2-h4">状态与周期</h4><div class="biz2-kv">'
+        + '<div class="r"><dt>状态</dt><dd>在产 · 支持定制</dd></div>'
+        + '<div class="r"><dt>周期</dt><dd class="tbd">改款与全新开发周期：规格待填</dd></div>'
+        + '<div class="r"><dt>起订与交期</dt><dd class="tbd">按车型、配置与订单规模评估：规格待填</dd></div>'
+        + '</div>'
+        + '<h4 class="biz2-h4">上牌与合规</h4><div class="biz2-kv">'
+        + '<div class="r"><dt>法规调校</dt><dd>极速与配置可按目标市场法规调校（欧盟 / 美国 / 中国等）</dd></div>'
+        + '<div class="r"><dt>认证状态</dt><dd class="tbd">规格待填（按车型与目标市场确认）</dd></div>'
+        + '<div class="r"><dt>说明</dt><dd>以目标市场最新法规为准，咨询时给出配置评估结论</dd></div>'
+        + '</div>'
+        + '</div></div>'
+        + '<div class="biz2-cta2"><a class="main" href="contact.html?product=' + encodeURIComponent(p.name) + '">咨询此车型 ' + p.name + ' →</a>'
+        + '<a class="sub" href="#list">← 回到车型表</a></div>'
+        + '</div>';
+    }
+
+    function showDetail(name){
+      var p = null;
+      for (var i = 0; i < BIZ2.length; i++){ if (BIZ2[i].name === name) p = BIZ2[i]; }
+      if (!p) return false;
+      listSec.hidden = true; if (jump) jump.hidden = true; if (faq) faq.hidden = true; if (cta) cta.hidden = true;
+      detail.innerHTML = detailHTML(p);
+      detail.hidden = false;
+      window.scrollTo(0, 0);
+      return true;
+    }
+    function showList(){
+      detail.hidden = true; detail.innerHTML = "";
+      listSec.hidden = false; if (jump) jump.hidden = false; if (faq) faq.hidden = false; if (cta) cta.hidden = false;
+    }
+    function route(){
+      var hh = decodeURIComponent((location.hash || "").replace(/^#/, ""));
+      if (hh.indexOf("m-") === 0){ if (showDetail(hh.slice(2))) return; }
+      showList();
+      var k = hh;
+      if (k === "list" || !k) k = "all";
+      var ok = false;
+      document.querySelectorAll(".pxid-biz-filter button").forEach(function(x){ if (x.getAttribute("data-f") === k) ok = true; });
+      if (ok) applyFilter(k); else applyFilter("all");
+    }
+    document.querySelector(".pxid-biz-filter").addEventListener("click", function(e){
+      var t = e.target, b = null;
+      while (t && t !== this){ if (t.tagName === "BUTTON"){ b = t; break; } t = t.parentNode; }
+      if (b){ applyFilter(b.getAttribute("data-f"), true); }
+    });
+    addEventListener("hashchange", route);
+    route();
+  })();
+  </script>
+
+<footer id="footer-contact">
+  <div class="bg"><svg class="water" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none"><defs><path id="foot-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z"/></defs><g class="parallax"><use href="#foot-wave" x="50" y="0" fill="rgba(19,65,68,1)"/></g></svg></div>
+  <div class="inner">
+    <div class="mid fxb">
+      <div class="left alanParent alanGo"><a class="logo alanUp" href="index.html"><img class="icon" src="../assets/pxid/logo-white.svg" alt="PXID 品向"></a></div>
+      <div class="right"><div class="top fxb alanParent alanGo"><div class="layer-search alanUp" data-url="search.html"><input class="search f-14 wc" type="text" placeholder="搜索产品与资料"><a class="sub fxc" aria-label="搜索"><i class="iconfont f-20 wc">&#xe8af;</i></a></div><div class="layer-top alanUp"><span class="mask"></span><span class="txt layer-icon"><i class="iconfont f-18">&#xe8ba;</i></span></div></div><ul class="items alanParent alanGo"><li class="list alanUp"><a href="index.html" class="f-20 en_b fxs wc txt">首页<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="company.html" class="f-20 en_b fxs wc txt">关于 PXID<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="business.html" class="f-20 en_b fxs wc txt">产品方案<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="manufacturing.html" class="f-20 en_b fxs wc txt">制造能力<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="sustainability.html" class="f-20 en_b fxs wc txt">ODM 全流程<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="news.html" class="f-20 en_b fxs wc txt">洞察与资料<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="contact.html" class="f-20 en_b fxs wc txt">启动项目<i class="iconfont f-20 mc">&#xe8a9;</i></a></li></ul></div>
+    </div>
+    <div class="btm alanParent alanGo">
+      <p class="f-12 wc alanUp">Copyright © 2026 PXID 品向智造. All rights reserved.</p>
+      <div class="col fxb alanUp"><p class="f-14 wc"><a href="tel:+8618936381099">+86 189 3638 1099</a><br><a href="mailto:inquiry@pxid.com">inquiry@pxid.com</a><br>江苏省淮安市清江浦区深圳东路18号4号楼</p><div class="set fxc"><a class="f-12 aHref" href="privacy-policy.html">隐私政策</a><span class="line"></span><a class="f-12 aHref" href="legal-notice.html">法律声明</a></div></div>
+    </div>
+  </div>
+</footer>
+<script src="../templates/assets/pxid-motion.js?v=20260831-native-scroll1"></script>
+<script src="../templates/assets/pxid-site.js?v=20260920-stage-anchor1"></script>
+
+
+<style id="pxid-biz-parts">
+/* 品类筛选条 */
+.business .pxid-biz-filter{display:flex;flex-wrap:wrap;gap:8px;margin:clamp(18px,2vw,26px) 0 clamp(24px,2.6vw,34px)}
+.business .pxid-biz-filter button{cursor:pointer;font:inherit;background:transparent;border:0;border-radius:0;
+  padding:9px 14px;font-size:clamp(13px,1.15vw,15px);color:#6b6b68;display:flex;align-items:baseline;gap:7px}
+.business .pxid-biz-filter button em{font-style:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.78em;color:#a8a8a4}
+.business .pxid-biz-filter button:hover{color:#d71920}
+.business .pxid-biz-filter button.on{background:#171717;color:#fff}
+.business .pxid-biz-filter button.on em{color:#d71920}
+/* 末尾 CTA 红底收口段 */
+.business main .pxid-biz-cta{background:#d71920;color:#fff;
+  padding:clamp(52px,5.6vw,72px) 0 calc(clamp(52px,5.6vw,72px) + var(--pxid-footer-wave-safe,0px))}
+.business .pxid-biz-cta>a{display:grid;grid-template-columns:1fr auto;align-items:end;color:#fff;text-decoration:none;position:relative}
+.business .pxid-biz-cta span{grid-column:1/-1;font-size:clamp(14px,.14rem,16px);color:rgba(255,255,255,.86)}
+.business .pxid-biz-cta h2{margin:clamp(8px,.9vw,12px) 0 0;font-weight:600;letter-spacing:-.02em;color:#fff;
+  font-size:clamp(30px,.5rem,54px);line-height:1.15}
+.business .pxid-biz-cta strong{padding-bottom:.08rem;font-size:clamp(15px,.15rem,18px);font-weight:700;white-space:nowrap}
+.business .pxid-biz-cta i{display:inline-block;margin-left:.14rem;font-style:normal;
+  transition:transform .35s cubic-bezier(.38,0,0,1)}
+.business .pxid-biz-cta>a:hover i{transform:translateX(.08rem)}
+@media (max-width:900px){.business .pxid-biz-cta>a{grid-template-columns:1fr}.business .pxid-biz-cta h2{font-size:32px}}
+</style>
+<script id="pxid-biz-filter">
+(function(){
+  var bar=document.querySelector('.pxid-biz-filter');if(!bar)return;
+  var cards=Array.prototype.slice.call(document.querySelectorAll('#pxidP1 .product-card'));
+  var btns=Array.prototype.slice.call(bar.querySelectorAll('button'));
+  /* bizx-20260921：序号跟筛选重排（分母=可见数）+ URL hash 联动 */
+  function pad(n){return (n<10?'0':'')+n;}
+  function applyFilter(f,push){
+    btns.forEach(function(x){x.classList.toggle('on',x.getAttribute('data-f')===f);});
+    var total=0,vis=0,i;
+    for(i=0;i<cards.length;i++){ if(f==='all'||cards[i].getAttribute('data-cat')===f) total++; }
+    for(i=0;i<cards.length;i++){
+      var c=cards[i], show=(f==='all')||(c.getAttribute('data-cat')===f);
+      c.style.display=show?'':'none';
+      if(show){
+        vis++;
+        var no=c.querySelector('.product-copy span');
+        if(no) no.textContent=pad(vis)+' / '+pad(total);
+      }
+    }
+    if(push&&window.history&&history.replaceState) history.replaceState(null,'','#'+f);
+  }
+  bar.addEventListener('click',function(e){
+    var t=e.target,b=null;
+    while(t&&t!==bar){if(t.tagName==='BUTTON'){b=t;break;}t=t.parentNode;}
+    if(!b)return;
+    applyFilter(b.getAttribute('data-f'),true);
+  });
+  function fromHash(){
+    var k=(location.hash||'').replace('#','');
+    if(!k) return false;
+    for(var i=0;i<btns.length;i++){ if(btns[i].getAttribute('data-f')===k){ applyFilter(k,false); return true; } }
+    return false;
+  }
+  if(!fromHash()) applyFilter('all',false);
+  window.addEventListener('hashchange',fromHash);
+})();
+</script>
+
+<!-- bizx-20260921 · 坤哥 2026-09-21：产品方案页内容逻辑补全 -->
+<style id="bizx-20260921">
+.business .product-copy .bizx-custom{margin:7px 0 0;font-size:clamp(11px,.1467rem,13px);line-height:1.65;color:inherit;opacity:.66}
+.business .bizx-note{margin:12px 0 0;font-size:clamp(14px,.1867rem,16px);line-height:1.8;color:#5a5a5a}
+.business .bizx-note a{color:#d71920;text-decoration:none}
+.business .bizx-row{margin-top:clamp(28px,2.2vw,44px)}
+.business .pxid-biz-cta .bizx-ctanote{margin:10px 0 0;font-size:clamp(13px,.1733rem,15px);line-height:1.7;opacity:.72}
+@media (max-width:900px){
+  .business .product-copy .bizx-custom{font-size:12px}
+}
+</style>
+
+<!-- bizx2-20260921 · 样式 -->
+<style id="bizx2-style">
+/* 数字带（样式同首页 S2 数字带） */
+.business .bizx-band{background:#f6f6f4;padding:clamp(56px,4vw,84px) 0}
+.business .bizx-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2vw,36px)}
+.business .bizx-nums i{display:block;width:26px;height:2px;background:#d71920;margin-bottom:clamp(14px,1.25vw,20px)}
+.business .bizx-nums b{display:block;font-size:clamp(26px,2.55vw,40px);line-height:1.06;font-weight:600;letter-spacing:-.02em;color:#171717;white-space:nowrap}
+.business .bizx-nums span{display:block;margin-top:7px;font-size:clamp(13px,1.05vw,15px);line-height:1.55;color:#5a5a5a}
+/* 按场景选型 */
+.business .bizx-find{background:#fff;padding:clamp(56px,4vw,84px) 0}
+.business .bizx-eyebrow{display:block;font-family:ui-monospace,Consolas,monospace;font-size:clamp(12px,.16rem,14px);letter-spacing:.28em;text-transform:uppercase;color:#d71920}
+.business .bizx-h2{font-size:clamp(26px,2.3vw,38px);line-height:1.15;font-weight:600;color:#171717;margin:10px 0 0;letter-spacing:-.01em}
+.business .bizx-scene{list-style:none;margin:clamp(24px,2.4vw,40px) 0 0;padding:0}
+.business .bizx-scene li{display:grid;grid-template-columns:minmax(90px,auto) 1fr auto;gap:clamp(14px,1.6vw,26px);align-items:baseline;padding:clamp(14px,1.3vw,20px) 0;border-top:1px solid #e4e4e4}
+.business .bizx-scene li:last-child{border-bottom:1px solid #e4e4e4}
+.business .bizx-scene em{font-style:normal;font-weight:700;color:#171717;font-size:clamp(15px,1.15vw,17px)}
+.business .bizx-scene span{color:#6a6a6a;font-size:clamp(13px,1vw,15px)}
+.business .bizx-scene a{color:#d71920;text-decoration:none;font-size:clamp(13px,1vw,15px);white-space:nowrap}
+.business .bizx-scene a:hover{text-decoration:underline}
+/* FAQ */
+.business .bizx-faq{background:#f6f6f4;padding:clamp(56px,4vw,84px) 0}
+.business .bizx-qa{margin-top:clamp(20px,2vw,32px);border-top:1px solid #e4e4e4;padding:clamp(16px,1.6vw,24px) 0}
+.business .bizx-qa h3{font-size:clamp(15px,1.2vw,18px);color:#171717;margin:0;font-weight:700}
+.business .bizx-qa p{margin:8px 0 0;font-size:clamp(13px,1vw,15px);line-height:1.8;color:#5a5a5a}
+/* 工艺图文要点 */
+.business .bizx-points{list-style:none;margin:12px 0 0;padding:0}
+.business .bizx-points li{position:relative;padding-left:16px;font-size:clamp(13px,1vw,15px);line-height:1.9;color:rgba(255,255,255,.82)}
+.business .bizx-points li::before{content:'';position:absolute;left:0;top:.85em;width:7px;height:2px;background:#d71920}
+@media (max-width:900px){
+  .business .bizx-nums{grid-template-columns:1fr 1fr}
+  .business .bizx-scene li{grid-template-columns:1fr;gap:4px}
+  .business .bizx-scene a{justify-self:start}
+}
+</style>
+
+<!-- bizx3-20260921 · 四环节 Bento 样式 -->
+<style id="bizx3-style">
+.business .bizx-build{background:#fff;padding:clamp(56px,4vw,84px) 0}
+.business .bizx-grid4{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,1.8vw,30px);margin-top:clamp(24px,2.4vw,40px)}
+.business .bizx-card{background:#f6f6f4;overflow:hidden}
+.business .bizx-card .pic{height:clamp(170px,13.5vw,250px);background-position:center;background-size:cover}
+.business .bizx-card .bd{padding:clamp(18px,1.7vw,28px)}
+.business .bizx-card .no{display:block;font-family:ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.24em;color:#d71920}
+.business .bizx-card h3{margin:6px 0 0;font-size:clamp(19px,1.6vw,25px);font-weight:700;color:#171717}
+.business .bizx-card .desc{margin:8px 0 0;font-size:clamp(13px,1vw,15px);line-height:1.8;color:#5a5a5a}
+.business .bizx-build .bizx-points{margin:12px 0 0}
+.business .bizx-build .bizx-points li{color:#5a5a5a;font-size:clamp(12px,.95vw,14px);line-height:1.9}
+.business .bizx-card .lnk{display:inline-block;margin-top:14px;color:#d71920;text-decoration:none;font-size:clamp(13px,1vw,15px)}
+.business .bizx-card .lnk:hover{text-decoration:underline}
+.business .bizx-links{display:flex;gap:18px;align-items:baseline;margin-top:14px;flex-wrap:wrap}
+.business .bizx-links .lnk{margin-top:0}
+.business .bizx-links .ghost{color:#171717}
+@media (max-width:900px){
+  .business .bizx-grid4{grid-template-columns:1fr}
+}
+</style>
+</body>
+</html>
