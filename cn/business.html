@@ -587,7 +587,8 @@
 </style>
 <style id="biz2-scroll-fix">
 .business .biz2-modal{overflow-y:auto;-webkit-overflow-scrolling:touch;touch-action:pan-y}
-.business .biz2-modal .biz2-mask{position:absolute;inset:0}
+.business .biz2-modal .biz2-mask{position:fixed;inset:0;z-index:0}
+.business .biz2-modal .biz2-panel{position:relative;z-index:1}
 @media (max-width:900px){.business .biz2-modal .biz2-panel{margin:0 auto 0}}
 </style>
 <style id="biz2-gallery-css">
