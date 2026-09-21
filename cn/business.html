@@ -545,15 +545,29 @@
     </div>
   </section>
 
-  <section class="row pxid-biz-cta"><a class="inner maxSize" href="contact.html">
-    <span>还没定用哪台车改？</span><h2>把目标品类和上牌要求发给我们</h2>
-    <strong>联系 PXID <i aria-hidden="true">&#8594;</i></strong>
-    <span class="biz2-cta3">
-      <em>基于现有车型改款 → contact.html?product=车型名</em>
-      <em>启动全新开发 → contact.html</em>
-      <em>先看制造与流程 → manufacturing.html</em>
-    </span>
-  </a></section>
+  <section class="row pxid-biz-cta"><div class="inner maxSize">
+    <span>还没定用哪台车改？</span>
+    <h2>把目标品类和上牌要求发给我们</h2>
+    <div class="biz2-cta3">
+      <a href="contact.html">基于现有车型改款<i aria-hidden="true">&#8594;</i></a>
+      <a href="contact.html">启动全新开发<i aria-hidden="true">&#8594;</i></a>
+      <a href="manufacturing.html">先看制造与流程<i aria-hidden="true">&#8594;</i></a>
+    </div>
+  </div></section>
+<style id="biz2-cta-btns">
+.business .pxid-biz-cta .inner{display:block}
+.business .pxid-biz-cta .biz2-cta3{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(20px,2vw,30px)}
+.business .pxid-biz-cta .biz2-cta3 a{display:inline-flex;align-items:center;gap:9px;
+  padding:13px 22px;border:1px solid rgba(255,255,255,.5);color:#fff;text-decoration:none;
+  font-size:clamp(14px,.15rem,16px);font-weight:600;line-height:1;
+  transition:background .3s cubic-bezier(.38,0,0,1),color .3s,border-color .3s}
+.business .pxid-biz-cta .biz2-cta3 a:first-child{background:#fff;color:#d71920;border-color:#fff}
+.business .pxid-biz-cta .biz2-cta3 a:hover{background:#fff;color:#d71920;border-color:#fff}
+.business .pxid-biz-cta .biz2-cta3 i{font-style:normal;transition:transform .35s cubic-bezier(.38,0,0,1)}
+.business .pxid-biz-cta .biz2-cta3 a:hover i{transform:translateX(4px)}
+@media (max-width:900px){.business .pxid-biz-cta .biz2-cta3{gap:10px}.business .pxid-biz-cta .biz2-cta3 a{flex:1 1 100%;justify-content:space-between}}
+</style>
+
 
   <div class="biz2-modal" id="biz2Modal" hidden>
     <div class="biz2-mask" data-close="1"></div>
