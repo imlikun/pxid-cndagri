@@ -585,10 +585,24 @@
   .business .biz2-hls{grid-template-columns:1fr}
 }
 </style>
+<style id="biz2-scroll-fix">
+.business .biz2-modal{overflow-y:auto;-webkit-overflow-scrolling:touch;touch-action:pan-y}
+.business .biz2-modal .biz2-mask{position:absolute;inset:0}
+@media (max-width:900px){.business .biz2-modal .biz2-panel{margin:0 auto 0}}
+</style>
+<style id="biz2-gallery-css">
+.business .biz2-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1vw,14px);margin-top:14px}
+.business .biz2-gal figure{margin:0}
+.business .biz2-gal .ph{height:clamp(120px,14vw,190px);background-size:cover;background-position:center;background-color:#eee}
+.business .biz2-gal figcaption{margin-top:7px;font-size:12px;color:#8a8a8a;line-height:1.5}
+@media (max-width:900px){.business .biz2-gal{grid-template-columns:1fr 1fr}.business .biz2-gal figure:last-child{grid-column:1/-1}}
+</style>
 
 
 
-  <div class="biz2-modal" id="biz2Modal" hidden>
+
+
+  <div class="biz2-modal" id="biz2Modal" data-lenis-prevent hidden>
     <div class="biz2-mask" data-close="1"></div>
     <div class="biz2-panel" role="dialog" aria-modal="true" aria-label="车型详情">
       <button class="biz2-x" type="button" aria-label="关闭" data-close="1">&#10005;</button>
@@ -754,6 +768,20 @@
      "把横与握把（款式 / 材质 / 颜色）"
     ]
    ]
+  ],
+  "gallery": [
+   [
+    "../assets/pxid/factory/assemble-01.jpg",
+    "自有总装产线"
+   ],
+   [
+    "../assets/pxid/factory/paint-hang-line.jpg",
+    "车架涂装线"
+   ],
+   [
+    "../assets/pxid/unified/process/oqc-check.jpg",
+    "出厂检测（OQC）"
+   ]
   ]
  },
  {
@@ -839,6 +867,20 @@
      "轮组与辐条",
      "刹车与避震配置"
     ]
+   ]
+  ],
+  "gallery": [
+   [
+    "../assets/pxid/factory/assemble-02.jpg",
+    "总装与调试"
+   ],
+   [
+    "../assets/pxid/factory/paint-line-overview.jpg",
+    "涂装线全貌"
+   ],
+   [
+    "../assets/pxid/unified/process/iqc-inspection.jpg",
+    "来料检验（IQC）"
    ]
   ]
  },
@@ -999,6 +1041,20 @@
      "灯光配置"
     ]
    ]
+  ],
+  "gallery": [
+   [
+    "../assets/pxid/factory/assemble-03.jpg",
+    "装配工位"
+   ],
+   [
+    "../assets/pxid/factory/paint-hang-white.jpg",
+    "车架涂装"
+   ],
+   [
+    "../assets/pxid/unified/process/report-archive.jpg",
+    "检测报告归档"
+   ]
   ]
  },
  {
@@ -1128,6 +1184,20 @@
      "车轮与制动配置",
      "避震与悬挂"
     ]
+   ]
+  ],
+  "gallery": [
+   [
+    "../assets/pxid/factory/workstation-01.jpg",
+    "整车装配工位"
+   ],
+   [
+    "../assets/pxid/factory/heat-treat-t4-t6.jpg",
+    "T4/T6 热处理"
+   ],
+   [
+    "../assets/pxid/factory/test-salt-spray.jpg",
+    "盐雾测试"
    ]
   ]
  },
@@ -1287,6 +1357,20 @@
      "握把与座垫"
     ]
    ]
+  ],
+  "gallery": [
+   [
+    "../assets/pxid/factory/line-scooter-02.jpg",
+    "滑板车产线"
+   ],
+   [
+    "../assets/pxid/factory/paint-booth-purple.jpg",
+    "喷涂工位"
+   ],
+   [
+    "../assets/pxid/unified/process/oqc-check.jpg",
+    "出厂检测（OQC）"
+   ]
   ]
  },
  {
@@ -1414,6 +1498,20 @@
      "刹车与轮胎",
      "座垫与配件"
     ]
+   ]
+  ],
+  "gallery": [
+   [
+    "../assets/pxid/factory/line-scooter-05.jpg",
+    "滑板车产线"
+   ],
+   [
+    "../assets/pxid/factory/paint-line-purple.jpg",
+    "涂装线"
+   ],
+   [
+    "../assets/pxid/unified/process/iqc-inspection.jpg",
+    "来料检验（IQC）"
    ]
   ]
  },
@@ -1565,6 +1663,20 @@
      "折叠结构与挂钩"
     ]
    ]
+  ],
+  "gallery": [
+   [
+    "../assets/pxid/factory/line-scooter-08.jpg",
+    "滑板车产线"
+   ],
+   [
+    "../assets/pxid/factory/paint-hang-line.jpg",
+    "车架涂装线"
+   ],
+   [
+    "../assets/pxid/factory/packing-01.jpg",
+    "包装出货"
+   ]
   ]
  },
  {
@@ -1690,6 +1802,20 @@
      "灯光配置",
      "轮胎与制动"
     ]
+   ]
+  ],
+  "gallery": [
+   [
+    "../assets/pxid/factory/line-scooter-11.jpg",
+    "滑板车产线"
+   ],
+   [
+    "../assets/pxid/factory/polish-line.jpg",
+    "抛光工序"
+   ],
+   [
+    "../assets/pxid/factory/packing-03.jpg",
+    "包装出货"
    ]
   ]
  },
@@ -1854,6 +1980,20 @@
      "轮胎与轮辋颜色"
     ]
    ]
+  ],
+  "gallery": [
+   [
+    "../assets/pxid/factory/assemble-02.jpg",
+    "总装与调试"
+   ],
+   [
+    "../assets/pxid/factory/paint-hang-white.jpg",
+    "车架涂装"
+   ],
+   [
+    "../assets/pxid/factory/packing-05.jpg",
+    "包装出货"
+   ]
   ]
  }
 ];
@@ -1904,6 +2044,12 @@
           return '<div><b>' + esc(b[0]) + '</b><span>' + esc(b[1]) + '</span></div>';
         }).join("") + '</div>';
       }
+      var gal = "";
+      if (p.gallery && p.gallery.length){
+        gal = '<h4 class="biz2-h4">自有制造 · 实拍</h4><div class="biz2-gal">' + p.gallery.map(function(g){
+          return '<figure><div class="ph" role="img" aria-label="' + esc(g[1]) + '" style="background-image:url(' + g[0] + ')"></div><figcaption>' + esc(g[1]) + '</figcaption></figure>';
+        }).join("") + '</div>';
+      }
       var hl = "";
       if (p.highlights && p.highlights.length){
         hl = '<h4 class="biz2-h4">产品亮点</h4><div class="biz2-hls">' + p.highlights.map(function(x){
@@ -1925,6 +2071,7 @@
         + '<div class="biz2-dhead"><span class="no">' + esc(p.catName) + '</span><h2>' + p.name + '</h2>'
         + '<p class="cat">' + esc(p.tagline || "") + '</p></div>'
         + brief
+        + gal
         + hl
         + '<div class="biz2-dgrid"><div>'
         + '<h4 class="biz2-h4">参数表</h4><div class="biz2-rows">' + p.spec.map(kv).join("") + '</div>'
@@ -1973,6 +2120,56 @@
       document.querySelectorAll(".pxid-biz-filter button").forEach(function(x){ if (x.getAttribute("data-f") === k) ok = true; });
       applyFilter(ok ? k : "all");
     }
+
+    /* ——— 弹层内滚动接管（站点平滑滚动会吞掉 wheel，必须手动转发） ——— */
+    (function(){
+      var m = modal;
+      function isOpen(){ return m && !m.hidden; }
+      function nearEdge(dy){
+        var top = m.scrollTop <= 0, bottom = m.scrollTop + m.clientHeight >= m.scrollHeight - 1;
+        return (dy < 0 && top) || (dy > 0 && bottom);
+      }
+      /* 捕获阶段拦截：先于页面的平滑滚动处理，弹层内自己滚 */
+      function onWheel(e){
+        if (!isOpen()) return;
+        m.scrollTop += e.deltaY;
+        e.preventDefault();
+        e.stopImmediatePropagation();
+      }
+      addEventListener("wheel", onWheel, { passive: false, capture: true });
+      /* 触摸 */
+      var lastY = 0;
+      addEventListener("touchstart", function(e){ if (isOpen()) lastY = e.touches[0].clientY; }, { passive: true, capture: true });
+      addEventListener("touchmove", function(e){
+        if (!isOpen()) return;
+        var y = e.touches[0].clientY, d = lastY - y;
+        lastY = y;
+        m.scrollTop += d * 1.6;
+        e.preventDefault();
+        e.stopImmediatePropagation();
+      }, { passive: false, capture: true });
+      /* 键盘 */
+      addEventListener("keydown", function(e){
+        if (!isOpen()) return;
+        var step = { ArrowDown: 120, ArrowUp: -120, PageDown: 0.85, PageUp: -0.85, Home: "t", End: "b", " ": 0.85 }[e.key];
+        if (step === undefined) return;
+        if (step === "t") m.scrollTop = 0;
+        else if (step === "b") m.scrollTop = m.scrollHeight;
+        else if (Math.abs(step) < 1) m.scrollTop += m.clientHeight * step;
+        else m.scrollTop += step;
+        e.preventDefault();
+      }, true);
+      /* 兜底：停用页面平滑滚动（存在则调） */
+      function lockPage(on){
+        try {
+          var L = window.lenis || window.Lenis || window.__lenis;
+          if (L && L.stop && L.start) { on ? L.stop() : L.start(); }
+        } catch (err) {}
+      }
+      var _open = openDetail, _close = closeDetail;
+      openDetail = function(n){ var r = _open(n); if (r) lockPage(true); return r; };
+      closeDetail = function(){ lockPage(false); return _close(); };
+    })();
 
     /* 事件 */
     grid.addEventListener("click", function(e){
