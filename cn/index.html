@@ -1342,29 +1342,15 @@
   /* 底部留白 177px：地图底距段底 36(iframe 内) + 177 = 213px，
      与「ODM 段 bento 底 → 地图段顶」的 213px 对齐（坤哥 2026-09-17） */
   .home .r5.pxid-network{padding-bottom:177px}
-  /* 过渡带：向下渐变到「视频首帧顶部」的浅色（#c9c4bb ≈ 白纸/木桌），
-     让深色段退场时与下方视频第一帧的颜色接上 */
-  /* 过渡带：向下渐变到「视频首帧顶部」的浅色（≈白纸/木桌），让深色段退场时和视频第一帧接上 */
+  /* iframe 是 inset:0 + height:100%，只给 section 加 padding 顶不开它，
+     必须同时把高度收掉 177px，地图深色区才会在段底上方 177px 处结束。
+     09-17 那次改动把这条规则连同 .s6-fade 的收尾一起写丢了，导致
+     深色区一直铺到段底、白色过渡带压在标题说明文字上面。 */
+  #pxidS6 > .pxid-s6frame{height:calc(100% - 177px)}
+  /* 过渡带：向下渐变到白，让深色段退场时和下方视频首帧接上 */
   #pxidS6 .s6-fade{position:absolute;left:0;right:0;bottom:0;height:177px;z-index:6;pointer-events:none;
-    background:#ffffff;
-  if (!vids.length || !('IntersectionObserver' in window)) return;
-  vids.forEach(function(v){
-    v.muted = true; v.loop = true; v.setAttribute('playsinline','');
-    if (!v.getAttribute('src') && v.dataset.videoDesktop) v.setAttribute('src', v.dataset.videoDesktop);
-  });
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      var v = e.target;
-      if (e.intersectionRatio >= 0.25) {            // 露出元素高度的 1/4 才播
-        if (v.paused) { v.play().catch(function(){}); }
-      } else {
-        if (!v.paused) { try { v.pause(); } catch(err){} }
-      }
-    });
-  }, { threshold: [0, 0.25, 0.5, 0.75] });
-  vids.forEach(function(v){ io.observe(v); });
-})();
-</script>
-
+    background:linear-gradient(180deg,rgba(255,255,255,0) 0,#ffffff 62%)}
+}
+</style>
 </body>
 </html>
