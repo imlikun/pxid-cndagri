@@ -257,23 +257,33 @@
   }
   </style>
   <style id="pxid-s2-center">
-  /* —— 坤哥 2026-09-21：S2 内容改为相对 section「垂直 + 左右」居中 —— */
+  /* —— 坤哥 2026-09-21：S2 内容相对 section「垂直 + 左右」居中，且左栏必须宽到不被图卡压住 ——
+     实测（1440）：标题 72px 需要 595px，原左栏仅 483px → 被压 98px。改为：
+     左右留白相等 · 左栏按标题所需给足 · 图区吃掉剩余宽度（不再写死 52%）。 */
   @media (min-width:901px){
-    /* ① 垂直居中：左栏不再顶对齐、按钮不再压底（auto 会把内容撑开） */
+    .home .r1.pxid-odm-intro{
+      --s2pad:clamp(24px,4.15vw,80px);      /* 左右留白（1440→59.8） */
+      --s2left:clamp(560px,42vw,700px);     /* 左栏（1440→604.8，>595 标题可单行） */
+      --s2gap:clamp(18px,1.7vw,34px);       /* 左栏与图区间隙（1440→24.5） */
+    }
+    /* ① 垂直居中：左栏 flex 居中、去掉顶底固定 padding 与 auto 撑开 */
     .home .r1.pxid-odm-intro > .inner{align-items:center}
     .home .r1.pxid-odm-intro #r1Txt{
+      width:var(--s2left);
       justify-content:center;
       padding-top:0;
       padding-bottom:0}
-    .home .r1.pxid-odm-intro #r1Txt > .layer-btn{margin-top:clamp(22px,2.6vw,46px)!important;margin-bottom:0!important}
     .home .r1.pxid-odm-intro #r1Txt > .pxid-home-nums{margin:clamp(28px,3.4vw,60px) 0 0!important}
-    /* ② 图区同步垂直居中：盒高 78%，故 top = (100-78)/2 = 11% */
-    .home .r1.pxid-odm-intro > .bg .imgBox{top:11%;transform:none}
-    /* ③ 左右居中：内容总宽 = 左栏(43%×1125≈484) + 间隙(≈13) + 图区(52vw)，两边留白相等 */
-    .home .r1.pxid-odm-intro > .inner{
-      margin-left:calc((100vw - 497px - 52vw)/2);
-      margin-right:0}
-    .home .r1.pxid-odm-intro > .bg .imgBox{right:calc((100vw - 497px - 52vw)/2)}
+    .home .r1.pxid-odm-intro #r1Txt > .layer-btn{margin-top:clamp(22px,2.6vw,46px)!important;margin-bottom:0!important}
+    /* ② 左右居中：左栏左边距 = 留白 */
+    .home .r1.pxid-odm-intro > .inner{margin-left:var(--s2pad);margin-right:0}
+    /* ③ 图区：垂直居中（盒高 78% → top 11%）＋ 左边缘紧接左栏，右边缘 = 留白，宽度自适应 */
+    .home .r1.pxid-odm-intro > .bg .imgBox{
+      left:calc(var(--s2pad) + var(--s2left) + var(--s2gap));
+      right:var(--s2pad);
+      width:auto;
+      top:11%;
+      transform:none}
   }
   </style><script>
 (function(){
@@ -699,16 +709,24 @@
     .cap .n{font-size:26px}.cap .t{font-size:16px}.cap .s{font-size:13px}
   }
 
-  /* —— 坤哥 2026-09-21：本档与 #pxidS2 同步，改为相对段内「垂直 + 左右」居中 —— */
+  /* —— 坤哥 2026-09-21：本档与 #pxidS2 同一条几何（垂直+左右居中；左栏给足 595px 标题宽） —— */
   @media (min-width:901px){
-    /* ① 垂直居中：左栏 flex 居中、去掉 auto 撑开 */
-    .left{left:calc((100vw - 497px - 52vw)/2);padding:0;justify-content:center}
-    .left h2{margin-bottom:.34rem}
+    :scope{
+      --s2pad:clamp(24px,4.15vw,80px);
+      --s2left:clamp(560px,42vw,700px);
+      --s2gap:clamp(18px,1.7vw,34px);
+    }
+    .left{left:var(--s2pad);width:var(--s2left);padding:0;justify-content:center}
     .nums{margin:clamp(28px,3.4vw,60px) 0 0}
-    .cta{margin-top:clamp(24px,2.6vw,46px)}
-    /* ② 图区同步垂直居中（盒高 78% → top 11%）＋左右居中 */
-    .right{right:calc((100vw - 497px - 52vw)/2);top:11%;height:78%}
-  }</style><div class="left">
+    .cta{margin-top:clamp(22px,2.6vw,46px)}
+    .right{
+      left:calc(var(--s2pad) + var(--s2left) + var(--s2gap));
+      right:var(--s2pad);
+      width:auto;
+      top:11%;
+      height:78%}
+  }
+</style><div class="left">
   <h2>电动出行产品 <span class="red">ODM</span><br>从设计到批量生产</h2>
   <p class="sub">PXID 品向成立于 2013 年，专注于电动出行产品开发，现已形成覆盖产品设计研发、模具设计制造、车架生产、整车装配和试验检测的一站式 ODM/OEM 服务体系。</p>
   <div class="nums"><div><i></i><b>2013</b><span>品向成立，从工业设计起步</span></div><div><i></i><b>25,000㎡</b><span>智能制造生产基地</span></div><div><i></i><b>110+</b><span>累计登记版权与专利</span></div><div><i></i><b>30+</b><span>产品覆盖国家和地区</span></div></div>
