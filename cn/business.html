@@ -287,15 +287,15 @@
   .business .biz2-modal{position:fixed;inset:0;z-index:900;overflow-y:auto;overscroll-behavior:contain}
   .business .biz2-modal[hidden]{display:none}
   .business .biz2-mask{position:fixed;inset:0;background:rgba(17,17,17,.62)}
-  .business .biz2-panel{position:relative;z-index:1;width:min(1040px,92vw);margin:64px auto 72px;background:#fff;
+  .business .biz2-panel{position:relative;z-index:1;width:min(1340px,94vw);margin:56px auto 64px;background:#fff;
     opacity:0;transform:translateY(-16px);
     transition:opacity .28s ease,transform .42s cubic-bezier(.22,1,.36,1)}
   .business .biz2-modal.on .biz2-panel{opacity:1;transform:none}
   .business .biz2-x{position:absolute;top:0;right:0;z-index:3;width:54px;height:54px;border:0;background:rgba(255,255,255,.9);
     font:400 22px/1 -apple-system,"Segoe UI",sans-serif;color:#171717;cursor:pointer}
   .business .biz2-x:hover{background:#171717;color:#fff}
-  .business .biz2-topimg{height:clamp(230px,27vw,400px);background-position:center;background-size:cover;background-color:#eee}
-  .business .biz2-pbody{padding:clamp(24px,3vw,44px)}
+  .business .biz2-topimg{height:clamp(260px,30vw,480px);background-position:center;background-size:cover;background-color:#eee}
+  .business .biz2-pbody{padding:clamp(26px,3.2vw,54px)}
   .business .biz2-dhead .no{font-family:ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.24em;color:#d71920}
   .business .biz2-dhead h2{margin:8px 0 0;font-size:clamp(28px,2.8vw,42px);font-weight:700;color:#171717;letter-spacing:-.01em}
   .business .biz2-dhead .cat{margin:8px 0 0;font-size:clamp(14px,1.15vw,15.5px);color:#6a6a6a}
@@ -570,24 +570,24 @@
 <style id="biz2-detail-rich">
 .business .biz2-brief{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e6e6e4;margin:clamp(18px,2vw,28px) 0 0}
 .business .biz2-brief>div{background:#fff;padding:clamp(14px,1.5vw,20px)}
-.business .biz2-brief b{display:block;font-size:clamp(15px,.17rem,20px);font-weight:700;color:#d71920;letter-spacing:-.01em}
+.business .biz2-brief b{display:block;font-size:clamp(16px,.18rem,23px);font-weight:700;color:#d71920;letter-spacing:-.01em}
 .business .biz2-brief span{display:block;margin-top:5px;font-size:clamp(12px,.13rem,13.5px);color:#8a8a8a}
 /* 产品亮点：图文块 */
 .business .biz2-hls{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,1.8vw,26px);margin-top:14px}
 .business .biz2-hls .hl{margin:0}
 .business .biz2-hls .hl .ph{height:clamp(120px,12vw,170px);background-size:cover;background-position:center;background-color:#f0f0ee}
-.business .biz2-hls .hl img.ph{display:block;width:100%;height:clamp(120px,12vw,170px);object-fit:cover;background:#f0f0ee}
-.business .biz2-mf .st img.ph{display:block;width:100%;height:clamp(96px,9vw,132px);object-fit:cover;background:#f0f0ee}
-.business .biz2-hls .hl b{display:block;margin-top:11px;font-size:clamp(13.5px,.145rem,15.5px);font-weight:700;color:#171717}
+.business .biz2-hls .hl img.ph{display:block;width:100%;height:clamp(150px,15vw,250px);object-fit:cover;background:#f0f0ee}
+.business .biz2-mf .st img.ph{display:block;width:100%;height:clamp(118px,11vw,196px);object-fit:cover;background:#f0f0ee}
+.business .biz2-hls .hl b{display:block;margin-top:13px;font-size:clamp(14.5px,.155rem,17px);font-weight:700;color:#171717}
 .business .biz2-hls .hl b:before{content:"";display:inline-block;width:14px;height:2px;background:#d71920;vertical-align:middle;margin-right:8px;transform:translateY(-3px)}
-.business .biz2-hls .hl p{margin:6px 0 0;font-size:clamp(12.5px,.135rem,14px);line-height:1.7;color:#6f6f6f}
+.business .biz2-hls .hl p{margin:7px 0 0;font-size:clamp(13px,.14rem,15px);line-height:1.72;color:#6f6f6f}
 /* 制造过程 */
 .business .biz2-mf{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.2vw,18px);margin-top:14px}
 .business .biz2-mf .st{position:relative}
 .business .biz2-mf .sn{display:block;font-size:12px;font-weight:700;color:#d71920;letter-spacing:.06em;margin-bottom:7px}
 .business .biz2-mf .ph{height:clamp(96px,9vw,132px);background-size:cover;background-position:center;background-color:#f0f0ee}
-.business .biz2-mf b{display:block;margin-top:10px;font-size:clamp(13px,.14rem,14.5px);font-weight:700;color:#171717}
-.business .biz2-mf p{margin:5px 0 0;font-size:clamp(12px,.13rem,13px);line-height:1.65;color:#8a8a8a}
+.business .biz2-mf b{display:block;margin-top:11px;font-size:clamp(13.5px,.145rem,15.5px);font-weight:700;color:#171717}
+.business .biz2-mf p{margin:6px 0 0;font-size:clamp(12.5px,.135rem,14px);line-height:1.68;color:#8a8a8a}
 .business .biz2-dgrid .cgrp+.cgrp{margin-top:14px}
 .business .biz2-dgrid .gt{display:block;font-size:12px;color:#a0a0a0;margin-bottom:7px;letter-spacing:.02em}
 @media (max-width:1100px){
