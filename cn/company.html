@@ -15,19 +15,20 @@
 
 <style id="pxid-co-inserts">
 /* ===== ① 硬数字带 ===== */
-.row.pxid-co-nums{background:#f6f6f4;padding:clamp(40px,4.6vw,66px) 0}
-.pxid-co-nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2vw,30px)}
-.pxid-co-nums-grid>div{position:relative;padding-top:22px}
-.pxid-co-nums-grid i{position:absolute;top:0;left:0;display:block;width:30px;height:2px;background:#d71920}
-.pxid-co-nums-grid b{display:block;font-weight:600;letter-spacing:-.02em;color:#171717;line-height:1.06;
-  font-size:clamp(34px,3.9vw,56px);white-space:nowrap}
-.pxid-co-nums-grid span{display:block;margin-top:10px;font-size:clamp(13px,1.15vw,15px);line-height:1.6;color:#5a5a55}
-.pxid-co-nums-foot{margin:clamp(26px,2.8vw,38px) 0 0;padding-top:clamp(16px,1.8vw,22px);
-  border-top:1px solid rgba(23,23,23,.12);font-size:clamp(14px,1.2vw,15.5px);line-height:1.7;color:#5a5a55}
-.pxid-co-nums-foot em{font-style:normal;color:#171717;font-weight:600}
+/* 硬数字带 —— 墨底通栏（坤哥 2026-09-21：白条体量感弱，改墨色一压就出来） */
+.row.pxid-co-nums{background:#171717;color:#fff;padding:clamp(52px,5.6vw,88px) 0}
+.pxid-co-nums-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(20px,2.3vw,36px)}
+.pxid-co-nums-grid>div{position:relative;padding-top:24px}
+.pxid-co-nums-grid i{position:absolute;top:0;left:0;display:block;width:34px;height:2px;background:#d71920}
+.pxid-co-nums-grid b{display:block;font-weight:600;letter-spacing:-.025em;color:#fff;line-height:1.02;
+  font-size:clamp(40px,4.7vw,72px);white-space:nowrap}
+.pxid-co-nums-grid span{display:block;margin-top:12px;font-size:clamp(13px,1.15vw,15px);line-height:1.6;color:rgba(255,255,255,.62)}
+.pxid-co-nums-foot{margin:clamp(28px,3vw,42px) 0 0;padding-top:clamp(18px,2vw,24px);
+  border-top:1px solid rgba(255,255,255,.16);font-size:clamp(14px,1.2vw,15.5px);line-height:1.7;color:rgba(255,255,255,.62)}
+.pxid-co-nums-foot em{font-style:normal;color:#fff;font-weight:600}
 @media (max-width:900px){
-  .pxid-co-nums-grid{grid-template-columns:repeat(2,1fr);gap:26px 18px}
-  .pxid-co-nums-grid b{font-size:34px}}
+  .pxid-co-nums-grid{grid-template-columns:repeat(2,1fr);gap:28px 18px}
+  .pxid-co-nums-grid b{font-size:38px}}
 
 /* ===== ③ 资质与认定 ===== */
 .row.pxid-co-qual{background:#f6f6f4;padding:clamp(56px,6vw,88px) 0 clamp(52px,5.6vw,80px)}
@@ -61,18 +62,39 @@
   font-size:clamp(28px,3.1vw,44px);line-height:1.15;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .pxid-co-tl-head p{max-width:40em;margin:clamp(12px,1.3vw,16px) 0 0;font-size:clamp(15px,1.25vw,17px);
   line-height:1.75;color:rgba(255,255,255,.62)}
-.pxid-co-tl-list{margin-top:clamp(30px,3.4vw,46px);border-top:1px solid rgba(255,255,255,.14)}
-.pxid-co-tl-list>div{display:grid;grid-template-columns:clamp(88px,8vw,124px) 1fr;gap:clamp(16px,2vw,32px);
-  position:relative;padding:clamp(16px,1.8vw,22px) 0 clamp(16px,1.8vw,22px) 0;border-bottom:1px solid rgba(255,255,255,.14)}
-.pxid-co-tl-list .yr{font-style:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:clamp(17px,1.6vw,22px);font-weight:700;
-  color:rgba(255,255,255,.5);letter-spacing:.02em;line-height:1.5}
-.pxid-co-tl-list h3{margin:0;font-size:clamp(16px,1.45vw,20px);font-weight:500;color:#fff;line-height:1.5}
-.pxid-co-tl-list p{margin:6px 0 0;font-size:clamp(14px,1.15vw,15.5px);line-height:1.7;color:rgba(255,255,255,.58);max-width:56em}
-/* 三家法人＝红色实心节点 + 白色标题 */
-.pxid-co-tl-list .co-entity .yr{color:#fff}
-.pxid-co-tl-list .co-entity::before{content:"";position:absolute;left:-1px;bottom:-1px;width:34px;height:2px;background:#d71920}
+/* 时间轴 —— 横向刻度轴 + 三条泳道（设计 / 贸易 / 制造）坤哥 2026-09-21 */
+.pxid-co-tl2{margin-top:clamp(30px,3.4vw,48px);border-top:1px solid rgba(255,255,255,.14);padding-top:clamp(20px,2.2vw,30px)}
+.pxid-co-tl2-axis{display:grid;grid-template-columns:clamp(64px,6.4vw,92px) 1fr;gap:clamp(12px,1.6vw,24px);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:clamp(11px,1vw,13px);
+  letter-spacing:.04em;color:rgba(255,255,255,.42)}
+.pxid-co-tl2-axis .grid7{display:grid;grid-template-columns:repeat(7,1fr)}
+.pxid-co-tl2-axis .grid7 span:first-child{text-align:left}
+.pxid-co-tl2-axis .grid7 span:last-child{text-align:right}
+.pxid-co-tl2-lane{display:grid;grid-template-columns:clamp(64px,6.4vw,92px) 1fr;gap:clamp(12px,1.6vw,24px);
+  align-items:start;padding:clamp(14px,1.5vw,20px) 0;border-top:1px solid rgba(255,255,255,.10)}
+.pxid-co-tl2-lane:first-of-type{border-top:0}
+.pxid-co-tl2-lane h3{margin:0;font-size:clamp(15px,1.35vw,18px);font-weight:600;color:#fff;line-height:1.7}
+.pxid-co-tl2-track{position:relative;display:grid;grid-template-columns:repeat(7,1fr);
+  grid-template-rows:6px auto;row-gap:16px;align-items:start}
+.pxid-co-tl2-bar{height:4px;background:#d71920;grid-row:1;align-self:center}
+.pxid-co-tl2-bar.co{background:#fff}
+.pxid-co-tl2-ev{grid-row:2;display:flex;flex-direction:column;gap:3px;padding-left:14px;position:relative}
+.pxid-co-tl2-ev::before{content:"";position:absolute;left:0;top:-22px;width:9px;height:9px;background:#fff;border-radius:50%}
+.pxid-co-tl2-ev:first-child::before{left:0}
+.pxid-co-tl2-ev b{font-size:clamp(12px,1.05vw,13.5px);font-weight:600;color:#fff}
+.pxid-co-tl2-ev span{font-size:clamp(11.5px,1vw,13px);color:rgba(255,255,255,.56);line-height:1.5}
+.pxid-co-tl2-foot{margin:clamp(20px,2.2vw,30px) 0 0;padding-top:clamp(16px,1.8vw,22px);
+  border-top:1px solid rgba(255,255,255,.14);font-size:clamp(13px,1.15vw,15px);line-height:1.7;color:rgba(255,255,255,.58)}
+.pxid-co-tl2-foot b{color:#fff;font-weight:600}
 @media (max-width:900px){
-  .pxid-co-tl-list>div{grid-template-columns:74px 1fr;gap:14px}}
+  .pxid-co-tl2-axis{display:none}
+  .pxid-co-tl2-lane{grid-template-columns:1fr;gap:10px}
+  .pxid-co-tl2-track{grid-template-columns:1fr;gap:12px}
+  .pxid-co-tl2-bar{height:2px}
+  .pxid-co-tl2-track{grid-template-rows:4px auto;row-gap:10px}
+  .pxid-co-tl2-ev{padding-left:16px}
+  .pxid-co-tl2-ev::before{top:-18px}}
+
 
 /* ===== ④ 数字化工厂（纸底） ===== */
 .row.pxid-co-digital{background:#f6f6f4;padding:clamp(56px,6vw,88px) 0 clamp(52px,5.6vw,80px)}
@@ -148,39 +170,81 @@
 <div><i></i><b>25,000㎡</b><span>智能制造生产基地（2024 年投用）</span></div>
 <div><i></i><b>110+</b><span>累计登记版权与专利</span></div>
 <div><i></i><b>5,000万+</b><span>2020 年至今研发总投入</span></div>
-</div><p class="pxid-co-nums-foot">产品与服务覆盖欧洲、北美、亚洲等 <em>30 多个国家和地区</em>，个人出行、城市通勤与共享出行均有交付案例。</p></div></section>
-<section class="row r1 pxid-company-r1"><div class="inner maxSize"><div class="pxid-company-intro alanGo"><h2>从产品设计<br>到批量生产</h2><p class="pxid-prose">PXID 将产品设计、结构与电控开发、工程样车、制造与质量检验纳入同一项目流程。</p></div><div class="pxid-company-capabilities"><article class="pxid-company-capability alanGo"><div class="pxid-company-capability-photo" aria-hidden="true" style="background-image:url('../assets/pxid/unified/process/process-01.webp')"></div><div class="pxid-company-capability-copy"><h3>产品设计</h3><p class="pxid-prose">基于目标市场、使用场景和法规要求，完成草图、三维建模与方案评审。</p></div></article><article class="pxid-company-capability alanGo"><div class="pxid-company-capability-photo" aria-hidden="true" style="background-image:url('../assets/pxid/unified/process/process-04.webp')"></div><div class="pxid-company-capability-copy"><h3>结构与电控</h3><p class="pxid-prose">开展结构、材料、驱动控制、电池管理及人机交互设计。</p></div></article><article class="pxid-company-capability alanGo"><div class="pxid-company-capability-photo" aria-hidden="true" style="background-image:url('../assets/pxid/unified/home-v2/case-p2-engineering.jpg')"></div><div class="pxid-company-capability-copy"><h3>工程样车</h3><p class="pxid-prose">制作接近量产状态的工程样车，验证结构、装配和制造工艺。</p></div></article><article class="pxid-company-capability alanGo"><div class="pxid-company-capability-photo" aria-hidden="true" style="background-image:url('../assets/pxid/unified/news/capability-manufacturing.jpg')"></div><div class="pxid-company-capability-copy"><h3>制造与检验</h3><p class="pxid-prose">覆盖模具、车架、涂装、整车装配、测试和质量检验。</p></div></article></div>
-</div></section>
-<section class="row r2"><div class="bg"><div class="photo fxBg pic" style="background-image:url('../assets/pxid/unified/process/industry-bg.webp')"></div></div><div class="inner"><div id="r1Txt" class="group"><div class="top"><h2 class="f-60 green en_b alanFn" data-split="/" data-text="深耕电动出行/设计与制造"><span class="pxid-title-line">深耕电动出行</span><span class="pxid-title-line">设计与制造</span></h2><p class="f-16 black alanUpEl alanGo pxid-prose">PXID 品向成立于 2013 年，业务由工业设计服务逐步拓展至产品设计研发、模具设计制造、车架生产、整车装配和试验检测。产品与服务已覆盖欧洲、北美、亚洲等 30 多个国家和地区。</p></div><div class="clear"></div><div class="mid alanParent"><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-01.webp" alt="产品设计"><h3 class="f-24 green">产品设计</h3></div><div class="icon alanLeft"><em></em><i class="iconfont green">&#xe8a9;</i><em></em></div><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-03.webp" alt="结构设计"><h3 class="f-24 green">结构设计</h3></div><div class="icon alanLeft"><em></em><i class="iconfont green">&#xe8a9;</i><em></em></div><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-04.webp" alt="电控系统设计"><h3 class="f-24 green">电控系统设计</h3></div><div class="icon alanLeft"><em></em><i class="iconfont green">&#xe8a9;</i><em></em></div><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-09.webp" alt="批量生产"><h3 class="f-24 green">批量生产</h3></div></div></div>
-</div></section>
+<div><i></i><b>30+</b><span>产品与服务覆盖的国家和地区</span></div>
+</div><p class="pxid-co-nums-foot">个人出行、城市通勤与共享出行均有交付案例；从设计服务到整车交付，由<em>三家法人主体</em>对应三段能力。</p></div></section>
 <section class="row pxid-co-timeline"><div class="inner maxSize">
 <div class="pxid-co-tl-head"><span>发展历程</span><h2>2013 &#8594; 2026</h2>
-<p class="pxid-prose">从工业设计服务起步，逐步补齐贸易、智能制造与数字化工厂，三家法人对应三段能力。</p></div>
-<div class="pxid-co-tl-list">
-<div class="co-entity"><em class="yr">2013</em><div class="bd"><h3>品向工业设计有限公司成立</h3><p>创始团队成立，从工业设计服务起步。</p></div></div>
-<div class="co-entity"><em class="yr">2019</em><div class="bd"><h3>品向科技有限公司成立</h3><p>承接贸易与客户侧交付。</p></div></div>
-<div class="co-entity"><em class="yr">2020</em><div class="bd"><h3>品向智能制造有限公司成立</h3><p>制造主体落地；同年获国家高新技术企业、江苏省工业设计中心认定。</p></div></div>
-<div><em class="yr">2021</em><div class="bd"><h3>市级技术研发中心</h3><p>淮安市轻型代步工具工程技术研究中心。</p></div></div>
-<div><em class="yr">2023</em><div class="bd"><h3>体系与产品认证</h3><p>通过 ISO9001 质量管理体系认证；产品取得 CE / UL / EEC 等认证；获评"专精特新"企业。</p></div></div>
-<div><em class="yr">2024</em><div class="bd"><h3>智能制造生产基地</h3><p>投入 3,000 万，面积 25,000&#13217;，模具、车架、涂装、检测、装配在同一园区闭环。</p></div></div>
-<div><em class="yr">2026</em><div class="bd"><h3>数字化工厂升级</h3><p>以 PLM/eMES + WMS + SDM 贯通订单、生产、仓储与供应。</p></div></div>
-</div></div></section>
-<section class="row pxid-co-qual"><div class="inner maxSize">
-<div class="pxid-co-qual-head"><span>资质与认定</span><h2>政府认定与体系认证</h2>
-<p class="pxid-prose">PXID 的开发与制造体系已纳入国家与省级创新体系认定，并建立质量管理体系。</p></div>
-<div class="pxid-co-qual-main">
+<p class="pxid-prose">从工业设计服务起步，逐步补齐贸易与智能制造 —— 三家法人，对应设计、交付与制造三段能力。</p></div>
+<div class="pxid-co-tl2"><div class="pxid-co-tl2-axis"><span>能力</span><div class="grid7"><span>2013</span><span>2019</span><span>2020</span><span>2021</span><span>2023</span><span>2024</span><span>2026</span></div></div><div class="pxid-co-tl2-lane"><h3>设计</h3><div class="pxid-co-tl2-track">
+<div class="pxid-co-tl2-bar co" style="grid-column:1 / 8"></div>
+<div class="pxid-co-tl2-ev" style="grid-column:1"> <b>2013</b><span>品向工业设计成立</span></div><div class="pxid-co-tl2-ev" style="grid-column:3"> <b>2020</b><span>国家高新技术企业 · 省工业设计中心</span></div>
+</div></div><div class="pxid-co-tl2-lane"><h3>贸易</h3><div class="pxid-co-tl2-track">
+<div class="pxid-co-tl2-bar" style="grid-column:2 / 8"></div>
+<div class="pxid-co-tl2-ev" style="grid-column:2"> <b>2019</b><span>品向科技成立 · 承接贸易与客户交付</span></div>
+</div></div><div class="pxid-co-tl2-lane"><h3>制造</h3><div class="pxid-co-tl2-track">
+<div class="pxid-co-tl2-bar co" style="grid-column:3 / 8"></div>
+<div class="pxid-co-tl2-ev" style="grid-column:3"> <b>2020</b><span>品向智能制造成立</span></div><div class="pxid-co-tl2-ev" style="grid-column:6"> <b>2024</b><span>25,000㎡ 基地投用 · 四大工序闭环</span></div><div class="pxid-co-tl2-ev" style="grid-column:7"> <b>2026</b><span>数字化工厂升级</span></div>
+</div></div><p class="pxid-co-tl2-foot"><b>三条泳道并进：</b>设计（2013 起）→ 贸易（2019 起）→ 制造（2020 起），三家法人对应三段能力，分别承接设计、客户交付与制造。</p></div>
+</div></section>
+<section class="row r1 pxid-company-r1"><div class="inner maxSize"><div class="pxid-company-intro alanGo"><h2>从产品设计<br>到批量生产</h2><p class="pxid-prose">PXID 将产品设计、结构与电控开发、工程样车、制造与质量检验纳入同一项目流程。</p></div><div class="pxid-company-capabilities"><article class="pxid-company-capability alanGo"><div class="pxid-company-capability-photo" aria-hidden="true" style="background-image:url('../assets/pxid/unified/process/process-01.webp')"></div><div class="pxid-company-capability-copy"><h3>产品设计</h3><p class="pxid-prose">基于目标市场、使用场景和法规要求，完成草图、三维建模与方案评审。</p></div></article><article class="pxid-company-capability alanGo"><div class="pxid-company-capability-photo" aria-hidden="true" style="background-image:url('../assets/pxid/unified/process/process-04.webp')"></div><div class="pxid-company-capability-copy"><h3>结构与电控</h3><p class="pxid-prose">开展结构、材料、驱动控制、电池管理及人机交互设计。</p></div></article><article class="pxid-company-capability alanGo"><div class="pxid-company-capability-photo" aria-hidden="true" style="background-image:url('../assets/pxid/unified/home-v2/case-p2-engineering.jpg')"></div><div class="pxid-company-capability-copy"><h3>工程样车</h3><p class="pxid-prose">制作接近量产状态的工程样车，验证结构、装配和制造工艺。</p></div></article><article class="pxid-company-capability alanGo"><div class="pxid-company-capability-photo" aria-hidden="true" style="background-image:url('../assets/pxid/unified/news/capability-manufacturing.jpg')"></div><div class="pxid-company-capability-copy"><h3>制造与检验</h3><p class="pxid-prose">覆盖模具、车架、涂装、整车装配、测试和质量检验。</p></div></article></div>
+</div><div class="pxid-soft-cta"><p>四块能力对应四类可验证证据，想看具体工艺与设备清单？</p><a href="manufacturing.html">查看制造能力 →</a></div></section>
+<section class="row r2" data-legacy-hidden="1"><div class="bg"><div class="photo fxBg pic" style="background-image:url('../assets/pxid/unified/process/industry-bg.webp')"></div></div><div class="inner"><div id="r1Txt" class="group"><div class="top"><h2 class="f-60 green en_b alanFn" data-split="/" data-text="深耕电动出行/设计与制造"><span class="pxid-title-line">深耕电动出行</span><span class="pxid-title-line">设计与制造</span></h2><p class="f-16 black alanUpEl alanGo pxid-prose">PXID 品向成立于 2013 年，业务由工业设计服务逐步拓展至产品设计研发、模具设计制造、车架生产、整车装配和试验检测。产品与服务已覆盖欧洲、北美、亚洲等 30 多个国家和地区。</p></div><div class="clear"></div><div class="mid alanParent"><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-01.webp" alt="产品设计"><h3 class="f-24 green">产品设计</h3></div><div class="icon alanLeft"><em></em><i class="iconfont green">&#xe8a9;</i><em></em></div><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-03.webp" alt="结构设计"><h3 class="f-24 green">结构设计</h3></div><div class="icon alanLeft"><em></em><i class="iconfont green">&#xe8a9;</i><em></em></div><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-04.webp" alt="电控系统设计"><h3 class="f-24 green">电控系统设计</h3></div><div class="icon alanLeft"><em></em><i class="iconfont green">&#xe8a9;</i><em></em></div><div class="list alanLeft"><img src="../assets/pxid/unified/process/process-09.webp" alt="批量生产"><h3 class="f-24 green">批量生产</h3></div></div></div>
+</div></section>
+
+
+<style id="pxid-co-awards">
+/* 认定 + 奖项：两栏图墙（左证书扫描件 / 右奖项 logo）—— 坤哥 2026-09-21 */
+.row.pxid-co-awards{background:#f6f6f4;padding:clamp(56px,6vw,88px) 0 clamp(52px,5.6vw,80px)}
+.pxid-co-aw-head>span{display:block;font-size:clamp(12px,1.05vw,14px);letter-spacing:.08em;color:#d71920}
+.pxid-co-aw-head h2{margin:clamp(10px,1.1vw,14px) 0 0;font-weight:600;letter-spacing:-.02em;color:#171717;
+  font-size:clamp(28px,3.1vw,44px);line-height:1.2}
+.pxid-co-aw-head p{max-width:40em;margin:clamp(12px,1.3vw,16px) 0 0;font-size:clamp(15px,1.25vw,17px);
+  line-height:1.75;color:#5a5a55}
+.pxid-co-aw-qual{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.4vw,20px) clamp(24px,3vw,48px);
+  margin-top:clamp(24px,2.6vw,34px)}
+.pxid-co-aw-qual>div{position:relative;padding:clamp(13px,1.35vw,16px) 0 clamp(13px,1.35vw,16px) 22px;
+  border-top:1px solid rgba(23,23,23,.12);font-size:clamp(16px,1.45vw,20px);line-height:1.5}
+.pxid-co-aw-qual i{position:absolute;left:0;top:-1px;width:34px;height:2px;background:#d71920}
+.pxid-co-aw-qual strong{font-weight:500;color:#171717}
+.pxid-co-aw-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,3vw,52px);
+  margin-top:clamp(32px,3.6vw,52px)}
+.pxid-co-aw-col>h3{margin:0 0 clamp(14px,1.5vw,20px);padding-bottom:12px;font-size:clamp(14px,1.2vw,16px);
+  font-weight:600;color:#171717;letter-spacing:.02em;border-bottom:2px solid #171717}
+.pxid-co-aw-certs{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.4vw,20px)}
+.pxid-co-aw-certs figure{margin:0}
+.pxid-co-aw-certs img{display:block;width:100%;height:clamp(170px,19vw,268px);object-fit:cover;object-position:top center;
+  background:#fff;border:1px solid rgba(23,23,23,.10)}
+.pxid-co-aw-certs figcaption{margin-top:9px;font-size:clamp(12px,.128rem,13.5px);line-height:1.6;color:#8a8a8a}
+.pxid-co-aw-certs figcaption b{display:block;color:#171717;font-weight:600}
+.pxid-co-aw-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.2vw,16px)}
+.pxid-co-aw-logos figure{margin:0;background:#fff;border:1px solid rgba(23,23,23,.10);
+  padding:clamp(14px,1.5vw,20px) clamp(10px,1.1vw,14px);display:flex;flex-direction:column;align-items:center;gap:11px}
+.pxid-co-aw-logos img{display:block;width:100%;height:clamp(56px,5.4vw,80px);object-fit:contain}
+.pxid-co-aw-logos figcaption{font-size:12px;line-height:1.5;color:#8a8a8a;text-align:center}
+.pxid-co-aw-note{margin:clamp(18px,2vw,26px) 0 0;padding-top:clamp(16px,1.8vw,22px);
+  border-top:1px solid rgba(23,23,23,.12);font-size:clamp(13px,1.15vw,15px);line-height:1.7;color:#7a7a74}
+.pxid-co-aw-note b{color:#171717}
+@media (max-width:900px){
+  .pxid-co-aw-qual{grid-template-columns:1fr;gap:0}
+  .pxid-co-aw-grid{grid-template-columns:1fr;gap:34px}
+  .pxid-co-aw-logos{grid-template-columns:repeat(3,1fr)}}
+</style>
+<section class="row pxid-co-awards"><div class="inner maxSize">
+<div class="pxid-co-aw-head"><span>资质与认定</span><h2>政府认定、体系认证与设计奖项</h2>
+<p class="pxid-prose">看得到的资质：政府与省级认定、质量管理体系与出口必备认证，以及四个国际设计奖项的证书原件。</p></div>
+<div class="pxid-co-aw-qual">
 <div><i></i><strong>国家高新技术企业</strong></div>
 <div><i></i><strong>江苏省工业设计中心</strong></div>
 <div><i></i><strong>淮安市轻型代步工具工程技术研究中心</strong></div>
 <div><i></i><strong>专精特新企业</strong></div>
 </div>
-<div class="pxid-co-qual-sub"><span class="k">出口资质</span><span class="v">CE · UL · EEC · ISO9001（2023）</span>
-<p>产品按欧美法规体系开发，同一套标准与检验流程用于国内交付。</p></div>
+<div class="pxid-co-aw-grid">
+<div class="pxid-co-aw-col"><h3>认证与获奖证书</h3><div class="pxid-co-aw-certs"><figure><img src="../assets/pxid/company/cert-gda-2024.jpg" alt="GOOD DESIGN AWARD 2024" loading="lazy"><figcaption><b>GOOD DESIGN AWARD 2024</b>日本优良设计奖 · P6 电动摩托车</figcaption></figure><figure><img src="../assets/pxid/company/cert-zijin-2022.jpg" alt="紫金奖 · 银奖" loading="lazy"><figcaption><b>紫金奖 · 银奖</b>文化创意设计大赛 · PX-1 电动摩托车（2022）</figcaption></figure><figure><img src="../assets/pxid/company/cert-dia-2024.jpg" alt="DIA 佳作奖" loading="lazy"><figcaption><b>DIA 佳作奖</b>中国设计智造大奖 · P5 电动摩托车（2024）</figcaption></figure><figure><img src="../assets/pxid/company/cert-cgd-2023.jpg" alt="当代好设计奖 WINNER" loading="lazy"><figcaption><b>当代好设计奖 WINNER</b>Contemporary Good Design · P2 胖胎电动自行车（2023）</figcaption></figure></div></div>
+<div class="pxid-co-aw-col"><h3>设计奖项</h3><div class="pxid-co-aw-logos"><figure><img src="../assets/pxid/company/award-dia.png" alt="DIA 中国设计智造大奖" loading="lazy"><figcaption>DIA<br>中国设计智造大奖</figcaption></figure><figure><img src="../assets/pxid/company/award-cgd.png" alt="当代好设计奖 Contemporary Good Design" loading="lazy"><figcaption>当代好设计奖<br>Contemporary Good Design</figcaption></figure><figure><img src="../assets/pxid/company/award-gda.png" alt="金点设计奖 BEST DESIGN 2025" loading="lazy"><figcaption>金点设计奖<br>BEST DESIGN 2025</figcaption></figure></div>
+<p class="pxid-co-aw-note"><b>出口资质：</b>CE · UL · EEC · ISO9001（2023）。产品按欧美法规体系开发，同一套标准与检验流程用于国内交付。</p>
+</div></div>
 </div></section>
-<section data-vh="1" class="row r3"><div class="bg"></div><div class="inner"><div class="topic fxb maxSize"><h2 class="f-80 en_b green alanGo" data-text="产品与设计奖项">产品与设计奖项</h2><div data-delay=".1" class="set fxb alanFn"><a class="r3Prev layer-set" role="button" aria-label="上一个奖项" tabindex="0"><div class="mask right"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8b3;</i></div></a><a class="r3Next layer-set" role="button" aria-label="下一个奖项" tabindex="0"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a></div></div><div class="group"><div class="swiper r3Sw"><div class="swiper-wrapper"><div class="swiper-slide"><div class="box"><img src="../assets/pxid/home/award-m2-gida.jpg" alt="M2 电动摩托车"><h3 class="f-16 green en_b pxid-award-title"><span>M2</span><br><span class="pxid-award-name">金芦苇工业设计奖</span></h3></div></div><div class="swiper-slide"><div class="box"><img src="../assets/pxid/home/award-p2-cgd.jpg" alt="P2 折叠电动自行车"><h3 class="f-16 green en_b pxid-award-title"><span>P2</span><br><span class="pxid-award-name">2024 GOOD DESIGN AWARD</span></h3></div></div><div class="swiper-slide"><div class="box"><img src="../assets/pxid/home/mantis-mountain.png" alt="MANTIS P6 电动自行车"><h3 class="f-16 green en_b pxid-award-title"><span>MANTIS P6</span><br><span class="pxid-award-name">2024 GOOD DESIGN AWARD</span></h3></div></div></div></div><div class="imgBox"><img src="../assets/pxid/logo-mask.svg" alt="PXID" class="logoImg"></div></div>
-</div></section>
-<section class="row r4"><div class="bg"><div data-pxid-local-background class="photo fxBg pic" style="background-image:url('../assets/pxid/unified/news/case-design-2.jpg')"></div></div><div class="inner maxSize"><div class="rect swiper r4Sw"><div class="swiper-wrapper"><div class="swiper-slide"><div class="part"><div class="left"><div class="pic" style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></div></div><div class="right"><h3 class="f-40 en_b green">产品设计</h3><p data-lenis-prevent class="f-18 black pxid-prose">结合目标市场法规、使用场景和用户需求开展分析，通过手绘草图、三维建模与效果图完成方案评审。</p></div></div></div><div class="swiper-slide"><div class="part"><div class="left"><div class="pic" style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)"></div></div><div class="right"><h3 class="f-40 en_b green">结构、电控与工程样车</h3><p data-lenis-prevent class="f-18 black pxid-prose">完成结构与电控系统设计，制作接近量产状态的工程样车，对结构、装配和制造工艺进行验证。</p></div></div></div><div class="swiper-slide"><div class="part"><div class="left"><div class="pic" style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></div></div><div class="right"><h3 class="f-40 en_b green">制造、测试与批量生产</h3><p data-lenis-prevent class="f-18 black pxid-prose">自建模具、车架、涂装、检测与装配体系，完成整车性能测试、质量检验和批量生产。</p></div></div></div></div></div><div class="topic fxb"><h2 class="f-100 en_b wc alanGo" data-text="ODM 服务范围">ODM 服务范围</h2><div class="pager"><em id="r4Sum" class="f-20 mc">01</em><small class="f-20 wc">&nbsp;&nbsp;/&nbsp;&nbsp;03</small></div><div class="set"><a class="r4Prev whiteFix layer-set"><div class="mask right"></div><div class="layer-icon"><i class="iconfont green f-14">&#xe8b3;</i></div></a><a class="r4Next whiteFix layer-set"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14">&#xe8a9;</i></div></a></div></div>
-</div></section>
+<!-- 已按 company 8 段规划移除（与「能力四卡」重复）：r4 ODM 服务范围 -->
 <section class="row pxid-co-digital"><div class="inner maxSize">
 <div class="pxid-co-dg-head"><span>工厂数字化</span><h2>订单、生产、仓储、供应同一套数据</h2>
 <p class="pxid-prose">PXID 以 PLM/eMES、WMS、SDM 三套系统贯通"订单&#8212;生产&#8212;仓储&#8212;供应"，支撑小批量、多批次订单的交付节奏。</p></div>
@@ -190,8 +254,74 @@
 <div><em>SDM</em><h3>供应商交付管理</h3><p>采购、交付、质检全过程线上化，强化售后质量问题的追溯能力。</p></div>
 </div>
 <div class="pxid-co-dg-chain"><span>订单</span><i></i><span>生产</span><i></i><span>仓储</span><i></i><span>供应</span></div>
+</div><div class="pxid-soft-cta"><p>想知道小批量、多批次订单实际怎么排产与交付？</p><a href="sustainability.html">看 ODM 全流程 →</a></div></section>
+<section class="row pxid-co-start"><div class="box maxSize"><div class="group" data-legacy-hidden="1" aria-hidden="true"><div class="swiper r5Sw"><div class="swiper-wrapper"><div class="swiper-slide"><div class="photo"><div class="pic" role="img" aria-label="设计师绘制电动滑板车手绘草图" style="background-image:url(../assets/pxid/unified/process/odm-poster.webp?v=20260827-crop1)"></div></div><div class="msg" data-swiper-parallax-x="-100" data-swiper-parallax-opacity="0"><a class="layer-set mcFix" href="sustainability.html#C-stage-1" aria-label="查看产品设计详情" title="查看产品设计详情"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a><p class="f-20 wc">产品设计</p></div></div><div class="swiper-slide"><div class="photo"><div class="pic" role="img" aria-label="电动滑板车在加载配重的测试台上进行检验" style="background-image:url(../assets/pxid/products/proof-testing.webp)"></div></div><div class="msg" data-swiper-parallax-x="-100" data-swiper-parallax-opacity="0"><a class="layer-set mcFix" href="sustainability.html#C-stage-5" aria-label="查看样车与测试详情" title="查看样车与测试详情"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a><p class="f-20 wc">样车与测试</p></div></div><div class="swiper-slide"><div class="photo"><div class="pic" role="img" aria-label="PXID 车间的电动滑板车整车装配线" style="background-image:url(../assets/pxid/products/proof-assembly.webp)"></div></div><div class="msg" data-swiper-parallax-x="-100" data-swiper-parallax-opacity="0"><a class="layer-set mcFix" href="sustainability.html#C-stage-9" aria-label="查看制造与装配详情" title="查看制造与装配详情"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a><p class="f-20 wc">制造与装配</p></div></div></div><div class="swiper-button-next greenFix layer-set"><div class="mask"></div><div class="layer-icon"><i class="iconfont wc f-14">&#xe8a9;</i></div></div></div></div>
+<div class="part pxid-project-start" data-legacy-hidden="1" aria-hidden="true"><div class="box maxSize"><h2 class="f-100 en_b green alanGo" data-text="选择项目起点">选择项目起点</h2><ul class="items layer-items"><li class="list downList alanParent active f-36"><em class="dot"></em><h3 class="green alanUp en_b">只有产品想法</h3><p class="f-14 alanUp black" style="display:block">可从市场需求、使用场景和产品定义开始。</p></li><li class="list downList alanParent f-36"><em class="dot"></em><h3 class="green alanUp en_b">已有设计或样车</h3><p class="f-14 alanUp black">可从结构评审、工程样车、模具开发或制造评估开始。</p></li></ul><a class="layer-btn" href="contact.html"><div class="mk"></div><span class="txt f-16">启动项目</span></a></div></div></div>
+<h2 class="f-100 en_b green alanGo" data-text="选择项目起点">选择项目起点</h2>
+<p class="pxid-prose pxid-co-start-lede">两条路都能开始 —— 选一条，剩下的交给同一支团队。</p>
+<div class="pxid-co-start-grid">
+<div class="col"><em>01</em><h3>只有产品想法</h3>
+<p>从目标市场与使用场景切入：需求分析、产品定义、草图与三维方案，先确认"做一台什么样的车"。</p>
+<ul><li>你提供：市场定位、法规目标、参考车型或竞品</li><li>我们输出：产品定义书 + 造型方向 + 可行性判断</li></ul>
+<a href="contact.html">从产品定义开始 →</a></div>
+<div class="col"><em>02</em><h3>已有设计或样车</h3>
+<p>从结构与制造可行性切入：结构评审、工程样车、模具与车架开发、制造评估与量产准备。</p>
+<ul><li>你提供：图纸 / 样车 / 目标配置</li><li>我们输出：结构评审意见 + 打样与量产路径</li></ul>
+<a href="contact.html">从制造评估开始 →</a></div>
+</div></div></section>
+
+<style id="pxid-co-start">
+.row.pxid-co-start{background:#fff;padding:clamp(56px,6vw,88px) 0 clamp(52px,5.6vw,80px)}
+.pxid-co-start h2{margin:0;font-size:clamp(30px,3.4vw,52px);color:#171717;letter-spacing:-.02em}
+.pxid-co-start-lede{max-width:40em;margin:clamp(12px,1.3vw,18px) 0 0;font-size:clamp(15px,1.25vw,17px);line-height:1.75;color:#5a5a55}
+.pxid-co-start-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,2.4vw,44px);margin-top:clamp(30px,3.4vw,48px)}
+.pxid-co-start-grid .col{position:relative;padding:clamp(20px,2.2vw,30px) 0 0;border-top:2px solid #171717}
+.pxid-co-start-grid em{display:block;font-style:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:clamp(12px,1.05vw,13.5px);font-weight:700;letter-spacing:.06em;color:#d71920}
+.pxid-co-start-grid h3{margin:10px 0 0;font-size:clamp(19px,1.8vw,26px);font-weight:600;color:#171717;letter-spacing:-.01em}
+.pxid-co-start-grid p{margin:12px 0 0;font-size:clamp(14px,1.2vw,16px);line-height:1.75;color:#5a5a55}
+.pxid-co-start-grid ul{margin:16px 0 0;padding:0;list-style:none}
+.pxid-co-start-grid li{position:relative;padding-left:16px;margin-top:8px;font-size:clamp(13px,1.15vw,15px);
+  line-height:1.7;color:#7a7a74}
+.pxid-co-start-grid li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;background:#d71920}
+.pxid-co-start-grid a{display:inline-flex;align-items:center;gap:8px;margin-top:clamp(18px,2vw,26px);
+  padding:13px 22px;background:#171717;color:#fff;text-decoration:none;font-size:clamp(14px,1.15vw,15.5px);font-weight:600;
+  transition:background .3s cubic-bezier(.38,0,0,1)}
+.pxid-co-start-grid a:hover{background:#d71920}
+@media (max-width:900px){.pxid-co-start-grid{grid-template-columns:1fr;gap:28px}}
+</style>
+
+<style id="pxid-co-cta">
+.row.pxid-co-cta{background:#d71920;color:#fff;padding:clamp(56px,6vw,88px) 0 clamp(52px,5.6vw,80px)}
+.row.pxid-co-cta .inner{display:grid;grid-template-columns:1fr auto;align-items:end;gap:clamp(20px,2.6vw,44px)}
+.pxid-co-cta .k{display:block;font-size:clamp(13px,1.15vw,15px);color:rgba(255,255,255,.86);letter-spacing:.02em}
+.pxid-co-cta h2{margin:clamp(10px,1.1vw,14px) 0 0;font-size:clamp(28px,3.2vw,50px);font-weight:600;letter-spacing:-.02em;color:#fff;line-height:1.15}
+.pxid-co-cta .act{display:flex;gap:12px;flex-wrap:wrap}
+.pxid-co-cta .act a{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;text-decoration:none;
+  font-size:clamp(14px,1.15vw,15.5px);font-weight:600;line-height:1;border:1px solid rgba(255,255,255,.55);color:#fff;
+  transition:background .3s cubic-bezier(.38,0,0,1),color .3s,border-color .3s}
+.pxid-co-cta .act a.main{background:#fff;color:#d71920;border-color:#fff}
+.pxid-co-cta .act a:hover{background:#fff;color:#d71920;border-color:#fff}
+/* 段中软按钮 */
+.pxid-soft-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  margin-top:clamp(26px,2.8vw,40px);padding-top:clamp(20px,2.2vw,28px);border-top:1px solid rgba(23,23,23,.12)}
+.pxid-soft-cta p{margin:0;flex:1 1 260px;font-size:clamp(14px,1.2vw,16px);line-height:1.7;color:#5a5a55}
+.pxid-soft-cta a{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:#171717;color:#fff;
+  text-decoration:none;font-size:clamp(13.5px,1.12vw,15px);font-weight:600;transition:background .3s cubic-bezier(.38,0,0,1)}
+.pxid-soft-cta a:hover{background:#d71920}
+@media (max-width:900px){.row.pxid-co-cta .inner{grid-template-columns:1fr}}
+</style>
+<section class="row pxid-co-cta"><div class="inner maxSize">
+<div><span class="k">下一步</span><h2>和我们一起定义下一款车</h2></div>
+<div class="act"><a class="main" href="contact.html">启动项目 →</a><a href="business.html">先看产品方案</a></div>
+</div></section><section data-vh="1" class="row r3" data-legacy-hidden="1"><div class="bg"></div><div class="inner"><div class="topic fxb maxSize"><h2 class="f-80 en_b green alanGo" data-text="产品与设计奖项">产品与设计奖项</h2><div data-delay=".1" class="set fxb alanFn"><a class="r3Prev layer-set" role="button" aria-label="上一个奖项" tabindex="0"><div class="mask right"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8b3;</i></div></a><a class="r3Next layer-set" role="button" aria-label="下一个奖项" tabindex="0"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a></div></div><div class="group"><div class="swiper r3Sw"><div class="swiper-wrapper"><div class="swiper-slide"><div class="box"><img src="../assets/pxid/home/award-m2-gida.jpg" alt="M2 电动摩托车"><h3 class="f-16 green en_b pxid-award-title"><span>M2</span><br><span class="pxid-award-name">金芦苇工业设计奖</span></h3></div></div><div class="swiper-slide"><div class="box"><img src="../assets/pxid/home/award-p2-cgd.jpg" alt="P2 折叠电动自行车"><h3 class="f-16 green en_b pxid-award-title"><span>P2</span><br><span class="pxid-award-name">2024 GOOD DESIGN AWARD</span></h3></div></div><div class="swiper-slide"><div class="box"><img src="../assets/pxid/home/mantis-mountain.png" alt="MANTIS P6 电动自行车"><h3 class="f-16 green en_b pxid-award-title"><span>MANTIS P6</span><br><span class="pxid-award-name">2024 GOOD DESIGN AWARD</span></h3></div></div></div></div><div class="imgBox"><img src="../assets/pxid/logo-mask.svg" alt="PXID" class="logoImg"></div></div>
 </div></section>
-<section class="row r5"><div class="bg"></div><div class="inner"><div class="group"><div class="swiper r5Sw"><div class="swiper-wrapper"><div class="swiper-slide"><div class="photo"><div class="pic" role="img" aria-label="设计师绘制电动滑板车手绘草图" style="background-image:url(../assets/pxid/unified/process/odm-poster.webp?v=20260827-crop1)"></div></div><div class="msg" data-swiper-parallax-x="-100" data-swiper-parallax-opacity="0"><a class="layer-set mcFix" href="sustainability.html#C-stage-1" aria-label="查看产品设计详情" title="查看产品设计详情"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a><p class="f-20 wc">产品设计</p></div></div><div class="swiper-slide"><div class="photo"><div class="pic" role="img" aria-label="电动滑板车在加载配重的测试台上进行检验" style="background-image:url(../assets/pxid/products/proof-testing.webp)"></div></div><div class="msg" data-swiper-parallax-x="-100" data-swiper-parallax-opacity="0"><a class="layer-set mcFix" href="sustainability.html#C-stage-5" aria-label="查看样车与测试详情" title="查看样车与测试详情"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a><p class="f-20 wc">样车与测试</p></div></div><div class="swiper-slide"><div class="photo"><div class="pic" role="img" aria-label="PXID 车间的电动滑板车整车装配线" style="background-image:url(../assets/pxid/products/proof-assembly.webp)"></div></div><div class="msg" data-swiper-parallax-x="-100" data-swiper-parallax-opacity="0"><a class="layer-set mcFix" href="sustainability.html#C-stage-9" aria-label="查看制造与装配详情" title="查看制造与装配详情"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14" aria-hidden="true">&#xe8a9;</i></div></a><p class="f-20 wc">制造与装配</p></div></div></div><div class="swiper-button-next greenFix layer-set"><div class="mask"></div><div class="layer-icon"><i class="iconfont wc f-14">&#xe8a9;</i></div></div></div></div><div class="part pxid-project-start"><div class="box maxSize"><h2 class="f-100 en_b green alanGo" data-text="选择项目起点">选择项目起点</h2><ul class="items layer-items"><li class="list downList alanParent active f-36"><em class="dot"></em><h3 class="green alanUp en_b">只有产品想法</h3><p class="f-14 alanUp black" style="display:block">可从市场需求、使用场景和产品定义开始。</p></li><li class="list downList alanParent f-36"><em class="dot"></em><h3 class="green alanUp en_b">已有设计或样车</h3><p class="f-14 alanUp black">可从结构评审、工程样车、模具开发或制造评估开始。</p></li></ul><a class="layer-btn" href="contact.html"><div class="mk"></div><span class="txt f-16">启动项目</span></a></div></div></div></section>
+<section class="row r4" data-legacy-hidden="1"><div class="bg"><div data-pxid-local-background class="photo fxBg pic" style="background-image:url('../assets/pxid/unified/news/case-design-2.jpg')"></div></div><div class="inner maxSize"><div class="rect swiper r4Sw"><div class="swiper-wrapper"><div class="swiper-slide"><div class="part"><div class="left"><div class="pic" style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></div></div><div class="right"><h3 class="f-40 en_b green">产品设计</h3><p data-lenis-prevent class="f-18 black pxid-prose">结合目标市场法规、使用场景和用户需求开展分析，通过手绘草图、三维建模与效果图完成方案评审。</p></div></div></div><div class="swiper-slide"><div class="part"><div class="left"><div class="pic" style="background-image:url(../assets/pxid/unified/home-v2/case-p2-engineering.jpg)"></div></div><div class="right"><h3 class="f-40 en_b green">结构、电控与工程样车</h3><p data-lenis-prevent class="f-18 black pxid-prose">完成结构与电控系统设计，制作接近量产状态的工程样车，对结构、装配和制造工艺进行验证。</p></div></div></div><div class="swiper-slide"><div class="part"><div class="left"><div class="pic" style="background-image:url(../assets/pxid/unified/process/process-09.webp)"></div></div><div class="right"><h3 class="f-40 en_b green">制造、测试与批量生产</h3><p data-lenis-prevent class="f-18 black pxid-prose">自建模具、车架、涂装、检测与装配体系，完成整车性能测试、质量检验和批量生产。</p></div></div></div></div></div><div class="topic fxb"><h2 class="f-100 en_b wc alanGo" data-text="ODM 服务范围">ODM 服务范围</h2><div class="pager"><em id="r4Sum" class="f-20 mc">01</em><small class="f-20 wc">&nbsp;&nbsp;/&nbsp;&nbsp;03</small></div><div class="set"><a class="r4Prev whiteFix layer-set"><div class="mask right"></div><div class="layer-icon"><i class="iconfont green f-14">&#xe8b3;</i></div></a><a class="r4Next whiteFix layer-set"><div class="mask"></div><div class="layer-icon"><i class="iconfont green f-14">&#xe8a9;</i></div></a></div></div>
+</div></section>
+<style id="pxid-co-legacy-hide">
+/* 8 段改版：r2/r3/r4 的内容已由「能力四卡」「认定与奖项」承担，保留 DOM 以兼容共享脚本，视觉上隐藏 */
+.company [data-legacy-hidden]{display:none !important}
+</style>
 <style id="pxid-company-switch-css"></style>
 </main>
 <footer id="footer-contact">
