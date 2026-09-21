@@ -289,6 +289,11 @@
   <style id="pxid-s2-numred">
   /* 坤哥 2026-09-21：S2 图卡上的序号改成与「ODM」同一个强调红（原为 .wc 继承的白色） */
   .home .r1.pxid-odm-intro .bg .imgBox .img .box .countFn .count{color:#d71920!important}
+  </style>
+  <style id="pxid-s4-tighten">
+  /* 坤哥 2026-09-21：产品系列段（#pxidS4）上下留白各减 40%
+     原实测 @1440：padding-top 135px(1.8rem) / padding-bottom 75px(1rem) → 1.08rem / .6rem */
+  #pxidS4{padding-top:1.08rem!important;padding-bottom:.6rem!important}
   </style><script>
 (function(){
   var secs = document.querySelectorAll('section');
@@ -400,7 +405,7 @@
   #P .idx .it.on p  { opacity:1; transform:translateY(-3px); }
 
   /* 整叠缓慢呼吸 */
-  #P .stack { position:absolute; right:5vw; top:50%; width:67.2vw; height:65vh;
+  #P .stack { position:absolute; right:9.583vw; top:50%; width:67.2vw; height:65vh;
       animation:stackBob 7.5s ease-in-out infinite; transform:translateY(-50%); }
   @keyframes stackBob { 0%,100%{transform:translateY(-50%)} 50%{transform:translateY(calc(-50% - 9px))} }
   #P .sheet { position:absolute; inset:0; overflow:hidden; background: rgb(255,255,255);
