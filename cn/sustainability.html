@@ -669,24 +669,23 @@ font-weight:400!important;display:block!important;margin:0 0 10px!important;text
 <script src="../templates/assets/pxid-motion.js"></script>
 <script src="../templates/assets/pxid-site.js?v=20260920-stage-anchor1"></script>
 
+
 <script>
 (function(){
   var belt = document.querySelector("#odm-stages .f3-idx-a");
   var sec = document.getElementById("odm-stages");
+  var last = document.getElementById("C-stage-10");
   if (!belt || !sec) return;
-  var last = document.getElementById("C-stage-10") || sec;
+  var home = sec.offsetTop;
   function tick(){
-    var st = window.scrollY || document.documentElement.scrollTop;
-    var stBottom = last.offsetTop - (last.offsetHeight || 0);
-    belt.classList.toggle("belt-on", st < stBottom || stBottom <= 0);
+    var st = window.scrollY || 0;
+    var end = last ? last.offsetTop + last.offsetHeight - 600 : Infinity;
+    belt.classList.toggle("belt-on", st >= home - 4 && st < end);
   }
   tick();
   window.addEventListener("scroll", tick, {passive:true});
   window.addEventListener("resize", tick);
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if (e.isIntersecting) belt.classList.add("belt-on"); });
-  },{threshold:0.02});
-  io.observe(sec);
+  document.addEventListener("DOMContentLoaded", tick);
 })();
 </script>
 
