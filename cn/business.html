@@ -572,17 +572,32 @@
 .business .biz2-brief>div{background:#fff;padding:clamp(14px,1.5vw,20px)}
 .business .biz2-brief b{display:block;font-size:clamp(15px,.17rem,20px);font-weight:700;color:#d71920;letter-spacing:-.01em}
 .business .biz2-brief span{display:block;margin-top:5px;font-size:clamp(12px,.13rem,13.5px);color:#8a8a8a}
-.business .biz2-hls{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.6vw,24px) clamp(18px,2.2vw,34px);margin-top:12px}
-.business .biz2-hls .hl{border-top:1px solid #ececea;padding-top:12px}
-.business .biz2-hls .hl b{display:block;font-size:clamp(13.5px,.145rem,15.5px);font-weight:700;color:#171717}
+/* 产品亮点：图文块 */
+.business .biz2-hls{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,1.8vw,26px);margin-top:14px}
+.business .biz2-hls .hl{margin:0}
+.business .biz2-hls .hl .ph{height:clamp(120px,12vw,170px);background-size:cover;background-position:center;background-color:#f0f0ee}
+.business .biz2-hls .hl img.ph{display:block;width:100%;height:clamp(120px,12vw,170px);object-fit:cover;background:#f0f0ee}
+.business .biz2-mf .st img.ph{display:block;width:100%;height:clamp(96px,9vw,132px);object-fit:cover;background:#f0f0ee}
+.business .biz2-hls .hl b{display:block;margin-top:11px;font-size:clamp(13.5px,.145rem,15.5px);font-weight:700;color:#171717}
 .business .biz2-hls .hl b:before{content:"";display:inline-block;width:14px;height:2px;background:#d71920;vertical-align:middle;margin-right:8px;transform:translateY(-3px)}
-.business .biz2-hls .hl p{margin:6px 0 0;font-size:clamp(12.5px,.135rem,14px);line-height:1.75;color:#6f6f6f}
-.business .biz2-cgrp,.business .biz2-dgrid .cgrp{margin-bottom:6px}
+.business .biz2-hls .hl p{margin:6px 0 0;font-size:clamp(12.5px,.135rem,14px);line-height:1.7;color:#6f6f6f}
+/* 制造过程 */
+.business .biz2-mf{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.2vw,18px);margin-top:14px}
+.business .biz2-mf .st{position:relative}
+.business .biz2-mf .sn{display:block;font-size:12px;font-weight:700;color:#d71920;letter-spacing:.06em;margin-bottom:7px}
+.business .biz2-mf .ph{height:clamp(96px,9vw,132px);background-size:cover;background-position:center;background-color:#f0f0ee}
+.business .biz2-mf b{display:block;margin-top:10px;font-size:clamp(13px,.14rem,14.5px);font-weight:700;color:#171717}
+.business .biz2-mf p{margin:5px 0 0;font-size:clamp(12px,.13rem,13px);line-height:1.65;color:#8a8a8a}
 .business .biz2-dgrid .cgrp+.cgrp{margin-top:14px}
 .business .biz2-dgrid .gt{display:block;font-size:12px;color:#a0a0a0;margin-bottom:7px;letter-spacing:.02em}
+@media (max-width:1100px){
+  .business .biz2-hls{grid-template-columns:repeat(2,1fr)}
+  .business .biz2-mf{grid-template-columns:repeat(3,1fr)}
+}
 @media (max-width:900px){
   .business .biz2-brief{grid-template-columns:repeat(2,1fr)}
   .business .biz2-hls{grid-template-columns:1fr}
+  .business .biz2-mf{grid-template-columns:1fr 1fr}
 }
 </style>
 <style id="biz2-scroll-fix">
@@ -642,27 +657,33 @@
   "highlights": [
    [
     "6061 铝合金锻造核心件",
-    "核心部件采用 6061 铝合金锻造，强度更高、刚性更好，全地形骑行更从容。"
+    "核心部件采用 6061 铝合金锻造，强度更高、刚性更好，全地形骑行更从容。",
+    "../assets/pxid/models/mantis-p6/01.jpg"
    ],
    [
     "可拆卸电池 20Ah / 35Ah",
-    "48V 20Ah 或 48V 35Ah 可选：大容量换更长续航，小容量更便携。"
+    "48V 20Ah 或 48V 35Ah 可选：大容量换更长续航，小容量更便携。",
+    "../assets/pxid/models/mantis-p6/02.jpg"
    ],
    [
     "电机 750W / 1200W 可选",
-    "按骑行需求选择直流无刷电机功率，不同动力带来不同骑行体验。"
+    "按骑行需求选择直流无刷电机功率，不同动力带来不同骑行体验。",
+    "../assets/pxid/models/mantis-p6/03.jpg"
    ],
    [
     "LCD 仪表（界面可定制）",
-    "显示速度、骑行时长、里程与剩余电量，布局、配色与数据单位可定制。"
+    "显示速度、骑行时长、里程与剩余电量，布局、配色与数据单位可定制。",
+    "../assets/pxid/models/mantis-p6/04.png"
    ],
    [
     "加长座垫（颜色可定制）",
-    "19.1 × 6.1 × 4.2 英寸加长座垫，接触面更大，长途更舒适。"
+    "19.1 × 6.1 × 4.2 英寸加长座垫，接触面更大，长途更舒适。",
+    "../assets/pxid/models/mantis-p6/05.jpg"
    ],
    [
     "专业避震组合",
-    "倒置前叉油压避震（1200 磅阻尼、带锁死功能）+ 后避震，显著降低路面冲击。"
+    "倒置前叉油压避震（1200 磅阻尼、带锁死功能）+ 后避震，显著降低路面冲击。",
+    "../assets/pxid/models/mantis-p6/06.jpg"
    ]
   ],
   "spec": [
@@ -770,18 +791,31 @@
     ]
    ]
   ],
-  "gallery": [
+  "mf": [
    [
-    "../assets/pxid/factory/assemble-01.jpg",
-    "自有总装产线"
+    "模具设计与制造",
+    "自有模具设计与制造，关键结构件精度可控。",
+    "../assets/pxid/factory/mold-rack.jpg"
    ],
    [
-    "../assets/pxid/factory/paint-hang-line.jpg",
-    "车架涂装线"
+    "精密加工与注塑",
+    "CNC 加工与注塑成型并行，零件一致性好。",
+    "../assets/pxid/factory/cnc-vh11-01.jpg"
    ],
    [
-    "../assets/pxid/unified/process/oqc-check.jpg",
-    "出厂检测（OQC）"
+    "车架焊接与工装",
+    "焊接工装定位，车架尺寸批次稳定。",
+    "../assets/pxid/factory/frame-jig-yellow.jpg"
+   ],
+   [
+    "涂装与表面处理",
+    "多色涂装线，支持品牌化配色与质感。",
+    "../assets/pxid/factory/paint-hang-line.jpg"
+   ],
+   [
+    "总装与出厂检测",
+    "整车装配后逐台功能检查，出厂前完成质检。",
+    "../assets/pxid/factory/assemble-01.jpg"
    ]
   ]
  },
@@ -814,27 +848,33 @@
   "highlights": [
    [
     "获奖级产品设计",
-    "项目的产品设计获金点设计奖与当代好设计奖，兼顾美学、功能与市场导向。"
+    "项目的产品设计获金点设计奖与当代好设计奖，兼顾美学、功能与市场导向。",
+    "../assets/pxid/models/pxid-p5/01.png"
    ],
    [
     "结构优化与材料效率",
-    "优化车架几何与高性能铝材选型，在降低重量的同时提升结构强度。"
+    "优化车架几何与高性能铝材选型，在降低重量的同时提升结构强度。",
+    "../assets/pxid/models/pxid-p5/02.jpg"
    ],
    [
     "IoT 电控系统",
-    "集成支持 GPS、App 互联与车队管理的控制器，适配共享出行部署。"
+    "集成支持 GPS、App 互联与车队管理的控制器，适配共享出行部署。",
+    "../assets/pxid/models/pxid-p5/03.jpg"
    ],
    [
     "模块化电池方案",
-    "模块化电池布局 + 热管理优化，在不增加车重的前提下提升续航与安全。"
+    "模块化电池布局 + 热管理优化，在不增加车重的前提下提升续航与安全。",
+    "../assets/pxid/models/pxid-p5/04.jpg"
    ],
    [
     "电机选型与调校",
-    "轮毂电机选型与控制器调校并重，强化爬坡能力与城市骑行舒适性。"
+    "轮毂电机选型与控制器调校并重，强化爬坡能力与城市骑行舒适性。",
+    "../assets/pxid/models/pxid-p5/05.jpg"
    ],
    [
     "全流程自有能力",
-    "自有模具设计与制造、CNC + 精密焊接车架、T4/T6 热处理与多色涂装线、荷兰辐条机轮组。"
+    "自有模具设计与制造、CNC + 精密焊接车架、T4/T6 热处理与多色涂装线、荷兰辐条机轮组。",
+    "../assets/pxid/models/pxid-p5/06.png"
    ]
   ],
   "spec": [
@@ -870,18 +910,31 @@
     ]
    ]
   ],
-  "gallery": [
+  "mf": [
    [
-    "../assets/pxid/factory/assemble-02.jpg",
-    "总装与调试"
+    "模具设计与制造",
+    "自有模具设计与制造，关键结构件精度可控。",
+    "../assets/pxid/factory/mold-rack.jpg"
    ],
    [
-    "../assets/pxid/factory/paint-line-overview.jpg",
-    "涂装线全貌"
+    "精密加工与注塑",
+    "CNC 加工与注塑成型并行，零件一致性好。",
+    "../assets/pxid/factory/cnc-vh11-01.jpg"
    ],
    [
-    "../assets/pxid/unified/process/iqc-inspection.jpg",
-    "来料检验（IQC）"
+    "车架焊接与工装",
+    "焊接工装定位，车架尺寸批次稳定。",
+    "../assets/pxid/factory/frame-jig-yellow.jpg"
+   ],
+   [
+    "涂装与表面处理",
+    "多色涂装线，支持品牌化配色与质感。",
+    "../assets/pxid/factory/paint-hang-line.jpg"
+   ],
+   [
+    "总装与出厂检测",
+    "整车装配后逐台功能检查，出厂前完成质检。",
+    "../assets/pxid/factory/assemble-01.jpg"
    ]
   ]
  },
@@ -914,27 +967,33 @@
   "highlights": [
    [
     "AM60B 航空级镁合金车架",
-    "无焊缝一体成型设计，比铝合金约轻 35%，兼顾强度与骑行安全。"
+    "无焊缝一体成型设计，比铝合金约轻 35%，兼顾强度与骑行安全。",
+    "../assets/pxid/models/light-p2/01.jpg"
    ],
    [
     "可拆卸电池（LG / 三星）",
-    "36V 7.65Ah + BMS，快拆设计，无需折叠车架即可更换。"
+    "36V 7.65Ah + BMS，快拆设计，无需折叠车架即可更换。",
+    "../assets/pxid/models/light-p2/02.jpg"
    ],
    [
     "电机 250W / 350W 可选",
-    "40N·m 扭矩，按通勤强度选择；可按目标市场法规配置。"
+    "40N·m 扭矩，按通勤强度选择；可按目标市场法规配置。",
+    "../assets/pxid/models/light-p2/02.jpg"
    ],
    [
     "刹车可定制",
-    "Tektro 液压或机械碟刹，碟片 160 / 180mm，可按骑行地形搭配。"
+    "Tektro 液压或机械碟刹，碟片 160 / 180mm，可按骑行地形搭配。",
+    "../assets/pxid/models/light-p2/04.jpg"
    ],
    [
     "高折叠比",
-    "3 秒折叠，收纳体积约为展开的一半，可放入后备箱或带上公共交通。"
+    "3 秒折叠，收纳体积约为展开的一半，可放入后备箱或带上公共交通。",
+    "../assets/pxid/models/light-p2/05.jpg"
    ],
    [
     "可调立管 + 后避震",
-    "伸缩立管高度与把横角度可调；后避震过滤城市路面颠簸。"
+    "伸缩立管高度与把横角度可调；后避震过滤城市路面颠簸。",
+    "../assets/pxid/models/light-p2/04.jpg"
    ]
   ],
   "spec": [
@@ -1043,18 +1102,31 @@
     ]
    ]
   ],
-  "gallery": [
+  "mf": [
    [
-    "../assets/pxid/factory/assemble-03.jpg",
-    "装配工位"
+    "模具设计与制造",
+    "自有模具设计与制造，折叠机构件精度可控。",
+    "../assets/pxid/factory/mold-rack.jpg"
    ],
    [
-    "../assets/pxid/factory/paint-hang-white.jpg",
-    "车架涂装"
+    "注塑成型",
+    "镁合金与塑件成型，轻量化的关键环节。",
+    "../assets/pxid/factory/injection-ma2600.jpg"
    ],
    [
-    "../assets/pxid/unified/process/report-archive.jpg",
-    "检测报告归档"
+    "车架焊接与工装",
+    "焊接工装定位，折叠节点强度可控。",
+    "../assets/pxid/factory/frame-jig-yellow.jpg"
+   ],
+   [
+    "涂装与表面处理",
+    "多色涂装，支持整车配色定制。",
+    "../assets/pxid/factory/paint-hang-white.jpg"
+   ],
+   [
+    "总装与出厂检测",
+    "折叠机构逐台调试，出厂前完成功能检查。",
+    "../assets/pxid/factory/assemble-03.jpg"
    ]
   ]
  },
@@ -1087,35 +1159,43 @@
   "highlights": [
    [
     "概念设计与 3D 可视化",
-    "把早期想法转成 3D 模型与草图，在开模前完成人机、结构与美学评估。"
+    "把早期想法转成 3D 模型与草图，在开模前完成人机、结构与美学评估。",
+    "../assets/pxid/models/m2/01.jpg"
    ],
    [
     "结构优化与材料效率",
-    "以工程分析平衡强度、动态性能与整车重量。"
+    "以工程分析平衡强度、动态性能与整车重量。",
+    "../assets/pxid/models/m2/02.jpg"
    ],
    [
     "电气架构与控制器",
-    "统一管理动力输出、系统通信与安全策略，支持按市场调校性能曲线。"
+    "统一管理动力输出、系统通信与安全策略，支持按市场调校性能曲线。",
+    "../assets/pxid/models/m2/03.jpg"
    ],
    [
     "电池系统",
-    "高压电池平台，兼顾续航、安全与维护便利，支持城市与长途两种取向。"
+    "高压电池平台，兼顾续航、安全与维护便利，支持城市与长途两种取向。",
+    "../assets/pxid/models/m2/04.jpg"
    ],
    [
     "电机集成",
-    "中置电机与轮毂电机两条路线，按扭矩与效率取向选型调校。"
+    "中置电机与轮毂电机两条路线，按扭矩与效率取向选型调校。",
+    "../assets/pxid/models/m2/05.png"
    ],
    [
     "样车验证与迭代",
-    "功能与性能测试 + 多轮迭代，把风险收敛在量产之前。"
+    "功能与性能测试 + 多轮迭代，把风险收敛在量产之前。",
+    "../assets/pxid/models/m2/06.jpg"
    ],
    [
     "自有模具与精密车架",
-    "模具设计与制造全程自有，精密加工与焊接保障车架质量。"
+    "模具设计与制造全程自有，精密加工与焊接保障车架质量。",
+    "../assets/pxid/models/m2/07.jpg"
    ],
    [
     "表面处理与涂装",
-    "热处理 + 涂装工艺，支撑品牌化外观与长期耐用性。"
+    "热处理 + 涂装工艺，支撑品牌化外观与长期耐用性。",
+    "../assets/pxid/models/m2/08.jpg"
    ]
   ],
   "spec": [
@@ -1187,18 +1267,31 @@
     ]
    ]
   ],
-  "gallery": [
+  "mf": [
    [
-    "../assets/pxid/factory/workstation-01.jpg",
-    "整车装配工位"
+    "模具设计与制造",
+    "电摩塑件与结构件模具自有制作。",
+    "../assets/pxid/factory/mold-rack.jpg"
    ],
    [
-    "../assets/pxid/factory/heat-treat-t4-t6.jpg",
-    "T4/T6 热处理"
+    "精密加工（CNC）",
+    "车架与关键件 CNC 加工，尺寸精度稳定。",
+    "../assets/pxid/factory/cnc-kafo-sv105-01.jpg"
    ],
    [
-    "../assets/pxid/factory/test-salt-spray.jpg",
-    "盐雾测试"
+    "热处理（T4 / T6）",
+    "热处理提升车架强度与耐久性。",
+    "../assets/pxid/factory/heat-treat-t4-t6.jpg"
+   ],
+   [
+    "涂装与表面处理",
+    "涂装线完成车架与外观件处理。",
+    "../assets/pxid/factory/paint-line-overview.jpg"
+   ],
+   [
+    "整车检测",
+    "盐雾、电气与整车性能测试。",
+    "../assets/pxid/factory/test-salt-spray.jpg"
    ]
   ]
  },
@@ -1231,31 +1324,38 @@
   "highlights": [
    [
     "3 秒快速折叠",
-    "折叠后可放进后备箱，或带进公共交通，通勤与接驳更方便。"
+    "折叠后可放进后备箱，或带进公共交通，通勤与接驳更方便。",
+    "../assets/pxid/models/urban-03/01.jpg"
    ],
    [
     "10 寸无内胎 + 前后双避震",
-    "城市路面的细碎颠簸由双避震过滤，骑行更稳。"
+    "城市路面的细碎颠簸由双避震过滤，骑行更稳。",
+    "../assets/pxid/models/urban-03/02.jpg"
    ],
    [
     "电机 500W / 800W 轮毂",
-    "最高 45km/h；可按需求升级功率与性能。"
+    "最高 45km/h；可按需求升级功率与性能。",
+    "../assets/pxid/models/urban-03/03.jpg"
    ],
    [
     "电池 48V 15.6Ah（可 21Ah）",
-    "LG / 三星电芯，紧凑封装，续航最高约 50km，容量可定制。"
+    "LG / 三星电芯，紧凑封装，续航最高约 50km，容量可定制。",
+    "../assets/pxid/models/urban-03/04.jpg"
    ],
    [
     "蓝牙互联",
-    "一键开关机、控制灯光、锁车；骑行设置可按偏好自定义。"
+    "一键开关机、控制灯光、锁车；骑行设置可按偏好自定义。",
+    "../assets/pxid/models/urban-03/05.jpg"
    ],
    [
     "前后碟刹 + BMS",
-    "制动与电池管理双重保障，骑行更安心。"
+    "制动与电池管理双重保障，骑行更安心。",
+    "../assets/pxid/models/urban-03/06.jpg"
    ],
    [
     "高亮前后灯",
-    "高亮前照灯与尾灯提升夜间可视性，灯光样式可定制。"
+    "高亮前照灯与尾灯提升夜间可视性，灯光样式可定制。",
+    "../assets/pxid/models/urban-03/07.jpg"
    ]
   ],
   "spec": [
@@ -1359,18 +1459,31 @@
     ]
    ]
   ],
-  "gallery": [
+  "mf": [
    [
-    "../assets/pxid/factory/line-scooter-02.jpg",
-    "滑板车产线"
+    "注塑成型",
+    "塑件与结构件注塑成型，产能与一致性兼顾。",
+    "../assets/pxid/factory/injection-ma2600.jpg"
    ],
    [
-    "../assets/pxid/factory/paint-booth-purple.jpg",
-    "喷涂工位"
+    "精密加工（CNC）",
+    "车架与连接件精密加工。",
+    "../assets/pxid/factory/cnc-lm2012.jpg"
    ],
    [
-    "../assets/pxid/unified/process/oqc-check.jpg",
-    "出厂检测（OQC）"
+    "总装产线",
+    "滑板车总装线，多工位流水作业。",
+    "../assets/pxid/factory/line-scooter-02.jpg"
+   ],
+   [
+    "涂装与表面处理",
+    "喷涂工位完成车架与外观件处理。",
+    "../assets/pxid/factory/paint-booth-purple.jpg"
+   ],
+   [
+    "出厂检测（OQC）",
+    "整车功能与安全检查，逐台记录。",
+    "../assets/pxid/unified/process/oqc-check.jpg"
    ]
   ]
  },
@@ -1403,27 +1516,33 @@
   "highlights": [
    [
     "镁合金车架",
-    "一体成型车身，结构强度与造型自由度高，观感接近碳纤维车架。"
+    "一体成型车身，结构强度与造型自由度高，观感接近碳纤维车架。",
+    "../assets/pxid/models/h10/01.jpg"
    ],
    [
     "汽车级动力锂电",
-    "40 颗 18650 电芯内置于轻量车身，续航约 35km，满足城市通勤。"
+    "40 颗 18650 电芯内置于轻量车身，续航约 35km，满足城市通勤。",
+    "../assets/pxid/models/h10/02.jpg"
    ],
    [
     "高聚能电机",
-    "可应对 15% 坡度，地库陡坡也能轻松通过。"
+    "可应对 15% 坡度，地库陡坡也能轻松通过。",
+    "../assets/pxid/models/h10/03.png"
    ],
    [
     "车架开发全流程",
-    "切割、焊接、热处理、喷涂等车架开发环节可一体化完成。"
+    "切割、焊接、热处理、喷涂等车架开发环节可一体化完成。",
+    "../assets/pxid/models/h10/04.png"
    ],
    [
     "模具与装配流程",
-    "覆盖模具设计、精密件加工与全检、样车装配、功能测试与优化。"
+    "覆盖模具设计、精密件加工与全检、样车装配、功能测试与优化。",
+    "../assets/pxid/models/h10/05.png"
    ],
    [
     "量产保障",
-    "检测实验室、半自动装配线与物料准备体系，保障量产阶段的稳定性。"
+    "检测实验室、半自动装配线与物料准备体系，保障量产阶段的稳定性。",
+    "../assets/pxid/models/h10/06.jpg"
    ]
   ],
   "spec": [
@@ -1501,18 +1620,31 @@
     ]
    ]
   ],
-  "gallery": [
+  "mf": [
    [
-    "../assets/pxid/factory/line-scooter-05.jpg",
-    "滑板车产线"
+    "注塑成型",
+    "塑件与结构件注塑成型，产能与一致性兼顾。",
+    "../assets/pxid/factory/injection-ma2600.jpg"
    ],
    [
-    "../assets/pxid/factory/paint-line-purple.jpg",
-    "涂装线"
+    "精密加工（CNC）",
+    "车架与连接件精密加工。",
+    "../assets/pxid/factory/cnc-lm2012.jpg"
    ],
    [
-    "../assets/pxid/unified/process/iqc-inspection.jpg",
-    "来料检验（IQC）"
+    "总装产线",
+    "滑板车总装线，多工位流水作业。",
+    "../assets/pxid/factory/line-scooter-02.jpg"
+   ],
+   [
+    "涂装与表面处理",
+    "喷涂工位完成车架与外观件处理。",
+    "../assets/pxid/factory/paint-booth-purple.jpg"
+   ],
+   [
+    "出厂检测（OQC）",
+    "整车功能与安全检查，逐台记录。",
+    "../assets/pxid/unified/process/oqc-check.jpg"
    ]
   ]
  },
@@ -1545,39 +1677,43 @@
   "highlights": [
    [
     "设计语言",
-    "流线极简造型打破传统滑板车形态，细节工艺强化整车的性能观感。"
+    "流线极简造型打破传统滑板车形态，细节工艺强化整车的性能观感。",
+    "../assets/pxid/models/px-3/01.jpg"
    ],
    [
     "结构设计与动力布局",
-    "在稳定性与灵活性之间取平衡，优化后的动力系统传输效率更高。"
+    "在稳定性与灵活性之间取平衡，优化后的动力系统传输效率更高。",
+    "../assets/pxid/models/px-3/02.jpg"
    ],
    [
     "照明系统",
-    "前照灯照亮前路，侧氛围灯提升可见度，尾灯强化后方辨识度。"
+    "前照灯照亮前路，侧氛围灯提升可见度，尾灯强化后方辨识度。",
+    "../assets/pxid/models/px-3/03.jpg"
    ],
    [
     "48V 30Ah 大容量电池",
-    "长途与复杂地形都能从容应对，减少中途补电。"
+    "长途与复杂地形都能从容应对，减少中途补电。",
+    "../assets/pxid/models/px-3/04.jpg"
    ],
    [
     "2 × 1000W 双电机",
-    "加速快、爬坡强，城市街道与越野路径都适用。"
+    "加速快、爬坡强，城市街道与越野路径都适用。",
+    "../assets/pxid/models/px-3/05.jpg"
    ],
    [
     "HD 显示屏",
-    "速度、电量、里程实时显示，随时掌握车辆状态。"
+    "速度、电量、里程实时显示，随时掌握车辆状态。",
+    "../assets/pxid/models/px-3/06.jpg"
    ],
    [
-    "11 寸越野防爆胎",
-    "抓地与减震更好，复杂路面更稳。"
+    "11 寸越野防爆胎 + 碟刹制动",
+    "抓地与减震更好，复杂路面更稳；碟刹提供可控制动力。",
+    "../assets/pxid/models/px-3/07.jpg"
    ],
    [
     "双层安全折叠扳手 + 折叠挂钩",
-    "折叠更稳固，展开时可挂载随身物品。"
-   ],
-   [
-    "碟刹制动",
-    "紧急制动与复杂地形下都有可控的制动力。"
+    "折叠更稳固，展开时可挂载随身物品。",
+    "../assets/pxid/models/px-3/08.jpg"
    ]
   ],
   "spec": [
@@ -1665,18 +1801,31 @@
     ]
    ]
   ],
-  "gallery": [
+  "mf": [
    [
-    "../assets/pxid/factory/line-scooter-08.jpg",
-    "滑板车产线"
+    "模具设计与制造",
+    "越野车型结构件模具自有制作。",
+    "../assets/pxid/factory/mold-rack.jpg"
    ],
    [
-    "../assets/pxid/factory/paint-hang-line.jpg",
-    "车架涂装线"
+    "精密加工（CNC）",
+    "高强度车架与连接件加工。",
+    "../assets/pxid/factory/cnc-hsd1615.jpg"
    ],
    [
-    "../assets/pxid/factory/packing-01.jpg",
-    "包装出货"
+    "总装与工装",
+    "越野车型专项工装与总装。",
+    "../assets/pxid/factory/line-scooter-08.jpg"
+   ],
+   [
+    "涂装与表面处理",
+    "车架涂装，支持多色定制。",
+    "../assets/pxid/factory/paint-hang-line.jpg"
+   ],
+   [
+    "来料与出厂检验",
+    "IQC / OQC 双重检查。",
+    "../assets/pxid/unified/process/iqc-inspection.jpg"
    ]
   ]
  },
@@ -1709,23 +1858,28 @@
   "highlights": [
    [
     "可拆卸座垫",
-    "站骑与坐骑随时切换，适配不同骑行偏好，舒适度与灵活性兼顾。"
+    "站骑与坐骑随时切换，适配不同骑行偏好，舒适度与灵活性兼顾。",
+    "../assets/pxid/models/freemile-f1/01.jpg"
    ],
    [
     "多色车架涂装",
-    "多种涂层颜色可选，在保证耐用性的同时提升外观辨识度。"
+    "多种涂层颜色可选，在保证耐用性的同时提升外观辨识度。",
+    "../assets/pxid/models/freemile-f1/02.jpg"
    ],
    [
     "电池 48V 13Ah / 17.5Ah",
-    "LG / 三星可拆卸电池 + BMS，兼顾续航、安全与充电效率。"
+    "LG / 三星可拆卸电池 + BMS，兼顾续航、安全与充电效率。",
+    "../assets/pxid/models/freemile-f1/03.jpg"
    ],
    [
     "电机 500W / 800W",
-    "直流无刷电机，加速顺滑、噪音低、维护需求少。"
+    "直流无刷电机，加速顺滑、噪音低、维护需求少。",
+    "../assets/pxid/models/freemile-f1/04.jpg"
    ],
    [
     "全流程验证",
-    "从车架生产、样车装配到骑行测试，逐环节验证性能与安全。"
+    "从车架生产、样车装配到骑行测试，逐环节验证性能与安全。",
+    "../assets/pxid/models/freemile-f1/05.jpg"
    ]
   ],
   "spec": [
@@ -1805,18 +1959,31 @@
     ]
    ]
   ],
-  "gallery": [
+  "mf": [
    [
-    "../assets/pxid/factory/line-scooter-11.jpg",
-    "滑板车产线"
+    "注塑成型",
+    "塑件与结构件注塑成型，产能与一致性兼顾。",
+    "../assets/pxid/factory/injection-ma2600.jpg"
    ],
    [
-    "../assets/pxid/factory/polish-line.jpg",
-    "抛光工序"
+    "精密加工（CNC）",
+    "车架与连接件精密加工。",
+    "../assets/pxid/factory/cnc-lm2012.jpg"
    ],
    [
-    "../assets/pxid/factory/packing-03.jpg",
-    "包装出货"
+    "总装产线",
+    "滑板车总装线，多工位流水作业。",
+    "../assets/pxid/factory/line-scooter-02.jpg"
+   ],
+   [
+    "涂装与表面处理",
+    "喷涂工位完成车架与外观件处理。",
+    "../assets/pxid/factory/paint-booth-purple.jpg"
+   ],
+   [
+    "出厂检测（OQC）",
+    "整车功能与安全检查，逐台记录。",
+    "../assets/pxid/unified/process/oqc-check.jpg"
    ]
   ]
  },
@@ -1849,31 +2016,38 @@
   "highlights": [
    [
     "三轮结构 + 后双驱轮毂电机",
-    "后置双电机驱动，越野场景下动力更强、更安全。"
+    "后置双电机驱动，越野场景下动力更强、更安全。",
+    "../assets/pxid/models/bestride-pro/01.jpg"
    ],
    [
     "后摇臂避震",
-    "后悬挂摇臂设计，起伏路面保持稳定。"
+    "后悬挂摇臂设计，起伏路面保持稳定。",
+    "../assets/pxid/models/bestride-pro/02.jpg"
    ],
    [
     "可拆卸座垫",
-    "站立骑行时更易平衡；座垫的设计、材质与颜色可定制。"
+    "站立骑行时更易平衡；座垫的设计、材质与颜色可定制。",
+    "../assets/pxid/models/bestride-pro/03.jpg"
    ],
    [
     "电池 48V 23.4Ah（可拆卸）",
-    "LG / 三星电芯，续航最高约 45km。"
+    "LG / 三星电芯，续航最高约 45km。",
+    "../assets/pxid/models/bestride-pro/04.jpg"
    ],
    [
     "电机 500W × 2 无刷轮毂",
-    "动力输出更强，骑行更顺滑。"
+    "动力输出更强，骑行更顺滑。",
+    "../assets/pxid/models/bestride-pro/05.jpg"
    ],
    [
     "TEKTRO 油压碟刹",
-    "高性能油压碟刹，制动更线性可靠。"
+    "高性能油压碟刹，制动更线性可靠。",
+    "../assets/pxid/models/bestride-pro/06.jpg"
    ],
    [
     "前 12 寸 / 后 10 寸无内胎",
-    "前后不同规格的无内胎气胎，兼顾通过性与稳定性。"
+    "前后不同规格的无内胎气胎，兼顾通过性与稳定性。",
+    "../assets/pxid/models/bestride-pro/06.jpg"
    ]
   ],
   "spec": [
@@ -1982,18 +2156,31 @@
     ]
    ]
   ],
-  "gallery": [
+  "mf": [
    [
-    "../assets/pxid/factory/assemble-02.jpg",
-    "总装与调试"
+    "注塑成型",
+    "塑件与结构件注塑成型，产能与一致性兼顾。",
+    "../assets/pxid/factory/injection-ma2600.jpg"
    ],
    [
-    "../assets/pxid/factory/paint-hang-white.jpg",
-    "车架涂装"
+    "精密加工（CNC）",
+    "车架与连接件精密加工。",
+    "../assets/pxid/factory/cnc-lm2012.jpg"
    ],
    [
-    "../assets/pxid/factory/packing-05.jpg",
-    "包装出货"
+    "总装产线",
+    "滑板车总装线，多工位流水作业。",
+    "../assets/pxid/factory/line-scooter-02.jpg"
+   ],
+   [
+    "涂装与表面处理",
+    "喷涂工位完成车架与外观件处理。",
+    "../assets/pxid/factory/paint-booth-purple.jpg"
+   ],
+   [
+    "出厂检测（OQC）",
+    "整车功能与安全检查，逐台记录。",
+    "../assets/pxid/unified/process/oqc-check.jpg"
    ]
   ]
  }
@@ -2045,16 +2232,19 @@
           return '<div><b>' + esc(b[0]) + '</b><span>' + esc(b[1]) + '</span></div>';
         }).join("") + '</div>';
       }
-      var gal = "";
-      if (p.gallery && p.gallery.length){
-        gal = '<h4 class="biz2-h4">自有制造 · 实拍</h4><div class="biz2-gal">' + p.gallery.map(function(g){
-          return '<figure><div class="ph" role="img" aria-label="' + esc(g[1]) + '" style="background-image:url(' + g[0] + ')"></div><figcaption>' + esc(g[1]) + '</figcaption></figure>';
-        }).join("") + '</div>';
-      }
       var hl = "";
       if (p.highlights && p.highlights.length){
         hl = '<h4 class="biz2-h4">产品亮点</h4><div class="biz2-hls">' + p.highlights.map(function(x){
-          return '<div class="hl"><b>' + esc(x[0]) + '</b><p>' + esc(x[1]) + '</p></div>';
+          var ph = x[2] ? '<img class="ph" src="' + x[2] + '" alt="' + esc(x[0]) + '" loading="lazy">' : '';
+          return '<figure class="hl">' + ph + '<figcaption><b>' + esc(x[0]) + '</b><p>' + esc(x[1]) + '</p></figcaption></figure>';
+        }).join("") + '</div>';
+      }
+      var mf = "";
+      if (p.mf && p.mf.length){
+        mf = '<h4 class="biz2-h4">制造过程</h4><div class="biz2-mf">' + p.mf.map(function(s, i){
+          return '<div class="st"><span class="sn">' + pad(i + 1) + '</span>'
+            + '<img class="ph" src="' + s[2] + '" alt="' + esc(s[0]) + '" loading="lazy">'
+            + '<b>' + esc(s[0]) + '</b><p>' + esc(s[1]) + '</p></div>';
         }).join("") + '</div>';
       }
       var cg = "";
@@ -2063,20 +2253,16 @@
           var chips = g[1].map(function(c){ return '<em' + (isTbd(c) ? ' class="tbd"' : '') + '>' + esc(c) + '</em>'; }).join("");
           return '<div class="cgrp"><span class="gt">' + esc(g[0]) + '</span><div class="biz2-chips">' + chips + '</div></div>';
         }).join("");
-      } else if (p.custom && p.custom.length){
-        cg = '<div class="cgrp"><div class="biz2-chips">' + p.custom.map(function(c){
-          return '<em' + (isTbd(c) ? ' class="tbd"' : '') + '>' + esc(c) + '</em>'; }).join("") + '</div></div>';
       }
       return '<div class="biz2-topimg" role="img" aria-label="' + p.name + '" style="background-image:url(' + p.img + ');background-position:' + p.focus + ';background-color:' + p.matte + '"></div>'
         + '<div class="biz2-pbody">'
         + '<div class="biz2-dhead"><span class="no">' + esc(p.catName) + '</span><h2>' + p.name + '</h2>'
         + '<p class="cat">' + esc(p.tagline || "") + '</p></div>'
         + brief
-        + gal
         + hl
+        + mf
         + '<div class="biz2-dgrid"><div>'
         + '<h4 class="biz2-h4">参数表</h4><div class="biz2-rows">' + p.spec.map(kv).join("") + '</div>'
-        + (p.specNote ? '<p class="biz2-kv" style="margin-top:14px;color:#8a8a8a;font-size:13.5px;line-height:1.75">' + esc(p.specNote) + '</p>' : '')
         + '</div><div>'
         + '<h4 class="biz2-h4">可定制边界</h4>' + cg
         + '<h4 class="biz2-h4">状态与周期</h4><div class="biz2-kv">'
