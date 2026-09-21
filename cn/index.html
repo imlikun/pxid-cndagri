@@ -290,6 +290,36 @@
   /* 坤哥 2026-09-21：S2 图卡上的序号改成与「ODM」同一个强调红（原为 .wc 继承的白色） */
   .home .r1.pxid-odm-intro .bg .imgBox .img .box .countFn .count{color:#d71920!important}
   </style>
+  <style id="pxid-s2-caprow">
+  /* 坤哥 2026-09-21：图卡角标「数字 + 标题」并排一行（副文仍在标题下方） */
+  .home .r1.pxid-odm-intro .bg .imgBox .img .box{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:.13rem;align-content:end;align-items:baseline}
+  .home .r1.pxid-odm-intro .bg .imgBox .img .box .countFn{font-size:0;line-height:1;white-space:nowrap}
+  .home .r1.pxid-odm-intro .bg .imgBox .img .box .countFn .count{display:inline-block;font-size:clamp(28px,.42rem,42px);line-height:1;color:#d71920!important}
+  /* 标题里的 ODM 三个字母用强调红 */
+  #pxidS2 #r1Txt h2 .pxid-odm-red{font-style:normal;color:#d71920}
+  </style>
+  <script id="pxid-s2-odmred">
+  /* 标题由入场动画按 data-text 重建（innerHTML 会被清空重写），
+     所以这里在重建之后再把 ODM 包成 <i>，并用 MutationObserver 兜住后续重建。 */
+  (function(){
+    function boot(){
+      var h2 = document.querySelector('#pxidS2 #r1Txt h2[data-split]');
+      if(!h2) return;
+      function paint(){
+        var sp = h2.querySelector('span[data-word]');
+        if(!sp || sp.querySelector('.pxid-odm-red')) return;
+        var t = sp.textContent;
+        if(t.indexOf('ODM') < 0) return;
+        sp.innerHTML = t.replace(/ODM/g, '<i class="pxid-odm-red">ODM</i>');
+      }
+      paint();
+      try{ new MutationObserver(paint).observe(h2, {childList:true, subtree:true}); }catch(e){}
+    }
+    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+    else boot();
+  })();
+  </script>
+
   <style id="pxid-s4-tighten">
   /* 坤哥 2026-09-21：产品系列段（#pxidS4）上下留白各减 40%
      原实测 @1440：padding-top 135px(1.8rem) / padding-bottom 75px(1rem) → 1.08rem / .6rem */
@@ -740,6 +770,13 @@
       top:11%;
       height:78%}
   }
+
+  /* 坤哥 2026-09-21：角标「数字 + 标题」并排一行（对齐 S2 原版），副文仍在标题下方 */
+  .cap{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.13rem}
+  .cap .n{display:inline-block;margin:0;font-size:clamp(28px,.42rem,42px);line-height:1}
+  .cap .t{display:inline-block;margin-top:0}
+  .cap .s{flex:0 0 100%;margin-top:.03rem}
+  @media (max-width:900px){.cap .n{font-size:26px}}
 </style><div class="left">
   <h2>电动出行产品 <span class="red">ODM</span><br>从设计到批量生产</h2>
   <p class="sub">PXID 品向成立于 2013 年，专注于电动出行产品开发，现已形成覆盖产品设计研发、模具设计制造、车架生产、整车装配和试验检测的一站式 ODM/OEM 服务体系。</p>
