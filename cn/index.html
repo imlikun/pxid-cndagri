@@ -695,7 +695,7 @@
       <div class="pxb-bar"></div>
       <p class="pxb-lede">从产品设计、结构与电控开发，到工程样车、制造、检验和批量生产。</p>
       <div class="pxb-steps" aria-hidden="true"><i>01</i><i>02</i><i>03</i><i>04</i><i>05</i><i>06</i><i>07</i><i>08</i><i>09</i><i>10</i></div>
-      <div class="pxb-shot"><img loading="lazy" src="../assets/pxid/factory/line-scooter-12.jpg" alt="PXID 自有总装产线"></div>
+      <div class="pxb-facts"><div><b>10</b><span>步全流程环节</span></div><div><b>23</b><span>台自有设备</span></div><div><b>6</b><span>大自有工艺</span></div></div>
       <a class="pxb-cta" href="sustainability.html">了解 ODM 全流程 <i>→</i></a>
     </div>
     <div class="pxb-tile pxb-big pxb-t01"><div class="pxb-img" style="background-image:url(../assets/pxid/unified/process/process-01.webp)"></div><div class="pxb-cap"><span class="pxb-n">01</span><span class="pxb-t">产品设计</span></div></div>
@@ -1531,12 +1531,13 @@
 <style id="pxid-s7-tighten">
 @media (min-width:901px){
   /* ① 把段与 #s7b9 叠出来的上下留白让给网格，行高按「省了多少补多少」计算，段高恒等 */
-  #pxidS7.pxid-process-section{padding-top:24px}
+  #pxidS7.pxid-process-section{padding:calc(12px + .5rem) 0}
   #pxidS7 #s7b9{padding-top:0}
   #pxidS7 #s7b9 .pxb-grid{grid-auto-rows:calc(clamp(150px,9vw,230px) + (40px + clamp(32px,3.7vw,71px))/3)}
-  /* ② 左栏 steps 与 CTA 之间的空白 → 自有产线实拍（吃掉剩余高度，不写死 px） */
-  #pxidS7 #s7b9 .pxb-shot{flex:1 1 auto;min-height:64px;margin:10px 0 36px;position:relative;overflow:hidden;background:rgb(222,222,222)}
-  #pxidS7 #s7b9 .pxb-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 46%}
+  /* ② 左栏空白 → 三个体量数字（口径同制造能力页） */
+  #pxidS7 #s7b9 .pxb-facts{margin-top:auto;margin-bottom:38px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:14px}
+  #pxidS7 #s7b9 .pxb-facts b{display:block;font-family:var(--en);font-weight:800;font-size:clamp(20px,.32rem,30px);line-height:1;color:var(--red);letter-spacing:-.02em}
+  #pxidS7 #s7b9 .pxb-facts span{display:block;margin-top:5px;font-size:clamp(12px,.16rem,14px);line-height:1.4;color:var(--ink-3);letter-spacing:.04em}
 }
 </style>
 </body>
