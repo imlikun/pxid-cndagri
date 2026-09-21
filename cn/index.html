@@ -285,6 +285,10 @@
       top:11%;
       transform:none}
   }
+  </style>
+  <style id="pxid-s2-numred">
+  /* 坤哥 2026-09-21：S2 图卡上的序号改成与「ODM」同一个强调红（原为 .wc 继承的白色） */
+  .home .r1.pxid-odm-intro .bg .imgBox .img .box .countFn .count{color:#d71920!important}
   </style><script>
 (function(){
   var secs = document.querySelectorAll('section');
@@ -373,12 +377,17 @@
   #P { min-height:84vh; background: rgb(236,236,236); }
   #P .head { position:absolute; left:6vw; top:12vh; z-index:6; }
   #P .idx { position:absolute; left:6vw; top:42%; z-index:6; }
-  #P .idx .it { position:relative; display:flex; align-items:baseline; gap:1.2vw; padding:1.8vh 0; cursor:pointer;
+  #P .idx .it { position:relative; display:grid; grid-template-columns:auto 1fr; align-items:baseline; column-gap:1.2vw; row-gap:.35vh; padding:1.8vh 0; cursor:pointer;
       transition:transform .6s cubic-bezier(.2,.7,.2,1); }
   /* 当前项左侧长出绿色竖线 */
   #P .idx .it::before { content:''; position:absolute; left:-1.4vw; top:50%; transform:translateY(-50%);
       width:2px; height:0; background: var(--green); transition:height .55s cubic-bezier(.2,.7,.2,1); }
   #P .idx .it.on::before { height:64%; }
+  /* 坤哥 2026-09-21：序号与名称一行，说明小字沉到名称下面 */
+  #P .idx .it .no { grid-column:1; grid-row:1; }
+  #P .idx .it h3  { grid-column:2; grid-row:1; }
+  #P .idx .it p   { grid-column:2; grid-row:2; }
+
   #P .idx .it .no { font-size:clamp(12px, 0.16rem, 14px); font-weight:700; letter-spacing:.3em; color:#ababab;
       transition:color .4s ease, transform .55s cubic-bezier(.2,.7,.2,1); }
   #P .idx .it h3 { font-size:clamp(15px, 0.32rem, 33px); font-weight:900; color:#121212;
@@ -391,7 +400,7 @@
   #P .idx .it.on p  { opacity:1; transform:translateY(-3px); }
 
   /* 整叠缓慢呼吸 */
-  #P .stack { position:absolute; right:7.6vw; top:50%; width:56vw; height:65vh;
+  #P .stack { position:absolute; right:5vw; top:50%; width:67.2vw; height:65vh;
       animation:stackBob 7.5s ease-in-out infinite; transform:translateY(-50%); }
   @keyframes stackBob { 0%,100%{transform:translateY(-50%)} 50%{transform:translateY(calc(-50% - 9px))} }
   #P .sheet { position:absolute; inset:0; overflow:hidden; background: rgb(255,255,255);
