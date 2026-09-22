@@ -502,5 +502,12 @@
 .pxid-co-start-grid .col{border-top-color:transparent !important}
 .pxid-co-start-grid .col::after{content:"";position:absolute;left:0;top:0;width:34px;height:2px;background:#171717}
 </style>
+
+<style id="pxid-co-chain-restore" data-co-chain-restore>
+/* ===== 恢复链条原长线（坤哥 0922 拍板：订单-生产-仓储-供应保持原样）=====
+   覆盖 shortlines 补丁第 4 条，还原原始顶线 + flex:1 长连接线 */
+.pxid-co-dg-chain{border-top:1px solid rgba(23,23,23,.12) !important;padding-top:clamp(18px,2vw,24px) !important;margin-top:clamp(26px,3vw,38px) !important}
+.pxid-co-dg-chain i{flex:1 1 24px !important;min-width:18px !important;height:1px !important;background:rgba(23,23,23,.28) !important}
+</style>
 </body>
 </html>
