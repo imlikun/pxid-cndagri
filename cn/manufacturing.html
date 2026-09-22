@@ -274,5 +274,114 @@
 .mfgMain .wfacts li:hover{border-color:#d71920;color:#d71920}
 </style>
 
+<style data-mfg-vproc="1">
+/* ===== 六大工艺 3 套变体(切换按钮) · 2026-09-22 · 只增不删 ===== */
+.vproc{position:relative}
+.vp-switch{position:absolute;top:clamp(6px,1vw,14px);right:0;display:flex;gap:6px;z-index:6;flex-wrap:wrap;justify-content:flex-end}
+.vp-switch button{appearance:none;border:1px solid var(--line);background:#fff;color:#666;font:600 12px/1 "Helvetica Neue",Inter,Arial,sans-serif;padding:8px 13px;cursor:pointer;letter-spacing:.02em;transition:all .18s}
+.vp-switch button:hover{border-color:#d71920;color:#d71920}
+.vp-switch button.on{background:#d71920;border-color:#d71920;color:#fff}
+/* --- 变体公共底座：全出血浅灰底 + 幽灵大字 + 切角卡 --- */
+.vproc[data-vp="a"],.vproc[data-vp="b"],.vproc[data-vp="c"]{
+  margin-inline:calc(-1 * clamp(16px,4vw,64px));padding-inline:clamp(16px,4vw,64px);
+  background:#f1f0ee;border-bottom:1px solid var(--line);overflow:hidden}
+.vproc[data-vp="a"]::before,.vproc[data-vp="b"]::before,.vproc[data-vp="c"]::before{
+  content:"PROCESS × EQUIPMENT";position:absolute;top:clamp(4px,.6vw,10px);left:clamp(16px,4vw,64px);
+  font:900 clamp(64px,9.5vw,150px)/1 "Helvetica Neue",Inter,Arial,sans-serif;letter-spacing:-.02em;
+  color:transparent;-webkit-text-stroke:1.5px #e2e0dc;white-space:nowrap;pointer-events:none;user-select:none;z-index:0}
+.vproc[data-vp="a"] .whead,.vproc[data-vp="b"] .whead,.vproc[data-vp="c"] .whead{position:relative;z-index:1;padding-top:clamp(56px,6.5vw,104px)}
+.vproc[data-vp="a"] .ccard,.vproc[data-vp="b"] .ccard,.vproc[data-vp="c"] .ccard{
+  position:relative;background:#fff;border:1px solid #e7e5e1;border-bottom-color:#e7e5e1;
+  box-shadow:0 12px 34px rgba(23,23,23,.07);
+  clip-path:polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,0 100%)}
+.vproc[data-vp="a"] .ccard::after,.vproc[data-vp="b"] .ccard::after,.vproc[data-vp="c"] .ccard::after{
+  content:"";position:absolute;top:-1px;right:-1px;width:32px;height:32px;
+  background:linear-gradient(225deg,#f1f0ee 50%,transparent 50.5%)}
+/* 卡内幽灵大编号 */
+.vp-list{counter-reset:vp}
+.vproc[data-vp] .ccard{counter-increment:vp}
+.vproc[data-vp="a"] .ccard::before,.vproc[data-vp="b"] .ccard::before,.vproc[data-vp="c"] .ccard::before{
+  content:counter(vp,decimal-leading-zero);position:absolute;right:20px;top:14px;z-index:0;
+  font:800 clamp(44px,4.6vw,72px)/1 "Helvetica Neue",Inter,Arial,sans-serif;letter-spacing:-.03em;
+  color:transparent;-webkit-text-stroke:1.5px #e9e7e3;pointer-events:none}
+.vproc[data-vp="a"] .ccard.dark::before,.vproc[data-vp="b"] .ccard.dark::before,.vproc[data-vp="c"] .ccard.dark::before{
+  -webkit-text-stroke-color:rgba(255,255,255,.14)}
+.vproc[data-vp] .ccard-top,.vproc[data-vp] .ccard-info{position:relative;z-index:1}
+/* --- A 通栏交错 --- */
+.vproc[data-vp="a"] .vp-wrap{position:relative;z-index:1}
+.vproc[data-vp="a"] .vp-list{display:flex;flex-direction:column;gap:clamp(20px,2.2vw,32px)}
+.vproc[data-vp="a"] .ccard:nth-child(even){margin-left:clamp(0px,4.5vw,72px)}
+/* --- B 双列矩阵 --- */
+.vproc[data-vp="b"] .vp-wrap{position:relative;z-index:1}
+.vproc[data-vp="b"] .vp-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.2vw,30px);align-items:start}
+.vproc[data-vp="b"] .ccard-body{grid-template-columns:1fr}
+.vproc[data-vp="b"] .ccard-body .ccard-media{order:-1}
+.vproc[data-vp="b"] .ccard-media>.wpic{min-height:clamp(150px,14vw,215px)}
+.vproc[data-vp="b"] .wmini .wpic{min-height:clamp(64px,6vw,92px)}
+.vproc[data-vp="b"] .ccard-info{gap:clamp(9px,1vw,13px);padding:clamp(16px,1.6vw,22px) clamp(18px,1.8vw,26px)}
+.vproc[data-vp="b"] .ccard-top{padding:clamp(12px,1.2vw,16px) clamp(18px,1.8vw,26px)}
+/* --- C 左索引右详情 --- */
+.vproc[data-vp="c"] .vp-wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(230px,290px) minmax(0,1fr);gap:clamp(20px,2.4vw,40px);align-items:start}
+.vp-index{display:none}
+.vproc[data-vp="c"] .vp-index{display:flex;flex-direction:column;gap:6px;background:#171717;padding:16px 12px;position:sticky;top:18px;box-shadow:0 12px 34px rgba(23,23,23,.18);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%)}
+.vproc[data-vp="c"] .vp-index button{appearance:none;display:flex;gap:10px;align-items:baseline;background:transparent;border:0;border-left:2px solid rgba(255,255,255,.16);color:rgba(255,255,255,.6);padding:11px 12px;text-align:left;cursor:pointer;font:600 14px/1.3 "Helvetica Neue",Inter,Arial,sans-serif;transition:all .18s}
+.vproc[data-vp="c"] .vp-index button i{font-style:normal;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;font-weight:800;color:#d71920;flex:none}
+.vproc[data-vp="c"] .vp-index button:hover{color:#fff}
+.vproc[data-vp="c"] .vp-index button.on{border-left-color:#d71920;color:#fff;background:rgba(255,255,255,.07)}
+.vproc[data-vp="c"] .vp-list{display:flex;flex-direction:column;gap:clamp(20px,2.2vw,32px)}
+.vproc[data-vp="c"] .ccard{scroll-margin-top:24px}
+/* --- 移动端 --- */
+@media (max-width:860px){
+  .vproc[data-vp="b"] .vp-list{grid-template-columns:1fr}
+  .vproc[data-vp="a"] .ccard:nth-child(even){margin-left:0}
+  .vproc[data-vp="c"] .vp-wrap{grid-template-columns:1fr}
+  .vproc[data-vp="c"] .vp-index{position:sticky;top:0;z-index:5;flex-direction:row;overflow-x:auto;padding:8px;gap:4px;clip-path:none}
+  .vproc[data-vp="c"] .vp-index button{border-left:0;border-bottom:2px solid rgba(255,255,255,.16);white-space:nowrap;flex:none}
+  .vproc[data-vp="c"] .vp-index button.on{border-bottom-color:#d71920}
+}
+</style>
+<script data-mfg-vproc="1">
+(function(){
+  var sec=document.querySelector('section.vproc');if(!sec||sec.dataset.vpInit)return;sec.dataset.vpInit='1';
+  var arts=[].slice.call(sec.querySelectorAll(':scope > article.ccard'));if(!arts.length)return;
+  /* 包一层 vp-wrap / vp-list（DOM 平移，不删除任何节点） */
+  var wrap=document.createElement('div');wrap.className='vp-wrap';
+  var list=document.createElement('div');list.className='vp-list';
+  sec.insertBefore(wrap,arts[0]);
+  arts.forEach(function(a){list.appendChild(a)});
+  wrap.appendChild(list);
+  /* C 索引面板 */
+  var idx=document.createElement('div');idx.className='vp-index';
+  var btns=arts.map(function(a,i){
+    var b=document.createElement('button');b.type='button';
+    var i0=document.createElement('i');i0.textContent=a.querySelector('.num').textContent;
+    b.appendChild(i0);b.appendChild(document.createTextNode(a.querySelector('h4').textContent));
+    b.addEventListener('click',function(){a.scrollIntoView({behavior:'smooth',block:'start'});setOn(i)});
+    idx.appendChild(b);return b;
+  });
+  wrap.insertBefore(idx,list);
+  function setOn(i){btns.forEach(function(b,j){b.classList.toggle('on',j===i)})}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting)setOn(arts.indexOf(e.target))});
+    },{rootMargin:'-25% 0px -65% 0px'});
+    arts.forEach(function(a){io.observe(a)});
+  }
+  /* 切换按钮 */
+  var sw=document.createElement('div');sw.className='vp-switch';sw.setAttribute('role','group');sw.setAttribute('aria-label','六大工艺排版切换');
+  [['orig','原样'],['a','A 通栏'],['b','B 矩阵'],['c','C 索引']].forEach(function(p){
+    var b=document.createElement('button');b.type='button';b.dataset.vpv=p[0];b.textContent=p[1];
+    if(p[0]==='orig')b.classList.add('on');sw.appendChild(b);
+  });
+  sec.insertBefore(sw,sec.firstChild);
+  sw.addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    var v=b.dataset.vpv;
+    [].forEach.call(sw.querySelectorAll('button'),function(x){x.classList.toggle('on',x===b)});
+    sec.setAttribute('data-vp',v);
+    if(v==='c')setOn(0);
+  });
+})();
+</script>
 </body>
 </html>
