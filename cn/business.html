@@ -560,11 +560,11 @@
     <div class="inner maxSize">
       <span class="bizx-eyebrow">FAQ</span>
       <h2 class="bizx-h2">常见问题</h2>
-      <div class="bizx-qa"><h3>OEM 和 ODM 有什么区别？</h3><p>OEM 按您的图纸与规格生产；ODM 由我们负责从设计到量产的完整开发，您提出品类、定位与品牌方向即可。</p></div>
-      <div class="bizx-qa"><h3>可以只做局部改款吗？</h3><p>可以。可基于现有车型做外观与配色、电池与电机、车架与结构等局部调整，也可以从需求开始正向开发。</p></div>
-      <div class="bizx-qa"><h3>开发流程一共多少步？</h3><p>共 10 个环节，从需求分析、概念设计到试验检测、批量装配，完整流程见「ODM 全流程」页面。</p></div>
-      <div class="bizx-qa"><h3>上牌与认证怎么处理？</h3><p>车辆可按目标市场的上牌与认证要求做配置评估，相关法规资料可在咨询时一并提供。</p></div>
-      <div class="bizx-qa"><h3>起订量和交期怎么算？</h3><p>按车型、配置与订单规模逐项评估，咨询时给出具体结论。</p></div>
+      <div class="bizx-qa faq-row"><span class="faq-n">Q1</span><div class="faq-col"><h3>OEM 和 ODM 有什么区别？</h3><p>OEM 按您的图纸与规格生产；ODM 由我们负责从设计到量产的完整开发，您提出品类、定位与品牌方向即可。</p></div></div>
+      <div class="bizx-qa faq-row"><span class="faq-n">Q2</span><div class="faq-col"><h3>可以只做局部改款吗？</h3><p>可以。可基于现有车型做外观与配色、电池与电机、车架与结构等局部调整，也可以从需求开始正向开发。</p></div></div>
+      <div class="bizx-qa faq-row"><span class="faq-n">Q3</span><div class="faq-col"><h3>开发流程一共多少步？</h3><p>共 10 个环节，从需求分析、概念设计到试验检测、批量装配，完整流程见「ODM 全流程」页面。</p></div></div>
+      <div class="bizx-qa faq-row"><span class="faq-n">Q4</span><div class="faq-col"><h3>上牌与认证怎么处理？</h3><p>车辆可按目标市场的上牌与认证要求做配置评估，相关法规资料可在咨询时一并提供。</p></div></div>
+      <div class="bizx-qa faq-row"><span class="faq-n">Q5</span><div class="faq-col"><h3>起订量和交期怎么算？</h3><p>按车型、配置与订单规模逐项评估，咨询时给出具体结论。</p></div></div>
     </div>
   </section>
 
@@ -2522,6 +2522,15 @@
 .business .bizx-qa{margin-top:clamp(20px,2vw,32px);border-top:1px solid #e4e4e4;padding:clamp(16px,1.6vw,24px) 0}
 .business .bizx-qa h3{font-size:clamp(15px,1.2vw,18px);color:#171717;margin:0;font-weight:700}
 .business .bizx-qa p{margin:8px 0 0;font-size:clamp(13px,1vw,15px);line-height:1.8;color:#5a5a5a}
+.bizx-qa.faq-row{display:flex;gap:clamp(14px,1.6vw,28px);background:transparent;transition:background .25s ease,box-shadow .25s ease;cursor:default;position:relative;padding-left:0}
+.bizx-qa.faq-row:hover{background:#fff;box-shadow:inset 3px 0 0 #d71920,0 10px 28px rgba(23,23,23,.06)}
+.bizx-qa.faq-row .faq-n{flex:none;font:900 clamp(13px,1vw,16px)/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;color:#c9c9c4;padding-top:3px;transition:color .25s ease}
+.bizx-qa.faq-row:hover .faq-n{color:#d71920}
+.bizx-qa.faq-row .faq-col{flex:1;min-width:0}
+.bizx-qa.faq-row p{opacity:.72;transition:opacity .25s ease}
+.bizx-qa.faq-row:hover p{opacity:1}
+.bizx-qa.faq-row h3{transition:color .25s ease}
+.bizx-qa.faq-row:hover h3{color:#d71920}
 /* 工艺图文要点 */
 .business .bizx-points{list-style:none;margin:12px 0 0;padding:0}
 .business .bizx-points li{position:relative;padding-left:16px;font-size:clamp(13px,1vw,15px);line-height:1.9;color:rgba(255,255,255,.82)}
