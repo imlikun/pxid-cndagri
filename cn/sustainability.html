@@ -684,7 +684,7 @@ font-weight:400!important;display:block!important;margin:0 0 10px!important;text
   var homeY = sec.offsetTop, fixedNow = false;
   function tick(){
     var st = window.scrollY || 0;
-    var end = last ? last.offsetTop + last.offsetHeight - 600 : Infinity;
+    var end = last ? last.offsetTop + last.offsetHeight + 80 : Infinity;
     var want = st >= homeY - 4 && st < end;
     if (want && !fixedNow){
       homeY = belt.getBoundingClientRect().top + st;
