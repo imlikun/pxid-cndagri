@@ -588,5 +588,37 @@ html.cool-on .cool-r.cool-keep{transform:none}
 })();
 </script>
 
+
+<style id="mfg-tail-fix2">
+/* ===== UI 修复五处 · 2026-09-22 · 只增不删 ===== */
+/* 1) 暗带真全出血：负边距按「(视口-1840)/2 + 容器pad」外扩，内容侧同值内缩保持对齐 */
+.vbounds .capHero,.blk.vcaps,.blk.vtail,
+.vproc[data-vp="a"],.vproc[data-vp="b"],.vproc[data-vp="c"]{
+  margin-inline:calc(-1 * (max(calc((100vw - 1840px) / 2), 0px) + clamp(16px,4vw,64px)));
+  padding-inline:calc(max(calc((100vw - 1840px) / 2), 0px) + clamp(16px,4vw,64px));
+}
+/* 2) 10号段去重叠：撤 INTEGRATION 幽灵字，暗段标题幽灵号撤除，卡片改实色 */
+.vcaps::before{display:none}
+.blk.vcaps>.whead::before,.blk.vtail>.whead::before{display:none}
+.vcaps .wcapc{background:#191919;border-color:rgba(255,255,255,.09)}
+.vcaps .wcapc:hover{background:#202020;border-color:rgba(255,255,255,.22)}
+/* 3) FAQ 单列 */
+.vfaq .wfaq{grid-template-columns:1fr;gap:10px}
+/* 4) 深色工艺卡可读性（原样/变体通用） */
+.ccard.dark .crow b{color:rgba(255,255,255,.62)}
+.ccard.dark .crow .v{color:rgba(255,255,255,.94)}
+.ccard.dark .crow .v .hl{color:#fff}
+.ccard.dark .ccard-top .en{color:rgba(255,255,255,.6)}
+.ccard.dark .ccard-top{border-color:rgba(255,255,255,.16)}
+.ccard.dark .wpic img{filter:brightness(1)}
+/* 5) 变体卡减线：去外框+去卡头分隔线（投影/切角/幽灵编号保留） */
+.vproc[data-vp="a"] .ccard,.vproc[data-vp="b"] .ccard,.vproc[data-vp="c"] .ccard{border-color:transparent}
+.vproc[data-vp="a"] .ccard-top,.vproc[data-vp="b"] .ccard-top,.vproc[data-vp="c"] .ccard-top{border-bottom-color:transparent}
+/* 6) 配套：变体幽灵大字 left / 切换按钮 right 随新内边距对齐内容区 */
+.vproc[data-vp="a"]::before,.vproc[data-vp="b"]::before,.vproc[data-vp="c"]::before{
+  left:calc(max(calc((100vw - 1840px) / 2), 0px) + clamp(16px,4vw,64px))}
+.vproc .vp-switch{right:calc(max(calc((100vw - 1840px) / 2), 0px) + clamp(16px,4vw,64px))}
+</style>
+
 </body>
 </html>
