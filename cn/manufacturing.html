@@ -284,7 +284,7 @@
 /* --- 变体公共底座：全出血浅灰底 + 幽灵大字 + 切角卡 --- */
 .vproc[data-vp="a"],.vproc[data-vp="b"],.vproc[data-vp="c"]{
   margin-inline:calc(-1 * clamp(16px,4vw,64px));padding-inline:clamp(16px,4vw,64px);
-  background:#f1f0ee;border-bottom:1px solid var(--line);overflow:hidden}
+  background:#f1f0ee;border-bottom:1px solid var(--line);overflow:clip}
 .vproc[data-vp="a"]::before,.vproc[data-vp="b"]::before,.vproc[data-vp="c"]::before{
   content:"PROCESS × EQUIPMENT";position:absolute;top:clamp(4px,.6vw,10px);left:clamp(16px,4vw,64px);
   font:900 clamp(64px,9.5vw,150px)/1 "Helvetica Neue",Inter,Arial,sans-serif;letter-spacing:-.02em;
@@ -379,6 +379,9 @@
     var v=b.dataset.vpv;
     [].forEach.call(sw.querySelectorAll('button'),function(x){x.classList.toggle('on',x===b)});
     sec.setAttribute('data-vp',v);
+    /* body 的 overflow:hidden auto 会产生不滚动的 scrollport 杀死 sticky，C 档临时改为 clip/visible */
+    if(v==='c'){document.body.style.overflowX='clip';document.body.style.overflowY='visible'}
+    else{document.body.style.overflowX='';document.body.style.overflowY=''}
     if(v==='c')setOn(0);
   });
 })();
