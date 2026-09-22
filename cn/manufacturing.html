@@ -386,5 +386,207 @@
   });
 })();
 </script>
+
+<style id="mfg-tail-cool">
+/* ===== 07-尾部 工业风改造 · 2026-09-22 · 只增不删 · 吸收 moldcraft 视觉语言 ===== */
+:root{--coolRed:#d71920;--coolInk:#101010;
+  --coolMono:ui-monospace,Menlo,Consolas,"Courier New",monospace;
+  --coolDisp:"Helvetica Neue",Inter,Arial,sans-serif}
+/* --- 0. 通用：section 裁切 + whead 幽灵巨号 + mono 标签 --- */
+.vbounds,.veq8,.vqual,.vcaps,.vproof,.vfaq,.vtail{position:relative;overflow:clip}
+.vbounds>.whead,.veq8>.whead,.vqual>.whead,.vcaps>.whead,.vproof>.whead,.vfaq>.whead,.vtail>.whead{position:relative;z-index:1}
+.vbounds>.whead::before,.veq8>.whead::before,.vqual>.whead::before,.vcaps>.whead::before,
+.vproof>.whead::before,.vfaq>.whead::before,.vtail>.whead::before{
+  content:attr(data-ghost);position:absolute;left:-.03em;top:-.18em;z-index:-1;
+  font:900 clamp(84px,10.5vw,164px)/1 var(--coolDisp);letter-spacing:-.045em;white-space:nowrap;
+  color:transparent;-webkit-text-stroke:1.5px rgba(23,23,23,.10);pointer-events:none;user-select:none}
+.vcaps>.whead::before,.vtail>.whead::before{-webkit-text-stroke-color:rgba(255,255,255,.10)}
+.vbounds .wnum,.veq8 .wnum,.vqual .wnum,.vcaps>.whead .wnum,.vproof .wnum,.vfaq .wnum{
+  font-family:var(--coolMono);font-weight:700;color:var(--coolRed);letter-spacing:.1em}
+.vbounds .wlab,.veq8 .wlab,.vqual .wlab,.vcaps>.whead .wlab,.vproof .wlab,.vfaq .wlab,.vtail .wlab{
+  font-family:var(--coolMono);letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:#8a8a8a}
+/* --- 1. 07 能力边界：暗色数据横幅 --- */
+.vbounds .capHero{position:relative;margin-inline:calc(-1*clamp(16px,4vw,64px));
+  background:var(--coolInk);clip-path:polygon(0 0,calc(100% - 34px) 0,100% 34px,100% 100%,0 100%)}
+.vbounds .capFig{min-height:clamp(240px,22vw,360px)}
+.vbounds .capFig img{filter:saturate(.65) contrast(1.18) brightness(.88);transition:filter .45s,transform .8s cubic-bezier(.16,.8,.24,1)}
+.vbounds .capHero:hover .capFig img{filter:saturate(.95) contrast(1.1) brightness(.98);transform:scale(1.03)}
+.vbounds .capNums{gap:1px;background:rgba(255,255,255,.14);padding:1px}
+.vbounds .capNums .cn{background:var(--coolInk);padding:clamp(22px,2.6vw,44px)}
+.vbounds .capNums .cn b{font-style:italic;font-weight:900;font-size:clamp(30px,3vw,52px);letter-spacing:-.03em;color:#fff}
+.vbounds .capNums .cn b span{color:var(--coolRed);font-weight:600}
+.vbounds .capNums .cn i{font-family:var(--coolMono);font-style:normal;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:12px}
+/* 能力边界表 */
+.vbounds .wtable th{font-family:var(--coolMono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+.vbounds .wtable tbody tr{transition:background .18s,box-shadow .18s}
+.vbounds .wtable tbody tr:hover{background:#faf7f6;box-shadow:inset 3px 0 0 var(--coolRed)}
+/* --- 2. 08 设备清单：灰度→彩色 + 红角标 + 巨号台数 --- */
+.veq8 .wgridEq{counter-reset:eq}
+.veq8 .weq{counter-increment:eq}
+.veq8 .eqFig::after{content:counter(eq,decimal-leading-zero);position:absolute;right:10px;bottom:10px;z-index:2;
+  font:700 12px/1 var(--coolMono);letter-spacing:.12em;color:#fff;background:var(--coolRed);padding:5px 9px}
+.veq8 .eqFig img{filter:grayscale(1) contrast(1.1);transition:transform .7s cubic-bezier(.16,.8,.24,1),filter .45s}
+.veq8 .weq:hover .eqFig img{transform:scale(1.05);filter:grayscale(0) contrast(1.04)}
+.veq8 .weqcnt{display:flex;align-items:baseline;gap:7px}
+.veq8 .weqcnt b{font:italic 900 clamp(30px,2.8vw,46px)/1 var(--coolDisp);letter-spacing:-.03em;color:#171717}
+.veq8 .weqcnt span{font-family:var(--coolMono);font-size:11px;letter-spacing:.14em;color:var(--coolRed)}
+.veq8 .weq:hover h4{color:var(--coolRed)}
+.veq8 .weq h4{transition:color .2s}
+/* --- 3. 09 四道关口：横轴节点 --- */
+.vqual .wcols{position:relative;padding-top:clamp(30px,3.4vw,50px)}
+.vqual .wcols::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(23,23,23,.18)}
+.vqual .wq{border-top:0;padding-top:0;transition:transform .26s cubic-bezier(.2,.7,.2,1)}
+.vqual .wq::before{content:"";position:absolute;left:1px;bottom:100%;width:1px;height:clamp(16px,2vw,28px);background:rgba(23,23,23,.32)}
+.vqual .wq{position:relative}
+.vqual .wq::after{content:"";position:absolute;left:-3.5px;bottom:calc(100% + clamp(16px,2vw,28px) - 4px);
+  width:9px;height:9px;border-radius:50%;background:#fff;border:1px solid rgba(23,23,23,.42);transition:all .2s}
+.vqual .wq:hover{transform:translateY(-6px)}
+.vqual .wq:hover::after{background:var(--coolRed);border-color:var(--coolRed)}
+.vqual .wqk{font-family:var(--coolMono);font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--coolRed)}
+.vqual .wqimgs .wpic img{filter:grayscale(.85) contrast(1.12);transition:filter .45s,transform .8s cubic-bezier(.16,.8,.24,1)}
+.vqual .wqimgs .wpic:hover img{filter:grayscale(0) contrast(1.04);transform:scale(1.03)}
+/* --- 4. 10 整合能力：幽灵字 + 切角暗卡 --- */
+.vcaps::before{content:"INTEGRATION";position:absolute;top:clamp(10px,1.2vw,22px);left:0;z-index:0;
+  font:900 clamp(58px,8.5vw,140px)/1 var(--coolDisp);letter-spacing:-.03em;white-space:nowrap;
+  color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.08);pointer-events:none;user-select:none}
+.vcaps .wgridCap{position:relative;z-index:1;gap:clamp(14px,1.6vw,24px)}
+.vcaps .wcapc{position:relative;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.12);
+  padding:clamp(22px,2.2vw,36px);transition:border-color .22s,transform .26s cubic-bezier(.2,.7,.2,1),background .22s;
+  clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%)}
+.vcaps .wcapc:hover{border-color:rgba(255,255,255,.36);background:rgba(255,255,255,.055);transform:translateY(-6px)}
+.vcaps .wcapc .wnum{display:block;font:italic 900 clamp(30px,2.6vw,44px)/1 var(--coolDisp);letter-spacing:-.03em;
+  color:transparent;-webkit-text-stroke:1.2px rgba(255,255,255,.38);transition:-webkit-text-stroke-color .2s}
+.vcaps .wcapc:hover .wnum{-webkit-text-stroke-color:var(--coolRed)}
+/* --- 5. 11 产线实录：灰墙 hover 复色 --- */
+.vproof .wcard4{transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s}
+.vproof .wcard4:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(23,23,23,.18)}
+.vproof .wpic img{filter:grayscale(.85) contrast(1.12) brightness(.95);
+  transition:transform .8s cubic-bezier(.16,.8,.24,1),filter .45s}
+.vproof .wcard4:hover .wpic img{transform:scale(1.06);filter:grayscale(0) contrast(1.04) brightness(1)}
+.vproof .wcardcap .wnum{font-family:var(--coolMono);font-weight:700;letter-spacing:.12em;color:var(--coolRed)}
+/* --- 6. 12 常见问题：幽灵 Q + hover --- */
+.vfaq .wfaq{counter-reset:fq}
+.vfaq .wfq{counter-increment:fq;position:relative;transition:transform .24s cubic-bezier(.2,.7,.2,1),border-color .2s,box-shadow .24s}
+.vfaq .wfq::before{content:"Q" counter(fq,decimal-leading-zero);position:absolute;right:14px;top:12px;
+  font:900 clamp(26px,2.2vw,36px)/1 var(--coolDisp);letter-spacing:-.02em;
+  color:transparent;-webkit-text-stroke:1.2px #e2e0dc;pointer-events:none;transition:-webkit-text-stroke-color .2s}
+.vfaq .wfq:hover{transform:translateY(-4px);border-color:#171717;box-shadow:0 14px 36px rgba(23,23,23,.12)}
+.vfaq .wfq:hover::before{-webkit-text-stroke-color:var(--coolRed)}
+.vfaq .wfq:hover h4{color:var(--coolRed)}
+.vfaq .wfq h4{transition:color .2s}
+/* --- 7. 尾部 CTA：暗色全出血横幅 --- */
+.vtail{margin-inline:calc(-1*clamp(16px,4vw,64px));padding-inline:clamp(16px,4vw,64px);
+  padding-block:clamp(56px,6.5vw,104px);background:var(--coolInk);border-bottom:0}
+.vtail .wtxt{position:relative;z-index:1}
+.vtail .wttl{color:#fff;font-size:clamp(26px,3vw,46px);letter-spacing:-.01em}
+.vtail .wlede{color:rgba(255,255,255,.62)}
+.vtail .wlab{color:var(--coolRed)}
+.vtail .wbtn{border:1px solid rgba(255,255,255,.42);background:transparent;color:#fff;transition:all .22s}
+.vtail .wbtn:hover{border-color:#fff;opacity:1;transform:translateY(-2px)}
+.vtail .wbtn.red{background:var(--coolRed);border-color:var(--coolRed)}
+.vtail .wbtn.red:hover{box-shadow:0 12px 34px rgba(215,25,32,.45)}
+.vtail .wimg .wpic{clip-path:polygon(0 0,calc(100% - 26px) 0,100% 26px,100% 100%,0 100%)}
+.vtail .wimg .wpic img{filter:saturate(.75) contrast(1.12) brightness(.9);transition:filter .45s}
+.vtail .wimg .wpic:hover img{filter:saturate(1) contrast(1.05) brightness(1)}
+/* --- 8. 滚动渐入（JS 加 cool-on 后才生效，无 JS 不受影响） --- */
+html.cool-on .cool-r{opacity:0;transform:translateY(26px);
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+html.cool-on .cool-r.in{opacity:1;transform:none}
+/* vtail / capHero 自身整体渐入时不叠加位移冲突 */
+html.cool-on .cool-r.cool-keep{transform:none}
+@media (prefers-reduced-motion:reduce){
+  html.cool-on .cool-r{opacity:1;transform:none;transition:none}}
+/* --- 9. 移动端收敛 --- */
+@media (max-width:860px){
+  .vbounds>.whead::before,.veq8>.whead::before,.vqual>.whead::before,.vcaps>.whead::before,
+  .vproof>.whead::before,.vfaq>.whead::before,.vtail>.whead::before{font-size:64px}
+  .vbounds .capHero{clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%)}
+  .vtail .wimg{margin-top:clamp(16px,4vw,28px)}
+}
+</style>
+
+
+<script id="mfg-tail-cool-js">
+/* ===== 07-尾部 工业风改造 JS · 只增不删 ===== */
+(function(){
+  var d=document;
+  d.documentElement.classList.add('cool-on');
+  var SECS=['.vbounds','.veq8','.vqual','.vcaps','.vproof','.vfaq','.vtail'];
+
+  /* 08 section 打标（该 section 无专属类） */
+  var g=d.querySelector('.wgridEq');
+  if(g){var s8=g.closest('section');if(s8)s8.classList.add('veq8');}
+
+  /* whead 幽灵巨号文案 = wnum（vtail 无 wnum 用 START） */
+  SECS.forEach(function(sel){
+    var s=d.querySelector(sel);if(!s)return;
+    var h=s.querySelector(':scope > .whead');if(!h)return;
+    var n=h.querySelector('.wnum');
+    h.setAttribute('data-ghost', n? n.textContent.trim() : 'START');
+  });
+
+  /* .weqcnt「9 台」→ 巨号数字 + mono 单位 */
+  d.querySelectorAll('.veq8 .weqcnt').forEach(function(el){
+    if(el.dataset.coolDone)return;el.dataset.coolDone='1';
+    var t=el.textContent.trim(),m=t.match(/^(\d+)/);
+    if(m)el.innerHTML='<b>'+m[1]+'</b><span>'+t.slice(m[1].length).trim()+'</span>';
+  });
+
+  /* 滚动渐入 */
+  function mark(el,idx){
+    el.classList.add('cool-r');
+    el.style.transitionDelay=Math.min(idx*60,420)+'ms';
+    io.observe(el);
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  SECS.forEach(function(sel){
+    var s=d.querySelector(sel);if(!s)return;
+    var h=s.querySelector(':scope > .whead');if(h)mark(h,0);
+    var cells=s.querySelectorAll(':scope > .capHero, :scope > .wtable, :scope > .wqimgs, :scope > .wcols, '+
+      ':scope > .wgridEq > .weq, :scope > .wcols > .wq, :scope > .wgrid4 > .wcapc, '+
+      ':scope > .wgrid4 > .wcard4, :scope > .wfaq > .wfq, :scope > .wcols > .wtxt, :scope > .wcols > .wimg');
+    var seen={};
+    cells.forEach(function(c){if(!seen[c]) {seen[c]=1;} });
+    var i=1;
+    cells.forEach(function(c){mark(c,i++);});
+  });
+
+  /* 数字滚动（保留 × – 单位符号与红色 span） */
+  function countUpEl(el){
+    var nodes=[];
+    (function walk(n){n.childNodes.forEach(function(c){
+      if(c.nodeType===3&&/\d/.test(c.nodeValue))nodes.push(c);
+      else if(c.nodeType===1)walk(c);});})(el);
+    nodes.forEach(function(nd){
+      var parts=nd.nodeValue.split(/(\d+)/);
+      if(!parts.some(function(p){return /^\d+$/.test(p)}))return;
+      var tg=parts.map(function(p){return /^\d+$/.test(p)?parseInt(p,10):null});
+      var t0=null;
+      function step(ts){
+        if(!t0)t0=ts;
+        var k=Math.min((ts-t0)/1100,1);k=1-Math.pow(1-k,3);
+        nd.nodeValue=parts.map(function(p,i){return tg[i]==null?p:String(Math.round(tg[i]*k))}).join('');
+        if(k<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  var capN=d.querySelector('.capNums');
+  if(capN){
+    var done=false;
+    var cio=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting&&!done){done=true;cio.disconnect();
+          e.target.querySelectorAll('.cn b').forEach(countUpEl);}
+      });
+    },{threshold:.35});
+    cio.observe(capN);
+  }
+})();
+</script>
+
 </body>
 </html>
