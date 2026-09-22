@@ -485,5 +485,22 @@
 <script src="../templates/assets/pxid-site.js?v=20260920-stage-anchor1"></script>
 
 
+
+<style id="pxid-co-shortlines" data-co-shortlines>
+/* ===== 长线改短线（坤哥 2026-09-22）：通栏装饰线全部收成 34px 短杠，与红色短杠同节奏 ===== */
+/* 1) 资质项：去通栏灰线，保留原 34px 红短杠 */
+.pxid-co-aw-qual>div{border-top-color:transparent !important}
+/* 2) 认证与获奖证书 / 设计奖项 h3：2px 通栏黑线改 34px 短线 */
+.pxid-co-aw-col>h3{position:relative;border-bottom-color:transparent !important}
+.pxid-co-aw-col>h3::after{content:"";position:absolute;left:0;bottom:0;width:34px;height:2px;background:#171717}
+/* 3) 工厂数字化列表项：去通栏灰线，保留原 34px 红短杠 */
+.pxid-co-dg-list>div{border-top-color:transparent !important}
+/* 4) 订单—生产—仓储—供应链条：去顶线，flex:1 长连接线改 34px 短杠 */
+.pxid-co-dg-chain{border-top-color:transparent !important;padding-top:0 !important;margin-top:clamp(30px,3.4vw,44px) !important}
+.pxid-co-dg-chain i{flex:0 0 34px !important;min-width:34px !important;background:rgba(23,23,23,.32) !important}
+/* 5) 选择项目起点两列：2px 通栏黑线改 34px 短线 */
+.pxid-co-start-grid .col{border-top-color:transparent !important}
+.pxid-co-start-grid .col::after{content:"";position:absolute;left:0;top:0;width:34px;height:2px;background:#171717}
+</style>
 </body>
 </html>
