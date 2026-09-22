@@ -536,6 +536,7 @@
 @media (max-width:760px){#odm-stages .f3-v-dc .f3-idx-a .n{width:52%}#odm-stages .f3-v-dc .f3-idx-a .n i{font-size:13px}}
 .f3-idx-a .n i{font-size:15px;font-weight:700;color:rgba(255,255,255,.55);transition:color .2s}#odm-stages .f3-v-dc .f3-idx-a .n a:hover i,#odm-stages .f3-v-dc .f3-idx-a .n a:focus-visible i{color:#d71920}#odm-stages .f3-v-dc .f3-idx-b{position:relative;padding:0 clamp(16px,2.4vw,40px) 4px}#odm-stages .f3-v-dc .f3-idx-b::before{content:"";position:absolute;left:calc(clamp(16px,2.4vw,40px) + 6%);right:calc(clamp(16px,2.4vw,40px) + 6%);top:34px;height:1px;background:#dcdcdc}#odm-stages .f3-v-dc .f3-idx-b .n{display:grid;grid-template-columns:repeat(10,1fr);position:relative}#odm-stages .f3-v-dc .f3-idx-b .n a{display:block;text-align:center;padding:20px 0 14px}#odm-stages .f3-v-dc .f3-idx-b .n i{display:inline-block;background:#fff;padding:0 9px;font-size:13px;font-weight:700;color:#9a9a96;line-height:28px}#odm-stages .f3-v-dc .f3-idx-b .n b{display:block;font-weight:400;font-size:11.5px;color:#b3b3af;margin-top:2px}#odm-stages .f3-v-dc .f3-idx-b .n a:hover i{color:#d71920}#odm-stages .f3-v-dc .f3-idx-b .n a:hover b{color:#45453f}#odm-stages .f3-v-dc .f3-idx-c{display:grid;grid-template-columns:repeat(10,1fr);gap:2px;padding:0;margin:0 clamp(16px,2.4vw,40px)}#odm-stages .f3-v-dc .f3-idx-c a{display:flex;align-items:baseline;justify-content:center;gap:7px;padding:15px 2px;background:#f4f4f4;transition:background .2s}#odm-stages .f3-v-dc .f3-idx-c i{font-size:12px;font-weight:700;color:#d71920}#odm-stages .f3-v-dc .f3-idx-c b{font-weight:400;font-size:12px;color:#45453f}#odm-stages .f3-v-dc .f3-idx-c a:hover,#odm-stages .f3-v-dc .f3-idx-c a:focus-visible{background:#171717}#odm-stages .f3-v-dc .f3-idx-c a:hover b,#odm-stages .f3-v-dc .f3-idx-c a:focus-visible b{color:#fff}
 
+header.belt-mode{visibility:hidden}
 #odm-stages .f3-v-dc .f3-idx-a.belt-fixed{position:fixed;top:0;left:0;right:0;max-width:none;margin:0;z-index:120;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 #odm-stages .f3-v-dc .f3-c-row{scroll-margin-top:0}@media (max-width:900px){#odm-stages .f3-v-dc .f3-C .f3-c-top{flex-direction:column}#odm-stages .f3-v-dc .f3-C .f3-c-fig{flex:none;height:auto;aspect-ratio:4/3}}</style>
 
@@ -672,11 +673,12 @@ font-weight:400!important;display:block!important;margin:0 0 10px!important;text
 
 
 <script>
-/* beltStickyV3 */
+/* beltStickyV4 */
 (function(){
   var belt = document.querySelector("#odm-stages .f3-idx-a");
   var sec = document.getElementById("odm-stages");
   var last = document.getElementById("C-stage-10");
+  var hdr = document.querySelector("header");
   if (!belt || !sec) return;
   var ph = document.createElement("div");
   ph.style.display = "none";
@@ -684,7 +686,8 @@ font-weight:400!important;display:block!important;margin:0 0 10px!important;text
   var homeY = sec.offsetTop, fixedNow = false;
   function tick(){
     var st = window.scrollY || 0;
-    var end = last ? last.offsetTop + last.offsetHeight + 80 : Infinity;
+    /* 页面坐标：getBoundingClientRect + scrollY（不受 offsetParent 影响） */
+    var end = last ? last.getBoundingClientRect().top + st + last.offsetHeight + 80 : Infinity;
     var want = st >= homeY - 4 && st < end;
     if (want && !fixedNow){
       homeY = belt.getBoundingClientRect().top + st;
@@ -698,6 +701,8 @@ font-weight:400!important;display:block!important;margin:0 0 10px!important;text
       ph.style.height = "";
       fixedNow = false;
     }
+    /* 01-10 区间内：隐藏网站 nav，只留腰带横条 */
+    if (hdr) hdr.classList.toggle("belt-mode", fixedNow);
   }
   tick();
   window.addEventListener("scroll", tick, {passive:true});
