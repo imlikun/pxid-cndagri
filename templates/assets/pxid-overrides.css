@@ -5920,3 +5920,12 @@ select:focus-visible {
   .prod-sec__media{order:-1}
   .prod-gallery{grid-template-columns:1fr}
 }
+
+/* ===== cndagri iot 页内容扩充 (navdrop10) ===== */
+.prod-sec-title{font-size:clamp(22px,.3rem,34px);font-weight:700;letter-spacing:-.02em;color:#171717;margin:clamp(40px,5vw,76px) 0 0}
+.prod-mag__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(16px,2vw,30px);margin-top:clamp(18px,2vw,28px)}
+.prod-mag__grid .item{border-top:3px solid #d71920;padding-top:16px}
+.prod-mag__grid .item h4{margin:0 0 8px;font-size:17px;font-weight:700;color:#171717}
+.prod-mag__grid .item p{margin:0;color:#666;font-size:14px;line-height:1.85}
+.prod-mag__grid .item strong{color:#d71920;font-weight:700}
+@media (max-width:760px){ .prod-mag__grid{grid-template-columns:1fr} }
