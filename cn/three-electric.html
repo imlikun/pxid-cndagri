@@ -10,67 +10,8 @@
   <script src="../templates/assets/swiper-bundle.js"></script>
   <link rel="stylesheet" href="../templates/assets/index.css">
   <link rel="stylesheet" href="../templates/assets/respone.css">
-  <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260927-navdrop7">
-  <style>
-.teMain{--accent:#d71920;--ink:#171717;--line:#e4e4e4;--page:#f8f8f8;
-  background:var(--page);color:var(--ink);padding-inline:clamp(16px,4vw,64px);max-width:1840px;margin:0 auto}
-.teMain *{box-sizing:border-box;border-radius:0}
-.teMain .blk{padding:clamp(30px,2.4vw,60px) 0;border-bottom:1px solid var(--line);scroll-margin-top:90px}
-.teMain .blkDark{background:#171717;color:#fff;margin-inline:calc(-1 * clamp(16px,4vw,64px));padding-inline:clamp(16px,4vw,64px);border-bottom:0}
-.teMain .wcols{display:grid;gap:clamp(16px,1.8vw,36px);align-items:stretch}
-.teMain .c11{grid-template-columns:1fr 1fr}
-.teMain .wtxt{display:flex;flex-direction:column;justify-content:center}
-.teMain .wnum{font:800 clamp(11px,0.16rem,15px)/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.14em;color:#171717;display:block;margin-bottom:6px}
-.teMain .wlab{font:600 clamp(10px,0.15rem,13px)/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.18em;color:#9a9a9a;display:block}
-.teMain .blkDark .wlab{color:#8a8a8a}
-.teMain .wttl{font-size:clamp(21px,0.3rem,30px);font-weight:600;margin:6px 0 clamp(10px,1vw,16px);letter-spacing:-.01em;line-height:1.35;color:var(--ink)}
-.teMain .wbig2{font-size:clamp(30px,0.52rem,52px);font-weight:600;line-height:1.25;margin:8px 0 clamp(12px,1.2vw,20px);letter-spacing:-.02em;color:var(--ink)}
-.teMain .wlede{font-size:clamp(14px,0.185rem,17px);line-height:1.95;color:rgba(23,23,23,.78);margin:0;max-width:40em}
-.teMain .blkDark .wlede{color:rgba(255,255,255,.76)}
-.teMain .wfacts{list-style:none;padding:0;margin:clamp(12px,1.2vw,20px) 0 0;display:flex;flex-wrap:wrap;gap:6px 8px}
-.teMain .wfacts li{font-size:clamp(12px,0.155rem,14px);line-height:1.6;color:rgba(23,23,23,.72);border:1px solid var(--line);padding:5px 10px;background:#fff;transition:border-color .2s ease,color .2s ease}
-.teMain .wfacts li:hover{border-color:#171717;color:#171717}
-.teMain .blkDark .wfacts li{color:rgba(255,255,255,.72);border-color:rgba(255,255,255,.22);background:transparent}
-.teMain .wstat{background:#171717;color:#fff;padding:clamp(20px,2vw,30px);box-shadow:inset 0 2px 0 #d71920;transition:transform .25s ease,background .25s ease;display:flex;flex-direction:column;gap:6px}
-.teMain .wstat:hover{background:#131313;transform:translateY(-3px)}
-.teMain .wstatnum{font-size:clamp(26px,0.42rem,42px);font-weight:600;letter-spacing:-.02em;line-height:1.1}
-.teMain .wstatlab{font-size:clamp(12px,0.15rem,14px);color:rgba(255,255,255,.62)}
-.teMain .wcols2{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
-/* 部件卡 */
-.teMain .whead{display:flex;align-items:baseline;gap:14px;margin-bottom:clamp(14px,1.4vw,24px);flex-wrap:wrap}
-.teMain .whead .wttl{margin:0}
-.teMain .wheadnote{font-size:clamp(12px,0.15rem,14px);color:#9a9a9a}
-.teMain .ccard{background:#fff;border:1px solid var(--line);margin-bottom:-1px}
-.teMain .ccard-top{display:flex;align-items:baseline;gap:14px;padding:clamp(14px,1.4vw,20px) clamp(18px,1.8vw,28px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.teMain .ccard-top .num{font:800 clamp(22px,2vw,30px)/1 "Helvetica Neue",Inter,Arial,sans-serif;letter-spacing:-.03em;color:#171717;flex:none}
-.teMain .ccard-top h4{margin:0;font-size:clamp(18px,0.24rem,24px);font-weight:600;color:var(--ink)}
-.teMain .ccard-top .en{font:600 11px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.16em;color:#9a9a9a}
-.teMain .ccard-top .jump{margin-left:auto;font:600 11px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.12em;color:#b3b3b3}
-.teMain .ccard-info{padding:clamp(18px,1.8vw,28px);display:flex;flex-direction:column;gap:clamp(12px,1.2vw,18px)}
-.teMain .crow{display:grid;grid-template-columns:clamp(64px,6vw,78px) 1fr;gap:clamp(10px,1vw,18px);align-items:start}
-.teMain .crow b{font-size:clamp(12px,0.15rem,13px);font-weight:600;color:#8a8a8a;padding-top:2px}
-.teMain .crow .v{font-size:clamp(14px,0.18rem,16px);line-height:1.8;color:#2a2a2a}
-.teMain .crow .v .hl{color:#171717;font-weight:600}
-.teMain .nums{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.teMain .nums span{border:1px solid var(--line);background:#f2f2f0;padding:3px 9px;font-size:clamp(11.5px,0.145rem,13px);color:#555}
-/* 电机两路线对比 */
-.teMain .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.4vw,24px)}
-.teMain .duocol{border:1px solid var(--line);background:#fff;padding:clamp(18px,1.8vw,26px)}
-.teMain .duocol h5{margin:0 0 6px;font-size:clamp(17px,0.22rem,22px);font-weight:600;color:var(--ink)}
-.teMain .duocol .tag{font:600 10.5px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.16em;color:#171717;display:block;margin-bottom:10px}
-.teMain .duocol p{margin:0;font-size:clamp(13px,0.17rem,15px);line-height:1.85;color:rgba(23,23,23,.75)}
-.teMain .duocol .nums{margin-top:14px}
-/* CTA */
-.teMain .ctarow{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.teMain .btn-accent{display:inline-flex;align-items:center;gap:10px;background:#d71920;color:#171717;padding:14px 26px;font-size:15px;font-weight:600;letter-spacing:.02em;transition:background .2s ease}
-.teMain .btn-accent:hover{background:#b3141b}
-.teMain .btn-ghost{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.35);color:#fff;padding:13px 26px;font-size:15px;font-weight:500;transition:border-color .2s ease,color .2s ease}
-.teMain .btn-ghost:hover{border-color:#fff}
-.teMain .note{font-size:12px;color:#9a9a9a;margin-top:14px}
-@media (max-width:860px){
-  .teMain .c11,.teMain .wcols2,.teMain .duo{grid-template-columns:1fr}
-}
-  </style>
+  <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260927-navdrop8">
+  
 </head>
 <body id="app" class="threesys afterInner">
 <style id="pxid-no-wave">
@@ -113,82 +54,7 @@
   <svg class="shape-overlays" viewBox="0 0 1080 1080" preserveAspectRatio="none"><rect class="path" x="0" y="0" width="1080" height="1080"></rect></svg>
 </nav>
 <main id="main-content">
-<section class="row banner pxid-inner-hero" data-hero-image="product" data-vh="1.08"><div class="bg"><div class="photo alanGo"><div class="pic full pxid-inner-hero-media"><picture class="pxid-hero-picture"><source media="(max-width: 900px) and (orientation: portrait)" srcset="../assets/pxid/home/mobile/hero-mantis-p6-portrait.jpg" width="941" height="1672"><img src="../assets/pxid/home/mantis-mountain.png" width="1672" height="941" alt="PXID 电动出行" fetchpriority="high" loading="eager" decoding="async"></picture></div></div><div class="wave w1"><div class="mask waveItem"></div></div><div class="wave w2"><div class="mask waveItem"></div></div></div><div class="inner maxSize"><small class="f-40 wc en_m alanGo" style="font-size:1.067rem">Three-Electric System</small><h1 class="f-40 wc num_b alanGo alanFn" data-text="三电系统">三电系统</h1><div class="scrEl"><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span></div></div></section>
-<div class="teMain"><section class="blk">
-<div class="wcols c11">
-  <div class="wtxt"><span class="wlab">THREE-ELECTRIC SYSTEM</span>
-    <h2 class="wbig2">电机、控制器、仪表，<br>整车动力一套匹配</h2>
-    <p class="wlede">一台电动自行车或电动摩托车好不好骑，动力取决于三件事：电机出多大扭矩、控制器给多大电流、仪表把哪些信息讲清楚。PXID 按 ODM 整车项目做三电选型与系统匹配——三个部件在一个方案里定下来、在一台样车上联调，不拿现货拼凑。</p>
-    <ul class="wfacts"><li>电机 · 控制器 · 仪表 一体匹配</li><li>36V–72V 电压平台</li><li>FOC 矢量控制</li><li>CAN / 一线通 通讯</li></ul></div>
-  <div class="wcols2">
-    <div class="wstat"><span class="wstatnum">03</span><span class="wstatlab">核心部件，一个方案定齐</span></div>
-    <div class="wstat"><span class="wstatnum">36–72V</span><span class="wstatlab">常用电压平台</span></div>
-    <div class="wstat"><span class="wstatnum">IP67</span><span class="wstatlab">电控系统防护可选</span></div>
-    <div class="wstat"><span class="wstatnum">130Nm</span><span class="wstatlab">可选电机峰值扭矩上限</span></div>
-  </div>
-</div></section>
-
-<section class="blk" id="controller">
-<div class="whead"><span class="wnum">01</span><span class="wlab">CONTROLLER</span><h3 class="wttl">控制器 —— 整车的动力分配与安全保护</h3><span class="wheadnote">技术方案 / 平台与通讯 / 保护与合规</span></div>
-<article class="ccard"><div class="ccard-top"><span class="num">01</span><h4>控制器</h4><span class="en">CONTROLLER</span><span class="jump">MCU × FOC</span></div><div class="ccard-info">
-  <div class="crow"><b>做什么</b><span class="v">把电池的直流电，按转把指令与整车状态调制成驱动电机的三相电流，精确控制转速与扭矩；整车的电气保护、能量回收、灯光供电大多挂在这块板子上。</span></div>
-  <div class="crow"><b>技术</b><span class="v"><span class="hl">FOC 正弦波矢量控制</span>替代传统方波——噪音更低、低速更平顺、全速段效率更高。32 位车规级 MCU 配三相全桥 MOSFET 拓扑，峰值相电流按车型定位配置；支持有感（霍尔）与无感方案，上电自动识别电机相位角。</span></div>
-  <div class="crow"><b>平台</b><span class="v"><span class="hl">36V / 48V / 60V / 72V</span> 常用电压平台。与仪表、BMS 之间走 CAN 总线或一线通通讯，预留蓝牙、4G 模块扩展位；控制器固件支持 OTA 升级，售后可读取故障码。</span></div>
-  <div class="crow"><b>保护</b><span class="v">过流、过压、欠压、MOS 过温、电机过温、堵转、短路、反接、防飞车全套保护；刹车断电与滑行/制动能量回收；三档变速、定速巡航、倒车、助力（PAS）模式可配置。<span class="hl">铝合金压铸外壳，防护等级 IP65–IP67</span>，按出口市场做 EMC 合规设计。</span></div>
-  <div class="crow"><b>标签</b><span class="v"><span class="nums"><span>FOC 正弦波</span><span>CAN · 一线通</span><span>OTA 升级</span><span>能量回收</span><span>PAS 助力</span><span>IP67 可选</span></span></span></div>
-</div></article>
-</section>
-
-<section class="blk" id="meter">
-<div class="whead"><span class="wnum">02</span><span class="wlab">METER</span><h3 class="wttl">仪表 —— 骑手与整车之间的人机交互</h3><span class="wheadnote">屏幕 / 显示与诊断 / 互联与防护</span></div>
-<article class="ccard"><div class="ccard-top"><span class="num">02</span><h4>仪表</h4><span class="en">METER / DISPLAY</span><span class="jump">TFT × CAN</span></div><div class="ccard-info">
-  <div class="crow"><b>做什么</b><span class="v">与控制器实时通讯，把车速、电量、续航估算、助力档位、故障信息呈现给骑手；同时承担灯光、档位切换、模式选择这些操作入口。仪表是整车的<span class="hl">人机交互中枢</span>，不只是显示屏。</span></div>
-  <div class="crow"><b>屏幕</b><span class="v">从 LCD 段码屏到 <span class="hl">3.5–5 英寸 TFT 彩屏</span>（主流分辨率 480×800）按成本档位选型；自动背光调节——白天日光下可读、夜间骑行不刺眼。</span></div>
-  <div class="crow"><b>显示</b><span class="v">实时 / 最大 / 平均速度，剩余电量与续航估算，单次与累计里程，电机功率输出；<span class="hl">手把、控制器、电机、刹车异常实时提示</span>，故障码支持售后设备读取。</span></div>
-  <div class="crow"><b>互联</b><span class="v">蓝牙 5.0 连接手机 APP——骑行数据同步、参数自定义、导航投屏；Type-C USB 充电口给手机补电；防护 IP65–IP66，<span class="hl">-30℃–80℃ 宽温工作</span>；公里/英里切换与多语言界面，适配出口市场。</span></div>
-  <div class="crow"><b>标签</b><span class="v"><span class="nums"><span>TFT 彩屏</span><span>CAN · UART</span><span>自动背光</span><span>蓝牙 APP</span><span>故障自诊</span><span>宽温 -30~80℃</span></span></span></div>
-</div></article>
-</section>
-
-<section class="blk" id="motor">
-<div class="whead"><span class="wnum">03</span><span class="wlab">MOTOR</span><h3 class="wttl">电机 —— 按车型定位选技术路线</h3><span class="wheadnote">轮毂电机 / 中置电机 两条路线，按场景定</span></div>
-<article class="ccard"><div class="ccard-top"><span class="num">03</span><h4>电机</h4><span class="en">MOTOR</span><span class="jump">BLDC / PMSM</span></div><div class="ccard-info">
-  <div class="duo">
-    <div class="duocol"><span class="tag">HUB MOTOR</span><h5>轮毂电机</h5>
-      <p>电机直接集成在车轮内，动力零传动损耗，结构简单、免维护，成本友好。城市通勤车、共享车型、滑板车的主流选择。</p>
-      <div class="nums"><span>250W–2000W+</span><span>巡航效率 85–90%</span><span>免维护密封</span><span>前后轮均可布置</span></div></div>
-    <div class="duocol"><span class="tag">MID-DRIVE</span><h5>中置电机</h5>
-      <p>布置在车身中部，经链条或皮带驱动后轮，重心居中、操控与攀爬表现好，可借变速系统放大扭矩。高性能电摩与越野车型的首选。</p>
-      <div class="nums"><span>2000W–5000W</span><span>峰值扭矩至 130Nm</span><span>重心居中</span><span>配变速放大扭矩</span></div></div>
-  </div>
-  <div class="crow" style="margin-top:clamp(14px,1.4vw,20px)"><b>参数</b><span class="v"><span class="hl">BLDC 无刷 / 永磁同步（PMSM）</span>为主流路线；48V–72V 电压平台，额定功率与峰值扭矩按车型配置；霍尔 / 编码器双重位置反馈可选；电机本体 IP54–IP67 密封防护，静音设计。</span></div>
-  <div class="crow"><b>匹配</b><span class="v">电机与控制器、减速比、轮组同步选型——同一台车换电机路线，控制器电流与仪表显示逻辑都要跟着调，这也是三电要一套方案定的原因。</span></div>
-</div></article>
-</section>
-
-<section class="blk blkDark">
-<div class="wcols c11">
-  <div class="wtxt"><span class="wlab">SYSTEM MATCHING</span>
-    <h2 class="wbig2">三电不是三件配件，<br>是一套匹配好的系统</h2>
-    <p class="wlede">在 ODM 项目里，三电按整车需求反推：先定车型与目标市场——合规车速、载重、续航目标；再定电机功率与扭矩、控制器电流与保护策略、仪表显示与交互；最后在同一台样车上联调。打样阶段三电与车架同步迭代，不让续航虚标、过热降功率这类问题拖到量产后才暴露。</p>
-    <ul class="wfacts"><li>按车型反推参数</li><li>样车联调验证</li><li>故障码可售后读取</li><li>固件可持续 OTA</li></ul></div>
-  <div class="wcols2">
-    <div class="wstat"><span class="wstatnum">01</span><span class="wstatlab">定车型与目标市场</span></div>
-    <div class="wstat"><span class="wstatnum">02</span><span class="wstatlab">反推三电参数</span></div>
-    <div class="wstat"><span class="wstatnum">03</span><span class="wstatlab">样车集成联调</span></div>
-    <div class="wstat"><span class="wstatnum">04</span><span class="wstatlab">量产持续迭代</span></div>
-  </div>
-</div></section>
-
-<section class="blk">
-<div class="ctarow">
-  <a class="btn-accent" href="contact.html">带车型需求，启动项目 →</a>
-  <a class="btn-ghost" href="manufacturing.html">看制造能力</a>
-  <a class="btn-ghost" href="iot.html">看物联网 IOT 方案</a>
-</div>
-<p class="note">文中电压平台、功率、扭矩、防护等级为行业主流方案范围，具体参数按车型项目定义。</p>
-</section>
-</div>
+<section class="prod-hero"><div class="prod-hero__media"><img src="https://appin.site/nav/three-sites/cndagri/assets/pxid/cndagri-prod/overview-dark.png" alt="三电系统"></div><div class="prod-hero__txt"><small>THREE-ELECTRIC SYSTEM</small><h1>三电系统</h1><p>三电系统决定了电动车的加速、续航、安全与体验。PXID 以 ODM 方式提供从部件到整车电气架构的一体化方案，电压平台、通讯方式与防护等级可按车型项目定义。文中参数为行业主流方案范围，具体以车型项目为准。</p><span class="prod-hero__tag">ODM 一体化方案</span></div></section><div class="prod-grid"><div class="prod-grid__head"><h2>三电系统：动力、控制与显示的协同</h2><p>控制器、仪表、电机是电动车与电动摩托车的三大核心部件。PXID 以 ODM 方式提供从部件到整车电气架构的一体化方案，电压平台、通讯方式与防护等级可按车型项目定义。</p></div><div class="prod-grid__cards"><a class="prod-card" href="controller.html"><div class="prod-card__media"><img src="https://appin.site/nav/three-sites/cndagri/assets/pxid/cndagri-prod/controller-studio.png" alt="控制器"></div><div class="prod-card__body"><h3>控制器</h3><p>动力分配与安全保护核心，FOC 正弦波、CAN 通讯、IP67 防护。</p><span class="prod-card__more">CONTROLLER →</span></div></a><a class="prod-card" href="meter.html"><div class="prod-card__media"><img src="https://appin.site/nav/three-sites/cndagri/assets/pxid/cndagri-prod/meter-studio.png" alt="仪表"></div><div class="prod-card__body"><h3>仪表</h3><p>整车信息显示中枢，TFT 全彩、故障自诊、蓝牙 APP 互联。</p><span class="prod-card__more">METER →</span></div></a><a class="prod-card" href="motor.html"><div class="prod-card__media"><img src="https://appin.site/nav/three-sites/cndagri/assets/pxid/cndagri-prod/motor-studio.png" alt="电机"></div><div class="prod-card__body"><h3>电机</h3><p>动力输出执行端，轮毂与中置双路线，250W–5000W 可选。</p><span class="prod-card__more">MOTOR →</span></div></a></div><div class="prod-intro"><h3>关于三电系统</h3><div>三电系统决定了电动车的加速、续航、安全与体验。PXID 以 ODM 方式提供从部件到整车电气架构的一体化方案，电压平台、通讯方式与防护等级可按车型项目定义。文中参数为行业主流方案范围，具体以车型项目为准。</div></div></div>
 </main>
 <footer id="footer-contact" class="wb-footer"><footer id="footer-contact" class="wb-footer"><div class="wb-footer-wave" aria-hidden="true"><svg viewBox="0 0 1440 92" preserveAspectRatio="none" focusable="false"><path d="M0 54C176 16 315 12 469 38C636 66 770 83 934 55C1097 27 1235 15 1440 46V92H0Z"></path></svg></div><div class="wb-footer-inner"><div class="wb-footer-top"><a class="wb-footer-logo" href="index.html" aria-label="PXID 品向首页"><img src="../assets/pxid/logo-white.svg" alt="PXID 品向"></a><div class="wb-footer-links"><nav class="wb-footer-col" aria-label="产品方向"><h3>产品方向</h3><a href="business.html#ebike">电动自行车</a><a href="business.html#scooter">电动滑板车</a><a href="business.html#motorcycle">电动摩托车</a></nav><nav class="wb-footer-col" aria-label="ODM 服务"><h3>ODM 服务</h3><a href="sustainability.html#C-stage-1">产品设计</a><a href="sustainability.html#C-stage-3">结构与电控系统设计</a><a href="sustainability.html#C-stage-5">工程样车开发</a><a href="sustainability.html#C-stage-9">测试与批量生产</a></nav><nav class="wb-footer-col" aria-label="公司信息"><h3>公司</h3><a href="company.html">关于 PXID</a><a href="news.html">新闻与资料</a><a href="contact.html">项目咨询</a></nav></div></div><div class="wb-footer-mid"><div class="wb-footer-contact"><div class="wb-footer-contact-item"><svg class="wb-footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><address>江苏省淮安市清江浦区深圳东路18号4号楼</address></div><div class="wb-footer-contact-item"><svg class="wb-footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 1 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+8618936381099">+86 189 3638 1099</a></div><div class="wb-footer-contact-item"><svg class="wb-footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:inquiry@pxid.com">inquiry@pxid.com</a></div></div><div class="wb-footer-side"><div class="wb-footer-share"><h3>关注 PXID</h3><div class="wb-footer-qrs"><figure class="wb-footer-qr" title="微信"><img src="../assets/pxid/footer/qr-wechat.svg" alt="PXID 微信二维码" loading="lazy"></figure><figure class="wb-footer-qr" title="抖音"><img src="../assets/pxid/footer/qr-douyin.svg" alt="PXID 抖音二维码" loading="lazy"></figure><figure class="wb-footer-qr" title="小红书"><img src="../assets/pxid/footer/qr-xiaohongshu.svg" alt="PXID 小红书二维码" loading="lazy"></figure><figure class="wb-footer-qr" title="视频号"><img src="../assets/pxid/footer/qr-videochannel.svg" alt="PXID 视频号二维码" loading="lazy"></figure></div></div><div class="wb-footer-subscribe"><h3>订阅行业资讯</h3><form class="wb-footer-subscribe-form"><label class="sr-only" for="pxid-footer-email">邮箱地址</label><input id="pxid-footer-email" name="email" type="email" autocomplete="email" placeholder="Your Email Address_" required=""><button type="submit">订阅 <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></form><p class="wb-footer-form-status" aria-live="polite"></p></div></div></div><div class="wb-footer-bottom"><p>Copyright © 2026 PXID 品向智造. All rights reserved.</p><div><a href="privacy-policy.html">隐私政策</a><span aria-hidden="true">|</span><a href="legal-notice.html">法律声明</a><span aria-hidden="true">|</span><div class="wb-footer-top-link" role="button" tabindex="0" aria-label="返回顶部">返回顶部 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></div></div><p>从产品设计到批量生产</p></div></div></footer></footer>
 <script src="../templates/assets/pxid-motion.js"></script>

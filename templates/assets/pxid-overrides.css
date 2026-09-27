@@ -5786,3 +5786,116 @@ select:focus-visible {
 .pcNav .pxid-nav-drop a:hover::before{width:8px}
 .pcNav .pxid-nav-drop .pnd-grp2{margin-top:6px;border-top:1px solid rgba(255,255,255,.1)}
 .pcNav .pxid-nav-drop .pnd-grp2 .pnd-t{padding-top:14px}
+/* =========================================================
+   cndagri 产品成品页布局 (v6, 2026-09-27)
+   组合方案：总览=橱窗网格 / 控制器·仪表=侧栏导航 / 电机=双栏对比 / IOT=编辑杂志
+   图风格：hero 用深色环境光大图，产品卡/对比用白底棚拍
+   配色：红 #d71920 强调，深灰 #171717 重色，白底卡片
+   ========================================================= */
+.prod-hero{position:relative;min-height:clamp(360px,52vh,560px);display:flex;align-items:flex-end;
+  overflow:hidden;background:#111}
+.prod-hero__media{position:absolute;inset:0}
+.prod-hero__media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.prod-hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(17,17,17,.30) 0%,rgba(17,17,17,.12) 42%,rgba(17,17,17,.86) 100%)}
+.prod-hero__txt{position:relative;z-index:2;color:#fff;padding:clamp(24px,4vw,64px);max-width:1120px}
+.prod-hero__txt small{display:block;font:600 12px/1 ui-monospace,Menlo,Consolas,monospace;
+  letter-spacing:.22em;color:rgba(255,255,255,.72);margin-bottom:14px}
+.prod-hero__txt h1{margin:0;font-size:clamp(34px,5vw,66px);font-weight:700;letter-spacing:-.02em;line-height:1.04}
+.prod-hero__txt p{margin:16px 0 0;max-width:46em;font-size:clamp(15px,.18rem,18px);line-height:1.8;color:rgba(255,255,255,.82)}
+.prod-hero__tag{display:inline-block;margin-top:20px;background:#d71920;color:#fff;
+  font:600 12px/1 ui-monospace,monospace;letter-spacing:.12em;padding:9px 15px}
+
+/* ---- L2 侧栏导航（控制器 / 仪表） ---- */
+.prod-sidenav{display:grid;grid-template-columns:240px 1fr;gap:clamp(24px,3vw,56px);
+  max-width:1280px;margin:0 auto;padding:clamp(36px,4vw,72px) clamp(16px,4vw,64px)}
+.prod-sidenav__rail{position:sticky;top:96px;align-self:start;display:flex;flex-direction:column;
+  border-left:2px solid #f0f0f0}
+.prod-sidenav__rail a{font-size:14px;color:#666;padding:11px 0 11px 18px;margin-left:-2px;
+  border-left:2px solid transparent;transition:color .2s,border-color .2s}
+.prod-sidenav__rail a:hover,.prod-sidenav__rail a.active{color:#d71920;border-left-color:#d71920}
+.prod-sidenav__main>section{scroll-margin-top:96px;padding:0 0 clamp(34px,3.2vw,56px);
+  margin:0 0 clamp(34px,3.2vw,56px);border-bottom:1px solid #eee}
+.prod-sidenav__main>section:last-child{border-bottom:0;margin-bottom:0}
+.prod-sec h2{font-size:clamp(22px,.3rem,32px);font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
+.prod-sec .lead{font-size:clamp(15px,.18rem,17px);line-height:1.9;color:#444;margin:0 0 22px;max-width:44em}
+.prod-spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:6px}
+.prod-spec__item{border:1px solid #ececec;padding:18px 20px;background:#fff;transition:border-color .2s,transform .2s}
+.prod-spec__item:hover{border-color:#e2c4c4;transform:translateY(-2px)}
+.prod-spec__item b{display:block;font-size:12px;letter-spacing:.04em;color:#9a9a9a;font-weight:600;margin-bottom:7px}
+.prod-spec__item span{font-size:15px;color:#1a1a1a;line-height:1.6}
+.prod-spec__item .k{color:#d71920;font-weight:700}
+.prod-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:6px}
+.prod-btn{display:inline-flex;align-items:center;gap:10px;background:#d71920;color:#fff;
+  padding:14px 26px;font-size:15px;font-weight:600;transition:background .2s}
+.prod-btn:hover{background:#b3141b}
+.prod-btn--ghost{background:transparent;color:#171717;border:1px solid rgba(23,23,23,.3);font-weight:500}
+.prod-btn--ghost:hover{border-color:#171717;background:transparent}
+
+/* ---- L3 橱窗网格（三电系统总览） ---- */
+.prod-grid{max-width:1280px;margin:0 auto;padding:clamp(40px,5vw,80px) clamp(16px,4vw,64px)}
+.prod-grid__head{margin-bottom:38px;max-width:48em}
+.prod-grid__head h2{font-size:clamp(26px,.36rem,42px);font-weight:700;margin:0 0 12px;letter-spacing:-.02em}
+.prod-grid__head p{color:#555;font-size:clamp(15px,.18rem,17px);line-height:1.85;margin:0}
+.prod-grid__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,1.6vw,26px)}
+.prod-card{display:block;border:1px solid #ececec;background:#fff;overflow:hidden;
+  transition:transform .25s,box-shadow .25s,border-color .25s}
+.prod-card:hover{transform:translateY(-4px);box-shadow:0 18px 44px -22px rgba(0,0,0,.45);border-color:#e2c4c4}
+.prod-card__media{aspect-ratio:4/3;overflow:hidden;background:#f5f5f3}
+.prod-card__media img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.prod-card:hover .prod-card__media img{transform:scale(1.04)}
+.prod-card__body{padding:22px 24px 26px}
+.prod-card__body h3{margin:0 0 8px;font-size:21px;font-weight:700}
+.prod-card__body p{margin:0 0 14px;font-size:14px;line-height:1.75;color:#666}
+.prod-card__more{font:600 12px/1 ui-monospace,monospace;letter-spacing:.1em;color:#d71920;display:inline-flex;align-items:center;gap:6px}
+.prod-intro{margin-top:clamp(40px,5vw,72px);border-top:3px solid #d71920;padding-top:30px;
+  display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(20px,3vw,48px)}
+.prod-intro h3{margin:0;font-size:clamp(20px,.28rem,28px);font-weight:700}
+.prod-intro p{margin:0;color:#555;font-size:15.5px;line-height:1.95}
+.prod-intro p+p{margin-top:14px}
+
+/* ---- L5 双栏对比（电机：轮毂 vs 中置） ---- */
+.prod-duo{max-width:1280px;margin:0 auto;padding:clamp(40px,5vw,80px) clamp(16px,4vw,64px)}
+.prod-duo__head{margin-bottom:40px;max-width:48em}
+.prod-duo__head h2{font-size:clamp(26px,.36rem,42px);font-weight:700;margin:0 0 12px;letter-spacing:-.02em}
+.prod-duo__head p{color:#555;font-size:clamp(15px,.18rem,17px);line-height:1.85;margin:0}
+.prod-duo__cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,32px)}
+.prod-duo__col{border:1px solid #ececec;background:#fff;display:flex;flex-direction:column}
+.prod-duo__col .media{aspect-ratio:16/10;overflow:hidden;background:#f5f5f3}
+.prod-duo__col .media img{width:100%;height:100%;object-fit:cover}
+.prod-duo__col .body{padding:24px 26px 30px;display:flex;flex-direction:column;flex:1}
+.prod-duo__col .body h3{font-size:23px;margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+.prod-duo__col .body .en{font:600 11px/1 ui-monospace,monospace;letter-spacing:.16em;color:#d71920}
+.prod-duo__col .body p{color:#555;line-height:1.8;font-size:14.5px;margin:0 0 16px}
+.prod-duo__col ul{margin:auto 0 0;padding:0;list-style:none;display:grid;gap:9px}
+.prod-duo__col li{font-size:14px;color:#444;padding-left:18px;position:relative;line-height:1.6}
+.prod-duo__col li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:#d71920}
+.prod-duo__note{margin-top:clamp(24px,3vw,40px);background:#171717;color:#fff;padding:clamp(22px,2.4vw,34px)}
+.prod-duo__note h4{margin:0 0 10px;font-size:18px}
+.prod-duo__note p{margin:0;color:rgba(255,255,255,.78);font-size:14.5px;line-height:1.85;max-width:60em}
+
+/* ---- L4 编辑杂志（物联网 IOT） ---- */
+.prod-mag{max-width:1280px;margin:0 auto;padding:clamp(40px,5vw,80px) clamp(16px,4vw,64px)}
+.prod-mag__wide{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,52px);
+  align-items:center;margin-bottom:clamp(36px,4vw,64px)}
+.prod-mag__wide .media{aspect-ratio:4/3;overflow:hidden;background:#f5f5f3}
+.prod-mag__wide .media img{width:100%;height:100%;object-fit:cover}
+.prod-mag__wide h2{font-size:clamp(26px,.36rem,44px);font-weight:700;letter-spacing:-.02em;margin:0 0 16px}
+.prod-mag__wide p{color:#555;font-size:clamp(15px,.18rem,17px);line-height:1.9}
+.prod-mag__split{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,1.8vw,28px)}
+.prod-mag__split .item{border-top:3px solid #d71920;padding-top:18px}
+.prod-mag__split .item h4{margin:0 0 8px;font-size:18px;font-weight:700}
+.prod-mag__split .item p{margin:0;color:#666;font-size:14px;line-height:1.85}
+
+@media (max-width:900px){
+  .prod-sidenav{grid-template-columns:1fr;padding-top:32px}
+  .prod-sidenav__rail{position:static;flex-direction:row;flex-wrap:wrap;border-left:0;
+    border-top:2px solid #f0f0f0;margin-bottom:8px}
+  .prod-sidenav__rail a{border-left:0;border-top:2px solid transparent;padding:10px 14px 10px 0}
+  .prod-sidenav__rail a.active{border-top-color:#d71920;border-left:0}
+  .prod-grid__cards{grid-template-columns:1fr}
+  .prod-intro{grid-template-columns:1fr;gap:14px}
+  .prod-duo__cols{grid-template-columns:1fr}
+  .prod-mag__wide{grid-template-columns:1fr}
+  .prod-mag__split{grid-template-columns:1fr}
+}
