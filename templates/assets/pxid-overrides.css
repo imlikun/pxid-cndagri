@@ -5784,3 +5784,16 @@ select:focus-visible {
 .pcNav .pxid-nav-drop a em{font-style:normal;font-size:10px;letter-spacing:.14em;color:#b3b3b3}
 .pcNav .pxid-nav-drop a:hover{color:#d71920;background:#f7f7f7}
 .pcNav .pxid-nav-drop a:hover em{color:#d71920}
+
+/* pxid-nav-drop 20260927v2 · 下拉视觉精修 */
+.pcNav .pxid-has-drop{position:relative}
+.pcNav .pxid-nav-drop{position:absolute;top:100%;left:50%;transform:translate(-50%,10px);width:264px;padding:4px 0 10px;background:#fff;color:#171717;border-top:2px solid #d71920;box-shadow:0 24px 48px rgba(10,10,10,.16),0 4px 12px rgba(10,10,10,.08);opacity:0;visibility:hidden;transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s;z-index:80}
+.pcNav .pxid-has-drop:hover .pxid-nav-drop,.pcNav .pxid-has-drop:focus-within .pxid-nav-drop{opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity .2s ease,transform .2s ease,visibility 0s}
+.pcNav .pxid-nav-drop::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.pcNav .pxid-nav-drop .pnd-t{display:block;padding:16px 24px 6px;font-size:11px;font-weight:700;letter-spacing:.22em;color:#9a9a9a}
+.pcNav .pxid-nav-drop a{position:relative;display:block;padding:9px 24px 9px 38px;font-size:14px;line-height:1.5;color:#171717;transition:color .15s ease}
+.pcNav .pxid-nav-drop a::before{content:"";position:absolute;left:24px;top:50%;width:0;height:2px;background:#d71920;transform:translateY(-50%);transition:width .18s ease}
+.pcNav .pxid-nav-drop a:hover{color:#d71920;background:transparent}
+.pcNav .pxid-nav-drop a:hover::before{width:8px}
+.pcNav .pxid-nav-drop .pnd-grp2{margin-top:6px;border-top:1px solid #f0f0f0}
+.pcNav .pxid-nav-drop .pnd-grp2 .pnd-t{padding-top:14px}
