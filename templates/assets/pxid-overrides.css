@@ -5952,3 +5952,38 @@ select:focus-visible {
 /* html{font-size:5.20833vw} 使 prod 容器 font-size=75px，line box strut≈112px 撑爆行距 */
 .prod-sidenav__main,.prod-mag,.prod-duo,.prod-grid,.prod-intro{font-size:15px}
 .prod-spec__item{font-size:15.5px}
+
+/* ===== navdrop13: 全宽重构（坤哥0927要求"全宽的"，去掉1280定宽边边） ===== */
+/* 1. 所有 prod 容器去掉 1280 上限，铺满视口，左右自适应留白 */
+.prod-sidenav,.prod-grid,.prod-duo,.prod-mag{
+  max-width:none;
+  width:100%;
+  padding-inline:clamp(20px,5vw,96px);
+  padding-block:clamp(40px,5vw,88px)
+}
+/* 2. controller/meter: rail 从左列 240px 改为顶部吸顶横条，内容全宽 */
+.prod-sidenav{display:block}
+.prod-sidenav__rail{
+  position:sticky;top:88px;z-index:30;
+  flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 30px;
+  background:#fff;border-left:0;border-bottom:1px solid #efefef;
+  padding:14px 0 12px;margin:0 0 clamp(28px,3vw,48px)
+}
+.prod-sidenav__rail a{
+  padding:6px 0;border-left:0;border-bottom:2px solid transparent;
+  font-size:15px;font-weight:500;color:#666
+}
+.prod-sidenav__rail a.active,.prod-sidenav__rail a:hover{
+  color:#d71920;border-left:0;border-bottom-color:#d71920
+}
+/* 3. 规格卡全宽后铺更多列 */
+.prod-spec{grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:16px 22px}
+/* 4. 理性全宽核心：文字栏限宽保可读，图片/色块自然铺满 */
+.prod-sec .lead,.prod-mag__wide p,.prod-duo__head p,.prod-grid__head p,.prod-intro p{max-width:62ch}
+.prod-sec__txt h2{font-size:clamp(24px,.34rem,38px)}
+/* 5. 大图全宽出血工具类 */
+.bleed{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}
+@media (max-width:900px){
+  .prod-sidenav__rail{top:0;gap:4px 18px;padding:12px 0 10px}
+  .prod-sidenav__rail a{font-size:14px}
+}
