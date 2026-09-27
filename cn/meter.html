@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="chinaLg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>仪表｜PXID 品向 · 电动车/电摩 TFT 彩屏、CAN 通讯、蓝牙互联、故障自诊</title>
+  <meta name="description" content="PXID 品向仪表：电动自行车与电动摩托车的人机交互中枢，TFT 彩屏、CAN/UART 通讯、自动背光、蓝牙 APP 互联与故障自诊，适配出口市场宽温与多语言。">
+  <link rel="icon" href="../assets/pxid/logo-dark.png" type="image/png">
+  <script src="../templates/assets/swiper-bundle.js"></script>
+  <link rel="stylesheet" href="../templates/assets/index.css">
+  <link rel="stylesheet" href="../templates/assets/respone.css">
+  <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260927-navdrop1">
+<style>
+.peMain{--accent:#afe226;--ink:#1a3837;--dark:#1a3837;--line:#e4e4e4;--page:#f8f8f8;
+  background:var(--page);color:var(--ink);padding-inline:clamp(16px,4vw,64px);max-width:1840px;margin:0 auto}
+.peMain *{box-sizing:border-box;border-radius:0}
+.peMain .blk{padding:clamp(30px,2.4vw,60px) 0;border-bottom:1px solid var(--line);scroll-margin-top:90px}
+.peMain .blkDark{background:#1a3837;color:#fff;margin-inline:calc(-1 * clamp(16px,4vw,64px));padding-inline:clamp(16px,4vw,64px);border-bottom:0}
+.peMain .wcols{display:grid;gap:clamp(16px,1.8vw,36px);align-items:stretch}
+.peMain .c11{grid-template-columns:1fr 1fr}
+.peMain .wtxt{display:flex;flex-direction:column;justify-content:center}
+.peMain .wnum{font:800 clamp(11px,0.16rem,15px)/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.14em;color:#1a3837;display:block;margin-bottom:6px}
+.peMain .wlab{font:600 clamp(10px,0.15rem,13px)/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.18em;color:#9a9a9a;display:block}
+.peMain .blkDark .wlab{color:#8a8a8a}
+.peMain .wttl{font-size:clamp(21px,0.3rem,30px);font-weight:600;margin:6px 0 clamp(10px,1vw,16px);letter-spacing:-.01em;line-height:1.35;color:#1a3837}
+.peMain .wbig2{font-size:clamp(30px,0.52rem,52px);font-weight:600;line-height:1.25;margin:8px 0 clamp(12px,1.2vw,20px);letter-spacing:-.02em;color:#1a3837}
+.peMain .wlede{font-size:clamp(14px,0.185rem,17px);line-height:1.95;color:rgba(26,56,55,.78);margin:0;max-width:40em}
+.peMain .blkDark .wlede{color:rgba(255,255,255,.76)}
+.peMain .wfacts{list-style:none;padding:0;margin:clamp(12px,1.2vw,20px) 0 0;display:flex;flex-wrap:wrap;gap:6px 8px}
+.peMain .wfacts li{font-size:clamp(12px,0.155rem,14px);line-height:1.6;color:rgba(26,56,55,.72);border:1px solid var(--line);padding:5px 10px;background:#fff;transition:border-color .2s ease,color .2s ease}
+.peMain .wfacts li:hover{border-color:#1a3837;color:#1a3837}
+.peMain .blkDark .wfacts li{color:rgba(255,255,255,.72);border-color:rgba(255,255,255,.22);background:transparent}
+.peMain .wstat{background:#1a3837;color:#fff;padding:clamp(20px,2vw,30px);box-shadow:inset 0 2px 0 #afe226;transition:transform .25s ease,background .25s ease;display:flex;flex-direction:column;gap:6px}
+.peMain .wstat:hover{background:#16302f;transform:translateY(-3px)}
+.peMain .wstatnum{font-size:clamp(26px,0.42rem,42px);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.peMain .wstatlab{font-size:clamp(12px,0.15rem,14px);color:rgba(255,255,255,.62)}
+.peMain .wcols2{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+.peMain .whead{display:flex;align-items:baseline;gap:14px;margin-bottom:clamp(14px,1.4vw,24px);flex-wrap:wrap}
+.peMain .whead .wttl{margin:0}
+.peMain .wheadnote{font-size:clamp(12px,0.15rem,14px);color:#9a9a9a}
+.peMain .ccard{background:#fff;border:1px solid var(--line);margin-bottom:-1px}
+.peMain .ccard-top{display:flex;align-items:baseline;gap:14px;padding:clamp(14px,1.4vw,20px) clamp(18px,1.8vw,28px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.peMain .ccard-top .num{font:800 clamp(22px,2vw,30px)/1 "Helvetica Neue",Inter,Arial,sans-serif;letter-spacing:-.03em;color:#1a3837;flex:none}
+.peMain .ccard-top h4{margin:0;font-size:clamp(18px,0.24rem,24px);font-weight:600;color:#1a3837}
+.peMain .ccard-top .en{font:600 11px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.16em;color:#9a9a9a}
+.peMain .ccard-top .jump{margin-left:auto;font:600 11px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.12em;color:#b3b3b3}
+.peMain .ccard-info{padding:clamp(18px,1.8vw,28px);display:flex;flex-direction:column;gap:clamp(12px,1.2vw,18px)}
+.peMain .crow{display:grid;grid-template-columns:clamp(64px,6vw,78px) 1fr;gap:clamp(10px,1vw,18px);align-items:start}
+.peMain .crow b{font-size:clamp(12px,0.15rem,13px);font-weight:600;color:#8a8a8a;padding-top:2px}
+.peMain .crow .v{font-size:clamp(14px,0.18rem,16px);line-height:1.8;color:#2a2a2a}
+.peMain .crow .v .hl{color:#1a3837;font-weight:600}
+.peMain .nums{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.peMain .nums span{border:1px solid var(--line);background:#f2f2f0;padding:3px 9px;font-size:clamp(11.5px,0.145rem,13px);color:#555}
+.peMain .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.4vw,24px)}
+.peMain .duocol{border:1px solid var(--line);background:#fff;padding:clamp(18px,1.8vw,26px)}
+.peMain .duocol h5{margin:0 0 6px;font-size:clamp(17px,0.22rem,22px);font-weight:600;color:#1a3837}
+.peMain .duocol .tag{font:600 10.5px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.16em;color:#1a3837;display:block;margin-bottom:10px}
+.peMain .duocol p{margin:0;font-size:clamp(13px,0.17rem,15px);line-height:1.85;color:rgba(26,56,55,.75)}
+.peMain .duocol .nums{margin-top:14px}
+.peMain .ctarow{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.peMain .btn-accent{display:inline-flex;align-items:center;gap:10px;background:#afe226;color:#1a3837;padding:14px 26px;font-size:15px;font-weight:600;letter-spacing:.02em;transition:background .2s ease}
+.peMain .btn-accent:hover{background:#9bce1f}
+.peMain .btn-ghost{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(26,56,55,.3);color:#1a3837;padding:13px 26px;font-size:15px;font-weight:500;transition:border-color .2s ease,color .2s ease}
+.peMain .btn-ghost:hover{border-color:#1a3837}
+.peMain .note{font-size:12px;color:#9a9a9a;margin-top:14px}
+@media (max-width:860px){
+  .peMain .c11,.peMain .wcols2,.peMain .duo{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body id="app" class="threesys afterInner">
+<style id="pxid-no-wave">
+  .wave, .wave.w1, .wave.w2{display:none !important}
+  #app footer .wb-footer-wave,
+  #app footer .pxid-footer-wave,
+  #app footer .wb-footer-wave svg,
+  #app footer .pxid-footer-wave svg,
+  #app footer .bg,
+  #app footer .bg .water{display:none !important}
+  .afterInner footer,
+  #app footer.wb-footer,
+  #app footer.pxid-footer{margin-top:0 !important}
+  #app footer{border-top:1px solid rgba(255,255,255,.16)}
+</style>
+<header>
+  <nav class="pcNav pc">
+    <a href="index.html" class="col logo">
+      <img class="white" src="../assets/pxid/logo-white.svg" alt="PXID 品向">
+      <img class="black" src="../assets/pxid/logo-ink.svg" alt="PXID 品向">
+    </a>
+    <ul class="mid fxc"><li class="lists hrefList"><a href="index.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>首页</a></li><li class="lists hrefList pxid-has-drop"><a href="business.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>产品方案</a><div class="pxid-nav-drop" role="menu" aria-label="产品方案下拉导航"><div class="pnd-grp"><span class="pnd-t">三电系统</span><a href="controller.html">控制器</a><a href="meter.html">仪表</a><a href="motor.html">电机</a></div><div class="pnd-grp pnd-grp2"><span class="pnd-t">智能网联</span><a href="iot.html">物联网 IOT</a></div></div></li><li class="lists hrefList"><a href="manufacturing.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>制造能力</a></li><li class="lists hrefList"><a href="sustainability.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>ODM 全流程</a></li><li class="lists hrefList"><a href="news.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>洞察与资料</a></li><li class="lists hrefList"><a href="contact.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>启动项目</a></li><li class="lists hrefList"><a href="company.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>关于 PXID</a></li></ul>
+    <div class="col set fxc">
+      <div class="layer-search" data-url="search.html"><input class="search f-14 wc" type="search" aria-label="搜索产品与资料" placeholder="搜索产品与资料"><button type="button" class="sub fxc" aria-label="搜索"><i class="iconfont f-14 wc" aria-hidden="true">&#xe8af;</i></button></div>
+      <a class="language fxc" href="index.html" aria-label="英文站规划中"><span class="txt wc f-16 en_b">EN</span></a>
+    </div>
+    <div class="mask"></div>
+  </nav>
+  <nav class="appNav app">
+    <div class="mask"></div>
+    <a class="logoBox" href="index.html"><img src="../assets/pxid/logo-white.svg" alt="PXID 品向" class="logo"></a>
+    <div class="col">
+      <a href="search.html" class="searchSub fxc" aria-label="搜索"><i class="iconfont f-14 wc">&#xe8af;</i></a>
+      <button type="button" id="menu" aria-label="打开导航" aria-expanded="false" aria-controls="pxid-mobile-menu"><span class="txt">Menu</span><svg class="pxid-menu-glyph" viewBox="0 0 24 24" aria-hidden="true"><path class="pxid-menu-line pxid-menu-line-top" d="M4 8h16"></path><path class="pxid-menu-line pxid-menu-line-bottom" d="M4 16h16"></path></svg></button>
+    </div>
+  </nav>
+</header>
+<nav class="menu">
+  <div class="items" data-vh=".8"><div class="content"><a href="index.html" class="lists appNavList"><span class="en_b f-26 wc">首页</span></a><a href="business.html" class="lists appNavList"><span class="en_b f-26 wc">产品方案</span></a><a href="three-electric.html" class="lists appNavList"><span class="en_b f-26 wc">三电系统</span></a><a href="controller.html" class="lists appNavList"><span class="en_b f-26 wc">控制器</span></a><a href="meter.html" class="lists appNavList"><span class="en_b f-26 wc">仪表</span></a><a href="motor.html" class="lists appNavList"><span class="en_b f-26 wc">电机</span></a><a href="iot.html" class="lists appNavList"><span class="en_b f-26 wc">物联网 IOT</span></a><a href="sustainability.html" class="lists appNavList"><span class="en_b f-26 wc">ODM 全流程</span></a><a href="news.html" class="lists appNavList"><span class="en_b f-26 wc">洞察与资料</span></a><a href="contact.html" class="lists appNavList"><span class="en_b f-26 wc">启动项目</span></a><a href="company.html" class="lists appNavList"><span class="en_b f-26 wc">关于 PXID</span></a></div></div>
+  <svg class="shape-overlays" viewBox="0 0 1080 1080" preserveAspectRatio="none"><rect class="path" x="0" y="0" width="1080" height="1080"></rect></svg>
+</nav>
+<main id="main-content">
+<section class="row banner pxid-inner-hero" data-hero-image="product" data-vh="1.08"><div class="bg"><div class="photo alanGo"><div class="pic full pxid-inner-hero-media"><picture class="pxid-hero-picture"><source media="(max-width: 900px) and (orientation: portrait)" srcset="../assets/pxid/home/mantis-p6-portrait.jpg" width="941" height="1672"><img src="../assets/pxid/home/mantis-mountain.png" width="1672" height="941" alt="PXID 电动出行" fetchpriority="high" loading="eager" decoding="async"></picture></div></div><div class="wave w1"><div class="mask waveItem"></div></div><div class="wave w2"><div class="mask waveItem"></div></div></div><div class="inner maxSize"><small class="f-40 wc en_m alanGo" style="font-size:1.067rem">THREE-ELECTRIC · METER</small><h1 class="f-40 wc num_b alanGo alanFn" data-text="仪表">仪表</h1><div class="scrEl"><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span></div></div></section>
+<div class="peMain"><section class="blk">
+<div class="whead"><span class="wnum">02</span><span class="wlab">METER</span><h3 class="wttl">仪表 —— 骑手与整车之间的人机交互</h3><span class="wheadnote">屏幕 / 显示与诊断 / 互联与防护</span></div>
+<article class="ccard"><div class="ccard-top"><span class="num">02</span><h4>仪表</h4><span class="en">METER / DISPLAY</span><span class="jump">TFT × CAN</span></div><div class="ccard-info">
+  <div class="crow"><b>做什么</b><span class="v">与控制器实时通讯，把车速、电量、续航估算、助力档位、故障信息呈现给骑手；同时承担灯光、档位切换、模式选择这些操作入口。仪表是整车的<span class="hl">人机交互中枢</span>，不只是显示屏。</span></div>
+  <div class="crow"><b>屏幕</b><span class="v">从 LCD 段码屏到 <span class="hl">3.5–5 英寸 TFT 彩屏</span>（主流分辨率 480×800）按成本档位选型；自动背光调节——白天日光下可读、夜间骑行不刺眼。</span></div>
+  <div class="crow"><b>显示</b><span class="v">实时 / 最大 / 平均速度，剩余电量与续航估算，单次与累计里程，电机功率输出；<span class="hl">手把、控制器、电机、刹车异常实时提示</span>，故障码支持售后设备读取。</span></div>
+  <div class="crow"><b>互联</b><span class="v">蓝牙 5.0 连接手机 APP——骑行数据同步、参数自定义、导航投屏；Type-C USB 充电口给手机补电；防护 IP65–IP66，<span class="hl">-30℃–80℃ 宽温工作</span>；公里/英里切换与多语言界面，适配出口市场。</span></div>
+  <div class="crow"><b>标签</b><span class="v"><span class="nums"><span>TFT 彩屏</span><span>CAN · UART</span><span>自动背光</span><span>蓝牙 APP</span><span>故障自诊</span><span>宽温 -30~80℃</span></span></span></div>
+</div></article>
+</section>
+<section class="blk">
+  <div class="ctarow">
+    <a class="btn-accent" href="three-electric.html">← 返回三电系统总览</a>
+    <a class="btn-ghost" href="contact.html">带车型需求，启动项目 →</a>
+  </div>
+  <p class="note">文中电压平台、功率、扭矩、防护等级为行业主流方案范围，具体参数按车型项目定义。</p>
+</section>
+</div>
+</main>
+<footer id="footer-contact" class="wb-footer"><!-- FOOTER --></footer>
+<script src="../templates/assets/pxid-motion.js"></script>
+<script src="../templates/assets/pxid-site.js?v=20260920-stage-anchor1"></script>
+</body>
+</html>
