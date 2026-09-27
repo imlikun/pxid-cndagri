@@ -5776,13 +5776,13 @@ select:focus-visible {
 
 /* pxid-nav-drop 20260927v5 · 灰底白字 + 站点黄绿强调（坤哥0927定） */
 .pcNav .pxid-has-drop{position:relative}
-.pcNav .pxid-nav-drop{position:absolute;top:100%;left:50%;transform:translate(-50%,12px);width:268px;padding:6px 0 12px;background:#2a2d2b;color:#fff;border-top:2px solid #afe226;border-radius:6px;box-shadow:0 26px 52px rgba(0,0,0,.30),0 6px 14px rgba(0,0,0,.20);opacity:0;visibility:hidden;transition:opacity .22s cubic-bezier(.38,0,0,1),transform .22s cubic-bezier(.38,0,0,1),visibility 0s linear .22s;z-index:80}
+.pcNav .pxid-nav-drop{position:absolute;top:100%;left:50%;transform:translate(-50%,12px);width:268px;padding:6px 0 12px;background:#2a2d2b;color:#fff;border-top:2px solid #d71920;border-radius:6px;box-shadow:0 26px 52px rgba(0,0,0,.30),0 6px 14px rgba(0,0,0,.20);opacity:0;visibility:hidden;transition:opacity .22s cubic-bezier(.38,0,0,1),transform .22s cubic-bezier(.38,0,0,1),visibility 0s linear .22s;z-index:80}
 .pcNav .pxid-has-drop:hover .pxid-nav-drop,.pcNav .pxid-has-drop:focus-within .pxid-nav-drop{opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity .22s cubic-bezier(.38,0,0,1),transform .22s cubic-bezier(.38,0,0,1),visibility 0s}
 .pcNav .pxid-nav-drop::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
 .pcNav .pxid-nav-drop .pnd-t{display:block;padding:16px 24px 8px;font-size:11px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.5)}
 .pcNav .pxid-nav-drop a{position:relative;display:block;padding:10px 24px 10px 40px;font-size:14px;line-height:1.4;color:#fff;transition:color .16s ease,background .16s ease}
-.pcNav .pxid-nav-drop a::before{content:"";position:absolute;left:24px;top:50%;width:0;height:2px;background:#afe226;transform:translateY(-50%);transition:width .18s ease}
-.pcNav .pxid-nav-drop a:hover{color:#afe226;background:rgba(255,255,255,.05)}
+.pcNav .pxid-nav-drop a::before{content:"";position:absolute;left:24px;top:50%;width:0;height:2px;background:#d71920;transform:translateY(-50%);transition:width .18s ease}
+.pcNav .pxid-nav-drop a:hover{color:#d71920;background:rgba(255,255,255,.05)}
 .pcNav .pxid-nav-drop a:hover::before{width:8px}
 .pcNav .pxid-nav-drop .pnd-grp2{margin-top:6px;border-top:1px solid rgba(255,255,255,.1)}
 .pcNav .pxid-nav-drop .pnd-grp2 .pnd-t{padding-top:14px}
