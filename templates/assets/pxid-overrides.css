@@ -5797,3 +5797,7 @@ select:focus-visible {
 .pcNav .pxid-nav-drop a:hover::before{width:8px}
 .pcNav .pxid-nav-drop .pnd-grp2{margin-top:6px;border-top:1px solid #f0f0f0}
 .pcNav .pxid-nav-drop .pnd-grp2 .pnd-t{padding-top:14px}
+
+/* pxid-nav-drop 20260927v3 · 分组标题可点(方案1) */
+.pcNav .pxid-nav-drop .pnd-grp-h{display:block;padding:16px 24px 6px;font-size:11px;font-weight:700;letter-spacing:.22em;color:#9a9a9a;transition:color .15s ease}
+.pcNav .pxid-nav-drop .pnd-grp-h:hover{color:#d71920}
