@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="chinaLg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>物联网 IOT｜PXID 品向 · 让每一台车都在线</title>
+  <meta name="description" content="PXID 品向物联网 IOT 方案：电动自行车与电动摩托车的车载智能终端（T-BOX）、CAN/一线通数据通道、防盗与电子围栏、整车 OTA、云平台与车主 APP，覆盖合规、运营与出海场景。">
+  <link rel="icon" href="../assets/pxid/logo-dark.png" type="image/png">
+  <script src="../templates/assets/swiper-bundle.js"></script>
+  <link rel="stylesheet" href="../templates/assets/index.css">
+  <link rel="stylesheet" href="../templates/assets/respone.css">
+  <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260927-navdrop1">
+  <style>
+.ioMain{--red:#d71920;--ink:#171717;--line:#e4e4e4;--page:#f8f8f8;
+  background:var(--page);color:var(--ink);padding-inline:clamp(16px,4vw,64px);max-width:1840px;margin:0 auto}
+.ioMain *{box-sizing:border-box;border-radius:0}
+.ioMain .blk{padding:clamp(30px,2.4vw,60px) 0;border-bottom:1px solid var(--line);scroll-margin-top:90px}
+.ioMain .blkDark{background:#171717;color:#fff;margin-inline:calc(-1 * clamp(16px,4vw,64px));padding-inline:clamp(16px,4vw,64px);border-bottom:0}
+.ioMain .wcols{display:grid;gap:clamp(16px,1.8vw,36px);align-items:stretch}
+.ioMain .c11{grid-template-columns:1fr 1fr}
+.ioMain .wtxt{display:flex;flex-direction:column;justify-content:center}
+.ioMain .wnum{font:800 clamp(11px,0.16rem,15px)/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.14em;color:#d71920;display:block;margin-bottom:6px}
+.ioMain .wlab{font:600 clamp(10px,0.15rem,13px)/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.18em;color:#9a9a9a;display:block}
+.ioMain .blkDark .wlab{color:#8a8a8a}
+.ioMain .wttl{font-size:clamp(21px,0.3rem,30px);font-weight:600;margin:6px 0 clamp(10px,1vw,16px);letter-spacing:-.01em;line-height:1.35;color:var(--ink)}
+.ioMain .wbig2{font-size:clamp(30px,0.52rem,52px);font-weight:600;line-height:1.25;margin:8px 0 clamp(12px,1.2vw,20px);letter-spacing:-.02em;color:var(--ink)}
+.ioMain .wlede{font-size:clamp(14px,0.185rem,17px);line-height:1.95;color:rgba(23,23,23,.78);margin:0;max-width:40em}
+.ioMain .blkDark .wlede{color:rgba(255,255,255,.76)}
+.ioMain .wfacts{list-style:none;padding:0;margin:clamp(12px,1.2vw,20px) 0 0;display:flex;flex-wrap:wrap;gap:6px 8px}
+.ioMain .wfacts li{font-size:clamp(12px,0.155rem,14px);line-height:1.6;color:rgba(23,23,23,.72);border:1px solid var(--line);padding:5px 10px;background:#fff;transition:border-color .2s ease,color .2s ease}
+.ioMain .wfacts li:hover{border-color:#d71920;color:#d71920}
+.ioMain .blkDark .wfacts li{color:rgba(255,255,255,.72);border-color:rgba(255,255,255,.22);background:transparent}
+.ioMain .wstat{background:#171717;color:#fff;padding:clamp(20px,2vw,30px);box-shadow:inset 0 2px 0 #d71920;transition:transform .25s ease,background .25s ease;display:flex;flex-direction:column;gap:6px}
+.ioMain .wstat:hover{background:#1f1f1f;transform:translateY(-3px)}
+.ioMain .wstatnum{font-size:clamp(26px,0.42rem,42px);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.ioMain .wstatlab{font-size:clamp(12px,0.15rem,14px);color:rgba(255,255,255,.62)}
+.ioMain .wcols2{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+.ioMain .whead{display:flex;align-items:baseline;gap:14px;margin-bottom:clamp(14px,1.4vw,24px);flex-wrap:wrap}
+.ioMain .whead .wttl{margin:0}
+.ioMain .wheadnote{font-size:clamp(12px,0.15rem,14px);color:#9a9a9a}
+.ioMain .ccard{background:#fff;border:1px solid var(--line);margin-bottom:-1px}
+.ioMain .ccard-top{display:flex;align-items:baseline;gap:14px;padding:clamp(14px,1.4vw,20px) clamp(18px,1.8vw,28px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.ioMain .ccard-top .num{font:800 clamp(22px,2vw,30px)/1 "Helvetica Neue",Inter,Arial,sans-serif;letter-spacing:-.03em;color:#d71920;flex:none}
+.ioMain .ccard-top h4{margin:0;font-size:clamp(18px,0.24rem,24px);font-weight:600;color:var(--ink)}
+.ioMain .ccard-top .en{font:600 11px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.16em;color:#9a9a9a}
+.ioMain .ccard-info{padding:clamp(18px,1.8vw,28px);display:flex;flex-direction:column;gap:clamp(12px,1.2vw,18px)}
+.ioMain .crow{display:grid;grid-template-columns:clamp(64px,6vw,78px) 1fr;gap:clamp(10px,1vw,18px);align-items:start}
+.ioMain .crow b{font-size:clamp(12px,0.15rem,13px);font-weight:600;color:#8a8a8a;padding-top:2px}
+.ioMain .crow .v{font-size:clamp(14px,0.18rem,16px);line-height:1.8;color:#2a2a2a}
+.ioMain .crow .v .hl{color:#171717;font-weight:600}
+.ioMain .nums{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ioMain .nums span{border:1px solid var(--line);background:#f2f2f0;padding:3px 9px;font-size:clamp(11.5px,0.145rem,13px);color:#555}
+.ioMain .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.4vw,24px)}
+.ioMain .duocol{border:1px solid var(--line);background:#fff;padding:clamp(18px,1.8vw,26px)}
+.ioMain .duocol h5{margin:0 0 6px;font-size:clamp(17px,0.22rem,22px);font-weight:600;color:var(--ink)}
+.ioMain .duocol .tag{font:600 10.5px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.16em;color:#d71920;display:block;margin-bottom:10px}
+.ioMain .duocol p{margin:0;font-size:clamp(13px,0.17rem,15px);line-height:1.85;color:rgba(23,23,23,.75)}
+.ioMain .duocol .nums{margin-top:14px}
+.ioMain .ctarow{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.ioMain .btn-red{display:inline-flex;align-items:center;gap:10px;background:#d71920;color:#fff;padding:14px 26px;font-size:15px;font-weight:600;letter-spacing:.02em;transition:background .2s ease}
+.ioMain .btn-red:hover{background:#b3141b}
+.ioMain .btn-ghost{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.35);color:#fff;padding:13px 26px;font-size:15px;font-weight:500;transition:border-color .2s ease,color .2s ease}
+.ioMain .btn-ghost:hover{border-color:#fff}
+.ioMain .note{font-size:12px;color:#9a9a9a;margin-top:14px}
+@media (max-width:860px){
+  .ioMain .c11,.ioMain .wcols2,.ioMain .duo{grid-template-columns:1fr}
+}
+  </style>
+</head>
+<body id="app" class="iot afterInner">
+<style id="pxid-no-wave">
+  .wave, .wave.w1, .wave.w2{display:none !important}
+  #app footer .wb-footer-wave,
+  #app footer .pxid-footer-wave,
+  #app footer .wb-footer-wave svg,
+  #app footer .pxid-footer-wave svg,
+  #app footer .bg,
+  #app footer .bg .water{display:none !important}
+  .afterInner footer,
+  #app footer.wb-footer,
+  #app footer.pxid-footer{margin-top:0 !important}
+  #app footer{border-top:1px solid rgba(255,255,255,.16)}
+</style>
+<header>
+  <nav class="pcNav pc">
+    <a href="index.html" class="col logo">
+      <img class="white" src="../assets/pxid/logo-white.svg" alt="PXID 品向">
+      <img class="black" src="../assets/pxid/logo-ink.svg" alt="PXID 品向">
+    </a>
+    <ul class="mid fxc"><li class="lists hrefList"><a href="index.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>首页</a></li><li class="lists hrefList pxid-has-drop"><a href="business.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>产品方案</a><div class="pxid-nav-drop" role="menu" aria-label="产品方案下拉导航"><div class="pnd-grp"><span class="pnd-t">三电系统</span><a href="three-electric.html">三电系统总览</a><a href="three-electric.html#controller">控制器 <em>CONTROLLER</em></a><a href="three-electric.html#meter">仪表 <em>METER</em></a><a href="three-electric.html#motor">电机 <em>MOTOR</em></a></div><div class="pnd-grp"><span class="pnd-t">智能网联</span><a href="iot.html">物联网 IOT <em>CONNECTED</em></a></div></div></li><li class="lists hrefList"><a href="manufacturing.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>制造能力</a></li><li class="lists hrefList"><a href="sustainability.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>ODM 全流程</a></li><li class="lists hrefList"><a href="news.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>洞察与资料</a></li><li class="lists hrefList"><a href="contact.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>启动项目</a></li><li class="lists hrefList"><a href="company.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>关于 PXID</a></li></ul>
+    <div class="col set fxc">
+      <div class="layer-search" data-url="search.html"><input class="search f-14 wc" type="search" aria-label="搜索产品与资料" placeholder="搜索产品与资料"><button type="button" class="sub fxc" aria-label="搜索"><i class="iconfont f-14 wc" aria-hidden="true">&#xe8af;</i></button></div>
+      <a class="language fxc" href="index.html" aria-label="英文站规划中"><span class="txt wc f-16 en_b">EN</span></a>
+    </div>
+    <div class="mask"></div>
+  </nav>
+  <nav class="appNav app">
+    <div class="mask"></div>
+    <a class="logoBox" href="index.html"><img src="../assets/pxid/logo-white.svg" alt="PXID 品向" class="logo"></a>
+    <div class="col">
+      <a href="search.html" class="searchSub fxc" aria-label="搜索"><i class="iconfont f-14 wc">&#xe8af;</i></a>
+      <button type="button" id="menu" aria-label="打开导航" aria-expanded="false" aria-controls="pxid-mobile-menu"><span class="txt">Menu</span><svg class="pxid-menu-glyph" viewBox="0 0 24 24" aria-hidden="true"><path class="pxid-menu-line pxid-menu-line-top" d="M4 8h16"></path><path class="pxid-menu-line pxid-menu-line-bottom" d="M4 16h16"></path></svg></button>
+    </div>
+  </nav>
+</header>
+<nav class="menu">
+  <div class="items" data-vh=".8"><div class="content"><a href="index.html" class="lists appNavList"><span class="en_b f-26 wc">首页</span></a><a href="business.html" class="lists appNavList"><span class="en_b f-26 wc">产品方案</span></a><a href="three-electric.html" class="lists appNavList"><span class="en_b f-26 wc">三电系统</span></a><a href="iot.html" class="lists appNavList"><span class="en_b f-26 wc">物联网 IOT</span></a><a href="sustainability.html" class="lists appNavList"><span class="en_b f-26 wc">ODM 全流程</span></a><a href="news.html" class="lists appNavList"><span class="en_b f-26 wc">洞察与资料</span></a><a href="contact.html" class="lists appNavList"><span class="en_b f-26 wc">启动项目</span></a><a href="company.html" class="lists appNavList"><span class="en_b f-26 wc">关于 PXID</span></a></div></div>
+  <svg class="shape-overlays" viewBox="0 0 1080 1080" preserveAspectRatio="none"><rect class="path" x="0" y="0" width="1080" height="1080"></rect></svg>
+</nav>
+<main id="main-content">
+<section class="row banner pxid-inner-hero" data-hero-image="design" data-vh="1.08"><div class="bg"><div class="photo alanGo"><div class="pic full pxid-inner-hero-media"><picture class="pxid-hero-picture"><source media="(max-width: 900px) and (orientation: portrait)" srcset="../assets/pxid/inner-hero/design-mobile.webp" width="941" height="1672"><img src="../assets/pxid/inner-hero/design-desktop.webp" width="1920" height="1080" alt="PXID 智能网联" fetchpriority="high" loading="eager" decoding="async"></picture></div></div><div class="wave w1"><div class="mask waveItem"></div></div><div class="wave w2"><div class="mask waveItem"></div></div></div><div class="inner maxSize"><small class="f-40 wc en_m alanGo" style="font-size:1.067rem">Connected Vehicle · IoT</small><h1 class="f-40 wc num_b alanGo alanFn" data-text="物联网 IOT">物联网 IOT</h1><div class="scrEl"><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span><span class="ripple iconfont mc">&#xe8b6;</span></div></div></section>
+<div class="ioMain"><section class="blk">
+<div class="wcols c11">
+  <div class="wtxt"><span class="wlab">CONNECTED VEHICLE · IOT</span>
+    <h2 class="wbig2">物联网 IOT，<br>让每一台车都在线</h2>
+    <p class="wlede">两轮车的智能化已经从卖点变成刚需——新国标把北斗定位列为整车出厂要求，租赁、换电、外卖与出海场景更是离不开车辆联网。PXID 在整车 ODM 里预留并集成车联网方案：车载终端、数据通道、云平台与 APP 一并规划，不让智能硬件变成量产后加装的补丁。</p>
+    <ul class="wfacts"><li>4G Cat.1 + 北斗定位</li><li>蓝牙无感解锁</li><li>终端 / 整车 OTA</li><li>开放云平台 API</li></ul></div>
+  <div class="wcols2">
+    <div class="wstat"><span class="wstatnum">端·管·云</span><span class="wstatlab">三层架构一层闭环</span></div>
+    <div class="wstat"><span class="wstatnum">≤5m</span><span class="wstatlab">定位精度（CEP50）</span></div>
+    <div class="wstat"><span class="wstatnum">IP67</span><span class="wstatlab">终端防护等级</span></div>
+    <div class="wstat"><span class="wstatnum">9–120V</span><span class="wstatlab">宽压输入适配</span></div>
+  </div>
+</div></section>
+
+<section class="blk" id="terminal">
+<div class="whead"><span class="wnum">01</span><span class="wlab">TELEMATICS BOX</span><h3 class="wttl">车载智能终端 —— 整车的联网入口</h3><span class="wheadnote">通讯 / 定位 / 结构设计</span></div>
+<article class="ccard"><div class="ccard-top"><span class="num">01</span><h4>车载智能终端（T-BOX）</h4><span class="en">TELEMATICS BOX</span></div><div class="ccard-info">
+  <div class="crow"><b>通讯</b><span class="v"><span class="hl">4G Cat.1 全网通</span>（移动 / 联通 / 电信）上报位置与车况，支持 MQTT 物联网协议；贴片 eSIM 免插卡，出海车型按目的国频段选配。</span></div>
+  <div class="crow"><b>定位</b><span class="v"><span class="hl">北斗 / GPS 双模</span>定位，水平精度 ≤5m；冷启动 ≤35s、热启动 ≤5s；过滤算法剔除无效定位点，弯道轨迹补偿，停车静默低功耗。</span></div>
+  <div class="crow"><b>近场</b><span class="v">蓝牙 5.x 与手机近场交互——<span class="hl">无感解锁、远程锁车、一键寻车</span>；靠近即连接，手机就是钥匙。</span></div>
+  <div class="crow"><b>结构</b><span class="v">内置天线、备用锂电池（整车断电后可独立上报位移与告警）；<span class="hl">9–120V 宽压输入</span>同时适配铅酸与锂电平台；IP67 防护，体积按车头 / 座桶可藏空间设计。</span></div>
+  <div class="crow"><b>标签</b><span class="v"><span class="nums"><span>4G Cat.1</span><span>北斗 + GPS</span><span>蓝牙 5.x</span><span>eSIM 贴片</span><span>备用电池</span><span>IP67</span></span></span></div>
+</div></article>
+</section>
+
+<section class="blk" id="data">
+<div class="whead"><span class="wnum">02</span><span class="wlab">DATA CHANNEL</span><h3 class="wttl">数据通道 —— 让终端读懂整车</h3><span class="wheadnote">总线协议 / 车况采集 / 异常上报</span></div>
+<article class="ccard"><div class="ccard-top"><span class="num">02</span><h4>数据通道</h4><span class="en">DATA CHANNEL</span></div><div class="ccard-info">
+  <div class="crow"><b>总线</b><span class="v">终端通过 <span class="hl">CAN 总线 / RS485 / 一线通</span>与控制器、BMS、仪表建立数据通道——这套协议与三电系统页面的电控架构是同一套，集成时不加转换网关。</span></div>
+  <div class="crow"><b>采集</b><span class="v">车速、电机功率与转速、电池电量电压温度、档位、故障码；本地循环覆盖存储，断网续传。</span></div>
+  <div class="crow"><b>上报</b><span class="v">异常即时上报：超速、电池异常、非法位移、碰撞、倾倒、低电、防拆触发——平台与车主 APP 同步收到。</span></div>
+</div></article>
+</section>
+
+<section class="blk" id="features">
+<div class="whead"><span class="wnum">03</span><span class="wlab">SMART FEATURES</span><h3 class="wttl">智能功能 —— 防盗、升级、骑行数据</h3><span class="wheadnote">按车型与运营场景选配</span></div>
+<article class="ccard"><div class="ccard-top"><span class="num">03</span><h4>智能功能</h4><span class="en">SMART FEATURES</span></div><div class="ccard-info">
+  <div class="crow"><b>防盗</b><span class="v"><span class="hl">多重定位智能防盗</span>：北斗 + GPS + 网络定位互补，震动 / 倾倒 / 非法移动告警，电子围栏出区提醒，轨迹回放，鸣笛寻车。</span></div>
+  <div class="crow"><b>升级</b><span class="v"><span class="hl">终端 OTA + 整车控制器固件 OTA</span>——功能不因出厂固化，bug 远程修复，新功能分批推送灰度验证。</span></div>
+  <div class="crow"><b>骑行</b><span class="v">骑行数据与驾驶行为记录，车辆健康分析；运营场景下支撑车辆调度、风控评分与保险精算。</span></div>
+  <div class="crow"><b>标签</b><span class="v"><span class="nums"><span>电子围栏</span><span>震动 / 倾倒告警</span><span>轨迹回放</span><span>整车 OTA</span><span>驾驶行为</span><span>车辆健康</span></span></span></div>
+</div></article>
+</section>
+
+<section class="blk" id="platform">
+<div class="whead"><span class="wnum">04</span><span class="wlab">CLOUD & APP</span><h3 class="wttl">云平台与 APP —— 数据落到业务里</h3><span class="wheadnote">平台能力 / 车主 APP / 运营场景</span></div>
+<article class="ccard"><div class="ccard-top"><span class="num">04</span><h4>云平台与 APP</h4><span class="en">CLOUD & APP</span></div><div class="ccard-info">
+  <div class="crow"><b>平台</b><span class="v">设备管理、位置服务、告警引擎、OTA 管理、数据看板；<span class="hl">开放 API</span> 对接车企自有的售后、运营与会员系统。</span></div>
+  <div class="crow"><b>车主 APP</b><span class="v">远程解锁 / 锁车、车辆定位与轨迹、车况与电量查看、故障提醒、骑行统计——小程序与 APP 双端。</span></div>
+  <div class="crow"><b>运营</b><span class="v">共享 / 租赁车队管理、换电与电池租赁、外卖车队监管；<span class="hl">出海方案</span>：eSIM 空中写卡、多国频段与本地资费适配，一点对接全球服务。</span></div>
+</div></article>
+</section>
+
+<section class="blk blkDark">
+<div class="wcols c11">
+  <div class="wtxt"><span class="wlab">INTEGRATION</span>
+    <h2 class="wbig2">智能在整车项目里<br>一次做对</h2>
+    <p class="wlede">车联网不是整车做完再「加装一个盒子」。PXID 在 ODM 立项阶段就把终端位置、供电、天线布局、总线通道与仪表显示一起排进整车方案——样车阶段联网功能与三电同步联调，量产后通过 OTA 持续迭代。合规要求（如新国标北斗定位）、运营需求（租赁 / 换电）、出海认证，在选型时就定掉。</p>
+    <ul class="wfacts"><li>立项即预留</li><li>样车同步联调</li><li>量产后 OTA 迭代</li><li>合规 / 运营 / 出海 三类场景</li></ul></div>
+  <div class="wcols2">
+    <div class="wstat"><span class="wstatnum">01</span><span class="wstatlab">立项预留终端与总线</span></div>
+    <div class="wstat"><span class="wstatnum">02</span><span class="wstatlab">样车联网联调</span></div>
+    <div class="wstat"><span class="wstatnum">03</span><span class="wstatlab">平台与 APP 就绪</span></div>
+    <div class="wstat"><span class="wstatnum">04</span><span class="wstatlab">OTA 持续迭代</span></div>
+  </div>
+</div></section>
+
+<section class="blk">
+<div class="ctarow">
+  <a class="btn-red" href="contact.html">带车型需求，启动项目 →</a>
+  <a class="btn-ghost" href="three-electric.html">看三电系统</a>
+  <a class="btn-ghost" href="manufacturing.html">看制造能力</a>
+</div>
+<p class="note">文中定位精度、电压范围、防护等级为行业主流方案指标，具体配置按车型项目定义。</p>
+</section>
+</div>
+</main>
+<footer id="footer-contact" class="wb-footer"><footer id="footer-contact" class="wb-footer"><div class="wb-footer-wave" aria-hidden="true"><svg viewBox="0 0 1440 92" preserveAspectRatio="none" focusable="false"><path d="M0 54C176 16 315 12 469 38C636 66 770 83 934 55C1097 27 1235 15 1440 46V92H0Z"></path></svg></div><div class="wb-footer-inner"><div class="wb-footer-top"><a class="wb-footer-logo" href="index.html" aria-label="PXID 品向首页"><img src="../assets/pxid/logo-white.svg" alt="PXID 品向"></a><div class="wb-footer-links"><nav class="wb-footer-col" aria-label="产品方向"><h3>产品方向</h3><a href="business.html#ebike">电动自行车</a><a href="business.html#scooter">电动滑板车</a><a href="business.html#motorcycle">电动摩托车</a></nav><nav class="wb-footer-col" aria-label="ODM 服务"><h3>ODM 服务</h3><a href="sustainability.html#C-stage-1">产品设计</a><a href="sustainability.html#C-stage-3">结构与电控系统设计</a><a href="sustainability.html#C-stage-5">工程样车开发</a><a href="sustainability.html#C-stage-9">测试与批量生产</a></nav><nav class="wb-footer-col" aria-label="公司信息"><h3>公司</h3><a href="company.html">关于 PXID</a><a href="news.html">新闻与资料</a><a href="contact.html">项目咨询</a></nav></div></div><div class="wb-footer-mid"><div class="wb-footer-contact"><div class="wb-footer-contact-item"><svg class="wb-footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><address>江苏省淮安市清江浦区深圳东路18号4号楼</address></div><div class="wb-footer-contact-item"><svg class="wb-footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 1 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+8618936381099">+86 189 3638 1099</a></div><div class="wb-footer-contact-item"><svg class="wb-footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:inquiry@pxid.com">inquiry@pxid.com</a></div></div><div class="wb-footer-side"><div class="wb-footer-share"><h3>关注 PXID</h3><div class="wb-footer-qrs"><figure class="wb-footer-qr" title="微信"><img src="../assets/pxid/footer/qr-wechat.svg" alt="PXID 微信二维码" loading="lazy"></figure><figure class="wb-footer-qr" title="抖音"><img src="../assets/pxid/footer/qr-douyin.svg" alt="PXID 抖音二维码" loading="lazy"></figure><figure class="wb-footer-qr" title="小红书"><img src="../assets/pxid/footer/qr-xiaohongshu.svg" alt="PXID 小红书二维码" loading="lazy"></figure><figure class="wb-footer-qr" title="视频号"><img src="../assets/pxid/footer/qr-videochannel.svg" alt="PXID 视频号二维码" loading="lazy"></figure></div></div><div class="wb-footer-subscribe"><h3>订阅行业资讯</h3><form class="wb-footer-subscribe-form"><label class="sr-only" for="pxid-footer-email">邮箱地址</label><input id="pxid-footer-email" name="email" type="email" autocomplete="email" placeholder="Your Email Address_" required=""><button type="submit">订阅 <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></form><p class="wb-footer-form-status" aria-live="polite"></p></div></div></div><div class="wb-footer-bottom"><p>Copyright © 2026 PXID 品向智造. All rights reserved.</p><div><a href="privacy-policy.html">隐私政策</a><span aria-hidden="true">|</span><a href="legal-notice.html">法律声明</a><span aria-hidden="true">|</span><div class="wb-footer-top-link" role="button" tabindex="0" aria-label="返回顶部">返回顶部 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></div></div><p>从产品设计到批量生产</p></div></div></footer></footer>
+<script src="../templates/assets/pxid-motion.js"></script>
+<script src="../templates/assets/pxid-site.js?v=20260920-stage-anchor1"></script>
+</body>
+</html>

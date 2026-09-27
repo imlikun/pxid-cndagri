@@ -5773,3 +5773,14 @@ select:focus-visible {
 .home .row.r4 .inner .videoBox .topic .green,
 .home .row.r4 .inner .videoBox .topic .green .letter,
 .home .row.r4 .inner .videoBox .topic .layer-btn .txt { color: #fff !important; }
+
+/* pxid-nav-drop 20260927 · 产品方案下拉（三电系统/物联网IOT） */
+.pcNav .pxid-has-drop{position:relative}
+.pcNav .pxid-nav-drop{position:absolute;top:100%;left:50%;transform:translate(-50%,10px);width:238px;padding:10px 0 12px;background:#fff;color:#171717;border-top:2px solid #d71920;box-shadow:0 20px 44px rgba(10,10,10,.18);opacity:0;visibility:hidden;transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s;z-index:80}
+.pcNav .pxid-has-drop:hover .pxid-nav-drop,.pcNav .pxid-has-drop:focus-within .pxid-nav-drop{opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity .2s ease,transform .2s ease,visibility 0s}
+.pcNav .pxid-nav-drop::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.pcNav .pxid-nav-drop .pnd-t{display:block;padding:10px 20px 4px;font-size:11px;font-weight:700;letter-spacing:.18em;color:#9a9a9a}
+.pcNav .pxid-nav-drop a{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:9px 20px;font-size:14px;line-height:1.4;color:#171717;transition:color .15s ease,background .15s ease}
+.pcNav .pxid-nav-drop a em{font-style:normal;font-size:10px;letter-spacing:.14em;color:#b3b3b3}
+.pcNav .pxid-nav-drop a:hover{color:#d71920;background:#f7f7f7}
+.pcNav .pxid-nav-drop a:hover em{color:#d71920}
