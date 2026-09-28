@@ -1,0 +1,129 @@
+/* PXID 产品页加厚版式工具集 · 2026-09-28 */
+.pxid-rich{--pr-red:#d71920;--pr-ink:#171717;--pr-grey:#f5f5f3;--pr-line:#e5e5e2;--pr-soft:#666}
+.pxid-rich .pr-wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.pxid-rich .pr-eyebrow{font-size:12px;letter-spacing:.28em;color:var(--pr-red);font-weight:700;text-transform:uppercase}
+.pxid-rich h2.pr-h{font-size:clamp(24px,2.4vw,34px);letter-spacing:-.02em;line-height:1.25}
+.pxid-rich .pr-note{background:#111;color:#fff;text-align:center;font-size:13px;padding:9px 16px;letter-spacing:.08em}
+.pxid-rich .pr-note b{color:#ff5a63}
+
+/* hero */
+.pxid-rich .pr-hero{position:relative;background:#0a0a0c;color:#fff;overflow:hidden}
+.pxid-rich .pr-hero img.pr-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6}
+.pxid-rich .pr-hero .pr-wrap{position:relative;padding:clamp(92px,12vw,170px) clamp(20px,4vw,48px) clamp(58px,7vw,100px)}
+.pxid-rich .pr-hero .pr-cr{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.14em;margin-bottom:26px}
+.pxid-rich .pr-hero .pr-eyebrow{color:#ff5a63}
+.pxid-rich .pr-hero h1{font-size:clamp(34px,4.6vw,62px);letter-spacing:-.02em;margin:10px 0 14px}
+.pxid-rich .pr-hero p{max-width:34em;color:rgba(255,255,255,.82);font-size:clamp(15px,1.2vw,18px)}
+
+/* stats 数字带 */
+.pxid-rich .pr-stats{border-bottom:1px solid var(--pr-line)}
+.pxid-rich .pr-stats .pr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--pr-line)}
+.pxid-rich .pr-stat{background:#fff;padding:clamp(22px,2.6vw,38px) clamp(14px,1.8vw,28px)}
+.pxid-rich .pr-stat b{display:block;font-size:clamp(26px,2.8vw,42px);font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.pxid-rich .pr-stat b i{font-style:normal;font-size:.5em;font-weight:700;color:var(--pr-red);margin-left:4px}
+.pxid-rich .pr-stat span{font-size:13px;color:#777}
+@media(max-width:760px){.pxid-rich .pr-stats .pr-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* section head */
+.pxid-rich .pr-head{padding:clamp(48px,6vw,90px) 0 clamp(22px,2.4vw,36px)}
+.pxid-rich .pr-head p.pr-sub{color:#666;max-width:46em;margin-top:10px;font-size:clamp(14px,1.1vw,16px)}
+
+/* full-bleed break */
+.pxid-rich .pr-break{position:relative;color:#fff}
+.pxid-rich .pr-break img{width:100%;height:clamp(300px,40vw,540px);object-fit:cover;display:block}
+.pxid-rich .pr-break .pr-cap{position:absolute;inset:auto 0 0;background:linear-gradient(transparent,rgba(0,0,0,.8));padding:clamp(60px,8vw,110px) 0 clamp(26px,3vw,44px)}
+.pxid-rich .pr-break .pr-cap p{font-size:clamp(18px,2vw,26px);font-weight:700}
+.pxid-rich .pr-break .pr-cap span{font-size:13px;color:rgba(255,255,255,.72)}
+
+/* bento 通用 */
+.pxid-rich .pr-bento{display:grid;gap:14px;padding-bottom:clamp(48px,6vw,90px)}
+.pxid-rich .pr-cell{border:1px solid var(--pr-line);border-radius:6px;padding:clamp(20px,2.2vw,30px);background:#fff;transition:.25s}
+.pxid-rich .pr-cell:hover{border-color:#c9c9c5;box-shadow:0 14px 30px -22px rgba(0,0,0,.35)}
+.pxid-rich .pr-cell.pr-hot{background:var(--pr-ink);color:#fff;border-color:var(--pr-ink)}
+.pxid-rich .pr-cell.pr-hot .pr-no{color:#ff5a63}
+.pxid-rich .pr-cell .pr-no{font-size:12px;font-weight:800;color:var(--pr-red);letter-spacing:.2em}
+.pxid-rich .pr-cell h3{font-size:clamp(16px,1.4vw,19px);margin:10px 0 8px}
+.pxid-rich .pr-cell p{font-size:13.5px;color:#666}
+.pxid-rich .pr-cell.pr-hot p{color:rgba(255,255,255,.72)}
+
+/* bento 变化A：3列6卡（控制器） */
+.pxid-rich .pr-bento.a{grid-template-columns:repeat(3,1fr)}
+.pxid-rich .pr-bento.a .pr-cell.wide{grid-column:span 2}
+@media(max-width:860px){.pxid-rich .pr-bento.a{grid-template-columns:repeat(2,1fr)}.pr-bento.a .pr-cell.wide{grid-column:span 2}}
+@media(max-width:560px){.pxid-rich .pr-bento.a{grid-template-columns:1fr}.pr-bento.a .pr-cell.wide{grid-column:span 1}}
+
+/* bento 变化B：2列4卡（仪表） */
+.pxid-rich .pr-bento.b{grid-template-columns:repeat(2,1fr)}
+@media(max-width:560px){.pxid-rich .pr-bento.b{grid-template-columns:1fr}}
+
+/* bento 变化C：横排4卡 strip（电机） */
+.pxid-rich .pr-bento.c{grid-template-columns:repeat(4,1fr)}
+.pxid-rich .pr-bento.c .pr-cell{text-align:center;display:flex;flex-direction:column;align-items:center}
+.pxid-rich .pr-bento.c .pr-cell .pr-no{margin-bottom:8px}
+@media(max-width:860px){.pxid-rich .pr-bento.c{grid-template-columns:repeat(2,1fr)}}
+
+/* bento 变化D：连通卡（IOT，带连接线视觉） */
+.pxid-rich .pr-bento.d{grid-template-columns:repeat(3,1fr)}
+.pxid-rich .pr-bento.d .pr-cell{position:relative;border-top:3px solid var(--pr-red)}
+.pxid-rich .pr-bento.d .pr-cell::after{content:"";position:absolute;right:-15px;top:24px;width:14px;height:2px;background:var(--pr-line)}
+.pxid-rich .pr-bento.d .pr-cell:nth-child(3n)::after{display:none}
+@media(max-width:860px){.pxid-rich .pr-bento.d{grid-template-columns:repeat(2,1fr)}.pr-bento.d .pr-cell::after{display:none}}
+@media(max-width:560px){.pxid-rich .pr-bento.d{grid-template-columns:1fr}}
+
+/* 交替图文行 */
+.pxid-rich .pr-frow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(26px,3vw,48px) 0}
+.pxid-rich .pr-frow.pr-rev .pr-txt{order:2}
+.pxid-rich .pr-frow .pr-txt .pr-eyebrow{display:block;margin-bottom:10px}
+.pxid-rich .pr-frow .pr-txt h3{font-size:clamp(20px,1.9vw,27px);margin-bottom:12px}
+.pxid-rich .pr-frow .pr-txt p{color:#555;font-size:15px}
+.pxid-rich .pr-frow .pr-txt ul{margin-top:14px;list-style:none}
+.pxid-rich .pr-frow .pr-txt li{padding:9px 0 9px 22px;border-bottom:1px solid var(--pr-line);font-size:14px;position:relative}
+.pxid-rich .pr-frow .pr-txt li::before{content:"";position:absolute;left:2px;top:18px;width:8px;height:2px;background:var(--pr-red)}
+.pxid-rich .pr-frow .pr-pic{aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:var(--pr-grey)}
+.pxid-rich .pr-frow .pr-pic img{width:100%;height:100%;object-fit:cover}
+@media(max-width:860px){.pxid-rich .pr-frow{grid-template-columns:1fr}.pxid-rich .pr-frow.pr-rev .pr-txt{order:0}}
+
+/* 参数表 */
+.pxid-rich .pr-spec{background:var(--pr-grey);padding:clamp(40px,5vw,72px) 0}
+.pxid-rich .pr-spec h2.pr-h{margin-bottom:6px}
+.pxid-rich .pr-spec .pr-sub{color:#666;font-size:14px;margin-bottom:26px}
+.pxid-rich .pr-spec .pr-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,48px)}
+.pxid-rich .pr-spec table{width:100%;border-collapse:collapse;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 10px 26px -24px rgba(0,0,0,.4)}
+.pxid-rich .pr-spec th,.pxid-rich .pr-spec td{padding:12px 16px;font-size:13.5px;text-align:left;border-bottom:1px solid #efefec}
+.pxid-rich .pr-spec th{color:#888;font-weight:600;width:38%;background:#fafaf8}
+.pxid-rich .pr-spec tr:last-child th,.pxid-rich .pr-spec tr:last-child td{border-bottom:0}
+.pxid-rich .pr-spec td b{color:var(--pr-red)}
+@media(max-width:860px){.pxid-rich .pr-spec .pr-cols{grid-template-columns:1fr}}
+
+/* 选型卡 */
+.pxid-rich .pr-picks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-bottom:clamp(48px,6vw,90px)}
+.pxid-rich .pr-pick{border:1px solid var(--pr-line);border-radius:6px;overflow:hidden;transition:.25s}
+.pxid-rich .pr-pick:hover{box-shadow:0 16px 34px -24px rgba(0,0,0,.4);transform:translateY(-3px)}
+.pxid-rich .pr-pick .pr-ph{aspect-ratio:16/10;background:var(--pr-grey);overflow:hidden}
+.pxid-rich .pr-pick .pr-ph img{width:100%;height:100%;object-fit:cover}
+.pxid-rich .pr-pick .pr-bd{padding:18px 20px 22px}
+.pxid-rich .pr-pick h3{font-size:17px;margin-bottom:6px}
+.pxid-rich .pr-pick p{font-size:13px;color:#666}
+.pxid-rich .pr-pick .pr-tag{display:inline-block;margin-top:12px;font-size:12px;color:var(--pr-red);font-weight:700;letter-spacing:.08em}
+@media(max-width:860px){.pxid-rich .pr-picks{grid-template-columns:1fr}}
+
+/* 相关产品 */
+.pxid-rich .pr-related{border-top:1px solid var(--pr-line);padding:clamp(40px,5vw,64px) 0}
+.pxid-rich .pr-related h2.pr-h{margin-bottom:22px}
+.pxid-rich .pr-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pxid-rich .pr-rel{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--pr-line);border-radius:6px;padding:20px 22px;text-decoration:none;color:var(--pr-ink);transition:.2s}
+.pxid-rich .pr-rel:hover{border-color:var(--pr-red)}
+.pxid-rich .pr-rel b{font-size:16px}
+.pxid-rich .pr-rel small{display:block;color:#888;font-size:12px;margin-top:3px}
+.pxid-rich .pr-rel .pr-arr{color:var(--pr-red);font-size:20px}
+@media(max-width:860px){.pxid-rich .pr-rel-grid{grid-template-columns:1fr}}
+
+/* CTA */
+.pxid-rich .pr-cta{background:var(--pr-ink);color:#fff;padding:clamp(48px,6vw,80px) 0}
+.pxid-rich .pr-cta .pr-wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.pxid-rich .pr-cta h2.pr-h{color:#fff}
+.pxid-rich .pr-cta p{color:rgba(255,255,255,.7);font-size:14px;margin-top:8px}
+.pxid-rich .pr-btn{display:inline-block;background:var(--pr-red);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:15px 34px;border-radius:4px;letter-spacing:.04em;transition:.2s}
+.pxid-rich .pr-btn:hover{background:#b8141b}
+.pxid-rich .pr-btn.pr-ghost{background:transparent;border:1px solid rgba(255,255,255,.4)}
+.pxid-rich .pr-btn.pr-ghost:hover{border-color:#fff}

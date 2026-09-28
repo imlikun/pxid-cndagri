@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>物联网 IOT｜PXID 品向 · 让每一台车都在线</title>
-  <meta name="description" content="PXID 品向物联网 IOT 方案：电动自行车与电动摩托车的车载智能终端（T-BOX）、CAN/一线通数据通道、防盗与电子围栏、整车 OTA、云平台与车主 APP，覆盖合规、运营与出海场景。">
+  <title>物联网 IOT｜PXID 品向 · 4G/BLE 车联网、远程诊断、云端运营</title>
+  <meta name="description" content="PXID 品向物联网：4G Cat.1 / BLE 车联网模块，远程诊断、OTA、电池监测与运营看板。">
   <link rel="icon" href="../assets/pxid/logo-dark.png" type="image/png">
   <script src="../templates/assets/swiper-bundle.js"></script>
   <link rel="stylesheet" href="../templates/assets/index.css">
   <link rel="stylesheet" href="../templates/assets/respone.css">
   <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260927-navdrop13">
-  
+  <link rel="stylesheet" href="../templates/assets/pxid-prodrich.css?v=20260928">
 </head>
-<body id="app" class="iot afterInner">
+<body id="app" class="threesys afterInner">
 <style id="pxid-no-wave">
   .wave, .wave.w1, .wave.w2{display:none !important}
   #app footer .wb-footer-wave,
@@ -33,7 +33,7 @@
       <img class="white" src="../assets/pxid/logo-white.svg" alt="PXID 品向">
       <img class="black" src="../assets/pxid/logo-ink.svg" alt="PXID 品向">
     </a>
-    <ul class="mid fxc"><li class="lists hrefList"><a href="index.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>首页</a></li><li class="lists hrefList pxid-has-drop"><a href="business.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>产品方案</a><div class="pxid-nav-drop" role="menu" aria-label="产品方案下拉导航"><div class="pnd-grp"><a href="three-electric.html" class="pnd-grp-h">三电系统</a><a href="three-electric.html#controller">控制器</a><a href="three-electric.html#meter">仪表</a><a href="three-electric.html#motor">电机</a></div><div class="pnd-grp pnd-grp2"><span class="pnd-t">智能网联</span><a href="iot.html">物联网 IOT</a></div></div></li><li class="lists hrefList"><a href="manufacturing.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>制造能力</a></li><li class="lists hrefList"><a href="sustainability.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>ODM 全流程</a></li><li class="lists hrefList"><a href="news.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>洞察与资料</a></li><li class="lists hrefList"><a href="contact.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>启动项目</a></li><li class="lists hrefList"><a href="company.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>关于 PXID</a></li></ul>
+    <ul class="mid fxc"><li class="lists hrefList"><a href="index.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>首页</a></li><li class="lists hrefList pxid-has-drop"><a href="business.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>产品方案</a><div class="pxid-nav-drop" role="menu" aria-label="产品方案下拉导航"><div class="pnd-grp"><span class="pnd-t">三电系统</span><a href="controller.html">控制器</a><a href="meter.html">仪表</a><a href="motor.html">电机</a></div><div class="pnd-grp pnd-grp2"><span class="pnd-t">智能网联</span><a href="iot.html">物联网 IOT</a></div></div></li><li class="lists hrefList"><a href="manufacturing.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>制造能力</a></li><li class="lists hrefList"><a href="sustainability.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>ODM 全流程</a></li><li class="lists hrefList"><a href="news.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>洞察与资料</a></li><li class="lists hrefList"><a href="contact.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>启动项目</a></li><li class="lists hrefList"><a href="company.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>关于 PXID</a></li></ul>
     <div class="col set fxc">
       <div class="layer-search" data-url="search.html"><input class="search f-14 wc" type="search" aria-label="搜索产品与资料" placeholder="搜索产品与资料"><button type="button" class="sub fxc" aria-label="搜索"><i class="iconfont f-14 wc" aria-hidden="true">&#xe8af;</i></button></div>
       <a class="language fxc" href="index.html" aria-label="英文站规划中"><span class="txt wc f-16 en_b">EN</span></a>
@@ -50,36 +50,39 @@
   </nav>
 </header>
 <nav class="menu">
-  <div class="items" data-vh=".8"><div class="content"><a href="index.html" class="lists appNavList"><span class="en_b f-26 wc">首页</span></a><a href="business.html" class="lists appNavList"><span class="en_b f-26 wc">产品方案</span></a><a href="three-electric.html" class="lists appNavList"><span class="en_b f-26 wc">三电系统</span></a><a href="iot.html" class="lists appNavList"><span class="en_b f-26 wc">物联网 IOT</span></a><a href="sustainability.html" class="lists appNavList"><span class="en_b f-26 wc">ODM 全流程</span></a><a href="news.html" class="lists appNavList"><span class="en_b f-26 wc">洞察与资料</span></a><a href="contact.html" class="lists appNavList"><span class="en_b f-26 wc">启动项目</span></a><a href="company.html" class="lists appNavList"><span class="en_b f-26 wc">关于 PXID</span></a></div></div>
+  <div class="items" data-vh=".8"><div class="content"><a href="index.html" class="lists appNavList"><span class="en_b f-26 wc">首页</span></a><a href="business.html" class="lists appNavList"><span class="en_b f-26 wc">产品方案</span></a><a href="three-electric.html" class="lists appNavList"><span class="en_b f-26 wc">三电系统</span></a><a href="controller.html" class="lists appNavList"><span class="en_b f-26 wc">控制器</span></a><a href="meter.html" class="lists appNavList"><span class="en_b f-26 wc">仪表</span></a><a href="motor.html" class="lists appNavList"><span class="en_b f-26 wc">电机</span></a><a href="iot.html" class="lists appNavList"><span class="en_b f-26 wc">物联网 IOT</span></a><a href="sustainability.html" class="lists appNavList"><span class="en_b f-26 wc">ODM 全流程</span></a><a href="news.html" class="lists appNavList"><span class="en_b f-26 wc">洞察与资料</span></a><a href="contact.html" class="lists appNavList"><span class="en_b f-26 wc">启动项目</span></a><a href="company.html" class="lists appNavList"><span class="en_b f-26 wc">关于 PXID</span></a></div></div>
   <svg class="shape-overlays" viewBox="0 0 1080 1080" preserveAspectRatio="none"><rect class="path" x="0" y="0" width="1080" height="1080"></rect></svg>
 </nav>
 <main id="main-content">
-<section class="row banner pxid-inner-hero" data-hero-image="product" data-vh="1.08"><div class="bg"><div class="photo alanGo"><div class="pic full pxid-inner-hero-media"><img src="../assets/pxid/cndagri-prod/iot-dark.jpg" width="2624" height="1472" alt="物联网 IOT" fetchpriority="high" loading="eager" decoding="async"></div></div></div><div class="inner maxSize"><small class="f-170 wc en_m alanGo" style="font-size:1.067rem">IOT · CONNECTED</small><h1 class="f-40 wc num_b alanGo alanFn" data-text="物联网 IOT">物联网 IOT</h1></div></section>
-<div class="prod-mag">
-  <div class="prod-mag__wide"><div class="media"><img src="../assets/pxid/cndagri-prod/iot-studio.jpg" alt="端-管-云智能网联架构"></div><div><h2>端—管—云：一套可运营的智能网联架构</h2><p>在车辆端部署 T-BOX 智能网联终端，通过 CAN 总线实时采集电机控制器、BMS 与仪表数据；经 4G Cat.1 蜂窝网络与北斗/GPS 双模定位回传至云平台；云端完成设备接入、规则引擎与大数据处理，向下打通车主 APP 与车队/共享运营后台，让两轮车具备可运营、可迭代的连接能力。</p></div></div>
-  <div class="prod-mag__split">
-    <div class="item"><div class="media"><img src="../assets/pxid/cndagri-prod/iot-module.jpg" alt="定位与防盗"></div><h4>定位与防盗</h4><p>北斗 + GPS 双模定位，电子围栏、异动/震动报警、轨迹回放；支持远程锁车与断油电，显著降低被盗与丢车风险。</p></div>
-    <div class="item"><div class="media"><img src="../assets/pxid/cndagri-prod/iot-app.jpg" alt="远程与 OTA"></div><h4>远程与 OTA</h4><p>4G Cat.1 长连，远程诊断与固件 OTA；加密签名、差分升级省流量、失败自动回滚，仅于驻车且电量充足时静默安装。</p></div>
-    <div class="item"><div class="media"><img src="../assets/pxid/cndagri-prod/iot-fleet.jpg" alt="数据与平台"></div><h4>数据与平台</h4><p>骑行数据上云，车队/共享运营后台可视化；支持新国标合规上报与开放 API，无缝对接企业既有系统。</p></div>
+<section class="pxid-rich"><div class="pr-hero">
+  <img class="pr-bg" src="../assets/pxid/cndagri-prod/iot-dark.png" alt="" fetchpriority="high" loading="eager">
+  <div class="pr-wrap">
+    <div class="pr-cr">产品方案 / 三电系统 / <span style="color:#fff">物联网 IOT</span></div>
+    <span class="pr-eyebrow">Telematics · 4G/BLE</span>
+    <h1>物联网 IOT</h1>
+    <p>把整车接上云。4G / BLE 双模通讯、车辆定位、远程诊断与 OTA，让共享、换电与车队运营从「盲管」变「可视」。</p>
   </div>
-  <div class="prod-mag__wide"><div class="media"><img src="../assets/pxid/cndagri-prod/bms-cloud.jpg" alt="电池 BMS 云协同监控"></div><div><h2>电池 BMS 云协同：把续航与寿命算清楚</h2><p>终端逐秒上报单体电芯电压、温度、充放电循环与 SOC/SOH；云端模型识别衰减趋势，提前预警电池健康，并结合使用习惯优化充电参数、低温加热与高温保护，延长电池寿命、降低全生命周期成本——这是电动车 ownership 最被关注的透明度来源。</p></div></div>
-  <h3 class="prod-sec-title">核心能力</h3>
-  <div class="prod-mag__grid">
-    <div class="item"><h4>智能网联终端 T-BOX</h4><p>硬件规格：<strong>4G Cat.1 模组</strong> · <strong>北斗+GPS 双模</strong> · <strong>CAN 总线采集</strong> · <strong>车载级 MCU</strong> · <strong>IP65 防护</strong>；与电机控制器、BMS、充电器高效协同，精准采集并实时上传关键数据。</p></div>
-    <div class="item"><h4>远程诊断与预测性维护</h4><p>故障主动上报，云端基于<strong>车队级机器学习</strong>识别失效前兆，可提前数周预警；保养与备件前置规划，减少趴窝与停机，经销商由单次交易转向持续服务。</p></div>
-    <div class="item"><h4>车主 APP 无感解锁</h4><p>数字钥匙、智能锁、远程授权借车；骑行报告、续航分析与寻车一键直达，把"车钥匙"装进手机，日常使用零负担。</p></div>
+</div></section><section class="pxid-rich"><div class="pr-stats"><div class="pr-grid"><div class="pr-stat"><b>4G<i>Cat.1</i></b><span>全国覆盖低功耗通讯</span></div><div class="pr-stat"><b>BLE5.0<i></i></b><span>近场手机直连配置</span></div><div class="pr-stat"><b>云端<i></i></b><span>数据看板 + API</span></div><div class="pr-stat"><b>≤1<i>s</i></b><span>状态上报时延</span></div></div></div></section><section class="pxid-rich"><div class="pr-wrap pr-head"><span class="pr-eyebrow">Overview</span><h2 class="pr-h" style="margin-top:8px">让每一辆车，都连在云上</h2><p class="pr-sub">IOT 模块是整车的联网入口：把位置、电量、故障与骑行行为实时上传云端，运营方在后台就能看到每一辆车的健康度——共享调度、换电提醒、防盗追踪，一套数据全打通。</p></div></section><section class="pxid-rich"><div class="pr-spec"><div class="pr-wrap">
+  <span class="pr-eyebrow">Specifications</span><h2 class="pr-h" style="margin:8px 0 6px">典型参数</h2>
+  <p class="pr-sub">以下为标准平台参数，ODM 项目可按车型重新定义。</p>
+  <div class="pr-cols"><table><tr><th>通讯方式</th><td><b>4G Cat.1 / BLE 5.0</b></td></tr><tr><th>定位</th><td>GPS / 北斗 双模</td></tr><tr><th>供电</th><td>整车 12–72V 直供，低功耗待机</td></tr><tr><th>工作温度</th><td>-30℃ ~ +80℃</td></tr><tr><th>云端平台</th><td>数据看板 + 开放 API</td></tr></table><table><tr><th>数据安全</th><td>加密通道，分级权限</td></tr><tr><th>远程能力</th><td>OTA、诊断、参数下发</td></tr><tr><th>典型时延</th><td>状态上报 ≤ 1s</td></tr><tr><th>防护等级</th><td>IP67</td></tr><tr><th>部署</th><td>控制器 / 仪表无缝对接</td></tr></table></div>
+</div></div></section><section class="pxid-rich"><div class="pr-break"><img src="../assets/pxid/cndagri-prod/iot-fleet.png" alt=""><div class="pr-cap"><div class="pr-wrap"><span>CLOUD PLATFORM</span><p>从单车数据采集到车队运营看板，云端一目了然</p></div></div></div></section><section class="pxid-rich"><div class="pr-wrap"><div class="pr-bento d"><div class="pr-cell"><span class="pr-no">01</span><h3>车辆定位</h3><p>GPS / 北斗双模，轨迹可回溯。</p></div><div class="pr-cell"><span class="pr-no">02</span><h3>远程诊断</h3><p>故障码云端读取，工单自动派发。</p></div><div class="pr-cell"><span class="pr-no">03</span><h3>OTA 升级</h3><p>固件与策略远程下发。</p></div><div class="pr-cell"><span class="pr-no">04</span><h3>电池监测</h3><p>电压 / 温度 / 循环次数全采集。</p></div><div class="pr-cell"><span class="pr-no">05</span><h3>智能防盗</h3><p>异动告警 + 电子围栏。</p></div><div class="pr-cell"><span class="pr-no">06</span><h3>运营看板</h3><p>资产、续航、利用率一屏统览。</p></div></div></div></section><section class="pxid-rich"><div class="pr-wrap"><div class="pr-frow">
+  <div class="pr-txt"><span class="pr-eyebrow">Hardware</span><h3>一颗模组，接入整车</h3><p>IOT 模组作为 CAN 节点与控制器 / 仪表对接，无需改动车型主电路。</p><ul><li>标准 CAN 接口，即插即用</li><li>4G + BLE 双模冗余</li><li>宽压供电，适配全平台</li></ul></div>
+  <div class="pr-pic"><img src="../assets/pxid/cndagri-prod/iot-module.png" alt=""></div>
+</div></div></section><section class="pxid-rich"><div class="pr-wrap"><div class="pr-frow pr-rev">
+  <div class="pr-txt"><span class="pr-eyebrow">Platform</span><h3>一套云端，管整支车队</h3><p>开放 API 对接客户的调度、换电与 CRM 系统，数据所有权归运营方。</p><ul><li>实时资产看板</li><li>续航预测与换电提醒</li><li>分级权限 + 加密通道</li></ul></div>
+  <div class="pr-pic"><img src="../assets/pxid/cndagri-prod/iot-studio.png" alt=""></div>
+</div></div></section><section class="pxid-rich"><div class="pr-wrap pr-head" style="padding-bottom:0"><span class="pr-eyebrow">Selection</span><h2 class="pr-h" style="margin:8px 0 22px">按车型选型</h2><div class="pr-picks" style="padding:0 0 clamp(48px,6vw,90px)"><div class="pr-pick"><div class="pr-ph"><img src="../assets/pxid/cndagri-prod/iot-app.png" alt=""></div>
+  <div class="pr-bd"><h3>共享出行</h3><p>定点还车 · 异动告警 · 骑行计费联动</p><span class="pr-tag">查看推荐方案 →</span></div></div><div class="pr-pick"><div class="pr-ph"><img src="../assets/pxid/cndagri-prod/iot-fleet.png" alt=""></div>
+  <div class="pr-bd"><h3>换电运营</h3><p>电量预测 · 换电工单 · 资产盘点</p><span class="pr-tag">查看推荐方案 →</span></div></div><div class="pr-pick"><div class="pr-ph"><img src="../assets/pxid/cndagri-prod/iot-dark.png" alt=""></div>
+  <div class="pr-bd"><h3>车队管理</h3><p>调度优化 · 健康度评分 · 远程锁车</p><span class="pr-tag">查看推荐方案 →</span></div></div></div></div></section><section class="pxid-rich"><div class="pr-related"><div class="pr-wrap"><h2 class="pr-h">继续了解三电系统</h2><div class="pr-rel-grid"><a class="pr-rel" href="controller.html"><span><b>控制器</b><small>Motor Controller · FOC</small></span><span class="pr-arr">→</span></a><a class="pr-rel" href="meter.html"><span><b>仪表</b><small>Smart Cluster · TFT 全彩</small></span><span class="pr-arr">→</span></a><a class="pr-rel" href="motor.html"><span><b>电机</b><small>Hub Motor · 高效密绕定子</small></span><span class="pr-arr">→</span></a></div></div></div></section><section class="pxid-rich"><div class="pr-cta"><div class="pr-wrap">
+  <div><h2 class="pr-h">带着车型需求来，我们直接给方案</h2><p>提供电压平台、电机功率与目标工况，48 小时内返回选型建议。</p></div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <a class="pr-btn" href="contact.html">启动项目 →</a>
+    <a class="pr-btn pr-ghost" href="three-electric.html">← 三电系统总览</a>
   </div>
-  <h3 class="prod-sec-title">应用场景</h3>
-  <div class="prod-mag__grid">
-    <div class="item"><h4>个人出行</h4><p>防盗追踪、实时续航、智能导航与充电站推荐，通勤更安心。</p></div>
-    <div class="item"><h4>共享租赁</h4><p>电子围栏、按时计费、智能调度与异地还车，运营可控、资产可视。</p></div>
-    <div class="item"><h4>外卖物流</h4><p>轨迹管理、能耗统计、维保提醒，助力车队降本提效。</p></div>
-    <div class="item"><h4>城市监管</h4><p>新国标合规上报、上牌溯源与行驶行为监管，赋能城市两轮治理。</p></div>
-  </div>
-  <div class="prod-mag__wide"><div class="media"><img src="../assets/pxid/cndagri-prod/security.jpg" alt="数据安全与合规"></div><div><h2>数据安全与合规</h2><p>链路采用 TLS / 国密加密传输，设备强身份认证与固件签名防篡改；位置、骑行等个人信息按隐私合规最小化采集与存储，企业可审计、用户可授权，构建可信的车云连接。</p></div></div>
-</div>
-</main>
-<footer id="footer-contact" class="wb-footer"><footer id="footer-contact" class="wb-footer"><div class="wb-footer-wave" aria-hidden="true"><svg viewBox="0 0 1440 92" preserveAspectRatio="none" focusable="false"><path d="M0 54C176 16 315 12 469 38C636 66 770 83 934 55C1097 27 1235 15 1440 46V92H0Z"></path></svg></div><div class="wb-footer-inner"><div class="wb-footer-top"><a class="wb-footer-logo" href="index.html" aria-label="PXID 品向首页"><img src="../assets/pxid/logo-white.svg" alt="PXID 品向"></a><div class="wb-footer-links"><nav class="wb-footer-col" aria-label="产品方向"><h3>产品方向</h3><a href="business.html#ebike">电动自行车</a><a href="business.html#scooter">电动滑板车</a><a href="business.html#motorcycle">电动摩托车</a></nav><nav class="wb-footer-col" aria-label="ODM 服务"><h3>ODM 服务</h3><a href="sustainability.html#C-stage-1">产品设计</a><a href="sustainability.html#C-stage-3">结构与电控系统设计</a><a href="sustainability.html#C-stage-5">工程样车开发</a><a href="sustainability.html#C-stage-9">测试与批量生产</a></nav><nav class="wb-footer-col" aria-label="公司信息"><h3>公司</h3><a href="company.html">关于 PXID</a><a href="news.html">新闻与资料</a><a href="contact.html">项目咨询</a></nav></div></div><div class="wb-footer-mid"><div class="wb-footer-contact"><div class="wb-footer-contact-item"><svg class="wb-footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><address>江苏省淮安市清江浦区深圳东路18号4号楼</address></div><div class="wb-footer-contact-item"><svg class="wb-footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 1 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="tel:+8618936381099">+86 189 3638 1099</a></div><div class="wb-footer-contact-item"><svg class="wb-footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:inquiry@pxid.com">inquiry@pxid.com</a></div></div><div class="wb-footer-side"><div class="wb-footer-share"><h3>关注 PXID</h3><div class="wb-footer-qrs"><figure class="wb-footer-qr" title="微信"><img src="../assets/pxid/footer/qr-wechat.svg" alt="PXID 微信二维码" loading="lazy"></figure><figure class="wb-footer-qr" title="抖音"><img src="../assets/pxid/footer/qr-douyin.svg" alt="PXID 抖音二维码" loading="lazy"></figure><figure class="wb-footer-qr" title="小红书"><img src="../assets/pxid/footer/qr-xiaohongshu.svg" alt="PXID 小红书二维码" loading="lazy"></figure><figure class="wb-footer-qr" title="视频号"><img src="../assets/pxid/footer/qr-videochannel.svg" alt="PXID 视频号二维码" loading="lazy"></figure></div></div><div class="wb-footer-subscribe"><h3>订阅行业资讯</h3><form class="wb-footer-subscribe-form"><label class="sr-only" for="pxid-footer-email">邮箱地址</label><input id="pxid-footer-email" name="email" type="email" autocomplete="email" placeholder="Your Email Address_" required=""><button type="submit">订阅 <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></form><p class="wb-footer-form-status" aria-live="polite"></p></div></div></div><div class="wb-footer-bottom"><p>Copyright © 2026 PXID 品向智造. All rights reserved.</p><div><a href="privacy-policy.html">隐私政策</a><span aria-hidden="true">|</span><a href="legal-notice.html">法律声明</a><span aria-hidden="true">|</span><div class="wb-footer-top-link" role="button" tabindex="0" aria-label="返回顶部">返回顶部 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></div></div><p>从产品设计到批量生产</p></div></div></footer></footer>
+</div></div></section></main>
+<footer id="footer-contact" class="wb-footer"><!-- FOOTER --></footer>
 <script src="../templates/assets/pxid-motion.js"></script>
 <script src="../templates/assets/pxid-site.js?v=20260920-stage-anchor1"></script>
 </body>
