@@ -11,6 +11,9 @@
 .afterInner .pxid-inner-hero .pr-cr{position:relative;z-index:3;font-size:12px;color:rgba(255,255,255,.62);letter-spacing:.14em;margin-bottom:16px}
 .afterInner .pxid-inner-hero .pr-cr span{color:#fff}
 .afterInner .pxid-inner-hero .pr-herolead{position:relative;z-index:3;max-width:38em;color:rgba(255,255,255,.84);font-size:clamp(15px,1.2vw,18px);line-height:1.7;margin:16px 0 0}
+/* hero 媒体图强制铺满：站点其他页靠超大 width/height 属性溢出裁切「碰巧」铺满，
+   这里按站点 .pxid-hero-picture img 同款规则显式 cover，任何尺寸属性都全幅铺满 */
+.afterInner .pxid-inner-hero .pxid-inner-hero-media img{width:100%;height:100%;object-fit:cover;object-position:var(--hero-position,center);max-width:none}
 /* 左向暗渐变底：白字压浅色图时用底色提对比（不加描边/阴影特效），仅作用于产品页 hero */
 .afterInner .pxid-inner-hero:has(h1[data-text])::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,9,.74) 0%,rgba(8,8,9,.48) 40%,rgba(8,8,9,0) 70%)}
 
