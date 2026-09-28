@@ -20,8 +20,8 @@
 .pxid-rich .pr-stat span{font-size:13px;color:#777}
 @media(max-width:760px){.pxid-rich .pr-stats .pr-grid{grid-template-columns:repeat(2,1fr)}}
 
-/* section head */
-.pxid-rich .pr-head{padding:clamp(48px,6vw,90px) 0 clamp(22px,2.4vw,36px)}
+/* section head：只写垂直 padding，水平继承 .pr-wrap（否则覆盖导致各段左右边缘不齐） */
+.pxid-rich .pr-head{padding-top:clamp(48px,6vw,90px);padding-bottom:clamp(22px,2.4vw,36px)}
 .pxid-rich .pr-head p.pr-sub{color:#666;max-width:46em;margin-top:10px;font-size:clamp(14px,1.1vw,16px)}
 
 /* full-bleed break */
@@ -33,19 +33,20 @@
 
 /* bento 通用 */
 .pxid-rich .pr-bento{display:grid;gap:14px;padding-bottom:clamp(48px,6vw,90px)}
-.pxid-rich .pr-cell{border:1px solid var(--pr-line);border-radius:6px;padding:clamp(20px,2.2vw,30px);background:#fff;transition:.25s}
+.pxid-rich .pr-cell{position:relative;overflow:hidden;border:1px solid var(--pr-line);border-radius:6px;padding:clamp(20px,2.2vw,30px);padding-bottom:clamp(48px,4.6vw,64px);background:#fff;transition:.25s}
 .pxid-rich .pr-cell:hover{border-color:#c9c9c5;box-shadow:0 14px 30px -22px rgba(0,0,0,.35)}
 .pxid-rich .pr-cell.pr-hot{background:var(--pr-ink);color:#fff;border-color:var(--pr-ink)}
-.pxid-rich .pr-cell.pr-hot .pr-no{color:#ff5a63}
-.pxid-rich .pr-cell .pr-no{font-size:12px;font-weight:800;color:var(--pr-red);letter-spacing:.2em}
-.pxid-rich .pr-cell h3{font-size:clamp(16px,1.4vw,19px);margin:10px 0 8px}
-.pxid-rich .pr-cell p{font-size:13.5px;color:#666}
+/* 编号：右下角大号幽灵数字（参照精密模具卡样式） */
+.pxid-rich .pr-cell .pr-no{position:absolute;right:12px;bottom:-14px;font-size:clamp(52px,5vw,76px);font-weight:800;line-height:1;letter-spacing:-.02em;color:rgba(23,23,23,.07);pointer-events:none}
+.pxid-rich .pr-cell.pr-hot .pr-no{color:rgba(255,255,255,.15)}
+.pxid-rich .pr-cell h3{font-size:clamp(16px,1.4vw,19px);margin:10px 0 8px;position:relative}
+.pxid-rich .pr-cell p{font-size:13.5px;color:#666;position:relative}
 .pxid-rich .pr-cell.pr-hot p{color:rgba(255,255,255,.72)}
 
-/* bento 变化A：3列6卡（控制器） */
-.pxid-rich .pr-bento.a{grid-template-columns:repeat(3,1fr)}
+/* bento 变化A：4列6卡（控制器，wide跨2 → 2行排满无落单） */
+.pxid-rich .pr-bento.a{grid-template-columns:repeat(4,1fr)}
 .pxid-rich .pr-bento.a .pr-cell.wide{grid-column:span 2}
-@media(max-width:860px){.pxid-rich .pr-bento.a{grid-template-columns:repeat(2,1fr)}.pr-bento.a .pr-cell.wide{grid-column:span 2}}
+@media(max-width:1100px){.pxid-rich .pr-bento.a{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.pxid-rich .pr-bento.a{grid-template-columns:1fr}.pr-bento.a .pr-cell.wide{grid-column:span 1}}
 
 /* bento 变化B：2列4卡（仪表） */
@@ -55,7 +56,6 @@
 /* bento 变化C：横排4卡 strip（电机） */
 .pxid-rich .pr-bento.c{grid-template-columns:repeat(4,1fr)}
 .pxid-rich .pr-bento.c .pr-cell{text-align:center;display:flex;flex-direction:column;align-items:center}
-.pxid-rich .pr-bento.c .pr-cell .pr-no{margin-bottom:8px}
 @media(max-width:860px){.pxid-rich .pr-bento.c{grid-template-columns:repeat(2,1fr)}}
 
 /* bento 变化D：连通卡（IOT，带连接线视觉） */
