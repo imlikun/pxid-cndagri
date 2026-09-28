@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="chinaLg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>APP 下载｜PXID 品向</title>
+  <meta name="description" content="下载品向智行（全球版 / 国内版）与 PXID 出行官方 App：车辆配对、定位寻车、骑行数据、OTA 升级。扫码或点击按钮直达官方渠道。">
+  <meta name="keywords" content="PXID,品向智行,PXID出行,APP下载,电助力车,电动自行车,ODM">
+  <link rel="icon" href="../assets/pxid/logo-dark.png" type="image/png">
+  <script src="../templates/assets/swiper-bundle.js"></script>
+  <link rel="stylesheet" href="../templates/assets/index.css">
+  <link rel="stylesheet" href="../templates/assets/respone.css">
+  <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260927-navdrop8">
+  <link rel="stylesheet" href="../templates/assets/pxid-prodrich.css?v=20260928h5">
+  <style>
+    /* ═══ 下载页专属样式（dl-*）═══ */
+    .dl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px}
+    .dl-card{background:#fff;border:1px solid rgba(23,23,23,.08);padding:36px 34px;position:relative;display:flex;flex-direction:column}
+    .dl-head{display:flex;gap:18px;align-items:center}
+    .dl-ico{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:24px;flex:none;letter-spacing:.02em}
+    .dl-ico-red{background:#d71920}
+    .dl-ico-ink{background:#171717}
+    .dl-head h3{font-size:22px;font-weight:800;color:#171717;margin:0;line-height:1.3}
+    .dl-badge{font-style:normal;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;vertical-align:3px;margin-left:8px;white-space:nowrap}
+    .dl-badge-red{background:rgba(215,25,32,.1);color:#d71920}
+    .dl-badge-ink{background:rgba(23,23,23,.08);color:#171717}
+    .dl-badge-line{background:transparent;border:1px solid rgba(23,23,23,.25);color:#666}
+    .dl-en{display:block;font-size:12.5px;color:#8a8a8a;letter-spacing:.12em;text-transform:uppercase;margin-top:4px}
+    .dl-desc{color:#555;font-size:15px;line-height:1.85;margin:20px 0 0}
+    .dl-meta{display:flex;gap:16px;margin-top:14px;font-size:13px;color:#8a8a8a}
+    .dl-btns{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+    .dl-btn{flex:1;min-width:150px;display:flex;align-items:center;justify-content:center;gap:8px;height:48px;border:1px solid #171717;background:#171717;color:#fff;font-weight:600;font-size:15px;text-decoration:none;transition:background .2s,color .2s}
+    .dl-btn:hover{background:#d71920;border-color:#d71920}
+    .dl-btn.pending{border:1px dashed rgba(23,23,23,.3);background:transparent;color:#9a9a9a;cursor:default;pointer-events:none}
+    .dl-qr{display:flex;align-items:center;gap:16px;margin-top:24px;padding-top:22px;border-top:1px solid rgba(23,23,23,.07)}
+    .dl-qr img{width:88px;height:88px;flex:none;display:block}
+    .dl-qr span{font-size:12.5px;color:#8a8a8a;line-height:1.7}
+    .dl-more{justify-content:center;align-items:center;border:1px dashed rgba(23,23,23,.25);background:transparent;color:#8a8a8a;text-align:center;min-height:280px;display:flex;flex-direction:column;gap:10px}
+    .dl-more b{font-size:30px;color:rgba(23,23,23,.18);font-weight:800}
+    .dl-more p{margin:0;font-size:14px;line-height:1.8;max-width:24em}
+    .dl-note{margin-top:20px;font-size:13px;color:#9a9a9a}
+    .dl-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+    .dl-step{background:#f5f5f3;padding:32px 30px;position:relative;overflow:hidden}
+    .dl-step b{display:block;font-size:64px;line-height:1;font-weight:800;color:rgba(23,23,23,.07);letter-spacing:-.02em}
+    .dl-step h3{margin:10px 0 8px;font-size:18px;font-weight:700;color:#171717}
+    .dl-step p{margin:0;color:#666;font-size:14.5px;line-height:1.8}
+    @media(max-width:900px){.dl-grid,.dl-steps{grid-template-columns:1fr}.dl-card{padding:28px 24px}}
+  </style>
+</head>
+<body id="app" class="new afterInner">
+<!-- 全站去掉波浪（坤哥 2026-09-19）：与站内其他页保持一致 -->
+<style id="pxid-no-wave">
+  .wave, .wave.w1, .wave.w2{display:none !important}
+  #app footer .wb-footer-wave,
+  #app footer .pxid-footer-wave,
+  #app footer .wb-footer-wave svg,
+  #app footer .pxid-footer-wave svg,
+  #app footer .bg,
+  #app footer .bg .water{display:none !important}
+  .afterInner footer,
+  #app footer.wb-footer,
+  #app footer.pxid-footer{margin-top:0 !important}
+  #app footer{border-top:1px solid rgba(255,255,255,.16)}
+</style>
+<header>
+  <nav class="pcNav pc">
+    <a href="index.html" class="col logo">
+      <img class="white" src="../assets/pxid/logo-white.svg" alt="PXID 品向">
+      <img class="black" src="../assets/pxid/logo-ink.svg" alt="PXID 品向">
+    </a>
+    <ul class="mid fxc"><li class="lists hrefList"><a href="index.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>首页</a></li><li class="lists hrefList pxid-has-drop"><a href="business.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>产品方案</a><div class="pxid-nav-drop" role="menu" aria-label="产品方案下拉导航"><div class="pnd-grp"><span class="pnd-t">三电系统</span><a href="controller.html">控制器</a><a href="meter.html">仪表</a><a href="motor.html">电机</a></div><div class="pnd-grp pnd-grp2"><span class="pnd-t">智能网联</span><a href="iot.html">物联网 IOT</a></div></div></li><li class="lists hrefList"><a href="manufacturing.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>制造能力</a></li><li class="lists hrefList"><a href="sustainability.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>ODM 全流程</a></li><li class="lists hrefList"><a href="news.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>洞察与资料</a></li><li class="lists hrefList"><a href="contact.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>启动项目</a></li><li class="lists hrefList on"><a href="download.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>APP 下载</a></li><li class="lists hrefList"><a href="company.html" class="f-16 en_b wc navHref"><i class="iconfont f-12">&#xe630;</i>关于 PXID</a></li></ul>
+    <div class="col set fxc">
+      <div class="layer-search" data-url="search.html"><input class="search f-14 wc" type="text" placeholder="搜索产品与资料"><a class="sub fxc" aria-label="搜索"><i class="iconfont f-14 wc">&#xe8af;</i></a></div>
+      <a class="language fxc" href="index.html" aria-label="英文站规划中"><span class="txt wc f-16 en_b">EN</span></a>
+    </div>
+    <div class="mask"></div>
+  </nav>
+  <nav class="appNav app">
+    <div class="mask"></div>
+    <a class="logoBox" href="index.html"><img src="../assets/pxid/logo-white.svg" alt="PXID 品向" class="logo"></a>
+    <div class="col">
+      <a href="search.html" class="searchSub fxc" aria-label="搜索"><i class="iconfont f-14 wc">&#xe8af;</i></a>
+      <span id="menu"><span class="txt">Menu</span><svg class="pxid-menu-glyph" viewBox="0 0 24 24" aria-hidden="true"><path class="pxid-menu-line pxid-menu-line-top" d="M4 8h16"></path><path class="pxid-menu-line pxid-menu-line-bottom" d="M4 16h16"></path></svg></span>
+    </div>
+  </nav>
+</header>
+<nav class="menu">
+  <div class="items" data-vh=".8"><div class="content"><a href="index.html" class="lists appNavList"><span class="en_b f-26 wc">首页</span></a><a href="business.html" class="lists appNavList"><span class="en_b f-26 wc">产品方案</span></a><a href="three-electric.html" class="lists appNavList"><span class="en_b f-26 wc">三电系统</span></a><a href="iot.html" class="lists appNavList"><span class="en_b f-26 wc">物联网 IOT</span></a><a href="sustainability.html" class="lists appNavList"><span class="en_b f-26 wc">ODM 全流程</span></a><a href="news.html" class="lists appNavList"><span class="en_b f-26 wc">洞察与资料</span></a><a href="contact.html" class="lists appNavList"><span class="en_b f-26 wc">启动项目</span></a><a href="download.html" class="lists appNavList"><span class="en_b f-26 wc">APP 下载</span></a><a href="company.html" class="lists appNavList"><span class="en_b f-26 wc">关于 PXID</span></a></div></div>
+</nav>
+<main>
+<section class="row banner pxid-inner-hero" data-hero-image="product" data-vh="1.08">
+  <div class="bg"><div class="photo alanGo"><div class="pic full pxid-inner-hero-media">
+    <img src="../assets/pxid/cndagri-prod/app-hero.jpg" width="1600" height="897" alt="PXID APP" fetchpriority="high" loading="eager" decoding="async">
+  </div></div></div>
+  <div class="inner maxSize">
+    <div class="pr-cr">首页 / <span>APP 下载</span></div>
+    <small class="f-170 wc en_m alanGo">PXID · APP Download</small>
+    <h1 class="f-40 wc num_b alanGo alanFn" data-text="APP 下载">APP 下载</h1>
+    <p class="pr-herolead">品向智行与 PXID 出行官方客户端。扫码或点击按钮直达下载渠道——配对车辆、定位寻车、骑行数据、OTA 升级，一个 App 全搞定。更多应用陆续上架。</p>
+  </div>
+</section>
+<section class="pxid-rich"><div class="pr-stats"><div class="pr-grid"><div class="pr-stat"><b>3<i>款</i></b><span>官方 App，覆盖全球与国内市场</span></div><div class="pr-stat"><b>iOS<i>/Android</i></b><span>双端支持，扫码即装</span></div><div class="pr-stat"><b>OTA<i></i></b><span>新功能持续推送，无需重装</span></div><div class="pr-stat"><b>官方<i>渠道</i></b><span>安全无广告，更新第一时间达</span></div></div></div></section>
+<section class="pxid-rich" id="apps"><div class="pr-wrap pr-head">
+  <span class="pr-eyebrow">Download</span>
+  <h2 class="pr-h" style="margin-top:8px">选择你的 App</h2>
+  <p class="pr-sub">海外用户选全球版，国内用户选国内版，账号相互独立。扫描右侧二维码或点击按钮直达官方商店。</p>
+  <div class="dl-grid">
+    <article class="dl-card" data-app="global" id="a-global">
+      <div class="dl-head"><span class="dl-ico dl-ico-red">智</span>
+        <div><h3>品向智行<i class="dl-badge dl-badge-red">全球版</i></h3><span class="dl-en">PXID RIDE · Global</span></div></div>
+      <p class="dl-desc">面向海外市场的整车配对与骑行 App：车辆绑定、定位寻车、骑行轨迹与电量、固件 OTA 升级，多语言界面。pxid.com 全球用户入口。</p>
+      <div class="dl-meta"><span class="dl-ver" data-field="ver">v1.0.0</span><span class="dl-upd" data-field="updated">更新：2026-09-28</span></div>
+      <div class="dl-btns">
+        <a class="dl-btn pending" data-store="ios" href="javascript:void(0)">待上架</a>
+        <a class="dl-btn pending" data-store="apk" href="javascript:void(0)">待上架</a>
+      </div>
+      <div class="dl-qr"><img data-field="qr" src="../assets/pxid/qr/app-global.png" alt="品向智行全球版下载二维码"><span>扫码下载<br>当前为演示码，正式上架后替换</span></div>
+    </article>
+    <article class="dl-card" data-app="cn" id="a-cn">
+      <div class="dl-head"><span class="dl-ico dl-ico-ink">智</span>
+        <div><h3>品向智行<i class="dl-badge dl-badge-ink">国内版</i></h3><span class="dl-en">PXID RIDE · China</span></div></div>
+      <p class="dl-desc">面向国内市场：手机号快捷登录、整车蓝牙配对、防盗定位、骑行数据与 OTA；贴合国内通勤与合规场景。pxid.cn 国内用户入口。</p>
+      <div class="dl-meta"><span class="dl-ver" data-field="ver">v1.0.0</span><span class="dl-upd" data-field="updated">更新：2026-09-28</span></div>
+      <div class="dl-btns">
+        <a class="dl-btn pending" data-store="ios" href="javascript:void(0)">待上架</a>
+        <a class="dl-btn pending" data-store="apk" href="javascript:void(0)">待上架</a>
+      </div>
+      <div class="dl-qr"><img data-field="qr" src="../assets/pxid/qr/app-cn.png" alt="品向智行国内版下载二维码"><span>扫码下载<br>当前为演示码，正式上架后替换</span></div>
+    </article>
+    <article class="dl-card" data-app="trip" id="a-trip">
+      <div class="dl-head"><span class="dl-ico dl-ico-ink">出</span>
+        <div><h3>PXID出行<i class="dl-badge dl-badge-line">出行服务</i></h3><span class="dl-en">PXID Mobility</span></div></div>
+      <p class="dl-desc">共享 / 租赁出行服务端：扫码用车、计费与订单管理、附近车辆查找、在线客服与押金体系，运营级出行解决方案。</p>
+      <div class="dl-meta"><span class="dl-ver" data-field="ver">v1.0.0</span><span class="dl-upd" data-field="updated">更新：2026-09-28</span></div>
+      <div class="dl-btns">
+        <a class="dl-btn pending" data-store="ios" href="javascript:void(0)">待上架</a>
+        <a class="dl-btn pending" data-store="apk" href="javascript:void(0)">待上架</a>
+      </div>
+      <div class="dl-qr"><img data-field="qr" src="../assets/pxid/qr/app-trip.png" alt="PXID出行下载二维码"><span>扫码下载<br>当前为演示码，正式上架后替换</span></div>
+    </article>
+    <div class="dl-more">
+      <b>+</b>
+      <p>更多官方应用陆续上架<br>新 App 上线后在此自动扩展，无需改版</p>
+    </div>
+  </div>
+  <p class="dl-note">* 当前按钮与二维码为占位演示；安卓 / 苹果正式上架链接确认后统一替换（页面内已预留唯一配置入口）。</p>
+</div></section>
+<section class="pxid-rich"><div class="pr-wrap pr-head">
+  <span class="pr-eyebrow">How it works</span>
+  <h2 class="pr-h" style="margin-top:8px">三步开始智行</h2>
+  <div class="dl-steps">
+    <div class="dl-step"><b>01</b><h3>下载并安装</h3><p>扫描对应版本二维码，或点击商店按钮跳转官方渠道安装。</p></div>
+    <div class="dl-step"><b>02</b><h3>注册登录</h3><p>手机号 / 邮箱注册。国内版与全球版账号相互独立，请按所在市场选择。</p></div>
+    <div class="dl-step"><b>03</b><h3>绑定车辆</h3><p>蓝牙或扫码配对整车，开启定位、骑行数据与 OTA 固件升级服务。</p></div>
+  </div>
+</div></section>
+</main>
+<footer id="footer-contact">
+  <div class="bg"><svg class="water" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none"><defs><path id="foot-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z"/></defs><g class="parallax"><use href="#foot-wave" x="50" y="0" fill="rgba(19,65,68,1)"/></g></svg></div>
+  <div class="inner">
+    <div class="mid fxb">
+      <div class="left alanParent alanGo"><a class="logo alanUp" href="index.html"><img class="icon" src="../assets/pxid/logo-white.svg" alt="PXID 品向"></a></div>
+      <div class="right"><div class="top fxb alanParent alanGo"><div class="layer-search alanUp" data-url="search.html"><input class="search f-14 wc" type="text" placeholder="搜索产品与资料"><a class="sub fxc" aria-label="搜索"><i class="iconfont f-20 wc">&#xe8af;</i></a></div><div class="layer-top alanUp"><span class="mask"></span><span class="txt layer-icon"><i class="iconfont f-18">&#xe8ba;</i></span></div></div><ul class="items alanParent alanGo"><li class="list alanUp"><a href="index.html" class="f-20 en_b fxs wc txt">首页<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="company.html" class="f-20 en_b fxs wc txt">关于 PXID<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="business.html" class="f-20 en_b fxs wc txt">产品方案<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="manufacturing.html" class="f-20 en_b fxs wc txt">制造能力<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="sustainability.html" class="f-20 en_b fxs wc txt">ODM 全流程<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="news.html" class="f-20 en_b fxs wc txt">洞察与资料<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="contact.html" class="f-20 en_b fxs wc txt">启动项目<i class="iconfont f-20 mc">&#xe8a9;</i></a></li><li class="list alanUp"><a href="download.html" class="f-20 en_b fxs wc txt">APP 下载<i class="iconfont f-20 mc">&#xe8a9;</i></a></li></ul></div>
+    </div>
+    <div class="btm alanParent alanGo">
+      <p class="f-12 wc alanUp">Copyright © 2026 PXID 品向智造. All rights reserved.</p>
+      <div class="col fxb alanUp"><p class="f-14 wc"><a href="tel:+8618936381099">+86 189 3638 1099</a><br><a href="mailto:inquiry@pxid.com">inquiry@pxid.com</a><br>江苏省淮安市清江浦区深圳东路18号4号楼</p><div class="set fxc"><a class="f-12 aHref" href="privacy-policy.html">隐私政策</a><span class="line"></span><a class="f-12 aHref" href="legal-notice.html">法律声明</a></div></div>
+    </div>
+  </div>
+</footer>
+<script src="../templates/assets/pxid-motion.js"></script>
+<script src="../templates/assets/pxid-site.js?v=20260920-stage-anchor1"></script>
+<!-- pxid-motion-v1 start -->
+<script src="../templates/assets/pxid-motion-v1.js?v=20260916-motion4"></script>
+<!-- pxid-motion-v1 end -->
+<script>
+/* ═══════════════════════════════════════════════════════════
+   APP 下载链接配置 · 唯一改动点（后续链接更新 / 管理界面只改这里）
+   拿到正式上架链接后：填入 ios / apk 的 URL，按钮自动点亮；
+   二维码同步替换 assets/pxid/qr/ 下同名文件即可。
+   ═══════════════════════════════════════════════════════════ */
+window.PXID_APP_LINKS={
+  global:{ios:"",apk:"",ver:"v1.0.0",updated:"2026-09-28"},   /* 品向智行 · 全球版 */
+  cn:    {ios:"",apk:"",ver:"v1.0.0",updated:"2026-09-28"},   /* 品向智行 · 国内版 */
+  trip:  {ios:"",apk:"",ver:"v1.0.0",updated:"2026-09-28"}    /* PXID出行 */
+};
+(function(){
+  var L=window.PXID_APP_LINKS||{};
+  var cards=document.querySelectorAll('.dl-card[data-app]');
+  for(var i=0;i<cards.length;i++){
+    (function(card){
+      var c=L[card.getAttribute('data-app')]; if(!c) return;
+      if(c.ver){ var v=card.querySelector('[data-field="ver"]'); if(v) v.textContent=c.ver; }
+      if(c.updated){ var u=card.querySelector('[data-field="updated"]'); if(u) u.textContent='更新：'+c.updated; }
+      ['ios','apk'].forEach(function(k){
+        var b=card.querySelector('[data-store="'+k+'"]'); if(!b) return;
+        if(c[k]){
+          b.href=c[k]; b.classList.remove('pending');
+          b.textContent = (k==='ios') ? 'App Store 下载' : 'Android APK 下载';
+        }
+      });
+    })(cards[i]);
+  }
+})();
+</script>
+</body>
+</html>
