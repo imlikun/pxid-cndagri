@@ -1,0 +1,232 @@
+/* Controller editorial redesign, 2026-09-29. Scoped to this product page. */
+#app.controller-detail .ctrl-page{--ctrl-red:#d71920;--ctrl-ink:#17191b;--ctrl-rule:#dedfe0;background:#f7f7f7}
+#app.controller-detail .ctrl-page .ctrl-inner{width:min(calc(100% - 80px),1440px)}
+#app.controller-detail .ctrl-page .ctrl-section{padding:clamp(82px,7.2vw,116px) 0}
+#app.controller-detail .ctrl-page h2{font-size:clamp(42px,4.2vw,66px);line-height:1.14;letter-spacing:-.065em}
+#app.controller-detail .ctrl-page .ctrl-eyebrow{font-size:12px;letter-spacing:.24em;margin-bottom:19px}
+#app.controller-detail .ctrl-page .ctrl-section-heading{margin-bottom:42px}
+#app.controller-detail .ctrl-page .ctrl-intro{font-size:17px;line-height:1.85;max-width:700px}
+#app.controller-detail .ctrl-page .ctrl-small-note{line-height:1.75}
+#app.controller-detail .ctrl-page .ctrl-two-col{grid-template-columns:minmax(0,.98fr) minmax(0,1.02fr);gap:clamp(50px,8vw,150px);align-items:center}
+
+/* 01 · Full-bleed industrial photograph with real HTML copy. */
+#app.controller-detail .ctrl-page .ctrl-hero{background:#0b0d0f;min-height:760px}
+#app.controller-detail .ctrl-page .ctrl-hero::before{display:none}
+#app.controller-detail .ctrl-page .ctrl-hero-inner{display:block;min-height:760px;padding:142px 0 112px}
+#app.controller-detail .ctrl-page .ctrl-hero-media{position:absolute;z-index:0;left:50%;right:auto;top:0;bottom:0;width:100vw;margin:0;transform:translateX(-50%);overflow:hidden}
+#app.controller-detail .ctrl-page .ctrl-hero-media::before{display:none}
+#app.controller-detail .ctrl-page .ctrl-hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b0d0ff7 0%,#0b0d0fca 29%,#0b0d0f12 58%,transparent 100%),linear-gradient(0deg,#0b0d0f7a,transparent 32%);pointer-events:none}
+#app.controller-detail .ctrl-page .ctrl-hero-media img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:center;mix-blend-mode:normal;mask-image:none}
+#app.controller-detail .ctrl-page .ctrl-hero-copy{max-width:650px;position:relative;z-index:2}
+#app.controller-detail .ctrl-page .ctrl-crumb{margin-bottom:82px;color:#b9b9b9}
+#app.controller-detail .ctrl-page .ctrl-hero .ctrl-eyebrow::before{content:"";display:inline-block;width:29px;height:2px;background:#d71920;vertical-align:middle;margin-right:14px}
+#app.controller-detail .ctrl-page .ctrl-hero h1{font-size:clamp(70px,6.2vw,96px);line-height:1.11;letter-spacing:-.07em}
+#app.controller-detail .ctrl-page .ctrl-hero-lead{font-size:19px;line-height:1.78;max-width:570px;color:#e0e0e0;margin-top:26px}
+#app.controller-detail .ctrl-page .ctrl-hero-actions{margin-top:35px;gap:17px}
+#app.controller-detail .ctrl-page .ctrl-btn{min-height:59px;padding:0 27px}
+#app.controller-detail .ctrl-page .ctrl-hero .ctrl-text-link{border:1px solid #818181;padding:18px 25px;min-height:59px;color:#fff}
+#app.controller-detail .ctrl-page .ctrl-hero .ctrl-text-link:hover{border-color:#fff}
+#app.controller-detail .ctrl-page .ctrl-image-note{margin-top:28px;color:#b5b5b5}
+#app.controller-detail .ctrl-page .ctrl-hero-bottom{bottom:29px;z-index:2}
+#app.controller-detail .ctrl-page .ctrl-section-nav{position:relative;z-index:3;box-shadow:0 7px 20px #00000012}
+#app.controller-detail .ctrl-page .ctrl-section-nav a{padding:23px 12px}
+
+/* 02 · System role as a dark input/control/output map. */
+#app.controller-detail .ctrl-page .ctrl-system{background:#17191b;color:#f7f7f7}
+#app.controller-detail .ctrl-page .ctrl-system .ctrl-intro{color:#cecece}
+#app.controller-detail .ctrl-page .ctrl-system .ctrl-small-note{color:#999}
+#app.controller-detail .ctrl-page .ctrl-system-diagram{padding:28px;border:1px solid #34383b;background:radial-gradient(ellipse at 52% 50%,#343538,#151719 64%);box-shadow:none}
+#app.controller-detail .ctrl-page .ctrl-system-label{margin:0 0 19px;color:#aaa;font-size:12px}
+#app.controller-detail .ctrl-page .ctrl-system-map{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.27fr) minmax(0,.94fr);gap:16px;align-items:stretch;min-height:470px}
+#app.controller-detail .ctrl-page .ctrl-system-side{display:grid;grid-template-rows:repeat(3,1fr);gap:12px;position:relative;z-index:1}
+#app.controller-detail .ctrl-page .ctrl-map-card{display:flex;flex-direction:column;justify-content:center;padding:21px 23px;background:#ffffff0e;border:1px solid #7777774d;color:#fff;position:relative}
+#app.controller-detail .ctrl-page .ctrl-system-side-in .ctrl-map-card::after,#app.controller-detail .ctrl-page .ctrl-system-side-out .ctrl-map-card::before{content:"";position:absolute;top:50%;width:17px;height:2px;background:#d71920}
+#app.controller-detail .ctrl-page .ctrl-system-side-in .ctrl-map-card::after{right:-17px}
+#app.controller-detail .ctrl-page .ctrl-system-side-out .ctrl-map-card::before{left:-17px}
+#app.controller-detail .ctrl-page .ctrl-map-card span{color:#f18185;font:700 10px Arial,sans-serif;letter-spacing:.18em}
+#app.controller-detail .ctrl-page .ctrl-map-card strong{font-size:21px;margin:10px 0 7px}
+#app.controller-detail .ctrl-page .ctrl-map-card small{color:#b9b9b9;font-size:12px;line-height:1.6}
+#app.controller-detail .ctrl-page .ctrl-system-machine{margin:0;position:relative;min-width:0;overflow:hidden;background:#101214}
+#app.controller-detail .ctrl-page .ctrl-system-machine img{display:block;width:100%;height:100%;max-height:470px;object-fit:cover;object-position:73% center}
+#app.controller-detail .ctrl-page .ctrl-system-machine::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0b0d0f 0%,transparent 38%);pointer-events:none}
+#app.controller-detail .ctrl-page .ctrl-system-machine figcaption{position:absolute;left:23px;right:20px;bottom:24px;z-index:1;color:#fff}
+#app.controller-detail .ctrl-page .ctrl-system-machine b{display:block;font-size:23px}
+#app.controller-detail .ctrl-page .ctrl-system-machine span{display:block;color:#b8b8b8;font-size:12px;margin-top:6px}
+
+/* 03 · Board study. The interactive hot spots remain real buttons. */
+#app.controller-detail .ctrl-page .ctrl-hardware{background:#101112}
+#app.controller-detail .ctrl-page .ctrl-hardware .ctrl-section-heading{max-width:1100px}
+#app.controller-detail .ctrl-page .ctrl-pcb-layout{grid-template-columns:minmax(0,1.65fr) minmax(290px,.65fr);gap:18px}
+#app.controller-detail .ctrl-page .ctrl-pcb-stage{aspect-ratio:1672/940;background:#151515;border-color:#363636}
+#app.controller-detail .ctrl-page .ctrl-pcb-stage img{object-fit:cover}
+#app.controller-detail .ctrl-page .ctrl-pcb-aside{background:#1b1d1f;border-color:#35383a;padding:36px}
+#app.controller-detail .ctrl-page .ctrl-pcb-description{padding-top:32px}
+#app.controller-detail .ctrl-page .ctrl-pcb-description p{line-height:1.75}
+#app.controller-detail .ctrl-page .ctrl-hotspot{width:42px;height:42px;background:#d71920}
+#app.controller-detail .ctrl-page .ctrl-pcb-list button{min-height:51px}
+#app.controller-detail .ctrl-page .ctrl-architecture-line{margin-top:35px}
+
+/* 04 · A lighter, calmer experience selector. */
+#app.controller-detail .ctrl-page .ctrl-experience{background:#f9f9f9}
+#app.controller-detail .ctrl-page .ctrl-scene-shell{border-color:#dedede;box-shadow:0 22px 55px #0000000d}
+#app.controller-detail .ctrl-page .ctrl-scene-tabs button{height:67px;font-size:16px}
+#app.controller-detail .ctrl-page .ctrl-scene-tabs button[aria-selected=true]{color:#17191b}
+#app.controller-detail .ctrl-page .ctrl-scene-body{min-height:410px;padding:clamp(36px,5vw,74px)}
+#app.controller-detail .ctrl-page .ctrl-scene-circle{width:clamp(110px,11vw,166px)}
+#app.controller-detail .ctrl-page .ctrl-scene-circle-red{background:#26282a;border-color:#d71920;box-shadow:0 0 0 7px #f1f1f1,0 0 0 9px #e85d62}
+#app.controller-detail .ctrl-page .ctrl-scene-copy{border-left:1px solid #ddd;padding-left:clamp(30px,4vw,65px)}
+#app.controller-detail .ctrl-page .ctrl-scene-copy h3{font-size:clamp(25px,2.6vw,38px)}
+
+/* 05 · Light equipment atmosphere behind the protection logic. */
+#app.controller-detail .ctrl-page .ctrl-protection{background:#eff1f3;position:relative;isolation:isolate}
+#app.controller-detail .ctrl-page .ctrl-protection::before{content:"";position:absolute;z-index:-1;left:0;right:0;top:0;height:580px;background:linear-gradient(90deg,#eff1f3 0%,#eff1f3e8 32%,#eff1f300 70%),url('../../assets/pxid/cndagri-controller-redesign/controller-light-studio.png') center right/cover no-repeat;pointer-events:none}
+#app.controller-detail .ctrl-page .ctrl-protection .ctrl-section-heading{min-height:390px;display:block;max-width:650px;padding-top:28px}
+#app.controller-detail .ctrl-page .ctrl-protection .ctrl-intro{margin-top:26px;color:#52585c}
+#app.controller-detail .ctrl-page .ctrl-protection-flow{gap:16px;background:transparent}
+#app.controller-detail .ctrl-page .ctrl-protection-flow li{min-height:260px;background:#ffffffed;border:1px solid #e1e3e4;box-shadow:0 12px 32px #0000000c;padding:29px}
+#app.controller-detail .ctrl-page .ctrl-protection-flow li::after{right:-17px;top:43%;font-size:28px}
+#app.controller-detail .ctrl-page .ctrl-protection-flow span{font-size:16px}
+#app.controller-detail .ctrl-page .ctrl-protection-flow b{font-size:29px;margin:38px 0 13px}
+#app.controller-detail .ctrl-page .ctrl-protection-flow p{font-size:14px}
+#app.controller-detail .ctrl-page .ctrl-protection-foot{margin-top:28px}
+
+/* 06 · Product image paired with three clear thermal checkpoints. */
+#app.controller-detail .ctrl-page .ctrl-thermal{background:#fafafa}
+#app.controller-detail .ctrl-page .ctrl-thermal .ctrl-section-heading{max-width:870px}
+#app.controller-detail .ctrl-page .ctrl-thermal .ctrl-section-heading .ctrl-intro{margin-top:20px}
+#app.controller-detail .ctrl-page .ctrl-thermal-grid{grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:clamp(36px,5vw,78px)}
+#app.controller-detail .ctrl-page .ctrl-thermal-media{border:0;background:#edf0f2}
+#app.controller-detail .ctrl-page .ctrl-thermal-media img{aspect-ratio:1.55;object-fit:cover;object-position:72% center}
+#app.controller-detail .ctrl-page .ctrl-thermal-path{margin-top:0}
+#app.controller-detail .ctrl-page .ctrl-thermal-path div{grid-template-columns:42px 1fr;gap:7px 16px;padding:24px 0}
+#app.controller-detail .ctrl-page .ctrl-thermal-path span{grid-row:1/3;font-size:24px;color:#aaa}
+#app.controller-detail .ctrl-page .ctrl-thermal-path b{font-size:22px}
+#app.controller-detail .ctrl-page .ctrl-thermal-path small{grid-column:2;font-size:14px}
+
+/* 07 · Information chain and documented public status. */
+#app.controller-detail .ctrl-page .ctrl-connect{background:#151719}
+#app.controller-detail .ctrl-page .ctrl-connect-layout{grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:45px}
+#app.controller-detail .ctrl-page .ctrl-connect-visual{height:480px;background:radial-gradient(circle at 50% 51%,#4e191d 0%,#181a1c 44%,#111 76%);border-color:#383b3d}
+#app.controller-detail .ctrl-page .ctrl-connect-core{width:220px;height:220px;border-color:#d71920;background:linear-gradient(#10111288,#10111288),url('../../assets/pxid/cndagri-controller-redesign/controller-dark-studio.png') 77% center/auto 100% no-repeat;box-shadow:0 0 0 20px #d7192014,0 0 0 84px #d7192008}
+#app.controller-detail .ctrl-page .ctrl-connect-core span{margin-top:93px;text-shadow:0 2px 4px #000}
+#app.controller-detail .ctrl-page .ctrl-connect-satellite{background:#242628ed;border-color:#606060;padding:17px 19px}
+#app.controller-detail .ctrl-page .ctrl-connect-table>div{padding:21px 17px}
+
+/* 08–09 · Evidence before claims; transparent integration inputs. */
+#app.controller-detail .ctrl-page .ctrl-evidence{background:#fafafa}
+#app.controller-detail .ctrl-page .ctrl-evidence-grid{gap:22px}
+#app.controller-detail .ctrl-page .ctrl-evidence-panel{padding:43px;border:1px solid #e6e6e6;box-shadow:0 14px 34px #0000000a}
+#app.controller-detail .ctrl-page .ctrl-evidence-panel h3{margin-bottom:26px}
+#app.controller-detail .ctrl-page .ctrl-evidence-panel li{font-size:16px;padding:16px 0}
+#app.controller-detail .ctrl-page .ctrl-selection{background:#f0f1f1}
+#app.controller-detail .ctrl-page .ctrl-selection-table{box-shadow:0 14px 38px #00000008}
+#app.controller-detail .ctrl-page .ctrl-selection-table>div{padding:23px 31px;grid-template-columns:23fr 43fr 34fr}
+#app.controller-detail .ctrl-page .ctrl-selection-table .ctrl-selection-head{background:#25282a}
+#app.controller-detail .ctrl-page .ctrl-process{background:#f7f7f7;padding-top:65px}
+#app.controller-detail .ctrl-page .ctrl-process-steps{background:#fff;border:1px solid #e1e1e1}
+#app.controller-detail .ctrl-page .ctrl-process-steps li{padding:30px 25px;min-height:205px;border-color:#e1e1e1}
+#app.controller-detail .ctrl-page .ctrl-process-steps li:first-child{padding-left:25px}
+
+/* 10 · Vehicle scope uses the generated industrial atmosphere, not fake case studies. */
+#app.controller-detail .ctrl-page .ctrl-applications{background:#0e1012;position:relative;isolation:isolate;overflow:hidden}
+#app.controller-detail .ctrl-page .ctrl-applications-grid{display:block;min-height:615px;position:relative;padding-top:18px;padding-bottom:35px}
+#app.controller-detail .ctrl-page .ctrl-applications-image{position:absolute;z-index:-1;left:50%;top:-116px;bottom:-116px;width:100vw;transform:translateX(-50%);overflow:hidden}
+#app.controller-detail .ctrl-page .ctrl-applications-image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0d0f11 0%,#0d0f11d9 29%,#0d0f1140 59%,transparent 100%)}
+#app.controller-detail .ctrl-page .ctrl-applications-image img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:center;background:transparent}
+#app.controller-detail .ctrl-page .ctrl-applications-image figcaption{position:absolute;z-index:2;right:40px;bottom:23px;color:#c2c2c2}
+#app.controller-detail .ctrl-page .ctrl-applications-copy{position:relative;z-index:1;max-width:760px}
+#app.controller-detail .ctrl-page .ctrl-applications .ctrl-intro{max-width:610px}
+#app.controller-detail .ctrl-page .ctrl-applications-list{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;border:0;margin-top:40px}
+#app.controller-detail .ctrl-page .ctrl-applications-list div{display:block;min-height:174px;padding:22px;background:#17191bd9;border:1px solid #7777776b}
+#app.controller-detail .ctrl-page .ctrl-applications-list span{font-size:17px}
+#app.controller-detail .ctrl-page .ctrl-applications-list p{margin-top:12px;color:#c8c8c8}
+
+/* Resources, questions, connected pages and project contact. */
+#app.controller-detail .ctrl-page .ctrl-resources{background:#f8f8f8;padding-bottom:74px}
+#app.controller-detail .ctrl-page .ctrl-resource-list>div{grid-template-columns:220px 1fr 110px;min-height:84px}
+#app.controller-detail .ctrl-page .ctrl-resource-list em{border:1px solid #dedede;padding:8px;color:#878787;text-align:center;font-size:12px}
+#app.controller-detail .ctrl-page .ctrl-faq{background:#f8f8f8;padding-top:54px;border-top:1px solid #e3e3e3}
+#app.controller-detail .ctrl-page .ctrl-faq-list summary{min-height:80px;display:flex;align-items:center;font-size:18px}
+#app.controller-detail .ctrl-page .ctrl-faq-list details p{font-size:16px;line-height:1.8}
+#app.controller-detail .ctrl-page .ctrl-related{background:#efefef}
+#app.controller-detail .ctrl-page .ctrl-related-grid{gap:20px}
+#app.controller-detail .ctrl-page .ctrl-related-grid a{min-height:232px;padding:31px}
+#app.controller-detail .ctrl-page .ctrl-project{background:radial-gradient(ellipse at 86% 24%,#562126 0,transparent 44%),linear-gradient(112deg,#17191b,#292022);padding:110px 0 205px}
+#app.controller-detail .ctrl-page .ctrl-project-grid{align-items:start}
+#app.controller-detail .ctrl-page .ctrl-project-action{align-self:end}
+
+@media(max-width:1100px){
+  #app.controller-detail .ctrl-page .ctrl-system-map{grid-template-columns:1fr 1.15fr 1fr}
+  #app.controller-detail .ctrl-page .ctrl-map-card{padding:15px}
+  #app.controller-detail .ctrl-page .ctrl-map-card strong{font-size:17px}
+  #app.controller-detail .ctrl-page .ctrl-map-card small{font-size:11px}
+  #app.controller-detail .ctrl-page .ctrl-pcb-layout{grid-template-columns:1fr}
+  #app.controller-detail .ctrl-page .ctrl-pcb-aside{display:block}
+  #app.controller-detail .ctrl-page .ctrl-pcb-description{padding-top:22px}
+  #app.controller-detail .ctrl-page .ctrl-thermal-grid{gap:35px}
+  #app.controller-detail .ctrl-page .ctrl-connect-layout{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  #app.controller-detail .ctrl-page .ctrl-inner{width:calc(100% - 40px)}
+  #app.controller-detail .ctrl-page .ctrl-section{padding:72px 0}
+  #app.controller-detail .ctrl-page h2{font-size:clamp(38px,8vw,53px)}
+  #app.controller-detail .ctrl-page .ctrl-two-col{grid-template-columns:1fr;gap:22px}
+  #app.controller-detail .ctrl-page .ctrl-hero{min-height:850px}
+  #app.controller-detail .ctrl-page .ctrl-hero-inner{min-height:850px;padding:107px 0 75px}
+  #app.controller-detail .ctrl-page .ctrl-hero-media{left:50%;right:auto;margin:0;width:100vw}
+  #app.controller-detail .ctrl-page .ctrl-hero-media img{max-height:none;height:100%;object-position:68% bottom}
+  #app.controller-detail .ctrl-page .ctrl-hero-media::after{background:linear-gradient(180deg,#0b0d0ffb 0%,#0b0d0fef 40%,#0b0d0f38 72%,#0b0d0f55 100%)}
+  #app.controller-detail .ctrl-page .ctrl-crumb{margin-bottom:52px}
+  #app.controller-detail .ctrl-page .ctrl-hero h1{font-size:clamp(55px,12vw,76px)}
+  #app.controller-detail .ctrl-page .ctrl-hero-lead{font-size:16px}
+  #app.controller-detail .ctrl-page .ctrl-hero-actions{gap:12px}
+  #app.controller-detail .ctrl-page .ctrl-hero .ctrl-text-link{padding:15px 18px;min-height:54px}
+  #app.controller-detail .ctrl-page .ctrl-system-map{grid-template-columns:1fr;min-height:0}
+  #app.controller-detail .ctrl-page .ctrl-system-side{grid-template-columns:repeat(3,1fr);grid-template-rows:auto}
+  #app.controller-detail .ctrl-page .ctrl-system-side .ctrl-map-card::before,#app.controller-detail .ctrl-page .ctrl-system-side .ctrl-map-card::after{display:none}
+  #app.controller-detail .ctrl-page .ctrl-system-machine{height:380px}
+  #app.controller-detail .ctrl-page .ctrl-system-machine img{max-height:none}
+  #app.controller-detail .ctrl-page .ctrl-scene-copy{border-left:0;padding-left:0}
+  #app.controller-detail .ctrl-page .ctrl-protection::before{height:450px;background-position:70% top}
+  #app.controller-detail .ctrl-page .ctrl-protection .ctrl-section-heading{min-height:355px;max-width:590px}
+  #app.controller-detail .ctrl-page .ctrl-protection-flow{grid-template-columns:repeat(2,1fr)}
+  #app.controller-detail .ctrl-page .ctrl-thermal-grid{grid-template-columns:1fr}
+  #app.controller-detail .ctrl-page .ctrl-thermal-media img{aspect-ratio:1.45}
+  #app.controller-detail .ctrl-page .ctrl-applications-grid{min-height:0;padding:0 0 60px}
+  #app.controller-detail .ctrl-page .ctrl-applications-copy{max-width:100%}
+  #app.controller-detail .ctrl-page .ctrl-applications-image{top:-72px;bottom:-72px}
+  #app.controller-detail .ctrl-page .ctrl-applications-image::after{background:linear-gradient(90deg,#0d0f11e8,#0d0f11a3)}
+  #app.controller-detail .ctrl-page .ctrl-applications-list{grid-template-columns:1fr}
+  #app.controller-detail .ctrl-page .ctrl-applications-list div{min-height:0}
+  #app.controller-detail .ctrl-page .ctrl-project{padding:80px 0 160px}
+}
+@media(max-width:520px){
+  #app.controller-detail .ctrl-page .ctrl-inner{width:calc(100% - 36px)}
+  #app.controller-detail .ctrl-page .ctrl-hero{min-height:805px}
+  #app.controller-detail .ctrl-page .ctrl-hero-inner{min-height:805px;padding-top:92px}
+  #app.controller-detail .ctrl-page .ctrl-crumb{margin-bottom:39px}
+  #app.controller-detail .ctrl-page .ctrl-hero h1{font-size:52px}
+  #app.controller-detail .ctrl-page .ctrl-hero .ctrl-text-link{border:0;padding:12px 0}
+  #app.controller-detail .ctrl-page .ctrl-hero-actions{margin-top:25px}
+  #app.controller-detail .ctrl-page .ctrl-image-note{margin-top:18px}
+  #app.controller-detail .ctrl-page .ctrl-system-diagram{padding:16px}
+  #app.controller-detail .ctrl-page .ctrl-system-side{grid-template-columns:1fr}
+  #app.controller-detail .ctrl-page .ctrl-map-card{padding:17px}
+  #app.controller-detail .ctrl-page .ctrl-map-card strong{font-size:18px;margin:7px 0 3px}
+  #app.controller-detail .ctrl-page .ctrl-system-machine{height:310px}
+  #app.controller-detail .ctrl-page .ctrl-pcb-aside{padding:22px}
+  #app.controller-detail .ctrl-page .ctrl-hotspot{width:31px;height:31px}
+  #app.controller-detail .ctrl-page .ctrl-scene-body{padding:27px 18px}
+  #app.controller-detail .ctrl-page .ctrl-scene-circle{width:88px}
+  #app.controller-detail .ctrl-page .ctrl-protection .ctrl-section-heading{min-height:390px}
+  #app.controller-detail .ctrl-page .ctrl-protection::before{height:490px;background:linear-gradient(180deg,#eff1f3 0%,#eff1f3dc 45%,#eff1f347 100%),url('../../assets/pxid/cndagri-controller-redesign/controller-light-studio.png') 64% center/cover no-repeat}
+  #app.controller-detail .ctrl-page .ctrl-protection-flow{grid-template-columns:1fr}
+  #app.controller-detail .ctrl-page .ctrl-protection-flow li{min-height:0}
+  #app.controller-detail .ctrl-page .ctrl-connect-visual{height:340px}
+  #app.controller-detail .ctrl-page .ctrl-connect-core{width:132px;height:132px;box-shadow:0 0 0 12px #d7192014,0 0 0 46px #d7192008}
+  #app.controller-detail .ctrl-page .ctrl-connect-core span{margin-top:47px}
+  #app.controller-detail .ctrl-page .ctrl-selection-table>div{grid-template-columns:1fr;gap:7px;padding:19px}
+  #app.controller-detail .ctrl-page .ctrl-related-grid a{min-height:0}
+  #app.controller-detail .ctrl-page .ctrl-project{padding-bottom:150px}
+}
+@media(prefers-reduced-motion:reduce){#app.controller-detail .ctrl-page *{scroll-behavior:auto!important}}

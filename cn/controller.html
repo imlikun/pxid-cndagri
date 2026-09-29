@@ -14,6 +14,7 @@
 
 
   <link rel="stylesheet" href="../templates/assets/pxid-controller-detail.css?v=red2">
+  <link rel="stylesheet" href="../templates/assets/pxid-controller-redesign.css?v=20260929a">
 </head>
 <body id="app" class="threesys afterInner controller-detail">
 <header>
@@ -53,7 +54,7 @@
         <div class="ctrl-hero-actions"><a class="ctrl-btn ctrl-btn-red" href="#system">了解控制系统 <span aria-hidden="true">↗</span></a><a class="ctrl-text-link" href="#selection">查看适配准备 <span aria-hidden="true">→</span></a></div>
         <p class="ctrl-image-note">外观为概念渲染；实际外形、接口与规格以项目资料为准。</p>
       </div>
-      <div class="ctrl-hero-media"><img src="../assets/pxid/cndagri-prod-v2/controller-hero.png" alt="带散热片的控制器概念外观" width="1448" height="1086" fetchpriority="high" decoding="async"></div>
+      <div class="ctrl-hero-media"><img src="../assets/pxid/cndagri-controller-redesign/controller-dark-studio.png" alt="带散热片的控制器概念外观，置于深色工业场景" width="1672" height="940" fetchpriority="high" decoding="async"></div>
     </div>
     <div class="ctrl-hero-bottom ctrl-inner"><span>CONTROL / FEEDBACK / INTEGRATION</span><a href="#system">向下探索 <span aria-hidden="true">↓</span></a></div>
   </section>
@@ -63,10 +64,13 @@
   <section class="ctrl-section ctrl-light ctrl-system" id="system" aria-labelledby="system-title">
     <div class="ctrl-inner">
       <div class="ctrl-section-heading ctrl-two-col"><div><p class="ctrl-eyebrow">01 / SYSTEM ROLE</p><h2 id="system-title">连接输入与动力的<br>控制中枢</h2></div><div><p class="ctrl-intro">控制器位于车辆电能路径和控制信号的交汇处。先看清各节点的关系，再讨论具体接口、策略和标定，才能把整车体验落到实际硬件上。</p><p class="ctrl-small-note">一般系统关系示意；不是本产品线束图。节点与接口以选定型号资料核对。</p></div></div>
-      <div class="ctrl-system-diagram" role="img" aria-label="电池经控制器向电机传递电能；转把和刹车提供输入信号，控制器可与仪表及联网终端交换状态信息。具体连接以型号资料为准。">
+      <div class="ctrl-system-diagram" aria-label="整车系统关系示意；具体连接以型号资料为准">
         <div class="ctrl-system-label"><span class="ctrl-line-key ctrl-line-energy"></span>电能路径 <span class="ctrl-line-key ctrl-line-signal"></span>信号路径</div>
-        <div class="ctrl-energy-row"><div class="ctrl-node"><span class="ctrl-node-index">POWER SOURCE</span><strong>电池</strong><small>电压平台与供电条件</small></div><span class="ctrl-flow-arrow" aria-hidden="true"><i></i>电能</span><div class="ctrl-node ctrl-node-core"><span class="ctrl-node-index">CONTROL CORE</span><strong>控制器</strong><small>接收指令 · 调节输出 · 状态反馈</small></div><span class="ctrl-flow-arrow" aria-hidden="true"><i></i>驱动输出</span><div class="ctrl-node"><span class="ctrl-node-index">DRIVE OUTPUT</span><strong>电机</strong><small>动力输出与反馈条件</small></div></div>
-        <div class="ctrl-signal-row"><div class="ctrl-signal-group"><span>输入</span><b>转把 / 刹车</b><small>输入定义需确认</small></div><div class="ctrl-signal-group"><span>车端交互</span><b>仪表</b><small>协议需确认</small></div><div class="ctrl-signal-group"><span>扩展连接</span><b>联网终端</b><small>配置与更新链路需确认</small></div></div>
+        <div class="ctrl-system-map">
+          <div class="ctrl-system-side ctrl-system-side-in"><div class="ctrl-map-card"><span>01 / POWER</span><strong>电池 / 电源</strong><small>提供直流电能；电压平台与供电条件待核对</small></div><div class="ctrl-map-card"><span>02 / SIGNAL</span><strong>转把输入</strong><small>加速指令与输入定义待核对</small></div><div class="ctrl-map-card"><span>03 / SIGNAL</span><strong>刹车输入</strong><small>制动信号与保护策略待核对</small></div></div>
+          <figure class="ctrl-system-machine"><img src="../assets/pxid/cndagri-controller-redesign/controller-dark-studio.png" alt="控制器概念外观，作为整车关系示意中心" width="1672" height="940" loading="lazy" decoding="async"><figcaption><b>PXID 控制器</b><span>整车系统的控制枢纽 · 概念示意</span></figcaption></figure>
+          <div class="ctrl-system-side ctrl-system-side-out"><div class="ctrl-map-card"><span>04 / OUTPUT</span><strong>驱动电机</strong><small>动力输出与电机匹配需按项目确认</small></div><div class="ctrl-map-card"><span>05 / DATA</span><strong>仪表 / 显示</strong><small>车辆状态与骑行信息的交互方向</small></div><div class="ctrl-map-card"><span>06 / CONNECT</span><strong>联网终端</strong><small>远程链路与升级能力按型号核对</small></div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -77,13 +81,13 @@
       <div class="ctrl-pcb-layout">
         <div class="ctrl-pcb-visual">
           <div class="ctrl-pcb-stage" id="pcb-stage">
-            <img src="../assets/pxid/cndagri-prod/controller-board.png" alt="PCB 概念渲染图，显示电容外观、集成电路封装与连接器等可见结构；非已核实量产板件" width="2624" height="1472" loading="lazy" decoding="async">
-            <svg class="ctrl-pcb-lines" viewBox="0 0 100 56" preserveAspectRatio="none" aria-hidden="true"><path data-line="connector" d="M77 28 L86 19 L95 19"/><path data-line="board" d="M46 41 L55 32 L69 32"/><path data-line="capacitor" d="M30 19 L37 11 L52 11"/></svg>
-            <button class="ctrl-hotspot is-active" type="button" data-hotspot="connector" style="--x:77%;--y:50%" aria-label="查看连接器外观说明" aria-pressed="true"><span>01</span></button>
-            <button class="ctrl-hotspot" type="button" data-hotspot="board" style="--x:46%;--y:73%" aria-label="查看板面封装器件说明" aria-pressed="false"><span>02</span></button>
-            <button class="ctrl-hotspot" type="button" data-hotspot="capacitor" style="--x:30%;--y:34%" aria-label="查看柱状元件外观说明" aria-pressed="false"><span>03</span></button>
+            <img src="../assets/pxid/cndagri-controller-redesign/controller-pcb-studio.png" alt="PCB 概念渲染图，显示柱状元件、集成电路封装与连接器等可见结构；非已核实量产板件" width="1672" height="940" loading="lazy" decoding="async">
+            <svg class="ctrl-pcb-lines" viewBox="0 0 100 56" preserveAspectRatio="none" aria-hidden="true"><path data-line="connector" d="M89 28 L91 18 L97 18"/><path data-line="board" d="M56 39 L61 29 L70 29"/><path data-line="capacitor" d="M42 18 L45 11 L54 11"/></svg>
+            <button class="ctrl-hotspot is-active" type="button" data-hotspot="connector" style="--x:89%;--y:50%" aria-label="查看连接器外观说明" aria-pressed="true"><span>01</span></button>
+            <button class="ctrl-hotspot" type="button" data-hotspot="board" style="--x:56%;--y:70%" aria-label="查看板面封装器件说明" aria-pressed="false"><span>02</span></button>
+            <button class="ctrl-hotspot" type="button" data-hotspot="capacitor" style="--x:42%;--y:32%" aria-label="查看柱状元件外观说明" aria-pressed="false"><span>03</span></button>
           </div>
-          <p class="ctrl-caption"><span class="ctrl-status-pill">概念示意</span> 原站独立图片，非实际板件照片；红色热点只对应图中可见外观，不代表器件功能鉴定。</p>
+          <p class="ctrl-caption"><span class="ctrl-status-pill">概念示意</span> 基于原站独立板面素材生成的氛围图，非实际板件照片；热点只对应可见外观，不代表器件功能鉴定。</p>
         </div>
         <div class="ctrl-pcb-aside">
           <span class="ctrl-aside-topline">EXPLORE THE BOARD</span>
@@ -112,7 +116,7 @@
     </div>
   </section>
 
-  <section class="ctrl-section ctrl-light ctrl-thermal" id="thermal" aria-labelledby="thermal-title"><div class="ctrl-inner ctrl-thermal-grid"><div class="ctrl-thermal-media"><img src="../assets/pxid/cndagri-prod/controller-thermal.png" alt="展示散热片外观的控制器概念渲染" width="2624" height="1472" loading="lazy" decoding="async"><span>外观概念图 / 非温升测试照片</span></div><div class="ctrl-thermal-copy"><p class="ctrl-eyebrow">05 / THERMAL STRUCTURE</p><h2 id="thermal-title">散热，从结构开始考虑。</h2><p class="ctrl-intro">散热片只是可见的外部形态。真实热路径还取决于内部接触、壳体材料、安装面、气流及持续负载条件。</p><div class="ctrl-thermal-path"><div><span>01</span><b>内部热源</b><small>器件与导热接触待工程图核对</small></div><div><span>02</span><b>外壳结构</b><small>散热片形态可见，材料与工艺待确认</small></div><div><span>03</span><b>安装环境</b><small>装车位置、气流与防护共同决定边界</small></div></div><p class="ctrl-small-note">无对应型号温升记录，当前不展示温度数据或散热提升百分比。</p></div></div></section>
+  <section class="ctrl-section ctrl-light ctrl-thermal" id="thermal" aria-labelledby="thermal-title"><div class="ctrl-inner"><div class="ctrl-section-heading"><p class="ctrl-eyebrow">05 / THERMAL STRUCTURE</p><h2 id="thermal-title">散热，从结构开始考虑。</h2><p class="ctrl-intro">散热片只是可见的外部形态。真实热路径还取决于内部接触、壳体材料、安装面、气流及持续负载条件。</p></div><div class="ctrl-thermal-grid"><div class="ctrl-thermal-media"><img src="../assets/pxid/cndagri-controller-redesign/controller-light-studio.png" alt="展示散热片外观的控制器概念渲染，浅色工业背景" width="1672" height="940" loading="lazy" decoding="async"><span>外观概念图 / 非温升测试照片</span></div><div class="ctrl-thermal-copy"><div class="ctrl-thermal-path"><div><span>01</span><b>内部热源与接触</b><small>器件与导热接触待工程图核对</small></div><div><span>02</span><b>外壳结构与材料</b><small>散热片形态可见，材料与工艺待确认</small></div><div><span>03</span><b>安装环境与气流</b><small>装车位置、气流与防护共同决定边界</small></div></div><p class="ctrl-small-note">无对应型号温升记录，当前不展示温度数据或散热提升百分比。</p></div></div></div></section>
 
   <section class="ctrl-section ctrl-dark ctrl-connect" id="connections" aria-labelledby="connections-title"><div class="ctrl-inner"><div class="ctrl-section-heading ctrl-two-col"><div><p class="ctrl-eyebrow">06 / INTERFACES & SOFTWARE</p><h2 id="connections-title">让控制器进入<br>整车信息链路。</h2></div><p class="ctrl-intro">通讯接口决定控制器如何与仪表、整车部件和调试工具协同。旧站提到 CAN、一线通和 OTA；本地资料尚不能证明具体型号、协议版本或远程升级链路。</p></div><div class="ctrl-connect-layout"><div class="ctrl-connect-visual"><div class="ctrl-connect-core">CONTROLLER<span>控制器</span></div><div class="ctrl-connect-satellite sat-a">仪表<small>状态与指令</small></div><div class="ctrl-connect-satellite sat-b">调试工具<small>参数与诊断</small></div><div class="ctrl-connect-satellite sat-c">联网终端<small>远程链路需核对</small></div><span class="ctrl-connect-line line-a" aria-hidden="true"></span><span class="ctrl-connect-line line-b" aria-hidden="true"></span><span class="ctrl-connect-line line-c" aria-hidden="true"></span></div><div class="ctrl-connect-table"><div class="ctrl-table-head"><span>项目</span><span>当前公开状态</span></div><div><strong>车端协议</strong><span>旧站提及 CAN / 一线通；接口定义与版本待确认</span></div><div><strong>调试与标定</strong><span>工具、可调项与权限范围待确认</span></div><div><strong>固件更新</strong><span>本地刷写与远程更新分别核对，不默认互通</span></div><div><strong>整车配套</strong><span>仪表、电机与线束兼容性按项目确认</span></div></div></div><p class="ctrl-caption">信息关系示意；连线表示讨论方向，不代表选定型号已具备全部接口。</p></div></section>
 
@@ -122,7 +126,7 @@
 
   <section class="ctrl-section ctrl-light ctrl-process" id="adaptation" aria-labelledby="adaptation-title"><div class="ctrl-inner"><div class="ctrl-section-heading"><p class="ctrl-eyebrow">09 / INTEGRATION</p><h2 id="adaptation-title">从需求输入，到样车验证。</h2><p class="ctrl-intro">以下是与项目团队讨论控制器适配时的建议顺序；具体开发、交付与服务范围需双方确认。</p></div><ol class="ctrl-process-steps"><li><span>01</span><h3>需求输入</h3><p>车型、电池、电机与目标工况</p></li><li><span>02</span><h3>接口核对</h3><p>线束、仪表协议与安装空间</p></li><li><span>03</span><h3>样件匹配</h3><p>明确候选硬件与软件版本</p></li><li><span>04</span><h3>参数标定</h3><p>记录关键策略与整车边界</p></li><li><span>05</span><h3>样车验证</h3><p>按约定工况检查响应与保护</p></li></ol></div></section>
 
-  <section class="ctrl-section ctrl-applications" id="applications" aria-labelledby="applications-title"><div class="ctrl-inner ctrl-applications-grid"><div class="ctrl-applications-copy"><p class="ctrl-eyebrow">10 / APPLICATION SCOPE</p><h2 id="applications-title">面向不同车型，<br>先核对适配边界。</h2><p class="ctrl-intro">旧站提及通勤、摩托和运营车辆等方向，但未提供对应型号与公开案例。本地预览只展示项目讨论时的差异，不声明已有量产项目。</p><div class="ctrl-applications-list"><div><span>城市通勤</span><p>关注低速平顺、能耗与日常使用边界。</p></div><div><span>高负载需求</span><p>关注输出、连续运行与散热条件。</p></div><div><span>运营车辆</span><p>关注接口、诊断与维护流程的配套范围。</p></div></div></div><figure class="ctrl-applications-image"><img src="../assets/pxid/cndagri-prod/controller-studio.png" alt="展示控制器接口一侧的概念渲染" width="2624" height="1472" loading="lazy" decoding="async"><figcaption>产品外观概念图；实车安装与客户案例图片待补。</figcaption></figure></div></section>
+  <section class="ctrl-section ctrl-applications" id="applications" aria-labelledby="applications-title"><div class="ctrl-inner ctrl-applications-grid"><div class="ctrl-applications-copy"><p class="ctrl-eyebrow">10 / APPLICATION SCOPE</p><h2 id="applications-title">面向不同车型，<br>先核对适配边界。</h2><p class="ctrl-intro">旧站提及通勤、摩托和运营车辆等方向，但未提供对应型号与公开案例。以下只展示项目讨论时的差异，不声明已有量产项目。</p><div class="ctrl-applications-list"><div><span>城市通勤</span><p>关注低速平顺、能耗与日常使用边界。</p></div><div><span>高负载需求</span><p>关注输出、连续运行与散热条件。</p></div><div><span>运营车辆</span><p>关注接口、诊断与维护流程的配套范围。</p></div></div></div><figure class="ctrl-applications-image"><img src="../assets/pxid/cndagri-controller-redesign/controller-dark-studio.png" alt="控制器概念渲染置于深色工业场景" width="1672" height="940" loading="lazy" decoding="async"><figcaption>产品外观概念图；实车安装与客户案例图片待补。</figcaption></figure></div></section>
 
   <section class="ctrl-section ctrl-light ctrl-resources" id="resources" aria-labelledby="resources-title"><div class="ctrl-inner"><div class="ctrl-section-heading ctrl-two-col"><div><p class="ctrl-eyebrow">11 / TECHNICAL RESOURCES</p><h2 id="resources-title">让资料，支持每一步判断。</h2></div><p class="ctrl-intro">本地项目尚未发现可公开下载的控制器规格书、安装图或接口定义。以下是适配通常需要的资料项；文件到位前不放空下载按钮。</p></div><div class="ctrl-resource-list"><div><strong>规格与尺寸</strong><span>型号、外形、安装尺寸、持续与峰值条件</span><em>待提供</em></div><div><strong>接口与线束</strong><span>连接器、针脚定义、协议版本和线束要求</span><em>待提供</em></div><div><strong>匹配与验证</strong><span>电机匹配、标定范围、测试条件与报告</span><em>待提供</em></div></div><a class="ctrl-inline-link" href="contact.html">带着项目资料联系团队 <span aria-hidden="true">↗</span></a></div></section>
 
