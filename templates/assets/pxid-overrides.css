@@ -6001,3 +6001,7 @@ select:focus-visible {
 .pcNav .pxid-nav-drop a:hover{color:#fff;background:rgba(255,255,255,.05)}
 .pcNav .pxid-nav-drop a:hover .pnd-ico{background:#d71920;color:#fff}
 .pcNav .pxid-nav-drop a:hover .pnd-tx b{color:#fff}
+
+/* ===== navdrop10: 下拉面板左对齐触发项（原居中偏移，2026-09-29） ===== */
+.pcNav .pxid-nav-drop{left:0;transform:translate(0,12px)}
+.pcNav .pxid-has-drop:hover .pxid-nav-drop,.pcNav .pxid-has-drop:focus-within .pxid-nav-drop{transform:translate(0,0)}
