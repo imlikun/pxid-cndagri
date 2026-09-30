@@ -1,0 +1,10 @@
+/* Website shell only. Product layout is isolated in the IoT component. */
+#app.product-iot{background:#09131d}
+#app.product-iot main.pxid-iot-host{display:block;position:relative;isolation:isolate;width:100%;max-width:none;margin:0;padding:0;border:0;overflow:clip;min-height:756px;outline:none}
+#app.product-iot footer.wb-footer{margin-top:82px}
+#app.product-iot .pxid-skip-link:not(:focus){opacity:0;pointer-events:none}
+#app.product-iot header:not(.pxid-header-scrolled) .pcNav{background:#081522e8}
+#app.product-iot header:not(.pxid-header-scrolled) .pcNav .navHref,#app.product-iot header:not(.pxid-header-scrolled) .pcNav .wc{color:#fff!important}
+#app.product-iot header:not(.pxid-header-scrolled) .pcNav .logo .black{opacity:0!important}
+#app.product-iot header:not(.pxid-header-scrolled) .pcNav .logo .white{opacity:1!important}
+@media(max-width:900px){#app.product-iot main.pxid-iot-host{padding-top:66px}}
