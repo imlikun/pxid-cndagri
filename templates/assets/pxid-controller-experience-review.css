@@ -1,0 +1,65 @@
+/* Section 04 review: a restrained, readable control-experience panel. */
+#app.controller-detail .cr-page .cr-experience{padding:30px 0 42px;background:#f3f4f5}
+#app.controller-detail .cr-page .cr-experience>.cr-wrap{padding:16px 90px 0;background:#fff;box-shadow:0 15px 42px #181b1e0d}
+#app.controller-detail .cr-page .cr-experience .cr-split-heading{display:grid;grid-template-columns:510px minmax(0,1fr);gap:55px;align-items:center;min-height:109px;margin:0 0 19px;padding-left:84px}
+#app.controller-detail .cr-page .cr-experience .cr-split-heading .cr-kicker{margin-bottom:11px;font-size:10px;letter-spacing:.26em}
+#app.controller-detail .cr-page .cr-experience .cr-split-heading .cr-kicker span{width:25px}
+#app.controller-detail .cr-page .cr-experience .cr-split-heading h2{font-size:42px;line-height:1.13;letter-spacing:-.045em}
+#app.controller-detail .cr-page .cr-experience .cr-split-heading>p{padding:0;color:#777d82;font-size:15px;line-height:1.75}
+#app.controller-detail .cr-page .cr-experience .cr-scene-panel{border:0;background:#fff;box-shadow:none}
+#app.controller-detail .cr-page .cr-experience .cr-scene-tabs{grid-template-columns:repeat(5,minmax(0,1fr));background:#f0f1f2}
+#app.controller-detail .cr-page .cr-experience .cr-scene-tabs button{min-height:49px;border-bottom-width:3px;font-size:15px;color:#555a60}
+#app.controller-detail .cr-page .cr-experience .cr-scene-tabs button[aria-selected=true]{background:#fff;color:#141617}
+#app.controller-detail .cr-page .cr-experience .cr-scene-body{display:grid;grid-template-columns:700px minmax(0,1fr);gap:0;min-height:270px;padding:34px 0 28px}
+#app.controller-detail .cr-page .cr-experience .cr-process-visual{display:grid;grid-template-columns:124px 40px 124px 40px 124px;gap:0;justify-content:space-between;align-items:start;min-width:0;padding:8px 58px 0 65px}
+#app.controller-detail .cr-page .cr-experience .cr-process-node{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;min-width:0}
+#app.controller-detail .cr-page .cr-experience .cr-process-disc{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;width:124px;height:124px;border:1px solid #dfe2e4;border-radius:50%;background:linear-gradient(145deg,#f5f5f5,#e9ebec);color:#16191c}
+#app.controller-detail .cr-page .cr-experience .cr-process-disc svg{display:block;width:31px;height:31px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+#app.controller-detail .cr-page .cr-experience .cr-process-disc b{position:static;margin:0;transform:none;font-size:17px;line-height:1.2}
+#app.controller-detail .cr-page .cr-experience .cr-process-active .cr-process-disc{border:2px solid #e5252b;background:#27292b;color:#fff;box-shadow:0 0 0 5px #fff,0 0 0 7px #f3c4c7}
+#app.controller-detail .cr-page .cr-experience .cr-process-node small{margin:14px 0 0;color:#8b9195;font-size:12px;line-height:1.5;white-space:nowrap}
+#app.controller-detail .cr-page .cr-experience .cr-process-visual>i{margin:47px 0 0;align-self:start;color:#26292b;font-size:29px;line-height:1;font-weight:300;text-align:center}
+#app.controller-detail .cr-page .cr-experience .cr-scene-copy{min-width:0;border-left:1px solid #dfe2e4;padding:1px 24px 0 54px}
+#app.controller-detail .cr-page .cr-experience .cr-scene-copy .cr-kicker{gap:14px;margin-bottom:14px;color:#92979b;font-size:11px;letter-spacing:.12em}
+#app.controller-detail .cr-page .cr-experience .cr-scene-copy .cr-kicker span{width:26px;height:2px}
+#app.controller-detail .cr-page .cr-experience .cr-scene-copy h3{font-size:22px;line-height:1.25;white-space:nowrap}
+#app.controller-detail .cr-page .cr-experience .cr-scene-copy>p:not(.cr-kicker){margin-top:9px;color:#858a8e;font-size:13px;line-height:1.62}
+#app.controller-detail .cr-page .cr-experience .cr-scene-copy ul{margin:11px 0 0;padding:11px 0 0;border-top:1px solid #e0e2e3}
+#app.controller-detail .cr-page .cr-experience .cr-scene-copy li{gap:10px;margin:6px 0;color:#979ca0;font-size:11px;line-height:1.4}
+#app.controller-detail .cr-page .cr-experience .cr-scene-copy li::before{width:7px;height:7px;background:#e5252b}
+#app.controller-detail .cr-page .cr-experience .cr-scene-copy li b{color:#26292b;font-size:11px}
+@media(max-width:1399px){
+  #app.controller-detail .cr-page .cr-experience>.cr-wrap{padding:24px 48px 0}
+  #app.controller-detail .cr-page .cr-experience .cr-split-heading{grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:35px;padding-left:20px}
+  #app.controller-detail .cr-page .cr-experience .cr-scene-body{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+  #app.controller-detail .cr-page .cr-experience .cr-process-visual{grid-template-columns:108px 30px 108px 30px 108px;padding:10px 25px 0;gap:0}
+  #app.controller-detail .cr-page .cr-experience .cr-process-disc{width:108px;height:108px}
+  #app.controller-detail .cr-page .cr-experience .cr-process-visual>i{margin-top:40px}
+  #app.controller-detail .cr-page .cr-experience .cr-scene-copy{padding-left:30px;padding-right:8px}
+  #app.controller-detail .cr-page .cr-experience .cr-scene-copy h3{white-space:normal}
+}
+@media(max-width:900px){
+  #app.controller-detail .cr-page .cr-experience>.cr-wrap{padding:28px 32px 0}
+  #app.controller-detail .cr-page .cr-experience .cr-split-heading{display:block;padding:0;margin-bottom:28px}
+  #app.controller-detail .cr-page .cr-experience .cr-split-heading>p{max-width:660px;margin-top:20px}
+  #app.controller-detail .cr-page .cr-experience .cr-scene-body{display:block;padding:32px 0}
+  #app.controller-detail .cr-page .cr-experience .cr-process-visual{display:flex;justify-content:space-around;padding:0 20px 32px}
+  #app.controller-detail .cr-page .cr-experience .cr-scene-copy{border-left:0;border-top:1px solid #dfe2e4;padding:25px 10px 0}
+}
+@media(max-width:600px){
+  #app.controller-detail .cr-page .cr-experience{padding:30px 0 45px}
+  #app.controller-detail .cr-page .cr-experience>.cr-wrap{padding:24px 16px 0}
+  #app.controller-detail .cr-page .cr-experience .cr-split-heading h2{font-size:35px}
+  #app.controller-detail .cr-page .cr-experience .cr-split-heading>p{font-size:13px}
+  #app.controller-detail .cr-page .cr-experience .cr-scene-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+  #app.controller-detail .cr-page .cr-experience .cr-scene-tabs button{min-width:0;min-height:46px;padding:0;font-size:11px}
+  #app.controller-detail .cr-page .cr-experience .cr-scene-body{padding:26px 0}
+  #app.controller-detail .cr-page .cr-experience .cr-process-visual{gap:2px;padding:0 0 25px}
+  #app.controller-detail .cr-page .cr-experience .cr-process-disc,#app.controller-detail .cr-page .cr-experience .cr-process-active .cr-process-disc{width:76px;height:76px;gap:2px}
+  #app.controller-detail .cr-page .cr-experience .cr-process-disc svg{width:23px;height:23px}
+  #app.controller-detail .cr-page .cr-experience .cr-process-disc b{font-size:12px}
+  #app.controller-detail .cr-page .cr-experience .cr-process-node small{font-size:9px;white-space:normal}
+  #app.controller-detail .cr-page .cr-experience .cr-process-visual>i{font-size:18px;margin-top:25px}
+  #app.controller-detail .cr-page .cr-experience .cr-scene-copy h3{font-size:20px}
+  #app.controller-detail .cr-page .cr-experience .cr-scene-copy>p:not(.cr-kicker){font-size:12px}
+}

@@ -1,0 +1,40 @@
+/* Section 02 review: a compact input–controller–output system map. */
+#app.controller-detail .cr-page .cr-system{padding:52px 0 42px;background:radial-gradient(ellipse at 62% 50%,#25282b 0%,#151718 49%,#101213 100%)}
+#app.controller-detail .cr-page .cr-system-grid{display:grid;grid-template-columns:390px minmax(0,1fr);gap:30px;align-items:center;min-height:0;padding:0 30px}
+#app.controller-detail .cr-page .cr-system-intro{grid-column:auto;max-width:none;margin:0;padding:0 0 0 4px}
+#app.controller-detail .cr-page .cr-system-intro .cr-kicker{margin-bottom:24px;font-size:10px}
+#app.controller-detail .cr-page .cr-system-intro h2{font-size:clamp(38px,3.25vw,53px);line-height:1.13}
+#app.controller-detail .cr-page .cr-system-intro>p:not(.cr-kicker){max-width:355px;margin-top:25px;color:#d3d6d8;font-size:14px;line-height:1.83}
+#app.controller-detail .cr-page .cr-system-intro small{margin-top:48px;padding-top:13px;width:270px;font-size:10px;letter-spacing:.27em}
+#app.controller-detail .cr-page .cr-system-diagram{height:430px;min-width:0;display:grid;grid-template-columns:minmax(185px,.87fr) minmax(270px,1.4fr) minmax(185px,.87fr);gap:18px;align-items:center;position:relative;isolation:isolate}
+#app.controller-detail .cr-page .cr-system-diagram::before{content:"";position:absolute;z-index:-2;inset:8% 17%;background:radial-gradient(ellipse,#575b6030,transparent 68%)}
+#app.controller-detail .cr-page .cr-system-strap{position:absolute;right:0;top:-28px;text-align:right;font-size:9px;line-height:1.55;letter-spacing:.28em;color:#a3a8ab}
+#app.controller-detail .cr-page .cr-system-strap::after{content:"";display:inline-block;width:23px;height:2px;background:#ee2c35;margin:0 0 3px 11px}
+#app.controller-detail .cr-page .cr-system-wires{position:absolute;z-index:-1;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+#app.controller-detail .cr-page .cr-system-wires path.cr-wire-energy,#app.controller-detail .cr-page .cr-system-wires path.cr-wire-signal{fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+#app.controller-detail .cr-page .cr-system-wires .cr-wire-energy{stroke:#ff3b46;filter:drop-shadow(0 0 5px #ff3444)}
+#app.controller-detail .cr-page .cr-system-wires .cr-wire-signal{stroke:#f4f6f6;filter:drop-shadow(0 0 3px #dce3e7)}
+#app.controller-detail .cr-page .cr-system-stack{height:auto;align-self:center;display:grid;grid-template-rows:repeat(3,118px);gap:18px;position:relative;z-index:2}
+#app.controller-detail .cr-page .cr-sys-card{height:118px;min-height:0;display:grid;grid-template-columns:108px minmax(0,1fr);gap:0;align-items:center;padding:10px 9px 10px 0;background:linear-gradient(120deg,#292d2fbd,#20242683);border:1px solid #74797d7c;border-radius:6px;box-shadow:0 12px 25px #0006}
+#app.controller-detail .cr-page .cr-system-inputs .cr-sys-card::after,#app.controller-detail .cr-page .cr-system-outputs .cr-sys-card::before{display:none}
+#app.controller-detail .cr-page .cr-sys-asset{display:block;width:112px;height:50px;margin-left:-4px;background-image:url('../../assets/pxid/cndagri-controller-redesign/controller-system-components.png');background-size:200% 300%;background-repeat:no-repeat;filter:drop-shadow(0 5px 5px #0008)}
+#app.controller-detail .cr-page .cr-sys-card>div{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0;font-size:12px;line-height:1.25}
+#app.controller-detail .cr-page .cr-asset-battery{background-position:left top}
+#app.controller-detail .cr-page .cr-asset-motor{background-position:right top}
+#app.controller-detail .cr-page .cr-asset-throttle{background-position:left center}
+#app.controller-detail .cr-page .cr-asset-meter{background-position:right center}
+#app.controller-detail .cr-page .cr-asset-brake{background-position:left bottom}
+#app.controller-detail .cr-page .cr-asset-iot{background-position:right bottom}
+#app.controller-detail .cr-page .cr-sys-card b{font-size:15px;line-height:1.28;white-space:normal}
+#app.controller-detail .cr-page .cr-sys-card p{font-size:11px;line-height:1.45;color:#c2c6c8;margin:4px 0 0}
+#app.controller-detail .cr-page .cr-sys-card em{font-size:10px;margin-top:8px;padding:3px 6px}
+#app.controller-detail .cr-page .cr-system-center{grid-column:auto;grid-row:auto;min-height:0;height:430px;position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#app.controller-detail .cr-page .cr-system-center::before{content:"";position:absolute;z-index:-2;inset:11% -4% 10%;background:radial-gradient(ellipse,#b8283138,transparent 66%)}
+#app.controller-detail .cr-page .cr-system-center img{width:100%;height:275px;max-width:315px;max-height:none;object-fit:contain;object-position:center;mix-blend-mode:normal;mask-image:none;filter:drop-shadow(0 18px 15px #000e)}
+#app.controller-detail .cr-page .cr-center-orbit{position:absolute;z-index:-1;left:8%;right:8%;top:auto;bottom:92px;height:67px;border:2px solid #e42730;border-radius:50%;box-shadow:0 0 16px #e427305e,inset 0 0 15px #e4273044;transform:none}
+#app.controller-detail .cr-page .cr-center-label{position:relative;bottom:auto;left:auto;right:auto;margin-top:-1px;text-align:center}
+#app.controller-detail .cr-page .cr-center-label b{font-size:20px;line-height:1.2}
+#app.controller-detail .cr-page .cr-center-label span{display:block;margin-top:5px;color:#c8cbcd;font-size:12px}
+#app.controller-detail .cr-page .cr-system>.cr-disclaimer{margin-top:13px;color:#8f9598;font-size:11px}
+@media(max-width:1365px){#app.controller-detail .cr-page .cr-system{padding:70px 0 55px}#app.controller-detail .cr-page .cr-system-grid{grid-template-columns:1fr;gap:45px;padding:0}#app.controller-detail .cr-page .cr-system-intro{max-width:720px}#app.controller-detail .cr-page .cr-system-intro>p:not(.cr-kicker){max-width:680px}#app.controller-detail .cr-page .cr-system-intro small{margin-top:22px}#app.controller-detail .cr-page .cr-system-diagram{grid-template-columns:minmax(170px,.87fr) minmax(240px,1.4fr) minmax(170px,.87fr)}#app.controller-detail .cr-page .cr-system-inputs{grid-column:1;grid-row:1}#app.controller-detail .cr-page .cr-system-center{grid-column:2;grid-row:1}#app.controller-detail .cr-page .cr-system-outputs{grid-column:3;grid-row:1}}
+@media(max-width:700px){#app.controller-detail .cr-page .cr-system{padding:65px 0 45px}#app.controller-detail .cr-page .cr-system-grid{display:block}#app.controller-detail .cr-page .cr-system-intro h2{font-size:39px}#app.controller-detail .cr-page .cr-system-diagram{display:grid;grid-template-columns:1fr 1fr;gap:10px;height:auto;margin-top:35px}#app.controller-detail .cr-page .cr-system-strap,#app.controller-detail .cr-page .cr-system-wires{display:none}#app.controller-detail .cr-page .cr-system-center{grid-column:1/-1;grid-row:1;height:290px;min-height:0}#app.controller-detail .cr-page .cr-system-center img{height:235px;max-width:290px}#app.controller-detail .cr-page .cr-center-orbit{bottom:43px;height:51px;left:23%;right:23%}#app.controller-detail .cr-page .cr-center-label b{font-size:17px}#app.controller-detail .cr-page .cr-center-label span{font-size:11px}#app.controller-detail .cr-page .cr-system-inputs{grid-column:1;grid-row:2}#app.controller-detail .cr-page .cr-system-outputs{grid-column:2;grid-row:2}#app.controller-detail .cr-page .cr-system-stack{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(3,124px);gap:9px}#app.controller-detail .cr-page .cr-sys-card{height:124px;min-height:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:8px 10px}#app.controller-detail .cr-page .cr-sys-asset{width:100px;height:45px;margin:0 0 3px}#app.controller-detail .cr-page .cr-sys-card b{font-size:12px}#app.controller-detail .cr-page .cr-sys-card p{font-size:10px;margin-top:2px}#app.controller-detail .cr-page .cr-sys-card em{font-size:9px;margin-top:3px}#app.controller-detail .cr-page .cr-system-intro small{width:230px}}

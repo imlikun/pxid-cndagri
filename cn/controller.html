@@ -14,6 +14,12 @@
 
 
   <link rel="stylesheet" href="../templates/assets/pxid-controller-reference.css?v=20260929b">
+  <link rel="stylesheet" href="../templates/assets/pxid-controller-hero-review.css?v=20260929c">
+  <link rel="stylesheet" href="../templates/assets/pxid-controller-system-review.css?v=20260929d">
+  <link rel="stylesheet" href="../templates/assets/pxid-controller-hardware-review.css?v=20260929e">
+  <link rel="stylesheet" href="../templates/assets/pxid-controller-experience-review.css?v=20260929f">
+  <link rel="stylesheet" href="../templates/assets/pxid-controller-protection-review.css?v=20260929g">
+  <link rel="stylesheet" href="../templates/assets/pxid-controller-final-sections.css?v=20260930a">
 </head>
 <body id="app" class="threesys afterInner controller-detail">
 <header>
@@ -43,8 +49,28 @@
   <svg class="shape-overlays" viewBox="0 0 1080 1080" preserveAspectRatio="none"><rect class="path" x="0" y="0" width="1080" height="1080"></rect></svg>
 </nav>
 <main id="main-content" class="ctrl-page cr-page">
+  <svg class="cr-icon-bank" width="0" height="0" aria-hidden="true"><defs>
+    <symbol id="cr-icon-gauge" viewBox="0 0 32 32"><path d="M5 24a13 13 0 1 1 22 0M16 16l7-7M7 16H4m24 0h-3M16 3v3"/><circle cx="16" cy="16" r="2"/></symbol>
+    <symbol id="cr-icon-car" viewBox="0 0 32 32"><path d="m7 9 3-5h12l3 5 3 4v11H4V13l3-4ZM4 13h24M8 24v4m16-4v4M8 18h4m8 0h4M7 9h18"/></symbol>
+    <symbol id="cr-icon-laptop" viewBox="0 0 32 32"><rect x="5" y="5" width="22" height="18" rx="1"/><path d="m5 23-3 5h28l-3-5M12 26h8"/></symbol>
+    <symbol id="cr-icon-cloud" viewBox="0 0 32 32"><path d="M8 27a7 7 0 0 1-1-14 9 9 0 0 1 17-3 8 8 0 0 1 0 17H8Z"/></symbol>
+    <symbol id="cr-icon-upload" viewBox="0 0 32 32"><path d="M9 25H7a6 6 0 0 1-1-12 9 9 0 0 1 17-3 8 8 0 0 1 2 15h-2M16 29V15m-5 5 5-5 5 5"/></symbol>
+    <symbol id="cr-icon-link" viewBox="0 0 32 32"><path d="m13 11 5-5a6 6 0 0 1 8 8l-5 5M19 21l-5 5a6 6 0 0 1-8-8l5-5m0 8 10-10"/></symbol>
+    <symbol id="cr-icon-wrench" viewBox="0 0 32 32"><path d="M13 5a9 9 0 0 0 11 11l6 10-4 4-10-6A9 9 0 0 0 5 13l6 1 3-3-1-6Z"/></symbol>
+    <symbol id="cr-icon-box" viewBox="0 0 32 32"><path d="m3 10 13-7 13 7v14l-13 7-13-7V10Zm0 0 13 7 13-7M16 17v14M9 6l13 7"/></symbol>
+    <symbol id="cr-icon-layers" viewBox="0 0 32 32"><path d="m2 10 14-7 14 7-14 7L2 10Zm0 7 14 7 14-7M2 24l14 7 14-7"/></symbol>
+    <symbol id="cr-icon-checkdoc" viewBox="0 0 32 32"><path d="M20 3H5v27h23V11l-8-8Zm0 0v8h8M10 18l3 3 7-7M10 26h11"/></symbol>
+    <symbol id="cr-icon-doc" viewBox="0 0 32 32"><rect x="7" y="3" width="19" height="27" rx="1"/><path d="M12 9h9M12 15h9M12 21h9M12 26h9"/></symbol>
+    <symbol id="cr-icon-sliders" viewBox="0 0 32 32"><path d="M3 7h26M3 16h26M3 25h26"/><circle cx="11" cy="7" r="3"/><circle cx="22" cy="16" r="3"/><circle cx="10" cy="25" r="3"/></symbol>
+    <symbol id="cr-icon-gear" viewBox="0 0 32 32"><path d="m13 3 6 0 1 4 3 2 4-1 3 5-3 3v3l3 3-3 5-4-1-3 2-1 4h-6l-1-4-3-2-4 1-3-5 3-3v-3l-3-3 3-5 4 1 3-2 1-4Z"/><circle cx="16" cy="17" r="5"/></symbol>
+    <symbol id="cr-icon-flag" viewBox="0 0 32 32"><path d="M6 30V3m0 1c7-5 12 5 20 0v14c-8 5-13-5-20 0"/></symbol>
+    <symbol id="cr-icon-ruler" viewBox="0 0 32 32"><rect x="8" y="2" width="17" height="28" rx="1"/><path d="M8 8h6m-6 6h9m-9 6h6m-6 6h9"/></symbol>
+    <symbol id="cr-icon-connector" viewBox="0 0 32 32"><path d="m4 22 18-18 6 6-18 18-6-6Zm4-4 6 6M18 8l6 6M2 28l4-4M26 6l4-4"/></symbol>
+    <symbol id="cr-icon-headset" viewBox="0 0 32 32"><path d="M4 18v-4a12 12 0 0 1 24 0v9c0 5-4 7-9 7"/><rect x="2" y="15" width="6" height="11" rx="2"/><rect x="24" y="15" width="6" height="11" rx="2"/></symbol>
+  </defs></svg>
   <section class="cr-hero" id="overview" aria-labelledby="cr-hero-title">
-    <div class="cr-hero-image" role="img" aria-label="黑色散热鳍片控制器的工业概念渲染图"></div>
+    <div class="cr-hero-image" aria-hidden="true"></div>
+    <img class="cr-hero-product" src="../assets/pxid/cndagri-controller-redesign/controller-system-cutout.png" alt="黑色散热鳍片控制器的工业概念渲染图" fetchpriority="high">
     <div class="cr-wrap cr-hero-inner">
       <div class="cr-hero-copy">
         <p class="cr-kicker cr-kicker-light"><span></span>PXID 控制器　CN DAGRI</p>
@@ -54,64 +80,166 @@
       </div>
       <p class="cr-hero-vertical">CONTROL<br>DRIVES<br>A BETTER<br>RIDE</p>
     </div>
-    <nav class="cr-chapter-nav" aria-label="控制器页面章节"><a href="#system">01 产品概述</a><a href="#hardware">02 核心优势</a><a href="#applications">03 应用场景</a><a href="#resources">04 技术支持</a><a href="#faq">05 常见问题</a></nav>
+    <nav class="cr-chapter-nav" aria-label="控制器页面章节"><div class="cr-chapter-inner"><a href="#system">01 产品概述</a><a href="#hardware">02 核心优势</a><a href="#applications">03 应用场景</a><a href="#resources">04 技术支持</a><a href="#faq">05 常见问题</a><span class="cr-scroll-cue" aria-hidden="true">SCROLL</span></div></nav>
   </section>
 
   <section class="cr-section cr-system cr-dark" id="system" aria-labelledby="cr-system-title">
     <div class="cr-wrap cr-system-grid">
-      <div class="cr-system-intro"><p class="cr-kicker cr-kicker-light"><span></span>PXID CONTROLLER</p><h2 id="cr-system-title">连接输入与动力的<br>控制中枢</h2><p>PXID 控制器位于整车动力系统的核心，连接电池、油门、刹车、电机与仪表等关键部件，协调能量与信号流动，让车辆的输入、控制和输出形成清晰链路。</p><small>控制更智能　·　出行更美好</small></div>
-      <div class="cr-system-inputs cr-system-stack" aria-label="控制器输入端">
-        <div class="cr-sys-card"><span class="cr-sys-symbol">▣</span><div><b>电池 / 电源</b><p>提供直流电能</p><em>电能输入</em></div></div>
-        <div class="cr-sys-card"><span class="cr-sys-symbol">◉</span><div><b>油门输入</b><p>加速信号</p><em class="cr-signal">信号输入</em></div></div>
-        <div class="cr-sys-card"><span class="cr-sys-symbol">⌁</span><div><b>刹车输入</b><p>制动信号</p><em class="cr-signal">信号输入</em></div></div>
-      </div>
-      <div class="cr-system-center"><div class="cr-center-orbit"></div><img src="../assets/pxid/cndagri-controller-redesign/controller-boardstyle-dark.png" alt="黑色控制器概念渲染图"><div class="cr-center-label"><b>PXID 控制器</b><span>整车系统的核心枢纽</span></div></div>
-      <div class="cr-system-outputs cr-system-stack" aria-label="控制器输出与通信端">
-        <div class="cr-sys-card"><img src="../assets/pxid/cndagri-prod/motor-dark.png" alt="" loading="lazy"><div><b>驱动电机</b><p>输出三相电流，驱动动力</p><em>电能输出</em></div></div>
-        <div class="cr-sys-card"><img src="../assets/pxid/cndagri-prod/meter-dark.png" alt="" loading="lazy"><div><b>仪表 / 显示</b><p>输出运行数据与状态</p><em class="cr-signal">数据通信</em></div></div>
-        <div class="cr-sys-card"><span class="cr-sys-symbol">☁</span><div><b>IoT / 诊断</b><p>连接终端与调试方向</p><em class="cr-signal">数据通信</em></div></div>
+      <div class="cr-system-intro"><p class="cr-kicker cr-kicker-light"><span></span>PXID CONTROLLER</p><h2 id="cr-system-title">连接输入与动力的<br>控制中枢</h2><p>PXID 控制器作为整车系统的核心枢纽，连接电池、油门、刹车、电机与仪表等关键部件，协调能量与信号流动，确保整车高效、安全、平稳运行，是电动出行的“大脑”。</p><small>控制更智能　·　出行更美好</small></div>
+      <div class="cr-system-diagram">
+        <p class="cr-system-strap">CONTROL DRIVES<br>A BETTER RIDE</p>
+        <svg class="cr-system-wires" viewBox="0 0 940 430" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="cr-energy-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M1 1 L8 4.5 L1 8" fill="none" stroke="#ff545c" stroke-width="1.6"/></marker><marker id="cr-signal-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M1 1 L8 4.5 L1 8" fill="none" stroke="#f1f2f3" stroke-width="1.6"/></marker></defs><path class="cr-wire-energy" d="M225 69 H258 Q274 69 274 85 V145 Q274 161 289 161 H340" marker-end="url(#cr-energy-arrow)"/><path class="cr-wire-signal" d="M225 215 H340" marker-end="url(#cr-signal-arrow)"/><path class="cr-wire-signal" d="M225 361 H258 Q274 361 274 345 V285 Q274 269 289 269 H340" marker-end="url(#cr-signal-arrow)"/><path class="cr-wire-energy" d="M602 161 H649 Q665 161 665 145 V85 Q665 69 681 69 H717" marker-end="url(#cr-energy-arrow)"/><path class="cr-wire-signal" d="M602 215 H717" marker-end="url(#cr-signal-arrow)"/><path class="cr-wire-signal" d="M602 269 H649 Q665 269 665 285 V345 Q665 361 681 361 H717" marker-end="url(#cr-signal-arrow)"/></svg>
+        <div class="cr-system-inputs cr-system-stack" aria-label="控制器输入端"><div class="cr-sys-card"><span class="cr-sys-asset cr-asset-battery" aria-hidden="true"></span><div><b>电池 / 电源</b><p>提供直流电能</p><em>电能输入</em></div></div><div class="cr-sys-card"><span class="cr-sys-asset cr-asset-throttle" aria-hidden="true"></span><div><b>油门输入</b><p>加速信号</p><em class="cr-signal">信号输入</em></div></div><div class="cr-sys-card"><span class="cr-sys-asset cr-asset-brake" aria-hidden="true"></span><div><b>刹车输入</b><p>制动信号</p><em class="cr-signal">信号输入</em></div></div></div>
+        <div class="cr-system-center"><div class="cr-center-orbit"></div><img src="../assets/pxid/cndagri-controller-redesign/controller-system-cutout.png" alt="黑色散热鳍片控制器概念渲染图" loading="lazy"><div class="cr-center-label"><b>PXID 控制器</b><span>整车系统的核心枢纽</span></div></div>
+        <div class="cr-system-outputs cr-system-stack" aria-label="控制器输出与通信端"><div class="cr-sys-card"><span class="cr-sys-asset cr-asset-motor" aria-hidden="true"></span><div><b>驱动电机</b><p>输出三相电流<br>驱动动力</p><em>电能输出</em></div></div><div class="cr-sys-card"><span class="cr-sys-asset cr-asset-meter" aria-hidden="true"></span><div><b>仪表 / 显示</b><p>输出运行数据<br>车端状态</p><em class="cr-signal">数据通信</em></div></div><div class="cr-sys-card"><span class="cr-sys-asset cr-asset-iot" aria-hidden="true"></span><div><b>IoT / 诊断</b><p>连接手机 App<br>故障诊断方向</p><em class="cr-signal">数据通信</em></div></div></div>
       </div>
     </div>
-    <p class="cr-disclaimer cr-wrap">系统连接为信息架构示意；实际端口、协议与功能以对应型号资料为准。</p>
   </section>
 
   <section class="cr-section cr-hardware cr-dark" id="hardware" aria-labelledby="cr-hardware-title">
     <div class="cr-wrap cr-hardware-layout">
-      <div class="cr-hardware-copy"><p class="cr-kicker cr-kicker-light"><span></span>PXID　|　CONTROL SYSTEM</p><h2 id="cr-hardware-title">从板面，<br>读懂控制架构<span class="cr-red-dot">。</span></h2><p>高集成的控制硬件设计，让每一次动力输出都更加稳定可靠。</p><div class="cr-function-tiles"><div><span>▣</span><b>控制策略</b><small>运行逻辑与算法控制</small></div><div><span>ϟ</span><b>功率与驱动</b><small>大电流驱动与保护</small></div><div><span>◉</span><b>采样与反馈</b><small>电流 / 电压 / 温度</small></div><div><span>▦</span><b>整车接口</b><small>CAN / 通讯 / 外设</small></div></div></div>
-      <div class="cr-pcb-stage"><img src="../assets/pxid/cndagri-controller-redesign/controller-pcb-studio.png" alt="控制器电路板概念渲染图" loading="lazy"><button type="button" class="cr-hotspot" style="--x:49%;--y:68%" data-feature="core" aria-label="查看控制核心" aria-pressed="true">01</button><button type="button" class="cr-hotspot" style="--x:65%;--y:29%" data-feature="power" aria-label="查看功率驱动" aria-pressed="false">02</button><button type="button" class="cr-hotspot" style="--x:74%;--y:58%" data-feature="interface" aria-label="查看整车接口" aria-pressed="false">03</button></div>
-      <div class="cr-hardware-details" aria-label="硬件结构说明"><button type="button" class="cr-detail-card is-active" data-feature="core"><span class="cr-detail-num">01</span><div><b>控制核心</b><p>控制策略与信号处理的集中区域。</p></div></button><button type="button" class="cr-detail-card" data-feature="power"><span class="cr-detail-num">02</span><div><b>功率驱动</b><p>动力输出相关器件的示意区域。</p></div></button><button type="button" class="cr-detail-card" data-feature="interface"><span class="cr-detail-num">03</span><div><b>整车接口</b><p>车辆连接与通信的示意区域。</p></div></button><p class="cr-tiny-note">板图与标注均为结构概念；具体器件位置以工程资料为准。</p></div>
+      <div class="cr-hardware-copy">
+        <p class="cr-kicker cr-kicker-light"><span></span>PXID　|　CONTROL SYSTEM</p>
+        <h2 id="cr-hardware-title">从板面，<br>读懂控制架构<span class="cr-red-dot">。</span></h2>
+        <p>高集成的控制硬件设计，<br>让每一次动力输出都更加稳定可靠。</p>
+      </div>
+      <div class="cr-pcb-stage">
+        <img src="../assets/pxid/cndagri-controller-redesign/controller-pcb-review.png" alt="绿色控制器电路板的工业概念渲染图，包含双电容、功率模块和白色整车接口" loading="lazy">
+        <button type="button" class="cr-hotspot" style="--x:43%;--y:65%" data-feature="core" aria-label="查看控制核心" aria-pressed="true">01</button>
+        <button type="button" class="cr-hotspot" style="--x:63%;--y:27%" data-feature="power" aria-label="查看功率驱动" aria-pressed="false">02</button>
+        <button type="button" class="cr-hotspot" style="--x:75%;--y:53%" data-feature="interface" aria-label="查看整车接口" aria-pressed="false">03</button>
+      </div>
+      <div class="cr-hardware-details" aria-label="硬件结构说明">
+        <button type="button" class="cr-detail-card is-active" data-feature="core"><span class="cr-detail-thumb cr-detail-thumb-core" aria-hidden="true"></span><span class="cr-detail-body"><span class="cr-detail-num">01</span><b>控制核心</b><span class="cr-detail-description">高性能控制单元<br>实现精细的电机控制策略。</span></span></button>
+        <button type="button" class="cr-detail-card" data-feature="power"><span class="cr-detail-thumb cr-detail-thumb-power" aria-hidden="true"></span><span class="cr-detail-body"><span class="cr-detail-num">02</span><b>功率驱动</b><span class="cr-detail-description">大电流功率器件<br>保证高效、稳定的动力输出。</span></span></button>
+        <button type="button" class="cr-detail-card" data-feature="interface"><span class="cr-detail-thumb cr-detail-thumb-interface" aria-hidden="true"></span><span class="cr-detail-body"><span class="cr-detail-num">03</span><b>整车接口</b><span class="cr-detail-description">丰富的车辆接口<br>支持 CAN 及多种外设连接。</span></span></button>
+      </div>
+      <div class="cr-function-tiles" aria-label="硬件功能分区">
+        <div><span class="cr-function-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="8" y="8" width="16" height="16" rx="1"/><rect x="12" y="12" width="8" height="8"/><path d="M12 3v5m8-5v5m-8 16v5m8-5v5M3 12h5m-5 8h5m16-8h5m-5 8h5"/></svg></span><b>控制策略</b><small>运行逻辑与算法控制</small></div>
+        <div><span class="cr-function-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M18 2 7 17h8l-2 13 12-17h-8l1-11Z"/></svg></span><b>功率与驱动</b><small>大电流驱动与保护</small></div>
+        <div><span class="cr-function-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="2"/><path d="M9 10a9 9 0 0 0 0 12m14-12a9 9 0 0 1 0 12M5 6a15 15 0 0 0 0 20m22-20a15 15 0 0 1 0 20"/></svg></span><b>采样与反馈</b><small>电流 / 电压 / 温度采集</small></div>
+        <div><span class="cr-function-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20" rx="2"/><path d="M12 6v20m8-20v20M6 12h20M6 20h20"/></svg></span><b>整车接口</b><small>CAN / 通讯 / 外设</small></div>
+      </div>
     </div>
   </section>
 
   <section class="cr-section cr-experience cr-light" id="experience" aria-labelledby="cr-experience-title">
     <div class="cr-wrap"><div class="cr-split-heading"><div><p class="cr-kicker"><span></span>CONTROL EXPERIENCE</p><h2 id="cr-experience-title">从起步到巡航，<br>关注每一次响应<span class="cr-red-dot">。</span></h2></div><p>PXID 控制器根据不同工况，动态调整控制策略，让每一次动力输出都更平顺、更自然、更可控。</p></div>
       <div class="cr-scene-panel"><div class="cr-scene-tabs" role="tablist" aria-label="骑行工况"><button type="button" role="tab" aria-selected="true" data-scene="start">起步</button><button type="button" role="tab" aria-selected="false" data-scene="slow">低速</button><button type="button" role="tab" aria-selected="false" data-scene="accelerate">加速</button><button type="button" role="tab" aria-selected="false" data-scene="cruise">巡航</button><button type="button" role="tab" aria-selected="false" data-scene="load">负载变化</button></div>
-        <div class="cr-scene-body"><div class="cr-process-visual" aria-label="输入到控制再到输出的工作流程"><div><span>⌁</span><b>输入</b><small>踏板信号采集</small></div><i>→</i><div class="cr-process-active"><span>▣</span><b>控制</b><small>多工况控制策略<br>实时计算与调节</small></div><i>→</i><div><span>⚙</span><b>输出</b><small>平顺的动力输出</small></div></div><div class="cr-scene-copy" role="tabpanel" aria-live="polite"><p class="cr-kicker"><span></span>当前场景</p><h3 id="cr-scene-title">起步：先建立平顺的第一感受</h3><p id="cr-scene-desc">通过精确的扭矩控制和响应策略，抑制突发冲击，让起步更平稳、自然。</p><ul id="cr-scene-points"><li><b>平顺响应</b><span>减少起步瞬间的冲击感</span></li><li><b>精准控制</b><span>匹配驾驶意图，输出线性动力</span></li><li><b>自然体验</b><span>让每一次起步都从容可控</span></li></ul></div></div>
-      </div><p class="cr-disclaimer">场景文案为控制体验设计方向；实际策略与表现需结合车型和测试条件验证。</p>
+        <div class="cr-scene-body"><div class="cr-process-visual" aria-label="输入到控制再到输出的工作流程"><div class="cr-process-node"><span class="cr-process-disc"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M10 9c3 0 5 3 7 5l6 5c2 1 4 2 6 2v7c-5 1-9-1-12-4l-7-6C7 15 7 11 10 9Z"/><path d="M26 21v8m4-7v7M9 28h23"/></svg><b>输入</b></span><small>踏板信号采集</small></div><i aria-hidden="true">→</i><div class="cr-process-node cr-process-active"><span class="cr-process-disc"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="11" y="11" width="18" height="18" rx="2"/><rect x="16" y="16" width="8" height="8"/><path d="M16 5v6m8-6v6m-8 18v6m8-6v6M5 16h6m-6 8h6m18-8h6m-6 8h6"/></svg><b>控制</b></span><small>多工况控制策略<br>实时计算与调节</small></div><i aria-hidden="true">→</i><div class="cr-process-node"><span class="cr-process-disc"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="8"/><circle cx="20" cy="20" r="3"/><path d="M20 5v5m0 20v5M5 20h5m20 0h5M9 9l4 4m14 14 4 4M31 9l-4 4M13 27l-4 4"/></svg><b>输出</b></span><small>平顺的动力输出</small></div></div><div class="cr-scene-copy" role="tabpanel" aria-live="polite"><p class="cr-kicker"><span></span>当前场景</p><h3 id="cr-scene-title">起步：先建立平顺的第一感受</h3><p id="cr-scene-desc">通过精确的扭矩控制和响应策略，抑制突发冲击，让起步更平稳、自然。</p><ul id="cr-scene-points"><li><b>平顺响应</b><span>减少起步瞬间的冲击感</span></li><li><b>精准控制</b><span>匹配驾驶意图，输出线性动力</span></li><li><b>自然体验</b><span>让每一次起步都从容可控</span></li></ul></div></div>
+      </div>
     </div>
   </section>
 
   <section class="cr-section cr-protection cr-light" id="protection" aria-labelledby="cr-protection-title">
-    <div class="cr-wrap"><div class="cr-protection-head"><div><p class="cr-kicker"><span></span>PXID PROTECTION</p><h2 id="cr-protection-title">保护，必须能说明<br>触发与恢复<span class="cr-red-dot">。</span></h2><p>围绕运行状态的监测、异常判定、保护处理与恢复，建立更清楚的整车保护逻辑。</p></div><img src="../assets/pxid/cndagri-controller-redesign/controller-boardstyle-light.png" alt="黑色散热控制器的浅色工业概念渲染图" loading="lazy"></div>
-      <div class="cr-protection-flow"><article><span class="cr-card-num">01 /</span><div class="cr-flow-icon">∿</div><h3>监测</h3><p>采集电压、电流、温度、转速等关键参数，持续观察系统运行状态。</p></article><article><span class="cr-card-num">02 /</span><div class="cr-flow-icon">△</div><h3>判定</h3><p>依据对应型号的阈值与控制策略，识别异常类型及响应级别。</p></article><article><span class="cr-card-num">03 /</span><div class="cr-flow-icon">⚙</div><h3>处理</h3><p>依据异常类型，执行限制输出或停机等保护动作，避免问题扩大。</p></article><article><span class="cr-card-num">04 /</span><div class="cr-flow-icon">↻</div><h3>恢复</h3><p>当异常解除且满足条件时，按对应策略恢复运行，保持业务连续性。</p></article></div><p class="cr-disclaimer">触发阈值、动作及恢复条件需要根据具体型号与项目资料确认。</p>
+    <div class="cr-wrap">
+      <div class="cr-protection-head">
+        <div class="cr-protection-copy">
+          <p class="cr-kicker"><span></span>PXID PROTECTION</p>
+          <h2 id="cr-protection-title">保护，必须能说明<br>触发与恢复<span class="cr-red-dot">。</span></h2>
+          <p>多重保护机制实时监测运行状态，在异常发生时快速响应，<br class="cr-desktop-break">并提供明确的恢复机制，保障系统持续、安全、稳定运行。</p>
+        </div>
+        <svg class="cr-protection-shield" viewBox="0 0 430 340" fill="none" aria-hidden="true"><path d="M217 12 393 70v108c0 79-52 126-176 151C93 304 41 257 41 178V70L217 12Z" stroke="currentColor" stroke-width="2"/><path d="M217 46 361 94v82c0 59-41 97-144 120C114 273 73 235 73 176V94l144-48Z" stroke="currentColor" stroke-width="1.4"/><path d="m128 129 31 12v31c0 20-12 34-31 42-19-8-31-22-31-42v-31l31-12Z" fill="#fff" stroke="currentColor" stroke-width="2"/><path d="m116 171 9 9 18-20" stroke="#ed1c24" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <img class="cr-protection-product" src="../assets/pxid/cndagri-controller-redesign/controller-system-cutout.png" alt="PXID 散热控制器概念渲染图" loading="lazy">
+        <p class="cr-protection-strap">SAFER<br>CONTROL<br>MORE<br>POSSIBILITIES</p>
+      </div>
+      <div class="cr-protection-flow" aria-label="保护流程">
+        <article><span class="cr-card-num">01 <i>/</i></span><div class="cr-flow-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M5 33h10l5-12 8 27 8-38 7 23h16"/></svg></div><h3>监测</h3><p>实时采集电压、电流、温度、转速等关键参数，持续监控系统运行状态。</p></article>
+        <article><span class="cr-card-num">02 <i>/</i></span><div class="cr-flow-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M29.5 9a3 3 0 0 1 5 0L58 50a3 3 0 0 1-2.5 4.5h-47A3 3 0 0 1 6 50L29.5 9Z"/><path d="M32 24v15"/><circle cx="32" cy="46" r="1.8" fill="currentColor" stroke="none"/></svg></div><h3>判定</h3><p>基于预设阈值与算法模型，快速识别异常类型与严重级别，触发保护机制。</p></article>
+        <article><span class="cr-card-num">03 <i>/</i></span><div class="cr-flow-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M27 5h10l2 7 5 2 6-4 7 7-4 6 2 5 7 2v10l-7 2-2 5 4 6-7 7-6-4-5 2-2 7H27l-2-7-5-2-6 4-7-7 4-6-2-5-7-2V30l7-2 2-5-4-6 7-7 6 4 5-2 2-7Z" fill="currentColor" stroke="none"/><circle cx="32" cy="35" r="10" fill="#f3f5f7" stroke="none"/></svg></div><h3>处理</h3><p>根据故障类型，执行限流、降额、停机等保护动作，防止问题扩大。</p></article>
+        <article><span class="cr-card-num">04 <i>/</i></span><div class="cr-flow-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M51 20a23 23 0 1 0 4 20"/><path d="M51 9v15H36"/></svg></div><h3>恢复</h3><p>当异常解除且条件满足时，系统自动或手动恢复运行，确保业务连续性。</p></article>
+      </div>
     </div>
   </section>
 
   <section class="cr-section cr-thermal cr-light" id="thermal" aria-labelledby="cr-thermal-title">
-    <div class="cr-wrap"><p class="cr-kicker"><span></span>THERMAL DESIGN</p><h2 id="cr-thermal-title">散热，从结构开始考虑<span class="cr-red-dot">。</span></h2><p class="cr-section-lead">通过合理的热源分布、结构设计与材料选择，构建被动散热路径，让控制器在复杂工况下保持稳定运行。</p><div class="cr-thermal-grid"><div class="cr-thermal-photo"><img src="../assets/pxid/cndagri-controller-redesign/controller-boardstyle-light.png" alt="展示散热鳍片结构的控制器概念渲染图" loading="lazy"><small>CONTROL DRIVES A BETTER RIDE</small></div><div class="cr-thermal-list"><article><span class="cr-thermal-number">01 /</span><div class="cr-thermal-symbol">♨</div><div><h3>内部热源与接触</h3><p>合理规划功率器件、驱动电路等主要热源的布局，通过导热界面与结构件紧密接触，形成从内部到外壳的传导路径。</p></div></article><article><span class="cr-thermal-number">02 /</span><div class="cr-thermal-symbol">▥</div><div><h3>外壳结构与材料</h3><p>通过大面积散热鳍片增加散热表面积；结合导热材料与外壳结构，改善热量向环境传递的条件。</p></div></article><article><span class="cr-thermal-number">03 /</span><div class="cr-thermal-symbol">≈</div><div><h3>安装环境与气流</h3><p>考虑安装空间与气流路径，避免热量积聚，并结合整车布置核对通风与防护要求。</p></div></article></div></div><p class="cr-disclaimer">散热结构为设计示意；温升与持续输出能力以实际样机和测试报告为准。</p></div>
+    <div class="cr-wrap">
+      <p class="cr-kicker cr-thermal-kicker"><span></span>THERMAL DESIGN</p>
+      <h2 id="cr-thermal-title">散热，从结构开始考虑<span class="cr-red-dot">。</span></h2>
+      <p class="cr-section-lead">通过合理的热源分布、结构设计与材料选择，<br>构建高效、可靠的被动散热方案，保障控制器在复杂工况下稳定运行。</p>
+      <div class="cr-thermal-grid">
+        <div class="cr-thermal-photo">
+          <img class="cr-thermal-product" src="../assets/pxid/cndagri-controller-redesign/controller-system-cutout.png" alt="展示散热鳍片结构的控制器概念渲染图" loading="lazy">
+          <small>CONTROL<br>DRIVES<br>A BETTER<br>RIDE</small>
+          <div class="cr-thermal-brand"><img src="../assets/pxid/logo-ink.svg" alt="PXID"><span>INDUSTRIAL CONTROL<br>SYSTEM</span></div>
+        </div>
+        <div class="cr-thermal-list">
+          <article><div class="cr-thermal-key"><span class="cr-thermal-number">01 <i>/</i></span><svg viewBox="0 0 80 80" aria-hidden="true"><path d="m10 45 30-15 30 15-30 15Z" fill="#959ba3"/><path d="m10 56 30 15 30-15v8L40 79 10 64Z" fill="#959ba3"/><path d="m10 45 30 15 30-15v8L40 68 10 53Z" fill="#b2b7be"/><g fill="none" stroke="#ed1c24" stroke-width="2.5"><path d="M24 30V13m-5 6 5-6 5 6M40 22V5m-5 6 5-6 5 6M56 30V13m-5 6 5-6 5 6"/></g></svg></div><div><h3>内部热源与接触</h3><p>合理规划功率器件、驱动电路等主要热源的布局，通过导热界面与结构件紧密接触，快速将热量传导至外壳散热体。</p></div></article>
+          <article><div class="cr-thermal-key"><span class="cr-thermal-number">02 <i>/</i></span><svg viewBox="0 0 80 80" aria-hidden="true"><g fill="#b0b5bd" stroke="#666d75" stroke-width="2"><path d="m15 19 33 13v44L15 63Z"/><path d="m24 15 33 13v44L24 59Z"/><path d="m33 11 33 13v44L33 55Z"/><path d="m42 7 33 13v44L42 51Z"/></g><path d="M9 23v40" stroke="#ed1c24" stroke-width="3"/></svg></div><div><h3>外壳结构与材料</h3><p>采用大面积散热鳍片结构，增大散热表面积。结合高导热的铝合金材料，提升热量传导效率，实现自然对流下的稳定散热。</p></div></article>
+          <article><div class="cr-thermal-key"><span class="cr-thermal-number">03 <i>/</i></span><svg viewBox="0 0 80 80" aria-hidden="true"><g fill="none" stroke="#9aA0a8" stroke-width="3.5" stroke-linecap="round"><path d="M5 27h30c18 0 18-20 5-20-7 0-9 6-7 10M3 39h39M5 52h30c18 0 18 20 5 20-7 0-9-6-7-10"/></g><g fill="none" stroke="#ed1c24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M46 26c8-6 17-6 28-6m-7-6 7 6-7 6M45 40h34m-7-6 7 6-7 6M46 53c8 6 17 6 28 6m-7-6 7 6-7 6"/></g></svg></div><div><h3>安装环境与气流</h3><p>考虑实际安装空间与气流路径，确保散热鳍片周围有足够的通风条件，避免热量积聚，保障控制器在各种工况下的可靠运行。</p></div></article>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="cr-section cr-connections cr-dark" id="connections" aria-labelledby="cr-connections-title"><div class="cr-wrap cr-connections-grid"><div class="cr-connections-intro"><p class="cr-kicker cr-kicker-light"><span></span>PXID ECOSYSTEM</p><h2 id="cr-connections-title">让控制器进入<br>整车信息链路<span class="cr-red-dot">。</span></h2><p>通过车端总线、调试工具与联网终端，与整车系统协同，构建清晰的信息链路。</p><small>OPEN INTERFACES<br>MORE POSSIBILITIES</small></div><div class="cr-ecosystem" aria-label="控制器与整车信息链路示意"><div class="cr-ecosystem-ring"></div><div class="cr-eco-center"><img src="../assets/pxid/cndagri-controller-redesign/controller-boardstyle-dark.png" alt="控制器概念渲染图" loading="lazy"><b>CONTROLLER</b></div><div class="cr-eco-node cr-eco-top"><span>◉</span><b>仪表</b><small>状态显示</small></div><div class="cr-eco-node cr-eco-left"><span>▱</span><b>整车网络</b><small>车端信号交互</small></div><div class="cr-eco-node cr-eco-right"><span>▤</span><b>调试工具</b><small>参数配置</small></div><div class="cr-eco-node cr-eco-bottom"><span>☁</span><b>联网终端</b><small>远程方向</small></div></div><div class="cr-status"><p class="cr-kicker cr-kicker-light"><span></span>CURRENT STATUS</p><h3>当前公开的对接方向</h3><div><b>车端协议</b><p>依据车辆总线协议，核对整车系统对接要求。</p><span>需确认</span></div><div><b>调试与标定</b><p>围绕控制参数与整车工况进行配置和验证。</p><span>需确认</span></div><div><b>固件更新</b><p>更新方式与支持范围以具体平台资料为准。</p><span>需确认</span></div><div><b>整车配套</b><p>根据车型与接口条件，评估配套方案。</p><span>需确认</span></div><small>以上为对接方向示意；接口与协议以项目资料为准。</small></div></div></section>
-
-  <section class="cr-section cr-evidence cr-light" id="evidence" aria-labelledby="cr-evidence-title"><div class="cr-wrap"><p class="cr-kicker"><span></span>PERFORMANCE &amp; RELIABILITY</p><h2 id="cr-evidence-title">性能与可靠性，<br>用条件和证据说话。</h2><p class="cr-section-lead">从材料到测试，从设计到验证，关键表现需要在明确工况下核对。</p><div class="cr-evidence-grid"><article><div class="cr-evidence-head"><span>▱</span><div><small>PERFORMANCE</small><h3>性能资料</h3></div></div><dl><div><dt>优质工业级材料</dt><dd>材料等级与选型依据，需按型号资料确认。</dd></div><div><dt>严格的制造工艺</dt><dd>工艺流程及一致性要求，需查看对应文件。</dd></div><div><dt>针对应用场景优化</dt><dd>根据整车工况进行有针对性的匹配。</dd></div><div><dt>在复杂工况下保持稳定</dt><dd>需要结合长期运行数据与环境条件验证。</dd></div></dl></article><article><div class="cr-evidence-head"><span>✓</span><div><small>VALIDATION</small><h3>验证资料</h3></div></div><dl><div><dt>环境适应性测试</dt><dd>明确测试条件、范围与适应边界。</dd></div><div><dt>长期运行验证</dt><dd>在持续运行条件下核对稳定性与可靠性。</dd></div><div><dt>多场景负载测试</dt><dd>覆盖不同工况与负载场景，确认实际可用性。</dd></div><div><dt>严苛品质控制</dt><dd>以正式品质标准与检验资料为依据。</dd></div></dl></article></div><p class="cr-disclaimer">当前页面不展示未经核验的性能数值或测试结论；正式资料可向项目团队索取。</p></div></section>
-
-  <section class="cr-section cr-selection cr-light" id="selection" aria-labelledby="cr-selection-title"><div class="cr-wrap"><p class="cr-kicker"><span></span>SELECTION &amp; INTRODUCTION</p><h2 id="cr-selection-title">关键输入与决策对应</h2><p class="cr-section-lead">先定义整车，再确定控制器。从整车需求出发，系统化准备关键资料，确保选型准确、导入高效。</p><div class="cr-table-scroll"><table><thead><tr><th>项目模块</th><th>需准备的资料 / 关键信息</th><th>影响的决策</th><th>参考示例</th></tr></thead><tbody><tr><th scope="row"><span class="cr-row-icon">▣</span><b>电池平台</b><small>提供能量基础</small></th><td>电池类型、标称电压、电压范围、持续 / 峰值放电电流、BMS 通信协议</td><td>电压等级选型、电流与过流能力、欠压 / 过压保护策略、通信兼容性</td><td>例如：电池化学体系、目标电压、BMS 协议字段</td></tr><tr><th scope="row"><span class="cr-row-icon">◉</span><b>电机资料</b><small>确定驱动对象</small></th><td>电机类型、额定 / 峰值功率、额定 / 最高转速、电机参数</td><td>控制算法与驱动模式、电流与速度环参数范围、匹配的控制器型号、散热与功率冗余</td><td>例如：电机类型、功率、转速及极对数</td></tr><tr><th scope="row"><span class="cr-row-icon">▱</span><b>整车工况</b><small>定义应用边界</small></th><td>整车类型、整车重量 / 载重、最高车速 / 加速度、典型路况</td><td>控制策略与功能配置、功率与散热冗余、可靠性与防护等级、制动与能量回收策略</td><td>例如：载重、坡度、速度与连续运行时间</td></tr><tr><th scope="row"><span class="cr-row-icon">⌁</span><b>接口与空间</b><small>匹配安装条件</small></th><td>高低压接口、通信接口、安装尺寸与布置空间、冷却方式</td><td>接口兼容与线束方案、控制器尺寸与安装方式、散热设计与环境适应性、整车布置维护便利性</td><td>例如：接口定义、安装空间与散热方式</td></tr></tbody></table></div><p class="cr-table-note">参考示例为信息字段示意，不代表 PXID 产品规格或已确认的整车项目。</p><div class="cr-selection-process"><div class="cr-process-heading"><h3>从需求输入，到样车验证</h3><p>标准化导入流程，打通从需求到验证的关键环节。</p></div><div class="cr-selection-steps"><article><span>01 /</span><b>需求输入</b><p>收集整车需求，明确性能目标与应用场景。</p></article><article><span>02 /</span><b>接口校对</b><p>确认电气、通信、安装与冷却等接口要求。</p></article><article><span>03 /</span><b>样件匹配</b><p>基于需求选择合适型号并进行样测。</p></article><article><span>04 /</span><b>参数标定</b><p>进行控制参数匹配与整车功能调试。</p></article><article><span>05 /</span><b>样车验证</b><p>完成样车实测，验证性能、可靠性与适应性。</p></article></div></div></div></section>
-
-  <section class="cr-applications" id="applications" aria-labelledby="cr-applications-title"><div class="cr-applications-dark"><div class="cr-wrap cr-applications-inner"><div class="cr-applications-copy"><p class="cr-kicker cr-kicker-light"><span></span>PXID CONTROL FOR MORE VEHICLES</p><h2 id="cr-applications-title">面向不同车型，<br>先核对适配边界<span class="cr-red-dot">。</span></h2><p>覆盖多种应用场景，提供清晰的选型参考，让控制器在合适的车辆与工况中发挥性能。</p><div class="cr-vehicle-cards"><article><div class="cr-vehicle-image cr-vehicle-one"></div><h3>城市通勤</h3><p>轻量化车体<br>关注平顺、能耗与静音</p></article><article><div class="cr-vehicle-image cr-vehicle-two"></div><h3>高负载需求</h3><p>物流配送 / 工程作业<br>关注输出与稳定耐用</p></article><article><div class="cr-vehicle-image cr-vehicle-three"></div><h3>运营车辆</h3><p>景区 / 园区 / 城市运营<br>关注连续运行与可靠性</p></article></div></div><div class="cr-applications-device" aria-hidden="true"></div></div></div>
-    <div class="cr-wrap cr-support-grid"><section id="resources" aria-labelledby="cr-resources-title"><p class="cr-kicker"><span></span>TECHNICAL RESOURCES</p><h2 id="cr-resources-title">让资料，支持每一步判断。</h2><p>提供完整的技术资料与支持，帮助您快速完成选型、对接与验证。</p><div class="cr-resource-rows"><div><b>规格与尺寸</b><span>产品规格书、结构尺寸图、安装参考</span><small>资料待提供</small></div><div><b>接口与线束</b><span>接口定义、线束说明、对接建议</span><small>资料待提供</small></div><div><b>匹配与验证</b><span>适配车型清单、测试报告、应用案例</span><small>资料待提供</small></div><div><b>技术支持 / 商务咨询</b><span>选型、样品与技术问题，欢迎联系我们</span><a href="contact.html">联系我们 →</a></div></div></section><section id="faq" aria-labelledby="cr-faq-title"><p class="cr-kicker"><span></span>FAQ</p><h2 id="cr-faq-title">常见问题</h2><p>整理用户最关心的问题，帮助您快速获取关键信息。</p><div class="cr-faq-list"><details><summary><span>01</span>PXID 控制器支持哪些车型？</summary><p>需根据车辆类型、动力平台与使用工况逐项核对。请提供整车资料，由项目团队评估适配边界。</p></details><details><summary><span>02</span>如何确认控制器与我的车辆匹配？</summary><p>建议先确认电池、电机、整车工况以及接口和安装空间，再进行样件匹配与样车验证。</p></details><details><summary><span>03</span>是否提供技术资料与测试报告？</summary><p>对应型号的规格、接口与验证资料请联系项目团队索取；可提供的范围以正式文件为准。</p></details><details><summary><span>04</span>可以提供定制化开发支持吗？</summary><p>可将需求与现有整车信息提交给项目团队，双方评估开发范围、周期与交付条件。</p></details></div></section></div>
+  <section class="cr-section cr-connections cr-dark" id="connections" aria-labelledby="cr-connections-title">
+    <div class="cr-wrap cr-connections-grid">
+      <div class="cr-connections-intro"><p class="cr-kicker cr-kicker-light"><span></span>PXID ECOSYSTEM</p><h2 id="cr-connections-title">让控制器进入<br>整车信息链路<span class="cr-red-dot">。</span></h2><p>通过车端总线、调试工具、联网终端，<br>与整车系统协同，构建开放的信息链路。</p><small>OPEN INTERFACES<br>MORE POSSIBILITIES</small></div>
+      <div class="cr-ecosystem" aria-label="控制器与整车信息链路示意">
+        <div class="cr-ecosystem-ring"></div>
+        <svg class="cr-ecosystem-lines" viewBox="0 0 480 440" fill="none" aria-hidden="true"><defs><marker id="cr-orbit-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="m1 1 6 3-6 3" stroke="#d64243" stroke-width="1"/></marker></defs><g stroke="#d64243" stroke-width="1" marker-end="url(#cr-orbit-arrow)"><path d="M199 62C134 74 99 101 85 148M281 62c65 12 100 39 114 86M85 285c17 49 56 80 112 91M395 285c-17 49-56 80-112 91"/><path d="M150 210h-48M330 210h48M240 138v-31M240 281v36" stroke-dasharray="3 3"/></g></svg>
+        <div class="cr-eco-center"><img src="../assets/pxid/cndagri-controller-redesign/controller-system-cutout.png" alt="控制器概念渲染图" loading="lazy"><b>CONTROLLER</b></div>
+        <div class="cr-eco-node cr-eco-top"><span><svg><use href="#cr-icon-gauge"/></svg></span><b>仪表</b><small>车辆状态显示<br>与诊断信息</small></div>
+        <div class="cr-eco-node cr-eco-left"><span><svg><use href="#cr-icon-car"/></svg></span><b>整车网络</b><small>CAN / 车端总线<br>整车信号交互</small></div>
+        <div class="cr-eco-node cr-eco-right"><span><svg><use href="#cr-icon-laptop"/></svg></span><b>调试工具</b><small>参数配置<br>标定与诊断</small></div>
+        <div class="cr-eco-node cr-eco-bottom"><span><svg><use href="#cr-icon-cloud"/></svg></span><b>联网终端</b><small>远程监控<br>数据上报与 OTA</small></div>
+      </div>
+      <div class="cr-status"><p class="cr-kicker cr-kicker-light"><span></span>CURRENT STATUS</p><h3>当前公开的对接方向</h3>
+        <div><svg><use href="#cr-icon-link"/></svg><div><b>车端协议</b><p>支持主流车端总线协议<br>（如 CAN），与整车系统对接。</p></div><span>进行中</span></div>
+        <div><svg><use href="#cr-icon-wrench"/></svg><div><b>调试与标定</b><p>提供调试工具与参数标定能力，<br>支持开发与量产阶段。</p></div><span>进行中</span></div>
+        <div><svg><use href="#cr-icon-upload"/></svg><div><b>固件更新</b><p>支持本地与远程固件升级，<br>提升维护效率。</p></div><span>规划中</span></div>
+        <div><svg><use href="#cr-icon-box"/></svg><div><b>整车配套</b><p>对接整车开发流程，<br>提供技术支持与配套服务。</p></div><span>进行中</span></div>
+        <small>* 以上为当前已规划的对接方向，具体接口与协议以实际项目沟通为准。</small>
+      </div>
+    </div>
   </section>
 
-  <section class="cr-final-cta"><div class="cr-wrap"><p class="cr-kicker cr-kicker-light"><span></span>START A PROJECT</p><h2>让方案从真实<br>需求开始。</h2><p>从电池平台、电机与整车工况出发，讨论适合项目的控制器方案。</p><a class="cr-button" href="contact.html">联系项目团队 <span aria-hidden="true">↗</span></a></div></section>
+  <section class="cr-section cr-evidence cr-light" id="evidence" aria-labelledby="cr-evidence-title"><div class="cr-wrap">
+    <p class="cr-kicker"><span></span>PERFORMANCE &amp; RELIABILITY</p><h2 id="cr-evidence-title">性能与可靠性，<br>用条件和证据说话。</h2><p class="cr-section-lead">从材料到测试，从设计到验证，确保每一次运行都稳定、可靠。</p>
+    <div class="cr-evidence-grid">
+      <article><div class="cr-evidence-head"><span><svg><use href="#cr-icon-layers"/></svg></span><div><small>PERFORMANCE</small><h3>性能资料</h3></div></div><dl>
+        <div><dt>优质工业级材料</dt><dd>选用高可靠性工业级材料，满足严苛应用需求。</dd></div><div><dt>严格的制造工艺</dt><dd>成熟工艺流程，保障一致性与可靠性。</dd></div><div><dt>针对应用场景优化</dt><dd>围绕实际工况进行针对性设计与优化。</dd></div><div><dt>在复杂工况下保持稳定</dt><dd>长期运行仍能保持稳定性能。</dd></div>
+      </dl></article>
+      <article><div class="cr-evidence-head"><span><svg><use href="#cr-icon-checkdoc"/></svg></span><div><small>VALIDATION</small><h3>验证资料</h3></div></div><dl>
+        <div><dt>环境适应性测试</dt><dd>通过多种环境条件测试，验证适应能力。</dd></div><div><dt>长期运行验证</dt><dd>在持续运行条件下验证稳定性与可靠性。</dd></div><div><dt>多场景负载测试</dt><dd>覆盖不同工况与负载场景，确保实际可用。</dd></div><div><dt>严苛品质控制</dt><dd>遵循严格的品质标准，确保出厂一致性。</dd></div>
+      </dl></article>
+    </div>
+  </div></section>
+
+  <section class="cr-section cr-selection cr-light" id="selection" aria-labelledby="cr-selection-title"><div class="cr-wrap">
+    <div class="cr-selection-heading"><h2 id="cr-selection-title">关键输入与决策对应</h2><p>先定义整车，再确定控制器。从整车需求出发，系统化准备关键资料，确保选型准确、导入高效。</p></div>
+    <div class="cr-table-scroll"><table><thead><tr><th>项目模块</th><th>需准备的资料 / 关键信息</th><th>影响的决策</th><th>参考示例</th></tr></thead><tbody>
+      <tr><th scope="row"><div class="cr-selection-module"><img src="../assets/pxid/cndagri-controller-redesign/selection-battery.png" alt="电池平台概念图" loading="lazy"><div><b>电池平台</b><small>提供能量基础</small></div></div></th><td><ul><li>电池类型（锂电 / 铅酸等）</li><li>电压范围与标称电压</li><li>最大持续 / 峰值放电电流</li><li>BMS 通信协议（如有）</li></ul></td><td><ul><li>控制器电压等级选型</li><li>电流规格与过流能力</li><li>欠压 / 过压保护策略</li><li>通信兼容性</li></ul></td><td>例如：<br>72V 锂电，持续电流 80A<br>BMS：CAN 2.0B</td></tr>
+      <tr><th scope="row"><div class="cr-selection-module"><img src="../assets/pxid/cndagri-controller-redesign/selection-motor.png" alt="电机概念图" loading="lazy"><div><b>电机资料</b><small>确定驱动对象</small></div></div></th><td><ul><li>电机类型（永磁同步 / 异步等）</li><li>额定功率 / 峰值功率</li><li>额定转速 / 最高转速</li><li>电机参数（电感、电阻、极对数等）</li></ul></td><td><ul><li>控制算法与驱动模式</li><li>电流环 / 速度环参数范围</li><li>匹配的控制器型号</li><li>散热与功率冗余设计</li></ul></td><td>例如：<br>永磁同步电机 15kW<br>额定转速 3000rpm<br>极对数 4，线电阻 12mΩ</td></tr>
+      <tr><th scope="row"><div class="cr-selection-module"><img src="../assets/pxid/cndagri-controller-redesign/selection-vehicle.png" alt="整车工况概念图" loading="lazy"><div><b>整车工况</b><small>定义应用边界</small></div></div></th><td><ul><li>整车类型（AGV / 工程机械 / 两轮车等）</li><li>整车重量 / 载重</li><li>最高车速 / 加速度要求</li><li>典型工况（爬坡、复杂路况、连续作业等）</li></ul></td><td><ul><li>控制策略与功能配置</li><li>功率与散热冗余</li><li>可靠性与防护等级</li><li>制动与能量回收策略</li></ul></td><td>例如：<br>工程车，整备质量 1200kg<br>最高车速 40km/h<br>爬坡 30%，连续作业 2h</td></tr>
+      <tr><th scope="row"><div class="cr-selection-module"><img src="../assets/pxid/cndagri-controller-redesign/selection-interface.png" alt="接口与空间概念图" loading="lazy"><div><b>接口与空间</b><small>匹配安装条件</small></div></div></th><td><ul><li>高压 / 低压接口定义</li><li>通信接口（CAN / RS485 等）</li><li>安装尺寸与布置空间</li><li>冷却方式（风冷 / 水冷 / 自然冷却）</li></ul></td><td><ul><li>接口兼容与线束方案</li><li>控制器尺寸与安装方式</li><li>散热设计与环境适应性</li><li>整车布置与维护便利性</li></ul></td><td>例如：<br>高压接口：橙色 HV 连接器<br>通信：CAN + DI/DO<br>安装空间：200×150×80 mm<br>冷却方式：水冷</td></tr>
+    </tbody></table></div>
+    <div class="cr-selection-process"><div class="cr-process-heading"><h3>从需求输入，到样车验证</h3><p>标准化的导入流程，打通从需求到验证的关键环节，确保控制器快速、可靠地应用到整车。</p></div>
+      <div class="cr-selection-steps">
+        <article><div class="cr-step-icon"><svg><use href="#cr-icon-doc"/></svg></div><div><span>01 <i>/</i></span><b>需求输入</b><p>收集整车需求，明确<br>性能目标与应用场景。</p></div></article>
+        <article><div class="cr-step-icon"><svg><use href="#cr-icon-checkdoc"/></svg></div><div><span>02 <i>/</i></span><b>接口核对</b><p>确认电气、通信、<br>安装与冷却等接口要求。</p></div></article>
+        <article><div class="cr-step-icon"><svg><use href="#cr-icon-gear"/></svg></div><div><span>03 <i>/</i></span><b>样件匹配</b><p>基于需求选择合适的<br>控制器型号并进行样测。</p></div></article>
+        <article><div class="cr-step-icon"><svg><use href="#cr-icon-sliders"/></svg></div><div><span>04 <i>/</i></span><b>参数标定</b><p>进行控制参数匹配与<br>整车功能调试。</p></div></article>
+        <article><div class="cr-step-icon"><svg><use href="#cr-icon-flag"/></svg></div><div><span>05 <i>/</i></span><b>样车验证</b><p>完成样车实测，验证<br>性能、可靠性与适应性。</p></div></article>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="cr-applications" id="applications" aria-labelledby="cr-applications-title">
+    <div class="cr-applications-dark"><div class="cr-wrap cr-applications-inner"><div class="cr-applications-copy"><p class="cr-kicker cr-kicker-light"><span></span>PXID CONTROL FOR MORE VEHICLES</p><h2 id="cr-applications-title">面向不同车型，<br>先核对适配边界<span class="cr-red-dot">。</span></h2><p>覆盖多种应用场景，提供清晰的选型参考，<br>让控制器在合适的车辆与工况中发挥最佳性能。</p><div class="cr-vehicle-cards"><article><div class="cr-vehicle-image cr-vehicle-one" role="img" aria-label="城市通勤电动滑板车"></div><h3>城市通勤</h3><p>轻量化车体<br>平稳高效，注重能耗与静音</p></article><article><div class="cr-vehicle-image cr-vehicle-two" role="img" aria-label="高负载物流配送车辆"></div><h3>高负载需求</h3><p>物流配送 / 工程作业<br>高扭矩输出，稳定耐用</p></article><article><div class="cr-vehicle-image cr-vehicle-three" role="img" aria-label="园区运营车辆"></div><h3>运营车辆</h3><p>景区 / 园区 / 城市运营<br>持续运行，强调可靠性</p></article></div></div><img class="cr-applications-device" src="../assets/pxid/cndagri-controller-redesign/controller-system-cutout.png" alt="控制器概念渲染图" loading="lazy"><p class="cr-applications-strap">CONTROL<br>DRIVES<br>A BETTER<br>RIDE</p></div></div>
+    <div class="cr-wrap cr-support-grid">
+      <section id="resources" aria-labelledby="cr-resources-title"><p class="cr-kicker"><span></span>TECHNICAL RESOURCES</p><div class="cr-resources-title"><h2 id="cr-resources-title">让资料，支持每一步判断。</h2><a href="news.html#main">进入资源中心 →</a></div><p>提供完整的技术资料与支持，帮助您快速完成选型、对接与验证。</p>
+        <div class="cr-resource-rows">
+          <div><svg><use href="#cr-icon-ruler"/></svg><b>规格与尺寸</b><span>产品规格书、结构尺寸图、安装参考</span><a class="cr-resource-view" href="contact.html?topic=controller-specifications">查看资料 <i>→</i></a></div>
+          <div><svg><use href="#cr-icon-connector"/></svg><b>接口与线束</b><span>接口定义、线束说明、对接建议</span><a class="cr-resource-view" href="contact.html?topic=controller-interfaces">查看资料 <i>→</i></a></div>
+          <div><svg><use href="#cr-icon-checkdoc"/></svg><b>匹配与验证</b><span>适配车型清单、测试报告、应用案例</span><a class="cr-resource-view" href="contact.html?topic=controller-validation">查看资料 <i>→</i></a></div>
+          <div class="cr-resource-contact"><svg><use href="#cr-icon-headset"/></svg><div><b>技术支持 / 商务咨询</b><span>选型、样品、技术问题，欢迎随时联系我们。</span></div><a href="contact.html">联系我们 <i>→</i></a></div>
+        </div>
+      </section>
+      <section id="faq" aria-labelledby="cr-faq-title"><p class="cr-kicker"><span></span>FAQ</p><h2 id="cr-faq-title">常见问题</h2><p>整理用户最关心的问题，帮助您快速获取关键信息。</p><div class="cr-faq-list"><details><summary><span>01</span>PXID 控制器支持哪些车型？</summary><p>需根据车辆类型、动力平台与使用工况逐项核对。请提供整车资料，由项目团队评估适配边界。</p></details><details><summary><span>02</span>如何确认控制器与我的车辆匹配？</summary><p>建议先确认电池、电机、整车工况以及接口和安装空间，再进行样件匹配与样车验证。</p></details><details><summary><span>03</span>是否提供技术资料与测试报告？</summary><p>对应型号的规格、接口与验证资料请联系项目团队索取；可提供的范围以正式文件为准。</p></details><details><summary><span>04</span>可以提供定制化开发支持吗？</summary><p>可将需求与现有整车信息提交给项目团队，双方评估开发范围、周期与交付条件。</p></details></div></section>
+    </div>
+  </section>
+
 </main>
 <footer id="footer-contact" class="wb-footer"><!-- FOOTER --></footer>
 <script src="../templates/assets/pxid-site.js?v=20260920-stage-anchor1"></script>
