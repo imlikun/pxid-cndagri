@@ -1,6 +1,6 @@
 /* The same fluid spacing rhythm inside the isolated IoT body. */
-#pxiot{--iot-gutter:clamp(28px,4vw,88px);--iot-space:clamp(108px,8vw,152px);--iot-layout-gap:clamp(36px,4vw,80px);--iot-spacing-ready:1}
-#pxiot .iot-wrap{width:calc(100% - var(--iot-gutter) - var(--iot-gutter));max-width:none}
+#pxiot{--iot-gutter:clamp(28px,4vw,88px);--iot-space:clamp(88px,6vw,120px);--iot-layout-gap:clamp(36px,4vw,80px);--iot-spacing-ready:1;font-size:16px;line-height:1.6}
+#pxiot .iot-wrap{width:calc(100% - var(--iot-gutter) - var(--iot-gutter));max-width:2000px;margin-inline:auto}
 #pxiot .iot-section:not(.iot-hero){padding-block:var(--iot-space)}
 #pxiot .iot-eyebrow{margin-bottom:28px}
 #pxiot .iot-lead{font-size:18px;line-height:1.85;margin-top:28px}
@@ -99,3 +99,20 @@
  #pxiot .iot-project .iot-lead{font-size:16px;line-height:1.85}
  #pxiot .iot-project{padding-bottom:240px!important}
 }
+
+/* Keep cinematic artwork aligned to the capped content on ultrawide screens. */
+@media(min-width:2121px){
+ #pxiot .iot-hero__art{width:1120px;right:calc((100% - 2120px)/2);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 85%,transparent)}
+ #pxiot .iot-project__art{width:1120px;right:calc((100% - 2120px)/2);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 85%,transparent)}
+ #pxiot .iot-cloud__photo{left:auto;right:calc((100% - 2120px)/2);width:1500px;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 85%,transparent)}
+ #pxiot .iot-cloud__stage::before{inset:0 auto 0 50%;width:2120px;transform:translateX(-50%)}
+}
+/* Let the mobile cloud title and caption finish before the dashboard image. */
+@media(max-width:600px){
+ #pxiot .iot-cloud__stage{min-height:550px}
+ #pxiot .iot-cloud__photo{top:350px;height:260px}
+ #pxiot .iot-cloud__stage::before{background:linear-gradient(180deg,#111e2a 48%,transparent 70%,#111e2a 99%)}
+}
+
+/* Keep the laptop display in landscape proportion as its column narrows. */
+#pxiot .iot-screen img{height:auto;aspect-ratio:64/39}
