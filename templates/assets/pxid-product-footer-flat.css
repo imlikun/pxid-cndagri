@@ -1,0 +1,9 @@
+/* Match the homepage's straight footer edge on the four product pages. */
+#app:is(.controller-detail, .product-meter, .product-motor, .product-iot) footer.wb-footer {
+  margin-top: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+}
+
+#app:is(.controller-detail, .product-meter, .product-motor, .product-iot) footer :is(.wb-footer-wave, .pxid-footer-wave, .bg) {
+  display: none !important;
+}
