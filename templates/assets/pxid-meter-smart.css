@@ -1,0 +1,71 @@
+/* Each meter chapter uses a visual that explains its own subject. */
+#app.product-meter #main-content .prod-hero::after { display: none; }
+#app.product-meter .pxid-skip-link:not(:focus) { opacity: 0; pointer-events: none; }
+#app.product-meter .pxid-skip-link:focus { opacity: 1; }
+#app.product-meter #main-content .meter-visual {
+  margin: 0;
+  min-width: 0;
+}
+#app.product-meter #main-content .meter-visual img,
+#app.product-meter #main-content .meter-scene-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #dadddf;
+}
+#app.product-meter #main-content .meter-visual figcaption,
+#app.product-meter #main-content .meter-scene-media figcaption {
+  margin-top: 14px;
+  color: #74777b;
+  font-size: 13px;
+  line-height: 1.8;
+}
+#app.product-meter #main-content .prod-dark .meter-visual figcaption,
+#app.product-meter #main-content .meter-scene-media figcaption { color: #b3b7bd; }
+#app.product-meter #main-content .prod-hero-image figcaption {
+  color: #b3b7bd;
+  opacity: 1;
+  font-size: 12px;
+}
+#app.product-meter #main-content .meter-scene-visual { min-width: 0; }
+#app.product-meter #main-content .meter-scene-eyebrow { display: block; margin: 0 0 16px; }
+#app.product-meter #main-content .meter-scene-media { margin: 0; }
+#app.product-meter #main-content .meter-scene-media[hidden] { display: none !important; }
+#app.product-meter #main-content .meter-connection-layout,
+#app.product-meter #main-content .meter-custom-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: var(--pd-gap);
+  align-items: center;
+}
+#app.product-meter #main-content #link .meter-connection-layout .prod-steps {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+#app.product-meter #main-content #link .meter-connection-layout .prod-steps > div {
+  padding: 28px 22px;
+  min-height: 205px;
+  border: 1px solid #e1e3e5;
+  background: #fff;
+  border-radius: 6px;
+}
+#app.product-meter #main-content #link .meter-connection-layout .prod-steps span { color: #d71920; }
+#app.product-meter #main-content .meter-custom-layout { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
+#app.product-meter #main-content .meter-custom-layout .prod-table { min-width: 0; }
+#app.product-meter #main-content #selection .meter-custom-layout .prod-table > div {
+  padding: 24px;
+  gap: 20px;
+  font-size: 16px;
+}
+@media (max-width: 1100px) {
+  #app.product-meter #main-content .meter-connection-layout,
+  #app.product-meter #main-content .meter-custom-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  #app.product-meter #main-content #link .meter-connection-layout .prod-steps { grid-template-columns: 1fr; gap: 20px; }
+  #app.product-meter #main-content #link .meter-connection-layout .prod-steps > div { min-height: 0; padding: 26px 22px; }
+  #app.product-meter #main-content #selection .meter-custom-layout .prod-table > div { padding: 24px; gap: 8px; }
+}
