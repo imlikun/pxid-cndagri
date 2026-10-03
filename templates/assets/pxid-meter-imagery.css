@@ -1,0 +1,38 @@
+/* Matched instrument photography. Preserve the screen's blacks and glass highlights. */
+#app.product-meter #main-content .prod-hero {
+  background: radial-gradient(ellipse at 86% 64%, #382229 0, transparent 56%), linear-gradient(125deg, #0c0e10, #202226);
+}
+#app.product-meter #main-content .prod-hero::before { display: none; }
+#app.product-meter #main-content .prod-hero-image {
+  margin: 0;
+  padding-bottom: 48px;
+  z-index: 0;
+}
+#app.product-meter #main-content .prod-hero-image img {
+  height: auto;
+  max-height: none;
+  aspect-ratio: 3 / 2;
+  mix-blend-mode: normal;
+  filter: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+#app.product-meter #main-content .prod-hero-image figcaption {
+  right: 0;
+  bottom: 24px;
+  color: #aaa;
+}
+#app.product-meter #main-content #structure .prod-figure img {
+  height: auto;
+  max-height: none;
+  aspect-ratio: 3 / 2;
+  background: #d8dadd;
+  border-radius: 8px;
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  #app.product-meter #main-content .prod-hero h1 { font-size: clamp(52px, 5.5vw, 61px); }
+}
+@media (max-width: 760px) {
+  #app.product-meter #main-content .prod-hero-image { padding-bottom: 38px; }
+  #app.product-meter #main-content .prod-hero-image figcaption { right: 0; bottom: 10px; }
+}
