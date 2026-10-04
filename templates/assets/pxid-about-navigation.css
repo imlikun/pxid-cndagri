@@ -1,0 +1,35 @@
+/* Shared About chapters. Page bodies and existing product navigation stay intact. */
+#app .pcNav .pxid-about-drop { position:relative; }
+#app .pcNav .pxid-about-nav-panel { position:absolute; z-index:25; top:100%; right:0; width:320px; padding:12px; background:#242726; border-top:2px solid #ed1b24; box-shadow:0 16px 40px #0003; opacity:0; visibility:hidden; transform:translateY(10px); transition:opacity .18s,transform .18s,visibility .18s; }
+#app .pcNav .pxid-about-drop:hover .pxid-about-nav-panel,
+#app .pcNav .pxid-about-drop:focus-within .pxid-about-nav-panel { opacity:1; visibility:visible; transform:none; }
+#app .pcNav .pxid-about-nav-link { display:flex; gap:14px; align-items:center; padding:13px 10px; color:#fff; text-align:left; font-size:16px; line-height:1.5; }
+#app .pcNav .pxid-about-nav-link:hover { background:#ffffff0e; }
+#app .pcNav .pxid-about-nav-number { font-size:12px; color:#b9bfbb; border:1px solid #ffffff24; padding:7px; font-family:Arial,sans-serif; }
+#app .pcNav .pxid-about-nav-link b { display:block; font-weight:600; }
+#app .pcNav .pxid-about-nav-link small { display:block; font-size:12px; color:#b9bfbb; margin-top:3px; }
+#app .menu .pxid-about-mobile-links { display:flex; flex-wrap:wrap; gap:0; padding:10px 0 22px; border-bottom:1px solid #ffffff20; }
+#app .menu .pxid-about-mobile-links a { display:block; padding:10px 20px 10px 0; font-size:15px; line-height:1.5; color:#ccd1cd; }
+#app .menu .pxid-about-mobile-links a:hover { color:#fff; }
+/* Fit the complete navigation and brand at tablet landscape widths. */
+@media (min-width:901px) and (max-width:1199px) {
+ #app header .pcNav { padding:0 24px!important; gap:18px; }
+ #app header .pcNav .logo { flex:0 0 72px!important; width:72px; }
+ #app header .pcNav .logo img { width:72px!important; }
+ #app header .pcNav .mid { flex:1 1 auto; justify-content:center; gap:14px!important; }
+ #app header .pcNav .mid .lists { margin:0; padding:0; }
+ #app header .pcNav .mid .lists .navHref { font-size:14px!important; line-height:1.5; padding:12px 0!important; }
+}
+/* The legacy mobile header stays active through 1000px. */
+@media (min-width:901px) and (max-width:1000px) {
+ #app header .appNav .logoBox { width:auto!important; }
+ #app header .appNav .logoBox img { width:auto!important; height:40px!important; }
+ html.pxid-menu-ready #app header .appNav #menu,
+ html.pxid-menu-ready #app header .appNav #menu.is-opened-navi { display:flex; align-items:center; justify-content:center; width:44px; min-width:44px; height:44px; min-height:44px; padding:0; border-radius:10px; background:#e91923!important; }
+ html.pxid-menu-ready #app header .appNav #menu .txt { position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+ #app header .appNav #menu .pxid-menu-glyph { display:block; width:18px; height:18px; overflow:visible; }
+ #app header .appNav #menu .pxid-menu-line { fill:none; stroke:#fff; stroke-width:1.8; stroke-linecap:round; transform-box:fill-box; transform-origin:center; }
+ #app header .appNav #menu.is-opened-navi .pxid-menu-line-top { transform:translateY(4px) rotate(45deg); }
+ #app header .appNav #menu.is-opened-navi .pxid-menu-line-bottom { transform:translateY(-4px) rotate(-45deg); }
+}
+@media (prefers-reduced-motion:reduce) { #app .pcNav .pxid-about-nav-panel { transition:none; } }
