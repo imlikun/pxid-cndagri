@@ -1,0 +1,15 @@
+/* The existing motor placement and all chapter copy remain unchanged. */
+#app.product-motor #main-content #advantages button.mr-adv-motor { padding:0; margin:0; border:0; border-radius:10px; background:none; appearance:none; cursor:default; color:#d8dcdf; }
+#app.product-motor #main-content #advantages button.mr-adv-motor[data-gear-ready=true] { cursor:pointer; }
+#advantages .mr-gear-photo { display:block; width:100%; height:100%; object-fit:contain; }
+#advantages .mr-gear-canvas { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:contain; opacity:0; pointer-events:none; }
+#advantages .mr-gear-hint { display:none; position:absolute; bottom:4px; left:50%; transform:translateX(-50%); white-space:nowrap; font:400 12px/1.5 'Microsoft YaHei',Arial,sans-serif; letter-spacing:.06em; color:#c9cbd0; opacity:.7; }
+#advantages [data-gear-ready=true] .mr-gear-hint { display:block; }
+#advantages .mr-gear-hint::before { content:'\21bb'; margin-right:8px; color:#ed2934; font-size:15px; }
+#advantages button.mr-adv-motor:focus-visible { outline:2px solid #e62a34; outline-offset:8px; }
+#advantages button[data-gear-playing=true] .mr-gear-hint { opacity:1; }
+#advantages .mr-gear-touch { display:none; }
+#advantages [data-gear-touch=true] .mr-gear-desktop { display:none; }
+#advantages [data-gear-touch=true] .mr-gear-touch { display:inline; }
+@media(hover:none) { #advantages .mr-gear-desktop { display:none; } #advantages .mr-gear-touch { display:inline; } }
+@media(max-width:600px) { #app.product-motor #main-content #advantages button.mr-adv-motor { margin:32px auto 30px; } }
