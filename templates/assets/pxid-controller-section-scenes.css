@@ -1,0 +1,17 @@
+/* Content-specific backdrops; wiring diagrams and original artwork stay intact. */
+#app.controller-detail #main-content .cr-connections {
+  background: radial-gradient(ellipse at 51% 49%, #1d3033 0%, #111b21 44%, #0b1118 88%);
+}
+#app.controller-detail #main-content .cr-applications-dark::before {
+  background: linear-gradient(90deg, #06101ce8 0%, #0a1626b8 43%, #101d3060 83%),
+    url('../../assets/pxid/motor-section-scenes-20261006/mobility.webp') 50% 66%/cover no-repeat;
+}
+#app.controller-detail #main-content .cr-applications-dark::after {
+  background: radial-gradient(ellipse at 70% 0, #526d8728, transparent 72%);
+}
+@media (max-width: 600px) {
+  #app.controller-detail #main-content .cr-applications-dark::before {
+    background: linear-gradient(180deg, #071323ed 0%, #0a1727c9 64%, #0a162ca3 100%),
+      url('../../assets/pxid/motor-section-scenes-20261006/mobility.webp') 76% 64%/cover no-repeat;
+  }
+}
