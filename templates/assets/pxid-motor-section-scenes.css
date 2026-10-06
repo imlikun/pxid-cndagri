@@ -1,0 +1,39 @@
+/* Separate the motor's three repeated photographic chapters by content. */
+#app.product-motor #main-content .mr-adv-showcase::before {
+  background:
+    linear-gradient(90deg,#080b10f0 0%,#090d137d 48%,#10141a30 80%),
+    url('../../assets/pxid/motor-section-scenes-20261006/precision.webp') 50% 55%/cover no-repeat;
+}
+#app.product-motor #main-content .mr-adv-cards article { background-color: #0b1016cc; }
+#app.product-motor #main-content .mr-adv-showcase :is(.mr-strap,.mr-gear-hint) {
+  color: #ecedf0;
+  text-shadow: 0 1px 5px #000;
+}
+#app.product-motor #main-content .mr-selection::before {
+  background:
+    linear-gradient(180deg,#07132270 0%,#07111ba3 60%,#050b12c7 100%),
+    url('../../assets/pxid/motor-section-scenes-20261006/mobility.webp') 50% 60%/cover no-repeat;
+}
+#app.product-motor #main-content .mr-selection-cards article::before {
+  background: linear-gradient(125deg,#172637ee,#0b1420f2);
+}
+#app.product-motor #main-content .mr-selection-cards article:nth-child(2)::before {
+  background: linear-gradient(125deg,#222c37ee,#111922f2);
+}
+#app.product-motor #main-content .mr-selection-cards article:nth-child(3)::before {
+  background: linear-gradient(125deg,#142d31ee,#0b181cf2);
+}
+#app.product-motor #main-content .mr-project::before {
+  background:
+    linear-gradient(90deg,#1113181a 0%,#0c10146b 44%,#0b0e13dc 76%),
+    url('../../assets/pxid/motor-section-scenes-20261006/engineering.webp') 50% 56%/cover no-repeat;
+}
+@media (max-width:900px) {
+  #app.product-motor #main-content .mr-adv-showcase::before { background-position: 67% 50%; }
+  #app.product-motor #main-content .mr-selection::before { background-position: 79% 65%; }
+  #app.product-motor #main-content .mr-project::before {
+    background:
+      linear-gradient(180deg,#0d101447 0%,#0b0e14c7 46%,#0b0e14ec 100%),
+      url('../../assets/pxid/motor-section-scenes-20261006/engineering.webp') 35% 50%/cover no-repeat;
+  }
+}
