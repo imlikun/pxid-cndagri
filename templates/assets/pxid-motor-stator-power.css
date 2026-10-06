@@ -1,0 +1,65 @@
+/* The fixed stator remains photographed; only winding illumination and field guides animate. */
+#structure [data-stator-power] {
+  border: 0;
+  border-radius: 12px;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+#structure [data-stator-power]:focus-visible {
+  outline: 2px solid #efba80;
+  outline-offset: 8px;
+}
+#structure .mr-stator-lines { pointer-events: none; }
+#structure .ms-power-artwork {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  isolation: isolate;
+  pointer-events: none;
+}
+#structure .ms-power-photo,
+#structure .ms-power-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#structure .ms-power-canvas {
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+#structure [data-power-active="true"] .ms-power-canvas { opacity: 1; }
+#structure .ms-power-hint {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #c4b4a6;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: .06em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+#structure .ms-power-touch { display: none; }
+#structure [data-power-touch="true"] .ms-power-touch { display: inline; }
+#structure [data-power-touch="true"] .ms-power-desktop { display: none; }
+@media (hover: none), (pointer: coarse) {
+  #structure .ms-power-touch { display: inline; }
+  #structure .ms-power-desktop { display: none; }
+}
+@media (max-width: 600px) {
+  #app.product-motor #main-content #structure .mr-stator-visual { padding-top: 338px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #structure .ms-power-canvas { transition: none; }
+}
