@@ -1,0 +1,20 @@
+/* The IoT content lives in a Shadow Root; keep its presentation changes scoped. */
+#pxiot { --iot-space: clamp(104px, 6.7vw, 144px); background: #eef1f4; }
+#pxiot .iot-section + .iot-section { margin-top: clamp(28px, 2vw, 44px); }
+#pxiot .iot-section { scroll-margin-top: clamp(110px, 7vw, 180px); border: 0; }
+#pxiot :is(.iot-metrics,.iot-metric,.iot-spec__caption,.iot-hw-list li,.iot-platform-features,.iot-platform-feature,.iot-cap,.iot-scenario) { border: 0; }
+#pxiot .iot-hero__bottom-line { display: none; }
+#pxiot .iot-spec__table :is(th,td) { border: 0; padding-inline: 24px; }
+#pxiot .iot-spec__table tr:first-child :is(th,td) { border: 0; }
+#pxiot .iot-spec__table tr:nth-child(odd) { background: #ffffff05; }
+#pxiot .iot-hw-list li { margin-top: 12px; padding-inline: 24px; background: #fff; border-radius: 8px; }
+#pxiot .iot-cap { background: #ffffff08; border-radius: 10px; }
+#pxiot .iot-platform-feature { background: #ffffff05; border-radius: 8px; padding: 28px 24px; }
+#pxiot .iot-api-line span { border: 0; background: #ffffff0a; }
+@media (max-width: 900px) { #pxiot { --iot-space: 88px; } }
+@media (max-width: 600px) {
+  #pxiot { --iot-space: 76px; }
+  #pxiot .iot-section + .iot-section { margin-top: 24px; }
+  #pxiot .iot-spec__table :is(th,td) { padding-inline: 12px; }
+  #pxiot .iot-hw-list li { padding-inline: 18px; }
+}

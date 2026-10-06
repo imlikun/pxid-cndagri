@@ -1,0 +1,152 @@
+/* Product chapters: generous separation, restrained surfaces, proportionate wide-screen scale.
+   Keep the established compositions intact as type, artwork and spacing grow together. */
+#app:is(.controller-detail,.product-motor,.product-meter) {
+  --pd-space: clamp(104px, 6.7vw, 144px);
+  --pd-chapter-gap: clamp(28px, 2vw, 44px);
+}
+#app:is(.controller-detail,.product-motor,.product-meter,.product-iot) #main-content {
+  background: #eef1f4;
+}
+#app:is(.controller-detail,.product-motor,.product-meter) #main-content > section:not(:first-of-type),
+#app.product-meter #main-content > nav + section {
+  margin-top: var(--pd-chapter-gap);
+}
+#app:is(.controller-detail,.product-motor,.product-meter) #main-content [id] {
+  scroll-margin-top: clamp(110px, 7vw, 180px);
+}
+
+/* The chapter rail has the same reading width as the page content. */
+#app.controller-detail #main-content .cr-chapter-nav {
+  height: 82px;
+  min-height: 82px;
+  padding-inline: var(--pd-gutter);
+  box-shadow: none;
+}
+#app.controller-detail #main-content .cr-chapter-inner {
+  width: 100%;
+  max-width: var(--pd-content-max);
+  gap: clamp(32px, 3vw, 72px);
+}
+#app.controller-detail #main-content .cr-chapter-nav a {
+  font-size: 16px;
+  letter-spacing: .025em;
+  display: inline-flex;
+  align-items: center;
+}
+#app.controller-detail #main-content .cr-scroll-cue { font-size: 13px; }
+#app.product-meter #main-content .prod-nav { border: 0; }
+#app.product-meter #main-content .prod-nav .prod-wrap { min-height: 82px; align-items: center; }
+#app.product-meter #main-content .prod-nav a { font-size: 16px; padding-block: 26px; }
+
+/* Motor: an exposed winding core, in a separate, quiet studio chapter. */
+#app.product-motor #main-content .mr-stator { border: 0; }
+#app.product-motor #main-content .mr-stator::before {
+  background: radial-gradient(ellipse at 72% 50%, #303032, #17181b 47%, #101114 85%);
+}
+#app.product-motor #main-content .mr-stator .mr-strap { color: #9ba0a7; }
+#app.product-motor #main-content .mr-stator-motor {
+  left: 18%; width: 68%; height: 100%; object-fit: contain;
+  filter: drop-shadow(0 24px 22px #0008);
+}
+#app.product-motor #main-content .mr-annotation h3 { border: 0; }
+#app.product-motor #main-content .mr-annotation span {
+  border: 0; outline: 0; background: #ed1c24;
+}
+#app.product-motor #main-content :is(.mr-tech-cards,.mr-adv-cards,.mr-selection-cards,.mr-project-cards) article {
+  border: 0;
+  border-radius: 10px;
+  background-color: #ffffff0b;
+}
+#app.product-motor #main-content .mr-tech-cards article::after,
+#app.product-motor #main-content .mr-selection-consult::before,
+#app.product-motor #main-content .mr-project-cards .mr-red-rule { display: none; }
+#app.product-motor #main-content .mr-red-rule { width: 36px; height: 2px; opacity: .8; }
+#app.product-motor #main-content :is(.mr-hero-stats,.mr-thermal-facts) > div { border: 0; }
+#app.product-motor #main-content :is(.mr-adv-showcase,.mr-selection,.mr-project) { border: 0; }
+#app.product-motor #main-content .mr-project-cards svg { border: 0; padding: 0; border-radius: 0; }
+#app.product-motor #main-content .mr-parameter-scroll { border: 0; border-radius: 8px; }
+#app.product-motor #main-content .mr-parameters-heading h3 { border: 0; padding-left: 0; }
+#app.product-motor #main-content .mr-parameters :is(th,td) { border: 0; }
+#app.product-motor #main-content .mr-parameters tr:nth-child(odd) { background: #e9edf2; }
+#app.product-motor #main-content .mr-parameters th { background: transparent; }
+#app.product-motor #main-content .mr-parameters-heading { margin-bottom: 38px; }
+
+/* Controller: reduce framing; retain the actual wiring, active tabs and diagrams. */
+#app.controller-detail #main-content :is(.cr-sys-card,.cr-detail-card,.cr-status>div,.cr-vehicle-cards article) { border: 0; }
+#app.controller-detail #main-content :is(.cr-scene-copy,.cr-scene-copy ul,.cr-thermal-list article,.cr-status,.cr-support-grid>section+section,.cr-selection-steps article) { border: 0; }
+#app.controller-detail #main-content .cr-function-tiles > div { border: 0; background: #ffffff0a; border-radius: 8px; }
+#app.controller-detail #main-content .cr-detail-card.is-active { box-shadow: inset 3px 0 #e1252e; }
+#app.controller-detail #main-content .cr-detail-card:hover { background: #ffffff14; }
+#app.controller-detail #main-content .cr-evidence-head { border: 0; }
+#app.controller-detail #main-content .cr-evidence-grid dl>div { border: 0; }
+#app.controller-detail #main-content .cr-table-scroll { border: 0; }
+#app.controller-detail #main-content .cr-selection :is(th,td) { border: 0; }
+#app.controller-detail #main-content .cr-selection tbody tr:nth-child(even) { background: #f7f8fa; }
+#app.controller-detail #main-content .cr-vehicle-cards article::after { display: none; }
+#app.controller-detail #main-content .cr-system-intro small { border: 0; }
+
+/* Meter: the subject-specific artwork carries the hierarchy, without repeated rules. */
+#app.product-meter #main-content :is(.prod-head .prod-intro,.prod-faq .prod-intro) { border: 0; background: none; padding-top: 0; }
+#app.product-meter #main-content :is(.prod-number-list li,.prod-steps,.prod-steps>div,.prod-feature,.prod-feature-quote,.prod-reading dl,.prod-reading dl>div,.prod-table,.prod-table>div,.prod-verification,.prod-resource-list,.prod-resource-list>div,.prod-faq-list,.prod-faq-list details,.meter-scene) { border: 0; }
+#app.product-meter #main-content #link .meter-connection-layout .prod-steps > div { border: 0; }
+#app.product-meter #main-content .prod-reading dl>div { background: #ffffff06; padding-inline: 22px; margin-top: 12px; border-radius: 6px; }
+#app.product-meter #main-content .prod-table > div:nth-child(2n) { background: #f2f4f6; }
+#app.product-meter #main-content .prod-resource-list > div,
+#app.product-meter #main-content .prod-faq-list details {
+  background: #fff; border-radius: 8px; margin-bottom: 14px; padding-inline: 28px;
+}
+#app.product-meter #main-content .prod-resource-list em { border: 0; background: #f2f4f6; }
+#app.product-meter #main-content .prod-feature-quote { border-radius: 8px; background: #fff; padding: 32px; }
+#app.product-meter #main-content .prod-related-grid a { border: 0; }
+
+@media (min-width: 901px) {
+  #app.controller-detail #main-content .cr-hero-inner { height: calc(100% - 82px); }
+  #app.controller-detail #main-content .cr-hero-product {
+    right: max(6%, calc((100% - var(--pd-content-max)) / 2 + 120px)); top: 20%;
+  }
+  #app.product-motor #main-content .mr-hero-motor { top: 56%; }
+}
+@media (min-width: 1760px) {
+  #app.product-motor #main-content .mr-hero-motor { top: 52%; width: 720px; height: 680px; }
+}
+@media (min-width: 2201px) {
+  /* Browser layout scaling expands both content and its fixed-size artwork.
+     2000px reading compositions grow to 3000px at 4K, with full-width backgrounds. */
+  #app:is(.controller-detail,.product-motor,.product-meter,.product-iot) #main-content {
+    zoom: 1.1;
+    zoom: clamp(1, calc(100vw / 2300px), 1.5);
+  }
+}
+@supports not (zoom: clamp(1, calc(100vw / 2300px), 1.5)) {
+  @media (min-width: 2801px) {
+    #app:is(.controller-detail,.product-motor,.product-meter,.product-iot) #main-content { zoom: 1.25; }
+  }
+  @media (min-width: 3401px) {
+    #app:is(.controller-detail,.product-motor,.product-meter,.product-iot) #main-content { zoom: 1.5; }
+  }
+}
+@media (min-width: 901px) and (max-width: 1500px) {
+  #app.controller-detail #main-content .cr-resource-rows>div {
+    grid-template-columns: 30px 100px minmax(0,1fr) 82px;
+  }
+}
+@media (max-width: 900px) {
+  #app:is(.controller-detail,.product-motor,.product-meter) { --pd-chapter-gap: 28px; }
+  #app.controller-detail #main-content .cr-chapter-nav { height: 70px; min-height: 70px; }
+  #app.controller-detail #main-content .cr-chapter-inner { gap: 28px; }
+  #app.controller-detail #main-content .cr-chapter-nav a { font-size: 14px; flex-shrink: 0; }
+  #app.product-meter #main-content .prod-nav .prod-wrap { min-height: 70px; }
+  #app.product-meter #main-content .prod-nav a { font-size: 14px; padding-block: 22px; }
+}
+@media (max-width: 600px) {
+  #app:is(.controller-detail,.product-motor,.product-meter) { --pd-space: 76px; --pd-chapter-gap: 24px; }
+  #app.controller-detail #main-content .cr-hero-inner { height: calc(100% - 70px); }
+  #app.controller-detail #main-content .cr-hero-product { top: 10%; max-height: 29%; }
+  #app.controller-detail #main-content .cr-resource-rows>div {
+    grid-template-columns: 28px minmax(0,1fr) 82px;
+  }
+  #app.product-motor #main-content .mr-stator-motor { left: 0; width: 100%; height: 300px; }
+  #app.product-motor #main-content .mr-annotation { border: 0; }
+  #app.product-meter #main-content .prod-resource-list>div,
+  #app.product-meter #main-content .prod-faq-list details { padding-inline: 20px; }
+}
