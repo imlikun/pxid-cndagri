@@ -6,23 +6,50 @@
   if (!svg) return;
 
   const ns = 'http://www.w3.org/2000/svg';
+  // Foreground schematic: heat originates within the housing, cooling follows its surface.
+  const overlay = document.createElementNS(ns, 'svg');
+  overlay.setAttribute('class', 'mr-airflow mt-flow-overlay');
+  overlay.setAttribute('viewBox', '0 0 500 440');
+  overlay.setAttribute('aria-hidden', 'true');
   const pulses = document.createElementNS(ns, 'g');
   pulses.setAttribute('class', 'mt-flow-pulses');
-  // Reuse the drawn routes. Each independent route has the same normalized travel length.
-  for (const [source, kind] of [['mr-cooling', 'cool'], ['mr-heat', 'heat']]) {
-    const group = svg.querySelector(`g[stroke="url(#${source})"]`);
-    group?.querySelectorAll('path').forEach(path => {
-      (path.getAttribute('d').match(/[Mm][^Mm]*/g) || []).forEach((route, index) => {
-        const pulse = document.createElementNS(ns, 'path');
-        pulse.setAttribute('class', `mt-flow-pulse mt-flow-${kind}`);
-        pulse.setAttribute('d', route);
-        pulse.setAttribute('pathLength', '100');
-        pulse.style.setProperty('--flow-delay', `${index * -.37}s`);
-        pulses.appendChild(pulse);
-      });
+  const routes = {
+    cool: [
+      'M0 126C50 166 66 131 102 111C151 85 218 80 299 109',
+      'M0 174C40 193 58 177 72 151C85 128 110 111 145 109',
+      'M0 210C30 212 51 201 63 180C72 166 81 151 102 145',
+      'M0 258C30 250 49 246 65 267C74 284 81 300 107 314',
+      'M0 305C45 274 60 300 82 324C124 357 181 368 240 367',
+      'M0 348C50 308 67 341 104 361C165 391 230 389 292 374'
+    ],
+    heat: [
+      'M238 222C291 193 330 151 372 137C424 120 455 112 484 91',
+      'M238 222C296 204 334 192 375 185C433 176 460 160 493 142',
+      'M238 222C292 226 330 235 376 243C431 251 460 242 491 231',
+      'M238 222C290 244 328 280 369 301C419 326 457 332 494 334',
+      'M238 222C286 269 322 313 367 342C411 369 451 372 478 377'
+    ]
+  };
+  for (const [kind, paths] of Object.entries(routes)) {
+    paths.forEach((route, index) => {
+      const track = document.createElementNS(ns, 'path');
+      track.setAttribute('class', `mt-flow-track mt-flow-${kind}`);
+      track.setAttribute('d', route);
+      pulses.appendChild(track);
+      const pulse = document.createElementNS(ns, 'path');
+      pulse.setAttribute('class', `mt-flow-pulse mt-flow-${kind}`);
+      pulse.setAttribute('d', route);
+      pulse.setAttribute('pathLength', '100');
+      pulse.style.setProperty('--flow-delay', `${index * -.37}s`);
+      pulses.appendChild(pulse);
     });
   }
-  svg.appendChild(pulses);
+  const source = document.createElementNS(ns, 'circle');
+  source.setAttribute('class', 'mt-heat-source');
+  source.setAttribute('cx', '238'); source.setAttribute('cy', '222'); source.setAttribute('r', '8');
+  pulses.appendChild(source);
+  overlay.appendChild(pulses);
+  control.appendChild(overlay);
 
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const hoverPointer = matchMedia('(hover: hover) and (pointer: fine)');

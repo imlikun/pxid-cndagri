@@ -64,3 +64,19 @@
   #thermal .mt-flow-pulses { transition: none; }
   #thermal .mt-flow-pulse { animation: none; stroke-dasharray: none; }
 }
+
+/* The animated explanation sits on the product, rather than behind the photograph. */
+#thermal .mt-flow-overlay { z-index: 2; overflow: visible; }
+#thermal .mr-thermal-motor { z-index: 1; }
+#thermal .mt-flow-hint { z-index: 3; }
+#thermal .mt-flow-track { fill: none; stroke-width: 1.3px; opacity: .38; }
+#thermal .mt-flow-pulse { stroke-width: 3px; }
+#thermal .mt-heat-source {
+  fill: #ff8d72;
+  stroke: #fff0e8;
+  stroke-width: 1.8px;
+  filter: drop-shadow(0 0 9px #ff7359);
+}
+#thermal [data-flow-active="true"] > .mr-airflow:not(.mt-flow-overlay) > g[stroke^="url"],
+#thermal [data-flow-active="true"] > .mr-airflow:not(.mt-flow-overlay) > path { opacity: 0; }
+#thermal > .mr-airflow { transition: opacity 320ms ease; }
