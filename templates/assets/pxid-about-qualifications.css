@@ -1,0 +1,17 @@
+/* Compact certifications layout, scoped to this chapter only. */
+#app.pxid-about #qualifications .about-qualifications-intro{grid-template-columns:1.08fr 1fr;align-items:start;gap:clamp(40px,4vw,72px);margin-bottom:52px}
+#app.pxid-about #qualifications .about-recognitions .about-eyebrow{color:var(--about-red);font-size:13px;margin-bottom:14px;letter-spacing:.12em}
+#app.pxid-about #qualifications .about-recognitions h2{font-size:clamp(34px,3vw,48px);line-height:1.25;margin:0 0 28px;letter-spacing:-.025em}
+#app.pxid-about #qualifications .about-recognitions ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,auto);grid-auto-flow:column;column-gap:30px;row-gap:12px}
+#app.pxid-about #qualifications .about-recognitions li{position:relative;border:0;padding:0 0 0 21px;font-size:17px;line-height:1.7;color:var(--about-copy);overflow-wrap:break-word}
+#app.pxid-about #qualifications .about-recognitions li::before{content:"";position:absolute;left:0;top:.67em;width:7px;height:7px;border-radius:50%;background:var(--about-red)}
+#app.pxid-about #qualifications .about-certification-visual{padding-top:32px;min-width:0}
+#app.pxid-about #qualifications .about-certification-visual .about-section-intro{font-size:16px;line-height:1.8;margin:0 0 22px;max-width:none}
+#app.pxid-about #qualifications .about-certification-visual img{width:100%;height:auto;object-fit:contain}
+#app.pxid-about #qualifications .about-qualifications-link{display:flex;justify-content:flex-end;align-items:center;gap:16px;min-height:44px;margin-top:4px;color:var(--about-red);font-size:14px;font-weight:600;width:max-content;margin-left:auto}
+#app.pxid-about #qualifications .about-qualifications-link:hover{text-decoration:underline;text-underline-offset:5px}
+#app.pxid-about #qualifications .about-qualifications-link:focus-visible{outline:2px solid var(--about-red);outline-offset:4px}
+#app.pxid-about #qualifications-awards{scroll-margin-top:calc((var(--about-header-height) + 130px) / var(--cinema-scale,1))}
+@media(max-width:1200px){#app.pxid-about #qualifications .about-qualifications-intro{gap:36px}#app.pxid-about #qualifications .about-recognitions ul{column-gap:22px}#app.pxid-about #qualifications .about-recognitions li{font-size:16px}}
+@media(max-width:1100px){#app.pxid-about #qualifications .about-qualifications-intro{grid-template-columns:1fr;gap:28px}#app.pxid-about #qualifications .about-certification-visual{padding-top:0}#app.pxid-about #qualifications .about-certification-visual img{max-height:none}}
+@media(max-width:600px){#app.pxid-about #qualifications .about-recognitions h2{font-size:32px;margin-bottom:24px}#app.pxid-about #qualifications .about-recognitions ul{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row;gap:11px}#app.pxid-about #qualifications .about-recognitions li{font-size:15px;padding-left:18px}#app.pxid-about #qualifications .about-certification-visual .about-section-intro{font-size:15px;margin-bottom:18px}#app.pxid-about #qualifications .about-qualifications-intro{margin-bottom:36px}}
