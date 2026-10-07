@@ -1,0 +1,31 @@
+#pxiot .iot-platform__view:has(.iot-fleet){height:auto;min-height:420px;margin:0}
+#pxiot .iot-screen:has(.iot-fleet){width:100%;max-width:100%;padding:12px;transform:none;box-shadow:0 20px 60px #0003}
+#pxiot .iot-screen:has(.iot-fleet)>.iot-screen__cap{position:static;display:inline-block;margin-bottom:12px;font-size:10px}
+#pxiot .iot-screen:has(.iot-fleet)>img{display:none}
+#pxiot .iot-fleet{font-family:Arial,'Microsoft YaHei',sans-serif;color:#d8e4ee;font-size:13px;text-align:left}
+#pxiot .iot-fleet-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 8px 18px}
+#pxiot .iot-fleet-head b{font-size:17px;color:#fff}#pxiot .iot-fleet-head span{font-size:11px;color:#869aa9}
+#pxiot .iot-fleet-filters{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 12px}
+#pxiot .iot-fleet-filters button{border:0;background:#182b39;border-radius:4px;color:#adbdcb;min-height:44px;padding:9px 12px;font:inherit;cursor:pointer}
+#pxiot .iot-fleet-filters button[aria-pressed=true]{color:#fff;background:#344e63}
+#pxiot .iot-fleet button:focus-visible{outline:3px solid #74dad8;outline-offset:3px}
+#pxiot .iot-fleet-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(175px,.8fr);gap:12px;min-height:270px}
+#pxiot .iot-fleet-map{position:relative;min-height:270px;border-radius:5px;background:#112733;overflow:hidden}
+#pxiot .iot-fleet-map>svg{position:absolute;inset:0;width:100%;height:100%}
+#pxiot .iot-fleet-map-label{position:absolute;left:12px;bottom:10px;font-size:10px;color:#7296a8;pointer-events:none}
+#pxiot .iot-fleet-marker{position:absolute;width:44px;height:44px;min-width:44px;min-height:44px;transform:translate(-50%,-50%);border:0;border-radius:50%;background:transparent;color:#80ddd6;cursor:pointer;padding:0}
+#pxiot .iot-fleet-marker span{display:grid;place-items:center;margin:auto;width:28px;height:28px;background:#182e3a;border:1px solid currentColor;border-radius:50%;font-size:11px;font-weight:700}
+#pxiot .iot-fleet-marker[data-state=swap]{color:#f3b875}#pxiot .iot-fleet-marker[data-state=offline]{color:#91a4b4}#pxiot .iot-fleet-marker[data-state=charging]{color:#9fbcff}
+#pxiot .iot-fleet-marker[aria-pressed=true] span{box-shadow:0 0 0 5px #76d8d626;background:#244957;color:#e1fffa}
+#pxiot .iot-fleet-marker[hidden]{display:none}
+#pxiot .iot-fleet-detail{padding:18px 16px;background:#162a38;border-radius:5px;min-width:0}
+#pxiot .iot-fleet-detail small{font-size:10px;color:#8dabbc;letter-spacing:1px}
+#pxiot .iot-fleet-detail h3{font-size:19px;line-height:1.4;margin:12px 0;color:#fff}
+#pxiot .iot-fleet-state{display:inline-block;padding:4px 8px;border-radius:3px;background:#2b4757;color:#addfd7;font-size:12px}
+#pxiot .iot-fleet-battery{margin-top:22px}#pxiot .iot-fleet-battery strong{font-size:32px;line-height:1.4;color:#fff}#pxiot .iot-fleet-battery p{font-size:11px;color:#9aafbf;margin:2px 0 8px}
+#pxiot .iot-fleet-bar{height:5px;background:#2f4655;border-radius:3px;overflow:hidden}#pxiot .iot-fleet-bar i{display:block;height:100%;background:#80d2c6}
+#pxiot .iot-fleet-detail .iot-fleet-description{font-size:12px;color:#a1b5c4;line-height:1.8;margin:18px 0 0}
+#pxiot .iot-fleet-foot{font-size:11px;line-height:1.8;color:#859eaf;padding:14px 6px 2px}
+@media(min-width:2400px){#pxiot .iot-screen:has(.iot-fleet){padding:22px}#pxiot .iot-fleet{font-size:17px}#pxiot .iot-fleet-head b{font-size:24px}#pxiot .iot-fleet-head span,#pxiot .iot-screen:has(.iot-fleet)>.iot-screen__cap{font-size:14px}#pxiot .iot-fleet-filters button{min-height:54px;padding:12px 18px}#pxiot .iot-fleet-body{min-height:380px;grid-template-columns:minmax(0,1.4fr) minmax(245px,.8fr);gap:20px}#pxiot .iot-fleet-map{min-height:380px}#pxiot .iot-fleet-detail{padding:28px 24px}#pxiot .iot-fleet-detail h3{font-size:26px}#pxiot .iot-fleet-detail small,#pxiot .iot-fleet-battery p,#pxiot .iot-fleet-foot,#pxiot .iot-fleet-map-label{font-size:14px}#pxiot .iot-fleet-state,#pxiot .iot-fleet-detail .iot-fleet-description{font-size:16px}#pxiot .iot-fleet-battery strong{font-size:44px}#pxiot .iot-fleet-marker{width:54px;height:54px}#pxiot .iot-fleet-marker span{width:36px;height:36px;font-size:14px}}
+@media(max-width:1100px){#pxiot .iot-platform__grid:has(.iot-fleet){grid-template-columns:1fr}#pxiot .iot-platform__view:has(.iot-fleet){max-width:850px}}
+@media(max-width:639px){#pxiot .iot-fleet-body{grid-template-columns:1fr}#pxiot .iot-fleet-detail{display:grid;grid-template-columns:1fr 1fr;gap:0 14px;padding:16px}#pxiot .iot-fleet-detail small{grid-column:1/-1}#pxiot .iot-fleet-detail h3{margin:10px 0}#pxiot .iot-fleet-battery{grid-column:2;grid-row:2/4;margin-top:6px}#pxiot .iot-fleet-state{justify-self:start}#pxiot .iot-fleet-detail .iot-fleet-description{grid-column:1/-1;margin:14px 0 0}#pxiot .iot-fleet-head{padding-left:2px;padding-right:2px}#pxiot .iot-fleet-filters button{padding:9px 10px}}

@@ -1,0 +1,28 @@
+#app.controller-detail .cr-sys-card{position:relative;transition:background .2s,box-shadow .2s}
+#app.controller-detail .cr-sys-card[data-flow-selected=true]{background:#2a292b;box-shadow:inset 0 0 0 1px #eb4b50,0 5px 24px #0003}
+#app.controller-detail .cr-live-hit{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;border-radius:inherit;cursor:pointer;z-index:3}
+#app.controller-detail .cr-live-hit:focus-visible{outline:3px solid #fc6267;outline-offset:4px}
+#app.controller-detail .cr-system-wires [data-flow-base]{transition:opacity .2s}
+#app.controller-detail .cr-system-wires[data-flow-active=true] [data-flow-base]{opacity:.16}
+#app.controller-detail .cr-system-wires[data-flow-active=true] [data-flow-base][data-flow-selected=true]{opacity:1}
+#app.controller-detail .cr-flow-pulse{fill:none;stroke-width:3;stroke-dasharray:7 35;stroke-linecap:round;opacity:0;filter:drop-shadow(0 0 4px currentColor);pointer-events:none}
+#app.controller-detail .cr-flow-pulse[data-flow-selected=true]{opacity:1;animation:cr-link-flow 1.6s linear infinite}
+#app.controller-detail .cr-system-diagram[data-flow-visible=false] .cr-flow-pulse{animation-play-state:paused;opacity:0}
+@keyframes cr-link-flow{to{stroke-dashoffset:-84}}
+#app.controller-detail .cr-flow-description{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center;color:#b9bdc3;font-size:14px;line-height:1.8;min-height:48px;margin-top:18px}
+#app.controller-detail .cr-flow-description span:first-child{font-size:11px;letter-spacing:1px;color:#959aa2}
+#app.controller-detail .cr-flow-description p{margin:0;flex:1;min-width:220px;color:#b9bdc3;font-size:inherit}
+#app.controller-detail .cr-live-reset,#app.controller-detail .cr-story-controls button{min-height:44px;border:1px solid #555c65;border-radius:5px;padding:9px 18px;font-family:inherit;font-size:14px;cursor:pointer;background:transparent;color:inherit}
+#app.controller-detail .cr-live-reset:focus-visible,#app.controller-detail .cr-story-controls button:focus-visible{outline:3px solid #ef3842;outline-offset:3px}
+#app.controller-detail .cr-protection-flow article{position:relative;transition:box-shadow .2s,background .2s}
+#app.controller-detail .cr-protection-flow article[data-story-selected=true]{box-shadow:inset 0 0 0 2px #f12531;background:#fff}
+#app.controller-detail .cr-protection-flow article .cr-live-hit:focus-visible{outline-color:#e51828}
+#app.controller-detail .cr-protection-story{margin-top:32px;padding:26px 30px;background:#fff;border-radius:7px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;color:#181b21}
+#app.controller-detail .cr-protection-story small{font-size:11px;letter-spacing:1px;color:#81878f}
+#app.controller-detail .cr-protection-story h3{font-size:22px;margin:10px 0 8px;line-height:1.5}
+#app.controller-detail .cr-protection-story p{font-size:15px;line-height:1.8;margin:0;color:#69717a}
+#app.controller-detail .cr-story-controls{display:flex;gap:10px;flex-wrap:wrap}
+#app.controller-detail .cr-story-controls button:first-child{color:white;background:#df1825;border-color:#df1825}
+@media(min-width:2400px){#app.controller-detail .cr-flow-description{font-size:18px}#app.controller-detail .cr-protection-story{padding:36px 44px}#app.controller-detail .cr-protection-story h3{font-size:30px}#app.controller-detail .cr-protection-story p{font-size:20px}#app.controller-detail .cr-live-reset,#app.controller-detail .cr-story-controls button{font-size:18px;min-height:54px}#app.controller-detail .cr-protection-story small,#app.controller-detail .cr-flow-description span:first-child{font-size:14px}}
+@media(max-width:899px){#app.controller-detail .cr-protection-story{grid-template-columns:1fr;padding:22px;gap:20px}#app.controller-detail .cr-flow-description{gap:8px}#app.controller-detail .cr-flow-description span:first-child{width:100%}}
+@media(prefers-reduced-motion:reduce){#app.controller-detail .cr-flow-pulse{animation:none!important;stroke-dasharray:none;stroke-width:2}}
