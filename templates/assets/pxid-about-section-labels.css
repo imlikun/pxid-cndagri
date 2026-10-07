@@ -1,0 +1,6 @@
+/* Seven editorial chapter labels; the removed chapter bar has no replacement. */
+#app.pxid-about #main-content .about-section .about-section-label{display:block;color:var(--about-red);font-size:14px;font-weight:600;letter-spacing:.1em;line-height:1.5}
+#app.pxid-about #main-content .about-section .about-section-label::before{content:none}
+#app.pxid-about #main-content .about-section{scroll-margin-top:calc((var(--about-header-height) + 40px) / var(--cinema-scale,1))}
+#app.pxid-about #main-content #qualifications-awards{scroll-margin-top:calc((var(--about-header-height) + 40px) / var(--cinema-scale,1))}
+@media(max-width:600px){#app.pxid-about #main-content .about-section .about-section-label{font-size:12px;letter-spacing:.08em}}

@@ -6,13 +6,14 @@
   });
   var header=document.querySelector('#app > header');
   var chapters=document.querySelector('.about-chapters');
-  if (!header || !chapters) return;
+  if (!header) return;
   function measureHeader() {
     document.body.style.setProperty('--about-header-height',Math.ceil(header.getBoundingClientRect().height)+'px');
   }
   measureHeader();
   if ('ResizeObserver' in window) new ResizeObserver(measureHeader).observe(header);
   else window.addEventListener('resize',measureHeader,{passive:true});
+  if (!chapters) return;
   var links=Array.from(chapters.querySelectorAll('a[href^="#"]'));
   var sections=links.map(function (link) { return document.querySelector(link.getAttribute('href')); });
   var pending=false;
