@@ -1,0 +1,40 @@
+/* About PXID: company profile first; equipment proof is available on demand. */
+#app.pxid-about #main-content .about-process-index span{font-size:11px;letter-spacing:.09em}
+#app.pxid-about #main-content .about-process-copy>p:last-child{margin-top:8px;line-height:1.8}
+#app.pxid-about #main-content .about-factory-records{margin-top:48px;border:0;background:#f5f6f4;padding:0 28px}
+#app.pxid-about #main-content .about-factory-records summary{padding:24px 0;min-height:72px}
+#app.pxid-about #main-content .about-factory-records summary:hover{color:var(--about-red)}
+#app.pxid-about #main-content .about-factory-records .about-details-body{padding:8px 0 28px}
+#app.pxid-about #main-content .about-equipment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 48px}
+#app.pxid-about #main-content .about-equipment-grid article{min-width:0}
+#app.pxid-about #main-content .about-equipment-grid h4{font:600 19px/1.5 "Microsoft YaHei","PingFang SC",Arial,sans-serif;color:var(--about-ink);margin:0 0 14px}
+#app.pxid-about #main-content .about-equipment-grid ul{padding-left:20px}
+#app.pxid-about #main-content .about-equipment-grid li{font-size:14px;line-height:1.85;overflow-wrap:break-word;padding-bottom:8px}
+#app.pxid-about #main-content .about-digital{padding:40px}
+#app.pxid-about #main-content .about-digital-label{font-size:12px;letter-spacing:.12em;color:#fa7e85}
+#app.pxid-about #main-content .about-digital-head h3{font-size:29px;line-height:1.45;margin-top:14px}
+#app.pxid-about #main-content .about-digital-intro{color:#bfc7bf;font-size:16px;line-height:1.85;max-width:38em}
+#app.pxid-about #main-content .about-digital-grid{margin-top:32px;gap:40px}
+#app.pxid-about #main-content .about-digital-grid article{border:0;padding-top:0}
+#app.pxid-about #main-content .about-cooperation{background:#f3f4f2}
+#app.pxid-about #main-content .about-cooperation .about-section-head{align-items:center;margin-bottom:0}
+#app.pxid-about #main-content .about-cooperation .about-actions{margin-top:28px;flex-wrap:wrap;gap:20px 32px}
+@media(max-width:900px){
+ #app.pxid-about #main-content .about-equipment-grid{gap:28px}
+ #app.pxid-about #main-content .about-digital{padding:32px}
+ #app.pxid-about #main-content .about-digital-grid{gap:28px}
+ #app.pxid-about #main-content .about-digital-head{gap:20px}
+ #app.pxid-about #main-content .about-digital-head h3{font-size:27px}
+}
+@media(max-width:600px){
+ #app.pxid-about #main-content .about-process-index{gap:16px}
+ #app.pxid-about #main-content .about-process-index span{font-size:10px}
+ #app.pxid-about #main-content .about-factory-records{margin-top:36px;padding:0 20px}
+ #app.pxid-about #main-content .about-factory-records summary{font-size:14px;min-height:68px;padding-block:20px}
+ #app.pxid-about #main-content .about-equipment-grid{grid-template-columns:1fr;gap:24px}
+ #app.pxid-about #main-content .about-equipment-grid h4{font-size:18px;margin-bottom:10px}
+ #app.pxid-about #main-content .about-digital{padding:28px 24px}
+ #app.pxid-about #main-content .about-digital-head h3{font-size:25px}
+ #app.pxid-about #main-content .about-digital-intro{font-size:14px}
+ #app.pxid-about #main-content .about-cooperation .about-actions{gap:20px 24px}
+}
