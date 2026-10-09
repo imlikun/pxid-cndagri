@@ -6016,7 +6016,8 @@ select:focus-visible {
 body.contact .contact-aside{ background:var(--pxid-ink,#111); border:0; color:#fff; }
 body.contact .contact-aside > span{ color:rgba(255,255,255,.5); }
 body.contact .contact-aside h3{ font-size:clamp(20px,.23rem,25px); margin:.1rem 0 .06rem; }
-body.contact .contact-aside p{ font-size:clamp(14px,.13rem,16px); line-height:1.6; color:rgba(255,255,255,.88); margin-top:.18rem; border-top:0; padding-top:0; }
+body.contact .contact-aside p{ font-size:clamp(14px,.13rem,16px); line-height:1.6; color:rgba(255,255,255,.88); margin-top:auto; padding-top:.18rem; border-top:1px solid rgba(255,255,255,.12); }
+body.contact .contact-aside p:first-of-type{ margin-top:.14rem; border-top:0; padding-top:0; }
 body.contact .contact-aside strong{ display:block; font-size:clamp(12px,.12rem,14px); color:rgba(255,255,255,.5); font-weight:500; }
 body.contact .contact-aside br{ display:none; }
 body.contact .contact-aside p a{ color:rgba(255,255,255,.88); }
