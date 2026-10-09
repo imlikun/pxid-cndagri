@@ -106,3 +106,10 @@ body.new #main .read-link:hover, body.new #main .insight-card h2 a:hover { color
 }
 body.new #main { font-family:Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
 body.new #main .insight-card h2, body.new #main .insight-card h2 a { max-width:none !important; width:auto; text-wrap:pretty; word-break:normal; }
+
+
+/* ===== overlay 弹层 90% 宽 + 内容统一边距（2026-10-09 ov1） ===== */
+@media (min-width:901px){
+dialog.pxid-news-overlay{ width:90%; }
+.pxid-news-overlay .pxid-overlay-content{ max-width:none; padding:56px 48px 72px; }
+}
