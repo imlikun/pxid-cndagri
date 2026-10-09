@@ -58,21 +58,7 @@
     .a-qrline .qr-phone .qrimg{width:100%;height:100%;object-fit:cover;border-radius:9px}
     .a-qrline.inv .qr-phone{background:#f5f5f3;box-shadow:0 10px 24px rgba(0,0,0,.32)}
     .a-qrline.inv .qr-phone::before,.a-qrline.inv .qr-phone::after{background:rgba(23,23,23,.24)}
-    .a-qrline .store-tag{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#171717}
-    .a-qrline.inv .store-tag{color:#fff}
-    .st-logo{width:22px;height:22px;fill:#171717;flex:none}
-    .a-qrline.inv .st-logo,.dl-btn .st-logo{fill:#fff}
-    .st-gplay{fill:none}
-    .dl-btn{display:inline-flex;align-items:center;gap:8px}
-    .dl-btn .st-logo{width:18px;height:18px}
-    .a-qrline .store-tag{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#171717}
-    .a-qrline.inv .store-tag{color:#fff}
-    .st-logo{width:22px;height:22px;fill:#171717;flex:none}
-    .a-qrline.inv .st-logo,.dl-btn .st-logo{fill:#fff}
-    .st-gplay{fill:none}
-    .dl-btn{display:inline-flex;align-items:center;gap:8px}
-    .dl-btn .st-logo{width:18px;height:18px}
-  .dl-tabs{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+    .dl-tabs{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
   .dl-tab{appearance:none;cursor:pointer;height:40px;padding:0 20px;border:1px solid rgba(23,23,23,.2);background:#fff;color:#555;font-size:14px;font-weight:600;font-family:inherit;transition:.2s}
   .dl-tab:hover{border-color:#171717;color:#171717}
   .dl-tab.active{background:#171717;color:#fff;border-color:#171717}
@@ -300,5 +286,38 @@ window.PXID_APP_LINKS={
   });
 })();
 </script>
+
+<style id="dl-cards-v2">
+/* ===== 下载卡精修 v2：统一浅面板+壳精致化+竖排按钮 ===== */
+    .a-row{align-items:start}
+    .a-row .a-panel,.a-row .a-panel.dark{background:#f6f6f4;border:1px solid rgba(23,23,23,.07);border-radius:6px;padding:22px;display:grid;grid-template-columns:auto 1fr;gap:12px 20px;align-items:center;box-shadow:none}
+    .a-row .a-panel .a-qrline{grid-row:1/4;grid-column:1;gap:14px;margin:0}
+    .a-row .a-panel .a-btns{grid-column:2;grid-row:2;display:flex;flex-direction:column;gap:10px;align-items:stretch}
+    .a-row .a-panel .a-btns .dl-btn{height:42px;justify-content:center;font-size:14px;gap:7px;border-radius:3px}
+    .a-row .a-panel .a-ver{grid-column:2;grid-row:3;font-size:12px;color:#9a9a9a}
+    .a-qrline .store-tag{font-size:12.5px;gap:7px}
+    .qr-phone{width:88px;height:172px;border-radius:13px;padding:5px 5px 13px;background:#1c1c1e;box-shadow:0 6px 16px rgba(0,0,0,.22)}
+    .a-qrline .qr-phone::before{width:28px;height:4px;top:5px;background:rgba(255,255,255,.3)}
+    .a-qrline .qr-phone::after{width:26px;height:3px;bottom:4px;background:rgba(255,255,255,.45)}
+    .a-qrline .qr-phone .qrimg{border-radius:8px;background:#fff;box-sizing:border-box;padding:5px}
+    .a-qrline.inv span{color:#171717}
+    .a-qrline.inv .store-tag{color:#171717}
+    .a-qrline .store-tag{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#171717}
+    .a-qrline.inv .store-tag{color:#fff}
+    .st-logo{width:22px;height:22px;fill:#171717;flex:none}
+    .a-qrline.inv .st-logo,.dl-btn .st-logo{fill:#fff}
+    .st-gplay{fill:none}
+    .dl-btn{display:inline-flex;align-items:center;gap:8px}
+    .dl-btn .st-logo{width:18px;height:18px}
+    .a-qrline .store-tag{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#171717}
+    .a-qrline.inv .store-tag{color:#fff}
+    .st-logo{width:22px;height:22px;fill:#171717;flex:none}
+    .a-qrline.inv .st-logo,.dl-btn .st-logo{fill:#fff}
+    .st-gplay{fill:none}
+    .dl-btn{display:inline-flex;align-items:center;gap:8px}
+    .dl-btn .st-logo{width:18px;height:18px}
+    .a-row .a-panel .a-qrline .store-tag{white-space:nowrap}
+
+</style>
 </body>
 </html>
