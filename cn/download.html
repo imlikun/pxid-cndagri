@@ -302,6 +302,19 @@ window.PXID_APP_LINKS={
     .a-qrline .qr-phone .qrimg{border-radius:8px;background:#fff;box-sizing:border-box;padding:5px}
     .a-qrline.inv span{color:#171717}
     .a-qrline.inv .store-tag{color:#171717}
+    /* ===== v3 紧凑单行卡：壳+名称+商店标识+按钮+版本 ===== */
+    .a-row{display:flex;align-items:center;gap:28px;padding:22px 36px}
+    .a-row .a-ico{display:none}
+    .a-row .a-info .a-desc,.a-row .a-info .a-chips{display:none}
+    .a-row .a-info{flex:0 0 auto;width:auto}
+    .a-row .a-info .a-head{margin:0 0 10px}
+    .a-row .a-info .a-head h3{font-size:19px;margin:0}
+    .a-row .a-panel,.a-row .a-panel.dark{background:transparent;border:0;padding:0;display:flex;flex-direction:row;align-items:center;gap:22px;box-shadow:none;width:auto}
+    .a-row .a-panel .a-qrline{display:flex;flex-direction:row;align-items:center;gap:16px;margin:0}
+    .a-row .a-panel .a-btns{display:flex;flex-direction:column;gap:9px;align-items:stretch;min-width:200px}
+    .a-row .a-panel .a-btns .dl-btn{height:44px;justify-content:flex-start;font-size:14.5px}
+    .a-row .a-panel .a-ver{font-size:12px;color:#9a9a9a;white-space:nowrap}
+    .a-row .a-qrline.inv .store-tag{color:#171717}.a-qrline .store-tag{white-space:nowrap;justify-content:flex-start;font-size:14px}
     .a-qrline .store-tag{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#171717}
     .a-qrline.inv .store-tag{color:#fff}
     .st-logo{width:22px;height:22px;fill:#171717;flex:none}
