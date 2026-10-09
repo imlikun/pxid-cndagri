@@ -201,7 +201,7 @@
         <div class="a-info"><div class="a-head"><span class="a-ico ico-red">智</span><div><h3>品向智行 <i class="badge b-red">全球版</i></h3><span class="a-en">PXID RIDE · Global</span></div></div>
           <p class="a-desc">面向海外市场的整车配对与骑行 App：车辆绑定、定位寻车、骑行轨迹与电量、固件 OTA 升级，多语言界面。pxid.com 全球用户入口。</p>
           <div class="a-chips"><span class="a-chip">蓝牙配对</span><span class="a-chip">定位寻车</span><span class="a-chip">骑行轨迹</span><span class="a-chip">OTA 升级</span><span class="a-chip">多语言</span></div></div>
-        <div class="a-panel"><div class="a-qrline"><img class="qrimg" src="../assets/pxid/qr/app-global.png" alt=""><span>扫码下载<br>演示码 · 正式上架后替换</span></div>
+        <div class="a-panel"><div class="a-qrline"><img class="qrimg" src="../assets/pxid/qr/app-global.png" alt=""><span>扫码下载<br>Android · 应用宝扫码下载</span></div>
           <div class="a-btns"><a class="dl-btn pending" data-store="ios" href="javascript:void(0)">待上架</a><a class="dl-btn pending" data-store="apk" href="javascript:void(0)">待上架</a></div>
           <div class="a-ver"><span data-field="ver">v1.0.0</span> · <span data-field="updated">更新：2026-09-28</span></div></div>
       </div>
@@ -302,7 +302,7 @@
    二维码同步替换 assets/pxid/qr/ 下同名文件即可。
    ═══════════════════════════════════════════════════════════ */
 window.PXID_APP_LINKS={
-  global:{ios:"",apk:"",ver:"v1.0.0",updated:"2026-09-28"},   /* 品向智行 · 全球版 */
+  global:{ios:"https://apps.apple.com/cn/app/%E5%93%81%E5%90%91%E6%99%BA%E8%A1%8C/id6799816454",gp:"https://play.google.com/store/apps/details?id=com.pxidiot.bike.pxidiot_toc_app",yb:"https://microdown.yyb.qq.com/o/simple.jsp?fromcase=70051&g_f=1182517&pkgname=com.pxidiot.bike.pxidiot_toc_app&scenevia=XQYFX",apk:"",ver:"v1.0.0",updated:"2026-09-29"},   /* 品向智行 · 全球版（App Store / Google Play / 应用宝） */
   cn:    {ios:"",apk:"",ver:"v1.0.0",updated:"2026-09-28"},   /* 品向智行 · 国内版 */
   trip:  {ios:"",apk:"",ver:"v1.0.0",updated:"2026-09-28"}    /* PXID出行 */
 };
@@ -314,13 +314,19 @@ window.PXID_APP_LINKS={
       var c=L[card.getAttribute('data-app')]; if(!c) return;
       if(c.ver){ var v=card.querySelector('[data-field="ver"]'); if(v) v.textContent=c.ver; }
       if(c.updated){ var u=card.querySelector('[data-field="updated"]'); if(u) u.textContent='更新：'+c.updated; }
-      ['ios','apk'].forEach(function(k){
-        var b=card.querySelector('[data-store="'+k+'"]'); if(!b) return;
+      [['ios','App Store 下载'],['apk','Android APK 下载'],['gp','Google Play 下载'],['yb','应用宝下载']].forEach(function(s){
+        var k=s[0], label=s[1];
+        var b=card.querySelector('[data-store="'+k+'"]');
         if(c[k]){
-          b.href=c[k]; b.classList.remove('pending');
-          b.textContent = (k==='ios') ? 'App Store 下载' : 'Android APK 下载';
+          if(!b){
+            var anyB=card.querySelector('[data-store]'); if(!anyB) return;
+            b=document.createElement('a'); b.className='dl-btn'; b.setAttribute('data-store',k); anyB.parentNode.appendChild(b);
+          }
+          b.href=c[k]; b.target='_blank'; b.rel='noopener'; b.classList.remove('pending');
+          b.textContent = label;
         }
       });
+      if((c.gp||c.yb) && !c.apk){ var ap=card.querySelector('[data-store="apk"]'); if(ap) ap.remove(); }
     })(cards[i]);
   }
 })();
