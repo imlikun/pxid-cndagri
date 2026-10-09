@@ -6013,21 +6013,21 @@ select:focus-visible {
 .contact-aside .contact-link{ margin-top:auto }
 
 /* ===== contact aside 方案C 内容做厚版（2026-10-09 拍板）：CTA+位置块填充等高 ===== */
-body.contact .contact-aside{ background:var(--pxid-ink,#111); border:0; color:#fff; }
+body.contact .contact-aside{ background:var(--pxid-ink,#111); border:0; color:#fff; padding:.56rem .48rem; }
 body.contact .contact-aside > span{ color:rgba(255,255,255,.5); }
 body.contact .contact-aside h3{ font-size:clamp(20px,.23rem,25px); margin:.1rem 0 .04rem; }
-body.contact .contact-aside p{ font-size:clamp(14px,.13rem,16px); line-height:1.6; color:rgba(255,255,255,.88); margin-top:.18rem; padding-top:.18rem; border-top:1px solid rgba(255,255,255,.12); }
+body.contact .contact-aside p{ font-size:clamp(14px,.13rem,16px); line-height:1.6; color:rgba(255,255,255,.88); margin-top:.2rem; padding-top:.2rem; border-top:1px solid rgba(255,255,255,.12); }
 body.contact .contact-aside p:first-of-type{ margin-top:.12rem; border-top:0; padding-top:0; }
 body.contact .contact-aside strong{ display:block; font-size:clamp(12px,.12rem,14px); color:rgba(255,255,255,.5); font-weight:500; }
 body.contact .contact-aside br{ display:none; }
 body.contact .contact-aside p a{ color:rgba(255,255,255,.88); }
 body.contact .contact-aside p:last-of-type{ margin-bottom:0; }
-body.contact .contact-cta{ display:grid; grid-template-columns:1fr 1fr; gap:.1rem; margin-top:.18rem; }
+body.contact .contact-cta{ display:grid; grid-template-columns:1fr 1fr; gap:.1rem; margin-top:auto; padding-top:.2rem; border-top:1px solid rgba(255,255,255,.12); }
 body.contact .contact-cta a{ display:flex; align-items:center; justify-content:center; gap:8px; min-height:46px; font-size:clamp(13px,.13rem,15px); font-weight:600; text-decoration:none; border-radius:4px; color:#fff; }
 body.contact .contact-cta a.mail{ background:var(--pxid-red,#d71920); }
 body.contact .contact-cta a.tel{ border:1px solid rgba(255,255,255,.35); }
 body.contact .contact-cta svg{ width:15px; height:15px; stroke:currentColor; fill:none; stroke-width:2; flex:none; }
-body.contact .contact-map{ position:relative; flex:1 1 auto; min-height:200px; height:auto; background:#181818; border:1px solid rgba(255,255,255,.1); border-radius:4px; overflow:hidden; margin-top:.18rem; }
+body.contact .contact-map{ position:relative; flex:0 0 auto; height:clamp(200px,4.2rem,340px); background:#181818; border:1px solid rgba(255,255,255,.1); border-radius:4px; overflow:hidden; margin-top:auto; }
 body.contact .contact-map iframe.osm{ position:absolute; inset:0; width:100%; height:100%; border:0; filter:invert(.92) grayscale(.85) contrast(.9) hue-rotate(180deg); }
 body.contact .contact-map svg{ position:absolute; inset:0; width:100%; height:100%; }
 body.contact .contact-map .dot{ position:absolute; left:50%; top:46%; width:10px; height:10px; background:var(--pxid-red,#d71920); border-radius:50%; box-shadow:0 0 0 6px rgba(215,25,32,.18); }
