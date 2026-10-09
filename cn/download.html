@@ -52,6 +52,12 @@
   .b-ink{background:rgba(23,23,23,.08);color:#171717}
   .b-line{background:transparent;border:1px solid rgba(23,23,23,.25);color:#666}
   .qrimg{width:88px;height:88px;display:block}
+    .a-qrline .qr-phone{position:relative;width:104px;height:196px;background:#171717;border-radius:16px;padding:7px 7px 16px;box-shadow:0 10px 24px rgba(0,0,0,.18);flex:none}
+    .a-qrline .qr-phone::before{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);width:34px;height:5px;border-radius:999px;background:rgba(255,255,255,.28)}
+    .a-qrline .qr-phone::after{content:"";position:absolute;bottom:6px;left:50%;transform:translateX(-50%);width:32px;height:4px;border-radius:999px;background:rgba(255,255,255,.28)}
+    .a-qrline .qr-phone .qrimg{width:100%;height:100%;object-fit:cover;border-radius:9px}
+    .a-qrline.inv .qr-phone{background:#f5f5f3;box-shadow:0 10px 24px rgba(0,0,0,.32)}
+    .a-qrline.inv .qr-phone::before,.a-qrline.inv .qr-phone::after{background:rgba(23,23,23,.24)}
   .dl-tabs{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
   .dl-tab{appearance:none;cursor:pointer;height:40px;padding:0 20px;border:1px solid rgba(23,23,23,.2);background:#fff;color:#555;font-size:14px;font-weight:600;font-family:inherit;transition:.2s}
   .dl-tab:hover{border-color:#171717;color:#171717}
@@ -197,7 +203,7 @@
         <div class="a-info"><div class="a-head"><span class="a-ico ico-red">智</span><div><h3>品向智行 <i class="badge b-red">全球版</i></h3><span class="a-en">PXID RIDE · Global</span></div></div>
           <p class="a-desc">面向海外市场的整车配对与骑行 App：车辆绑定、定位寻车、骑行轨迹与电量、固件 OTA 升级，多语言界面。pxid.com 全球用户入口。</p>
           <div class="a-chips"><span class="a-chip">蓝牙配对</span><span class="a-chip">定位寻车</span><span class="a-chip">骑行轨迹</span><span class="a-chip">OTA 升级</span><span class="a-chip">多语言</span></div></div>
-        <div class="a-panel"><div class="a-qrline"><img class="qrimg" src="../assets/pxid/qr/app-global.png" alt=""><span>扫码下载<br>Android · 应用宝扫码下载</span></div>
+        <div class="a-panel"><div class="a-qrline"><div class="qr-phone"><img class="qrimg" src="../assets/pxid/qr/app-global.png" alt=""></div><span>扫码下载<br>Android · 应用宝扫码下载</span></div>
           <div class="a-btns"><a class="dl-btn pending" data-store="ios" href="javascript:void(0)">待上架</a><a class="dl-btn pending" data-store="apk" href="javascript:void(0)">待上架</a></div>
           <div class="a-ver"><span data-field="ver">v1.0.0</span> · <span data-field="updated">更新：2026-09-28</span></div></div>
       </div>
@@ -205,7 +211,7 @@
         <div class="a-info"><div class="a-head"><span class="a-ico ico-ink">智</span><div><h3>品向智行 <i class="badge b-ink">国内版</i></h3><span class="a-en">PXID RIDE · China</span></div></div>
           <p class="a-desc">面向国内市场：手机号快捷登录、整车蓝牙配对、防盗定位、骑行数据与 OTA；贴合国内通勤与合规场景。pxid.cn 国内用户入口。</p>
           <div class="a-chips"><span class="a-chip">手机号登录</span><span class="a-chip">蓝牙配对</span><span class="a-chip">防盗定位</span><span class="a-chip">OTA 升级</span></div></div>
-        <div class="a-panel dark"><div class="a-qrline inv"><img class="qrimg" src="../assets/pxid/qr/app-cn.png" alt=""><span>扫码下载<br>扫码下载 · 应用宝 / App Store</span></div>
+        <div class="a-panel dark"><div class="a-qrline inv"><div class="qr-phone"><img class="qrimg" src="../assets/pxid/qr/app-cn.png" alt=""></div><span>扫码下载<br>扫码下载 · 应用宝 / App Store</span></div>
           <div class="a-btns"><a class="dl-btn pending pend-inv" data-store="ios" href="javascript:void(0)">待上架</a><a class="dl-btn pending pend-inv" data-store="apk" href="javascript:void(0)">待上架</a></div>
           <div class="a-ver"><span data-field="ver">v1.0.0</span> · <span data-field="updated">更新：2026-09-28</span></div></div>
       </div>
@@ -213,7 +219,7 @@
         <div class="a-info"><div class="a-head"><span class="a-ico ico-ink">出</span><div><h3>PXID出行 <i class="badge b-line">出行服务</i></h3><span class="a-en">PXID Mobility</span></div></div>
           <p class="a-desc">共享 / 租赁出行服务端：扫码用车、计费与订单管理、附近车辆查找、在线客服与押金体系，运营级出行解决方案。</p>
           <div class="a-chips"><span class="a-chip">扫码用车</span><span class="a-chip">计费订单</span><span class="a-chip">附近车辆</span><span class="a-chip">在线客服</span></div></div>
-        <div class="a-panel"><div class="a-qrline"><img class="qrimg" src="../assets/pxid/qr/app-trip.png" alt=""><span>扫码下载<br>扫码下载 · 应用宝 / App Store</span></div>
+        <div class="a-panel"><div class="a-qrline"><div class="qr-phone"><img class="qrimg" src="../assets/pxid/qr/app-trip.png" alt=""></div><span>扫码下载<br>扫码下载 · 应用宝 / App Store</span></div>
           <div class="a-btns"><a class="dl-btn pending" data-store="ios" href="javascript:void(0)">待上架</a><a class="dl-btn pending" data-store="apk" href="javascript:void(0)">待上架</a></div>
           <div class="a-ver"><span data-field="ver">v1.0.0</span> · <span data-field="updated">更新：2026-09-28</span></div></div>
       </div>
