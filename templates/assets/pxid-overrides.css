@@ -6005,3 +6005,9 @@ select:focus-visible {
 /* ===== navdrop10: 下拉面板左对齐触发项（原居中偏移，2026-09-29） ===== */
 .pcNav .pxid-nav-drop{left:0;transform:translate(0,12px)}
 .pcNav .pxid-has-drop:hover .pxid-nav-drop,.pcNav .pxid-has-drop:focus-within .pxid-nav-drop{transform:translate(0,0)}
+
+/* ===== contact aside 等高适配（2026-10-09）：右卡高度随左侧表单拉伸，链接沉底 ===== */
+.pxid-contact-layout{ align-items:stretch }
+.contact-aside{ position:static; top:auto; display:flex; flex-direction:column }
+.contact-aside p:last-of-type{ margin-bottom:.44rem }
+.contact-aside .contact-link{ margin-top:auto }
