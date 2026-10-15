@@ -72,7 +72,7 @@
       return;
     }
     var startedAt = performance.now();
-    var duration = 3050;
+    var duration = 1600;
     function update(now) {
       if (!loader.isConnected || window.getComputedStyle(loader).display === 'none') return;
       var time = Math.min(1, (now - startedAt) / duration);
