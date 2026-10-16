@@ -7,13 +7,6 @@
 #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title{color:#fff;font-family:Arial,Helvetica,sans-serif!important;font-size:clamp(82px,8.5vw,320px)!important;font-weight:900!important;line-height:.83!important;letter-spacing:-.075em!important;text-transform:uppercase;white-space:nowrap}
 #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title span{color:#e31e29;font-family:inherit}
 #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-sub{margin:clamp(25px,2.5vw,64px) 0 0;color:#fff;font-size:clamp(17px,1.12vw,34px);font-weight:500;letter-spacing:.03em;line-height:1.5;text-shadow:0 2px 18px rgba(0,0,0,.25)}
-#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-cta{display:inline-flex;position:relative;width:auto;height:auto;min-height:0;margin-top:clamp(22px,2.2vw,52px);padding:0 0 10px;background:transparent;border:0;border-bottom:2px solid rgba(255,255,255,.85);border-radius:0;color:#fff;box-shadow:none;font-size:clamp(15px,.88vw,27px);font-weight:700;line-height:1.4;transition:border-color .25s,color .25s}
-#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-cta:hover{color:#fff;border-color:#e31e29}
-#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-cta .mk{display:none}
-#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-cta .txt{position:relative;display:inline-flex;align-items:center;gap:clamp(15px,2vw,40px);width:auto;height:auto;padding:0;background:none;color:inherit;font:inherit;white-space:nowrap}
-#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-cta .txt span{font:inherit;margin:0}
-#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-cta .txt i{color:#fff;font:400 1.4em/1 Arial,Helvetica,sans-serif;transition:transform .25s}
-#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-cta:hover .txt i{transform:translate(4px,-4px)}
 #pxidS1.pxid-first-film-on{cursor:pointer}
 #pxidS1.pxid-first-film-on .pager,#pxidS1.pxid-first-film-on .pager *{cursor:pointer}
 #pxidS1 .pxid-first-film-cursor{position:absolute;z-index:50;left:0;top:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;width:clamp(96px,7.2vw,164px);height:clamp(96px,7.2vw,164px);border-radius:50%;background:#db1e28;color:#fff;font:700 clamp(13px,.83vw,20px)/1.2 'Noto Sans SC',Arial,sans-serif;letter-spacing:.02em;box-shadow:0 16px 48px rgba(0,0,0,.25);pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.72);transition:opacity .2s,transform .25s cubic-bezier(.2,.8,.2,1)}
@@ -28,7 +21,9 @@
  #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-eyebrow:before{width:24px;height:2px}
  #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title{font-size:clamp(58px,14vw,105px)!important;line-height:.86!important;letter-spacing:-.075em!important}
  #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-sub{margin-top:22px;font-size:16px}
- #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-cta{margin-top:24px;font-size:15px}
  #pxidS1 .pxid-first-film-cursor{display:none}
 }
 @media(prefers-reduced-motion:reduce){#pxidS1 .pxid-first-film-cursor{display:none}}
+
+#pxidS1 .pxid-first-film-access-link{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap}
+#pxidS1 .pxid-first-film-access-link:focus-visible{width:auto;height:auto;left:0;top:100%;margin:18px 0 0;padding:12px 18px;overflow:visible;clip:auto;clip-path:none;background:#db1e28;color:#fff;outline:2px solid #fff;outline-offset:4px;white-space:nowrap;z-index:40}
