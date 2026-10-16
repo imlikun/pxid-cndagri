@@ -12,7 +12,20 @@
 #pxidS1 .pxid-first-film-cursor{position:absolute;z-index:50;left:0;top:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;width:clamp(96px,7.2vw,164px);height:clamp(96px,7.2vw,164px);border-radius:50%;background:#db1e28;color:#fff;font:700 clamp(13px,.83vw,20px)/1.2 'Noto Sans SC',Arial,sans-serif;letter-spacing:.02em;box-shadow:0 16px 48px rgba(0,0,0,.25);pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.72);transition:opacity .2s,transform .25s cubic-bezier(.2,.8,.2,1)}
 #pxidS1 .pxid-first-film-cursor .arrow{font:400 1.7em/1 Arial,Helvetica,sans-serif}
 #pxidS1.pxid-first-film-on .pxid-first-film-cursor.visible{opacity:1;transform:translate(-50%,-50%) scale(1)}
-@media(min-width:901px){#pxidS1 .pager{top:auto!important;bottom:clamp(42px,5.7vh,104px)!important;left:clamp(286px,23vw,890px)!important;width:auto!important;z-index:30}}
+@media(min-width:901px){
+ #pxidS1{--pxid-hero-pager-bottom:clamp(34px,5.5vh,112px);--pxid-hero-pager-height:max(44px,.4rem)}
+ #pxidS1 .pager{top:auto!important;bottom:var(--pxid-hero-pager-bottom)!important;left:1.1rem!important;width:auto!important;height:var(--pxid-hero-pager-height);z-index:30}
+ #pxidS1 .inner .group .bannerList{bottom:calc(var(--pxid-hero-pager-bottom) + var(--pxid-hero-pager-height) + clamp(24px,2vh,40px))}
+}
+#pxidS1 .bannerPic[data-hero-frame="p6"] .pic{background-position:58% center}
+#pxidS1 .bannerPic[data-hero-frame="p2"] .pic{background-position:62% center}
+#pxidS1 .bannerPic[data-hero-frame="m2"] .pic{background-position:center 58%}
+@media(max-width:900px){
+ #pxidS1 .bannerPic[data-hero-frame="p6"] .pxid-mobile-hero-img{object-fit:cover;object-position:54% center}
+ #pxidS1 .bannerPic[data-hero-frame="p2"] .pic{background-color:#62666a}
+ #pxidS1 .bannerPic[data-hero-frame="p2"] .pxid-mobile-hero-img{object-fit:contain;object-position:center top}
+ #pxidS1 .bannerPic[data-hero-frame="m2"] .pxid-mobile-hero-img{object-fit:cover;object-position:center}
+}
 @media(max-width:900px){
  #pxidS1 .bannerPic:first-child .pxid-first-film-video{object-position:72% center}
  #pxidS1 .bannerPic:first-child:after{background:linear-gradient(0deg,rgba(3,12,15,.77),rgba(3,12,15,.3) 50%,rgba(3,12,15,.13))}
