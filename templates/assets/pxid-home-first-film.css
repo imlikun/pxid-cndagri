@@ -1,5 +1,5 @@
 #pxidS1 .bannerPic:first-child{isolation:isolate}
-#pxidS1 .bannerPic:first-child .pxid-first-film-video{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;object-fit:cover;object-position:center center;pointer-events:none}
+#pxidS1 .bannerPic:first-child .pxid-first-film-video{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;object-fit:contain;object-position:center center!important;transform:none!important;background:#0b100d;pointer-events:none}
 #pxidS1 .bannerPic:first-child:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(4,13,16,.7) 0%,rgba(4,13,16,.43) 31%,rgba(4,13,16,.06) 68%,transparent 100%),linear-gradient(0deg,rgba(4,13,16,.44),transparent 37%),linear-gradient(180deg,rgba(4,13,16,.27),transparent 26%)}
 #pxidS1 .inner .group .bannerList:first-child{max-width:60vw}
 #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 clamp(19px,2.1vw,46px);color:#fff;font:700 clamp(11px,.78vw,25px)/1.4 Arial,Helvetica,sans-serif;letter-spacing:.24em}
@@ -27,7 +27,7 @@
  #pxidS1 .bannerPic[data-hero-frame="m2"] .pxid-mobile-hero-img{object-fit:cover;object-position:center}
 }
 @media(max-width:900px){
- #pxidS1 .bannerPic:first-child .pxid-first-film-video{object-position:72% center}
+ #pxidS1 .bannerPic:first-child .pxid-first-film-video{object-position:center center!important}
  #pxidS1 .bannerPic:first-child:after{background:linear-gradient(0deg,rgba(3,12,15,.77),rgba(3,12,15,.3) 50%,rgba(3,12,15,.13))}
  #pxidS1 .inner .group .bannerList:first-child{max-width:90vw}
  #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-eyebrow{margin-bottom:18px;font-size:10px;letter-spacing:.15em}
@@ -59,3 +59,13 @@
 }
 @keyframes pxid-slogan-wheel{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){#pxidS1 .slogan-f-glyph,#pxidS1 .slogan-f-bike{transition:none}#pxidS1 .slogan-f:hover .slogan-f-wheel{animation:none}}
+
+/* Keep the entire source frame inside the visible first screen. */
+.home #pxidS1,.home #pxidS1>.inner{height:100vh!important;height:100svh!important}
+#pxidS1 .bannerPic[data-hero-frame="video"]{background:#0b100d}
+#pxidS1 .bannerPic[data-hero-frame="video"]>.pic{background-size:contain!important;background-position:center!important;background-color:#0b100d;transform:none!important}
+#pxidS1 .bannerPic[data-hero-frame="video"] .pxid-mobile-hero-img{object-fit:contain!important;object-position:center!important}
+@media(max-width:900px) and (orientation:portrait){
+ #pxidS1 .bannerPic[data-hero-frame="video"]>.pic,
+ #pxidS1 .bannerPic[data-hero-frame="video"]>.pxid-first-film-video{top:clamp(92px,14svh,170px)!important;bottom:auto!important;left:0!important;width:100%!important;height:calc(100vw * 720 / 1279)!important;aspect-ratio:1279/720}
+}
