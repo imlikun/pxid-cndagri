@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#111513">
-  <title>PXID · P6 滚动空间预览</title>
+  <title>PXID · 骑行与滚动空间预览</title>
   <link rel="icon" href="../assets/pxid/favicon.png">
   <link rel="preload" href="../templates/font/Bronova-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/pxid/home/scroll120/00000.webp" as="image">
-  <link rel="stylesheet" href="../templates/assets/pxid-hero-scroll120.css?v=20261016-scroll120">
+  <link rel="stylesheet" href="../templates/assets/pxid-hero-scroll120.css?v=20261016-scrollfilm2">
 </head>
 <body>
 <a class="skip-link" href="#nextChapter">跳过动态展示</a>
@@ -20,8 +20,8 @@
   <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false"><span></span><span></span></button>
 </header>
 <main>
-  <section class="scroll-story" id="scrollStory" aria-label="MANTIS P6 滚动空间展示">
-    <div class="scroll-stage" id="scrollStage" data-frame="0" data-progress="0" aria-busy="true">
+  <section class="scroll-story" id="scrollStory" aria-label="从疾驰骑行到 MANTIS P6 产品展示">
+    <div class="scroll-stage" id="scrollStage" data-phase="film" data-frame="0" data-progress="0" aria-busy="true">
       <div class="ambient-photo" aria-hidden="true"></div>
       <div class="media-window" id="mediaWindow">
         <img class="sequence-poster" id="sequencePoster" src="../assets/pxid/home/scroll120/00000.webp" alt="绿色 MANTIS P6，山景中的车头视角">
@@ -30,17 +30,23 @@
         <div class="picture-grade" aria-hidden="true"></div>
         <span class="picture-corner corner-one" aria-hidden="true"></span><span class="picture-corner corner-two" aria-hidden="true"></span>
       </div>
+      <div class="film-layer" id="filmLayer" aria-hidden="true">
+        <div class="film-backdrop"></div>
+        <video class="riding-film" id="ridingFilm" autoplay muted playsinline preload="auto" poster="../assets/pxid/home/hero-mantis-field-poster.jpg" tabindex="-1"><source src="../assets/pxid/home/hero-mantis-field-full.mp4" type="video/mp4"></video>
+        <img class="film-freeze" id="filmFreeze" src="../assets/pxid/home/hero-mantis-freeze.jpg" alt="">
+        <div class="film-shade"></div>
+      </div>
+      <div class="handoff-edge" id="handoffEdge" aria-hidden="true"></div>
       <div class="opening-copy" id="openingCopy">
-        <p class="eyebrow">MANTIS / ALL-TERRAIN</p>
-        <h1>P6<span>.</span></h1>
-        <p class="opening-line">生而向野。</p>
-        <p class="opening-note">从一个视角，走向更多可能。</p>
+        <p class="eyebrow">PXID / ELECTRIC MOBILITY ODM</p>
+        <h1>BUILT<br>TO MOVE<span>.</span></h1>
+        <p class="opening-line">从产品构想，到真正上路。</p>
       </div>
       <div class="next-copy" id="nextCopy" aria-hidden="true" inert>
-        <p class="eyebrow">PXID / ELECTRIC MOBILITY</p>
-        <h2>BUILT<br>TO <span>MOVE.</span></h2>
-        <p class="next-chinese">从设计，到真正上路。</p>
-        <p class="next-description">把产品构想，转化为可以交付的出行方案。</p>
+        <p class="eyebrow" id="modelFamily">MANTIS / ALL-TERRAIN</p>
+        <h2><b id="modelCode">P6</b><span>.</span></h2>
+        <p class="next-chinese" id="modelHeadline">生而向野。</p>
+        <p class="next-description" id="modelDescription">全地形电动自行车，让设计走进真实的骑行场景。</p>
         <a class="product-cta" href="business.html">探索产品方案 <span>↗</span></a>
         <div class="model-choices" role="group" aria-label="选择车型">
           <button type="button" class="is-current" data-model="0" aria-pressed="true">P6 <small>全地形</small></button>
@@ -49,8 +55,9 @@
         </div>
       </div>
       <div class="stage-bottom">
-        <button class="scroll-cue" type="button" id="scrollCue"><span class="mouse-mark"><i></i></span><span id="cueText">向下滚动，改变视角</span><b>↓</b></button>
+        <button class="scroll-cue" type="button" id="scrollCue"><span class="mouse-mark"><i></i></span><span id="cueText">向下滚动，探索下一程</span><b>↓</b></button>
         <div class="frame-counter" aria-hidden="true"><b id="currentFrame">001</b><span>/</span><span>120</span></div>
+        <button type="button" class="film-toggle" id="filmToggle" aria-label="暂停开场视频">Ⅱ</button>
         <button type="button" class="replay" id="replay">重新体验 <span>↺</span></button>
       </div>
       <div class="loading-line" id="loadingLine" aria-hidden="true"><span id="loadingFill"></span></div>
@@ -69,6 +76,6 @@
     <iframe src="hero-story-odm-preview.html" title="ODM 服务流程" loading="lazy" id="odmFrame"></iframe>
   </section>
 </main>
-<script src="../templates/assets/pxid-hero-scroll120.js?v=20261016-scroll120"></script>
+<script src="../templates/assets/pxid-hero-scroll120.js?v=20261016-scrollfilm2"></script>
 </body>
 </html>
