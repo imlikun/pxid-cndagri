@@ -142,6 +142,15 @@
     var copies = Array.prototype.slice.call(document.querySelectorAll('.home .bannerList'));
     var dots = Array.prototype.slice.call(document.querySelectorAll('.home .BannerDot'));
     var heroIndex = 0;
+    var heroTimer = null;
+    function scheduleHero() {
+      if (heroTimer) window.clearTimeout(heroTimer);
+      if (prefersReducedMotion || pictures.length < 2) return;
+      heroTimer = window.setTimeout(function () {
+        if (document.hidden) { scheduleHero(); return; }
+        showHero(heroIndex + 1);
+      }, heroIndex === 0 ? 7200 : 5600);
+    }
     function showHero(index) {
       if (!pictures.length) return;
       heroIndex = (index + pictures.length) % pictures.length;
@@ -155,6 +164,7 @@
       dots.forEach(function (item, itemIndex) {
         item.classList.toggle('on', itemIndex === heroIndex);
       });
+      scheduleHero();
     }
     if (pictures.length > 1) {
       showHero(0);
@@ -165,9 +175,6 @@
           showHero(index);
         }, true);
       });
-      if (!prefersReducedMotion) {
-        window.setInterval(function () { showHero(heroIndex + 1); }, 5600);
-      }
     }
 
     var familyCarousel = document.querySelector('.home .r3Sw');
