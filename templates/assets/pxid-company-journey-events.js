@@ -80,15 +80,15 @@
         x=175*distance*unit;
         y=-46*distance*unit;
         z=-370*distance*unit;
-        opacity=clamp(1-.62*distance,0,1);
-        blur=2.8*distance*Math.max(.7,unit);
+        opacity=clamp(1-.75*Math.pow(distance,3),0,1);
+        blur=2.8*Math.pow(distance,3)*Math.max(.7,unit);
         angle=-4*distance;
       } else {
         var forward=-distance;
         x=-265*forward*unit;
         y=55*forward*unit;
         z=420*forward*unit;
-        opacity=clamp(1-1.58*forward,0,1);
+        opacity=clamp(1-1.8*forward,0,1);
         blur=7*forward*Math.max(.7,unit);
         angle=5*forward;
       }
