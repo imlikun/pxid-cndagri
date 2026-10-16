@@ -40,3 +40,22 @@
 
 #pxidS1 .pxid-first-film-access-link{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap}
 #pxidS1 .pxid-first-film-access-link:focus-visible{width:auto;height:auto;left:0;top:100%;margin:18px 0 0;padding:12px 18px;overflow:visible;clip:auto;clip-path:none;background:#db1e28;color:#fff;outline:2px solid #fff;outline-offset:4px;white-space:nowrap;z-index:40}
+
+#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title.pxid-first-film-title--beauty{font-size:clamp(72px,7.6vw,300px)!important;line-height:.88!important;letter-spacing:-.065em!important}
+@media(max-width:900px){#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title.pxid-first-film-title--beauty{font-size:clamp(40px,12.4vw,98px)!important;line-height:.91!important;letter-spacing:-.065em!important}}
+#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title .slogan-stop{color:#fff}
+#pxidS1 .pxid-first-film-title .slogan-f{position:relative;display:inline-block;color:#e31e29;isolation:isolate}
+#pxidS1 .slogan-f-glyph{display:inline-block;transition:opacity .18s,transform .24s}
+#pxidS1 .slogan-f-bike{position:absolute;left:-.015em;top:-.04em;width:.66em;height:.85em;overflow:visible;opacity:0;transform:translateY(.035em) scale(.92);transition:opacity .18s,transform .24s;pointer-events:none}
+#pxidS1 .slogan-f-body{fill:currentColor}
+#pxidS1 .slogan-f-detail,#pxidS1 .slogan-f-wheel{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+#pxidS1 .slogan-f-wheel circle{fill:#07100b;stroke-width:3}
+#pxidS1 .slogan-f-wheel path{stroke-width:1.4}
+@media(hover:hover) and (pointer:fine){
+ #pxidS1 .slogan-f:hover .slogan-f-glyph{opacity:0;transform:translateY(-.035em)}
+ #pxidS1 .slogan-f:hover .slogan-f-bike{opacity:1;transform:translateY(0) scale(1)}
+ #pxidS1 .slogan-f:hover .slogan-f-wheel{animation:pxid-slogan-wheel 1.8s linear infinite;transform-box:fill-box;transform-origin:center}
+ #pxidS1:has(.slogan-f:hover) .pxid-first-film-cursor{opacity:0!important}
+}
+@keyframes pxid-slogan-wheel{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){#pxidS1 .slogan-f-glyph,#pxidS1 .slogan-f-bike{transition:none}#pxidS1 .slogan-f:hover .slogan-f-wheel{animation:none}}
