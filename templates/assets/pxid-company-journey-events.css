@@ -27,6 +27,11 @@
 #milestones.pxid-events .pe-scroll-hint > span:first-child { display:inline-block; margin-right:calc(12 * var(--pe-u)); color:var(--pe-red); font-size:calc(25 * var(--pe-u)); vertical-align:middle; }
 #milestones.pxid-events .pe-ghost-year { position:absolute; z-index:0; left:42%; bottom:9%; transform:translateX(-50%); color:#a7adb3; opacity:.16; filter:blur(calc(3 * var(--pe-u))); font:700 calc(250 * var(--pe-u))/1 Arial,sans-serif; letter-spacing:-.08em; pointer-events:none; }
 #milestones.pxid-events .pe-composition { position:absolute; z-index:2; inset:0; }
+#milestones.pxid-events-depth .pe-composition { perspective:calc(1180 * var(--pe-u)); perspective-origin:52% 55%; transform-style:preserve-3d; }
+#milestones.pxid-events-depth .pe-slide { position:absolute; inset:0; transform-style:preserve-3d; backface-visibility:hidden; will-change:transform,opacity,filter; }
+#milestones.pxid-events-depth:not(.pe-ready) .pe-slide:not(:first-child),
+#milestones.pxid-events-depth.pe-ready:not(.pe-pinned) .pe-slide:not([aria-current="true"]) { display:none; }
+#milestones.pxid-events-depth .pe-slide[aria-hidden="true"] { user-select:none; }
 #milestones.pxid-events .pe-next-card { position:absolute; z-index:1; left:52%; top:29%; width:27%; height:calc(230 * var(--pe-u)); padding:calc(24 * var(--pe-u)); overflow:hidden; border:1px solid #fff; border-radius:calc(12 * var(--pe-u)); background:#fff9; box-shadow:0 calc(22 * var(--pe-u)) calc(55 * var(--pe-u)) #44525b0d; color:#748087; opacity:.75; }
 #milestones.pxid-events .pe-next-card span { display:block; font:700 calc(20 * var(--pe-u))/1 Arial,sans-serif; }
 #milestones.pxid-events .pe-next-card strong { display:block; margin-top:calc(16 * var(--pe-u)); max-width:70%; font-size:calc(15 * var(--pe-u)); line-height:1.5; font-weight:500; }
@@ -60,6 +65,8 @@
 #milestones.pxid-events .pe-track { position:absolute; z-index:4; left:6%; right:6%; bottom:6%; height:2px; background:repeating-linear-gradient(90deg,#a7aeb3 0 2px,transparent 2px 8px); }
 #milestones.pxid-events .pe-track-fill { display:block; height:2px; width:var(--pe-progress,0%); background:var(--pe-red); transition:width .4s ease; }
 #milestones.pxid-events .pe-track-dot { position:absolute; top:50%; left:var(--pe-progress,0%); width:calc(11 * var(--pe-u)); height:calc(11 * var(--pe-u)); border-radius:50%; background:var(--pe-red); transform:translate(-50%,-50%); transition:left .4s ease; }
+#milestones.pxid-events-depth.pe-pinned .pe-track-fill,
+#milestones.pxid-events-depth.pe-pinned .pe-track-dot { transition:none; }
 #milestones.pxid-events .pe-sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
 #milestones.pxid-events .pe-static { max-width:960px; margin:0 auto; padding:48px 24px; }
 #milestones.pxid-events .pe-static li { margin-bottom:24px; }
@@ -80,6 +87,9 @@
  #milestones.pxid-events .pe-scroll-hint { top:76px; right:6%; font-size:11px; }
  #milestones.pxid-events .pe-scroll-hint > span:first-child { font-size:20px; }
  #milestones.pxid-events .pe-composition { position:relative; inset:auto; height:440px; margin-top:45px; }
+ #milestones.pxid-events-depth .pe-composition { perspective:none; }
+ #milestones.pxid-events-depth .pe-slide:not([aria-current="true"]) { display:none; }
+ #milestones.pxid-events-depth .pe-slide[aria-current="true"] { position:relative; height:440px; transform:none!important; opacity:1!important; filter:none!important; }
  #milestones.pxid-events .pe-card { top:32px; left:3%; width:58%; min-height:315px; padding:30px 100px 28px 32px; }
  #milestones.pxid-events .pe-figure { top:92px; left:51%; width:43%; height:300px; }
  #milestones.pxid-events .pe-next-card { top:0; left:54%; width:35%; height:200px; padding:22px; }
@@ -99,6 +109,7 @@
  #milestones.pxid-events .pe-heading > p:last-child { font-size:16px; margin-top:13px; }
  #milestones.pxid-events .pe-scroll-hint { display:none; }
  #milestones.pxid-events .pe-composition { height:auto; margin-top:31px; }
+ #milestones.pxid-events-depth .pe-slide[aria-current="true"] { height:auto; }
  #milestones.pxid-events .pe-next-card { display:none; }
  #milestones.pxid-events .pe-card { position:relative; top:auto; left:auto; width:100%; min-height:285px; padding:26px 26px 37px; border-radius:13px; }
  #milestones.pxid-events .pe-card-head { font-size:11px; }
