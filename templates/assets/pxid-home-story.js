@@ -7,9 +7,11 @@
   var video=first.querySelector('video'),copy=sec.querySelector('.bannerList'),pager=sec.querySelector('.pager');
   var reduced=matchMedia('(prefers-reduced-motion:reduce)'),mobile=matchMedia('(max-width:900px)');
   var phase='intro',released=false,active=true,mediaReady=false,entranceDone=false,failed=false;
-  var auto={value:0},scrollProgress=0,progress=0,bridgeStarted=false,raf=0,frameCallback=0;
+  var auto={value:0},scrollProgress=0,progress=0,bridgeStarted=false,settleStarted=false,reversing=false,raf=0,frameCallback=0;
   var runtime=null,timeline=null,trigger=null,autoTween=null,timeout,skipTimer,lastPercent=0;
-  var entrance=[],objectUrl=null,assets=sec.dataset.storyAssets;
+  var entrance=[],assets=sec.dataset.storyAssets,typeFrames=[],logoTarget=null;
+  var logoImage=loader.querySelector('.pxid-intro-logo');
+  var campaignTitle=copy.querySelector('h1'),design=copy.querySelector('.story-design'),your=copy.querySelector('.story-your'),rLetter=copy.querySelector('.slogan-r'),ide=copy.querySelector('.pxid-intro-tail'),subtitle=copy.querySelector('.pxid-first-film-sub'),eyebrow=copy.querySelector('.pxid-first-film-eyebrow');
   sec.dataset.heroStory='true';
   var shell=document.createElement('div');shell.className='pxid-story-shell';
   sec.parentNode.insertBefore(shell,sec);shell.appendChild(sec);sec.prepend(loader);
@@ -26,14 +28,14 @@
   sec.appendChild(bike);
   var scene=document.createElement('div');scene.className='pxid-photo-handoff pxid-story-scene';scene.inert=true;scene.setAttribute('aria-hidden','true');
   scene.innerHTML='<div class="pxid-story-landscape"><img class="pxid-story-field" src="'+assets+'hero-empty-field-20261017.webp" alt="" width="1672" height="940" decoding="async"></div>'+
-    '<div class="pxid-photo-handoff-copy"><h2 class="pxid-photo-handoff-title" aria-label="DESIGN YOUR RIDE"><span class="ride-design">DES<span class="ride-accent">I</span>GN</span><span class="ride-your">YOUR</span><span class="ride-ride"><span class="ride-rider-letter" aria-hidden="true">R</span><span class="ride-accent">I</span>DE</span></h2><p class="pxid-photo-handoff-sub">探索更美的出现方式</p></div>'+
     '<div class="pxid-story-rider"><img src="'+assets+'hero-rider-right-20261017.svg" alt="MANTIS P6 骑行者" width="1100" height="940" decoding="async" draggable="false"></div>'+
     '<div class="pxid-story-grass" aria-hidden="true"></div>'+
+    '<div class="pxid-story-photo"><img src="'+sec.dataset.photoHandoff+'" alt="MANTIS P6 骑行实拍" width="2560" height="1441" decoding="async" draggable="false"></div>'+
     '<a class="pxid-photo-handoff-cta" href="business.html">探索产品方案 <span aria-hidden="true">↗</span></a>';
   sec.appendChild(scene);
   var landscape=scene.querySelector('.pxid-story-landscape'),field=scene.querySelector('.pxid-story-field');
   var rider=scene.querySelector('.pxid-story-rider'),grass=scene.querySelector('.pxid-story-grass');
-  var words=scene.querySelector('.pxid-photo-handoff-copy'),title=scene.querySelector('h2'),cta=scene.querySelector('a');
+  var finalPhoto=scene.querySelector('.pxid-story-photo'),photoImage=finalPhoto.querySelector('img'),cta=scene.querySelector('a');
   grass.style.backgroundImage='url("'+assets+'hero-empty-field-20261017.webp")';
   var prompt=document.createElement('button');prompt.type='button';prompt.className='pxid-handoff-prompt';
   prompt.innerHTML='<span>滚动，展开下一程</span><i aria-hidden="true">↓</i>';sec.appendChild(prompt);
@@ -54,22 +56,52 @@
     if(video.readyState>=3&&buffered>=Math.min(1.2,video.duration||1.2)){mediaReady=true;finishIntro();}
   }
   function logoLayout(){
-    var logo=document.querySelector(mobile.matches?'header .appNav .logoBox':'header .pcNav .logo');
-    if(!logo)return;var r=logo.getBoundingClientRect(),img=loader.querySelector('.pxid-intro-logo');
-    if(r.width){img.style.left=r.left+'px';img.style.top=r.top+'px';img.style.width=r.width+'px';img.style.height=r.height+'px';}
+    var nav=document.querySelector(mobile.matches?'header .appNav .logoBox img':'header .pcNav .logo img');
+    if(!nav)return;
+    var r=(mobile.matches?nav.parentElement:nav).getBoundingClientRect();
+    var ratio=1200/280,sw=Math.min(r.width,r.height*ratio),sh=sw/ratio;
+    logoTarget={x:r.left+(mobile.matches?0:(r.width-sw)/2),y:r.top+(r.height-sh)/2,w:sw};
   }
   function layout(){
     logoLayout();
     var w=sec.clientWidth,h=sec.clientHeight;
-    var artWidth=mobile.matches?Math.min(w*.96,h*.51*1100/940):Math.min(w*.40,h*.54*1100/940);
-    var artHeight=artWidth*940/1100;
-    rider.style.width=artWidth+'px';rider.style.height=artHeight+'px';
-    rider.style.left=(w*.51-artWidth*.5)+'px';rider.style.top=(mobile.matches?h*.47:h*.395)+'px';
-    scene.style.setProperty('--ride-left-edge',w*.417+'px');scene.style.setProperty('--ride-right-edge',w*.63+'px');
-    scene.style.setProperty('--ride-row-y',h*.56+'px');scene.style.setProperty('--ride-design-y',h*.42+'px');
-    var f=parseFloat(getComputedStyle(title).fontSize),dw=scene.querySelector('.ride-design').getBoundingClientRect().width;
-    scene.style.setProperty('--ride-caption-x',Math.max(w*.055,w*.417-dw)+'px');scene.style.setProperty('--ride-caption-y',(h*.56+f*1.08)+'px');
+    // The true photograph is the final coordinate system, including its standing rider.
+    var ratio=2560/1441,iw=Math.max(w,h*ratio),ih=iw/ratio;
+    var ix=(w-iw)/2,iy=(h-ih)/2;
+    var artWidth=iw*.25;
+    rider.style.width=artWidth+'px';rider.style.height=artWidth*940/1100+'px';
+    rider.style.left=(ix+iw*.538-artWidth*.609)+'px';
+    rider.style.top=(iy+ih*.418)+'px';
+    var parts=[design,your,rLetter,ide,subtitle];
+    parts.forEach(function(n){n.style.transform='none';});
+    // Measure the actual film lettering once; transforms never reflow the words.
+    var sr=sec.getBoundingClientRect(),base=parts.map(function(n){var r=n.getBoundingClientRect();return {x:r.left-sr.left,y:r.top-sr.top,w:r.width,h:r.height};});
+    var f=parseFloat(getComputedStyle(campaignTitle).fontSize),scale=mobile.matches?.984:6.8/7.6;
+    var left=ix+iw*.45-f*scale*.12,right=ix+iw*.575+f*scale*.18,row=iy+ih*.53;
+    var targets=mobile.matches?[
+      {x:w*.055,y:h*.205},{x:w*.055,y:h*.205+f*1.04},
+      {x:w*.055+base[1].w*scale+f*.18,y:h*.205+f*1.04},
+      {x:w*.055+(base[1].w+base[2].w)*scale+f*.18,y:h*.205+f*1.04},
+      {x:w*.055,y:h*.205+f*2.08+18}
+    ]:[
+      {x:left-base[0].w*scale,y:row-f*scale*1.1},
+      {x:left-base[1].w*scale,y:row},
+      {x:ix+iw*.50-base[2].w*scale*.5,y:row},
+      {x:right,y:row},
+      {x:Math.max(w*.055,left-base[0].w*scale),y:row+f*scale*1.10}
+    ];
+    typeFrames=parts.map(function(n,i){return {node:n,x:targets[i].x-base[i].x,y:targets[i].y-base[i].y,scale:i===4?1:scale};});
     shell.style.setProperty('--pxid-story-distance',released&&active&&!reduced.matches?distance()+'px':'0px');
+    if(released)paintType();
+  }
+  function paintType(){
+    var t=smooth(progress),c=smooth((progress-.08)/.22),rgb=[255+(17-255)*c,255+(28-255)*c,255+(25-255)*c].map(Math.round);
+    typeFrames.forEach(function(a){a.node.style.transform=progress?'translate3d('+a.x*t+'px,'+a.y*t+'px,0) scale('+(1+(a.scale-1)*t)+')':'';});
+    campaignTitle.style.setProperty('--story-ink','rgb('+rgb.join(',')+')');
+    subtitle.style.color='rgb('+rgb.join(',')+')';subtitle.style.textShadow=c>.5?'none':'';
+    rLetter.style.opacity=mobile.matches?'1':String(1-smooth((progress-.46)/.26));
+    rLetter.style.pointerEvents=progress>.05?'none':'';
+    eyebrow.style.opacity=String(1-smooth(progress/.48));
   }
   function inputGuard(event){
     if(!root.classList.contains('pxid-intro-pending'))return;
@@ -83,16 +115,8 @@
   function finishIntro(){
     if(released||!entranceDone||!mediaReady)return;
     released=true;clearTimeout(timeout);clearTimeout(skipTimer);percent(100);status.textContent=failed?'READY TO EXPLORE':'READY TO RIDE';
-    loader.dataset.introState='morphing';sec.classList.add('pxid-intro-restore-r','pxid-intro-copy-hold');
-    window.dispatchEvent(new CustomEvent('pxid:hero-intro-morph'));
-    // Only the R slot changes; the rest of RIDE remains fully visible.
-    var morphAnimations=reduced.matches?[]:[
-      bike.animate([{opacity:1,transform:bike.style.transform},{opacity:0,transform:bike.style.transform+' scale(.72)'}],{duration:230,easing:'cubic-bezier(.2,.7,.2,1)',fill:'forwards'}),
-      copy.querySelector('.slogan-f-glyph').animate([{opacity:.75},{opacity:1}],{duration:230,fill:'forwards'})
-    ];
-    entrance=entrance.concat(morphAnimations);
-    var morph=Promise.all(morphAnimations.map(function(a){return a.finished;}));
-    morph.then(function(){
+    loader.dataset.introState='revealing';sec.classList.add('pxid-intro-copy-hold');
+    Promise.resolve().then(function(){
       loader.dataset.introState='revealing';root.classList.add('pxid-intro-revealing');
       window.pxidHeroIntroReleased=true;first.classList.add('on');
       window.dispatchEvent(new CustomEvent('pxid:hero-intro-release'));window.dispatchEvent(new CustomEvent('pxid:hero-intro-reveal'));
@@ -114,31 +138,29 @@
   }
   function enter(){
     logoLayout();layout();
-    var letter=copy.querySelector('.slogan-r'),r=letter.getBoundingClientRect(),s=sec.getBoundingClientRect();
-    var w=Math.max(74,Math.min(190,parseFloat(getComputedStyle(letter).fontSize)*1.24));
-    var targetWidth=r.width*.98,x=r.left-s.left+(r.width-targetWidth)/2,y=r.top-s.top+(r.height-targetWidth*940/1620)*.58;
-    var target='translate3d('+x+'px,'+y+'px,0) scale('+(targetWidth/w)+')';
-    bike.style.width=w+'px';bike.style.height=(w*940/1620)+'px';bike.style.transform=target;
+    var r=rLetter.getBoundingClientRect(),sr=sec.getBoundingClientRect();
+    var w=mobile.matches?86:Math.min(190,innerWidth*.10),x=r.left-sr.left+(r.width-w)/2,y=r.top-sr.top+r.height*.45-w*372/640*.5;
+    var target='translate3d('+x+'px,'+y+'px,0)';
+    bike.style.width=w+'px';bike.style.height=w*372/640+'px';bike.style.transform=target;
     bike.style.opacity='1';sec.classList.add('pxid-intro-running');
-    if(reduced.matches){entranceDone=true;mediaReady=true;loader.dataset.entranceDone='true';finishIntro();return;}
-    var duration=1580,lead=Math.min(105,innerWidth*.14),easing='cubic-bezier(.22,.72,.22,1)';
+    var lr=logoImage.getBoundingClientRect(),endLogo=logoTarget?'translate3d('+(logoTarget.x-lr.left)+'px,'+(logoTarget.y-lr.top)+'px,0) scale('+(logoTarget.w/lr.width)+')':'none';
+    if(reduced.matches){bike.style.opacity='0';logoImage.style.transform=endLogo;entranceDone=true;mediaReady=true;loader.dataset.entranceDone='true';finishIntro();return;}
+    var duration=1450,easing='cubic-bezier(.22,.72,.22,1)';
     entrance=[
-      bike.animate([
-        {transform:'translate3d('+(-w-20)+'px,'+y+'px,0)',offset:0},
-        {transform:'translate3d('+lead+'px,'+y+'px,0)',offset:.16,easing:easing},
-        {transform:target,offset:1}
-      ],{duration:duration,fill:'both'}),
-      copy.animate([
-        {transform:'translate3d('+(-innerWidth*.74)+'px,0,0)',opacity:0,offset:0},
-        {transform:'translate3d('+(-innerWidth*.74)+'px,0,0)',opacity:0,offset:.16,easing:easing},
-        {transform:'translate3d(0,0,0)',opacity:1,offset:1}
-      ],{duration:duration,fill:'both'})
+      bike.animate([{transform:'translate3d('+(-w-20)+'px,'+y+'px,0)'},{transform:target}],{duration:duration,easing:easing,fill:'both'}),
+      copy.animate([{transform:'translate3d('+(-innerWidth*.74)+'px,0,0)',opacity:0},{transform:'translate3d(0,0,0)',opacity:1}],{delay:220,duration:1230,easing:easing,fill:'both'}),
+      logoImage.animate([{transform:'translate3d(-60px,0,0)'},{transform:'translate3d(0,0,0)'}],{duration:1050,easing:easing,fill:'both'})
     ];
-    Promise.all(entrance.map(function(a){return a.ready;})).then(function(){var t=entrance[0].startTime;entrance.forEach(function(a){a.startTime=t;});loader.dataset.entranceStarted=t;});
     Promise.all(entrance.map(function(a){return a.finished;})).then(function(){
       copy.style.transform='translate3d(0,0,0)';copy.style.opacity='1';
       entrance.forEach(function(a){a.cancel();});bike.style.transform=target;
-      entranceDone=true;loader.dataset.entranceDone='true';finishIntro();
+      // The real bike simply fades out. The large official logo takes the same beat to land in navigation.
+      var landing=[bike.animate([{opacity:1},{opacity:0}],{duration:500,easing:'ease-out',fill:'forwards'}),logoImage.animate([{transform:'none'},{transform:endLogo}],{duration:650,easing:'cubic-bezier(.3,.1,.2,1)',fill:'forwards'})];
+      entrance=entrance.concat(landing);
+      Promise.all(landing.map(function(a){return a.finished;})).then(function(){
+        bike.style.opacity='0';logoImage.style.transform=endLogo;
+        landing.forEach(function(a){a.cancel();});entranceDone=true;loader.dataset.entranceDone='true';finishIntro();
+      });
     });
   }
   function lock(value){sec.dataset.handoffLocked=String(value);sec.classList.toggle('pxid-handoff-locked',value);pager.inert=value;}
@@ -158,13 +180,21 @@
       rider.style.opacity=smooth((progress-.09)/.28);
       rider.style.transform='translate3d('+(-sec.clientWidth*(mobile.matches?.16:.14)*(1-smooth((progress-.08)/.78)))+'px,'+(-sec.clientHeight*.02*(1-progress))+'px,0) scale('+(.88+.12*smooth(progress/.9))+')';
       field.style.transform='translate3d('+(-1.8+1.8*progress)+'%,0,0) scale(1.04)';
-      words.style.opacity=smooth((progress-.38)/.34);words.style.transform='translate3d('+(-sec.clientWidth*.045*(1-smooth((progress-.38)/.42)))+'px,0,0)';
+      finalPhoto.style.opacity=smooth((progress-.68)/.25);
       grass.style.opacity=smooth((progress-.15)/.35);cta.style.opacity=smooth((progress-.86)/.14);
     }
+    paintType();
     lock(bridgeStarted&&!complete&&!reduced.matches&&!failed);
     promptLabel.textContent=complete?'继续滚动，探索 PXID':'滚动，展开下一程';
     document.documentElement.classList.toggle('pxid-handoff-light',progress>.32&&sec.getBoundingClientRect().bottom>100&&sec.getBoundingClientRect().top>-20);
     if(complete){setPhase('poster');video.pause();}
+    // Resolve the last photographic match in a short uninterrupted beat, so
+    // stopping a wheel never leaves a sliced or double-exposed rider onscreen.
+    if(progress>=.68&&progress<.998&&bridgeStarted&&!settleStarted&&!reversing){
+      settleStarted=true;if(autoTween)autoTween.kill();if(raf)cancelAnimationFrame(raf);
+      if(runtime)autoTween=runtime.gsap.to(auto,{value:1,duration:.44,ease:'power1.inOut',onUpdate:paint});
+      else{var from=auto.value,began=performance.now();function settle(now){auto.value=from+(1-from)*smooth((now-began)/440);paint();if(now-began<440)raf=requestAnimationFrame(settle);}raf=requestAnimationFrame(settle);}
+    }
   }
   function buildTimeline(){
     if(!runtime||timeline||reduced.matches)return;
@@ -174,7 +204,7 @@
       .fromTo(field,{xPercent:-1.8,scale:1.04},{xPercent:0,scale:1.04,duration:1},0)
       .fromTo(rider,{x:function(){return -sec.clientWidth*(mobile.matches?.16:.14);},y:function(){return -sec.clientHeight*.02;},scale:.88},{x:0,y:0,scale:1,duration:.80,ease:'power2.out'},.09)
       .fromTo(rider,{opacity:0},{opacity:1,duration:.16,ease:'power1.out'},.13)
-      .fromTo(words,{opacity:0,x:function(){return -sec.clientWidth*.045;}},{opacity:1,x:0,duration:.43,ease:'power2.out'},.38)
+      .fromTo(finalPhoto,{opacity:0},{opacity:1,duration:.25,ease:'power1.inOut'},.68)
       .fromTo(grass,{opacity:0,xPercent:-1},{opacity:1,xPercent:0,duration:.62},.15)
       .fromTo(cta,{opacity:0},{opacity:1,duration:.14},.86);
     paint();
@@ -220,7 +250,7 @@
       if(Number.isFinite(video.duration)){
         var remaining=video.duration-video.currentTime;
         if(remaining<=1.3)sec.classList.add('pxid-handoff-anticipate');
-        if(remaining<=.8)sec.classList.add('pxid-handoff-outro');
+        // Keep every word on the moving film; the same nodes travel into the photograph.
       }
       frameCallback=requestAnimationFrame(tick);
     }
@@ -240,9 +270,11 @@
     if(next===active)return;active=next;
     if(!active){
       video.pause();stopScroll();scene.style.visibility='hidden';scene.inert=true;scene.setAttribute('aria-hidden','true');
+      typeFrames.forEach(function(a){a.node.style.transform='';});rLetter.style.opacity='';campaignTitle.style.removeProperty('--story-ink');subtitle.style.color='';eyebrow.style.opacity='';
       sec.classList.remove('pxid-intro-copy-hold','pxid-handoff-outro','pxid-handoff-ready','pxid-handoff-revealing','pxid-handoff-complete','pxid-handoff-anticipate');lock(false);
     }else{
-      if(autoTween)autoTween.kill();auto.value=scrollProgress=progress=0;bridgeStarted=false;
+      if(autoTween)autoTween.kill();auto.value=scrollProgress=progress=0;bridgeStarted=false;settleStarted=false;
+      sec.classList.add('pxid-intro-copy-hold');layout();paintType();
       if(timeline)timeline.progress(0);sec.classList.remove('pxid-handoff-outro');setPhase('film');
       if(reduced.matches||failed)showStatic();else{layout();initScroll();video.currentTime=0;video.play().catch(failMedia);watchFilm();}
     }
@@ -252,16 +284,20 @@
   window.addEventListener('pxid:motion-ready',function(){runtime=window.pxidMotionRuntime;initScroll();});
   var lastScrollPosition=scrollY;
   window.addEventListener('scroll',function(){
-    var upward=scrollY<lastScrollPosition;lastScrollPosition=scrollY;
+    var upward=scrollY<lastScrollPosition;reversing=upward;lastScrollPosition=scrollY;
     if(!trigger)scrollUpdate();
     if(!active)return;
     var rect=sec.getBoundingClientRect();root.classList.toggle('pxid-handoff-light',progress>.32&&rect.top>-20&&rect.bottom>100);
     root.classList.toggle('pxid-story-view',released&&rect.top>=-1&&rect.bottom>=innerHeight-2);
+    if(upward&&scrollY-start()>=1&&settleStarted){
+      settleStarted=false;if(autoTween)autoTween.kill();if(raf)cancelAnimationFrame(raf);raf=0;
+      if(runtime)autoTween=runtime.gsap.to(auto,{value:.38,duration:.32,onUpdate:paint});else{auto.value=.38;paint();}
+    }
     if(upward&&scrollY-start()<1&&auto.value>0){
       scrollProgress=0;
       if(autoTween)autoTween.kill();
       if(raf)cancelAnimationFrame(raf);raf=0;
-      bridgeStarted=false;
+      bridgeStarted=false;settleStarted=false;
       if(runtime)autoTween=runtime.gsap.to(auto,{value:0,duration:.32,onUpdate:paint});else{auto.value=0;paint();}
     }
   },{passive:true});
