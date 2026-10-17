@@ -44,7 +44,19 @@
 #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title.pxid-first-film-title--beauty{font-size:clamp(72px,7.6vw,300px)!important;line-height:.88!important;letter-spacing:-.065em!important}
 @media(max-width:900px){#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title.pxid-first-film-title--beauty{font-size:clamp(40px,12.4vw,98px)!important;line-height:.91!important;letter-spacing:-.065em!important}}
 #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title .slogan-stop{color:#fff}
-#pxidS1 .pxid-first-film-title .slogan-f{display:inline;color:#e31e29;font:inherit;letter-spacing:inherit}
+/* Keep the letter in the word, then make room for the full two-wheel icon on hover. */
+#pxidS1 .pxid-first-film-title .slogan-f{display:inline-block;position:relative;width:.55em;color:#e31e29;font:inherit;letter-spacing:0;vertical-align:baseline;transition:width .38s cubic-bezier(.22,.7,.2,1)}
+#pxidS1 .pxid-first-film-title .slogan-f-glyph{display:inline-block;font:inherit;letter-spacing:-.065em;transform-origin:50% 80%;transition:opacity .18s ease,transform .38s cubic-bezier(.22,.7,.2,1)}
+#pxidS1 .pxid-first-film-title .slogan-f-bike{position:absolute;left:0;top:50%;display:block;width:1.13em;height:.74em;max-width:none;object-fit:contain;opacity:0;pointer-events:none;transform:translate(-.08em,-45%) scale(.66) rotate(-8deg);transform-origin:50% 75%;transition:opacity .2s ease,transform .38s cubic-bezier(.22,.7,.2,1)}
+@media(hover:hover) and (pointer:fine){
+ #pxidS1 .pxid-first-film-title .slogan-f:hover{width:1.15em}
+ #pxidS1 .pxid-first-film-title .slogan-f:hover .slogan-f-glyph{opacity:0;transform:translateY(-.05em) scale(.72) rotate(-8deg)}
+ #pxidS1 .pxid-first-film-title .slogan-f:hover .slogan-f-bike{opacity:1;transform:translate(0,-45%) scale(1) rotate(0)}
+ #pxidS1:has(.slogan-f:hover) .pxid-first-film-cursor{opacity:0!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #pxidS1 .pxid-first-film-title .slogan-f,#pxidS1 .pxid-first-film-title .slogan-f-glyph,#pxidS1 .pxid-first-film-title .slogan-f-bike{transition:none}
+}
 
 /* Fill the visible first screen without adding a separate zoom. */
 .home #pxidS1,.home #pxidS1>.inner{height:100vh!important;height:100svh!important}

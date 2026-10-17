@@ -30,7 +30,7 @@
   new MutationObserver(sync).observe(first,{attributes:true,attributeFilter:['class']});
   sync();
   sec.addEventListener('pointermove',function(event){
-    if(!active||event.pointerType==='touch'||event.target.closest('.pager,.scrEl')){cursor.classList.remove('visible');return;}
+    if(!active||event.pointerType==='touch'||event.target.closest('.pager,.scrEl,.slogan-f')){cursor.classList.remove('visible');return;}
     var bounds=sec.getBoundingClientRect();
     cursor.style.left=(event.clientX-bounds.left)+'px';
     cursor.style.top=(event.clientY-bounds.top)+'px';
