@@ -35,7 +35,8 @@ html.pxid-handoff-light #app header .pcNav .set .layer-search{border-color:rgba(
 html.pxid-handoff-light #app header .pcNav .logo .white{opacity:0!important}
 html.pxid-handoff-light #app header .pcNav .logo .black{opacity:1!important}
 html.pxid-handoff-light #app header .appNav{background:#edf6f4!important}
-html.pxid-handoff-light #app header .appNav .logoBox img{content:url('../../assets/pxid/logo-ink.svg')}
+html.pxid-handoff-light #app header .appNav .logoBox::before{opacity:0!important}
+html.pxid-handoff-light #app header .appNav .logoBox::after{opacity:1!important}
 html.pxid-handoff-light #app header .appNav .searchSub .iconfont{color:#16211d!important}
 @media(max-width:900px){
  #pxidS1 .pxid-photo-handoff-image{object-position:center}

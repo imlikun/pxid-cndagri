@@ -17,8 +17,6 @@
   sec.appendChild(prompt);
   var label=prompt.querySelector('span');
   var image=photo.querySelector('img');
-  var mobileLogo=document.querySelector('header .appNav .logoBox img');
-  var mobileLogoSource=mobileLogo&&mobileLogo.getAttribute('src');
   var active=false,ready=false,failed=false,imageFailed=false,unavailable=false,progress=0,target=0,raf=0,timeFrame=0,touchY=null,touchManaged=false,finishRequested=false;
   var classes=['pxid-handoff-outro','pxid-handoff-ready','pxid-handoff-revealing','pxid-handoff-complete','pxid-handoff-locked'];
   video.loop=false;video.removeAttribute('loop');
@@ -28,7 +26,6 @@
   function header(){
     var r=sec.getBoundingClientRect(),light=active&&progress>.08&&r.top>=-8&&r.bottom>100;
     document.documentElement.classList.toggle('pxid-handoff-light',light);
-    if(mobileLogo){var src=light?'../assets/pxid/logo-ink.svg':mobileLogoSource;if(mobileLogo.getAttribute('src')!==src)mobileLogo.setAttribute('src',src);}
   }
   function paint(){
     sec.style.setProperty('--pxid-handoff-edge',(progress*100).toFixed(3)+'%');
