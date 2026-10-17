@@ -18,7 +18,9 @@
   var label=prompt.querySelector('span');
   var image=photo.querySelector('img');
   var title=photo.querySelector('.pxid-photo-handoff-title');
+  var maskWidth=sec.clientWidth;
   function layout(){
+    maskWidth=sec.clientWidth;
     if(sec.clientWidth<=900)return;
     var width=sec.clientWidth,height=sec.clientHeight,ratio=(image.naturalWidth||2560)/(image.naturalHeight||1441);
     var imageWidth=Math.max(width,height*ratio),imageHeight=imageWidth/ratio;
@@ -34,8 +36,8 @@
     photo.style.setProperty('--ride-caption-x',Math.max(width*.055,left-designWidth)+'px');
     photo.style.setProperty('--ride-caption-y',(row+font*.88+font*.18)+'px');
   }
-  var active=false,ready=false,failed=false,imageFailed=false,unavailable=false,progress=0,target=0,raf=0,timeFrame=0,touchY=null,touchManaged=false,finishRequested=false;
-  var classes=['pxid-handoff-outro','pxid-handoff-ready','pxid-handoff-revealing','pxid-handoff-complete','pxid-handoff-locked'];
+  var active=false,ready=false,failed=false,imageFailed=false,progress=0,target=0,raf=0,timeFrame=0,touchY=null,touchManaged=false,finishRequested=false,lastFrame=0;
+  var classes=['pxid-handoff-outro','pxid-handoff-anticipate','pxid-handoff-ready','pxid-handoff-revealing','pxid-handoff-complete','pxid-handoff-locked'];
   video.loop=false;video.removeAttribute('loop');
   function clamp(value){return Math.max(0,Math.min(1,value));}
   function isVisible(){var r=sec.getBoundingClientRect();return active&&r.top>=-8&&r.top<innerHeight*.12&&r.bottom>innerHeight*.7;}
@@ -46,20 +48,23 @@
   }
   function paint(){
     sec.style.setProperty('--pxid-handoff-edge',(progress*100).toFixed(3)+'%');
+    sec.style.setProperty('--pxid-handoff-mask-edge',(progress*(maskWidth+80)-40).toFixed(2)+'px');
     sec.dataset.handoffProgress=progress.toFixed(4);
     sec.classList.toggle('pxid-handoff-revealing',progress>0&&progress<.999);
     sec.classList.toggle('pxid-handoff-complete',progress>=.999);
     photo.inert=progress<.999;photo.setAttribute('aria-hidden',String(progress<.999));
     lock(active&&!failed&&(ready||finishRequested)&&progress<.999&&!reduced.matches);
-    label.textContent=progress>=.999?'继续滚动，探索 PXID':'滚动，展开下一程';
+    label.textContent=progress>=.999?'继续滚动，探索 PXID':'继续滚动，展开下一程';
+    if(progress>=.999&&!video.paused)video.pause();
     header();
   }
-  function animate(){
+  function animate(now){
     raf=0;
-    progress=reduced.matches?target:progress+(target-progress)*.17;
+    var dt=lastFrame?Math.min(40,now-lastFrame):16;lastFrame=now;
+    progress=reduced.matches?target:progress+(target-progress)*(1-Math.exp(-dt/105));
     if(Math.abs(target-progress)<.001)progress=target;
     paint();
-    if(progress!==target)raf=requestAnimationFrame(animate);
+    if(progress!==target)raf=requestAnimationFrame(animate);else lastFrame=0;
   }
   function reveal(value){target=clamp(value);if(!raf)raf=requestAnimationFrame(animate);}
   function freeze(){
@@ -73,32 +78,42 @@
     if(!active||ready||failed||video.paused)return;
     if(Number.isFinite(video.duration)&&video.duration>1){
       var remaining=video.duration-video.currentTime;
+      if(remaining<=1.25)sec.classList.add('pxid-handoff-anticipate');
       if(remaining<=.8){sec.classList.add('pxid-handoff-outro');lock(true);}
+      // Let the last half-second settle gently into a still rather than
+      // cutting from full camera speed straight to a frozen frame.
+      if(remaining<=.6){
+        var rate=.6+.4*Math.max(0,remaining/.6);
+        if(Math.abs(video.playbackRate-rate)>.025)video.playbackRate=rate;
+      }
     }
     timeFrame=requestAnimationFrame(time);
   }
   function requestFinish(){
     if(finishRequested||ready||failed)return;
-    finishRequested=true;
-    if(Number.isFinite(video.duration)&&video.duration>1){
-      video.currentTime=Math.max(video.currentTime,video.duration-.8);
-      sec.classList.add('pxid-handoff-outro');lock(true);
-      video.play().catch(function(){freeze();});
-    }else{finishRequested=false;unavailable=true;lock(false);}
+    // Early scroll reveals the photo over the MOVING film. Never seek to a
+    // different camera shot or discard the input while waiting for "ended".
+    finishRequested=ready=true;
+    sec.classList.add('pxid-handoff-outro','pxid-handoff-ready');lock(true);
   }
   function input(delta,event){
-    if(reduced.matches||failed||unavailable||!isVisible()||!delta)return false;
-    if(ready&&progress>=.999&&target>=1&&delta>0)return false;
+    if(document.documentElement.classList.contains('pxid-intro-pending')||reduced.matches||failed||!isVisible()||!delta)return false;
+    if(ready&&progress>=.985&&target>=1&&delta>0){progress=target=1;paint();return false;}
     if(ready&&progress<=0&&delta<0)return false;
+    if(!ready&&delta<0)return false;
     if(event){event.preventDefault();event.stopImmediatePropagation();}
-    if(!ready){if(delta>0)requestFinish();return true;}
-    reveal(target+delta/Math.max(540,innerHeight*.82));
+    if(!ready)requestFinish();
+    var distance=Math.max(680,innerHeight*.9);
+    // A large wheel notch must not wipe the whole viewport in a single event.
+    delta=Math.max(-distance*.22,Math.min(distance*.22,delta));
+    reveal(target+delta/distance);
     return true;
   }
   function reset(){
     ready=false;failed=imageFailed||!!video.error;finishRequested=false;progress=target=0;
+    video.playbackRate=1;
     classes.forEach(function(name){sec.classList.remove(name);});
-    if(raf)cancelAnimationFrame(raf);raf=0;
+    if(raf)cancelAnimationFrame(raf);raf=0;lastFrame=0;
     photo.inert=true;photo.setAttribute('aria-hidden','true');
     sec.dataset.handoffLocked='false';paint();
   }
@@ -111,7 +126,6 @@
   }
   video.addEventListener('play',function(){if(!timeFrame&&active&&!ready)time();});
   video.addEventListener('ended',freeze);
-  video.addEventListener('loadedmetadata',function(){unavailable=false;});
   video.addEventListener('error',function(){failed=true;lock(false);sec.classList.remove('pxid-handoff-outro');});
   image.addEventListener('error',function(){imageFailed=failed=true;lock(false);sec.classList.remove('pxid-handoff-outro','pxid-handoff-ready');});
   image.addEventListener('load',layout);
@@ -141,7 +155,7 @@
   },true);
   prompt.addEventListener('click',function(){
     if(progress>=.999){window.scrollTo({top:sec.offsetTop+sec.offsetHeight,behavior:reduced.matches?'instant':'smooth'});return;}
-    if(!ready){requestFinish();return;}
+    if(!ready)requestFinish();
     reveal(1);
   });
   window.addEventListener('scroll',header,{passive:true});

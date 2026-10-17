@@ -2,6 +2,9 @@
 #pxidS1{--pxid-handoff-edge:0%;--pxid-handoff-progress:0}
 #pxidS1 .pxid-photo-handoff{position:absolute;inset:0;z-index:21;overflow:hidden;visibility:hidden;pointer-events:none;clip-path:inset(0 calc(100% - var(--pxid-handoff-edge)) 0 0);background:#ecf6f5}
 #pxidS1.pxid-handoff-revealing .pxid-photo-handoff,#pxidS1.pxid-handoff-complete .pxid-photo-handoff{visibility:visible}
+@supports ((mask-image:linear-gradient(#000,#000)) or (-webkit-mask-image:linear-gradient(#000,#000))){
+ #pxidS1 .pxid-photo-handoff{clip-path:none;-webkit-mask-image:linear-gradient(90deg,#000 calc(var(--pxid-handoff-mask-edge,-40px) - 40px),transparent calc(var(--pxid-handoff-mask-edge,-40px) + 40px));mask-image:linear-gradient(90deg,#000 calc(var(--pxid-handoff-mask-edge,-40px) - 40px),transparent calc(var(--pxid-handoff-mask-edge,-40px) + 40px))}
+}
 #pxidS1 .pxid-photo-handoff-image{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;transform:scaleX(-1)}
 #pxidS1 .pxid-photo-handoff-copy{position:absolute;inset:0;color:#111c19;max-width:none;pointer-events:none}
 #pxidS1 .pxid-photo-handoff-title{position:absolute;inset:0;margin:0;color:#111c19;font:900 clamp(68px,6.8vw,260px)/.88 Arial,Helvetica,sans-serif!important;letter-spacing:-.065em!important;white-space:nowrap;text-transform:uppercase}
@@ -21,7 +24,7 @@
 #pxidS1.pxid-handoff-complete .bannerList:first-child{visibility:hidden!important}
 #pxidS1 .pxid-handoff-prompt{position:absolute;right:5.7%;bottom:6.4vh;z-index:35;display:flex;align-items:center;gap:16px;min-height:44px;padding:8px 0;border:0;background:none;color:#fff;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .25s,color .25s;font:600 clamp(12px,.8vw,20px)/1.4 Arial,"Noto Sans SC",sans-serif;letter-spacing:.06em}
 #pxidS1 .pxid-handoff-prompt i{font:normal 24px/1 Arial}
-#pxidS1.pxid-handoff-ready .pxid-handoff-prompt,#pxidS1.pxid-handoff-revealing .pxid-handoff-prompt,#pxidS1.pxid-handoff-complete .pxid-handoff-prompt{opacity:1;visibility:visible;transform:none}
+#pxidS1.pxid-handoff-anticipate .pxid-handoff-prompt,#pxidS1.pxid-handoff-ready .pxid-handoff-prompt,#pxidS1.pxid-handoff-revealing .pxid-handoff-prompt,#pxidS1.pxid-handoff-complete .pxid-handoff-prompt{opacity:1;visibility:visible;transform:none}
 #pxidS1.pxid-handoff-complete .pxid-handoff-prompt{color:#fff;text-shadow:0 1px 5px rgba(0,0,0,.4)}
 #pxidS1.pxid-handoff-outro .pxid-first-film-cursor,#pxidS1.pxid-handoff-locked .pxid-hero-switch-cursor{visibility:hidden!important;opacity:0!important}
 #pxidS1.pxid-handoff-complete .pxid-first-film-cursor.visible{visibility:visible!important;opacity:1!important}

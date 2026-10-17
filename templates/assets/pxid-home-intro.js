@@ -50,12 +50,21 @@
   }
   function end(){
     if(phase!=='loading'||!entranceDone||!mediaReady)return;
-    phase='releasing';loader.dataset.introState=failed?'fallback':'ready';
+    phase='morphing';loader.dataset.introState='morphing';
     loader.dataset.introReady='true';
     clearTimeout(timer);clearTimeout(decodeTimer);clearTimeout(skipTimer);
     if(!failed){setProgress(100);status.textContent='READY TO RIDE';}
-    sec.classList.add('pxid-intro-restore-r');
     sec.classList.add('pxid-intro-copy-hold');
+    entranceAnimations.forEach(function(animation){animation.cancel();});
+    sec.classList.add('pxid-intro-restore-r');
+    loader.dataset.morphStarted=String(performance.now());
+    window.dispatchEvent(new CustomEvent('pxid:hero-intro-morph'));
+    // The car becomes R only AFTER the complete group has landed. The 240ms
+    // is visible transformation, not an empty wait or a playback delay.
+    setTimeout(revealVideo,reduced?0:240);
+  }
+  function revealVideo(){
+    phase='releasing';loader.dataset.introState='revealing';
     root.classList.add('pxid-intro-revealing');
     window.pxidHeroIntroReleased=true;
     sec.querySelector('.bannerPic').classList.add('on');
@@ -124,16 +133,29 @@
       sec.classList.add('pxid-intro-reduced');
       entranceDone=true;loader.dataset.entranceDone='true';end();return;
     }
-    var timing={duration:1200,easing:'cubic-bezier(.28,.55,.28,1)',fill:'both'};
+    var timing={duration:1600,easing:'linear',fill:'both'};
+    var pullEase='cubic-bezier(.3,.3,.25,1)';
+    var lead=Math.min(110,innerWidth*.12);
     entranceAnimations=[
-      copy.animate([{transform:'translate3d('+m.copyStart+'px,0,0)'},{transform:'translate3d(0,0,0)'}],timing),
-      bike.animate([{transform:'translate3d('+(m.x+m.copyStart)+'px,'+m.y+'px,0)'},{transform:finalTransform}],timing),
-      copy.querySelector('.pxid-intro-tail').animate([{opacity:0,offset:0},{opacity:0,offset:.78},{opacity:1,offset:1}],{duration:1200,easing:'linear',fill:'both'})
+      copy.animate([
+        {transform:'translate3d('+m.copyStart+'px,0,0)',offset:0},
+        {transform:'translate3d('+m.copyStart+'px,0,0)',offset:.25,easing:pullEase},
+        {transform:'translate3d(0,0,0)',offset:1}
+      ],timing),
+      bike.animate([
+        {transform:'translate3d('+(-m.width-12)+'px,'+m.y+'px,0)',offset:0},
+        {transform:'translate3d('+lead+'px,'+m.y+'px,0)',offset:.25,easing:pullEase},
+        {transform:finalTransform,offset:1}
+      ],timing),
+      copy.animate([{opacity:0,offset:0},{opacity:0,offset:.25},{opacity:1,offset:.34},{opacity:1,offset:1}],timing)
     ];
     sec.classList.add('pxid-intro-running');
-    var start=document.timeline.currentTime;
-    entranceAnimations.forEach(function(animation){animation.startTime=start;});
-    bike.style.opacity='1';loader.dataset.entranceStarted=String(performance.now());
+    bike.style.opacity='1';
+    Promise.all(entranceAnimations.map(function(animation){return animation.ready;})).then(function(){
+      var start=entranceAnimations[0].startTime;
+      entranceAnimations.forEach(function(animation){animation.startTime=start;});
+      loader.dataset.entranceStarted=String(start);
+    });
     Promise.all(entranceAnimations.map(function(animation){return animation.finished;})).then(function(){
       entranceDone=true;loader.dataset.entranceDone='true';end();
     }).catch(function(){});
