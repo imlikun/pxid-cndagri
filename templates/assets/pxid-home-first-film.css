@@ -63,3 +63,10 @@
 #pxidS1 .bannerPic[data-hero-frame="video"]{background:#0b100d}
 #pxidS1 .bannerPic[data-hero-frame="video"]>.pic{background-size:cover!important;background-position:center!important;background-color:#0b100d;transform:none!important}
 #pxidS1 .bannerPic[data-hero-frame="video"] .pxid-mobile-hero-img{object-fit:cover!important;object-position:72% center!important}
+
+/* This campaign image carries its own MANTIS P6 headline. */
+@media(min-width:901px){
+ #pxidS1 .bannerPic[data-hero-frame="p6"] .pic{background-position:center!important;transform:none!important}
+ #pxidS1 .bannerPic[data-hero-frame="p6"]::after{background:linear-gradient(180deg,rgba(0,0,0,.36),transparent 24%,transparent 68%,rgba(0,0,0,.28))!important}
+ #pxidS1 .bannerList[data-hero-copy="p6"] .til{display:none}
+}
