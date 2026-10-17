@@ -138,8 +138,16 @@
   }
   function enter(){
     logoLayout();layout();
-    var r=rLetter.getBoundingClientRect(),sr=sec.getBoundingClientRect();
-    var w=mobile.matches?86:Math.min(190,innerWidth*.10),x=r.left-sr.left+(r.width-w)/2,y=r.top-sr.top+r.height*.45-w*372/640*.5;
+    // Match the logo to the actual capital-letter height and centre it on screen.
+    var typeStyle=getComputedStyle(campaignTitle),measure=document.createElement('canvas').getContext('2d');
+    measure.font=typeStyle.fontWeight+' '+typeStyle.fontSize+' '+typeStyle.fontFamily;
+    var metrics=measure.measureText('DESIGN'),capHeight=metrics.actualBoundingBoxAscent||parseFloat(typeStyle.fontSize)*.73;
+    logoImage.style.width=(capHeight*1200/280)+'px';logoImage.style.height=capHeight+'px';
+    logoImage.style.left=((sec.clientWidth-capHeight*1200/280)/2)+'px';logoImage.style.top=((sec.clientHeight-capHeight)/2)+'px';
+    // The bike leads the whole word and parks beyond E, never inside a letter slot.
+    var r=ide.getBoundingClientRect(),sr=sec.getBoundingClientRect(),gap=Math.max(10,parseFloat(typeStyle.fontSize)*.12);
+    var x=r.right-sr.left+gap,available=sec.clientWidth-x-sec.clientWidth*.055;
+    var w=Math.min(mobile.matches?86:190,available),y=r.top-sr.top+(r.height-w*372/640)/2;
     var target='translate3d('+x+'px,'+y+'px,0)';
     bike.style.width=w+'px';bike.style.height=w*372/640+'px';bike.style.transform=target;
     bike.style.opacity='1';sec.classList.add('pxid-intro-running');

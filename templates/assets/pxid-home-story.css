@@ -7,7 +7,7 @@ body.home:has(.pxid-story-shell){overflow-x:clip!important;overflow-y:visible!im
 #pxidHeroIntro{position:fixed;inset:0;z-index:5000;overflow:hidden;background:#16251c;pointer-events:auto}
 #pxidHeroIntro .pxid-intro-backdrop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.38;max-width:none}
 #pxidHeroIntro::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,12,9,.88),rgba(4,12,9,.13) 80%);pointer-events:none}
-#pxidHeroIntro .pxid-intro-logo{position:absolute;left:5.75%;top:19%;width:clamp(240px,20vw,600px);height:auto;transform-origin:0 0;object-fit:contain;z-index:2}
+#pxidHeroIntro .pxid-intro-logo{position:absolute;left:calc(50% - clamp(72px,7.6vw,300px)*1.564);top:calc(50% - clamp(72px,7.6vw,300px)*.365);width:calc(clamp(72px,7.6vw,300px)*3.128);height:auto;transform-origin:0 0;object-fit:contain;z-index:2}
 #pxidHeroIntro .pxid-intro-note{position:absolute;left:5.75%;bottom:28px;z-index:2;margin:0;color:#c0c8c1;font:500 10px/1.6 Arial,Helvetica,sans-serif;letter-spacing:.12em}
 #pxidHeroIntro .pxid-intro-progress{position:absolute;right:5.75%;bottom:9%;z-index:2;color:#e31e29;font:900 clamp(120px,14vw,440px)/.76 Arial,Helvetica,sans-serif;letter-spacing:-.085em;white-space:nowrap;font-variant-numeric:tabular-nums}
 #pxidHeroIntro .pxid-intro-progress *{font-family:Arial,Helvetica,sans-serif!important;font-weight:900;letter-spacing:inherit}
@@ -110,7 +110,7 @@ html.pxid-handoff-light #app header .appNav .searchSub .iconfont{color:#16211d!i
 #pxidS1 .pxid-story-photo{position:absolute;inset:0;z-index:6;opacity:0;pointer-events:none}
 #pxidS1 .pxid-story-photo img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;transform:scaleX(-1)}
 @media(max-width:900px){
- #pxidHeroIntro .pxid-intro-logo{left:5.5%;top:12%;width:clamp(170px,50vw,300px)}
+ #pxidHeroIntro .pxid-intro-logo{left:calc(50% - clamp(40px,12.4vw,98px)*1.564);top:calc(50% - clamp(40px,12.4vw,98px)*.365);width:calc(clamp(40px,12.4vw,98px)*3.128)}
  #pxidHeroIntro .pxid-intro-progress{top:25%;font-size:clamp(88px,23vw,180px)}
  #pxidHeroIntro .pxid-intro-status{top:calc(25% + 95px)}
  #pxidS1 .pxid-story-photo img{object-position:center}
