@@ -1,0 +1,41 @@
+/* A fifth, layered campaign scene; the original four Hero slides stay intact. */
+#pxidS1 .pxid-p6-layered{background:#0b1017}
+#pxidS1 .pxid-p6-layered .pxid-p6-layered-root{transform:none!important;background:none!important;overflow:hidden}
+#pxidS1 .pxid-p6-layered::after{z-index:4;background:linear-gradient(180deg,rgba(0,0,0,.36),transparent 24%,transparent 68%,rgba(0,0,0,.28))!important}
+#pxidS1 .pxid-p6-layered-stage{position:absolute;left:50%;top:50%;width:max(100vw,calc(100svh * 1672 / 941));aspect-ratio:1672 / 941;transform:translate(-50%,-50%);isolation:isolate}
+#pxidS1 .pxid-p6-layered-stage img{display:block;width:100%;height:100%;max-width:none;user-select:none;pointer-events:none}
+#pxidS1 .pxid-p6-layered-bg{position:absolute;inset:0;z-index:0;object-fit:cover}
+#pxidS1 .pxid-p6-layered-type{position:absolute;z-index:1;left:2.8%;top:-12.7%;width:97%;height:92%;transform:rotate(-1.1deg);transform-origin:center}
+#pxidS1 .pxid-p6-layered-bike{position:absolute;z-index:2;left:20.5%;top:20%;width:66%;height:72%;filter:drop-shadow(0 14px 12px rgba(0,0,0,.23))}
+#pxidS1 .pxid-p6-layered:not(.is-layered-playing) :is(.pxid-p6-layered-bike,.pxid-p6-layered-type){opacity:0}
+#pxidS1 .pxid-p6-layered.is-layered-playing .pxid-p6-layered-bike{animation:pxid-p6-bike-enter 1.12s cubic-bezier(.16,.78,.23,1) .12s both;will-change:transform,opacity}
+#pxidS1 .pxid-p6-layered.is-layered-playing .pxid-p6-layered-type{animation:pxid-p6-type-enter 1s cubic-bezier(.2,.78,.2,1) .62s both;will-change:transform,opacity}
+#pxidS1 .bannerList[data-hero-copy="p6-motion"] .til{display:none}
+#pxidS1 .pager .pxid-p6-layered-pager{width:auto;min-width:44px;display:inline-flex;align-items:center;gap:8px;padding-right:5px}
+#pxidS1 .pager .pxid-p6-layered-pager-label{display:block;font:600 12px/1 Arial,"Noto Sans SC",sans-serif;letter-spacing:.04em;white-space:nowrap;color:rgba(255,255,255,.72);transition:color .2s}
+#pxidS1 .pager .pxid-p6-layered-pager.on .pxid-p6-layered-pager-label{color:#fff}
+#pxidS1 .pager .pxid-p6-layered-pager:focus-visible{outline:2px solid #e31e29;outline-offset:5px}
+@keyframes pxid-p6-bike-enter{
+ 0%{opacity:0;transform:translate3d(130vw,1.5%,0) scale(1.035);filter:blur(8px)}
+ 8%{opacity:1}
+ 72%{opacity:1;transform:translate3d(-1.7%,0,0) scale(1);filter:blur(.3px)}
+ 88%{transform:translate3d(.35%,-.2%,0) scale(1)}
+ 100%{opacity:1;transform:translate3d(0,0,0) scale(1);filter:drop-shadow(0 14px 12px rgba(0,0,0,.23))}
+}
+@keyframes pxid-p6-type-enter{
+ 0%{opacity:0;transform:translate3d(-110vw,0,0) rotate(-1.1deg);filter:blur(5px)}
+ 10%{opacity:1}
+ 100%{opacity:1;transform:translate3d(0,0,0) rotate(-1.1deg);filter:blur(0)}
+}
+@media(max-width:900px){
+ #pxidS1 .pxid-p6-layered-stage{width:100%;height:100%;aspect-ratio:auto}
+ #pxidS1 .pxid-p6-layered-bg{object-position:53% center}
+ #pxidS1 .pxid-p6-layered-type{left:3%;top:12%;width:94%;height:auto;aspect-ratio:1672 / 941}
+ #pxidS1 .pxid-p6-layered-bike{left:-11%;top:32%;width:125%;height:auto;aspect-ratio:1672 / 941}
+ #pxidS1 .pxid-p6-layered::after{background:linear-gradient(180deg,rgba(0,0,0,.22),transparent 20%,transparent 62%,rgba(0,0,0,.55))!important}
+ #pxidS1 .pager .pxid-p6-layered-pager-label{font-size:10px}
+ #pxidS1 .pager .pxid-p6-layered-pager{gap:5px;min-width:34px}
+}
+@media(prefers-reduced-motion:reduce){
+ #pxidS1 .pxid-p6-layered :is(.pxid-p6-layered-bike,.pxid-p6-layered-type){animation:none!important;opacity:1!important;will-change:auto!important}
+}
