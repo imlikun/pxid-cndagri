@@ -7,14 +7,13 @@
   if(!loader||!copy||!video)return;
   var reduced=matchMedia('(prefers-reduced-motion:reduce)').matches||new URLSearchParams(location.search).get('motion')==='reduce';
   var root=document.documentElement,phase='loading',entranceDone=false,mediaReady=false,failed=false;
-  var xhr,timer,decodeTimer,skipTimer,started=performance.now(),lastProgress=0;
+  var xhr,timer,decodeTimer,skipTimer,lastProgress=0,entranceAnimations=[];
   var source=video.querySelector('source'),url=source&&(source.dataset.src||source.getAttribute('src'));
   if(!url)return;
   root.classList.add('pxid-intro-pending');
   sec.classList.add('pxid-intro-active');
   sec.prepend(loader);
   loader.dataset.introState='loading';
-  loader.insertAdjacentHTML('beforeend','<div class="pxid-intro-progress" role="progressbar" aria-label="骑行影片加载进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><output class="pxid-intro-number">00</output><span class="pxid-intro-percent" aria-hidden="true">%</span></div><p class="pxid-intro-status" role="status">LOADING THE RIDE</p><button class="pxid-intro-skip" type="button" hidden>先进入首页 ↗</button>');
   var progress=loader.querySelector('.pxid-intro-progress'),number=loader.querySelector('.pxid-intro-number');
   var status=loader.querySelector('.pxid-intro-status'),skip=loader.querySelector('.pxid-intro-skip');
   var bike=document.createElement('img');
@@ -23,6 +22,13 @@
   // Inert only the surrounding UI, never the progress or delayed escape action.
   var surroundings=Array.prototype.slice.call(document.querySelectorAll('#app>header,#app>nav,#app>footer,main>section:not(#pxidS1),#pxidS1 .pager'));
   var inertBefore=surroundings.map(function(node){var old=node.inert;node.inert=true;return old;});
+  document.addEventListener('DOMContentLoaded',function(){
+    if(phase==='complete')return;
+    document.querySelectorAll('#app>header,#app>nav,#app>footer,main>section:not(#pxidS1),#pxidS1 .pager').forEach(function(node){
+      if(surroundings.indexOf(node)>=0)return;
+      surroundings.push(node);inertBefore.push(node.inert);node.inert=true;
+    });
+  },{once:true});
   function setProgress(value){
     value=Math.max(lastProgress,Math.min(100,Math.floor(value)));lastProgress=value;
     number.textContent=String(value).padStart(2,'0');
@@ -49,23 +55,23 @@
     clearTimeout(timer);clearTimeout(decodeTimer);clearTimeout(skipTimer);
     if(!failed){setProgress(100);status.textContent='READY TO RIDE';}
     sec.classList.add('pxid-intro-restore-r');
+    sec.classList.add('pxid-intro-copy-hold');
+    root.classList.add('pxid-intro-revealing');
+    window.pxidHeroIntroReleased=true;
+    sec.querySelector('.bannerPic').classList.add('on');
+    window.dispatchEvent(new CustomEvent('pxid:hero-intro-release'));
+    window.dispatchEvent(new CustomEvent('pxid:hero-intro-reveal'));
+    loader.style.opacity='0';
+    loader.style.pointerEvents='none';
     setTimeout(function(){
-      sec.classList.add('pxid-intro-copy-hold');
-      window.pxidHeroIntroReleased=true;
-      window.dispatchEvent(new CustomEvent('pxid:hero-intro-release'));
-      loader.style.opacity='0';
-      loader.style.pointerEvents='none';
-      setTimeout(function(){
-        root.classList.remove('pxid-intro-pending');
-        sec.classList.remove('pxid-intro-active','pxid-intro-restore-r');
-        bike.remove();loader.hidden=true;loader.style.display='none';phase='complete';loader.dataset.introState='complete';
-        clearInput();
-        window.dispatchEvent(new CustomEvent('pxid:hero-intro-complete'));
-        // Native desktop initialization has an old entrance tween. Keep the real
-        // copy fixed until that finishes, then release every normal Hero state.
-        setTimeout(function(){sec.classList.remove('pxid-intro-copy-hold');},1800);
-      },reduced?0:420);
-    },reduced?0:240);
+      root.classList.remove('pxid-intro-pending','pxid-intro-revealing');
+      sec.classList.remove('pxid-intro-active','pxid-intro-restore-r');
+      entranceAnimations.forEach(function(animation){animation.cancel();});
+      bike.remove();loader.hidden=true;loader.style.display='none';phase='complete';loader.dataset.introState='complete';
+      clearInput();
+      window.dispatchEvent(new CustomEvent('pxid:hero-intro-complete'));
+      setTimeout(function(){sec.classList.remove('pxid-intro-copy-hold');},1800);
+    },reduced?0:340);
   }
   function fallback(){
     if(phase!=='loading')return;
@@ -100,31 +106,51 @@
     xhr.onerror=xhr.ontimeout=fallback;
     xhr.send();
   }
-  function ease(t){return 1-Math.pow(1-t,3);}
-  function animate(now){
-    var elapsed=now-started;
-    var copyT=reduced?1:Math.max(0,Math.min(1,(elapsed-160)/1320));
-    var bikeT=reduced?1:Math.max(0,Math.min(1,elapsed/1480));
-    sec.style.setProperty('--intro-copy-x',(-(innerWidth+copy.offsetWidth)*(1-ease(copyT)))+'px');
-    // Read the R's final slot by subtracting only our whole-copy translation.
+  function measure(){
+    // Measure once BEFORE motion. No layout reads or JS position calculations
+    // run during the entrance; both transforms run on the compositor timeline.
     var letter=copy.querySelector('.slogan-r'),r=letter.getBoundingClientRect(),s=sec.getBoundingClientRect();
-    var translation=-(innerWidth+copy.offsetWidth)*(1-ease(copyT));
-    var font=parseFloat(getComputedStyle(letter).fontSize),width=font*.78,height=width*168/256;
-    var finalX=r.left-s.left-translation+(r.width-width)/2;
+    var font=parseFloat(getComputedStyle(letter).fontSize),width=font*.62,height=width*168/256;
+    var finalX=r.left-s.left+(r.width-width)/2;
     var finalY=r.top-s.top+(r.height-height)*.62;
     bike.style.width=width+'px';bike.style.height=height+'px';
-    bike.style.transform='translate3d('+(-width*1.2+(finalX+width*1.2)*ease(bikeT))+'px,'+finalY+'px,0) rotate('+(-4*(1-bikeT))+'deg)';
-    bike.style.opacity=reduced?'0':'1';
-    if(copyT<1||bikeT<1){requestAnimationFrame(animate);}
-    else{entranceDone=true;loader.dataset.entranceDone='true';end();}
+    return {x:finalX,y:finalY,width:width,copyStart:-(finalX+width+24)};
+  }
+  function startEntrance(){
+    var m=measure();
+    var finalTransform='translate3d('+m.x+'px,'+m.y+'px,0)';
+    bike.style.transform=finalTransform;
+    if(reduced||!copy.animate){
+      sec.classList.add('pxid-intro-reduced');
+      entranceDone=true;loader.dataset.entranceDone='true';end();return;
+    }
+    var timing={duration:1200,easing:'cubic-bezier(.28,.55,.28,1)',fill:'both'};
+    entranceAnimations=[
+      copy.animate([{transform:'translate3d('+m.copyStart+'px,0,0)'},{transform:'translate3d(0,0,0)'}],timing),
+      bike.animate([{transform:'translate3d('+(m.x+m.copyStart)+'px,'+m.y+'px,0)'},{transform:finalTransform}],timing),
+      copy.querySelector('.pxid-intro-tail').animate([{opacity:0,offset:0},{opacity:0,offset:.78},{opacity:1,offset:1}],{duration:1200,easing:'linear',fill:'both'})
+    ];
+    sec.classList.add('pxid-intro-running');
+    var start=document.timeline.currentTime;
+    entranceAnimations.forEach(function(animation){animation.startTime=start;});
+    bike.style.opacity='1';loader.dataset.entranceStarted=String(performance.now());
+    Promise.all(entranceAnimations.map(function(animation){return animation.finished;})).then(function(){
+      entranceDone=true;loader.dataset.entranceDone='true';end();
+    }).catch(function(){});
   }
   // A resize during a long transfer still keeps the bike registered to the R.
-  window.addEventListener('resize',function(){if(phase==='loading'&&entranceDone)animate(performance.now());},{passive:true});
+  window.addEventListener('resize',function(){
+    if(phase!=='loading'||!entranceDone)return;
+    entranceAnimations.forEach(function(animation){animation.cancel();});
+    var m=measure();bike.style.transform='translate3d('+m.x+'px,'+m.y+'px,0)';
+  },{passive:true});
   new MutationObserver(function(){
     var first=sec.querySelector('.bannerPic');
     if(first.classList.contains('out')||(!first.classList.contains('on')&&!first.classList.contains('in')))sec.classList.remove('pxid-intro-copy-hold');
   }).observe(sec.querySelector('.bannerPic'),{attributes:true,attributeFilter:['class']});
-  requestAnimationFrame(function(now){started=now;animate(now);});
+  // Start only once the already-preloaded SVG is decoded, so a missing first
+  // icon frame cannot produce a pop halfway through the movement.
+  Promise.resolve(bike.decode?bike.decode():null).catch(function(){}).then(function(){requestAnimationFrame(startEntrance);});
   skipTimer=setTimeout(function(){if(phase==='loading')skip.hidden=false;},10000);
   timer=setTimeout(fallback,46000);
   if(location.protocol==='file:')fallback();else download();

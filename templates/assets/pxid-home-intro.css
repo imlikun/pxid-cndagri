@@ -1,5 +1,5 @@
 /* The actual Hero copy sits over this loading plane, then stays in place. */
-#pxidHeroIntro{position:fixed;inset:0;box-sizing:border-box;width:100%;height:100%;z-index:5000;overflow:hidden;background:#111!important;pointer-events:auto;transition:opacity .4s ease}
+#pxidHeroIntro{position:fixed;inset:0;box-sizing:border-box;width:100%;height:100%;z-index:5000;overflow:hidden;background:#111!important;pointer-events:auto;transition:opacity .32s ease}
 #pxidHeroIntro .pxid-intro-note{position:absolute;left:5.75%;bottom:32px;width:auto;margin:0;padding:0;text-align:left;color:#777;font:500 10px/1.6 Arial,sans-serif;letter-spacing:.12em}
 #pxidHeroIntro .pxid-intro-progress{position:absolute;right:5.75%;bottom:8.5%;margin:0;color:#e31e29;font:900 clamp(120px,14vw,440px)/.76 Arial,Helvetica,sans-serif;letter-spacing:-.085em;font-variant-numeric:tabular-nums;white-space:nowrap}
 #pxidHeroIntro .pxid-intro-percent{display:inline-block;margin-left:.14em;font-size:.3em;letter-spacing:-.05em;vertical-align:top;line-height:1.1}
@@ -12,17 +12,23 @@ html.pxid-intro-pending #app>header{opacity:0!important;pointer-events:none!impo
 #pxidS1.pxid-intro-active{z-index:5001!important;isolation:isolate;cursor:default!important}
 #pxidS1.pxid-intro-active>#pxidHeroIntro{position:absolute;z-index:100;height:100%!important}
 #pxidS1.pxid-intro-active>.inner{z-index:101!important;pointer-events:none}
-#pxidS1.pxid-intro-active .inner .group .bannerList:first-child{opacity:1!important;visibility:visible!important;transform:translate3d(var(--intro-copy-x,-120vw),0,0)!important;transition:none!important;will-change:transform}
+#pxidS1.pxid-intro-active .inner .group .bannerList:first-child{opacity:1!important;visibility:visible!important;transform:none;transition:none!important;will-change:transform}
+#pxidS1.pxid-intro-active:not(.pxid-intro-running):not(.pxid-intro-reduced) .inner .group .bannerList:first-child{opacity:0!important}
 #pxidS1.pxid-intro-active .inner .group .bannerList:first-child .til{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
 #pxidS1.pxid-intro-active .bannerList:not(:first-child),#pxidS1.pxid-intro-active .pager,#pxidS1.pxid-intro-active .scrEl,#pxidS1.pxid-intro-active .pxid-first-film-cursor,#pxidS1.pxid-intro-active .pxid-hero-switch-cursor{visibility:hidden!important}
 #pxidS1.pxid-intro-active .slogan-r .slogan-f-glyph{opacity:0;transition:opacity .22s ease}
 #pxidS1.pxid-intro-active .slogan-r .slogan-f-bike{opacity:0!important}
+#pxidS1.pxid-intro-active .pxid-intro-tail{opacity:0}
+#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title .pxid-intro-tail{color:inherit;font:inherit;letter-spacing:inherit}
 #pxidS1.pxid-intro-active.pxid-intro-restore-r .slogan-r .slogan-f-glyph{opacity:1}
-#pxidS1 .pxid-intro-bike{position:absolute;left:0;top:0;z-index:103;max-width:none;pointer-events:none;will-change:transform;opacity:0;transform-origin:50% 80%;transition:opacity .22s ease}
+#pxidS1 .pxid-intro-bike{position:absolute;left:0;top:0;z-index:103;max-width:none;pointer-events:none;will-change:transform;opacity:0;transform-origin:50% 80%}
+#pxidS1.pxid-intro-restore-r .pxid-intro-bike{transition:opacity .2s ease}
 #pxidS1.pxid-intro-restore-r .pxid-intro-bike{opacity:0!important}
 /* Suppress only the legacy INITIAL copy entrance, not the film's later outro. */
 #pxidS1.pxid-intro-copy-hold:not(.pxid-handoff-outro) .bannerList:first-child{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
 #pxidS1.pxid-intro-copy-hold .bannerList:first-child .til{opacity:1!important;transform:none!important}
+#pxidS1.pxid-intro-reduced .slogan-r .slogan-f-glyph{opacity:1!important}
+#pxidS1.pxid-intro-reduced .pxid-intro-tail{opacity:1}
 @media(max-width:900px){
  #pxidHeroIntro .pxid-intro-progress{top:20%;bottom:auto;right:6%;font-size:clamp(88px,23vw,180px)}
  #pxidHeroIntro .pxid-intro-status{top:calc(20% + clamp(88px,23vw,180px));bottom:auto;right:6%;font-size:9px}
