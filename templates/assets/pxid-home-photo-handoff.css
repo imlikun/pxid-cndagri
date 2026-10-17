@@ -7,6 +7,7 @@
 #pxidS1 .pxid-photo-handoff-title{position:absolute;inset:0;margin:0;color:#111c19;font:900 clamp(68px,6.8vw,260px)/.88 Arial,Helvetica,sans-serif!important;letter-spacing:-.065em!important;white-space:nowrap;text-transform:uppercase}
 #pxidS1 .pxid-photo-handoff-title span{font:inherit;letter-spacing:inherit;color:inherit}
 #pxidS1 .pxid-photo-handoff-title .ride-accent{color:#e31e29}
+#pxidS1 .pxid-photo-handoff-title .ride-rider-letter{display:none}
 #pxidS1 .pxid-photo-handoff-title>.ride-design,#pxidS1 .pxid-photo-handoff-title>.ride-your,#pxidS1 .pxid-photo-handoff-title>.ride-ride{position:absolute;display:block}
 #pxidS1 .ride-design{top:var(--ride-design-y,40%);left:var(--ride-left-edge,44%);transform:translateX(-100%)}
 #pxidS1 .ride-your{top:var(--ride-row-y,54%);left:var(--ride-left-edge,44%);transform:translateX(-100%)}
@@ -50,6 +51,7 @@ html.pxid-handoff-light #app header .appNav .searchSub .iconfont{color:#16211d!i
  #pxidS1 .pxid-photo-handoff-title>.ride-design{display:block}
  #pxidS1 .pxid-photo-handoff-title>.ride-your,#pxidS1 .pxid-photo-handoff-title>.ride-ride{display:inline-block}
  #pxidS1 .pxid-photo-handoff-title>.ride-ride{margin-left:.18em}
+ #pxidS1 .pxid-photo-handoff-title .ride-rider-letter{display:inline}
  #pxidS1 .pxid-photo-handoff-sub{position:static;font-size:14px;margin-top:18px}
  #pxidS1 .pxid-photo-handoff-cta{left:5.5%;bottom:22%;min-height:44px;font-size:14px}
  #pxidS1 .pxid-handoff-prompt{right:5.5%;bottom:6%;font-size:11px;gap:8px}
