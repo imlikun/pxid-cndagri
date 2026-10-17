@@ -86,10 +86,12 @@
     loader.dataset.introState='morphing';sec.classList.add('pxid-intro-restore-r','pxid-intro-copy-hold');
     window.dispatchEvent(new CustomEvent('pxid:hero-intro-morph'));
     // Only the R slot changes; the rest of RIDE remains fully visible.
-    var morph=reduced.matches?Promise.resolve():Promise.all([
-      bike.animate([{opacity:1,transform:bike.style.transform},{opacity:0,transform:bike.style.transform+' scale(.72)'}],{duration:230,easing:'cubic-bezier(.2,.7,.2,1)',fill:'forwards'}).finished,
-      copy.querySelector('.slogan-f-glyph').animate([{opacity:.75},{opacity:1}],{duration:230,fill:'forwards'}).finished
-    ]);
+    var morphAnimations=reduced.matches?[]:[
+      bike.animate([{opacity:1,transform:bike.style.transform},{opacity:0,transform:bike.style.transform+' scale(.72)'}],{duration:230,easing:'cubic-bezier(.2,.7,.2,1)',fill:'forwards'}),
+      copy.querySelector('.slogan-f-glyph').animate([{opacity:.75},{opacity:1}],{duration:230,fill:'forwards'})
+    ];
+    entrance=entrance.concat(morphAnimations);
+    var morph=Promise.all(morphAnimations.map(function(a){return a.finished;}));
     morph.then(function(){
       loader.dataset.introState='revealing';root.classList.add('pxid-intro-revealing');
       window.pxidHeroIntroReleased=true;first.classList.add('on');
@@ -238,7 +240,7 @@
     if(next===active)return;active=next;
     if(!active){
       video.pause();stopScroll();scene.style.visibility='hidden';scene.inert=true;scene.setAttribute('aria-hidden','true');
-      sec.classList.remove('pxid-handoff-outro','pxid-handoff-ready','pxid-handoff-revealing','pxid-handoff-complete','pxid-handoff-anticipate');lock(false);
+      sec.classList.remove('pxid-intro-copy-hold','pxid-handoff-outro','pxid-handoff-ready','pxid-handoff-revealing','pxid-handoff-complete','pxid-handoff-anticipate');lock(false);
     }else{
       if(autoTween)autoTween.kill();auto.value=scrollProgress=progress=0;bridgeStarted=false;
       if(timeline)timeline.progress(0);sec.classList.remove('pxid-handoff-outro');setPhase('film');
