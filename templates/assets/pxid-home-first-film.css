@@ -1,5 +1,5 @@
 #pxidS1 .bannerPic:first-child{isolation:isolate}
-#pxidS1 .bannerPic:first-child .pxid-first-film-video{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;object-fit:contain;object-position:center center!important;transform:none!important;background:#0b100d;pointer-events:none}
+#pxidS1 .bannerPic:first-child .pxid-first-film-video{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;object-fit:cover;object-position:center center;transform:none!important;background:#0b100d;pointer-events:none}
 #pxidS1 .bannerPic:first-child:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(4,13,16,.7) 0%,rgba(4,13,16,.43) 31%,rgba(4,13,16,.06) 68%,transparent 100%),linear-gradient(0deg,rgba(4,13,16,.44),transparent 37%),linear-gradient(180deg,rgba(4,13,16,.27),transparent 26%)}
 #pxidS1 .inner .group .bannerList:first-child{max-width:60vw}
 #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 clamp(19px,2.1vw,46px);color:#fff;font:700 clamp(11px,.78vw,25px)/1.4 Arial,Helvetica,sans-serif;letter-spacing:.24em}
@@ -27,7 +27,7 @@
  #pxidS1 .bannerPic[data-hero-frame="m2"] .pxid-mobile-hero-img{object-fit:cover;object-position:center}
 }
 @media(max-width:900px){
- #pxidS1 .bannerPic:first-child .pxid-first-film-video{object-position:center center!important}
+ #pxidS1 .bannerPic:first-child .pxid-first-film-video{object-position:72% center}
  #pxidS1 .bannerPic:first-child:after{background:linear-gradient(0deg,rgba(3,12,15,.77),rgba(3,12,15,.3) 50%,rgba(3,12,15,.13))}
  #pxidS1 .inner .group .bannerList:first-child{max-width:90vw}
  #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-eyebrow{margin-bottom:18px;font-size:10px;letter-spacing:.15em}
@@ -44,28 +44,10 @@
 #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title.pxid-first-film-title--beauty{font-size:clamp(72px,7.6vw,300px)!important;line-height:.88!important;letter-spacing:-.065em!important}
 @media(max-width:900px){#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title.pxid-first-film-title--beauty{font-size:clamp(40px,12.4vw,98px)!important;line-height:.91!important;letter-spacing:-.065em!important}}
 #pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title .slogan-stop{color:#fff}
-#pxidS1 .pxid-first-film-title .slogan-f{position:relative;display:inline-block;color:#e31e29;isolation:isolate}
-#pxidS1 .slogan-f-glyph{display:inline-block;transition:opacity .18s,transform .24s}
-#pxidS1 .slogan-f-bike{position:absolute;left:-.015em;top:-.04em;width:.66em;height:.85em;overflow:visible;opacity:0;transform:translateY(.035em) scale(.92);transition:opacity .18s,transform .24s;pointer-events:none}
-#pxidS1 .slogan-f-body{fill:currentColor}
-#pxidS1 .slogan-f-detail,#pxidS1 .slogan-f-wheel{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-#pxidS1 .slogan-f-wheel circle{fill:#07100b;stroke-width:3}
-#pxidS1 .slogan-f-wheel path{stroke-width:1.4}
-@media(hover:hover) and (pointer:fine){
- #pxidS1 .slogan-f:hover .slogan-f-glyph{opacity:0;transform:translateY(-.035em)}
- #pxidS1 .slogan-f:hover .slogan-f-bike{opacity:1;transform:translateY(0) scale(1)}
- #pxidS1 .slogan-f:hover .slogan-f-wheel{animation:pxid-slogan-wheel 1.8s linear infinite;transform-box:fill-box;transform-origin:center}
- #pxidS1:has(.slogan-f:hover) .pxid-first-film-cursor{opacity:0!important}
-}
-@keyframes pxid-slogan-wheel{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){#pxidS1 .slogan-f-glyph,#pxidS1 .slogan-f-bike{transition:none}#pxidS1 .slogan-f:hover .slogan-f-wheel{animation:none}}
+#pxidS1 .pxid-first-film-title .slogan-f{display:inline;color:#e31e29;font:inherit;letter-spacing:inherit}
 
-/* Keep the entire source frame inside the visible first screen. */
+/* Fill the visible first screen without adding a separate zoom. */
 .home #pxidS1,.home #pxidS1>.inner{height:100vh!important;height:100svh!important}
 #pxidS1 .bannerPic[data-hero-frame="video"]{background:#0b100d}
-#pxidS1 .bannerPic[data-hero-frame="video"]>.pic{background-size:contain!important;background-position:center!important;background-color:#0b100d;transform:none!important}
-#pxidS1 .bannerPic[data-hero-frame="video"] .pxid-mobile-hero-img{object-fit:contain!important;object-position:center!important}
-@media(max-width:900px) and (orientation:portrait){
- #pxidS1 .bannerPic[data-hero-frame="video"]>.pic,
- #pxidS1 .bannerPic[data-hero-frame="video"]>.pxid-first-film-video{top:clamp(92px,14svh,170px)!important;bottom:auto!important;left:0!important;width:100%!important;height:calc(100vw * 720 / 1279)!important;aspect-ratio:1279/720}
-}
+#pxidS1 .bannerPic[data-hero-frame="video"]>.pic{background-size:cover!important;background-position:center!important;background-color:#0b100d;transform:none!important}
+#pxidS1 .bannerPic[data-hero-frame="video"] .pxid-mobile-hero-img{object-fit:cover!important;object-position:72% center!important}

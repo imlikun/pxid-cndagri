@@ -11,13 +11,20 @@
   sec.appendChild(cursor);
   var active=false;
   var reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var mobile=window.matchMedia('(max-width: 900px)');
+  function frameFocus(){
+    video.style.objectPosition=mobile.matches?(video.currentTime<2.42?'72% center':video.currentTime<3.9?'55% center':'40% center'):'center center';
+  }
+  video.addEventListener('timeupdate',frameFocus);
+  video.addEventListener('seeked',frameFocus);
+  if(mobile.addEventListener)mobile.addEventListener('change',frameFocus);
   function sync(){
     var next=(first.classList.contains('on')||first.classList.contains('in'))&&!first.classList.contains('out');
     if(next===active)return;
     active=next;
     sec.classList.toggle('pxid-first-film-on',active);
     cursor.classList.remove('visible');
-    if(active&&!reduced.matches){video.currentTime=0;video.play().catch(function(){});}
+    if(active&&!reduced.matches){video.currentTime=0;frameFocus();video.play().catch(function(){});}
     else video.pause();
   }
   new MutationObserver(sync).observe(first,{attributes:true,attributeFilter:['class']});
