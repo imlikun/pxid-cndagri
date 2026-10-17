@@ -94,6 +94,20 @@
     loaderProgressFrame = window.requestAnimationFrame(update);
   }
 
+  // The redesigned homepage has an independent media-driven intro.
+  // Its event initializes the Hero only; the legacy loader never runs there.
+  var introHeroStarted = false;
+  function activateIntroHero() {
+    if (introHeroStarted) return;
+    introHeroStarted = true;
+    var firstPic = document.querySelector('#pxidS1 .bannerPic');
+    if (firstPic) firstPic.classList.add('on');
+    if (prefersReducedMotion || window.matchMedia('(max-width: 900px)').matches) startFallbackMotion();
+    else loadDeferredMotion();
+  }
+  window.addEventListener('pxid:hero-intro-release', activateIntroHero);
+  if (window.pxidHeroIntroReleased) activateIntroHero();
+
   startLoaderProgress();
 
   function releaseLoader() {

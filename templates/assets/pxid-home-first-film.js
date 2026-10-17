@@ -19,7 +19,7 @@
   video.addEventListener('seeked',frameFocus);
   if(mobile.addEventListener)mobile.addEventListener('change',frameFocus);
   function sync(){
-    var next=(first.classList.contains('on')||first.classList.contains('in'))&&!first.classList.contains('out');
+    var next=!document.documentElement.classList.contains('pxid-intro-pending')&&(first.classList.contains('on')||first.classList.contains('in'))&&!first.classList.contains('out');
     if(next===active)return;
     active=next;
     sec.classList.toggle('pxid-first-film-on',active);
@@ -28,6 +28,7 @@
     else video.pause();
   }
   new MutationObserver(sync).observe(first,{attributes:true,attributeFilter:['class']});
+  window.addEventListener('pxid:hero-intro-complete',sync);
   sync();
   sec.addEventListener('pointermove',function(event){
     if(!active||event.pointerType==='touch'||event.target.closest('.pager,.scrEl,.slogan-f')){cursor.classList.remove('visible');return;}
