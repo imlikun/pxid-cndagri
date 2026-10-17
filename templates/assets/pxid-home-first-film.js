@@ -24,6 +24,7 @@
     active=next;
     sec.classList.toggle('pxid-first-film-on',active);
     cursor.classList.remove('visible');
+    if(sec.dataset.heroStory==='true')return;
     if(active&&!reduced.matches){video.currentTime=0;frameFocus();video.play().catch(function(){});}
     else video.pause();
   }
@@ -40,7 +41,7 @@
   });
   sec.addEventListener('pointerleave',function(){cursor.classList.remove('visible');});
   sec.addEventListener('click',function(event){
-    if(!active||event.defaultPrevented||event.target.closest('a,button,.pager,.scrEl'))return;
+    if(!active||sec.dataset.handoffLocked==='true'||event.defaultPrevented||event.target.closest('a,button,.pager,.scrEl'))return;
     window.location.href='business.html';
   });
   if(reduced.addEventListener)reduced.addEventListener('change',function(){

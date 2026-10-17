@@ -1,0 +1,102 @@
+/* Opening and film share the actual campaign type; the poster is a layered scene. */
+.pxid-story-shell{position:relative;height:calc(100svh + var(--pxid-story-distance,0px));overflow:visible;isolation:isolate}
+body.home:has(.pxid-story-shell){overflow-x:clip!important;overflow-y:visible!important}
+.home .pxid-story-shell>#pxidS1{position:sticky!important;top:0!important;height:100vh!important;height:100svh!important;overflow:hidden}
+#pxidS1>.inner{height:100svh!important;z-index:23!important;pointer-events:none}
+#pxidS1>.inner .pager,#pxidS1>.inner a,#pxidS1>.inner .slogan-r{pointer-events:auto}
+#pxidHeroIntro{position:fixed;inset:0;z-index:5000;overflow:hidden;background:#16251c;pointer-events:auto}
+#pxidHeroIntro .pxid-intro-backdrop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.38;max-width:none}
+#pxidHeroIntro::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,12,9,.88),rgba(4,12,9,.13) 80%);pointer-events:none}
+#pxidHeroIntro .pxid-intro-logo{position:absolute;left:7.4%;top:3.4%;width:70px;height:30px;object-fit:contain;z-index:2}
+#pxidHeroIntro .pxid-intro-note{position:absolute;left:5.75%;bottom:28px;z-index:2;margin:0;color:#c0c8c1;font:500 10px/1.6 Arial,Helvetica,sans-serif;letter-spacing:.12em}
+#pxidHeroIntro .pxid-intro-progress{position:absolute;right:5.75%;bottom:9%;z-index:2;color:#e31e29;font:900 clamp(120px,14vw,440px)/.76 Arial,Helvetica,sans-serif;letter-spacing:-.085em;white-space:nowrap;font-variant-numeric:tabular-nums}
+#pxidHeroIntro .pxid-intro-progress *{font-family:Arial,Helvetica,sans-serif!important;font-weight:900;letter-spacing:inherit}
+#pxidHeroIntro .pxid-intro-percent{display:inline-block;font-size:.3em;margin-left:.15em;vertical-align:top;line-height:1.1}
+#pxidHeroIntro .pxid-intro-status{position:absolute;right:5.75%;bottom:4.8%;z-index:2;margin:0;color:#c0c8c1;font:600 10px/1.4 Arial,Helvetica,sans-serif;letter-spacing:.14em}
+#pxidHeroIntro .pxid-intro-skip{position:absolute;right:5.75%;top:5%;z-index:2;min-height:44px;padding:8px 0;color:#fff;background:none;border:0;border-bottom:1px solid #ffffff80;font:600 13px/1.4 Arial,"Microsoft YaHei",sans-serif}
+#pxidHeroIntro .pxid-intro-skip[hidden]{display:none}
+html.pxid-intro-pending{overflow:hidden!important}
+html.pxid-intro-pending #app>header{opacity:0!important;pointer-events:none!important}
+html.pxid-intro-revealing #app>header{opacity:1!important;transition:opacity .38s}
+#pxidS1.pxid-intro-active{z-index:5001!important;isolation:isolate;cursor:default!important}
+#pxidS1.pxid-intro-active>#pxidHeroIntro{position:absolute;z-index:100}
+#pxidS1.pxid-intro-active>.inner{z-index:101!important;pointer-events:none}
+#pxidS1.pxid-intro-active .bannerList:first-child{visibility:visible!important;transition:none!important;will-change:transform,opacity}
+#pxidS1.pxid-intro-active:not(.pxid-intro-running) .bannerList:first-child{opacity:0!important}
+#pxidS1.pxid-intro-active .bannerList:first-child .til{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+#pxidS1.pxid-intro-active .bannerList:not(:first-child),#pxidS1.pxid-intro-active .pager,#pxidS1.pxid-intro-active .scrEl,#pxidS1.pxid-intro-active .pxid-first-film-cursor,#pxidS1.pxid-intro-active .pxid-hero-switch-cursor{visibility:hidden!important}
+#pxidS1 .pxid-intro-bike{position:absolute;top:0;left:0;z-index:103;max-width:none;transform-origin:0 0;pointer-events:none;opacity:0;will-change:transform}
+#pxidS1 .pxid-intro-bike img{display:block;width:100%;height:100%;max-width:none;object-fit:contain}
+#pxidS1 .pxid-first-film-title .pxid-intro-tail{opacity:1!important;color:inherit!important;font:inherit;letter-spacing:inherit}
+#pxidS1.pxid-intro-active .slogan-r{width:.657em!important}
+#pxidS1.pxid-intro-active .slogan-f-bike{display:none}
+#pxidS1 .pxid-first-film-sub{font-family:Arial,"Microsoft YaHei","PingFang SC",sans-serif!important}
+#pxidS1.pxid-intro-copy-hold:not(.pxid-handoff-outro) .bannerList:first-child{opacity:1!important;visibility:visible!important;transform:none!important}
+#pxidS1.pxid-intro-copy-hold .bannerList:first-child .til{opacity:1!important;transform:none!important}
+#pxidS1.pxid-handoff-outro .bannerList:first-child{opacity:0!important;transform:translate3d(35px,0,0)!important;transition:opacity .3s ease,transform .3s ease!important;pointer-events:none!important}
+#pxidS1.pxid-handoff-complete .bannerList:first-child{visibility:hidden!important}
+#pxidS1 .pxid-photo-handoff{position:absolute;inset:0;z-index:21;overflow:hidden;visibility:hidden;pointer-events:none}
+#pxidS1 .pxid-story-landscape{position:absolute;inset:0;clip-path:inset(0 100% 0 0)}
+@supports (mask-image:linear-gradient(#000,#000)){#pxidS1 .pxid-story-landscape{clip-path:none!important;mask-image:linear-gradient(90deg,#000 calc(var(--story-wipe,-40px) - 35px),transparent calc(var(--story-wipe,-40px) + 35px))}}
+#pxidS1 .pxid-story-field{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;transform:scale(1.04)}
+#pxidS1 .pxid-story-rider{position:absolute;opacity:0;transform-origin:50% 85%;z-index:3;will-change:transform}
+#pxidS1 .pxid-story-rider::before{content:"";position:absolute;left:9%;right:9%;bottom:-.5%;height:3.5%;border-radius:50%;background:#0b19094d;filter:blur(9px);z-index:-1}
+#pxidS1 .pxid-story-rider img{display:block;width:100%;height:100%;max-width:none;object-fit:contain}
+#pxidS1 .pxid-story-rider img{mask-image:linear-gradient(#000 90%,transparent 100%);-webkit-mask-image:linear-gradient(#000 90%,transparent 100%)}
+#pxidS1 .pxid-photo-handoff-copy{position:absolute;inset:0;z-index:2;color:#111c19;opacity:0;pointer-events:none}
+#pxidS1 .pxid-photo-handoff-title{position:absolute;inset:0;margin:0;color:#111c19;font:900 clamp(68px,6.8vw,260px)/.88 Arial,Helvetica,sans-serif!important;letter-spacing:-.065em!important;white-space:nowrap}
+#pxidS1 .pxid-photo-handoff-title span{font:inherit;letter-spacing:inherit;color:inherit}
+#pxidS1 .pxid-photo-handoff-title .ride-accent{color:#e31e29}
+#pxidS1 .pxid-photo-handoff-title .ride-rider-letter{display:none}
+#pxidS1 .pxid-photo-handoff-title>.ride-design,#pxidS1 .pxid-photo-handoff-title>.ride-your,#pxidS1 .pxid-photo-handoff-title>.ride-ride{position:absolute;display:block}
+#pxidS1 .ride-design{top:var(--ride-design-y,42%);left:var(--ride-left-edge,46.7%);transform:translateX(-100%)}
+#pxidS1 .ride-your{top:var(--ride-row-y,56%);left:var(--ride-left-edge,46.7%);transform:translateX(-100%)}
+#pxidS1 .ride-ride{top:var(--ride-row-y,56%);left:var(--ride-right-edge,63%)}
+#pxidS1 .pxid-photo-handoff-sub{position:absolute;top:var(--ride-caption-y,70%);left:var(--ride-caption-x,20%);margin:0;color:#17221d;font:600 clamp(17px,1.12vw,34px)/1.4 Arial,"Microsoft YaHei","PingFang SC",sans-serif}
+#pxidS1 .pxid-story-grass{position:absolute;inset:0;z-index:4;background-size:cover;background-position:center;mask-image:linear-gradient(transparent 82%,#000 95%);-webkit-mask-image:linear-gradient(transparent 82%,#000 95%);opacity:0;pointer-events:none}
+#pxidS1 .pxid-photo-handoff-cta{position:absolute;left:5.75%;bottom:calc(var(--pxid-hero-pager-bottom,5.5vh) + 78px);z-index:5;display:inline-flex;align-items:center;gap:30px;min-height:44px;padding:0 0 8px;border-bottom:1px solid #ffffffb3;color:white;text-shadow:0 1px 5px #0006;font:700 clamp(14px,.84vw,22px)/1.4 Arial,"Microsoft YaHei",sans-serif;opacity:0;pointer-events:none}
+#pxidS1 .pxid-photo-handoff-cta span{font:400 30px/1 Arial}
+#pxidS1.pxid-handoff-complete .pxid-photo-handoff-cta{pointer-events:auto}
+#pxidS1 .pxid-handoff-prompt{position:absolute;right:5.7%;bottom:6.4vh;z-index:35;display:flex;align-items:center;gap:16px;min-height:44px;padding:8px 0;border:0;background:none;color:#fff;text-shadow:0 1px 6px #0007;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .25s;font:600 clamp(12px,.8vw,20px)/1.4 Arial,"Microsoft YaHei",sans-serif;letter-spacing:.04em}
+#pxidS1 .pxid-handoff-prompt i{font:normal 24px/1 Arial}
+#pxidS1.pxid-handoff-anticipate .pxid-handoff-prompt,#pxidS1.pxid-handoff-ready .pxid-handoff-prompt,#pxidS1.pxid-handoff-complete .pxid-handoff-prompt{opacity:1;visibility:visible;transform:none}
+#pxidS1.pxid-handoff-outro .pxid-first-film-cursor,#pxidS1.pxid-handoff-locked .pxid-hero-switch-cursor{visibility:hidden!important;opacity:0!important}
+#pxidS1.pxid-handoff-complete .pxid-first-film-cursor.visible{visibility:visible!important;opacity:1!important}
+#pxidS1.pxid-handoff-complete.pxid-hero-follow-on .pxid-first-film-cursor{opacity:0!important}
+#pxidS1.pxid-handoff-locked .pager{opacity:.3;pointer-events:none!important}
+#pxidS1.pxid-handoff-complete .scrEl{display:none}
+#pxidS1 :is(.pxid-handoff-prompt,.pxid-photo-handoff-cta):focus-visible,#pxidHeroIntro button:focus-visible{outline:2px solid #e31e29;outline-offset:6px}
+html.pxid-handoff-light #app header{background:transparent!important;box-shadow:none!important}
+html.pxid-story-view #app>header{transform:translateY(0)!important;top:0!important;opacity:1!important;visibility:visible!important}
+html.pxid-story-view #app>header :is(.pcNav,.appNav){transform:translateY(0)!important;opacity:1!important;visibility:visible!important}
+html.pxid-handoff-light #app header .pcNav .navHref,html.pxid-handoff-light #app header .pcNav .set .layer-search{color:#16211d!important;text-shadow:none!important}
+html.pxid-handoff-light #app header .pcNav .layer-search :is(input,.iconfont){color:#16211d!important}
+html.pxid-handoff-light #app header .pcNav input::placeholder{color:#16211db3!important}
+html.pxid-handoff-light #app header .pcNav .layer-search{border-color:#16211d40!important;background:#ffffff26!important}
+html.pxid-handoff-light #app header .pcNav .logo .white{opacity:0!important}
+html.pxid-handoff-light #app header .pcNav .logo .black{opacity:1!important}
+html.pxid-handoff-light #app header .appNav{background:#edf6f4!important}
+html.pxid-handoff-light #app header .appNav .logoBox::before{opacity:0!important}
+html.pxid-handoff-light #app header .appNav .logoBox::after{opacity:1!important}
+html.pxid-handoff-light #app header .appNav .searchSub .iconfont{color:#16211d!important}
+@media(max-width:900px){
+ #pxidHeroIntro .pxid-intro-backdrop{object-position:72% center}
+ #pxidHeroIntro .pxid-intro-progress{top:19%;bottom:auto;font-size:clamp(88px,23vw,180px)}
+ #pxidHeroIntro .pxid-intro-status{top:calc(19% + 95px);bottom:auto;font-size:9px}
+ #pxidHeroIntro .pxid-intro-note{left:5.5%;bottom:calc(24px + env(safe-area-inset-bottom,0px));font-size:9px}
+ #pxidS1 .pxid-photo-handoff-copy{inset:auto;top:19%;left:5.5%;width:89%}
+ #pxidS1 .pxid-photo-handoff-title{position:static;font-size:clamp(42px,12.2vw,84px)!important;line-height:.91!important}
+ #pxidS1 .pxid-photo-handoff-title>.ride-design,#pxidS1 .pxid-photo-handoff-title>.ride-your,#pxidS1 .pxid-photo-handoff-title>.ride-ride{position:static;transform:none}
+ #pxidS1 .pxid-photo-handoff-title>.ride-design{display:block}
+ #pxidS1 .pxid-photo-handoff-title>.ride-your,#pxidS1 .pxid-photo-handoff-title>.ride-ride{display:inline-block}
+ #pxidS1 .pxid-photo-handoff-title>.ride-ride{margin-left:.18em}
+ #pxidS1 .pxid-photo-handoff-title .ride-rider-letter{display:inline}
+ #pxidS1 .pxid-photo-handoff-sub{position:static;font-size:14px;margin-top:18px}
+ #pxidS1 .pxid-story-grass{mask-image:linear-gradient(transparent 76%,#000 91%);-webkit-mask-image:linear-gradient(transparent 76%,#000 91%)}
+ #pxidS1 .pxid-photo-handoff-cta{left:5.5%;top:36%;bottom:auto;min-height:38px;font-size:14px;color:#17221d;border-color:#17221d80;text-shadow:none}
+ #pxidS1 .pxid-handoff-prompt{right:5.5%;bottom:5.5%;font-size:11px;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+ #pxidHeroIntro,#pxidS1 .pxid-handoff-prompt,#pxidS1.pxid-handoff-outro .bannerList:first-child{transition:none!important}
+ #pxidS1 .pxid-intro-bike{display:none}
+}
