@@ -70,3 +70,9 @@
  #pxidS1 .bannerPic[data-hero-frame="p6"]::after{background:linear-gradient(180deg,rgba(0,0,0,.36),transparent 24%,transparent 68%,rgba(0,0,0,.28))!important}
  #pxidS1 .bannerList[data-hero-copy="p6"] .til{display:none}
 }
+
+/* R uses the existing letter-to-motorcycle motion; only I is the red letter. */
+#pxidS1 .pxid-first-film-title .slogan-f.slogan-r{width:.657em}
+#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title .slogan-r,
+#pxidS1 .inner .group .bannerList:first-child .pxid-first-film-title .slogan-r .slogan-f-glyph{color:inherit}
+@media(hover:hover) and (pointer:fine){#pxidS1 .pxid-first-film-title .slogan-f.slogan-r:hover{width:1.15em}}
