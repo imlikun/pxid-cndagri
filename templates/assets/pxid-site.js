@@ -145,7 +145,7 @@
     var heroTimer = null;
     function scheduleHero() {
       if (heroTimer) window.clearTimeout(heroTimer);
-      if (prefersReducedMotion || pictures.length < 2) return;
+      if (prefersReducedMotion || pictures.length < 2 || document.querySelector('#pxidS1[data-hero-manual="true"]')) return;
       heroTimer = window.setTimeout(function () {
         if (document.hidden) { scheduleHero(); return; }
         showHero(heroIndex + 1);
