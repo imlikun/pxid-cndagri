@@ -29,7 +29,7 @@
   var raf=0;
   function index(){var current=dots.findIndex(function(dot){return dot.classList.contains('on');});return current<0?0:current;}
   function busy(){return frames.some(function(frame){return frame.classList.contains('in')||frame.classList.contains('out');});}
-  function change(delta){if(busy())return;dots[(index()+delta+dots.length)%dots.length].click();}
+  function change(delta){if(busy()||sec.dataset.handoffLocked==="true")return;dots[(index()+delta+dots.length)%dots.length].click();}
   function hide(){direction=0;cursor.classList.remove('is-visible');sec.classList.remove('pxid-hero-follow-on');if(raf){cancelAnimationFrame(raf);raf=0;}}
   function draw(){
     raf=0;
@@ -41,7 +41,7 @@
     if(direction&&(Math.abs(targetX-currentX)>.2||Math.abs(targetY-currentY)>.2))raf=requestAnimationFrame(draw);
   }
   function follow(event){
-    if(!fine.matches||event.pointerType==='touch'||event.target.closest('a,button,.pager,.scrEl,.slogan-f')){hide();return;}
+    if(sec.dataset.handoffLocked==="true"||!fine.matches||event.pointerType==='touch'||event.target.closest('a,button,.pager,.scrEl,.slogan-f')){hide();return;}
     var bounds=sec.getBoundingClientRect();
     var x=event.clientX-bounds.left,y=event.clientY-bounds.top;
     // The opener keeps its existing product cursor in the center; its edges navigate.

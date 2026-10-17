@@ -1,0 +1,48 @@
+/* The last movie frame stays full size; one mask reveals the complete photo poster. */
+#pxidS1{--pxid-handoff-edge:0%;--pxid-handoff-progress:0}
+#pxidS1 .pxid-photo-handoff{position:absolute;inset:0;z-index:21;overflow:hidden;visibility:hidden;pointer-events:none;clip-path:inset(0 calc(100% - var(--pxid-handoff-edge)) 0 0);background:#ecf6f5}
+#pxidS1.pxid-handoff-revealing .pxid-photo-handoff,#pxidS1.pxid-handoff-complete .pxid-photo-handoff{visibility:visible}
+#pxidS1 .pxid-photo-handoff-image{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;transform:none}
+#pxidS1 .pxid-photo-handoff-copy{position:absolute;top:clamp(108px,12.6vh,260px);left:5.75%;color:#111c19;max-width:88%;pointer-events:none}
+#pxidS1 .pxid-photo-handoff-title{margin:0;color:#111c19;font:900 clamp(68px,6.8vw,260px)/.88 Arial,Helvetica,sans-serif!important;letter-spacing:-.065em!important;white-space:nowrap;text-transform:uppercase}
+#pxidS1 .pxid-photo-handoff-title span{font:inherit;letter-spacing:inherit;color:#e31e29}
+#pxidS1 .pxid-photo-handoff-sub{margin:clamp(20px,1.5vw,42px) 0 0;color:#17221d;font:600 clamp(17px,1.12vw,34px)/1.4 Arial,"Noto Sans SC",sans-serif;letter-spacing:.02em}
+#pxidS1 .pxid-photo-handoff-cta{position:absolute;left:5.75%;bottom:calc(var(--pxid-hero-pager-bottom,5.5vh) + 78px);display:inline-flex;align-items:center;gap:30px;min-height:50px;padding:0 0 8px;border-bottom:1px solid rgba(255,255,255,.8);color:#fff;text-shadow:0 1px 5px rgba(0,0,0,.4);font:700 clamp(14px,.84vw,22px)/1.4 Arial,"Noto Sans SC",sans-serif;pointer-events:none;opacity:0;transition:opacity .2s}
+#pxidS1 .pxid-photo-handoff-cta span{font:400 30px/1 Arial}
+#pxidS1.pxid-handoff-complete .pxid-photo-handoff-cta{opacity:1;pointer-events:auto}
+#pxidS1.pxid-handoff-complete .pxid-photo-handoff-title .slogan-f{pointer-events:auto}
+#pxidS1 .pxid-photo-handoff-cta:focus-visible,#pxidS1 .pxid-handoff-prompt:focus-visible{outline:2px solid #e31e29;outline-offset:6px}
+#pxidS1.pxid-handoff-outro .bannerList:first-child{opacity:0!important;transform:translate3d(40px,0,0)!important;transition:opacity .3s ease,transform .3s ease!important;pointer-events:none!important}
+#pxidS1.pxid-handoff-complete .bannerList:first-child{visibility:hidden!important}
+#pxidS1 .pxid-handoff-prompt{position:absolute;right:5.7%;bottom:6.4vh;z-index:35;display:flex;align-items:center;gap:16px;min-height:44px;padding:8px 0;border:0;background:none;color:#fff;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .25s,color .25s;font:600 clamp(12px,.8vw,20px)/1.4 Arial,"Noto Sans SC",sans-serif;letter-spacing:.06em}
+#pxidS1 .pxid-handoff-prompt i{font:normal 24px/1 Arial}
+#pxidS1.pxid-handoff-ready .pxid-handoff-prompt,#pxidS1.pxid-handoff-revealing .pxid-handoff-prompt,#pxidS1.pxid-handoff-complete .pxid-handoff-prompt{opacity:1;visibility:visible;transform:none}
+#pxidS1.pxid-handoff-complete .pxid-handoff-prompt{color:#fff;text-shadow:0 1px 5px rgba(0,0,0,.4)}
+#pxidS1.pxid-handoff-outro .pxid-first-film-cursor,#pxidS1.pxid-handoff-locked .pxid-hero-switch-cursor{visibility:hidden!important;opacity:0!important}
+#pxidS1.pxid-handoff-complete .pxid-first-film-cursor.visible{visibility:visible!important;opacity:1!important}
+#pxidS1.pxid-handoff-complete.pxid-hero-follow-on .pxid-first-film-cursor{opacity:0!important}
+#pxidS1.pxid-handoff-locked{cursor:default!important;touch-action:none}
+#pxidS1.pxid-handoff-locked .pager{opacity:.3;pointer-events:none}
+#pxidS1.pxid-handoff-complete .inner{z-index:23!important;pointer-events:none}
+#pxidS1.pxid-handoff-complete .pager{pointer-events:auto}
+#pxidS1.pxid-handoff-complete .scrEl{display:none}
+html.pxid-handoff-light #app header{background:transparent!important;box-shadow:none!important}
+html.pxid-handoff-light #app header .pcNav .mid .navHref,html.pxid-handoff-light #app header .pcNav .set .layer-search{color:#16211d!important}
+html.pxid-handoff-light #app header .pcNav .mid .navHref{text-shadow:none!important}
+html.pxid-handoff-light #app header .pcNav .layer-search input,html.pxid-handoff-light #app header .pcNav .layer-search .iconfont{color:#16211d!important}
+html.pxid-handoff-light #app header .pcNav .layer-search input::placeholder{color:rgba(22,33,29,.7)!important}
+html.pxid-handoff-light #app header .pcNav .set .layer-search{border-color:rgba(22,33,29,.25)!important;background:rgba(255,255,255,.15)!important}
+html.pxid-handoff-light #app header .pcNav .logo .white{opacity:0!important}
+html.pxid-handoff-light #app header .pcNav .logo .black{opacity:1!important}
+html.pxid-handoff-light #app header .appNav{background:#edf6f4!important}
+html.pxid-handoff-light #app header .appNav .logoBox img{content:url('../../assets/pxid/logo-ink.svg')}
+html.pxid-handoff-light #app header .appNav .searchSub .iconfont{color:#16211d!important}
+@media(max-width:900px){
+ #pxidS1 .pxid-photo-handoff-image{object-position:center}
+ #pxidS1 .pxid-photo-handoff-copy{top:112px;left:5.5%;max-width:89%}
+ #pxidS1 .pxid-photo-handoff-title{font-size:clamp(42px,12.2vw,84px)!important;line-height:.91!important}
+ #pxidS1 .pxid-photo-handoff-sub{font-size:14px;margin-top:18px}
+ #pxidS1 .pxid-photo-handoff-cta{left:5.5%;bottom:22%;min-height:44px;font-size:14px}
+ #pxidS1 .pxid-handoff-prompt{right:5.5%;bottom:6%;font-size:11px;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){#pxidS1 .pxid-handoff-prompt,#pxidS1 .pxid-photo-handoff-cta,#pxidS1.pxid-handoff-outro .bannerList:first-child{transition:none!important}}
