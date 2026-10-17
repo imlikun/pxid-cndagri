@@ -9,7 +9,7 @@
   photo.className='pxid-photo-handoff';
   photo.setAttribute('aria-hidden','true');
   photo.inert=true;
-  photo.innerHTML='<img class="pxid-photo-handoff-image" src="'+sec.dataset.photoHandoff+'" alt="MANTIS P6 骑行在绿色旷野中" width="2560" height="1441" decoding="async"><div class="pxid-photo-handoff-copy"><h2 class="pxid-photo-handoff-title" aria-label="DESIGN YOUR RIDE"><span class="ride-design">DESIGN</span> <span class="ride-your">YOUR</span> <span class="ride-ride"><span class="ride-rider-letter" aria-hidden="true">R</span><span class="ride-accent">I</span>DE</span></h2><p class="pxid-photo-handoff-sub">探索更美的出现方式</p></div><a class="pxid-photo-handoff-cta" href="business.html">探索产品方案 <span aria-hidden="true">↗</span></a>';
+  photo.innerHTML='<img class="pxid-photo-handoff-image" src="'+sec.dataset.photoHandoff+'" alt="MANTIS P6 骑行在绿色旷野中" width="2560" height="1441" decoding="async"><div class="pxid-photo-handoff-copy"><h2 class="pxid-photo-handoff-title" aria-label="DESIGN YOUR RIDE"><span class="ride-design">DES<span class="ride-accent">I</span>GN</span> <span class="ride-your">YOUR</span> <span class="ride-ride"><span class="ride-rider-letter" aria-hidden="true">R</span><span class="ride-accent">I</span>DE</span></h2><p class="pxid-photo-handoff-sub">探索更美的出现方式</p></div><a class="pxid-photo-handoff-cta" href="business.html">探索产品方案 <span aria-hidden="true">↗</span></a>';
   sec.appendChild(photo);
   var prompt=document.createElement('button');
   prompt.type='button';prompt.className='pxid-handoff-prompt';
