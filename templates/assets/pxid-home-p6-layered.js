@@ -17,6 +17,7 @@
     var next=(frame.classList.contains('in')||frame.classList.contains('on')||frame.classList.contains('is-fallback-active'))&&!frame.classList.contains('out');
     if(next===active)return;
     active=next;
+    sec.classList.toggle('pxid-p6-layered-active',active);
     play();
   }
   new MutationObserver(sync).observe(frame,{attributes:true,attributeFilter:['class']});
@@ -26,7 +27,11 @@
     if(img.complete)return Promise.resolve();
     return new Promise(function(resolve){img.addEventListener('load',resolve,{once:true});img.addEventListener('error',resolve,{once:true});});
   })).then(function(){ready=true;frame.classList.add('is-layered-ready');sync();if(active)play();});
-  pager.addEventListener('click',function(){if(active&&ready)play();},true);
+  pager.addEventListener('click',function(event){
+    if(!active||!ready)return;
+    event.stopImmediatePropagation();
+    play();
+  },true);
   if(reduced.addEventListener)reduced.addEventListener('change',play);
   // A shareable view opens the new scene after the existing carousel is ready.
   if(new URLSearchParams(window.location.search).get('hero')==='p6-motion'){
