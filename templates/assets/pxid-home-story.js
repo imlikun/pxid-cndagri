@@ -10,7 +10,7 @@
   var auto={value:0},scrollProgress=0,progress=0,bridgeStarted=false,settleStarted=false,reversing=false,raf=0,frameCallback=0;
   var runtime=null,timeline=null,trigger=null,autoTween=null,timeout,skipTimer,lastPercent=0;
   var entrance=[],assets=sec.dataset.storyAssets,typeFrames=[],logoTarget=null;
-  var logoImage=loader.querySelector('.pxid-intro-logo');
+  var logoImage=copy.querySelector('.pxid-intro-logo'),eyebrowDeparted=false;
   var campaignTitle=copy.querySelector('h1'),design=copy.querySelector('.story-design'),your=copy.querySelector('.story-your'),rLetter=copy.querySelector('.slogan-r'),ide=copy.querySelector('.pxid-intro-tail'),subtitle=copy.querySelector('.pxid-first-film-sub'),eyebrow=copy.querySelector('.pxid-first-film-eyebrow');
   sec.dataset.heroStory='true';
   var shell=document.createElement('div');shell.className='pxid-story-shell';
@@ -101,7 +101,7 @@
     subtitle.style.color='rgb('+rgb.join(',')+')';subtitle.style.textShadow=c>.5?'none':'';
     rLetter.style.opacity=mobile.matches?'1':String(1-smooth((progress-.46)/.26));
     rLetter.style.pointerEvents=progress>.05?'none':'';
-    eyebrow.style.opacity=String(1-smooth(progress/.48));
+    eyebrow.style.opacity=eyebrowDeparted?'0':String(1-smooth(progress/.48));
   }
   function inputGuard(event){
     if(!root.classList.contains('pxid-intro-pending'))return;
@@ -138,12 +138,7 @@
   }
   function enter(){
     logoLayout();layout();
-    // Match the logo to the actual capital-letter height and centre it on screen.
-    var typeStyle=getComputedStyle(campaignTitle),measure=document.createElement('canvas').getContext('2d');
-    measure.font=typeStyle.fontWeight+' '+typeStyle.fontSize+' '+typeStyle.fontFamily;
-    var metrics=measure.measureText('DESIGN'),capHeight=metrics.actualBoundingBoxAscent||parseFloat(typeStyle.fontSize)*.73;
-    logoImage.style.width=(capHeight*1200/280)+'px';logoImage.style.height=capHeight+'px';
-    logoImage.style.left=((sec.clientWidth-capHeight*1200/280)/2)+'px';logoImage.style.top=((sec.clientHeight-capHeight)/2)+'px';
+    var typeStyle=getComputedStyle(campaignTitle);
     // The bike leads the whole word and parks beyond E, never inside a letter slot.
     var r=ide.getBoundingClientRect(),sr=sec.getBoundingClientRect(),gap=Math.max(10,parseFloat(typeStyle.fontSize)*.12);
     var x=r.right-sr.left+gap,available=sec.clientWidth-x-sec.clientWidth*.055;
@@ -151,22 +146,34 @@
     var target='translate3d('+x+'px,'+y+'px,0)';
     bike.style.width=w+'px';bike.style.height=w*372/640+'px';bike.style.transform=target;
     bike.style.opacity='1';sec.classList.add('pxid-intro-running');
-    var lr=logoImage.getBoundingClientRect(),endLogo=logoTarget?'translate3d('+(logoTarget.x-lr.left)+'px,'+(logoTarget.y-lr.top)+'px,0) scale('+(logoTarget.w/lr.width)+')':'none';
-    if(reduced.matches){bike.style.opacity='0';logoImage.style.transform=endLogo;entranceDone=true;mediaReady=true;loader.dataset.entranceDone='true';finishIntro();return;}
+    function flyLogo(instant){
+      logoLayout();
+      var lr=logoImage.getBoundingClientRect(),sr=sec.getBoundingClientRect();
+      // Move the same small wordmark to the opening overlay, retaining its exact screen rectangle.
+      loader.appendChild(logoImage);loader.dataset.brandOrigin='eyebrow';
+      logoImage.style.left=(lr.left-sr.left)+'px';logoImage.style.top=(lr.top-sr.top)+'px';
+      logoImage.style.width=lr.width+'px';logoImage.style.height=lr.height+'px';
+      var endLogo=logoTarget?'translate3d('+(logoTarget.x-lr.left)+'px,'+(logoTarget.y-lr.top)+'px,0) scale('+(logoTarget.w/lr.width)+')':'none';
+      eyebrowDeparted=true;
+      if(instant){logoImage.style.transform=endLogo;eyebrow.style.opacity='0';return [];}
+      var flight=logoImage.animate([{transform:'none'},{transform:endLogo}],{duration:650,easing:'cubic-bezier(.3,.1,.2,1)',fill:'forwards'});
+      flight.finished.then(function(){logoImage.style.transform=endLogo;});
+      return [flight,eyebrow.animate([{opacity:1},{opacity:0}],{duration:220,fill:'forwards'})];
+    }
+    if(reduced.matches){bike.style.opacity='0';flyLogo(true);entranceDone=true;mediaReady=true;loader.dataset.entranceDone='true';finishIntro();return;}
     var duration=1450,easing='cubic-bezier(.22,.72,.22,1)';
     entrance=[
       bike.animate([{transform:'translate3d('+(-w-20)+'px,'+y+'px,0)'},{transform:target}],{duration:duration,easing:easing,fill:'both'}),
-      copy.animate([{transform:'translate3d('+(-innerWidth*.74)+'px,0,0)',opacity:0},{transform:'translate3d(0,0,0)',opacity:1}],{delay:220,duration:1230,easing:easing,fill:'both'}),
-      logoImage.animate([{transform:'translate3d(-60px,0,0)'},{transform:'translate3d(0,0,0)'}],{duration:1050,easing:easing,fill:'both'})
+      copy.animate([{transform:'translate3d('+(-innerWidth*.74)+'px,0,0)',opacity:0},{transform:'translate3d(0,0,0)',opacity:1}],{delay:220,duration:1230,easing:easing,fill:'both'})
     ];
     Promise.all(entrance.map(function(a){return a.finished;})).then(function(){
       copy.style.transform='translate3d(0,0,0)';copy.style.opacity='1';
       entrance.forEach(function(a){a.cancel();});bike.style.transform=target;
-      // The real bike simply fades out. The large official logo takes the same beat to land in navigation.
-      var landing=[bike.animate([{opacity:1},{opacity:0}],{duration:500,easing:'ease-out',fill:'forwards'}),logoImage.animate([{transform:'none'},{transform:endLogo}],{duration:650,easing:'cubic-bezier(.3,.1,.2,1)',fill:'forwards'})];
+      // The real bike fades beside RIDE; only the small eyebrow logo enlarges into navigation.
+      var landing=[bike.animate([{opacity:1},{opacity:0}],{duration:500,easing:'ease-out',fill:'forwards'})].concat(flyLogo(false));
       entrance=entrance.concat(landing);
       Promise.all(landing.map(function(a){return a.finished;})).then(function(){
-        bike.style.opacity='0';logoImage.style.transform=endLogo;
+        bike.style.opacity='0';eyebrow.style.opacity='0';
         landing.forEach(function(a){a.cancel();});entranceDone=true;loader.dataset.entranceDone='true';finishIntro();
       });
     });
