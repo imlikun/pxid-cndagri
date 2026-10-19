@@ -1,7 +1,7 @@
 /* Opening and film share the actual campaign type; the poster is a layered scene. */
 .pxid-story-shell{position:relative;height:calc(100svh + var(--pxid-story-distance,0px));overflow:visible;isolation:isolate}
 body.home:has(.pxid-story-shell){overflow-x:clip!important;overflow-y:visible!important}
-.home .pxid-story-shell>#pxidS1{position:sticky!important;top:0!important;height:100vh!important;height:100svh!important;overflow:hidden}
+.home .pxid-story-shell>#pxidS1{position:relative!important;top:0!important;height:100vh!important;height:100svh!important;overflow:hidden}
 #pxidS1>.inner{height:100svh!important;z-index:23!important;pointer-events:none}
 #pxidS1>.inner .pager,#pxidS1>.inner a,#pxidS1>.inner .slogan-r{pointer-events:auto}
 #pxidHeroIntro{position:fixed;inset:0;z-index:5000;overflow:hidden;background:#16251c;pointer-events:auto}
@@ -36,13 +36,12 @@ html.pxid-intro-revealing #app>header{opacity:1!important;transition:opacity .38
 #pxidS1.pxid-handoff-outro .bannerList:first-child{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
 #pxidS1.pxid-handoff-complete .bannerList:first-child{visibility:visible!important}
 #pxidS1 .pxid-photo-handoff{position:absolute;inset:0;z-index:21;overflow:hidden;visibility:hidden;pointer-events:none}
-#pxidS1 .pxid-story-landscape{position:absolute;inset:0;clip-path:inset(0 100% 0 0)}
-@supports (mask-image:linear-gradient(#000,#000)){#pxidS1 .pxid-story-landscape{clip-path:none!important;mask-image:linear-gradient(90deg,#000 calc(var(--story-wipe,-40px) - 35px),transparent calc(var(--story-wipe,-40px) + 35px))}}
+#pxidS1 .pxid-story-landscape{position:absolute;inset:0;opacity:0}
 #pxidS1 .pxid-story-field{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;transform:scale(1.04)}
 #pxidS1 .pxid-story-rider{position:absolute;opacity:0;transform-origin:50% 85%;z-index:3;will-change:transform}
 #pxidS1 .pxid-story-rider::before{content:"";position:absolute;left:9%;right:9%;bottom:-.5%;height:3.5%;border-radius:50%;background:#0b19094d;filter:blur(9px);z-index:-1}
 #pxidS1 .pxid-story-rider img{display:block;width:100%;height:100%;max-width:none;object-fit:contain}
-#pxidS1 .pxid-story-rider img{mask-image:linear-gradient(#000 90%,transparent 100%);-webkit-mask-image:linear-gradient(#000 90%,transparent 100%)}
+#pxidS1 .pxid-story-rider img{mask-image:linear-gradient(#000 var(--rider-solid,90%),transparent var(--rider-clear,100%));-webkit-mask-image:linear-gradient(#000 var(--rider-solid,90%),transparent var(--rider-clear,100%))}
 #pxidS1 .pxid-photo-handoff-copy{position:absolute;inset:0;z-index:2;color:#111c19;opacity:0;pointer-events:none}
 #pxidS1 .pxid-photo-handoff-title{position:absolute;inset:0;margin:0;color:#111c19;font:900 clamp(68px,6.8vw,260px)/.88 Arial,Helvetica,sans-serif!important;letter-spacing:-.065em!important;white-space:nowrap}
 #pxidS1 .pxid-photo-handoff-title span{font:inherit;letter-spacing:inherit;color:inherit}
@@ -127,3 +126,50 @@ html.pxid-story-view #app>header .pcNav{background:transparent!important;box-sha
 #pxidS1 .pxid-intro-brand{display:inline-block;flex:none;width:3.343em;height:.78em;letter-spacing:0}
 #pxidS1 .pxid-intro-brand .pxid-intro-logo{display:block;width:100%;height:100%;max-width:none;object-fit:contain}
 #pxidS1 .pxid-intro-descriptor{font:inherit;letter-spacing:inherit;color:inherit}
+
+/* The film now has one timed ending and no scroll extension. */
+.pxid-story-shell{height:100svh!important}
+#pxidS1 .bannerPic[data-hero-frame="video"]{opacity:var(--story-film-opacity,1)!important}
+#pxidS1 .pager[hidden]{display:none!important}
+#pxidS1 .pxid-handoff-prompt{opacity:1;visibility:visible;transform:none}
+#pxidS1.pxid-intro-active .pxid-handoff-prompt{visibility:hidden!important}
+#pxidS1 .pxid-story-rider{will-change:transform,opacity;}
+
+/* Product campaigns occupy the following actual viewport. */
+#pxidModelHero{position:relative;height:100vh;height:100svh;overflow:hidden;background:#111820;isolation:isolate;touch-action:pan-y pinch-zoom;scroll-margin-top:0}
+#pxidModelHero .pxid-model-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s;pointer-events:none;overflow:hidden}
+#pxidModelHero .pxid-model-slide.is-active{opacity:1;visibility:visible;pointer-events:auto;z-index:1}
+#pxidModelHero .pxid-p6-layered-root{position:absolute;inset:0;overflow:hidden}
+#pxidModelHero .pxid-model-photo,#pxidModelHero .pxid-model-photo img{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:62% center}
+#pxidModelHero [data-model="m2"] .pxid-model-photo img{object-position:center 58%}
+#pxidModelHero .pxid-model-slide::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(0deg,#000b,transparent 65%),linear-gradient(180deg,#0005,transparent 25%)}
+#pxidModelHero .pxid-model-copy{position:absolute;left:5.75%;bottom:calc(5.5vh + 68px);z-index:6;color:white;max-width:70%;pointer-events:none}
+#pxidModelHero .pxid-model-title{margin:0 0 32px;font:800 clamp(48px,4.2vw,120px)/1.08 Arial,"Microsoft YaHei",sans-serif;letter-spacing:-.04em;color:white;text-shadow:0 2px 16px #0005}
+#pxidModelHero [data-model="p6-motion"] .pxid-model-title{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+#pxidModelHero .pxid-model-copy a{pointer-events:auto;opacity:1!important;transform:none!important;background:#db1e28;border-radius:8px;overflow:hidden;min-width:160px;min-height:52px}
+#pxidModelHero .pxid-model-controls{position:absolute;left:5.75%;bottom:5.5vh;z-index:10;display:flex;align-items:center;gap:8px}
+#pxidModelHero .pxid-model-dot{min-width:44px;min-height:44px;padding:8px 12px;border:0;border-bottom:2px solid transparent;background:transparent;color:#ffffffa6;font:700 14px/1 Arial,sans-serif;cursor:pointer}
+#pxidModelHero .pxid-model-dot.is-active{color:#fff;border-color:#e31e29}
+#pxidModelHero .pxid-model-continue{position:absolute;right:5.7%;bottom:5.5vh;min-height:44px;display:flex;align-items:center;gap:16px;z-index:10;color:#fff;text-shadow:0 2px 6px #0007;font:600 14px/1.4 Arial,"Microsoft YaHei",sans-serif}
+#pxidModelHero .pxid-model-continue span{font-size:24px}
+#pxidModelHero :is(button,a):focus-visible{outline:2px solid #e31e29;outline-offset:5px}
+html.pxid-model-view #app>header,html.pxid-model-view #app>header :is(.pcNav,.appNav){transform:none!important;opacity:1!important;visibility:visible!important}
+html.pxid-model-view #app>header .pcNav{background:transparent!important;box-shadow:none!important}
+html.pxid-model-view #app>header .pcNav .navHref,html.pxid-model-view #app>header .pcNav .layer-search{color:#fff!important}
+html.pxid-model-view #app>header .pcNav .layer-search :is(input,.iconfont),html.pxid-model-view #app>header .pcNav .language .txt{color:#fff!important;text-shadow:none!important}
+html.pxid-model-view #app>header .pcNav .layer-search input::placeholder{color:#ffffffb3!important}
+html.pxid-model-view #app>header .pcNav .logo .white{opacity:1!important}
+html.pxid-model-view #app>header .pcNav .logo .black{opacity:0!important}
+html.pxid-model-view #app>header .appNav .logoBox::before{opacity:1!important}
+html.pxid-model-view #app>header .appNav .logoBox::after{opacity:0!important}
+html.pxid-model-view #app>header .appNav{background:#10161a!important}
+html.pxid-model-view #app>header .appNav .searchSub .iconfont{color:#fff!important}
+@media(max-width:900px){
+ #pxidModelHero .pxid-model-copy{left:5.5%;bottom:calc(11.5vh + 62px);max-width:89%}
+ #pxidModelHero .pxid-model-title{font-size:clamp(30px,8vw,50px);margin-bottom:22px}
+ #pxidModelHero [data-model="p2"] .pxid-model-photo img{object-fit:contain;object-position:center top;background:#62666a}
+ #pxidModelHero .pxid-model-controls{left:5.5%;bottom:10.5vh;gap:2px}
+ #pxidModelHero .pxid-model-dot{padding:8px 9px;font-size:12px}
+ #pxidModelHero .pxid-model-continue{right:5.5%;bottom:3.5vh;font-size:11px;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){#pxidModelHero .pxid-model-slide{transition:none}}

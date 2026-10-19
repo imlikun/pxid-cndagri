@@ -7,8 +7,8 @@
   var video=first.querySelector('video'),copy=sec.querySelector('.bannerList'),pager=sec.querySelector('.pager');
   var reduced=matchMedia('(prefers-reduced-motion:reduce)'),mobile=matchMedia('(max-width:900px)');
   var phase='intro',released=false,active=true,mediaReady=false,entranceDone=false,failed=false;
-  var auto={value:0},scrollProgress=0,progress=0,bridgeStarted=false,settleStarted=false,reversing=false,raf=0,frameCallback=0;
-  var runtime=null,timeline=null,trigger=null,autoTween=null,timeout,skipTimer,lastPercent=0;
+  var progress=0,bridgeStarted=false,raf=0,frameCallback=0,bridgeBegan=0,bridgeFrom=0,mediaTime=0;
+  var runtime=null,autoTween=null,timeout,skipTimer,lastPercent=0;
   var entrance=[],assets=sec.dataset.storyAssets,typeFrames=[],logoTarget=null;
   var logoImage=copy.querySelector('.pxid-intro-logo'),eyebrowDeparted=false;
   var campaignTitle=copy.querySelector('h1'),design=copy.querySelector('.story-design'),your=copy.querySelector('.story-your'),rLetter=copy.querySelector('.slogan-r'),ide=copy.querySelector('.pxid-intro-tail'),subtitle=copy.querySelector('.pxid-first-film-sub'),eyebrow=copy.querySelector('.pxid-first-film-eyebrow');
@@ -38,11 +38,10 @@
   var finalPhoto=scene.querySelector('.pxid-story-photo'),photoImage=finalPhoto.querySelector('img'),cta=scene.querySelector('a');
   grass.style.backgroundImage='url("'+assets+'hero-empty-field-20261017.webp")';
   var prompt=document.createElement('button');prompt.type='button';prompt.className='pxid-handoff-prompt';
-  prompt.innerHTML='<span>滚动，展开下一程</span><i aria-hidden="true">↓</i>';sec.appendChild(prompt);
+  prompt.innerHTML='<span>向下探索 MANTIS P6</span><i aria-hidden="true">↓</i>';sec.appendChild(prompt);
   var promptLabel=prompt.querySelector('span');
   function clamp(v){return Math.max(0,Math.min(1,v));}
   function smooth(v){v=clamp(v);return v*v*(3-2*v);}
-  function distance(){return mobile.matches?Math.min(420,innerHeight*.46):Math.min(900,Math.max(620,innerHeight*.72));}
   function start(){return shell.getBoundingClientRect().top+scrollY;}
   function setPhase(value){phase=value;sec.dataset.storyPhase=value;}
   function percent(value){
@@ -91,11 +90,11 @@
       {x:Math.max(w*.055,left-base[0].w*scale),y:row+f*scale*1.10}
     ];
     typeFrames=parts.map(function(n,i){return {node:n,x:targets[i].x-base[i].x,y:targets[i].y-base[i].y,scale:i===4?1:scale};});
-    shell.style.setProperty('--pxid-story-distance',released&&active&&!reduced.matches?distance()+'px':'0px');
+    shell.style.setProperty('--pxid-story-distance','0px');
     if(released)paintType();
   }
   function paintType(){
-    var t=smooth(progress),c=smooth((progress-.08)/.22),rgb=[255+(17-255)*c,255+(28-255)*c,255+(25-255)*c].map(Math.round);
+    var t=smooth(progress),c=smooth((progress-.22)/.30),rgb=[255+(17-255)*c,255+(28-255)*c,255+(25-255)*c].map(Math.round);
     typeFrames.forEach(function(a){a.node.style.transform=progress?'translate3d('+a.x*t+'px,'+a.y*t+'px,0) scale('+(1+(a.scale-1)*t)+')':'';});
     campaignTitle.style.setProperty('--story-ink','rgb('+rgb.join(',')+')');
     subtitle.style.color='rgb('+rgb.join(',')+')';subtitle.style.textShadow=c>.5?'none':'';
@@ -128,7 +127,7 @@
         entrance.forEach(function(a){a.cancel();});copy.style.transform='';copy.style.opacity='';
         bike.remove();loader.hidden=true;loader.dataset.introState='complete';clearGuard();
         window.dispatchEvent(new CustomEvent('pxid:hero-intro-complete'));
-        if(reduced.matches||failed)showStatic();else initScroll();
+        if(reduced.matches||failed)showStatic();else{runtime=window.pxidMotionRuntime||runtime;paint();}
       });
     });
   }
@@ -178,155 +177,66 @@
       });
     });
   }
-  function lock(value){sec.dataset.handoffLocked=String(value);sec.classList.toggle('pxid-handoff-locked',value);pager.inert=value;}
+  function lock(value){sec.dataset.handoffLocked=String(value);}
+  function refreshHeader(){
+    var rect=sec.getBoundingClientRect();
+    root.classList.toggle('pxid-story-view',released&&rect.top>=-1&&rect.bottom>=innerHeight-2);
+    root.classList.toggle('pxid-handoff-light',progress>.40&&rect.top>-40&&rect.bottom>100);
+  }
   function paint(){
-    progress=clamp(auto.value+(1-auto.value)*scrollProgress);
-    if(!active)return;
-    sec.dataset.handoffProgress=progress.toFixed(4);
-    sec.style.setProperty('--pxid-handoff-edge',(progress*100).toFixed(3)+'%');
-    var visible=progress>.001,complete=progress>=.998;
-    var heroRect=sec.getBoundingClientRect();root.classList.toggle('pxid-story-view',released&&active&&heroRect.top>=-1&&heroRect.bottom>=innerHeight-2);
-    scene.style.visibility=visible?'visible':'hidden';scene.setAttribute('aria-hidden',String(!complete));scene.inert=!complete;
+    progress=clamp(progress);var p=progress,w=sec.clientWidth,h=sec.clientHeight;
+    sec.dataset.handoffProgress=p.toFixed(4);
+    var complete=p>=.999,visible=p>.001;
+    scene.style.visibility=visible?'visible':'hidden';scene.inert=!complete;scene.setAttribute('aria-hidden',String(!complete));
     sec.classList.toggle('pxid-handoff-revealing',visible&&!complete);sec.classList.toggle('pxid-handoff-complete',complete);
-    if(timeline)timeline.progress(progress);
-    else{
-      landscape.style.clipPath='inset(0 '+((1-smooth(progress/.40))*100)+'% 0 0)';
-      landscape.style.setProperty('--story-wipe',(-40+(sec.clientWidth+80)*smooth(progress/.40))+'px');
-      rider.style.opacity=smooth((progress-.09)/.28);
-      rider.style.transform='translate3d('+(-sec.clientWidth*(mobile.matches?.16:.14)*(1-smooth((progress-.08)/.78)))+'px,'+(-sec.clientHeight*.02*(1-progress))+'px,0) scale('+(.88+.12*smooth(progress/.9))+')';
-      field.style.transform='translate3d('+(-1.8+1.8*progress)+'%,0,0) scale(1.04)';
-      finalPhoto.style.opacity=smooth((progress-.68)/.25);
-      grass.style.opacity=smooth((progress-.15)/.35);cta.style.opacity=smooth((progress-.86)/.14);
-    }
-    paintType();
-    lock(bridgeStarted&&!complete&&!reduced.matches&&!failed);
-    promptLabel.textContent=complete?'继续滚动，探索 PXID':'滚动，展开下一程';
-    document.documentElement.classList.toggle('pxid-handoff-light',progress>.32&&sec.getBoundingClientRect().bottom>100&&sec.getBoundingClientRect().top>-20);
-    if(complete){setPhase('poster');video.pause();}
-    // Resolve the last photographic match in a short uninterrupted beat, so
-    // stopping a wheel never leaves a sliced or double-exposed rider onscreen.
-    if(progress>=.68&&progress<.998&&bridgeStarted&&!settleStarted&&!reversing){
-      settleStarted=true;if(autoTween)autoTween.kill();if(raf)cancelAnimationFrame(raf);
-      if(runtime)autoTween=runtime.gsap.to(auto,{value:1,duration:.44,ease:'power1.inOut',onUpdate:paint});
-      else{var from=auto.value,began=performance.now();function settle(now){auto.value=from+(1-from)*smooth((now-began)/440);paint();if(now-began<440)raf=requestAnimationFrame(settle);}raf=requestAnimationFrame(settle);}
-    }
-  }
-  function buildTimeline(){
-    if(!runtime||timeline||reduced.matches)return;
-    var g=runtime.gsap;
-    timeline=g.timeline({paused:true,defaults:{ease:'none'}});
-    timeline.fromTo(landscape,{clipPath:'inset(0 100% 0 0)','--story-wipe':'-40px'},{clipPath:'inset(0 0% 0 0)','--story-wipe':function(){return (sec.clientWidth+40)+'px';},duration:.40,ease:'power1.inOut'},0)
-      .fromTo(field,{xPercent:-1.8,scale:1.04},{xPercent:0,scale:1.04,duration:1},0)
-      .fromTo(rider,{x:function(){return -sec.clientWidth*(mobile.matches?.16:.14);},y:function(){return -sec.clientHeight*.02;},scale:.88},{x:0,y:0,scale:1,duration:.80,ease:'power2.out'},.09)
-      .fromTo(rider,{opacity:0},{opacity:1,duration:.16,ease:'power1.out'},.13)
-      .fromTo(finalPhoto,{opacity:0},{opacity:1,duration:.25,ease:'power1.inOut'},.68)
-      .fromTo(grass,{opacity:0,xPercent:-1},{opacity:1,xPercent:0,duration:.62},.15)
-      .fromTo(cta,{opacity:0},{opacity:1,duration:.14},.86);
-    paint();
-  }
-  function scrollUpdate(){
-    if(!released||!active||reduced.matches||failed)return;
-    scrollProgress=clamp((scrollY-start())/distance());
-    if(scrollProgress>.998)scrollProgress=1;
-    if(scrollProgress>.0005&&!bridgeStarted)beginBridge();
-    paint();
-  }
-  function initScroll(){
-    if(!released||!active||reduced.matches||failed)return;
-    layout();
-    runtime=window.pxidMotionRuntime||runtime;
-    if(runtime){
-      buildTimeline();
-      if(!trigger)trigger=runtime.ScrollTrigger.create({trigger:shell,start:'top top',end:function(){return '+='+distance();},invalidateOnRefresh:true,onUpdate:scrollUpdate});
-      runtime.ScrollTrigger.refresh();
-    }
-    scrollUpdate();
+    var fieldIn=smooth(p/.20),move=smooth((p-.08)/.72),photoIn=smooth((p-.66)/.34);
+    // Begin with the side-shot horizon, then settle into the photograph's framing.
+    landscape.style.opacity=fieldIn;field.style.transform='translate3d('+(-1.2*(1-move))+'%,'+(-7*(1-move))+'%,0) scale('+(1.18-.18*move)+')';
+    sec.style.setProperty('--story-film-opacity',String(1-smooth((p-.50)/.20)));
+    // Match the last side-view shot using its media coordinate system, then
+    // move toward the unchanged photograph's helmet anchor. No scroll input.
+    var ratio=(video.videoWidth||1920)/(video.videoHeight||1080),vw=Math.max(w,h*ratio),vh=vw/ratio;
+    var vx=(w-vw)*(mobile.matches?.40:.5),vy=(h-vh)/2;
+    var startWidth=vw*.27,endWidth=parseFloat(rider.style.width),endX=parseFloat(rider.style.left),endY=parseFloat(rider.style.top);
+    var startX=vx+vw*.445-startWidth*.609,startY=vy+vh*.345;
+    var scale=startWidth/endWidth,dx=startX-endX,dy=startY-endY;
+    rider.style.transform='translate3d('+(dx*(1-move))+'px,'+(dy*(1-move))+'px,0) scale('+(scale+(1-scale)*move)+')';
+    rider.style.transformOrigin='0 0';rider.style.opacity=String(smooth(p/.16)*(1-photoIn));
+    rider.style.filter='blur('+(2+2*(1-smooth(p/.6)))+'px) brightness('+(.83+.17*move)+')';
+    rider.style.setProperty('--rider-solid',(56+34*move)+'%');rider.style.setProperty('--rider-clear',(72+28*move)+'%');
+    finalPhoto.style.opacity=photoIn;grass.style.opacity=smooth((p-.18)/.4)*(1-photoIn);
+    cta.style.opacity=smooth((p-.86)/.14);paintType();refreshHeader();lock(bridgeStarted&&!complete);
+    if(complete){setPhase('poster');video.pause();scene.dataset.finalMedia='original-photo-mirrored';}
   }
   function beginBridge(){
-    if(bridgeStarted||!active||reduced.matches||failed)return;
-    if(autoTween)autoTween.kill();if(raf)cancelAnimationFrame(raf);raf=0;
-    bridgeStarted=true;setPhase('handoff');sec.classList.add('pxid-handoff-outro','pxid-handoff-ready');
-    // Time handles the first short bridge. Native scroll continues that SAME progress.
-    if(runtime){autoTween=runtime.gsap.to(auto,{value:.38,duration:.48,ease:'power2.inOut',onUpdate:paint});}
-    else{
-      var from=auto.value,began=performance.now();
-      function step(now){auto.value=from+(.38-from)*smooth((now-began)/480);paint();if(now-began<480)raf=requestAnimationFrame(step);}
-      raf=requestAnimationFrame(step);
-    }
+    if(bridgeStarted||reduced.matches||failed)return;
+    bridgeStarted=true;mediaTime=video.currentTime;sec.dataset.bridgeMediaTime=mediaTime.toFixed(3);video.pause();
+    setPhase('handoff');sec.classList.add('pxid-handoff-outro','pxid-handoff-ready');
+    runtime=window.pxidMotionRuntime||runtime;bridgeBegan=performance.now();bridgeFrom=progress;
+    if(runtime){autoTween=runtime.gsap.to({p:progress},{p:1,duration:1.22,ease:'none',onUpdate:function(){progress=this.targets()[0].p;paint();},onComplete:function(){progress=1;paint();}});}
+    else{function step(now){progress=bridgeFrom+(1-bridgeFrom)*clamp((now-bridgeBegan)/1220);paint();if(progress<1)raf=requestAnimationFrame(step);}raf=requestAnimationFrame(step);}
   }
   function showStatic(){
-    if(trigger){trigger.kill();trigger=null;}if(autoTween)autoTween.kill();if(raf)cancelAnimationFrame(raf);raf=0;video.pause();auto.value=1;scrollProgress=0;bridgeStarted=false;
-    shell.style.setProperty('--pxid-story-distance','0px');sec.classList.add('pxid-handoff-outro');paint();lock(false);setPhase('poster');
+    if(autoTween)autoTween.kill();if(raf)cancelAnimationFrame(raf);raf=0;
+    video.pause();progress=1;bridgeStarted=false;sec.classList.add('pxid-handoff-outro','pxid-handoff-ready');paint();lock(false);setPhase('poster');
   }
   function watchFilm(){
-    if(frameCallback)return;
+    if(frameCallback||bridgeStarted)return;
     function tick(){
-      frameCallback=0;if(!active||video.paused||phase==='intro')return;
-      if(Number.isFinite(video.duration)){
-        var remaining=video.duration-video.currentTime;
-        if(remaining<=1.3)sec.classList.add('pxid-handoff-anticipate');
-        // Keep every word on the moving film; the same nodes travel into the photograph.
-      }
+      frameCallback=0;if(video.paused||bridgeStarted||phase==='intro')return;
+      if(Number.isFinite(video.duration)&&video.currentTime>=video.duration-.50){beginBridge();return;}
       frameCallback=requestAnimationFrame(tick);
     }
     frameCallback=requestAnimationFrame(tick);
   }
-  function stopScroll(){
-    if(trigger){trigger.kill();trigger=null;}
-    if(autoTween){autoTween.kill();autoTween=null;}if(raf)cancelAnimationFrame(raf);raf=0;
-    var inHero=sec.getBoundingClientRect().top>=-distance()-10&&sec.getBoundingClientRect().bottom>0;
-    shell.style.setProperty('--pxid-story-distance','0px');if(inHero)window.scrollTo({top:start(),behavior:'instant'});
-    document.documentElement.classList.remove('pxid-handoff-light','pxid-story-view');
-    if(runtime)requestAnimationFrame(function(){runtime.ScrollTrigger.refresh();});
-  }
-  function sync(){
-    if(!released)return;
-    var next=(first.classList.contains('on')||first.classList.contains('in')||(root.classList.contains('pxid-fallback-motion')&&pager.querySelector('.BannerDot').classList.contains('on')))&&!first.classList.contains('out');
-    if(next===active)return;active=next;
-    if(!active){
-      video.pause();stopScroll();scene.style.visibility='hidden';scene.inert=true;scene.setAttribute('aria-hidden','true');
-      typeFrames.forEach(function(a){a.node.style.transform='';});rLetter.style.opacity='';campaignTitle.style.removeProperty('--story-ink');subtitle.style.color='';eyebrow.style.opacity='';
-      sec.classList.remove('pxid-intro-copy-hold','pxid-handoff-outro','pxid-handoff-ready','pxid-handoff-revealing','pxid-handoff-complete','pxid-handoff-anticipate');lock(false);
-    }else{
-      if(autoTween)autoTween.kill();auto.value=scrollProgress=progress=0;bridgeStarted=false;settleStarted=false;
-      sec.classList.add('pxid-intro-copy-hold');layout();paintType();
-      if(timeline)timeline.progress(0);sec.classList.remove('pxid-handoff-outro');setPhase('film');
-      if(reduced.matches||failed)showStatic();else{layout();initScroll();video.currentTime=0;video.play().catch(failMedia);watchFilm();}
-    }
-  }
-  new MutationObserver(sync).observe(first,{attributes:true,attributeFilter:['class']});
-  new MutationObserver(sync).observe(pager.querySelector('.BannerDot'),{attributes:true,attributeFilter:['class']});
-  window.addEventListener('pxid:motion-ready',function(){runtime=window.pxidMotionRuntime;initScroll();});
-  var lastScrollPosition=scrollY;
-  window.addEventListener('scroll',function(){
-    var upward=scrollY<lastScrollPosition;reversing=upward;lastScrollPosition=scrollY;
-    if(!trigger)scrollUpdate();
-    if(!active)return;
-    var rect=sec.getBoundingClientRect();root.classList.toggle('pxid-handoff-light',progress>.32&&rect.top>-20&&rect.bottom>100);
-    root.classList.toggle('pxid-story-view',released&&rect.top>=-1&&rect.bottom>=innerHeight-2);
-    if(upward&&scrollY-start()>=1&&settleStarted){
-      settleStarted=false;if(autoTween)autoTween.kill();if(raf)cancelAnimationFrame(raf);raf=0;
-      if(runtime)autoTween=runtime.gsap.to(auto,{value:.38,duration:.32,onUpdate:paint});else{auto.value=.38;paint();}
-    }
-    if(upward&&scrollY-start()<1&&auto.value>0){
-      scrollProgress=0;
-      if(autoTween)autoTween.kill();
-      if(raf)cancelAnimationFrame(raf);raf=0;
-      bridgeStarted=false;settleStarted=false;
-      if(runtime)autoTween=runtime.gsap.to(auto,{value:0,duration:.32,onUpdate:paint});else{auto.value=0;paint();}
-    }
-  },{passive:true});
-  window.addEventListener('resize',function(){layout();if(timeline)timeline.invalidate();if(trigger)trigger.refresh();paint();},{passive:true});
-  video.addEventListener('ended',beginBridge);video.addEventListener('play',watchFilm);
-  video.addEventListener('error',failMedia);
+  window.addEventListener('pxid:motion-ready',function(){runtime=window.pxidMotionRuntime;});
+  window.addEventListener('scroll',refreshHeader,{passive:true});
+  window.addEventListener('resize',function(){layout();paint();},{passive:true});
+  video.addEventListener('ended',beginBridge);video.addEventListener('play',watchFilm);video.addEventListener('error',failMedia);
   ['progress','loadeddata','canplay','canplaythrough'].forEach(function(name){video.addEventListener(name,loadingProgress);});
   skip.addEventListener('click',function(){mediaReady=true;if(video.readyState<2)failed=true;finishIntro();});
-  prompt.addEventListener('click',function(){
-    if(!active)return;
-    if(reduced.matches||failed||progress>.998){window.scrollTo({top:start()+shell.offsetHeight,behavior:reduced.matches?'instant':'smooth'});return;}
-    beginBridge();window.scrollTo({top:start()+distance(),behavior:'smooth'});
-  });
-  document.addEventListener('visibilitychange',function(){if(document.hidden)video.pause();else if(active&&released&&!bridgeStarted&&!video.ended&&!failed&&!reduced.matches)video.play().catch(function(){});});
+  prompt.addEventListener('click',function(){var next=document.getElementById('pxidModelHero');if(next)window.scrollTo({top:next.getBoundingClientRect().top+scrollY,behavior:reduced.matches?'instant':'smooth'});});
+  document.addEventListener('visibilitychange',function(){if(document.hidden){video.pause();if(autoTween)autoTween.pause();}else{if(autoTween)autoTween.resume();if(released&&!bridgeStarted&&!video.ended&&!failed&&!reduced.matches)video.play().catch(function(){});}});
   reduced.addEventListener('change',function(){if(reduced.matches&&released)showStatic();});
   video.loop=false;video.removeAttribute('loop');video.preload='auto';
   video.src=assets+(mobile.matches?'hero-field-mobile-20261017.mp4':'hero-field-web-20261017.mp4');video.load();

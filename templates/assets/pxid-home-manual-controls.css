@@ -1,22 +1,22 @@
-/* Manual controls enhance the existing Hero pager without replacing its slides. */
-#pxidS1 .pxid-hero-manual-controls{display:inline-flex;align-items:center;gap:6px;margin-left:14px;vertical-align:middle}
-#pxidS1 .pxid-hero-manual-button{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;padding:0;border:1px solid rgba(255,255,255,.42);border-radius:50%;background:rgba(0,0,0,.24);color:#fff;cursor:pointer;transition:background .2s,border-color .2s,opacity .2s}
-#pxidS1 .pxid-hero-manual-button svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-#pxidS1 .pxid-hero-manual-button:focus-visible{outline:2px solid #e31e29;outline-offset:4px}
-#pxidS1 .pxid-hero-manual-button:disabled{opacity:.45;cursor:default}
-@media(hover:hover) and (pointer:fine){#pxidS1 .pxid-hero-manual-button:not(:disabled):hover{background:#e31e29;border-color:#e31e29}}
-#pxidS1 .pxid-hero-switch-cursor{position:absolute;left:0;top:0;z-index:50;pointer-events:none;transform:translate3d(var(--pxid-cursor-x,0px),var(--pxid-cursor-y,0px),0);visibility:hidden}
-#pxidS1 .pxid-hero-switch-cursor.is-visible{visibility:visible}
-#pxidS1 .pxid-hero-switch-cursor-bubble{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:clamp(88px,6.4vw,144px);height:clamp(88px,6.4vw,144px);border-radius:50%;background:#db1e28;color:#fff;box-shadow:0 12px 40px rgba(0,0,0,.2);opacity:0;transform:translate(-50%,-50%) scale(.8);transition:opacity .18s,transform .24s cubic-bezier(.2,.8,.2,1)}
-#pxidS1 .pxid-hero-switch-cursor.is-visible .pxid-hero-switch-cursor-bubble{opacity:1;transform:translate(-50%,-50%) scale(1)}
-#pxidS1 .pxid-hero-switch-cursor-arrow{font:400 clamp(28px,2.3vw,46px)/.8 Arial,Helvetica,sans-serif}
-#pxidS1 .pxid-hero-switch-cursor-label{font:600 clamp(12px,.75vw,18px)/1.3 Arial,"Noto Sans SC",sans-serif;letter-spacing:.06em}
-#pxidS1.pxid-hero-follow-on{cursor:none}
-#pxidS1.pxid-hero-follow-on .pxid-first-film-cursor{opacity:0!important}
+/* Shared manual buttons and following-pointer cursor for Hero campaigns. */
+:is(#pxidS1,#pxidModelHero) .pxid-hero-manual-controls{display:inline-flex;align-items:center;gap:6px;margin-left:14px;vertical-align:middle}
+:is(#pxidS1,#pxidModelHero) .pxid-hero-manual-button{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;padding:0;border:1px solid rgba(255,255,255,.42);border-radius:50%;background:rgba(0,0,0,.24);color:#fff;cursor:pointer;transition:background .2s,border-color .2s,opacity .2s}
+:is(#pxidS1,#pxidModelHero) .pxid-hero-manual-button svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+:is(#pxidS1,#pxidModelHero) .pxid-hero-manual-button:focus-visible{outline:2px solid #e31e29;outline-offset:4px}
+:is(#pxidS1,#pxidModelHero) .pxid-hero-manual-button:disabled{opacity:.45;cursor:default}
+@media(hover:hover) and (pointer:fine){:is(#pxidS1,#pxidModelHero) .pxid-hero-manual-button:not(:disabled):hover{background:#e31e29;border-color:#e31e29}}
+:is(#pxidS1,#pxidModelHero) .pxid-hero-switch-cursor{position:absolute;left:0;top:0;z-index:50;pointer-events:none;transform:translate3d(var(--pxid-cursor-x,0px),var(--pxid-cursor-y,0px),0);visibility:hidden}
+:is(#pxidS1,#pxidModelHero) .pxid-hero-switch-cursor.is-visible{visibility:visible}
+:is(#pxidS1,#pxidModelHero) .pxid-hero-switch-cursor-bubble{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:clamp(88px,6.4vw,144px);height:clamp(88px,6.4vw,144px);border-radius:50%;background:#db1e28;color:#fff;box-shadow:0 12px 40px rgba(0,0,0,.2);opacity:0;transform:translate(-50%,-50%) scale(.8);transition:opacity .18s,transform .24s cubic-bezier(.2,.8,.2,1)}
+:is(#pxidS1,#pxidModelHero) .pxid-hero-switch-cursor.is-visible .pxid-hero-switch-cursor-bubble{opacity:1;transform:translate(-50%,-50%) scale(1)}
+:is(#pxidS1,#pxidModelHero) .pxid-hero-switch-cursor-arrow{font:400 clamp(28px,2.3vw,46px)/.8 Arial,Helvetica,sans-serif}
+:is(#pxidS1,#pxidModelHero) .pxid-hero-switch-cursor-label{font:600 clamp(12px,.75vw,18px)/1.3 Arial,"Noto Sans SC",sans-serif;letter-spacing:.06em}
+:is(#pxidS1,#pxidModelHero).pxid-hero-follow-on{cursor:none}
+:is(#pxidS1,#pxidModelHero).pxid-hero-follow-on .pxid-first-film-cursor{opacity:0!important}
 @media(max-width:900px){
- #pxidS1 .pxid-hero-manual-controls{gap:4px;margin-left:8px}
- #pxidS1 .pxid-hero-manual-button{width:36px;height:36px}
- #pxidS1 .pxid-hero-manual-button svg{width:17px;height:17px}
+ :is(#pxidS1,#pxidModelHero) .pxid-hero-manual-controls{gap:4px;margin-left:8px}
+ :is(#pxidS1,#pxidModelHero) .pxid-hero-manual-button{width:36px;height:36px}
+ :is(#pxidS1,#pxidModelHero) .pxid-hero-manual-button svg{width:17px;height:17px}
 }
-@media(hover:none),(pointer:coarse){#pxidS1 .pxid-hero-switch-cursor{display:none}#pxidS1.pxid-hero-follow-on{cursor:auto}}
-@media(prefers-reduced-motion:reduce){#pxidS1 .pxid-hero-manual-button,#pxidS1 .pxid-hero-switch-cursor-bubble{transition:none}}
+@media(hover:none),(pointer:coarse){:is(#pxidS1,#pxidModelHero) .pxid-hero-switch-cursor{display:none}:is(#pxidS1,#pxidModelHero).pxid-hero-follow-on{cursor:auto}}
+@media(prefers-reduced-motion:reduce){:is(#pxidS1,#pxidModelHero) .pxid-hero-manual-button,:is(#pxidS1,#pxidModelHero) .pxid-hero-switch-cursor-bubble{transition:none}}
