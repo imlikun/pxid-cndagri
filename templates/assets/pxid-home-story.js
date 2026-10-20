@@ -85,8 +85,8 @@
     ]:[
       {x:left-base[0].w*scale,y:row-f*scale*1.1},
       {x:left-base[1].w*scale,y:row},
-      {x:ix+iw*.50-base[2].w*scale*.5,y:row},
       {x:right,y:row},
+      {x:right+base[2].w*scale,y:row},
       {x:Math.max(w*.055,left-base[0].w*scale),y:row+f*scale*1.10}
     ];
     typeFrames=parts.map(function(n,i){return {node:n,x:targets[i].x-base[i].x,y:targets[i].y-base[i].y,scale:i===4?1:scale};});
@@ -98,7 +98,7 @@
     typeFrames.forEach(function(a){a.node.style.transform=progress?'translate3d('+a.x*t+'px,'+a.y*t+'px,0) scale('+(1+(a.scale-1)*t)+')':'';});
     campaignTitle.style.setProperty('--story-ink','rgb('+rgb.join(',')+')');
     subtitle.style.color='rgb('+rgb.join(',')+')';subtitle.style.textShadow=c>.5?'none':'';
-    rLetter.style.opacity=mobile.matches?'1':String(1-smooth((progress-.46)/.26));
+    rLetter.style.opacity='1';
     rLetter.style.pointerEvents=progress>.05?'none':'';
     eyebrow.style.opacity=eyebrowDeparted?'0':String(1-smooth(progress/.48));
   }
