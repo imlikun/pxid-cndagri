@@ -106,7 +106,7 @@
   </div>
 </div></div>
 </template>
-  <div class="pxid-s2switch" role="group" aria-label="ODM 排版切换"><span class="lbl">ODM 排版</span><button type="button" data-v="orig" class="on">当前版式</button><button type="button" data-v="a">ODM 服务流程</button></div>
+  <div class="pxid-s2switch" style="display:none" aria-hidden="true"><span class="lbl">ODM 排版</span><button type="button" data-v="orig" class="on">当前版式</button><button type="button" data-v="a">ODM 服务流程</button></div>
   <style id="pxid-s2-switch-css">
 #pxidS2{position:relative}
 #app.home #pxidS2:not([data-s1v="orig"]){height:auto!important;min-height:100vh;min-height:100svh;padding:0!important}
@@ -174,7 +174,7 @@
   }
   if(frame) frame.addEventListener("load", syncNav);
   for(var i=0;i<btns.length;i++)(function(b){ b.addEventListener("click",function(){ set(b.getAttribute("data-v")); }); })(btns[i]);
-  var saved="orig"; try{ saved=localStorage.getItem(KEY)||"orig"; }catch(e){}
+  var saved="a";
   var requested=new URLSearchParams(location.search).get("odm");
   if(requested==="a"||requested==="orig") saved=requested;
   if(saved!=="a") saved="orig";
