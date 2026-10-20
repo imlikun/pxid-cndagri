@@ -10,7 +10,7 @@ html,body {margin:0;padding:0;width:100%;min-height:100%;height:auto;background:
 html {height:100%;}
 body {display:flex;flex-direction:column;justify-content:center;}
 :where(h2,p) {margin:0;}
-.blk {width:100%;flex:0 0 auto;padding:clamp(56px,3.1vw,120px) 0;}
+.blk {width:100%;flex:0 0 auto;padding:1.08rem 0 .6rem;}
 .wrap {width:min(95%,3500px);margin:0 auto;}
 .bento {display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:var(--row);gap:var(--gap);}
 .tile {position:relative;min-width:0;overflow:hidden;border-radius:3px;background:#d9dce0;}
@@ -71,7 +71,7 @@ body {display:flex;flex-direction:column;justify-content:center;}
   .cap .s {font-size:11px;}
 }
 @media (max-width:1100px) {
-  .blk {padding:80px 0 72px;}
+  .blk {padding:1.08rem 0 .6rem;}
   .wrap {width:calc(100% - 40px);max-width:900px;}
   .bento {grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;grid-auto-rows:clamp(165px,22vw,230px);gap:14px;}
   .bento .tile {grid-column:auto;grid-row:auto;}
@@ -93,7 +93,7 @@ body {display:flex;flex-direction:column;justify-content:center;}
   .t01 .cap .n,.t01 .cap .t {font-size:24px;}
 }
 @media (max-width:600px) {
-  .blk {padding:80px 0 78px;}
+  .blk {padding:1.08rem 0 .6rem;}
   .wrap {width:calc(100% - 32px);}
   .bento {display:flex;flex-direction:column;gap:12px;}
   .bento .tile {height:185px;flex:0 0 auto;}
