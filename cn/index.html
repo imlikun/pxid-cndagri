@@ -110,7 +110,7 @@
 .tile[data-step]{cursor:pointer}
 .tile[data-step] .img{transition:transform .45s ease}
 .tile[data-step]:hover .img{transform:scale(1.045)}
-.tile[data-step]::after{content:"查看详情\A↓";white-space:pre;position:absolute;left:50%;top:42%;width:112px;height:112px;border-radius:50%;background:#d71920;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font:700 15px/1.55 Arial,"PingFang SC","Microsoft YaHei";text-align:center;letter-spacing:.08em;transform:translate(-50%,-50%) scale(.45);opacity:0;transition:.3s cubic-bezier(.34,1.35,.5,1);pointer-events:none;box-shadow:0 14px 36px rgba(215,25,32,.45)}
+.tile[data-step]::after{content:"查看详情\A↓";white-space:pre;position:absolute;left:var(--mx,50%);top:var(--my,42%);width:112px;height:112px;border-radius:50%;background:#d71920;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font:700 15px/1.55 Arial,"PingFang SC","Microsoft YaHei";text-align:center;letter-spacing:.08em;transform:translate(-50%,-50%) scale(.45);opacity:0;transition:.3s cubic-bezier(.34,1.35,.5,1);pointer-events:none;box-shadow:0 14px 36px rgba(215,25,32,.45)}
 .tile[data-step]:hover::after{opacity:1;transform:translate(-50%,-50%) scale(1)}
 /* ── 弹窗（黑底白字红点缀）── */
 .odmp{position:fixed;inset:0;z-index:9999;display:none;background:rgba(0,0,0,.74);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:3vh 3vw}
@@ -171,6 +171,7 @@
   var tiles=document.querySelectorAll('.tile[data-step]');
   tiles.forEach(function(el,i){
     el.addEventListener('click',function(){open(i);});
+    el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px');});
     el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(i);}});
   });
   btn.addEventListener('click',close);
