@@ -661,7 +661,7 @@
 </div>
 </div>
 </div>
-  <div class="pxid-s7switch" role="group" aria-label="ODM 排版切换"><span class="lbl">ODM 排版</span><button type="button" data-v="orig" class="on">ODM 服务流程</button><button type="button" data-v="a">产品概览</button></div>
+  <div class="pxid-s7switch" style="display:none" aria-hidden="true"><span class="lbl">ODM 排版</span><button type="button" data-v="orig" class="on">ODM 服务流程</button><button type="button" data-v="a">产品概览</button></div>
 
   <iframe class="pxid-s7frame" title="ODM 排版预览" hidden></iframe>
   <template class="pxid-s7tpl" data-v="a"><style>
@@ -839,7 +839,7 @@
   }
   if(frame) frame.addEventListener("load", syncNav);
   for(var i=0;i<btns.length;i++)(function(b){ b.addEventListener("click",function(){ set(b.getAttribute("data-v")); }); })(btns[i]);
-  var saved="orig"; try{ saved=localStorage.getItem(KEY)||"orig"; }catch(e){}
+  var saved="a";
   if(saved!=="a") saved="orig";
   set(saved);
   window.__pxidS7=set;
