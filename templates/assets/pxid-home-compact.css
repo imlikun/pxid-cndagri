@@ -1,0 +1,37 @@
+/* Homepage phone/tablet repairs. The approved desktop composition is unchanged. */
+@media(max-width:1200px), (pointer:coarse) and (max-width:1400px){
+ #app.home #pxidS4[data-s1v="b"]{height:auto!important;min-height:0!important;padding:0!important;overflow:hidden!important}
+ #app.home #pxidS4[data-s1v="b"]{padding-left:env(safe-area-inset-left,0px)!important;padding-right:env(safe-area-inset-right,0px)!important}
+ #app.home #pxidS4[data-s1v="b"]>.inner{display:none!important}
+ #app.home #pxidS4[data-s1v="b"]>.pxid-s4frame{position:relative!important;inset:auto!important;display:block;width:100%;height:650px;min-height:0;border:0;vertical-align:top;background:#ececec}
+ #app.home #pxidS4 .pxid-s4switch{display:none!important}
+ #app.home #pxidS4{scroll-margin-top:80px}
+ #app.home>header .appNav{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+ #app.home>.pxid-skip-link{max-width:calc(100vw - 32px)}
+}
+@media(max-width:600px) and (max-height:600px){
+ #app.home #pxidS1 .pxid-first-film-title{font-size:clamp(32px,9vw,58px)!important}
+ #app.home #pxidHeroIntro .pxid-intro-progress{font-size:clamp(66px,18vw,120px)}
+}
+@media(min-width:901px) and (max-width:1200px), (min-width:901px) and (max-width:1400px) and (pointer:coarse){
+ #app.home>header .pcNav{display:none!important}
+ #app.home>header .appNav{display:flex!important;align-items:center;justify-content:space-between;position:relative;width:100%;height:72px;padding:0 32px;padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px));background:rgba(249,249,247,.97)!important;box-shadow:0 3px 12px #0000000d}
+ #app.home>header .appNav .mask{display:none!important}
+ #app.home>header .appNav .logoBox{position:relative;width:110px!important;max-width:110px;height:27px!important;display:block;flex:none}
+ #app.home>header .appNav .logoBox::before{opacity:0!important}
+ #app.home>header .appNav .logoBox::after{content:"";position:absolute;inset:0;background:url('../../assets/pxid/logo-opening-ink-20261017.webp') left center/contain no-repeat;opacity:1!important}
+ #app.home>header .appNav .logoBox img{display:block;width:100%;height:100%;object-fit:contain;opacity:0!important}
+ #app.home>header .appNav .col{display:flex;align-items:center;gap:20px}
+ #app.home>header .appNav .searchSub{display:grid;place-items:center;width:44px;height:44px;color:#171717!important}
+ #app.home>header .appNav .searchSub .iconfont{font-size:22px;color:#171717!important}
+ html.pxid-menu-ready #app.home>header .appNav #menu,html.pxid-menu-ready #app.home>header .appNav #menu.is-opened-navi{position:relative;display:grid;place-items:center;width:48px;min-width:48px;height:48px;min-height:48px;padding:0;border:0;border-radius:10px;background:#d71920!important;color:#fff!important;overflow:hidden}
+ html.pxid-menu-ready #app.home>header #menu .txt,html.pxid-menu-ready #app.home>header #menu .icon{display:none!important}
+ #app.home>header #menu .pxid-menu-glyph{display:block;width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round}
+ #app.home>header #menu .pxid-menu-line{transform-origin:center;transition:transform .2s}
+ #app.home>header #menu.is-opened-navi .pxid-menu-line-top{transform:translateY(4px) rotate(45deg)}
+ #app.home>header #menu.is-opened-navi .pxid-menu-line-bottom{transform:translateY(-4px) rotate(-45deg)}
+ html.pxid-menu-ready #app.home nav.menu .items{display:block!important;height:auto!important;min-height:100svh;padding:104px 40px 36px}
+ html.pxid-menu-ready #app.home nav.menu .items .content{display:flex!important;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px;width:100%;max-width:700px;margin:0 auto}
+ html.pxid-menu-ready #app.home nav.menu .appNavList{display:flex!important;align-items:center;min-height:48px;margin:0;padding:6px 0}
+ html.pxid-menu-ready #app.home nav.menu .appNavList>span{font-size:25px!important;line-height:1.3}
+}

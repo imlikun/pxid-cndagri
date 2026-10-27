@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="../templates/assets/pxid-home-story.css?v=20261020-video10">
 <noscript><style>#pxidHeroIntro{display:none!important}#pxidS1 .bannerPic:first-child,#pxidS1 .bannerList:first-child{opacity:1!important;visibility:visible!important}</style></noscript>
   <link rel="stylesheet" href="../templates/assets/pxid-home-process-dialog.css?v=20261020-process1">
+  <link rel="stylesheet" href="../templates/assets/pxid-home-compact.css?v=20261027-mobile1">
 </head>
 <body id="app" class="home" data-motion-src="../templates/assets/pxid-home-motion.js?v=20261017-story3">
 <!-- 全站去掉波浪（坤哥 2026-09-19）：hero/r6 的 .wave 与 footer 顶部 svg.water 隐藏，footer 顶部改平直线 -->
@@ -495,6 +496,43 @@
   #P .stack { height: 79vh; }
   /* 列表随之微调，保持与标题／图框的视觉关系 */
   #P .idx   { top: 40%; }
+/* Touch layout uses document flow, never the desktop absolute paper stack. */
+@media(max-width:1200px), (pointer:coarse) and (max-width:1400px){
+ html,body{height:auto!important;overflow:hidden!important}
+ body{display:block!important}
+ #P{min-height:0!important;padding:36px clamp(20px,4vw,48px) 28px!important;display:flex;flex-direction:column;gap:22px;border:0;transform:none!important}
+ #P .head{position:static;margin:0!important;order:0}
+ #P .eyebrow{font-size:11px;letter-spacing:.25em;line-height:1.4}
+ #P .eyebrow::after{margin-top:9px;width:26px}
+ #P .head h2{font-size:clamp(30px,4.2vw,42px);line-height:1.15;margin-top:12px;font-weight:700}
+ #P .idx{position:static;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;order:1;width:100%}
+ #P .idx .it{display:block;min-height:60px;padding:10px 6px;border:1px solid #17171726;background:#ffffff52;text-align:center;border-radius:4px!important;transform:none;transition:background .2s,border-color .2s}
+ #P .idx .it::before{display:none}
+ #P .idx .it .no{display:block;font-size:10px;letter-spacing:.12em;line-height:1.3;margin-bottom:5px;transform:none!important}
+ #P .idx .it h3{font-size:clamp(12px,1.7vw,17px);line-height:1.3;white-space:nowrap;transform:none!important}
+ #P .idx .it p{display:none}
+ #P .idx .it.on{background:#fff;border-color:#d71920}
+ #P .idx .it.on .no,#P .idx .it.on h3{color:#d71920}
+ #P .idx .it:focus-visible,#P .compact-controls button:focus-visible{outline:2px solid #d71920;outline-offset:3px}
+ #P .stack{position:relative;inset:auto;order:2;width:100%;height:auto!important;aspect-ratio:16/10;max-height:600px;transform:none!important;animation:none!important;touch-action:pan-y}
+ #P .sheet,#P .stack:hover .sheet{inset:0;border-radius:6px!important;box-shadow:none!important;transform:none!important;transition:opacity .28s ease}
+ #P .sheet:not(.on){opacity:0!important;pointer-events:none}
+ #P .sheet.on{opacity:1;z-index:3}
+ #P .sheet img,#P .sheet.on img{object-fit:contain;object-position:center;animation:none!important;transform:none!important;filter:none;background:#ececec}
+ #P .compact-caption{order:3;display:block;color:#171717}
+ #P .compact-caption strong{display:block;font-size:22px;line-height:1.3;font-weight:700}
+ #P .compact-caption p{margin-top:7px;font-size:14px;line-height:1.65;color:#676767}
+ #P .count{position:static;order:4;min-height:44px;justify-content:flex-end;gap:16px}
+ #P .count .bar{display:none}
+ #P .count .t{margin-right:auto;font-size:12px;letter-spacing:.16em}
+ #P .compact-controls{display:flex;gap:10px}
+ #P .compact-controls button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid #17171740;border-radius:50%!important;background:transparent;color:#171717;font:400 24px/1 Arial;cursor:pointer}
+ #P .compact-controls button:active{background:#d71920;border-color:#d71920;color:#fff}
+ html.pxid-mo-ready #P .pxid-reveal{opacity:1!important;transform:none!important;transition:none!important}
+}
+@media(min-width:1401px), (min-width:1201px) and (pointer:fine){#P .compact-caption,#P .compact-controls{display:none}}
+@media(prefers-reduced-motion:reduce){#P .sheet,#P .idx .it{transition:none}#P .stack,#P .sheet.on img{animation:none!important}}
+
 </style><section id="P">
   <div class="head"><div class="eyebrow">Product Lines</div><h2>产品系列</h2></div>
   <div class="idx">
@@ -518,6 +556,9 @@
   var its = P.querySelectorAll('.idx .it'), sh = P.querySelectorAll('.stack .sheet');
   var bar = P.querySelector('.count .bar'), tt = P.querySelector('.count .t');
   var cur = 0, timer = null;
+  var compact=window.matchMedia('(max-width:1200px), (pointer:coarse) and (max-width:1400px)'),reduced=window.matchMedia('(prefers-reduced-motion:reduce)');
+  var caption=document.createElement('div');caption.className='compact-caption';caption.setAttribute('aria-live','polite');caption.innerHTML='<strong></strong><p></p>';P.appendChild(caption);
+  var controls=document.createElement('div');controls.className='compact-controls';controls.innerHTML='<button type="button" aria-label="上一个产品系列">←</button><button type="button" aria-label="下一个产品系列">→</button>';P.querySelector('.count').appendChild(controls);
   function go(i){
     cur = i;
     sh.forEach(function(s,k){
@@ -530,14 +571,28 @@
     var back = [];
     sh.forEach(function(s,k){ if(k > i) back.push(s); });
     back.forEach(function(s,n){ s.classList.remove('s0','s1'); s.classList.add(n===0 ? 's1' : 's0'); });
-    its.forEach(function(t,k){ t.classList.toggle('on', k===i); });
+    its.forEach(function(t,k){ t.classList.toggle('on', k===i);t.setAttribute('aria-pressed',String(k===i)); });
+    sh.forEach(function(s,k){s.setAttribute('aria-hidden',String(k!==i));});
+    caption.querySelector('strong').textContent=its[i].querySelector('h3').textContent;
+    caption.querySelector('p').textContent=its[i].querySelector('p').textContent;
     tt.textContent = '0' + (i+1) + ' / 03';
     bar.classList.remove('run'); void bar.offsetWidth; bar.classList.add('run');
   }
-  function arm(){ clearInterval(timer); timer = setInterval(function(){ go((cur+1) % 3); }, 5000); }
+  function arm(){ clearInterval(timer);if(compact.matches||reduced.matches)return; timer = setInterval(function(){ go((cur+1) % 3); }, 5000); }
   its.forEach(function(t){
-    t.addEventListener('mouseenter', function(){ go(+t.dataset.i); arm(); });
+    t.setAttribute('role','button');t.setAttribute('tabindex','0');t.setAttribute('aria-label',t.querySelector('h3').textContent);
+    t.addEventListener('mouseenter', function(){if(!compact.matches){go(+t.dataset.i);arm();}});
+    t.addEventListener('click',function(){go(+t.dataset.i);arm();});
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(+t.dataset.i);arm();}});
   });
+  controls.children[0].addEventListener('click',function(){go((cur+2)%3);arm();});
+  controls.children[1].addEventListener('click',function(){go((cur+1)%3);arm();});
+  var start=null,stack=P.querySelector('.stack');
+  stack.addEventListener('pointerdown',function(e){if(compact.matches)start={x:e.clientX,y:e.clientY};});
+  stack.addEventListener('pointercancel',function(){start=null;});
+  stack.addEventListener('pointerup',function(e){if(!start)return;var x=e.clientX-start.x,y=e.clientY-start.y;start=null;if(Math.abs(x)>40&&Math.abs(x)>Math.abs(y)){go((cur+(x<0?1:2))%3);arm();}});
+  compact.addEventListener('change',function(){arm();alignHead();});
+  reduced.addEventListener('change',arm);
   go(0);
   arm();
 
@@ -546,6 +601,7 @@
      centerContent 的并集边界 → 整体平移量跟着变（实测写死值会差几十 px）。
      ⚠️ 量之前要把 stack 的呼吸动画停到基准相位 —— stackBob 有 ±9px 浮动，否则结果随机偏。 */
   function alignHead(){
+    if(compact.matches){P.querySelector(".head").style.marginTop="0";return;}
     var hd = P.querySelector('.head'), eb = P.querySelector('.head .eyebrow'),
         st = P.querySelector('.stack'), on = P.querySelector('.stack .sheet.on');
     if (!eb || !st || !on) return;
@@ -605,6 +661,7 @@
      ③ 只做纯平移 translateY 补正 —— 不改高度（改高度会让 74% 这类百分比定位跟着动，来回振荡）；
      ④ 平移后底部会露出一条 → body 用 root 自己的背景色兜住，肉眼无缝。 */
   function centerContent(){
+    if(window.matchMedia("(max-width:1200px), (pointer:coarse) and (max-width:1400px)").matches){fitFrame();return;}
     if(!frame||frame.hidden) return;
     try{
       var d=frame.contentDocument; if(!d) return;
@@ -626,8 +683,10 @@
     for(var i=0;i<3;i++){ try{
       var d=frame.contentDocument; if(!d) return;
       var root=d.querySelector('section')||d.querySelector('div[id]'); if(!root) return;
-      var h=Math.round(root.getBoundingClientRect().height);
-      /* 段高由站点原样内容撑出，iframe 铺满即可 */
+      if(window.matchMedia("(max-width:1200px), (pointer:coarse) and (max-width:1400px)").matches){
+        root.style.transform="none";root.style.minHeight="0";
+        frame.style.height=Math.ceil(root.getBoundingClientRect().height)+"px";
+      }else{frame.style.height="";}
     }catch(e){} }
   }
   if(frame) frame.addEventListener("load", function(){ setTimeout(centerContent,200); setTimeout(centerContent,1200); setTimeout(centerContent,2600); setTimeout(fitFrame,120); setTimeout(fitFrame,600); });
@@ -649,12 +708,13 @@
   /* 本段已定为「P 叠纸抽换」（坤哥：这个模块只保留 P）—— 忽略历史偏好，固定 P */
   try{ localStorage.setItem(KEY,"b"); }catch(e){}
   set("b");
-  window.__pxidS4=set;
+  window.addEventListener("resize",function(){requestAnimationFrame(function(){try{frame.contentDocument.documentElement.style.fontSize=getComputedStyle(document.documentElement).fontSize;}catch(e){}if(window.matchMedia("(max-width:1200px), (pointer:coarse) and (max-width:1400px)").matches)fitFrame();else{frame.style.height="";centerContent();}});},{passive:true});
+window.__pxidS4=set;
 })();
 </script>
   </section>
 
-  <section class="row r4"><div class="inner"><div class="videoBox"><video class="media pc" loop preload="none" muted playsinline webkit-playsinline poster="../assets/pxid/unified/process/manufacturing-poster.jpg"><source src="../assets/pxid/unified/process/manufacturing-hero.mp4" type="video/mp4"></video><div class="pxid-mobile-video app" style="background-image:url('../assets/pxid/unified/process/manufacturing-poster.jpg')"></div><div class="topic maxSize fxb"><div class="til"><h2 class="f-80 mb-20 green en_b alanGo" data-text="制造能力">制造能力</h2><p class="f-24 green alanFn">自建模具、车架、涂装、检测与装配体系，衔接产品开发和批量生产</p></div><a href="company.html#manufacturing" class="layer-btn alanGo"><div class="mk"></div><div class="txt f-16"><span class="num_b">查看制造能力</span><div class="layer-icon"><small class="ripple"></small><small class="ripple"></small><i class="iconfont f-12 green">&#xe8a9;</i></div></div></a></div></div></div></section>
+  <section class="row r4"><div class="inner"><div class="videoBox"><video class="media pc" loop preload="none" muted playsinline webkit-playsinline poster="../assets/pxid/unified/process/manufacturing-poster-web-20261027.webp"><source src="../assets/pxid/unified/process/manufacturing-hero.mp4" type="video/mp4"></video><div class="pxid-mobile-video app" style="background-image:url('../assets/pxid/unified/process/manufacturing-poster-web-20261027.webp')"></div><div class="topic maxSize fxb"><div class="til"><h2 class="f-80 mb-20 green en_b alanGo" data-text="制造能力">制造能力</h2><p class="f-24 green alanFn">自建模具、车架、涂装、检测与装配体系，衔接产品开发和批量生产</p></div><a href="company.html#manufacturing" class="layer-btn alanGo"><div class="mk"></div><div class="txt f-16"><span class="num_b">查看制造能力</span><div class="layer-icon"><small class="ripple"></small><small class="ripple"></small><i class="iconfont f-12 green">&#xe8a9;</i></div></div></a></div></div></div></section>
 
   <section class="row pxid-process-section" id="pxidS7" data-s1v="orig"><div class="inner">
       <div id="s7b9">
