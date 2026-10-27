@@ -6,7 +6,7 @@
   var root=document.documentElement,first=sec.querySelector('[data-hero-frame="video"]');
   var video=first.querySelector('video'),copy=sec.querySelector('.bannerList'),pager=sec.querySelector('.pager');
   var reduced=matchMedia('(prefers-reduced-motion:reduce)'),mobile=matchMedia('(max-width:900px)');
-  var phase='intro',released=false,active=true,mediaReady=false,entranceDone=false,failed=false;
+  var phase='intro',released=false,active=true,mediaReady=false,entranceDone=false,failed=false,manualPlayback=false;
   var progress=0,bridgeStarted=false,raf=0,frameCallback=0,bridgeBegan=0,bridgeFrom=0,mediaTime=0;
   var runtime=null,autoTween=null,timeout,skipTimer,lastPercent=0;
   var entrance=[],assets=sec.dataset.storyAssets,typeFrames=[],logoTarget=null;
@@ -40,6 +40,7 @@
   var prompt=document.createElement('button');prompt.type='button';prompt.className='pxid-handoff-prompt';
   prompt.innerHTML='<span>继续滚动，探索 PXID</span><i aria-hidden="true">↓</i>';sec.appendChild(prompt);
   var promptLabel=prompt.querySelector('span');
+  var replay=document.createElement('button');replay.type='button';replay.className='pxid-hero-replay';replay.textContent='播放视频';replay.hidden=true;sec.appendChild(replay);
   function clamp(v){return Math.max(0,Math.min(1,v));}
   function smooth(v){v=clamp(v);return v*v*(3-2*v);}
   function start(){return shell.getBoundingClientRect().top+scrollY;}
@@ -218,13 +219,22 @@
   }
   function showStatic(){
     if(autoTween)autoTween.kill();if(raf)cancelAnimationFrame(raf);raf=0;
-    video.pause();progress=1;bridgeStarted=false;sec.classList.add('pxid-handoff-outro','pxid-handoff-ready');paint();lock(false);setPhase('poster');
+    video.pause();progress=1;bridgeStarted=false;manualPlayback=false;sec.classList.add('pxid-handoff-outro','pxid-handoff-ready');paint();lock(false);setPhase('poster');replay.hidden=!(active&&(failed||reduced.matches));
   }
+  replay.addEventListener('click',function(){
+    if(!released||!active)return;
+    failed=false;manualPlayback=true;bridgeStarted=false;progress=0;replay.hidden=true;
+    if(autoTween)autoTween.kill();if(raf)cancelAnimationFrame(raf);raf=0;
+    sec.classList.remove('pxid-handoff-outro','pxid-handoff-ready','pxid-handoff-complete');setPhase('film');paint();
+    video.muted=true;video.defaultMuted=true;
+    try{if(video.error)video.load();else video.currentTime=0;var playing=video.play();if(playing&&playing.catch)playing.catch(function(){manualPlayback=false;failMedia();});watchFilm();}
+    catch(error){manualPlayback=false;failMedia();}
+  });
   function watchFilm(){
     if(frameCallback||bridgeStarted)return;
     function tick(){
       frameCallback=0;if(!active||video.paused||bridgeStarted||phase==='intro')return;
-      if(Number.isFinite(video.duration)&&video.currentTime>=video.duration-.50){beginBridge();return;}
+      if(Number.isFinite(video.duration)&&video.currentTime>=video.duration-.50){if(reduced.matches&&manualPlayback)showStatic();else beginBridge();return;}
       frameCallback=requestAnimationFrame(tick);
     }
     frameCallback=requestAnimationFrame(tick);
@@ -233,7 +243,7 @@
     if(!released)return;
     var dot=pager.querySelector('.BannerDot');
     var next=(first.classList.contains('on')||first.classList.contains('in')||(root.classList.contains('pxid-fallback-motion')&&dot.classList.contains('on')))&&!first.classList.contains('out');
-    if(next===active)return;active=next;sec.classList.toggle('pxid-story-inactive',!active);
+    if(next===active)return;active=next;sec.classList.toggle('pxid-story-inactive',!active);if(!active)replay.hidden=true;else if(phase==='poster')replay.hidden=!(failed||reduced.matches);
     if(active){
       layout();paint();if(autoTween)autoTween.resume();
       if(!bridgeStarted&&!failed&&!reduced.matches)video.play().catch(failMedia);
@@ -246,13 +256,13 @@
   window.addEventListener('pxid:motion-ready',function(){runtime=window.pxidMotionRuntime;});
   window.addEventListener('scroll',refreshHeader,{passive:true});
   window.addEventListener('resize',function(){if(active){layout();paint();}else logoLayout();},{passive:true});
-  video.addEventListener('ended',beginBridge);video.addEventListener('play',watchFilm);video.addEventListener('error',failMedia);
+  video.addEventListener('ended',function(){if(reduced.matches&&manualPlayback)showStatic();else beginBridge();});video.addEventListener('play',watchFilm);video.addEventListener('error',failMedia);
   ['progress','loadeddata','canplay','canplaythrough'].forEach(function(name){video.addEventListener(name,loadingProgress);});
   skip.addEventListener('click',function(){mediaReady=true;if(video.readyState<2)failed=true;finishIntro();});
   prompt.addEventListener('click',function(){var next=document.getElementById('pxidS2');if(next)window.scrollTo({top:next.getBoundingClientRect().top+scrollY,behavior:reduced.matches?'instant':'smooth'});});
-  document.addEventListener('visibilitychange',function(){if(document.hidden){video.pause();if(autoTween)autoTween.pause();}else if(active){if(autoTween)autoTween.resume();if(released&&!bridgeStarted&&!video.ended&&!failed&&!reduced.matches)video.play().catch(function(){});}});
+  document.addEventListener('visibilitychange',function(){if(document.hidden){video.pause();if(autoTween)autoTween.pause();}else if(active){if(autoTween)autoTween.resume();if(released&&!bridgeStarted&&!video.ended&&!failed&&(!reduced.matches||manualPlayback))video.play().catch(function(){});}});
   reduced.addEventListener('change',function(){if(reduced.matches&&released)showStatic();});
-  video.loop=false;video.removeAttribute('loop');video.preload='auto';
+  video.loop=false;video.removeAttribute('loop');video.muted=true;video.defaultMuted=true;video.playsInline=true;video.setAttribute('playsinline','');video.setAttribute('webkit-playsinline','');video.preload='auto';
   video.src=assets+(mobile.matches?'hero-field-mobile-20261017.mp4':'hero-field-web-20261017.mp4');video.load();
   Promise.resolve(bikeImage.decode?bikeImage.decode():null).catch(function(){}).then(function(){percent(10);requestAnimationFrame(enter);});
   skipTimer=setTimeout(function(){if(!released)skip.hidden=false;},4000);

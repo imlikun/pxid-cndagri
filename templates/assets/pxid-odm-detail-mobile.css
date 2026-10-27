@@ -1,0 +1,14 @@
+/* One full-width heading and a compact action over the photograph. */
+.f3-photo-detail{display:none}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-row{grid-template-areas:"heading" "summary" "photo" "thumbs" "notes"}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-c-txt>h2{grid-area:heading;display:flex!important;align-items:baseline;gap:10px;width:100%!important;max-width:none!important;min-width:0!important;margin:0!important;font-size:22px!important;line-height:1.4!important;font-weight:650!important;white-space:normal!important}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-mobile-step{flex:none;margin:0;font-size:20px}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-mobile-summary{grid-area:summary;min-width:0}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-fig{grid-area:photo}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-strip{grid-area:thumbs}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-stage-notes{grid-area:notes;min-width:0;margin:12px 0 0}
+html[data-pxid-site-compact="true"] #app #odm-stages .odm-photo-action-ready .f3-stage-notes:not([open]){display:none}
+html[data-pxid-site-compact="true"] #app #odm-stages .odm-photo-action-ready .f3-stage-notes>summary{display:none!important}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-photo-detail{grid-area:photo;align-self:end;justify-self:start;position:relative;z-index:4;margin:12px;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 13px;border:0;border-radius:5px;background:rgba(14,16,15,.83);color:#fff;font:600 13px/1.4 Arial,"Microsoft YaHei",sans-serif;cursor:pointer;touch-action:manipulation}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-photo-detail:active{background:#d71920}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-photo-detail:focus-visible{outline:2px solid #fff;outline-offset:2px}

@@ -23,6 +23,7 @@
  function ready(){
   sync();window.addEventListener('resize',schedule,{passive:true});if(window.visualViewport)visualViewport.addEventListener('resize',schedule,{passive:true});
   retainPageOnRotation();if(document.readyState!=='complete')window.addEventListener('load',function(){setTimeout(retainPageOnRotation,0);},{once:true});
+  var currentPath=location.pathname;document.querySelectorAll('#app nav.menu .appNavList[href]').forEach(function(link){var path=new URL(link.href,location.href).pathname;var matches=currentPath===path||(path.endsWith('/news.html')&&currentPath.indexOf('/news/')!==-1);if(matches)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
   var observer=new ResizeObserver(schedule);observer.observe(document.documentElement);
   var model=document.getElementById('biz2Modal');if(model){
    var opened=false,returnFocus=null;

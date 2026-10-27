@@ -163,3 +163,15 @@ body {display:flex;flex-direction:column;justify-content:center;}
 .odm-compact #b3-s2[data-odm-layout="outer"] .facts>div{padding-inline:12px}
 .odm-compact #b3-s2[data-odm-layout="outer"] .facts>div:first-child{padding-left:0}
 .odm-compact #b3-s2[data-odm-layout="outer"] .facts>div:last-child{padding-right:0}
+
+/* Compact links use surface and touch feedback; only the carousel arrow switches images. */
+.odm-compact #b3-s2 .odm-step-details{padding:3px 7px;border-radius:5px;background:rgba(10,14,13,.72);color:#fff;text-decoration:none;line-height:1.35}
+.odm-compact #b3-s2 .odm-step-details:active{background:#d71920}
+.odm-compact #b3-s2 .facts b::before{display:none}
+.odm-compact #b3-s2 .facts>div{border:0}
+.odm-compact #b3-s2 .cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border:0;border-radius:6px;background:#e7e8e6;color:#171717;text-decoration:none}
+.odm-compact #b3-s2 .cta i{display:none}
+.odm-compact #b3-s2 .cta:active{background:#d9dad8}
+
+/* Keep the selected number in sync with the visible card. */
+.odm-compact #b3-s2 .steps button{transition:none}

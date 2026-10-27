@@ -67,3 +67,22 @@ html[data-pxid-site-profile="outer"] #app #odm-stages .f3-idx-a .t{padding-botto
 html[data-pxid-site-profile="outer"] #app #odm-stages .f3-idx-a .n{width:100%;max-width:100%;min-width:0;margin-left:0;grid-template-columns:repeat(10,minmax(36px,1fr));overflow-x:auto}
 html[data-pxid-site-profile="outer"] #app #odm-stages .f3-idx-a .n a{padding:12px 0}
 @media(prefers-reduced-motion:reduce){html[data-pxid-site-compact="true"] #app header #menu .pxid-menu-line{transition:none}}
+
+/* Mobile navigation: content first, without decorative numbers or arrows. */
+html[data-pxid-site-compact="true"].pxid-menu-ready #app nav.menu .appNavList,
+html[data-pxid-site-compact="true"].pxid-menu-ready #app nav.menu .appNavList:nth-child(n){display:flex!important;align-items:center;min-height:48px;margin:0;padding:6px 0;grid-template-columns:none!important;transition-delay:0s!important}
+html[data-pxid-site-compact="true"].pxid-menu-ready #app nav.menu .appNavList::before,
+html[data-pxid-site-compact="true"].pxid-menu-ready #app nav.menu .appNavList::after{content:none!important;display:none!important}
+html[data-pxid-site-compact="true"] #app nav.menu .appNavList :is(i,.iconfont){display:none!important}
+html[data-pxid-site-compact="true"] #app nav.menu .appNavList[aria-current="page"]>span{color:#f03b43!important}
+html[data-pxid-site-compact="true"] #app nav.menu .pxid-about-mobile-links{display:flex;flex-wrap:wrap;gap:0 18px;padding:8px 0 16px;border:0!important}
+html[data-pxid-site-compact="true"] #app nav.menu .pxid-about-mobile-links a{min-height:44px;padding:10px 0;border:0;text-decoration:none;color:#c8cecb;font-size:14px}
+html[data-pxid-site-compact="true"] #app nav.menu a:focus-visible{outline:2px solid #ef323a;outline-offset:3px}
+
+/* Primary Hero action stays readable over the photograph. */
+html[data-pxid-site-compact="true"] #app.home #pxidS1 .pxid-photo-handoff-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 16px;border:0;border-radius:6px;background:#d71920;color:#fff;text-decoration:none;text-shadow:none}
+html[data-pxid-site-compact="true"] #app.home #pxidS1 .pxid-photo-handoff-cta span{display:none}
+html[data-pxid-site-compact="true"] #app.home #pxidS1 .pxid-photo-handoff-cta:active{background:#b8141a}
+#pxidS1 .pxid-hero-replay[hidden]{display:none!important}
+#pxidS1 .pxid-hero-replay{position:absolute;left:5.5%;bottom:5.5%;z-index:36;min-height:44px;padding:10px 14px;border:0;border-radius:6px;background:rgba(18,23,20,.82);color:#fff;font:600 13px/1.4 Arial,"Microsoft YaHei",sans-serif;cursor:pointer}
+#pxidS1 .pxid-hero-replay:focus-visible{outline:2px solid #e31e29;outline-offset:3px}
