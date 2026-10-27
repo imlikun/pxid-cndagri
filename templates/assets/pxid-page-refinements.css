@@ -1,0 +1,112 @@
+/* Keep the approved layouts; compact state is observed by the shared site runtime. */
+#odm-intro .f2-v-ba{display:block!important}
+.f3-mobile-step,.f3-mobile-summary,.f3-mobile-full{display:none}
+.f3-stage-notes>summary{display:none}
+.f3-stage-notes{border:0;padding:0;margin:0}
+
+/* This native preview remains visible when external map hosts cannot be reached. */
+body.contact .contact-map{margin-top:24px;height:auto;aspect-ratio:3/2;border:0;background:#e9ece7}
+body.contact .contact-map .contact-map-preview{position:absolute;inset:0;display:block;border:0;padding:0}
+body.contact .contact-map-preview img{display:block;width:100%;height:100%;object-fit:cover}
+body.contact .contact-map .loc{top:10px;left:10px;max-width:calc(100% - 20px);padding:5px 8px}
+body.contact .contact-map .contact-map-credit{position:absolute;right:0;bottom:0;z-index:3;background:#ffffffeb;color:#4d5749;font:10px/1.5 Arial,sans-serif;padding:2px 4px;border:0}
+body.contact .contact-map-links{gap:10px;margin:14px 0 24px}
+body.contact .contact-map-links a{min-height:44px;padding:10px 15px;background:#ffffff12;border:0;border-radius:6px;font-size:13px}
+body.contact .contact-map-preview:focus-visible{outline:3px solid #d71920;outline-offset:-3px}
+
+/* The original overview is landscape artwork. Cover crops it without changing proportions. */
+.afterInner .pxid-three-electric-hero .pxid-three-electric-image{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;transform:none}
+html[data-pxid-site-compact="true"] .pxid-three-electric-hero .inner small{font-size:clamp(14px,2vw,24px)!important;line-height:1.4;letter-spacing:.05em;max-width:none}
+html[data-pxid-site-compact="true"] .pxid-three-electric-hero .inner h1{font-size:clamp(32px,4vw,46px)!important;line-height:1.3;margin-top:8px}
+html[data-pxid-site-profile="outer"] .pxid-three-electric-hero{height:clamp(480px,72svh,640px)!important;min-height:0!important}
+html[data-pxid-site-profile="outer"] .pxid-three-electric-hero>.inner{height:100%!important;min-height:0!important;padding:28px 20px!important;display:flex!important;flex-direction:column;justify-content:flex-end;align-items:flex-start;text-shadow:0 2px 10px #0009}
+html[data-pxid-site-profile="outer"] .pxid-three-electric-hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,#000b 100%);pointer-events:none}
+
+/* Bento A keeps its desktop composition, then reads 01–10 in order on compact screens. */
+html[data-pxid-site-compact="true"] #odm-intro{padding-top:36px!important;padding-bottom:36px!important}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-A{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:12px}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-A>*{grid-column:auto!important;grid-row:auto!important;min-width:0}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-txt{grid-column:1/-1!important;display:block;padding:0 0 12px}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-txt .en{font-size:clamp(38px,6vw,60px);line-height:1}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-txt .en br{display:none}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-txt h2{font-size:22px;line-height:1.4;margin:12px 0}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-lede{font-size:14px;line-height:1.8;max-width:40em;margin:0 0 16px;text-indent:0}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-bar,html[data-pxid-site-compact="true"] #odm-intro .pxb2-steps{display:none}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-cta{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border:0;border-radius:6px;background:#e7e7e3;color:#171717;font-size:14px;font-weight:600}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-tile{min-height:160px;aspect-ratio:3/2;border-radius:5px;overflow:hidden}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-cap{padding:14px}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-t{font-size:16px;line-height:1.35}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-s{font-size:12px;line-height:1.5}
+html[data-pxid-site-profile="outer"] #odm-intro .pxb2-A{grid-template-columns:repeat(2,minmax(0,1fr))}
+html[data-pxid-site-profile="outer"] #odm-intro .pxb2-tile{min-height:140px;aspect-ratio:4/3}
+
+/* Compact stage: concise heading, photograph, all five thumbnails, optional work detail. */
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-row{display:grid;grid-template-columns:minmax(0,1fr);gap:0;width:100%;min-width:0;padding:24px max(16px,2.4vw)}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-top,
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-txt{display:contents}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-eyebrow,
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-c-txt>.f3-pr{display:none!important}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-c-txt>h2{order:0;margin:0;font-size:24px;line-height:1.4;min-width:0;color:#fff}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-mobile-step{display:inline-block;margin-right:10px;color:#e31e29;font-size:20px;font-variant-numeric:tabular-nums}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-mobile-summary{display:block;order:1;margin:8px 0 18px;font-size:14px;line-height:1.8;color:#d8d8d8}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-fig{order:2;display:block;flex:none;width:100%;height:auto;min-height:0;aspect-ratio:4/3}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-strip{order:3;display:flex;align-items:stretch;gap:6px;margin:8px 0 0;padding:2px 0 6px;width:100%;max-width:100%;min-width:0;overflow-x:auto;overflow-y:hidden;touch-action:pan-x pan-y;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#888 #222}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-strip>i{flex:1 0 48px;width:0;min-width:48px;max-width:none;height:auto;min-height:0;aspect-ratio:4/3;scroll-snap-align:start;cursor:pointer}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-stage-notes{display:block;order:4;min-width:0;margin-top:10px}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-stage-notes>summary{display:inline-flex;align-items:center;min-height:44px;list-style:none;padding:9px 12px;background:#ffffff10;border-radius:5px;font-size:12px;color:#ddd;cursor:pointer}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-stage-notes>summary::-webkit-details-marker{display:none}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-mobile-full{display:block;font-size:14px;line-height:1.8;margin:14px 0;color:#ddd}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-stage-notes .f3-dl{margin:0;font-size:12px;line-height:1.7}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-stage-notes .f3-dl>div{gap:10px;padding:10px 0;grid-template-columns:64px minmax(0,1fr)}
+/* Ten equal touch targets fit a narrow screen; no horizontal nav scroll bar. */
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-idx-a{display:flex;flex-wrap:wrap;gap:0;padding:10px 16px 0;max-width:100%;overflow:hidden}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-idx-a .k{padding:0 0 8px;font-size:17px}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-idx-a .t{padding-bottom:8px;font-size:14px}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-idx-a .n{display:grid;width:100%;min-width:0;max-width:100%;margin:0;grid-template-columns:repeat(10,minmax(0,1fr));overflow:visible}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-idx-a .n a{min-width:0;min-height:44px;padding:12px 0;font-size:12px;border:0}
+@media(prefers-reduced-motion:no-preference){.contact-map-links a:active{background:#ffffff25}}
+
+html[data-pxid-site-profile="inner"] #app #odm-stages .f3-v-dc .f3-C .f3-c-fig{aspect-ratio:16/9;max-height:560px}
+
+/* Parallel company content shares a native, manual rail. Content and desktop layout stay intact. */
+.about-rail-hint{display:none}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-compact-rail{display:grid!important;grid-template-columns:none!important;grid-auto-flow:column;grid-auto-columns:var(--about-card-width,88%);align-items:stretch;gap:12px!important;width:100%;max-width:100%;min-width:0;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-inline:0;overscroll-behavior-x:contain;touch-action:pan-x pan-y;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-compact-rail::-webkit-scrollbar{display:none}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-research-stack{display:contents}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-compact-rail :is(article,figure,li){grid-column:auto;grid-row:auto;margin:0;min-width:0;scroll-snap-align:start;scroll-snap-stop:normal}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-rail-hint{display:flex;justify-content:space-between;align-items:center;margin:12px 0 0;font-size:12px;line-height:1.5;color:#737773}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-rail-hint output{font:inherit;font-variant-numeric:tabular-nums}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-compact-rail:focus-visible{outline:2px solid #d71920;outline-offset:4px}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-research-grid article{display:flex;flex-direction:column;border-radius:6px;overflow:hidden;background:#f3f4f0;height:auto;min-height:0}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-research-grid article>img{position:static;display:block;flex:none;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-research-grid article>div{position:static;padding:18px;background:#f3f4f0;color:#171717}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-research-grid article h3{color:#171717;font-size:21px;line-height:1.4;margin:8px 0}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-research-grid article p{color:#626862;font-size:14px;line-height:1.8}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-research-grid article>div>span{font-size:11px;color:#a82028}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-process-grid article{position:relative;aspect-ratio:4/3;height:auto;min-height:0;border-radius:6px;overflow:hidden}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-process-grid article>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-process-copy{position:absolute;left:0;right:0;bottom:0;padding:18px}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-process-copy>h3{font-size:22px;line-height:1.4}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-process-copy>p:last-child{font-size:13px;line-height:1.6}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-quality-flow>li{border:0;border-radius:6px;padding:20px;background:#f3f4f0;min-height:0}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-quality-flow>li::before{display:none}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-digital-grid>article{border:0;border-radius:6px;padding:20px;background:#ffffff0a;min-height:0}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-digital .about-rail-hint{color:#b6beb6}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-certificates figure{border:0;min-height:0}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-certificates img{display:block;width:100%;height:300px;object-fit:contain;background:#f5f5f1}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-certificates figcaption{padding:14px 0}
+
+.about-rail-hint[hidden]{display:none!important}
+html[data-pxid-site-profile="outer"] #odm-intro .pxb2-cap{padding:12px}
+html[data-pxid-site-profile="outer"] #odm-intro .pxb2-t{font-size:14px;line-height:1.4}
+html[data-pxid-site-profile="outer"] #odm-intro .pxb2-s{font-size:11px;line-height:1.5}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-process-copy{background:linear-gradient(transparent,#000c);color:#fff}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-process-copy :is(h3,p,span){color:#fff}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-process-copy .about-process-index{color:#ff4149}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-compact-rail{grid-auto-rows:auto}
+html[data-pxid-site-compact="true"] #app.pxid-about #main-content .about-quality-flow>li{height:auto;padding:20px}
+
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-tile{width:100%;max-width:100%;justify-self:stretch}
+html[data-pxid-site-compact="true"] #odm-intro .pxb2-cap{background:linear-gradient(0deg,#000d,#0007 72%,transparent);padding-top:20px}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-stage-notes{padding:0;margin:12px 0 0}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-stage-notes>summary{margin:0}
