@@ -73,6 +73,11 @@
     });observer.observe(pop,{attributes:true,attributeFilter:['class']});
   }
   var signature='',layoutFrame=0;
+  function fitFrame(){
+    var frame=window.frameElement;if(!frame)return;
+    var height=Math.ceil(root.getBoundingClientRect().height);
+    frame.style.height=(isCompact?height:Math.max(parent.innerHeight,height))+'px';
+  }
   function layout(){
     var width=document.documentElement.clientWidth,height=parent.visualViewport?parent.visualViewport.height:parent.innerHeight;
     var touch=navigator.maxTouchPoints>0,key=width+'|'+Math.round(height)+'|'+touch;
@@ -92,12 +97,12 @@
     if(isCompact){
       carousel.hidden=false;if(!wasCompact)cards.forEach(function(c){track.appendChild(c);});createPortal();
       if(portal)portal.firstElementChild.dataset.detailLayout=width>=960||(width>=600&&height<600)?'side':'stack';
-      requestAnimationFrame(function(){go(current,false);});
-    }else{restorePortal();if(wasCompact)cards.forEach(function(c){grid.appendChild(c);});carousel.hidden=true;paint(current);}
+      requestAnimationFrame(function(){go(current,false);fitFrame();});
+    }else{restorePortal();if(wasCompact)cards.forEach(function(c){grid.appendChild(c);});carousel.hidden=true;paint(current);fitFrame();}
   }
   function resize(){if(layoutFrame)return;layoutFrame=requestAnimationFrame(function(){layoutFrame=0;layout();});}
   window.addEventListener('resize',resize,{passive:true});parent.addEventListener('resize',resize,{passive:true});
   if(parent.visualViewport)parent.visualViewport.addEventListener('resize',resize,{passive:true});
-  var sizeObserver=new ResizeObserver(resize);sizeObserver.observe(document.documentElement);
+  var sizeObserver=new ResizeObserver(function(){resize();fitFrame();});sizeObserver.observe(document.documentElement);sizeObserver.observe(root);
   window.addEventListener('pagehide',function(){restorePortal();sizeObserver.disconnect();parent.removeEventListener('resize',resize);if(parent.visualViewport)parent.visualViewport.removeEventListener('resize',resize);});layout();
 })();
