@@ -1,0 +1,69 @@
+/* Actual compact viewport state comes from the shared resize observer. */
+html[data-pxid-site-compact="true"] #app:not(.home)>header .pcNav{display:none!important}
+html[data-pxid-site-compact="true"] #app:not(.home)>header .appNav{display:flex!important;align-items:center;justify-content:space-between;position:relative;width:100%;height:calc(var(--pxid-site-header-height,64px) + env(safe-area-inset-top,0px))!important;padding:env(safe-area-inset-top,0px) max(20px,env(safe-area-inset-right,0px)) 0 max(20px,env(safe-area-inset-left,0px));background:rgba(249,249,247,.98)!important;box-shadow:0 3px 12px #0000000d}
+html[data-pxid-site-compact="true"] #app:not(.home)>header .appNav .mask{display:none!important}
+html[data-pxid-site-compact="true"] #app:not(.home)>header .appNav .logoBox{position:relative;display:block;width:var(--pxid-site-logo-width,96px)!important;max-width:none;height:27px!important;flex:none}
+html[data-pxid-site-compact="true"] #app:not(.home)>header .appNav .logoBox::before{opacity:0!important}
+html[data-pxid-site-compact="true"] #app:not(.home)>header .appNav .logoBox::after{content:"";position:absolute;inset:0;background:url('../../assets/pxid/logo-opening-ink-20261017.webp') left center/contain no-repeat;opacity:1!important}
+html[data-pxid-site-compact="true"] #app:not(.home)>header .appNav .logoBox img{width:100%!important;height:100%!important;object-fit:contain;opacity:0!important}
+html[data-pxid-site-compact="true"] #app:not(.home)>header .appNav .col{display:flex;align-items:center;gap:16px}
+html[data-pxid-site-compact="true"] #app:not(.home)>header .appNav .searchSub{display:grid;place-items:center;width:44px;height:44px;color:#171717!important}
+html[data-pxid-site-compact="true"] #app:not(.home)>header .appNav .searchSub .iconfont{font-size:22px;color:#171717!important}
+html[data-pxid-site-compact="true"].pxid-menu-ready #app:not(.home)>header .appNav #menu{position:relative;display:grid!important;place-items:center;width:48px!important;min-width:48px!important;height:48px!important;min-height:48px!important;padding:0!important;border:0;border-radius:10px;background:#d71920!important;color:#fff!important;box-shadow:none}
+html[data-pxid-site-compact="true"].pxid-menu-ready #app:not(.home)>header #menu :is(.txt,.icon){display:none!important}
+html[data-pxid-site-compact="true"] #app:not(.home)>header #menu .pxid-menu-glyph{display:block;width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round}
+html[data-pxid-site-compact="true"] #app:not(.home)>header #menu .pxid-menu-line{transform-box:view-box;transform-origin:center;transition:transform .2s}
+html[data-pxid-site-compact="true"] #app:not(.home)>header #menu.is-opened-navi .pxid-menu-line-top{transform:translateY(4px) rotate(45deg)}
+html[data-pxid-site-compact="true"] #app:not(.home)>header #menu.is-opened-navi .pxid-menu-line-bottom{transform:translateY(-4px) rotate(-45deg)}
+html[data-pxid-site-compact="true"].pxid-menu-ready #app:not(.home) nav.menu .items{display:block!important;min-height:100dvh;height:auto!important;padding:calc(var(--pxid-site-header-height,64px) + env(safe-area-inset-top,0px) + 24px) 24px 32px;overflow:visible}
+html[data-pxid-site-compact="true"].pxid-menu-ready #app:not(.home) nav.menu .items .content{display:flex!important;flex-direction:column;align-items:stretch;gap:6px;width:100%;max-width:720px;margin:0 auto}
+html[data-pxid-site-compact="true"].pxid-menu-ready #app:not(.home) nav.menu .appNavList{display:flex!important;align-items:center;min-height:48px;margin:0;padding:8px 0;opacity:1;transform:none}
+html[data-pxid-site-compact="true"].pxid-menu-ready #app:not(.home) nav.menu .appNavList>span{font-size:25px!important;line-height:1.4}
+html[data-pxid-site-compact="true"] #app:not(.home) nav.menu .appNavList::before,html[data-pxid-site-compact="true"] #app:not(.home) nav.menu .appNavList::after{display:none}
+html[data-pxid-site-compact="true"] #app:not(.home) nav.menu .pxid-about-mobile-links a{min-height:44px;display:flex;align-items:center}
+html[data-pxid-site-compact="true"] #app :is(section[id],form[id]){scroll-margin-top:calc(var(--pxid-site-header-height,64px) + env(safe-area-inset-top,0px) + 16px)}
+
+/* Download cards must give copy a real column, including on narrow outer screens. */
+#app.business .biz2-modal{z-index:20000}
+html[data-pxid-site-compact="true"] #app.business .biz2-modal .biz2-x{position:fixed;top:max(12px,env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px));width:48px;height:48px;background:#fff;color:#171717;border-radius:4px;box-shadow:0 2px 10px #0002}
+html[data-pxid-site-compact="true"] #app #apps .a-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.9fr);align-items:center;gap:24px;padding:24px}
+html[data-pxid-site-compact="true"] #app #apps .a-info{width:auto;min-width:0;padding:0}
+html[data-pxid-site-compact="true"] #app #apps .a-head{gap:12px;min-width:0}
+html[data-pxid-site-compact="true"] #app #apps .a-head>div{flex:1;min-width:0}
+html[data-pxid-site-compact="true"] #app #apps .a-head h3{font-size:20px;line-height:1.4}
+html[data-pxid-site-compact="true"] #app #apps .a-ico{width:48px;height:48px;border-radius:10px;font-size:20px}
+html[data-pxid-site-compact="true"] #app #apps .a-en{line-height:1.6;overflow-wrap:anywhere}
+html[data-pxid-site-compact="true"] #app #apps .a-desc{max-width:none;font-size:14px;line-height:1.8}
+html[data-pxid-site-compact="true"] #app #apps .a-panel{display:grid;grid-template-columns:var(--pxid-qr-size,96px) minmax(0,1fr);gap:16px;align-items:center;width:100%;min-width:0}
+html[data-pxid-site-compact="true"] #app #apps .a-btns{width:100%;min-width:0;gap:10px}
+html[data-pxid-site-compact="true"] #app #apps .a-btns .dl-btn{width:100%;min-width:0;min-height:46px;height:auto;padding:10px 8px;font-size:13px;line-height:1.5;justify-content:center}
+html[data-pxid-site-compact="true"] #app #apps .a-ver{grid-column:1/-1;margin:0;white-space:normal;line-height:1.6}
+html[data-pxid-site-compact="true"] #app #apps .a-qrline{min-width:0}
+html[data-pxid-site-compact="true"] #app #apps .a-qrline .qr-phone{width:var(--pxid-qr-size,96px);height:var(--pxid-qr-size,96px);padding:6px;border:1px solid #ddd;border-radius:6px;background:#fff;box-shadow:none}
+html[data-pxid-site-compact="true"] #app #apps .a-qrline .qr-phone::before,html[data-pxid-site-compact="true"] #app #apps .a-qrline .qr-phone::after{display:none}
+html[data-pxid-site-compact="true"] #app #apps .a-qrline .qr-phone .qrimg{width:100%;height:100%;padding:0;border-radius:0;object-fit:contain}
+html[data-pxid-site-profile="outer"] #app #apps .a-row{grid-template-columns:minmax(0,1fr);gap:22px;padding:20px}
+html[data-pxid-site-profile="outer"] #app #apps .a-qrline{align-self:start}
+
+/* Use only the sticky belt offset; root scroll padding is already applied by anchors. */
+#app #odm-stages .f3-v-dc .f3-C .f3-c-row{scroll-margin-top:calc(var(--pxid-odm-belt-height,88px) + 12px - var(--pxid-page-scroll-padding,0px))}
+/* Inner screens should not stretch every ODM stage to a tall viewport. */
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-row{min-height:0;display:block;padding:24px max(16px,2.4vw)}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-top{flex:none;min-height:0;align-items:center;gap:24px}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-fig{flex:1 1 0;min-width:0;min-height:0;height:clamp(320px,43vw,480px)}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-txt{flex:0 0 44%;min-width:0;align-self:center}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;overscroll-behavior-x:contain;margin-top:16px;padding:2px 0}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-C .f3-c-strip i{flex:0 0 clamp(96px,17vw,180px);height:auto;min-height:0;aspect-ratio:4/3;scroll-snap-align:start}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-c-strip i:focus-visible{outline:2px solid #fff;outline-offset:1px}
+html[data-pxid-site-profile="outer"] #app #odm-stages .f3-v-dc .f3-C .f3-c-top{flex-direction:column;align-items:stretch}
+html[data-pxid-site-profile="outer"] #app #odm-stages .f3-v-dc .f3-C .f3-c-fig{flex:none;width:100%;height:auto;aspect-ratio:4/3}
+html[data-pxid-site-profile="outer"] #app #odm-stages .f3-v-dc .f3-C .f3-c-txt{flex:none;width:100%}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-dl>div{grid-template-columns:64px minmax(0,1fr);gap:12px}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-v-dc .f3-dl dt{white-space:nowrap}
+html[data-pxid-site-compact="true"] #app #odm-stages .f3-idx-a .n a{min-height:44px}
+html[data-pxid-site-profile="outer"] #app #odm-stages .f3-idx-a{flex-wrap:wrap;gap:0;padding:10px 16px 0}
+html[data-pxid-site-profile="outer"] #app #odm-stages .f3-idx-a .k{padding:0 0 8px;font-size:16px}
+html[data-pxid-site-profile="outer"] #app #odm-stages .f3-idx-a .t{padding-bottom:8px;font-size:14px}
+html[data-pxid-site-profile="outer"] #app #odm-stages .f3-idx-a .n{width:100%;max-width:100%;min-width:0;margin-left:0;grid-template-columns:repeat(10,minmax(36px,1fr));overflow-x:auto}
+html[data-pxid-site-profile="outer"] #app #odm-stages .f3-idx-a .n a{padding:12px 0}
+@media(prefers-reduced-motion:reduce){html[data-pxid-site-compact="true"] #app header #menu .pxid-menu-line{transition:none}}

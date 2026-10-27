@@ -5,7 +5,7 @@
   var grid=root.querySelector('.bento'),text=root.querySelector('.t-text'),steps=root.querySelector('.steps');
   var cards=Array.from(grid.querySelectorAll(':scope>.tile[data-step]'));
   if(cards.length!==10)return;
-  var reduced=matchMedia('(prefers-reduced-motion:reduce)'),current=0,raf=0,isCompact=false,jump=0,painted='';
+  var reduced=matchMedia('(prefers-reduced-motion:reduce)'),current=0,raf=0,isCompact=false,jump=0,painted='',targetSlide=null;
   var numbers=Array.from(steps.querySelectorAll('i'));
   steps.removeAttribute('aria-hidden');steps.setAttribute('role','group');steps.setAttribute('aria-label','选择 ODM 服务步骤');
   var buttons=numbers.map(function(n,i){
@@ -18,10 +18,13 @@
   carousel.innerHTML='<div class="odm-carousel-viewport"><div class="odm-carousel-track" role="region" aria-label="ODM 步骤图片，可左右滑动" aria-roledescription="轮播"></div></div>';
   steps.after(carousel);
   var track=carousel.querySelector('.odm-carousel-track');
+  var titleNodes=[],detailButtons=[],nextButtons=[];
   cards.forEach(function(card,i){
     card.id='odm-carousel-step-'+String(i+1).padStart(2,'0');buttons[i].setAttribute('aria-controls',card.id);
     card.setAttribute('aria-label','第 '+(i+1)+' 步：'+card.querySelector('.t').textContent+'，查看详情');
-    var hint=document.createElement('span');hint.className='odm-slide-hint';hint.setAttribute('aria-hidden','true');hint.innerHTML='<svg viewBox="0 0 24 24" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>';card.appendChild(hint);
+    var title=card.querySelector('.t'),details=document.createElement('button');details.type='button';details.className='t odm-step-details';details.textContent=title.textContent;details.setAttribute('aria-label','查看第 '+(i+1)+' 步 '+title.textContent+'的详情');details.setAttribute('aria-haspopup','dialog');titleNodes.push(title);detailButtons.push(details);
+    var hint=document.createElement('button');hint.type='button';hint.className='odm-slide-hint';hint.hidden=true;hint.setAttribute('aria-label','下一个服务步骤');hint.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>';card.appendChild(hint);nextButtons.push(hint);
+    hint.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var n=(current+1)%10;go(n,n!==0);nextButtons[n].focus({preventScroll:true});});
   });
   function paint(i){
     current=Math.max(0,Math.min(9,i));
@@ -31,20 +34,20 @@
     root.dataset.activeStep=String(current+1).padStart(2,'0');
   }
   function go(i,animate){
-    i=Math.max(0,Math.min(9,i));paint(i);
+    i=Math.max(0,Math.min(9,i));targetSlide=i;paint(i);
     var token=++jump,left=i*track.clientWidth;
     if(animate&&!reduced.matches){track.scrollTo({left:left,behavior:'smooth'});return;}
     // Cancel a swipe's remaining snap/momentum before a numbered jump.
     track.style.scrollSnapType='none';track.scrollTo({left:left,behavior:'instant'});
-    requestAnimationFrame(function(){if(token!==jump)return;track.style.scrollSnapType='';track.scrollTo({left:i*track.clientWidth,behavior:'instant'});paint(i);});
+    requestAnimationFrame(function(){if(token!==jump)return;track.style.scrollSnapType='';track.scrollTo({left:i*track.clientWidth,behavior:'instant'});targetSlide=null;paint(i);});
   }
-  track.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){raf=0;if(track.clientWidth)paint(Math.round(track.scrollLeft/track.clientWidth));});},{passive:true});
-  track.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(current+(e.key==='ArrowRight'?1:-1),true);cards[current].focus({preventScroll:true});}});
+  track.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){raf=0;if(!track.clientWidth)return;if(targetSlide!==null){if(Math.abs(track.scrollLeft-targetSlide*track.clientWidth)>1)return;var n=targetSlide;targetSlide=null;paint(n);}else paint(Math.round(track.scrollLeft/track.clientWidth));});},{passive:true});
+  track.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var n=(current+(e.key==='ArrowRight'?1:9))%10,arrow=e.target.classList.contains('odm-slide-hint');go(n,Math.abs(n-current)===1);(arrow?nextButtons[n]:detailButtons[n]).focus({preventScroll:true});}});
   var pointer=null,dragged=false;
-  track.addEventListener('pointerdown',function(e){pointer={x:e.clientX,y:e.clientY};dragged=false;});
+  track.addEventListener('pointerdown',function(e){pointer={x:e.clientX,y:e.clientY};dragged=false;targetSlide=null;++jump;track.style.scrollSnapType='';});
   track.addEventListener('pointermove',function(e){if(pointer&&Math.abs(e.clientX-pointer.x)>8)dragged=true;});
   track.addEventListener('pointercancel',function(){pointer=null;});
-  track.addEventListener('click',function(e){if(dragged){e.preventDefault();e.stopImmediatePropagation();}pointer=null;dragged=false;},true);
+  track.addEventListener('click',function(e){if(dragged&&e.detail!==0){e.preventDefault();e.stopImmediatePropagation();}pointer=null;dragged=false;},true);
 
   // Existing detail content is hosted by the parent page, so shortening the
   // section cannot clip a popup or place its close control above the viewport.
@@ -67,7 +70,7 @@
     portal.addEventListener('cancel',function(e){e.preventDefault();closeButton.click();});
     observer=new MutationObserver(function(){
       if(pop.classList.contains('on')){if(!portal.open){portal.showModal();pd.documentElement.classList.add('pxid-odm-mobile-open');closeButton.focus();}}
-      else if(portal.open){portal.close();pd.documentElement.classList.remove('pxid-odm-mobile-open');cards[current].focus({preventScroll:true});}
+      else if(portal.open){portal.close();pd.documentElement.classList.remove('pxid-odm-mobile-open');(isCompact?detailButtons[current]:cards[current]).focus({preventScroll:true});}
     });observer.observe(pop,{attributes:true,attributeFilter:['class']});
   }
   var signature='',layoutFrame=0;
@@ -83,6 +86,11 @@
     // Handheld UAs keep the compact interaction even on a very wide inner screen.
     var handheld=touch&&(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||navigator.platform==='MacIntel'||(navigator.userAgentData&&navigator.userAgentData.mobile));
     var wasCompact=isCompact;isCompact=width<=1200||(touch&&width<=1400)||handheld;
+    cards.forEach(function(card,i){
+      card.setAttribute('role',isCompact?'group':'button');nextButtons[i].hidden=!isCompact;
+      if(isCompact){card.removeAttribute('tabindex');card.setAttribute('aria-label','第 '+(i+1)+' 步：'+titleNodes[i].textContent);if(titleNodes[i].parentNode)titleNodes[i].replaceWith(detailButtons[i]);}
+      else{card.tabIndex=0;card.setAttribute('aria-label','第 '+(i+1)+' 步：'+titleNodes[i].textContent+'，查看详情');if(detailButtons[i].parentNode)detailButtons[i].replaceWith(titleNodes[i]);}
+    });
     var profile=!isCompact?'desktop':width<380?'outer':width<600?'phone':width>height*1.4&&height<600?'landscape':width<960?'inner':'expanded';
     document.documentElement.classList.toggle('odm-compact',isCompact);
     document.documentElement.dataset.odmLayout=profile;root.dataset.odmLayout=profile;
