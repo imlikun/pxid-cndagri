@@ -35,3 +35,7 @@
  html.pxid-menu-ready #app.home nav.menu .appNavList{display:flex!important;align-items:center;min-height:48px;margin:0;padding:6px 0}
  html.pxid-menu-ready #app.home nav.menu .appNavList>span{font-size:25px!important;line-height:1.3}
 }
+
+/* The compact ODM carousel sizes to its content rather than a viewport minimum. */
+#app.home #pxidS2[data-odm-compact="true"]:not([data-s1v="orig"]){min-height:0!important}
+html.pxid-odm-mobile-open,html.pxid-odm-mobile-open #app.home{overflow:hidden!important}
