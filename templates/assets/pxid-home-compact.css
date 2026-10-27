@@ -39,3 +39,23 @@
 /* The compact ODM carousel sizes to its content rather than a viewport minimum. */
 #app.home #pxidS2[data-odm-compact="true"]:not([data-s1v="orig"]){min-height:0!important}
 html.pxid-odm-mobile-open,html.pxid-odm-mobile-open #app.home{overflow:hidden!important}
+
+
+/* Compact layouts follow the visible content, not hidden desktop alternatives. */
+html[data-pxid-compact="true"] #app.home #pxidS7[data-s1v="a"]{height:auto!important;min-height:0!important;padding:0!important;overflow:hidden}
+html[data-pxid-compact="true"] #app.home #pxidS7[data-s1v="a"]>.inner{display:none!important}
+html[data-pxid-compact="true"] #app.home #pxidS7>.pxid-s7frame{position:relative!important;inset:auto!important;width:100%;height:800px;display:block;border:0;vertical-align:top}
+html[data-pxid-compact="true"] #app.home #pxidS4[data-s1v="b"]{height:auto!important;min-height:0!important;padding:0!important}
+html[data-pxid-compact="true"] #app.home #pxidS4[data-s1v="b"]>.inner{display:none!important}
+html[data-pxid-compact="true"] #app.home #pxidS4>.pxid-s4frame{position:relative!important;inset:auto!important;display:block;min-height:0}
+html[data-pxid-compact="true"] #app.home main>.r2{display:none!important}
+html[data-pxid-compact="true"] #app.home main>.r4{height:auto!important;min-height:0!important;padding:0!important}
+html[data-pxid-compact="true"] #app.home main>.r4>.inner{height:auto!important;min-height:0!important}
+html[data-pxid-compact="true"] #app.home .r4 .videoBox{position:relative;height:var(--pxid-manufacturing-height,320px)!important;min-height:0!important;overflow:hidden}
+html[data-pxid-compact="true"] #app.home .r4 .videoBox>video{display:none!important}
+html[data-pxid-compact="true"] #app.home .r4 .pxid-mobile-video{display:block!important;position:absolute;inset:0;width:100%;height:100%;background-position:center;background-size:cover}
+html[data-pxid-compact="true"] #app.home #pxidS6{padding:0!important;height:auto!important;min-height:0!important;max-height:none!important}
+html[data-pxid-compact="true"] #app.home #pxidS6>.inner{display:none!important}
+html[data-pxid-compact="true"] #app.home #pxidS6>.pxid-s6frame{position:relative!important;inset:auto!important;display:block;width:100%;height:650px;vertical-align:top}
+html[data-pxid-compact="true"] #app.home main>.r6.pxid-cooperation{height:var(--pxid-cooperation-height,560px)!important;min-height:0!important}
+html[data-pxid-compact="true"] #app.home main>.r6.pxid-cooperation>.inner{height:100%!important;min-height:0!important}
