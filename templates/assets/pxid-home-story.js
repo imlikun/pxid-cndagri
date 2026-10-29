@@ -8,7 +8,7 @@
   var reduced=matchMedia('(prefers-reduced-motion:reduce)'),mobile=matchMedia('(max-width:900px)');
   var phase='intro',released=false,active=true,mediaReady=false,entranceDone=false,failed=false,manualPlayback=false;
   var progress=0,bridgeStarted=false,raf=0,frameCallback=0,bridgeBegan=0,bridgeFrom=0,mediaTime=0;
-  var runtime=null,autoTween=null,timeout,skipTimer,lastPercent=0,entranceStart=0,progressRaf=0,sceneRequested=false;
+  var runtime=null,autoTween=null,timeout,skipTimer,lastPercent=0,entranceStart=0,progressRaf=0,sceneRequested=false,playWait=0,playPending=false;
   var entrance=[],assets=sec.dataset.storyAssets,typeFrames=[],logoTarget=null;
   var logoImage=copy.querySelector('.pxid-intro-logo'),eyebrowDeparted=false;
   var campaignTitle=copy.querySelector('h1'),design=copy.querySelector('.story-design'),your=copy.querySelector('.story-your'),rLetter=copy.querySelector('.slogan-r'),ide=copy.querySelector('.pxid-intro-tail'),subtitle=copy.querySelector('.pxid-first-film-sub'),eyebrow=copy.querySelector('.pxid-first-film-eyebrow');
@@ -32,6 +32,7 @@
     '<div class="pxid-story-grass" aria-hidden="true"></div>'+
     '<div class="pxid-story-photo"><img data-story-src="'+sec.dataset.photoHandoff+'" alt="MANTIS P6 骑行实拍" width="2560" height="1441" decoding="async" draggable="false"></div>'+
     '<a class="pxid-photo-handoff-cta" href="business.html">探索产品方案 <span aria-hidden="true">↗</span></a>';
+  scene.style.backgroundImage='url("'+assets+'hero-field-opening-20261017.jpg")';scene.style.backgroundSize='cover';scene.style.backgroundPosition='center';
   sec.appendChild(scene);
   var landscape=scene.querySelector('.pxid-story-landscape'),field=scene.querySelector('.pxid-story-field');
   var rider=scene.querySelector('.pxid-story-rider'),grass=scene.querySelector('.pxid-story-grass');
@@ -44,6 +45,7 @@
   var prompt=document.createElement('button');prompt.type='button';prompt.className='pxid-handoff-prompt';
   prompt.innerHTML='<span>继续滚动，探索 PXID</span><i aria-hidden="true">↓</i>';sec.appendChild(prompt);
   var promptLabel=prompt.querySelector('span');
+  var filmBackdrop=first.querySelector('.pic');filmBackdrop.style.backgroundImage='url("'+assets+'hero-field-opening-20261017.jpg")';video.style.opacity='0';
   var replay=document.createElement('button');replay.type='button';replay.className='pxid-hero-replay';replay.textContent='播放视频';replay.hidden=true;sec.appendChild(replay);
   function clamp(v){return Math.max(0,Math.min(1,v));}
   function smooth(v){v=clamp(v);return v*v*(3-2*v);}
@@ -129,7 +131,7 @@
       window.pxidHeroIntroReleased=true;first.classList.add('on');
       window.dispatchEvent(new CustomEvent('pxid:hero-intro-release'));window.dispatchEvent(new CustomEvent('pxid:hero-intro-reveal'));
       setPhase('film');layout();
-      if(!reduced.matches&&!failed){video.play().catch(function(){failMedia();});watchFilm();}
+      if(!reduced.matches&&!failed){video.play().catch(function(){failMedia();});guardFilmWait();watchFilm();}
       var reveal=loader.animate([{opacity:1},{opacity:0}],{duration:reduced.matches?0:380,easing:'ease-out',fill:'forwards'});
       reveal.finished.then(function(){
         root.classList.remove('pxid-intro-pending','pxid-intro-revealing');sec.classList.remove('pxid-intro-active','pxid-intro-restore-r');
@@ -141,7 +143,7 @@
     });
   }
   function failMedia(){
-    if(failed)return;failed=true;mediaReady=true;video.pause();
+    if(failed)return;clearTimeout(playWait);playPending=false;replay.disabled=false;replay.textContent='播放视频';video.style.opacity='0';failed=true;mediaReady=true;video.pause();
     if(released){showStatic();return;}finishIntro();
   }
   function enter(){
@@ -227,17 +229,31 @@
   }
   function showStatic(){
     if(autoTween)autoTween.kill();if(raf)cancelAnimationFrame(raf);raf=0;
-    video.pause();progress=1;bridgeStarted=false;manualPlayback=false;sec.classList.add('pxid-handoff-outro','pxid-handoff-ready');paint();lock(false);setPhase('poster');replay.hidden=!(active&&(failed||reduced.matches));
+    clearTimeout(playWait);playPending=false;replay.disabled=false;replay.textContent='播放视频';video.style.opacity='0';video.pause();progress=1;bridgeStarted=false;manualPlayback=false;sec.classList.add('pxid-handoff-outro','pxid-handoff-ready');paint();lock(false);setPhase('poster');replay.hidden=!(active&&(failed||reduced.matches));
+  }
+  function beginManualFilm(){
+    if(!playPending||video.paused||video.currentTime<=0)return;
+    clearTimeout(playWait);playPending=false;replay.disabled=false;replay.textContent='播放视频';replay.hidden=true;
+    failed=false;manualPlayback=true;bridgeStarted=false;progress=0;
+    if(autoTween)autoTween.kill();if(raf)cancelAnimationFrame(raf);raf=0;
+    sec.classList.remove('pxid-handoff-outro','pxid-handoff-ready','pxid-handoff-complete');setPhase('film');video.style.opacity='1';paint();watchFilm();
   }
   replay.addEventListener('click',function(){
-    if(!released||!active)return;
-    failed=false;manualPlayback=true;bridgeStarted=false;progress=0;replay.hidden=true;
-    if(autoTween)autoTween.kill();if(raf)cancelAnimationFrame(raf);raf=0;
-    sec.classList.remove('pxid-handoff-outro','pxid-handoff-ready','pxid-handoff-complete');setPhase('film');paint();
-    video.muted=true;video.defaultMuted=true;
-    try{if(video.error)video.load();else video.currentTime=0;var playing=video.play();if(playing&&playing.catch)playing.catch(function(){manualPlayback=false;failMedia();});watchFilm();}
-    catch(error){manualPlayback=false;failMedia();}
+    if(!released||!active||playPending)return;
+    failed=false;playPending=true;replay.disabled=true;replay.textContent='视频加载中…';
+    sec.style.setProperty('--story-film-opacity','1');video.style.opacity='0';
+    video.muted=true;video.defaultMuted=true;video.playsInline=true;
+    playWait=setTimeout(function(){if(playPending)failMedia();},6500);
+    try{if(video.error)video.load();else if(video.readyState>=1)video.currentTime=0;var playing=video.play();if(playing&&playing.catch)playing.catch(failMedia);}
+    catch(error){failMedia();}
   });
+  function guardFilmWait(){
+    if(!released||failed||playPending||phase!=='film')return;
+    clearTimeout(playWait);playWait=setTimeout(function(){if(phase==='film'&&!failed&&!playPending)failMedia();},6500);
+  }
+  video.addEventListener('waiting',guardFilmWait);
+  video.addEventListener('playing',function(){if(!playPending)guardFilmWait();});
+  video.addEventListener('timeupdate',function(){if(playPending)beginManualFilm();else if(!video.paused&&video.currentTime>0){clearTimeout(playWait);video.style.opacity='1';}});
   function watchFilm(){
     if(frameCallback||bridgeStarted)return;
     function tick(){
