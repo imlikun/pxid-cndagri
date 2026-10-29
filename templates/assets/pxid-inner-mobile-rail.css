@@ -1,0 +1,11 @@
+/* Compact, touch-first rails for related cards on inner pages. */
+.pxid-inner-rail{display:flex!important;grid-template-columns:none!important;grid-auto-flow:initial!important;align-items:stretch!important;gap:12px!important;overflow-x:auto!important;overflow-y:hidden!important;overscroll-behavior-x:contain;touch-action:pan-x pan-y;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#d71920 #dedfe1;padding-bottom:10px!important;-webkit-overflow-scrolling:touch}
+.pxid-inner-rail::-webkit-scrollbar{height:3px}
+.pxid-inner-rail::-webkit-scrollbar-thumb{background:#d71920;border-radius:4px}
+.pxid-inner-rail::-webkit-scrollbar-track{background:#dedfe1}
+.pxid-inner-rail>*{flex:0 0 85%!important;min-width:0!important;width:85%!important;max-width:none!important;scroll-snap-align:start;scroll-snap-stop:normal}
+.pxid-inner-rail:focus-visible{outline:2px solid #d71920;outline-offset:3px}
+.pxid-inner-tight-top{padding-top:44px!important}
+.pxid-inner-tight-bottom{padding-bottom:48px!important}
+.about-metrics.pxid-inner-rail>*{flex-basis:43%!important;width:43%!important}
+.cr-protection-flow.pxid-inner-rail>article::after,.cr-selection-steps.pxid-inner-rail>article::after{display:none!important}
