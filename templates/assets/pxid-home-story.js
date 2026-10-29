@@ -8,7 +8,7 @@
   var reduced=matchMedia('(prefers-reduced-motion:reduce)'),mobile=matchMedia('(max-width:900px)');
   var phase='intro',released=false,active=true,mediaReady=false,entranceDone=false,failed=false,manualPlayback=false;
   var progress=0,bridgeStarted=false,raf=0,frameCallback=0,bridgeBegan=0,bridgeFrom=0,mediaTime=0;
-  var runtime=null,autoTween=null,timeout,skipTimer,lastPercent=0;
+  var runtime=null,autoTween=null,timeout,skipTimer,lastPercent=0,entranceStart=0,progressRaf=0,sceneRequested=false;
   var entrance=[],assets=sec.dataset.storyAssets,typeFrames=[],logoTarget=null;
   var logoImage=copy.querySelector('.pxid-intro-logo'),eyebrowDeparted=false;
   var campaignTitle=copy.querySelector('h1'),design=copy.querySelector('.story-design'),your=copy.querySelector('.story-your'),rLetter=copy.querySelector('.slogan-r'),ide=copy.querySelector('.pxid-intro-tail'),subtitle=copy.querySelector('.pxid-first-film-sub'),eyebrow=copy.querySelector('.pxid-first-film-eyebrow');
@@ -27,16 +27,20 @@
   var bikeImage=bike.firstElementChild;
   sec.appendChild(bike);
   var scene=document.createElement('div');scene.className='pxid-photo-handoff pxid-story-scene';scene.inert=true;scene.setAttribute('aria-hidden','true');
-  scene.innerHTML='<div class="pxid-story-landscape"><img class="pxid-story-field" src="'+assets+'hero-empty-field-20261017.webp" alt="" width="1672" height="940" decoding="async"></div>'+
-    '<div class="pxid-story-rider"><img src="'+assets+'hero-rider-right-20261017.svg" alt="MANTIS P6 骑行者" width="1100" height="940" decoding="async" draggable="false"></div>'+
+  scene.innerHTML='<div class="pxid-story-landscape"><img class="pxid-story-field" data-story-src="'+assets+'hero-empty-field-20261017.webp" alt="" width="1672" height="940" decoding="async"></div>'+
+    '<div class="pxid-story-rider"><img data-story-src="'+assets+'hero-rider-right-20261017.svg" alt="MANTIS P6 骑行者" width="1100" height="940" decoding="async" draggable="false"></div>'+
     '<div class="pxid-story-grass" aria-hidden="true"></div>'+
-    '<div class="pxid-story-photo"><img src="'+sec.dataset.photoHandoff+'" alt="MANTIS P6 骑行实拍" width="2560" height="1441" decoding="async" draggable="false"></div>'+
+    '<div class="pxid-story-photo"><img data-story-src="'+sec.dataset.photoHandoff+'" alt="MANTIS P6 骑行实拍" width="2560" height="1441" decoding="async" draggable="false"></div>'+
     '<a class="pxid-photo-handoff-cta" href="business.html">探索产品方案 <span aria-hidden="true">↗</span></a>';
   sec.appendChild(scene);
   var landscape=scene.querySelector('.pxid-story-landscape'),field=scene.querySelector('.pxid-story-field');
   var rider=scene.querySelector('.pxid-story-rider'),grass=scene.querySelector('.pxid-story-grass');
   var finalPhoto=scene.querySelector('.pxid-story-photo'),photoImage=finalPhoto.querySelector('img'),cta=scene.querySelector('a');
-  grass.style.backgroundImage='url("'+assets+'hero-empty-field-20261017.webp")';
+  function prepareScene(){
+    if(sceneRequested)return;sceneRequested=true;
+    scene.querySelectorAll('[data-story-src]').forEach(function(img){img.src=img.dataset.storySrc;});
+    grass.style.backgroundImage='url("'+assets+'hero-empty-field-20261017.webp")';
+  }
   var prompt=document.createElement('button');prompt.type='button';prompt.className='pxid-handoff-prompt';
   prompt.innerHTML='<span>继续滚动，探索 PXID</span><i aria-hidden="true">↓</i>';sec.appendChild(prompt);
   var promptLabel=prompt.querySelector('span');
@@ -50,10 +54,14 @@
     number.textContent=String(value).padStart(2,'0');bar.setAttribute('aria-valuenow',value);loader.dataset.loadedPercent=value;
   }
   function loadingProgress(){
-    if(released||failed)return;
+    progressRaf=0;if(released||failed)return;
     var buffered=video.buffered.length?video.buffered.end(0):0;
-    percent(Math.min(99,Math.min(1,buffered/1.5)*85+(bikeImage.complete&&bikeImage.naturalWidth?10:0)+(video.readyState>=2?4:0)));
-    if(video.readyState>=3&&buffered>=Math.min(1.2,video.duration||1.2)){mediaReady=true;finishIntro();}
+    if(video.readyState>=3&&buffered>=Math.min(1.2,video.duration||1.2))mediaReady=true;
+    var mediaPart=mediaReady?85:Math.min(85,buffered/1.2*85);
+    var motionPart=entranceDone?10:(entranceStart?Math.min(9,(performance.now()-entranceStart)/2100*10):0);
+    percent(mediaPart+(bikeImage.complete&&bikeImage.naturalWidth?4:0)+motionPart);
+    if(mediaReady)finishIntro();
+    if(!released&&!failed)progressRaf=requestAnimationFrame(loadingProgress);
   }
   function logoLayout(){
     var nav=document.querySelector(mobile.matches?'header .appNav .logoBox img':'header .pcNav .logo img');
@@ -114,7 +122,7 @@
   function clearGuard(){window.removeEventListener('wheel',inputGuard,true);window.removeEventListener('touchmove',inputGuard,true);window.removeEventListener('keydown',inputGuard,true);inertNodes.forEach(function(n,i){n.inert=inertValues[i];});}
   function finishIntro(){
     if(released||!entranceDone||!mediaReady)return;
-    released=true;clearTimeout(timeout);clearTimeout(skipTimer);percent(100);status.textContent=failed?'READY TO EXPLORE':'READY TO RIDE';
+    released=true;clearTimeout(timeout);clearTimeout(skipTimer);cancelAnimationFrame(progressRaf);prepareScene();percent(100);status.textContent=failed?'READY TO EXPLORE':'READY TO RIDE';
     loader.dataset.introState='revealing';sec.classList.add('pxid-intro-copy-hold');
     Promise.resolve().then(function(){
       loader.dataset.introState='revealing';root.classList.add('pxid-intro-revealing');
@@ -137,7 +145,7 @@
     if(released){showStatic();return;}finishIntro();
   }
   function enter(){
-    logoLayout();layout();
+    entranceStart=performance.now();logoLayout();layout();
     var typeStyle=getComputedStyle(campaignTitle);
     // The bike leads the whole word and parks beyond E, never inside a letter slot.
     var r=ide.getBoundingClientRect(),sr=sec.getBoundingClientRect(),gap=Math.max(10,parseFloat(typeStyle.fontSize)*.12);
@@ -257,15 +265,16 @@
   window.addEventListener('scroll',refreshHeader,{passive:true});
   window.addEventListener('resize',function(){if(active){layout();paint();}else logoLayout();},{passive:true});
   video.addEventListener('ended',function(){if(reduced.matches&&manualPlayback)showStatic();else beginBridge();});video.addEventListener('play',watchFilm);video.addEventListener('error',failMedia);
-  ['progress','loadeddata','canplay','canplaythrough'].forEach(function(name){video.addEventListener(name,loadingProgress);});
+  ['progress','loadeddata','canplay','canplaythrough'].forEach(function(name){video.addEventListener(name,function(){if(!progressRaf)loadingProgress();});});
   skip.addEventListener('click',function(){mediaReady=true;if(video.readyState<2)failed=true;finishIntro();});
   prompt.addEventListener('click',function(){var next=document.getElementById('pxidS2');if(next)window.scrollTo({top:next.getBoundingClientRect().top+scrollY,behavior:reduced.matches?'instant':'smooth'});});
   document.addEventListener('visibilitychange',function(){if(document.hidden){video.pause();if(autoTween)autoTween.pause();}else if(active){if(autoTween)autoTween.resume();if(released&&!bridgeStarted&&!video.ended&&!failed&&(!reduced.matches||manualPlayback))video.play().catch(function(){});}});
   reduced.addEventListener('change',function(){if(reduced.matches&&released)showStatic();});
   video.loop=false;video.removeAttribute('loop');video.muted=true;video.defaultMuted=true;video.playsInline=true;video.setAttribute('playsinline','');video.setAttribute('webkit-playsinline','');video.preload='auto';
-  video.src=assets+(mobile.matches?'hero-field-mobile-20261017.mp4':'hero-field-web-20261017.mp4');video.load();
-  Promise.resolve(bikeImage.decode?bikeImage.decode():null).catch(function(){}).then(function(){percent(10);requestAnimationFrame(enter);});
-  skipTimer=setTimeout(function(){if(!released)skip.hidden=false;},4000);
-  timeout=setTimeout(failMedia,12000);
+  video.src=assets+(mobile.matches?'hero-field-mobile-20261029.mp4':'hero-field-web-20261017.mp4');video.load();
+  Promise.race([Promise.resolve(bikeImage.decode?bikeImage.decode():null).catch(function(){}),new Promise(function(resolve){setTimeout(resolve,800);})]).then(function(){requestAnimationFrame(enter);});
+  loadingProgress();
+  skipTimer=setTimeout(function(){if(!released)skip.hidden=false;},3000);
+  timeout=setTimeout(failMedia,5500);
   layout();
 })();
