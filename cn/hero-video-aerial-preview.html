@@ -10,7 +10,7 @@
   <link rel="icon" href="../assets/pxid/favicon.png?v=20260929" type="image/png">
   <script src="../templates/assets/swiper-bundle.js"></script>
   <link rel="preload" href="../templates/assets/pxid-home-motion.js?v=20261015-native2" as="script">
-  <link rel="stylesheet" href="../templates/assets/index.css?v=20261102-search1">
+  <link rel="stylesheet" href="../templates/assets/index.css?v=20261102-search2">
   <link rel="stylesheet" href="../templates/assets/respone.css">
   <link rel="stylesheet" href="../templates/assets/pxid-overrides.css?v=20260929-navdrop10">
   <link rel="stylesheet" href="../templates/assets/pxid-about-navigation.css?v=20261004-about1">
@@ -1448,7 +1448,7 @@
 </style>
 
 <!-- 首页 S3「三类电动出行产品」背景图：始终可见（坤哥 2026-09-17）
-     原因：index.css?v=20261102-search1 里 .fxBg{visibility:hidden}，只有 .fxBg.showImg 才 visible；
+     原因：index.css?v=20261102-search2 里 .fxBg{visibility:hidden}，只有 .fxBg.showImg 才 visible；
      而 showImg 由 pxid-company-services.js 用 IntersectionObserver toggle，
      滚出视口就移除 → 背景图反复"消失"。（该 JS 是模板文件，不动，这里用 CSS 兜底） -->
 <style id="pxid-fxbg-visible">
@@ -1456,13 +1456,13 @@
 </style>
 
 <!-- 首页 hero 底部波形：铺满整宽（坤哥 2026-09-17）
-     原因：index.css?v=20261102-search1 里 .home .banner .bg .wave{width:13rem;right:1.6rem} 只覆盖右侧 1300px，
+     原因：index.css?v=20261102-search2 里 .home .banner .bg .wave{width:13rem;right:1.6rem} 只覆盖右侧 1300px，
      1920 视口下左边缘落在 x=460，所以左边 460px 是空的（"前半截不显示"）。
      ⚠️ 必须挂在主文档里（用 pxid-s6-gap 块做锚点）——这台页面有 4 个 </body>，
         挂"最后一个 </body>"会落进内嵌文档，样式根本不加载。 -->
 <style id="pxid-wave-full">
 @media (min-width:901px){
-  /* 首页两处波形都铺满整宽（index.css?v=20261102-search1 里都是 width:13rem + right 偏移，左半边天然空白） */
+  /* 首页两处波形都铺满整宽（index.css?v=20261102-search2 里都是 width:13rem + right 偏移，左半边天然空白） */
   .home .banner .bg .wave,
   .home .r6 .bg .wave{width:100%!important;left:0!important;right:0!important}
   .home .banner .bg .wave.w2,
