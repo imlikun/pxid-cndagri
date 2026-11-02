@@ -61,3 +61,11 @@
 #app header .pcNav .mid .lists .navHref{position:relative}
 #app header .pcNav .mid .lists .navHref::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:#d71920;transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
 #app header .pcNav .mid .lists .navHref:hover::after{transform:scaleX(1)}
+
+#pxidS6 .loc-photo{position:absolute;left:0;bottom:4%;width:43%;aspect-ratio:16/10;overflow:hidden;background:#242424}
+#pxidS6 .loc-photo-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s}
+#pxidS6 .loc-photo-huaian{object-position:center 63%}
+#pxidS6 .loc-photo-hongkong{height:120%;object-position:center top}
+#pxidS6[data-selected-location="huaian"] .loc-photo-huaian,#pxidS6[data-selected-location="nanjing"] .loc-photo-nanjing,#pxidS6[data-selected-location="shenzhen"] .loc-photo-shenzhen,#pxidS6[data-selected-location="hongkong"] .loc-photo-hongkong{opacity:1;visibility:visible}
+@media(max-width:900px){#pxidS6 .loc-map{max-height:320px}#pxidS6 .loc-photo{position:relative;left:auto;bottom:auto;width:100%;aspect-ratio:2/1;margin:8px 0 12px}#pxidS6 .loc-map-note{margin:0 0 2px}#pxidS6 .loc-map-wrap{width:100%}}
+@media(prefers-reduced-motion:reduce){#pxidS6 .loc-photo-image{transition:none}}
