@@ -9,16 +9,11 @@
 #pxidS6 .loc-map-wrap{position:relative;min-width:0;max-width:760px;width:100%;margin:auto}
 #pxidS6 .loc-map{width:100%;height:auto;display:block;max-height:58vh;overflow:visible}
 #pxidS6 .loc-provinces .pv{fill:#353638;stroke:#929496;stroke-opacity:.52;stroke-width:.9;vector-effect:non-scaling-stroke}
-#pxidS6 .loc-leader{fill:none;stroke:#d2d2d2;stroke-opacity:.55;stroke-width:1.4;vector-effect:non-scaling-stroke}
-#pxidS6 .loc-pin{fill:#e12932;stroke:#171717;stroke-width:1.5}
-#pxidS6 .loc-halo{fill:none;stroke:#e12932;stroke-opacity:.36;stroke-width:2;opacity:0;transition:opacity .2s}
-#pxidS6 .loc-map-item.is-selected .loc-halo{opacity:1}
-#pxidS6 .loc-map-item.is-selected .loc-leader{stroke:#ee343b;stroke-opacity:1}
-#pxidS6 .loc-label{cursor:pointer;outline:none}
-#pxidS6 .loc-label rect{fill:#242526;fill-opacity:.94;stroke:#737475;stroke-width:.8;vector-effect:non-scaling-stroke}
-#pxidS6 .loc-label text{fill:#f4f4f4;font:600 31px 'Microsoft YaHei',sans-serif;pointer-events:none}
-#pxidS6 .loc-map-item.is-selected .loc-label rect{fill:#d71920;stroke:#d71920}
-#pxidS6 .loc-label:focus-visible rect{stroke:white;stroke-width:3}
+#pxidS6 .loc-provinces .pv{transition:fill .4s ease,stroke .4s ease}
+#pxidS6[data-selected-location="huaian"] .loc-region-jiangsu,#pxidS6[data-selected-location="nanjing"] .loc-region-jiangsu,#pxidS6[data-selected-location="shenzhen"] .loc-region-guangdong,#pxidS6[data-selected-location="hongkong"] .loc-region-hongkong{fill:#a9abad;stroke:#dedfe0;stroke-opacity:.9}
+#pxidS6 .loc-marker{transition:transform .55s cubic-bezier(.22,1,.36,1);pointer-events:none}
+#pxidS6 .loc-marker path{fill:#e12932;stroke:#fff;stroke-width:1;paint-order:stroke fill}
+#pxidS6 .loc-marker circle{fill:#fff}
 #pxidS6 .loc-map-note{position:absolute;bottom:1%;right:0;margin:0;color:#777;font-size:10px;letter-spacing:.04em}
 #pxidS6 .loc-content{min-width:0}
 #pxidS6 .loc-list-kicker{display:flex;justify-content:space-between;color:#898989;margin-bottom:22px;font-size:11px}
@@ -57,7 +52,7 @@
  #pxidS6 .loc-detail{padding:18px 2px 0;min-height:76px;gap:14px}
  #pxidS6 .loc-detail h3{font-size:18px}
 }
-@media(prefers-reduced-motion:reduce){#pxidS6 .loc-choice,#pxidS6 .loc-halo{transition:none}}
+@media(prefers-reduced-motion:reduce){#pxidS6 .loc-choice,#pxidS6 .loc-marker,#pxidS6 .loc-provinces .pv{transition:none}}
 
 @media(max-width:900px){html[data-pxid-compact="true"] #app.home #pxidS6.pxid-locations{padding:40px 0 44px!important}}
 
