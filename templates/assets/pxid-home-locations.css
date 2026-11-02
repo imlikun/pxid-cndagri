@@ -1,0 +1,68 @@
+/* Four-city locations on the existing homepage. */
+#app.home #pxidS6.pxid-locations{position:relative;height:auto;min-height:0;max-height:none;overflow:hidden;background:#171717;color:#f6f6f6;padding:clamp(44px,4vw,76px) 0!important}
+#pxidS6 .loc-wrap{width:min(89%,1640px);margin:auto}
+#pxidS6 .loc-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;padding:0 0 clamp(25px,3.4vw,58px);border-bottom:1px solid #ffffff1c}
+#pxidS6 .loc-kicker,#pxidS6 .loc-list-kicker{margin:0;color:#ea2b33;font:700 12px/1.3 Arial,sans-serif;letter-spacing:.19em}
+#pxidS6 .loc-heading h2{margin:12px 0 0;font:700 clamp(38px,4vw,70px)/1.1 'Microsoft YaHei',sans-serif;letter-spacing:-.035em;color:#fff}
+#pxidS6 .loc-intro{margin:0;color:#b4b4b4;font-size:clamp(13px,1vw,17px);letter-spacing:.12em}
+#pxidS6 .loc-layout{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(340px,.82fr);gap:clamp(40px,6vw,112px);align-items:center}
+#pxidS6 .loc-map-wrap{position:relative;min-width:0;max-width:760px;width:100%;margin:auto}
+#pxidS6 .loc-map{width:100%;height:auto;display:block;max-height:58vh;overflow:visible}
+#pxidS6 .loc-provinces .pv{fill:#353638;stroke:#929496;stroke-opacity:.52;stroke-width:.9;vector-effect:non-scaling-stroke}
+#pxidS6 .loc-leader{fill:none;stroke:#d2d2d2;stroke-opacity:.55;stroke-width:1.4;vector-effect:non-scaling-stroke}
+#pxidS6 .loc-pin{fill:#e12932;stroke:#171717;stroke-width:1.5}
+#pxidS6 .loc-halo{fill:none;stroke:#e12932;stroke-opacity:.36;stroke-width:2;opacity:0;transition:opacity .2s}
+#pxidS6 .loc-map-item.is-selected .loc-halo{opacity:1}
+#pxidS6 .loc-map-item.is-selected .loc-leader{stroke:#ee343b;stroke-opacity:1}
+#pxidS6 .loc-label{cursor:pointer;outline:none}
+#pxidS6 .loc-label rect{fill:#242526;fill-opacity:.94;stroke:#737475;stroke-width:.8;vector-effect:non-scaling-stroke}
+#pxidS6 .loc-label text{fill:#f4f4f4;font:600 31px 'Microsoft YaHei',sans-serif;pointer-events:none}
+#pxidS6 .loc-map-item.is-selected .loc-label rect{fill:#d71920;stroke:#d71920}
+#pxidS6 .loc-label:focus-visible rect{stroke:white;stroke-width:3}
+#pxidS6 .loc-map-note{position:absolute;bottom:1%;right:0;margin:0;color:#777;font-size:10px;letter-spacing:.04em}
+#pxidS6 .loc-content{min-width:0}
+#pxidS6 .loc-list-kicker{display:flex;justify-content:space-between;color:#898989;margin-bottom:22px;font-size:11px}
+#pxidS6 .loc-list-kicker span{color:#777;letter-spacing:.08em}
+#pxidS6 .loc-choices{border-top:1px solid #ffffff30}
+#pxidS6 .loc-choice{appearance:none;display:grid;grid-template-columns:36px minmax(100px,1fr) auto;align-items:center;gap:14px;width:100%;min-height:86px;padding:16px 5px;text-align:left;color:#e7e7e7;background:transparent;border:0;border-bottom:1px solid #ffffff30;cursor:pointer;font-family:inherit;transition:color .2s,background-color .2s}
+#pxidS6 .loc-choice:hover,#pxidS6 .loc-choice.is-selected{color:#fff;background:#ffffff08}
+#pxidS6 .loc-index{color:#858585;font:500 12px/1.2 Arial,sans-serif}
+#pxidS6 .loc-choice.is-selected .loc-index{color:#ec333c}
+#pxidS6 .loc-name{font-size:clamp(20px,2vw,30px);font-weight:700;white-space:nowrap}
+#pxidS6 .loc-name small{margin-left:12px;color:#929292;font:600 10px/1.3 Arial,sans-serif;letter-spacing:.12em}
+#pxidS6 .loc-role{font-size:13px;color:#b7b7b7;text-align:right;line-height:1.5}
+#pxidS6 .loc-choice:focus-visible{outline:2px solid #ea2b33;outline-offset:2px}
+#pxidS6 .loc-detail{display:flex;gap:20px;padding:28px 4px 0;min-height:118px}
+#pxidS6 .loc-detail-no{color:#e02b34;font:600 11px/1.5 Arial,sans-serif;white-space:nowrap}
+#pxidS6 .loc-detail h3{margin:0;color:#fff;font-size:20px;line-height:1.3}
+#pxidS6 .loc-detail h3 span{color:#8a8a8a;font:600 10px/1.5 Arial,sans-serif;letter-spacing:.12em;margin-left:8px}
+#pxidS6 .loc-detail-role,#pxidS6 .loc-detail-copy{margin:8px 0 0;color:#a6a6a6;font-size:13px;line-height:1.6}
+#pxidS6 .loc-detail-role:empty,#pxidS6 .loc-detail-copy:empty{display:none}
+@media(max-width:900px){
+ #app.home #pxidS6.pxid-locations{padding:48px 0 50px!important}
+ #pxidS6 .loc-wrap{width:calc(100% - 36px)}
+ #pxidS6 .loc-heading{align-items:start;gap:12px;padding-bottom:20px}
+ #pxidS6 .loc-heading h2{font-size:clamp(31px,8vw,44px);margin-top:8px}
+ #pxidS6 .loc-intro{font-size:11px;line-height:1.8;letter-spacing:0;text-align:right;max-width:150px}
+ #pxidS6 .loc-layout{display:flex;flex-direction:column;gap:10px;align-items:stretch}
+ #pxidS6 .loc-map-wrap{max-width:520px}
+ #pxidS6 .loc-map{width:100%;max-height:440px}
+ #pxidS6 .loc-map-note{position:static;text-align:right;font-size:9px;margin-top:-12px}
+ #pxidS6 .loc-list-kicker{display:none}
+ #pxidS6 .loc-choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;border:0;margin-top:6px}
+ #pxidS6 .loc-choice{display:block;min-height:46px;padding:9px 4px;border:0;border-radius:3px;background:#28292b;color:#ddd;text-align:center}
+ #pxidS6 .loc-choice.is-selected{background:#d71920;color:#fff}
+ #pxidS6 .loc-index,#pxidS6 .loc-role,#pxidS6 .loc-name small{display:none}
+ #pxidS6 .loc-name{font-size:clamp(14px,4vw,18px);line-height:1.3}
+ #pxidS6 .loc-detail{padding:18px 2px 0;min-height:76px;gap:14px}
+ #pxidS6 .loc-detail h3{font-size:18px}
+}
+@media(prefers-reduced-motion:reduce){#pxidS6 .loc-choice,#pxidS6 .loc-halo{transition:none}}
+
+@media(max-width:900px){html[data-pxid-compact="true"] #app.home #pxidS6.pxid-locations{padding:40px 0 44px!important}}
+
+/* Existing desktop navigation behavior from the previous map section. */
+#app header .pcNav .mid .lists .navHref i.iconfont{display:none!important}
+#app header .pcNav .mid .lists .navHref{position:relative}
+#app header .pcNav .mid .lists .navHref::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:#d71920;transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+#app header .pcNav .mid .lists .navHref:hover::after{transform:scaleX(1)}
